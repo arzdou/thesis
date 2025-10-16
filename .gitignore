@@ -45,3 +45,5 @@
 .bak 
 .mtc
 build/
+*.mw
+deprec/

@@ -1,85 +1,26 @@
-% Encoding, language, and fonts
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
 
-% Math and graphics
-\usepackage{amsmath, amssymb, amsthm, physics, graphicx}
+% Choose the language
+\usepackage[english]{babel} % Load characters and hyphenation
+\usepackage[english=british]{csquotes}	% English quotes
 
-% tufte classes provide marginfigure and fullwidth figures; avoid caption/subcaption
-\usepackage{booktabs}
+% Load packages for testing
+\usepackage{blindtext}
+%\usepackage{showframe} % Uncomment to show boxes around the text area, margin, header and footer
+%\usepackage{showlabels} % Uncomment to output the content of \label commands to the document where they are used
 
-% provides \justifying and the justify environment
-\usepackage{microtype}   
-\usepackage{ragged2e}    
-\AtBeginDocument{\justifying\emergencystretch=1em}
+% Load the bibliography package
+\usepackage{kaobiblio}
+\addbibresource{bibliography.bib} % Bibliography file
 
-% References and colours
-\usepackage{xcolor}
-\definecolor{linkblue}{RGB}{0,0,150}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=linkblue,
-    citecolor=linkblue,
-    urlcolor=linkblue
-}
+% Load mathematical packages for theorems and related environments
+\usepackage{kaotheorems}
 
-% Other useful packages
-\usepackage{enumitem}
-\usepackage{csquotes}
+% Load the package for hyperreferences
+\usepackage{kaorefs}
 
-% Tufte class provides its own page layout. Do not load geometry here.
-% Bibliography: numeric, order-of-appearance, and short margin citations
-\usepackage[
-  backend=biber,
-  style=numeric,        % numeric labels
-  sorting=none,         % order of appearance (absolute numeration)
-  giveninits=true,      % use initials for given names
-  maxcitenames=1,       % show "FirstAuthor et al." in citations (and margin items)
-  maxbibnames=99,       % show full author list in the main bibliography
-  backref=true,         % record pages where each entry was cited
-  doi=false, url=false, isbn=false, eprint=false
-]{biblatex}
-\addbibresource{bibliography.bib}
+\graphicspath{{images/}{./}} % Paths where images are looked for
 
-% (Using biblatex's built-in backref formatting for now; custom backref
-% code was removed because it triggered list-processing macros too early.
-% If you want the exact parenthesised "(cited on pages ...)" text, I can
-% add a safer variant after confirming the margincite output.)
-
-% Margin citation: short author (et al.), year, and journal (if present)
-% Usage: \margincite{<key>}
-\DeclareCiteCommand{\margincite}
-  {}
-  {\marginnote{%
-     \printnames{labelname}%
-     \addspace\printfield{year}%
-     \iffieldundef{journaltitle}{}{\addcomma\space\printfield{journaltitle}}}}
-  {}
-  {}
-
-% Define \cite so it prints the numeric label inline and also produces a
-% short margin citation (author et al., year, journal). This keeps a single
-% \cite command for both inline labels and tufte-style side notes.
-\DeclareCiteCommand{\cite}
-  {\usebibmacro{prenote}}% prenote (optional argument before key)
-  {%
-      % print numeric label (labelnumber is already formatted by \DeclareFieldFormat)
-      \mkbibbrackets{\bibhyperref{\printfield{labelnumber}}}% inline [N] with hyperlink to bib
-      % then place a short citation in the margin: [N]: Author et al. (YEAR), 'Title'
-      \marginnote{%
-        \mkbibbrackets{\bibhyperref{\printfield{labelnumber}}}:\space% leading clickable [N]:
-        \printnames{labelname}% author(s) (respects maxcitenames)
-        \space\printtext{\mkbibparens{\printfield{year}}}% (YEAR)
-        \iffieldundef{title}{}{% add title when present
-          \addcomma\space\mkbibquote{\printfield{title}}}%
-      }%
-  }
-  {\multicitedelim}% separator for multiple keys
-  {\usebibmacro{postnote}}% postnote (optional argument after key)
-
-
+% Aliases
 \newcommand{\red}[1]{\textcolor{red}{(#1)}}
 \newcommand{\Er}{Er$^{3+}$\,}
 \newcommand{\Nb}{$^{93}$Nb\,}

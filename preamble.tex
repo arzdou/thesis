@@ -3,15 +3,16 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 
-% Tufte class provides its own page layout. Do not load geometry here.
+% Math and graphics
+\usepackage{amsmath, amssymb, amsthm, physics, graphicx}
 
-% Math and science
-\usepackage{amsmath, amssymb, amsthm}
-
-% Graphics and tables
-\usepackage{graphicx}
 % tufte classes provide marginfigure and fullwidth figures; avoid caption/subcaption
 \usepackage{booktabs}
+
+% provides \justifying and the justify environment
+\usepackage{microtype}   
+\usepackage{ragged2e}    
+\AtBeginDocument{\justifying\emergencystretch=1em}
 
 % References and colours
 \usepackage{xcolor}
@@ -27,6 +28,57 @@
 % Other useful packages
 \usepackage{enumitem}
 \usepackage{csquotes}
+
+% Tufte class provides its own page layout. Do not load geometry here.
+% Bibliography: numeric, order-of-appearance, and short margin citations
+\usepackage[
+  backend=biber,
+  style=numeric,        % numeric labels
+  sorting=none,         % order of appearance (absolute numeration)
+  giveninits=true,      % use initials for given names
+  maxcitenames=1,       % show "FirstAuthor et al." in citations (and margin items)
+  maxbibnames=99,       % show full author list in the main bibliography
+  backref=true,         % record pages where each entry was cited
+  doi=false, url=false, isbn=false, eprint=false
+]{biblatex}
+\addbibresource{bibliography.bib}
+
+% (Using biblatex's built-in backref formatting for now; custom backref
+% code was removed because it triggered list-processing macros too early.
+% If you want the exact parenthesised "(cited on pages ...)" text, I can
+% add a safer variant after confirming the margincite output.)
+
+% Margin citation: short author (et al.), year, and journal (if present)
+% Usage: \margincite{<key>}
+\DeclareCiteCommand{\margincite}
+  {}
+  {\marginnote{%
+     \printnames{labelname}%
+     \addspace\printfield{year}%
+     \iffieldundef{journaltitle}{}{\addcomma\space\printfield{journaltitle}}}}
+  {}
+  {}
+
+% Define \cite so it prints the numeric label inline and also produces a
+% short margin citation (author et al., year, journal). This keeps a single
+% \cite command for both inline labels and tufte-style side notes.
+\DeclareCiteCommand{\cite}
+  {\usebibmacro{prenote}}% prenote (optional argument before key)
+  {%
+      % print numeric label (labelnumber is already formatted by \DeclareFieldFormat)
+      \mkbibbrackets{\bibhyperref{\printfield{labelnumber}}}% inline [N] with hyperlink to bib
+      % then place a short citation in the margin: [N]: Author et al. (YEAR), 'Title'
+      \marginnote{%
+        \mkbibbrackets{\bibhyperref{\printfield{labelnumber}}}:\space% leading clickable [N]:
+        \printnames{labelname}% author(s) (respects maxcitenames)
+        \space\printtext{\mkbibparens{\printfield{year}}}% (YEAR)
+        \iffieldundef{title}{}{% add title when present
+          \addcomma\space\mkbibquote{\printfield{title}}}%
+      }%
+  }
+  {\multicitedelim}% separator for multiple keys
+  {\usebibmacro{postnote}}% postnote (optional argument after key)
+
 
 \newcommand{\red}[1]{\textcolor{red}{(#1)}}
 \newcommand{\Er}{Er$^{3+}$\,}

@@ -3,26 +3,25 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 
-% Page setup
-\usepackage{geometry}
-\geometry{a4paper, margin=1in}
+% Tufte class provides its own page layout. Do not load geometry here.
 
 % Math and science
 \usepackage{amsmath, amssymb, amsthm}
 
 % Graphics and tables
 \usepackage{graphicx}
-\usepackage{caption}
-\usepackage{subcaption}
+% tufte classes provide marginfigure and fullwidth figures; avoid caption/subcaption
 \usepackage{booktabs}
 
-% References
+% References and colours
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{0,0,150}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
-    citecolor=blue,
-    urlcolor=blue
+    linkcolor=linkblue,
+    citecolor=linkblue,
+    urlcolor=linkblue
 }
 
 % Other useful packages

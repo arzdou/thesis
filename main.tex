@@ -1,27 +1,22 @@
-\documentclass[12pt,a4paper]{report} % or book, depending on your university requirements
+\documentclass[a4paper,oneside]{tufte-book}
 
 % Include preamble settings
 \input{preamble}
 
 \begin{document}
 
-% ----------------------
-% Front matter
-% ----------------------
-\begin{titlepage}
-    \centering
-    {\Huge Thesis Title \par}
-    \vspace{2cm}
-    {\Large Jaime Travesedo \par}
-    \vfill
-    {\large \today \par}
-\end{titlepage}
+% Tufte classes provide nice title and author handling; use simple title block
+\title{Thesis Title}
+\author{Jaime Travesedo}
+\date{\today}
+\maketitle
 
 \pagenumbering{roman}
 \tableofcontents
 \listoffigures
 \listoftables
 
+% Front matter files (keep as-is; tufte class will handle margins)
 \include{frontmatter/abstract}
 \include{frontmatter/acknowledgements}
 
@@ -36,7 +31,7 @@
 % ----------------------
 % Bibliography
 % ----------------------
-\bibliographystyle{plain} % or abbrv, apa, ieee, etc.
+\bibliographystyle{plainnat}
 \bibliography{bibliography}
 
 \end{document}

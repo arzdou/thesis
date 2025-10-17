@@ -47,3 +47,4 @@
 build/
 *.mw
 deprec/
+.DS_Store

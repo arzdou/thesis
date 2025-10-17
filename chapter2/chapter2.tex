@@ -48,8 +48,6 @@ We begin the section with a description of the host crystal. Calcium tungstate (
 
 Lanthanide ions enter the crystal in substitution to Ca$^{2+}$. Due to the difference in charge between the two ions, charge compensation mechanisms take place inside the crystal, which can be achieved by the presence of interstitial ions, vacancies, or other defects. Figure \red{figure} shows an example of a \Ca crystal, where an \Er replaces the central calcium ion. The point symmetry of the \Er site is $S_4$, which notably lacks inversion symmetry. \red{discussed later}.
 
-The nuclear spin environment of \Ca is predominantly comprised of \W nuclear spins with a natural abundance of 14.4\%. These nuclei possess a relatively low gyromagnetic ratio, $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T \sidecite{knight_solidstate_1986}. The combination of a low density of nuclear spins with a weak gyromagnetic ratio results in a reduced magnetic environment. This makes \Ca a promising plaftform for quantum technologies where long coherences are an essential characteristic.
-
 The crystal-field Hamiltonian is used to describe the interaction between the ion and the crystal and is generally described in terms of the extended Stevens operators $\hat{O}^q_k$ with $k=2,4,6,\dots$ and $q \in \{-k,\dots, k\}$ \sidecite{abragam_electron_2012,stevens_matrix_1952}
 
 \begin{equation}
@@ -70,7 +68,7 @@ $B_6^{-4}$ & 75~cm$^{-1}$
 \label{tab:cf_parameters}
 \end{margintable}
 
-Where $B_k^q$ are the real-valued crystal field parameters. The extended Stevens operators are constructed as polynomial combinations of the $J_z$, $J_+$ and $J_-$ operators, and a full list of the operators can be found in \sidecite{altshuler_electron_1964}. The indices $k$ and $q$ encode the symmetry properties of the crystal field: $k$ specifies the rank of the operator (i.e., the maximum total power of angular momentum operators in the polynomial), and is restricted to even values due to time-reversal symmetry. The index $q$ determines the projection to the quantization axis (i.e. the maximum power of the non-diagonal terms). This allows the crystal field to encode the symmetry properties of the crystal site in a reduced number of terms. The values of the crystal-field parameters for \Er:\Ca are given in table \ref{tab:cf_parameters}
+Where $B_k^q$ are the real-valued crystal field parameters. The extended Stevens operators are constructed as polynomial combinations of the $J_z$, $J_+$ and $J_-$ operators, and a full list of the operators can be found in \sidecite{altshuler_electron_1964}. The indices $k$ and $q$ encode the symmetry properties of the crystal field: $k$ specifies the rank of the operator (i.e., the maximum total power of angular momentum operators in the polynomial), and is restricted to even values due to time-reversal symmetry. The index $q$ determines the projection to the quantization axis (i.e. the maximum power of the non-diagonal terms). This allows the crystal field to encode the symmetry properties of the crystal site in a reduced number of terms. The values of the crystal-field parameters for \Er:\Ca are given in table \ref{tab:cf_parameters}. 
 
 The effect of the crystal-field is the mixing of states with different $J$ and $J_z$, although the former is much weaker. For \Er, the 16-fold degenerate $^4I_{15/2}$ ground state is split into eight doublets ($Z_{1,\dots,8}$), known as \emph{Kramers doublets}. According to Kramers' theorem, \sidecite{kramers_general_1930} if the number of electrons in the $4f$ shell is odd and there is time-reversal symmetry (i.e. no magnetic field applied), then all crystal field levels are at least doubly degenerate, which is the case for \Er with $N=11$.
 
@@ -122,6 +120,109 @@ Throughout this thesis, we will primarily use this effective spin-1/2 approximat
 \end{equation}
 
 where $E_\downarrow$ and $E_\uparrow$ are the energies of the system as a function of the applied magnetic field $B_z$. This non-linearity is the origin of the pseudo-Zeeman \sidecite{baker_paramagnetic_1997} and pseudo-Quadrupole effects \sidecite{foley_secondorder_1947}, which are taken into account when interpreting the high-resolution spectroscopy experiments detailed in \red{labch}
+
+\subsection{Magneto-Electric effect}
+
+As discussed before, \Er:\Ca is located in a site with $S_4$ symmetry, which notably lacks inversion symmetry. This results in the appearance of odd terms $(k=1,3,5,\dots)$ in the crystal-field Hamiltonian. However, these terms do not modify the energy level structure of the ion unless an external electric field is applied \sidecite{ham_linear_1961}. The origin of these magneto-electric shifts lies in the electrical-field-induced mixing between the odd and even terms of the Hamiltonian \sidecite{kiel_electricfieldinduced_1970}. This interaction can be modeled with the following Hamiltonian,
+
+\begin{equation}
+    \mathcal{H}_{\text{m-e}} = \sum_{i,j,k}^{\{a,b,c\}} T_{k, i, j} S_{i} B_j E_k
+\end{equation}
+
+\begin{margintable}
+\centering
+\begin{tabular}{l|l|l}
+param.         & value  & $S_4$ symm.   \\[-1em] \\ \hline \\[-1em]
+$T_{a,c,a}$    & 1.4    & $-T_{b,c,b}$  \\[-1em] \\ \hline \\[-1em]
+$T_{a,c,b}$    & 1.0    & $-T_{b,c,a}$  \\[-1em] \\ \hline \\[-1em]
+$T_{c,a,a}$    & 5.4    & $-T_{c,b,b}$  \\[-1em] \\ \hline \\[-1em]
+$T_{c,b,a}$    & 2.9    &  (-) 
+\end{tabular}
+\caption{Magneto-electric parameters for \Er:\Ca given in ($10^{-32} \times \frac{\text{J/T}}{\text{V/m}}$). The third column indicates the relation between the parameters that originate from the $S_4$ symmetry of the ion site. The rest of the values of the tensor can be obtained by enforcing $\{i, j\}$ index symmetry $T_{k, i, j} = T_{k, j, i}$.}
+\labtab{magnetoelectric_parameters}
+\end{margintable}
+
+where $i,j,k \in\{x,y,z\}$ and $T_{k, i, j}$ is third-rank tensor which is symmetric in the {i, j} indices. The tensor captures the linear mixing of the levels as a function of the electric and magnetic field. The values for the tensor in \Er:\Ca were experimentally determined by Mims \sidecite{mims_electric_1965} and are displayed in \reftab{magnetoelectric_parameters}. The effect can be discribed with only four independent parameters and the rest of the elements of the tensor are obtained by enforcing $S_4$ and $\{i, j\}$ index symmetry.
+
+Even if the energy shifts are zero in the absence of and electric field, this interaction can be understood as an induced electric dipole $\mathbf{d}$ due to an external magnetic field; if $\mathbf{B}$ is fixed, the interaction can be effectively rewritten as 
+
+\begin{align}
+\begin{split}
+    \mathcal{H}_{\text{m-e}} &= \sum_k-d_k E_k = -\mathbf{d} \cdot \mathbf{E}, \\
+    d_k &= - \sum_{i,j} T_{k, i, j} \langle S_{i}\rangle B_j.
+\end{split}
+\label{seq:electric_dipole}
+\end{align}
+
+where $\langle S_i \rangle$ corresponds to the expected value of the electron spin. The dipole in turn generates an electric field around the position of the \Er, whose effects will be revisited in \red{refsec}
+
+\subsection{Magnetic spin environment}
+
+The nuclear spin environment of \Ca is predominantly composed of \W nuclear spins, which have a natural abundance of 14.4\% and a relatively low gyromagnetic ratio, $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T \sidecite{knight_solidstate_1986}. The combination of a low density of nuclear spins and a weak gyromagnetic ratio results in an environment with a reduced magnetic moment density.
+\sidenote{There are other stable calcium and oxygen isotopes with non-zero nuclear spin, namely $^{43}$Ca, $^{15}$O and $^{17}$O with $I=7/2$, $I=1/2$ and $I=5/2$, respectively, but their natural abundances are low (0.1\%, 0.003\% and <0.003\%, respectively) and are not considered in our discussion.}
+As such, the magnetic noise perceived by any paramagnetic impurity hosted in the crystal is significantly reduced compared to other hosts used in quantum applications, such as yttrium orthosilicate (Y$_2$SiO$_5$, YSO) and yttrium oxide (Y$_2$O$_3$). This results in slow spectral diffusion and reduced decoherence rates for any paramagnetic impurity hosted in the crystal.
+
+In addition to the nuclear spin bath, paramagnetic impurities—such as other rare-earth ions or transition metal ions—can also contribute significantly to the magnetic environment experienced by a single \Er ion. These electronic spins have a much larger gyromagnetic response and are more spatially delocalized than the point-like nuclear spins. At high concentrations, the magnetic noise is dominated by the paramagnetic impurities rather than the nuclear bath. Therefore, minimizing the dopant concentration is crucial to achieve long coherence times. Indeed, by reducing the concentration of rare-earth ions to the 1--100 parts per billion (ppb) range and exploiting the low magnetic density, ensemble spin coherence times as long as 23~ms have been demonstrated for \Er:\Ca \sidecite{ledantec_twentythreemillisecond_2021}.
+
+The sample used for this work was grown using high-purity, natural-abundance materials and no paramagnetic impurities were added during crystal growth\sidenote{Specific details on the growth of a similar sample can be found in \cite{erb_growth_2013}.}. Nevertheless, trace amounts in the precursors result in a concentration of \Er of 3.1~ppb, measured using electron spin resonance (ESR) techniques \red{appendix}. There are four calcium sites in a single unit cell with volume $V_{\text{unit cell}}\sim310\ \text{\AA}^3$. This results in in average distance between ions of 0.3 \textmu m. \sidenote{The Ca site density is 
+\begin{equation*}
+    4/310 \approx 1.3\times10^{-2} \text{~A}^{-3}
+\end{equation*} 
+With [\Er]=3.1~ppb, the \Er density is 
+\begin{equation*}
+    n_{\text{\Er}} \approx 4.0\times10^{-11} \text{~A}^{-3}
+\end{equation*} 
+and the characteristic spacing is
+\begin{equation*}
+    n_{\text{\Er}}^{-1/3} \approx 2.9\times10^{3}\text{~A}\approx0.29\text{~\textmu m} 
+\end{equation*}
+} 
+This distance is large enough that interactions between paramagnetic impurities can be effectively neglected except in specific cases where two ions are, by chance, in close proximity. Consequently, we consider that the magnetic noise environment in the crystal is dominated by \W nuclear spin.
+
+\subsection{Interaction between two spins}
+
+We now consider interactions between two spins, which in this system are governed primarily by two mechanisms: long-range magnetic dipole coupling and short-range contact interaction. Below we treat \Er-\W and \W-\W couplings separately. Due to the very low \Er concentration, \Er-\Er interactions are negligible and are therefore omitted.\sidenote{A complete analysis of \Er decoherence should include interactions between paramagnetic ions, but this lies outside the scope of the present work.}
+
+In classical terms, the magnetic interaction between two dipoles with magnetic moment $\boldsymbol{\mu_1}$ and $\boldsymbol{\mu_2}$ is expressed as\sidecite{abragam_electron_2012}
+
+\begin{equation}
+    \mathcal{H}_{dd} = \frac{\mu_0}{4\pi} r^{-3} 
+    \left[ \boldsymbol{\mu}_1 \cdot \boldsymbol{\mu}_2 
+    - 3r^{-2} (\boldsymbol{\mu}_1 \cdot \mathbf{r})(\boldsymbol{\mu}_2 \cdot \mathbf{r}), \right]
+\end{equation}
+
+\noindent where $\mathbf{r}$ is the vector separating the two 
+
+\begin{equation}
+\begin{aligned}
+\mathcal{H}_{dd} &= 
+\mu_B^2 \frac{\mu_0}{4\pi} r^{-3} \Big[ 
+g_{x1} g_{x2} \hat{S}_{x1} \hat{S}_{x2} \big( 1 - 3 \sin^2 \theta_r \cos^2 \phi_r \big) \\
+&\quad + g_{y1} g_{y2} \hat{S}_{y1} \hat{S}_{y2} \big( 1 - 3 \sin^2 \theta_r \sin^2 \phi_r \big) \\
+&\quad + g_{z1} g_{z2} \hat{S}_{z1} \hat{S}_{z2} \big( 1 - 3 \cos^2 \theta_r \big) \\
+&\quad - 3 \sin^2 \theta_r \cos \phi_r \sin \phi_r 
+\big( g_{x1} g_{y2} \hat{S}_{x1} \hat{S}_{y2} + g_{y1} g_{x2} \hat{S}_{y1} \hat{S}_{x2} \big) \\
+&\quad - 3 \sin \theta_r \cos \phi_r \cos \theta_r 
+\big( g_{x1} g_{z2} \hat{S}_{x1} \hat{S}_{z2} + g_{z1} g_{x2} \hat{S}_{z1} \hat{S}_{x2} \big) \\
+&\quad - 3 \sin \theta_r \sin \phi_r \cos \theta_r 
+\big( g_{y1} g_{z2} \hat{S}_{y1} \hat{S}_{z2} + g_{z1} g_{y2} \hat{S}_{z1} \hat{S}_{y2} \big) 
+\Big]
+\end{aligned}
+\end{equation}
+
+The exchange interaction\sidenote{Also known as Fermi-contact interaction} takes the following form \sidecite{abragam_electron_2012}:
+
+\begin{equation}
+    \cH{exch} = \mathbf{S_1} \cdot \bar{\bar {J}}_\text{exch} \cdot \mathbf{J}
+\end{equation}
+
+Contact interactions only occur when the spin wavefunctions overlap with each other and the typical interaction range is $\sim$1.5~nm. We do not consider contact interactions between two nuclear spins as the wavefunctions are almost point-like.
+
+The wavefunctions of \Er ions are highly localized thanks to the $5s$ and $5p$ shielding. Additionally, thanks to the low density of \Er ions we can discard any possible contact term between two distant electron spins. 
+
+In the case of electron and nuclear spin interaction, the \Er and W ions in the crystal are coordinated by an oxygen ion (see \red{labfig}) which prevents direct overlap between the spin wavefunctions. We conclude that contact interaction between proximal \Er ions and \W nuclear spins is not the primary coupling; at most they may produce small isotropic shifts.
+
+As such the dominating interaction mechanism between two spins in our system is the free-space dipolar coupling
 
 \section{Spins coupled to a cavity}
 \labsec{spins_coupled_to_a_cavity}

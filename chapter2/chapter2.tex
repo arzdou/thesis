@@ -183,7 +183,7 @@ This distance is large enough that interactions between paramagnetic impurities 
 
 We now consider interactions between two spins, which in this system are governed primarily by two mechanisms: long-range magnetic dipole coupling and short-range contact interaction. Below we treat \Er-\W and \W-\W couplings separately. Due to the very low \Er concentration, \Er-\Er interactions are negligible and are therefore omitted.\sidenote{A complete analysis of \Er decoherence should include interactions between paramagnetic ions, but this lies outside the scope of the present work.}
 
-In classical terms, the magnetic interaction between two dipoles with magnetic moment $\boldsymbol{\mu_1}$ and $\boldsymbol{\mu_2}$ is expressed as\sidecite{abragam_electron_2012}
+In classical physics, the magnetic interaction between two dipoles with magnetic vector moments $\boldsymbol{\mu_1}$ and $\boldsymbol{\mu_2}$ is expressed as\sidecite{abragam_electron_2012}
 
 \begin{equation}
     \mathcal{H}_{dd} = \frac{\mu_0}{4\pi} r^{-3} 
@@ -191,29 +191,51 @@ In classical terms, the magnetic interaction between two dipoles with magnetic m
     - 3r^{-2} (\boldsymbol{\mu}_1 \cdot \mathbf{r})(\boldsymbol{\mu}_2 \cdot \mathbf{r}), \right]
 \end{equation}
 
-\noindent where $\mathbf{r}$ is the vector separating the two 
+\noindent where $\mathbf{r}$ is the vector separating the two dipoles. In quantum mechanics, this expression is directly applicable when taking into consideration that the magnetic moment of a spin is given by $\boldsymbol{\mu} = \bar{\bar{\gamma}} \cdot \mathbf{S}$. Expanding the expression in terms of the spin operators yields
 
 \begin{equation}
 \begin{aligned}
 \mathcal{H}_{dd} &= 
-\mu_B^2 \frac{\mu_0}{4\pi} r^{-3} \Big[ 
-g_{x1} g_{x2} \hat{S}_{x1} \hat{S}_{x2} \big( 1 - 3 \sin^2 \theta_r \cos^2 \phi_r \big) \\
-&\quad + g_{y1} g_{y2} \hat{S}_{y1} \hat{S}_{y2} \big( 1 - 3 \sin^2 \theta_r \sin^2 \phi_r \big) \\
-&\quad + g_{z1} g_{z2} \hat{S}_{z1} \hat{S}_{z2} \big( 1 - 3 \cos^2 \theta_r \big) \\
+\frac{\mu_0}{4\pi} r^{-3} \Big[ 
+\gamma_{x1}\gamma_{x2} \hat{S}_{x1} \hat{S}_{x2} \big( 1 - 3 \sin^2 \theta_r \cos^2 \phi_r \big) \\
+&\quad + \gamma_{y1}\gamma_{y2} \hat{S}_{y1} \hat{S}_{y2} \big( 1 - 3 \sin^2 \theta_r \sin^2 \phi_r \big) \\
+&\quad + \gamma_{z1}\gamma_{z2} \hat{S}_{z1} \hat{S}_{z2} \big( 1 - 3 \cos^2 \theta_r \big) \\
 &\quad - 3 \sin^2 \theta_r \cos \phi_r \sin \phi_r 
-\big( g_{x1} g_{y2} \hat{S}_{x1} \hat{S}_{y2} + g_{y1} g_{x2} \hat{S}_{y1} \hat{S}_{x2} \big) \\
+\big( \gamma_{x1}\gamma_{y2} \hat{S}_{x1} \hat{S}_{y2} + \gamma_{y1}\gamma_{x2} \hat{S}_{y1} \hat{S}_{x2} \big) \\
 &\quad - 3 \sin \theta_r \cos \phi_r \cos \theta_r 
-\big( g_{x1} g_{z2} \hat{S}_{x1} \hat{S}_{z2} + g_{z1} g_{x2} \hat{S}_{z1} \hat{S}_{x2} \big) \\
+\big( \gamma_{x1}\gamma_{z2} \hat{S}_{x1} \hat{S}_{z2} + \gamma_{z1}\gamma_{x2} \hat{S}_{z1} \hat{S}_{x2} \big) \\
 &\quad - 3 \sin \theta_r \sin \phi_r \cos \theta_r 
-\big( g_{y1} g_{z2} \hat{S}_{y1} \hat{S}_{z2} + g_{z1} g_{y2} \hat{S}_{z1} \hat{S}_{y2} \big) 
+\big( \gamma_{y1}\gamma_{z2} \hat{S}_{y1} \hat{S}_{z2} + \gamma_{z1}\gamma_{y2} \hat{S}_{z1} \hat{S}_{y2} \big) 
 \Big]
 \end{aligned}
 \end{equation}
 
+\noindent where $\theta_r$ and $\phi_r$ are respectively the polar and azimutal angles of the $\mathbf{r}$ vector. This interaction is strongly anisotropic and depends on the relative position and alignment between the two spins. 
+
+\red{Give estimates for \Er-\W interactions with relevant plots. types 1 2 and 3 in first unit cell}
+
+For the case between two \W nuclear spins (with spin operators $\mathbf{I_1}$ and $\mathbf{I_2}$), we give a rough estimation of the interaction strength as a full picture of the coupling between the different sites will is not of interest in this work. Since both spins are have an isotropic gyromagnetic factor, they will both be aligned to the externally applied field in the high field regime\sidenote{This corresponds to 
+\begin{equation*}
+|\mathbf{B_0}| \gg \frac{\gamma_{\text{\W}} \mu_0}{ 8\pi a^3} \approx 1\text{~mT !}
+\end{equation*}
+} For two aligned spins the interaction is then simplified to
+
+\begin{equation}
+    \mathcal{H}_{dd} = \frac{\mu_0\gamma_{\text{\W}}^2}{4\pi r^3}  \mathbf{I_1} \mathbf{I_2} \left[ 1 - 3\cos(\theta_r) \right],
+\end{equation}
+
+\noindent and the average strength of the interaction is
+
+\begin{equation}
+    \frac{\mu_0\gamma_{\text{\W}}^2}{8\pi a^3} \approx 1\text{~Hz}. 
+\end{equation} 
+
+\red{some extra discussion}
+
 The exchange interaction\sidenote{Also known as Fermi-contact interaction} takes the following form \sidecite{abragam_electron_2012}:
 
 \begin{equation}
-    \cH{exch} = \mathbf{S_1} \cdot \bar{\bar {J}}_\text{exch} \cdot \mathbf{J}
+    \cH{exch} = \mathbf{S_1} \cdot \bar{\bar {J}}_\text{exch} \cdot \mathbf{S_2}
 \end{equation}
 
 Contact interactions only occur when the spin wavefunctions overlap with each other and the typical interaction range is $\sim$1.5~nm. We do not consider contact interactions between two nuclear spins as the wavefunctions are almost point-like.

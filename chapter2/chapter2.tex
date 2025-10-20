@@ -354,13 +354,20 @@ as the energy of the quadrupole can be written in a compact form
 To quantize this expression one must take the quantum mechanical expression for the charge density of the constituting protons of the nucleus and apply the Wigner-Eckart theorem to evaluate the resulting integrals and express the interaction in terms of the nuclear spin operator $\mathbf{I}$ 
 
 \begin{equation}
-\mathcal{H}_{Q} = \frac{eQ}{6I(2I-1)} 
+\cH{Q} = \frac{e\mathcal{Q}}{6I(2I-1)} 
 \sum_{\alpha,\beta} V_{\alpha\beta} 
 \left[ \tfrac{3}{2} \left( I_{\alpha} I_{\beta} + I_{\beta} I_{\alpha} \right) 
 - \delta_{\alpha\beta} I^{2} \right].
+\label{eq:quadrupole}
 \end{equation}
 
-where $Q$ denotes the quadrupole moment obtained from the integral of the nuclear charge distribution. We note the following relations between the values of the EFG. The Laplace law enforces that $\nabla^2 V = V_{xx} + V_{yy} + V_{zz} = 0$. In addition, the symmetry of the EFG results in $V_{\alpha\beta} = V_{\beta\alpha}$. Therefore, the EFG can be effectively described as a real, symmetric and traceless rank-2 tensor which can be diagonalized. In the principal-axis system $(\mathbf{x}_Q, \mathbf{y}_Q, \mathbf{z}_Q)$ and choosing the $\mathbf{z}_Q$-axis such that $|V_{z_Qz_Q}|\geq|V_{x_Qx_Q}|\geq|V_{y_Qy_Q}|$, it is customary to introduce the asymmetry parameter
+where $\mathcal{Q}$ denotes the quadrupole moment, obtained from the integral of the nuclear charge distribution and measured in Barns. The quadrupole Hamiltonian can be writen the following compact form
+
+\begin{equation}
+    \cH{Q} = \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I},
+\end{equation}
+
+\noindent where $\bar{\bar{Q}}$ is the quadrupole tensor, proportional to the EFG. The EFG satisfies Laplace's equation, so its components obey $V_{xx}+V_{yy}+V_{zz}=0$, and by electrostatic symmetry $V_{\alpha\beta}=V_{\beta\alpha}$. Consequently, the EFG (and thus $\bar{\bar{Q}}$) is a real, symmetric, traceless rank-2 tensor and can be diagonalized. In the principal-axis frame $(\mathbf{x}_Q,\mathbf{y}_Q,\mathbf{z}_Q)$, choosing the $\mathbf{z}_Q$ axis so that $|V_{z_Qz_Q}|\ge|V_{x_Qx_Q}|\ge|V_{y_Qy_Q}|$, one defines the conventional asymmetry parameter
 
 \begin{equation}
     \eta = \frac{V_{x_Qx_Q}-V_{y_Qy_Q}}{V_{z_Qz_Q}}, \qquad 0\leq\eta\leq1,
@@ -369,11 +376,45 @@ where $Q$ denotes the quadrupole moment obtained from the integral of the nuclea
 \noindent and the Hamiltonian in the principal-axis system can be expressed as
 
 \begin{equation}
-\mathcal{H}_{Q} = \frac{\hbar \omega_Q}{6}\left[ 3 I_{z_Q}^2 - I(I+1) + \eta(I_{x_Q}^2 - I_{y_Q}^2)\right],
+\cH{Q} = \frac{\hbar \omega_Q}{6}\left[ 3 I_{z_Q}^2 - I(I+1) + \eta(I_{x_Q}^2 - I_{y_Q}^2)\right],
 \end{equation}
 
-where $\hbar \omega_Q$ is the quadrupole energy\sidenote{\[\omega_Q \equiv  \frac{3C_q}{2I(2I-1)\hbar} \]}.
+where $\hbar \omega_Q$ is the quadrupole energy\sidenote{\[\omega_Q \equiv  \frac{3e\mathcal{Q}V_{z_Qz_Q}}{2I(2I-1)\hbar} \]}. Based on the value of the asymmetry parameter we can distinguish two regimes. First, if $\eta=0$ the quadrupole is said to be axial and the Hamiltonian is diagonal in the $\ket{I,m_I}$ basis. The quadrupole then splits the nuclear energy levels by $m_I^2 \omega_Q/2 $, where $m_I$ is the projection of the nuclear spin along the $z_Q$ axis. Second, when $\eta\neq0$ the term proportional to $\eta$ mixes states differing by $\Delta m_I=\pm2$ and creates a non-trivial energy level structure. 
 
+
+\subsubsection{Rotational invariance of the Quadrupole Hamiltonian}
+
+\red{In this section we now consider the reconstruction procedure of a quadrupole tensor of a spin under a magnetic field and the inherent limitations with only one magnetic field orientation.}
+
+When measuring the nuclear spin transitions under a specific magnetic field orientation, the resulting frequencies are generally not enough to describe the full quadrupole tensor. 
+
+To unveil any hidden symmetry, it is useful to express the quadrupole in the basis of the rank-2 spherical tensors\sidenote{
+The rank-2 spherical tensors are related to the spin operator basis by
+\begin{equation*}
+\begin{split}
+T^{(2)}_{0} &= 3 I_z^2 - I(I+1), \\
+T^{(2)}_{\pm 1} &= \mp \left( I_z I_{\pm} + I_{\pm} I_z \right), \\
+T^{(2)}_{\pm 2} &= I_{\pm}^2 .
+\end{split}
+\end{equation*}
+}. By algebraic manipulation of Eq. \ref{eq:quadrupole} we can rewrite the Hamiltonian as
+
+\begin{equation}
+    \cH{Q} = \sum_{m = -2}^2 Q_m T^{(2)}_m(\mathbf{I})
+    \label{eq:quadrupole_spherical}
+\end{equation}
+
+\noindent with
+
+\begin{equation}
+\begin{aligned}
+Q_{0} &= Q_{zz}, \\
+Q_{\pm 1} &= Q_{zx} \pm i Q_{zy}, \\
+Q_{\pm 2} &= \tfrac{1}{2}(Q_{xx} - Q_{yy}) \pm i Q_{xy}.
+\end{aligned}
+\end{equation}
+
+One can show (Appendix \ref{app:rotations_quadrupole}) that the coefficients transform as $Q_m \;\mapsto\; e^{-im\zeta}\, Q_m,$ under a rotation of angle $\zeta$ around the $z$-axis. Since the energy levels of the Hamiltonian only depends on the absolute quantities $|Q_m|$, the energy spectrum is invariant under rotations in the $z$ axis: any two tensors related by a rotation in the $xy$ plane produce identical NMR spectra for a fixed field orientation.
 
 
 \section{Spins coupled to a cavity}

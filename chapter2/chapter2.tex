@@ -64,7 +64,7 @@ $B_6^0$    & -0.6~cm$^{-1}$ \\[-1em] \\ \hline \\[-1em]
 $B_6^4$    & 396~cm$^{-1}$  \\[-1em] \\ \hline \\[-1em]
 $B_6^{-4}$ & 75~cm$^{-1}$  
 \end{tabular}
-\caption{Crystal field parameters for \Er:\Ca measured in \cite{enrique_optical_1971} with the operator normalization as defined in \cite{erath_crystal_1961}}
+\caption[Crystal field parameters]{Crystal field parameters for \Er:\Ca measured in \cite{enrique_optical_1971} with the operator normalization as defined in \cite{erath_crystal_1961}}
 \label{tab:cf_parameters}
 \end{margintable}
 
@@ -76,7 +76,7 @@ Each of the doublets can be modelled as an effective spin-1/2 with an anisotropi
 
 \begin{figure}
     \includegraphics{chapter2/figures/energy_levels_vs_Bz_all.pdf}
-    \caption{Energy levels for all $Z_i$ doublets under a magnetic field parallel (perpendicular) to the $c$-axis. The y-axis is broken to better show the magnetic splitting of the levels. Energy difference between the states of each doublet at 500~mT is shown as vertical double arrows, along with the approximate frequency of the transitiion}
+    \caption[Crystal field levels]{Energy levels for all $Z_i$ doublets under a magnetic field parallel (perpendicular) to the $c$-axis. The y-axis is broken to better show the magnetic splitting of the levels. Energy difference between the states of each doublet at 500~mT is shown as vertical double arrows, along with the approximate frequency of the transitiion}
     \labfig{energy_levels_vs_Bz_all}
 \end{figure}
 
@@ -95,7 +95,7 @@ The energy separation between the $Z_1$ and $Z_2$ doublets is approximately 650 
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/energy_levels_vs_Bz_Z1.pdf}
-    \caption{Energy levels of the $Z_1$ doublet as a function of magnetic field along the $c$-axis. The curves were obtaioned by direct diagonalization of Eq. \ref{eq:J-CF_Hamiltonian} and Eq. \ref{eq:er_spin_hamiltonian} (solid and dot-dashed resp.).}
+    \caption[Zeeman splitting of the $Z_1$ doublet]{Energy levels of the $Z_1$ doublet as a function of magnetic field along the $c$-axis. The curves were obtaioned by direct diagonalization of Eq. \ref{eq:J-CF_Hamiltonian} and Eq. \ref{eq:er_spin_hamiltonian} (solid and dot-dashed resp.).}
     \labfig{energy_levels_vs_Bz_Z1}
 \end{marginfigure}
 
@@ -138,11 +138,13 @@ $T_{a,c,b}$    & 1.0    & $-T_{b,c,a}$  \\[-1em] \\ \hline \\[-1em]
 $T_{c,a,a}$    & 5.4    & $-T_{c,b,b}$  \\[-1em] \\ \hline \\[-1em]
 $T_{c,b,a}$    & 2.9    &  (-) 
 \end{tabular}
-\caption{Magneto-electric parameters for \Er:\Ca given in ($10^{-32} \times \frac{\text{J/T}}{\text{V/m}}$). The third column indicates the relation between the parameters that originate from the $S_4$ symmetry of the ion site. The rest of the values of the tensor can be obtained by enforcing $\{i, j\}$ index symmetry $T_{k, i, j} = T_{k, j, i}$.}
+\caption[Magneto-optic parameters]{Magneto-electric parameters for \Er:\Ca given in ($10^{-32} \times \frac{\text{J/T}}{\text{V/m}}$). The third column indicates the relation between the parameters that originate from the $S_4$ symmetry of the ion site. The rest of the values of the tensor can be obtained by enforcing $\{i, j\}$ index symmetry $T_{k, i, j} = T_{k, j, i}$.}
 \labtab{magnetoelectric_parameters}
 \end{margintable}
 
-where $i,j,k \in\{x,y,z\}$ and $T_{k, i, j}$ is third-rank tensor which is symmetric in the {i, j} indices. The tensor captures the linear mixing of the levels as a function of the electric and magnetic field. The values for the tensor in \Er:\Ca were experimentally determined by Mims \sidecite{mims_electric_1965} and are displayed in \reftab{magnetoelectric_parameters}. The effect can be discribed with only four independent parameters and the rest of the elements of the tensor are obtained by enforcing $S_4$ and $\{i, j\}$ index symmetry.
+where $i,j,k \in\{x,y,z\}$ and $T_{k, i, j}$ is third-rank tensor which is symmetric in the {i, j} indices. The tensor captures the linear mixing of the levels as a function of the electric and magnetic field. The values for the tensor in \Er:\Ca were experimentally determined by Mims \sidecite{mims_electric_1965} and are displayed in \reftab{magnetoelectric_parameters}. The effect can be described with only four independent parameters and the rest of the elements of the tensor are obtained by enforcing $S_4$ and $\{i, j\}$ index symmetry.
+
+\red{Plot with the shift as a function of the electric field}
 
 Even if the energy shifts are zero in the absence of and electric field, this interaction can be understood as an induced electric dipole $\mathbf{d}$ due to an external magnetic field; if $\mathbf{B}$ is fixed, the interaction can be effectively rewritten as 
 
@@ -177,11 +179,13 @@ and the characteristic spacing is
     n_{\text{\Er}}^{-1/3} \approx 2.9\times10^{3}\text{~A}\approx0.29\text{~\textmu m} 
 \end{equation*}
 } 
-This distance is large enough that interactions between paramagnetic impurities can be effectively neglected except in specific cases where two ions are, by chance, in close proximity. Consequently, we consider that the magnetic noise environment in the crystal is dominated by \W nuclear spin.
+This distance is large enough that interactions between paramagnetic impurities can be effectively neglected except in specific cases where two ions are, by chance, in close proximity. Consequently, we consider that the magnetic environment in the crystal is dominated by \W nuclear spin.
 
 \subsection{Interaction between two spins}
 
 We now consider interactions between two spins, which in this system are governed primarily by two mechanisms: long-range magnetic dipole coupling and short-range contact interaction. Below we treat \Er-\W and \W-\W couplings separately. Due to the very low \Er concentration, \Er-\Er interactions are negligible and are therefore omitted.\sidenote{A complete analysis of \Er decoherence should include interactions between paramagnetic ions, but this lies outside the scope of the present work.}
+
+\subsubsection{Magnetic dipole interaction}
 
 In classical physics, the magnetic interaction between two dipoles with magnetic vector moments $\boldsymbol{\mu_1}$ and $\boldsymbol{\mu_2}$ is expressed as\sidecite{abragam_electron_2012}
 
@@ -210,41 +214,94 @@ In classical physics, the magnetic interaction between two dipoles with magnetic
 \end{aligned}
 \end{equation}
 
-\noindent where $\theta_r$ and $\phi_r$ are respectively the polar and azimutal angles of the $\mathbf{r}$ vector. This interaction is strongly anisotropic and depends on the relative position and alignment between the two spins. 
-
-\red{Give estimates for \Er-\W interactions with relevant plots. types 1 2 and 3 in first unit cell}
-
-For the case between two \W nuclear spins (with spin operators $\mathbf{I_1}$ and $\mathbf{I_2}$), we give a rough estimation of the interaction strength as a full picture of the coupling between the different sites will is not of interest in this work. Since both spins are have an isotropic gyromagnetic factor, they will both be aligned to the externally applied field in the high field regime\sidenote{This corresponds to 
-\begin{equation*}
-|\mathbf{B_0}| \gg \frac{\gamma_{\text{\W}} \mu_0}{ 8\pi a^3} \approx 1\text{~mT !}
-\end{equation*}
-} For two aligned spins the interaction is then simplified to
+\noindent where $\theta_r$ and $\phi_r$ are respectively the polar and azimutal angles of the $\mathbf{r}$ vector. This interaction can be expressed following compact form
 
 \begin{equation}
-    \mathcal{H}_{dd} = \frac{\mu_0\gamma_{\text{\W}}^2}{4\pi r^3}  \mathbf{I_1} \mathbf{I_2} \left[ 1 - 3\cos(\theta_r) \right],
+    \cH{d-d} = \mathbf{S_1} \cdot \bar{\bar {A}} \cdot \mathbf{S_2},
+\end{equation}
+
+\noindent where the complexity of the dipolar interaction is encoded in the hyperfine tensor $\bar{\bar{A}}$. This interaction is strongly anisotropic and depends on the relative position and orientation between the two spins. Therefore, their coupling will depend on the orientation of the external magnetic field. This is particularly relevant in the case of \Er:\Ca as the erbium spin is strongly anisotropic. 
+
+We first consider the interaction between the \Er electron spin and the \W nuclear spin ($\mathbf{S_1}=\mathbf{S}$ and $\mathbf{S_2}=\mathbf{I}$). The particularity of this case arises from the large difference between the Zeeman energies of the two spins: the gyromagnetic tensor of electrons is approximately $10^3$ times larger than that of nuclear spins. In addition, we consider the large-field regime\sidenote{This corresponds to
+\begin{equation*}
+|\bar{\bar{\gamma}}_{^{3+}\text{Er}} \cdot \mathbf{B_0}| \gg \bar{\bar A}.
+\end{equation*}
+If the separation between the spins is $a$, the condition can be approximated as
+\begin{equation*}
+|\mathbf{B_0}| \gg \frac{\gamma_{\text{\W}} \mu_0}{ 8\pi a^3} \approx 1\text{~mT}.
+\end{equation*}}, where the dominant term in the Hamiltonian is the Zeeman energy of \Er. In line with the experimental conditions discussed later, we take the magnetic field to be approximately parallel to the $c$-axis of the crystal, corresponding to the $z$-axis of the laboratory frame. The leading contribution to the Hamiltonian is then $S_z$, while non-commuting terms can be treated as perturbations to the energy-level structure. In particular, hyperfine interaction terms involving $S_x$ and $S_y$ can be disregarded by applying the secular approximation. The resulting Hamiltonian is given by
+
+\begin{align}
+\begin{split}
+    \mathbf{S}\cdot\bar{\bar{A}}\cdot\mathbf{I} \approx&\ S_z\,\left(A_{zx}I_x+A_{zy}I_y+A_{zz}I_z\right) \rightarrow \\
+    \rightarrow &\ S_z \, \left(A_\perp I_x + A_\parallel I_z\right),
+\end{split}
+\end{align}
+
+\noindent where the arrow corresponds to a rotation of the coordinate system by $x$-axis lies along the direction of the perpendicular hyperfine coupling and $A_\perp^2 = A_{zx}^2+A_{zy}^2$ and $A_\parallel = A_{zz}$.
+
+Intuitively, the secular approximation can be understood by considering the effects of each term in the \Er spin Bloch sphere. The dominant Zeeman term induces a precession of the electron spin around the $z$-axis with frequency $\gamma_\parallel B_0$. By contrast, the hyperfine terms involving $S_x$ and $S_y$ correspond to rotations around the $x$- and $y$-axes, with much smaller frequencies. Because of the large difference in frequency scales, the transverse rotations effectively average to zero and can be neglected.
+
+\begin{figure}
+    \includegraphics{chapter2/figures/hyperfine_tensor_vs_angle.pdf}
+    \caption[Hyperfine coupling parameter]{Parallel and perpendicular hyperfine couplings as a function of the angle $\theta$ between the magnetic field $B_0$ and the $c$-axis of the crystal for the three types of W-sites.}
+    \labfig{hyperfine_tensor_vs_angle}
+\end{figure}
+
+
+\begin{margintable}[]
+\begin{tabular}{l|l}
+       & distance (\AA) \\ \hline
+type 1 & $(+2.62, +2.62,  0) $           \\
+       & $(+2.62, -2.62,  0)  $          \\
+       & $(-2.62, +2.62,  0)$            \\
+       & $(-2.62, -2.62,  0)$            \\ \hline
+type 2 & $(+2.62,  0, -2.84)$            \\
+       & $(-2.62,  0, -2.84)$            \\
+       & $(0, +2.62, +2.84)$             \\
+       & $(0, -2.62, +2.84)$             \\ \hline
+type 3 & $(0, 0, +5.69)$                 \\
+       & $(0, 0, -5.69)$                
+\end{tabular}
+\caption[\W atomic positions]{W site positions in \Ca, separated in three types depending on their relative position to the central \Er ion}
+\labtab{w_positions}
+\end{margintable}
+
+Within the first unit cell, and with $B_0$ applied parallel to the $c$-axis, three sets of magnetically-equivalent \W atoms can be found, called types 1, 2, and 3 in the following. All \W nuclear spins beyond the first unit cell have lower couplings and are not resolved in this work. Table \reftab{w_positions} indicates the atomic positions of the ten W-sites within a unit cell centered around an \Er ion. The value of the hyperfine parameters $A_\parallel$ and $A_\perp$ are plot as a function of the angle between the applied magnetic field and the $c$-axis is \reffig{hyperfine_tensor_vs_angle}. The strong dependence of the hyperfine coupling with the angle evidences the anisotropic nature of the interaction, with values that can change from a zero to hundreds of kHz in less than 10º.
+
+For the case between two \W nuclear spins (with spin operators $\mathbf{I_1}$ and $\mathbf{I_2}$), we give a rough estimation of the interaction strength as a full picture of the coupling between the different sites will is not of interest in this work. Since both spins are have an isotropic gyromagnetic factor, they will both be aligned to the externally applied field in the high field regime. For two aligned spins the interaction is then simplified to
+
+\begin{equation}
+    \cH{d-d} = \frac{\mu_0\gamma_{\text{\W}}^2}{4\pi r^3}  \mathbf{I_1} \mathbf{I_2} \left[ 1 - 3\cos(\theta_r) \right],
 \end{equation}
 
 \noindent and the average strength of the interaction is
 
 \begin{equation}
-    \frac{\mu_0\gamma_{\text{\W}}^2}{8\pi a^3} \approx 1\text{~Hz}. 
+    \frac{\mu_0\gamma_{\text{\W}}^2}{8\pi a^3} \approx 1\text{~Hz}, 
 \end{equation} 
 
-\red{some extra discussion}
+\noindent is orders of magnitude smaller than the \Er-\W coupling and Zeeman terms. Therefore, the nuclear spin bath interactions will be slow compared to the dynamics of the paramagnetic ion and the neighbouring nuclear spins.
 
-The exchange interaction\sidenote{Also known as Fermi-contact interaction} takes the following form \sidecite{abragam_electron_2012}:
+\subsubsection{Exchange interaction}
+
+The exchange interaction, also known as Fermi-contact interaction, takes the following form \sidecite{abragam_electron_2012}:
 
 \begin{equation}
     \cH{exch} = \mathbf{S_1} \cdot \bar{\bar {J}}_\text{exch} \cdot \mathbf{S_2}
 \end{equation}
 
-Contact interactions only occur when the spin wavefunctions overlap with each other and the typical interaction range is $\sim$1.5~nm. We do not consider contact interactions between two nuclear spins as the wavefunctions are almost point-like.
+Contact interactions only occur when the spin wavefunctions overlap with each other and the typical interaction range is $\sim$1.5~nm \sidecite{schweiger_principles_2001}. We do not consider contact interactions between two nuclear spins as the wavefunctions are almost point-like.
 
 The wavefunctions of \Er ions are highly localized thanks to the $5s$ and $5p$ shielding. Additionally, thanks to the low density of \Er ions we can discard any possible contact term between two distant electron spins. 
 
 In the case of electron and nuclear spin interaction, the \Er and W ions in the crystal are coordinated by an oxygen ion (see \red{labfig}) which prevents direct overlap between the spin wavefunctions. We conclude that contact interaction between proximal \Er ions and \W nuclear spins is not the primary coupling; at most they may produce small isotropic shifts.
 
-As such the dominating interaction mechanism between two spins in our system is the free-space dipolar coupling
+We conclude that the dominating interaction mechanism between two spins in our system is the free-space dipolar coupling.
+
+\subsection{High-nuclear spins}
+
+In section \red{labsec} we discuss the measurements performed in a system consisting of an \Er spin and a \Nb nuclear spin in close proximity. Although unexpected, the presence of a \Nb spin gave us the chance to study a more complex system, as \Nb boasts a high-nuclear spin $I=9/2$. 
 
 \section{Spins coupled to a cavity}
 \labsec{spins_coupled_to_a_cavity}

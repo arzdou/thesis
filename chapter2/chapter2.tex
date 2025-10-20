@@ -387,9 +387,7 @@ where $\mathcal{Q}$ denotes the quadrupole moment, obtained from the integral of
 where $\hbar \omega_Q$ is the quadrupole energy\sidenote{\[\omega_Q \equiv  \frac{3e\mathcal{Q}V_{z_Qz_Q}}{2I(2I-1)\hbar} \]}. Based on the value of the asymmetry parameter we can distinguish two regimes. First, if $\eta=0$ the quadrupole is said to be axial and the Hamiltonian is diagonal in the $\ket{I,m_I}$ basis. The quadrupole then splits the nuclear energy levels by $m_I^2 \omega_Q/2 $, where $m_I$ is the projection of the nuclear spin along the $z_Q$ axis. Second, when $\eta\neq0$ the term proportional to $\eta$ mixes states differing by $\Delta m_I=\pm2$ and creates a non-trivial energy level structure. 
 
 
-\subsubsection{Rotational invariance of the Quadrupole Hamiltonian}
-
-\red{In this section we now consider the reconstruction procedure of a quadrupole tensor of a spin under a magnetic field and the inherent limitations with only one magnetic field orientation.}
+\subsubsection{Rotational invariance of the quadrupolar energy spectrum}
 
 When measuring the nuclear spin transitions under a specific magnetic field orientation, the resulting frequencies are generally not enough to describe the full quadrupole tensor. 
 
@@ -419,7 +417,14 @@ Q_{\pm 2} &= \tfrac{1}{2}(Q_{xx} - Q_{yy}) \pm i Q_{xy}.
 \end{aligned}
 \end{equation}
 
-One can show (Appendix \ref{app:rotations_quadrupole}) that the coefficients transform as $Q_m \;\mapsto\; e^{-im\zeta}\, Q_m,$ under a rotation of angle $\zeta$ around the $z$-axis. Since the energy levels of the Hamiltonian only depends on the absolute quantities $|Q_m|$, the energy spectrum is invariant under rotations in the $z$ axis: any two tensors related by a rotation in the $xy$ plane produce identical NMR spectra for a fixed field orientation.
+One can show (Appendix \ref{app:rotations_quadrupole}) that the coefficients transform as 
+\begin{equation}
+Q_m \;\mapsto\; e^{-im\zeta}\, Q_m,
+\end{equation}
+under a physical rotation of angle $\zeta$ about the $z$-axis. Since the energy levels of the Hamiltonian are insensitive to these phase factors and depend only on invariants such as $Q_0$, $|Q_{\pm 1}|^2$, and $|Q_{\pm 2}|^2$, the energy spectrum is invariant under such rotations. 
+
+This is a subtle point with an important consequence: any two tensors related by a rotation in the $xy$ plane produce identical NMR spectra for a fixed field orientation. Equivalently, no matter how precise the measurement of the nuclear transition frequencies, one can reconstruct the quadrupole tensor only up to a rotation about the field axis. Consequently, the only way to lift this degeneracy is by measuring with a different quantization axis of the nuclear spin\sidenote{At zero magnetic field, no orientation information can be extracted, only the magnitudes of the principal components of the quadrupole}.
+
 
 
 \section{Spins coupled to a cavity}

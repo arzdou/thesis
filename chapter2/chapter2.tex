@@ -4,18 +4,29 @@
 \addpart{Background}
 \pagelayout{margin} % Restore margins
 
-\chapter{Erbium ions in Solids}
-\labch{erbium_ions_in_solids}
+\subsection*{Introduction}
 
-% Introduction to rare-earths, brief description of the ions, their properties and their applications
-Erbium belongs to the family of atoms known as lanthanides. These atoms have gathered significant interest as potential enablers for key quantum technologies such as quantum repeaters, memories and transducers. The unique properties of these atoms can be traced to their electronic structure. Their incomplete $4f$ valence shell is shielded by the outermost $5s$ and $5p$ closed shells from interacting with the environment, ligand electrons and lattice vibrations. This is particularly useful since these atoms can be placed in a crystalline host, where micro- and nanostructures can be fabricated to enhance their interaction with light, while maintaining long optical and spin coherences. In addition, Erbium has an optical transition at 1.5~\textmu m, in the low-loss band of optical fiber, which can be exploited for integration in current network infrastructure. 
+This chapter covers the necessary physical background to understand the results of this thesis. 
 
-This section will focus on the energy level structure of erbium when placed inside of a \Ca host. Then, we will consider the interaction of the erbium ion with the nuclear spin environment of the crystal, mainly consisting of \W nuclear spins. 
+The physical system of interest in this work is comprised by a single electron-like spin-1/2 that interacts magnetically with a small register of nuclear spins \red{figure}. On the one hand, the electron spin takes the form of a paramagnetic impurity in a crystal with an unpaired electron in its valence shell. On the other, the register is comprised by the non-zero nuclear spins of the nearest-neighbouring ions. The nuclear spins are strongly coupled to the electron through a direct magnetic dipole interaction. The interaction effectlively shifts the electron spin's gyromagnetic tensor depending on the quantum state of the nuclear spins and by performing Electron Spin Resonance (ESR) we infer the state of the register. In doing so, the electron spin becomes an ancilla element \textit{akin} to an antenna, used to mediate the detection of the nuclear spins. The results described in this work are general to paramagnetic impurities in crystalline samples, but in this work we focus on erbium in calcium tungstate. The nuclear spin environment is predominatly dominated by \W isotopes with spin $I=1/2$. However, in chapter \red{refch} we probe an \Er ion strongly coupled to a \Nb nuclear spin with spin $I=9/2$.
 
-\section{Free-ion Hamiltonian}
-\labsec{free_ion_hamiltonian}
+In addition, we use non-standard ESR techniques to measure the electron spin's resonance frequency. Generally, ESR is performed by induction detection, in which an ensemble of electron spins is aligned to produce a measurable magnetization that is detected by an antenna. In this work, we use fluorescence detection, where the state of the electron spin is measured by counting the fluorescence photons from the electron spin after exciting it with a microwave pulse. By coupling the \Er ion to a superconducting resonator, we enhance the fluorescence relaxation rate through the Purcell effect.
 
-Given the protection of the erbium energy states to external perturbations, we consider first the energy level structure of the free \Er ion, which is described in detail in the following references \sidecite{weissbluth_atoms_2012, abragam_electron_2012}. To describe the energy of an ion we consider the following Hamiltonian.
+\chapter{Electron spins, nuclear spins and their interaction}
+\labch{electron_nuclear_interaction}
+
+This chapter is dedicated to the description of the \Er electron spin and the nuclear spins in \Ca along with the way they couple to each other. The chapter will be organised as follows. \refsec{erbium_ions_in_ca} begins with the description of the energy levels of a Rare-Earth Ions (REIs) impurity in a crystal to arrive to an effective electron spin-1/2 approximation. This is followed in \refsec{nuclear_spins_ca} by a description of the nuclear spin Hamiltonian including the quadrupole interaction. Finally, the dipolar and exchange interactions between the different spin types are discussed in \refsec{interaction_between_to_spins}.
+
+\section{Erbium ions in \Ca}
+\labsec{erbium_ions_in_ca}
+
+Erbium belongs to the family of atoms known as lanthanides. These atoms have gathered significant interest as potential enablers for key quantum technologies such as quantum repeaters, memories and transducers. The unique properties of these atoms can be traced to their electronic structure. Their incomplete $4f$ valence shell is shielded by the outermost $5s$ and $5p$ closed shells from interacting with the environment, ligand electrons and lattice vibrations. This is particularly useful since these atoms can be placed in a crystalline host, where micro- and nanostructures can be fabricated to enhance their interaction with light, while maintaining long optical and spin coherences. In addition, Erbium has an optical transition at 1.5~\textmu m, in the low-loss band of optical fiber, which can be exploited for integration in current network infrastructure.
+
+When placed in a crystalline host, $5s$ and $5p$ shells protect the energy-level structure of the unpaired electron. This allows one to treat the electrostatics of the crystal as a perturbation to the Free-Ion Hamiltonian. For ions with an odd number of electron spins\sidenote{\Er has 11 electron spins in its $4f$ shell.} the ground state will be a Kramers doublet. Consequently, when working at cryogenic temperatures, the ion can be effectively treated as an effective spin-1/2, as only the doublet is populated. We will now derive the spin-1/2 approximation from first principles.
+
+\subsection{Free-ion Hamiltonian}
+
+Given the protection of the erbium energy states to external perturbations, we consider first the energy level structure of the free \Er ion\sidenote{All details of the Free-Ion Hamiltonian can be found in \cite{weissbluth_atoms_2012, abragam_electron_2012}}. To describe the energy of an ion we consider the following Hamiltonian.
 
 \begin{align}
 \begin{split}
@@ -43,7 +54,7 @@ To calculate the effect of the non-central Hamiltonian $\cH{NC}$, the matrix ele
 
 Lastly, we consider the effects of the spin--orbit coupling on the energy structure. For light ions, with radially confined orbitals, this term is smaller than the rest of the interactions and can be treated as a perturbation. However, it is important to note that this term does not commute independently with $\mathbf{L}$ and $\mathbf{S}$ but with the combination of the two operators $\mathbf{J} = \mathbf{L} + \mathbf{S}$. Thus, the perturbation splits the degeneracy of the Russell--Saunders ground state into levels with a specific value of $J$, which are ($2J+1$)-degenerate. The labels are given by Russell--Saunders notation as $^{2S+1}L_J$\sidenote{Since erbium is a medium-sized ion, this approximation is not entirely valid, given that the spin--orbit coupling is no longer perturbative. Thus, $J$ and $S$ are no longer good quantum numbers, but remain relatively accurate for low-energy transitions.}. In the case of \Er, the free-ion ground state corresponds to $^4I_{15/2}$, a 16-fold degenerate level. The first excidecited level is separated by 1.5~\textmu m. In the following work, the \Ca crystal and the ions are cooled down to 10~mK. Consequently, only the ground state will be populated, which can be effectively approximated as a spin $J=15/2$.
 
-\section{Crystal-field Hamiltonian}
+\subsection{Crystal-field Hamiltonian}
 When a lanthanide enters a crystal, it does so as a trivalent ion. Inside the crystal, the ion will be subject to the electrostatic field generated by the electronic clouds of the neighboring atoms. The crystal field breaks the spherical symmetry, which lifts the degeneracy of the free-ion states. However, the $4f$ electrons of a lanthanide are highly localized and shielded, so the crystal-field interaction can be treated as a perturbation to the free-ion energy levels. 
 
 \begin{marginfigure}
@@ -97,7 +108,7 @@ Under a magnetic field $\mathbf{B_0}$, the Hamiltonian of the ground $J=15/2$-mu
 
 The first term represents the Zeeman interaction, where $\mu_B/2\pi = 13.996$~GHz/T is the Bohr magneton and $g_J = 6/5$ is the Landé factor for the \Er ground state. \reffig{energy_levels_vs_Bz_all} illustrates the magnetic-field-induced splitting of the energy levels along the $c$-axis, obtained by direct diagonalization of the Hamiltonian in Eq.~\ref{eq:J-CF_Hamiltonian}. Each $Z_i$ doublet splits into two levels, with an effective, anisotropic gyromagnetic tensor that varies for each doublet. This anisotropy is evident from the differing transition frequencies observed when a 500~mT magnetic field is applied parallel versus perpendicular to the $c$-axis. 
 
-\section{Spin-1/2 approximation}
+\subsection{Spin-1/2 approximation}
 
 The energy separation between the $Z_1$ and $Z_2$ doublets is approximately 650 GHz, which corresponds to a temperature of 50~K. Thus, at the working temperature of 10~mK, only the $Z_1$ doublet will be populated. This doublet can be effectively treated as a spin-1/2 with an anisotropic gyromagnetic tensor,
 
@@ -129,7 +140,7 @@ Throughout this thesis, we will primarily use this effective spin-1/2 approximat
 
 where $E_\downarrow$ and $E_\uparrow$ are the energies of the system as a function of the applied magnetic field $B_z$. This non-linearity is the origin of the pseudo-Zeeman \sidecite{baker_paramagnetic_1997} and pseudo-Quadrupole effects \sidecite{foley_secondorder_1947}, which are taken into account when interpreting the high-resolution spectroscopy experiments detailed in \red{labch}
 
-\section{Magneto-Electric effect}
+\subsection{Magneto-Electric effect}
 \label{sec:magneto-optic}
 
 As discussed before, \Er:\Ca is located in a site with $S_4$ symmetry, which notably lacks inversion symmetry. This results in the appearance of odd terms $(k=1,3,5,\dots)$ in the crystal-field Hamiltonian. However, these terms do not modify the energy level structure of the ion unless an external electric field is applied \sidecite{ham_linear_1961}. The origin of these magneto-electric shifts lies in the electrical-field-induced mixing between the odd and even terms of the Hamiltonian \sidecite{kiel_electricfieldinduced_1970}. This interaction can be modeled with the following Hamiltonian,
@@ -165,7 +176,11 @@ Even if the energy shifts are zero in the absence of and electric field, this in
 
 where $\langle S_i \rangle$ corresponds to the expected value of the electron spin. The dipole in turn generates an electric field around the position of the \Er, whose effects will be revisited in \red{refsec}
 
-\section{Magnetic spin environment}
+
+\section{Nuclear spins in \Ca}
+\labsec{nuclear_spins_ca}
+
+\subsection{Magnetic spin environment}
 
 The nuclear spin environment of \Ca is predominantly composed of \W nuclear spins, which have a natural abundance of 14.4\% and a relatively low gyromagnetic ratio, $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T \sidecite{knight_solidstate_1986}. The combination of a low density of nuclear spins and a weak gyromagnetic ratio results in an environment with a reduced magnetic moment density.
 \sidenote{There are other stable calcium and oxygen isotopes with non-zero nuclear spin, namely $^{43}$Ca, $^{15}$O and $^{17}$O with $I=7/2$, $I=1/2$ and $I=5/2$, respectively, but their natural abundances are low (0.1\%, 0.003\% and <0.003\%, respectively) and are not considered in our discussion.}
@@ -188,7 +203,130 @@ and the characteristic spacing is
 } 
 This distance is large enough that interactions between paramagnetic impurities can be effectively neglected except in specific cases where two ions are, by chance, in close proximity. Consequently, we consider that the magnetic environment in the crystal is dominated by \W nuclear spin.
 
+
+\subsection{Electric Quadrupole interaction}
+
+In section \red{labsec} we discuss the measurements performed in a system consisting of an \Er spin and a \Nb nuclear spin in close proximity. Although unexpected, the presence of a \Nb spin gave us the chance to study a more complex system, as it boasts a high nuclear spin $I=9/2$. This requires introducing the nuclear quadrupole interaction\sidenote{The quadrupole is strictly zero for $I=\tfrac12$}, which couples the nuclear electric quadrupole moment to the local electric-field gradient (EFG)
+
+Physically, the quadrupole effect arrises from the non-sphericity of the nuclear wavefunctions of $I\geq1$ nuclear spins. The charge distribution inside of the nuclear spin will be elongated and when subject to an external field gradient certain orientations of the charge will be favoured. \reffig{charge_orientatons} sketches this intuition by placing an elongated positively charged distribution between four charges, two $+q$ in the $x$-axis and two $-q$ in the $y$-axis. Due to the electrostatic attraction between the positive and negative charges, the vertical orientation will be energetically favoured.
+
+\begin{marginfigure}
+    \includegraphics{chapter2/figures/charge_orientatons.pdf}
+    \caption[Quadrupole charge diagram]{Non-spherical charge distribution with four charges, two $+q$ in the $x$-axis and two $-q$ in the $y$-axis. The positively charged distribution has two orientations: perpendicular and horizonatal. The perpendicular orientation is energetically more favourable.}
+    \labfig{charge_orientatons}
+\end{marginfigure}
+
+We now proceed to sketch the derivation of the quadrupole interaction in terms of the spin operators which can be found in full in \sidecite{slichter_principles_1996}. We begin by considering the classical case of a charge distribution $\rho(\mathbf{r})$ under an electric potential $V(\mathbf{r})$. The energy associated to this system is given by
+
+\begin{equation}
+    E = \int \rho(\mathbf{r}) \times V(\mathbf{r}) d\mathcal{V}.
+\end{equation}
+
+We can approach this problem through the multi-pole expansion, which consists on writing the potential as a Taylor series at the center of mass of the nucleus and treating each term independently, 
+
+\begin{equation}
+V(\mathbf{r}) = V(0) 
++ \sum_{\alpha} x_{\alpha} 
+\left. \frac{\partial V}{\partial x_{\alpha}} \right|_{\mathbf{r}=0}
++ \frac{1}{2!} \sum_{\alpha,\beta} x_{\alpha} x_{\beta} 
+\left. \frac{\partial^2 V}{\partial x_{\alpha} \partial x_{\beta}} \right|_{\mathbf{r}=0}
++ \cdots
+\end{equation}
+
+Consequently, the energy will be written as \sidenote{We have introduced the notation \[V_{\alpha}=\frac{\partial V}{\partial x_{\alpha}}, \quad V_{\alpha \beta}\equiv\frac{\partial^2 V}{\partial x_{\alpha} \partial x_{\beta}},\] \noindent which correspond to the electric field and the EFG respectively.}
+
+\begin{align}
+\begin{split}
+E =&\, V(0) \int \rho \, d\mathcal{V} 
++ \sum_{\alpha} V_{\alpha} \int x_{\alpha} \rho \, d\mathcal{V} +\\
++&\, \frac{1}{2!} \sum_{\alpha,\beta} V_{\alpha \beta} \int x_{\alpha} x_{\beta} \rho \, d\mathcal{V} 
++ \cdots
+\end{split}
+\end{align}
+
+Respectively, each term corresponds to the electrostatic energy of a point-charge nucleus, the energy due to the dipole moment \sidenote{Given that the center of mass and the center of charge are equal, the dipole energy tends to zero} and the quadrupolar term. To describe the quadrupole interaction, it is particularly useful to introduce the following quantities 
+
+\begin{equation}
+    Q_{\alpha \beta} = \int \big( 3 x_{\alpha} x_{\beta} - \delta_{\alpha \beta} r^{2} \big) \, \rho \, d\mathcal{V}
+\end{equation}
+
+as the energy of the quadrupole can be written in a compact form
+
+\begin{equation}
+    E_\text{Q} = \tfrac16 \sum_{\alpha, \beta} Q_{\alpha \beta} V_{\alpha \beta}.
+\end{equation}
+
+To quantize this expression one must take the quantum mechanical expression for the charge density of the constituting protons of the nucleus and apply the Wigner-Eckart theorem to evaluate the resulting integrals and express the interaction in terms of the nuclear spin operator $\mathbf{I}$ 
+
+\begin{equation}
+\cH{Q} = \frac{e\mathcal{Q}}{6I(2I-1)} 
+\sum_{\alpha,\beta} V_{\alpha\beta} 
+\left[ \tfrac{3}{2} \left( I_{\alpha} I_{\beta} + I_{\beta} I_{\alpha} \right) 
+- \delta_{\alpha\beta} I^{2} \right].
+\label{eq:quadrupole}
+\end{equation}
+
+where $\mathcal{Q}$ denotes the quadrupole moment, obtained from the integral of the nuclear charge distribution and measured in Barns. The quadrupole Hamiltonian can be writen the following compact form
+
+\begin{equation}
+    \cH{Q} = \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I},
+\end{equation}
+
+\noindent where $\bar{\bar{Q}}$ is the quadrupole tensor, proportional to the EFG. The EFG satisfies Laplace's equation, so its components obey $V_{xx}+V_{yy}+V_{zz}=0$, and by electrostatic symmetry $V_{\alpha\beta}=V_{\beta\alpha}$. Consequently, the EFG (and thus $\bar{\bar{Q}}$) is a real, symmetric, traceless rank-2 tensor and can be diagonalized. In the principal-axis frame $(\mathbf{x}_Q,\mathbf{y}_Q,\mathbf{z}_Q)$, choosing the $\mathbf{z}_Q$ axis so that $|V_{z_Qz_Q}|\ge|V_{x_Qx_Q}|\ge|V_{y_Qy_Q}|$, one defines the conventional asymmetry parameter
+
+\begin{equation}
+    \eta = \frac{V_{x_Qx_Q}-V_{y_Qy_Q}}{V_{z_Qz_Q}}, \qquad 0\leq\eta\leq1,
+\end{equation}
+
+\noindent and the Hamiltonian in the principal-axis system can be expressed as
+
+\begin{equation}
+\cH{Q} = \frac{\hbar \omega_Q}{6}\left[ 3 I_{z_Q}^2 - I(I+1) + \eta(I_{x_Q}^2 - I_{y_Q}^2)\right],
+\end{equation}
+
+where $\hbar \omega_Q$ is the quadrupole energy\sidenote{\[\omega_Q \equiv  \frac{3e\mathcal{Q}V_{z_Qz_Q}}{2I(2I-1)\hbar} \]}. Based on the value of the asymmetry parameter we can distinguish two regimes. First, if $\eta=0$ the quadrupole is said to be axial and the Hamiltonian is diagonal in the $\ket{I,m_I}$ basis. The quadrupole then splits the nuclear energy levels by $m_I^2 \omega_Q/2 $, where $m_I$ is the projection of the nuclear spin along the $z_Q$ axis. Second, when $\eta\neq0$ the term proportional to $\eta$ mixes states differing by $\Delta m_I=\pm2$ and creates a non-trivial energy level structure. 
+
+
+\subsubsection{Rotational invariance of the quadrupolar energy spectrum}
+
+When measuring the nuclear spin transitions under a specific magnetic field orientation, the resulting frequencies are generally not enough to describe the full quadrupole tensor. 
+
+To unveil any hidden symmetry, it is useful to express the quadrupole in the basis of the rank-2 spherical tensors\sidenote{
+The rank-2 spherical tensors are related to the spin operator basis by
+\begin{equation*}
+\begin{split}
+T^{(2)}_{0} &= 3 I_z^2 - I(I+1), \\
+T^{(2)}_{\pm 1} &= \mp \left( I_z I_{\pm} + I_{\pm} I_z \right), \\
+T^{(2)}_{\pm 2} &= I_{\pm}^2 .
+\end{split}
+\end{equation*}
+}. By algebraic manipulation of Eq. \ref{eq:quadrupole} we can rewrite the Hamiltonian as
+
+\begin{equation}
+    \cH{Q} = \sum_{m = -2}^2 Q_m T^{(2)}_m(\mathbf{I})
+    \label{eq:quadrupole_spherical}
+\end{equation}
+
+\noindent with
+
+\begin{equation}
+\begin{aligned}
+Q_{0} &= Q_{zz}, \\
+Q_{\pm 1} &= Q_{zx} \pm i Q_{zy}, \\
+Q_{\pm 2} &= \tfrac{1}{2}(Q_{xx} - Q_{yy}) \pm i Q_{xy}.
+\end{aligned}
+\end{equation}
+
+One can show (Appendix \ref{app:rotations_quadrupole}) that the coefficients transform as 
+\begin{equation}
+Q_m \;\mapsto\; e^{-im\zeta}\, Q_m,
+\end{equation}
+under a physical rotation of angle $\zeta$ about the $z$-axis. Since the energy levels of the Hamiltonian are insensitive to these phase factors and depend only on invariants such as $Q_0$, $|Q_{\pm 1}|^2$, and $|Q_{\pm 2}|^2$, the energy spectrum is invariant under such rotations. 
+
+This is a subtle point with an important consequence: any two tensors related by a rotation in the $xy$ plane produce identical NMR spectra for a fixed field orientation. Equivalently, no matter how precise the measurement of the nuclear transition frequencies, one can reconstruct the quadrupole tensor only up to a rotation about the field axis. Consequently, the only way to lift this degeneracy is by measuring with a different quantization axis of the nuclear spin\sidenote{At zero magnetic field, no orientation information can be extracted, only the magnitudes of the principal components of the quadrupole}.
+
 \section{Interaction between two spins}
+\labsec{interaction_between_to_spins}
 
 We now consider interactions between two spins, which in this system are governed primarily by two mechanisms: long-range magnetic dipole coupling and short-range contact interaction. Below we treat \Er-\W and \W-\W couplings separately. Due to the very low \Er concentration, \Er-\Er interactions are negligible and are therefore omitted.\sidenote{A complete analysis of \Er decoherence should include interactions between paramagnetic ions, but this lies outside the scope of the present work.}
 
@@ -305,129 +443,6 @@ The wavefunctions of \Er ions are highly localized thanks to the $5s$ and $5p$ s
 In the case of electron and nuclear spin interaction, the \Er and W ions in the crystal are coordinated by an oxygen ion (see \labfig{crystal}) which prevents direct overlap between the spin wavefunctions. We conclude that contact interaction between proximal \Er ions and \W nuclear spins is not the primary coupling; at most they may produce small isotropic shifts.
 
 We conclude that the dominating interaction mechanism between two spins in our system is the free-space dipolar coupling.
-
-\section{Electric Quadrupole interaction}
-
-In section \red{labsec} we discuss the measurements performed in a system consisting of an \Er spin and a \Nb nuclear spin in close proximity. Although unexpected, the presence of a \Nb spin gave us the chance to study a more complex system, as it boasts a high nuclear spin $I=9/2$. This requires introducing the nuclear quadrupole interaction\sidenote{The quadrupole is strictly zero for $I=\tfrac12$}, which couples the nuclear electric quadrupole moment to the local electric-field gradient (EFG)
-
-Physically, the quadrupole effect arrises from the non-sphericity of the nuclear wavefunctions of $I\geq1$ nuclear spins. The charge distribution inside of the nuclear spin will be elongated and when subject to an external field gradient certain orientations of the charge will be favoured. \reffig{charge_orientatons} sketches this intuition by placing an elongated positively charged distribution between four charges, two $+q$ in the $x$-axis and two $-q$ in the $y$-axis. Due to the electrostatic attraction between the positive and negative charges, the vertical orientation will be energetically favoured.
-
-\begin{marginfigure}
-    \includegraphics{chapter2/figures/charge_orientatons.pdf}
-    \caption[Quadrupole charge diagram]{Non-spherical charge distribution with four charges, two $+q$ in the $x$-axis and two $-q$ in the $y$-axis. The positively charged distribution has two orientations: perpendicular and horizonatal. The perpendicular orientation is energetically more favourable.}
-    \labfig{charge_orientatons}
-\end{marginfigure}
-
-We now proceed to sketch the derivation of the quadrupole interaction in terms of the spin operators which can be found in full in \sidecite{slichter_principles_1996}. We begin by considering the classical case of a charge distribution $\rho(\mathbf{r})$ under an electric potential $V(\mathbf{r})$. The energy associated to this system is given by
-
-\begin{equation}
-    E = \int \rho(\mathbf{r}) \times V(\mathbf{r}) d\mathcal{V}.
-\end{equation}
-
-We can approach this problem through the multi-pole expansion, which consists on writing the potential as a Taylor series at the center of mass of the nucleus and treating each term independently, 
-
-\begin{equation}
-V(\mathbf{r}) = V(0) 
-+ \sum_{\alpha} x_{\alpha} 
-\left. \frac{\partial V}{\partial x_{\alpha}} \right|_{\mathbf{r}=0}
-+ \frac{1}{2!} \sum_{\alpha,\beta} x_{\alpha} x_{\beta} 
-\left. \frac{\partial^2 V}{\partial x_{\alpha} \partial x_{\beta}} \right|_{\mathbf{r}=0}
-+ \cdots
-\end{equation}
-
-Consequently, the energy will be written as \sidenote{We have introduced the notation \[V_{\alpha}=\frac{\partial V}{\partial x_{\alpha}}, \quad V_{\alpha \beta}\equiv\frac{\partial^2 V}{\partial x_{\alpha} \partial x_{\beta}},\] \noindent which correspond to the electric field and the EFG respectively.}
-
-\begin{align}
-\begin{split}
-E =&\, V(0) \int \rho \, d\mathcal{V} 
-+ \sum_{\alpha} V_{\alpha} \int x_{\alpha} \rho \, d\mathcal{V} +\\
-+&\, \frac{1}{2!} \sum_{\alpha,\beta} V_{\alpha \beta} \int x_{\alpha} x_{\beta} \rho \, d\mathcal{V} 
-+ \cdots
-\end{split}
-\end{align}
-
-Respectively, each term corresponds to the electrostatic energy of a point-charge nucleus, the energy due to the dipole moment \sidenote{Given that the center of mass and the center of charge are equal, the dipole energy tends to zero} and the quadrupolar term. To describe the quadrupole interaction, it is particularly useful to introduce the following quantities 
-
-\begin{equation}
-    Q_{\alpha \beta} = \int \big( 3 x_{\alpha} x_{\beta} - \delta_{\alpha \beta} r^{2} \big) \, \rho \, d\mathcal{V}
-\end{equation}
-
-as the energy of the quadrupole can be written in a compact form
-
-\begin{equation}
-    E_\text{Q} = \tfrac16 \sum_{\alpha, \beta} Q_{\alpha \beta} V_{\alpha \beta}.
-\end{equation}
-
-To quantize this expression one must take the quantum mechanical expression for the charge density of the constituting protons of the nucleus and apply the Wigner-Eckart theorem to evaluate the resulting integrals and express the interaction in terms of the nuclear spin operator $\mathbf{I}$ 
-
-\begin{equation}
-\cH{Q} = \frac{e\mathcal{Q}}{6I(2I-1)} 
-\sum_{\alpha,\beta} V_{\alpha\beta} 
-\left[ \tfrac{3}{2} \left( I_{\alpha} I_{\beta} + I_{\beta} I_{\alpha} \right) 
-- \delta_{\alpha\beta} I^{2} \right].
-\label{eq:quadrupole}
-\end{equation}
-
-where $\mathcal{Q}$ denotes the quadrupole moment, obtained from the integral of the nuclear charge distribution and measured in Barns. The quadrupole Hamiltonian can be writen the following compact form
-
-\begin{equation}
-    \cH{Q} = \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I},
-\end{equation}
-
-\noindent where $\bar{\bar{Q}}$ is the quadrupole tensor, proportional to the EFG. The EFG satisfies Laplace's equation, so its components obey $V_{xx}+V_{yy}+V_{zz}=0$, and by electrostatic symmetry $V_{\alpha\beta}=V_{\beta\alpha}$. Consequently, the EFG (and thus $\bar{\bar{Q}}$) is a real, symmetric, traceless rank-2 tensor and can be diagonalized. In the principal-axis frame $(\mathbf{x}_Q,\mathbf{y}_Q,\mathbf{z}_Q)$, choosing the $\mathbf{z}_Q$ axis so that $|V_{z_Qz_Q}|\ge|V_{x_Qx_Q}|\ge|V_{y_Qy_Q}|$, one defines the conventional asymmetry parameter
-
-\begin{equation}
-    \eta = \frac{V_{x_Qx_Q}-V_{y_Qy_Q}}{V_{z_Qz_Q}}, \qquad 0\leq\eta\leq1,
-\end{equation}
-
-\noindent and the Hamiltonian in the principal-axis system can be expressed as
-
-\begin{equation}
-\cH{Q} = \frac{\hbar \omega_Q}{6}\left[ 3 I_{z_Q}^2 - I(I+1) + \eta(I_{x_Q}^2 - I_{y_Q}^2)\right],
-\end{equation}
-
-where $\hbar \omega_Q$ is the quadrupole energy\sidenote{\[\omega_Q \equiv  \frac{3e\mathcal{Q}V_{z_Qz_Q}}{2I(2I-1)\hbar} \]}. Based on the value of the asymmetry parameter we can distinguish two regimes. First, if $\eta=0$ the quadrupole is said to be axial and the Hamiltonian is diagonal in the $\ket{I,m_I}$ basis. The quadrupole then splits the nuclear energy levels by $m_I^2 \omega_Q/2 $, where $m_I$ is the projection of the nuclear spin along the $z_Q$ axis. Second, when $\eta\neq0$ the term proportional to $\eta$ mixes states differing by $\Delta m_I=\pm2$ and creates a non-trivial energy level structure. 
-
-
-\subsection{Rotational invariance of the quadrupolar energy spectrum}
-
-When measuring the nuclear spin transitions under a specific magnetic field orientation, the resulting frequencies are generally not enough to describe the full quadrupole tensor. 
-
-To unveil any hidden symmetry, it is useful to express the quadrupole in the basis of the rank-2 spherical tensors\sidenote{
-The rank-2 spherical tensors are related to the spin operator basis by
-\begin{equation*}
-\begin{split}
-T^{(2)}_{0} &= 3 I_z^2 - I(I+1), \\
-T^{(2)}_{\pm 1} &= \mp \left( I_z I_{\pm} + I_{\pm} I_z \right), \\
-T^{(2)}_{\pm 2} &= I_{\pm}^2 .
-\end{split}
-\end{equation*}
-}. By algebraic manipulation of Eq. \ref{eq:quadrupole} we can rewrite the Hamiltonian as
-
-\begin{equation}
-    \cH{Q} = \sum_{m = -2}^2 Q_m T^{(2)}_m(\mathbf{I})
-    \label{eq:quadrupole_spherical}
-\end{equation}
-
-\noindent with
-
-\begin{equation}
-\begin{aligned}
-Q_{0} &= Q_{zz}, \\
-Q_{\pm 1} &= Q_{zx} \pm i Q_{zy}, \\
-Q_{\pm 2} &= \tfrac{1}{2}(Q_{xx} - Q_{yy}) \pm i Q_{xy}.
-\end{aligned}
-\end{equation}
-
-One can show (Appendix \ref{app:rotations_quadrupole}) that the coefficients transform as 
-\begin{equation}
-Q_m \;\mapsto\; e^{-im\zeta}\, Q_m,
-\end{equation}
-under a physical rotation of angle $\zeta$ about the $z$-axis. Since the energy levels of the Hamiltonian are insensitive to these phase factors and depend only on invariants such as $Q_0$, $|Q_{\pm 1}|^2$, and $|Q_{\pm 2}|^2$, the energy spectrum is invariant under such rotations. 
-
-This is a subtle point with an important consequence: any two tensors related by a rotation in the $xy$ plane produce identical NMR spectra for a fixed field orientation. Equivalently, no matter how precise the measurement of the nuclear transition frequencies, one can reconstruct the quadrupole tensor only up to a rotation about the field axis. Consequently, the only way to lift this degeneracy is by measuring with a different quantization axis of the nuclear spin\sidenote{At zero magnetic field, no orientation information can be extracted, only the magnitudes of the principal components of the quadrupole}.
-
-
 
 \chapter{Spins coupled to a cavity}
 \labch{spins_coupled_to_a_cavity}

@@ -15,7 +15,7 @@ In addition, we use non-standard ESR techniques to measure the electron spin's r
 \chapter{Electron spins, nuclear spins and their interaction}
 \labch{electron_nuclear_interaction}
 
-This chapter is dedicated to the description of the \Er electron spin and the nuclear spins in \Ca along with the way they couple to each other. The chapter will be organised as follows. \refsec{erbium_ions_in_ca} begins with the description of the energy levels of a Rare-Earth Ions (REIs) impurity in a crystal to arrive to an effective electron spin-1/2 approximation. This is followed in \refsec{nuclear_spins_ca} by a description of the nuclear spin Hamiltonian including the quadrupole interaction. Finally, the dipolar and exchange interactions between the different spin types are discussed in \refsec{interaction_between_to_spins}.
+This chapter is dedicated to the description of the \Er electron spin and the nuclear spins in \Ca along with their interactions. The chapter will be organised as follows. \refsec{erbium_ions_in_ca} begins with the description of the energy levels of a Rare-Earth Ions (REIs) impurity in a crystal to arrive to an effective electron spin-1/2 approximation. This is followed in \refsec{nuclear_spins_ca} by a description of the nuclear spin Hamiltonian including the quadrupole interaction. Finally, the dipolar and exchange interactions between the different spin types are discussed in \refsec{interaction_between_to_spins}.
 
 \section{Erbium ions in \Ca}
 \labsec{erbium_ions_in_ca}
@@ -143,7 +143,9 @@ where $E_\downarrow$ and $E_\uparrow$ are the energies of the system as a functi
 \subsection{Magneto-Electric effect}
 \label{sec:magneto-optic}
 
-As discussed before, \Er:\Ca is located in a site with $S_4$ symmetry, which notably lacks inversion symmetry. This results in the appearance of odd terms $(k=1,3,5,\dots)$ in the crystal-field Hamiltonian. However, these terms do not modify the energy level structure of the ion unless an external electric field is applied \sidecite{ham_linear_1961}. The origin of these magneto-electric shifts lies in the electrical-field-induced mixing between the odd and even terms of the Hamiltonian \sidecite{kiel_electricfieldinduced_1970}. This interaction can be modeled with the following Hamiltonian,
+Paramagnetic impurities in non-centrosymmetric crystals exhibit a gyromagnetic tensor that depends on both the magnitude and orientation of an externally applied static electric field $\mathbf{E}$ \sidecite{ham_linear_1961}. This phenomenon is particularly strong in \Er:\Ca \sidecite{mims_electric_1965}, where it significantly influences the electron spin decoherence rate \sidecite{ledantec_twentythreemillisecond_2021}. The magneto-electric effect can be understood as a magnetically induced electric dipole. In Section \red{reference}, we perform NMR spectroscopy with high-resolution, and the effect of the dipole's electric field is key to understand one possible explanation to our observations. We follow with an explanation of this effect.
+
+As noted earlier, \Er:\Ca occupies a site with $S_4$ symmetry, which lacks inversion symmetry. This allows odd terms $(k=1,3,5,\dots)$ to appear in the crystal-field Hamiltonian. These terms do not affect the ion's energy level structure in the absence of an external electric field and are not given in \reftab{cf_parameters}. The origin of these magneto-electric shifts lies in field-induced mixing between odd and even crystal-field terms which shifts the energy structure \sidecite{kiel_electricfieldinduced_1970}. This interaction can be modeled with the Hamiltonian:
 
 \begin{equation}
     \mathcal{H}_{\text{m-e}} = \sum_{i,j,k}^{\{a,b,c\}} T_{k, i, j} S_{i} B_j E_k
@@ -177,44 +179,30 @@ Even if the energy shifts are zero in the absence of and electric field, this in
 where $\langle S_i \rangle$ corresponds to the expected value of the electron spin. The dipole in turn generates an electric field around the position of the \Er, whose effects will be revisited in \red{refsec}
 
 
-\section{Nuclear spins in \Ca}
+\section[Nuclear spins in CaWO4]{Nuclear spins in \Ca}
 \labsec{nuclear_spins_ca}
 
-\subsection{Magnetic spin environment}
+The coupling of a nuclear spin to a static magnetic field can be generally described with a nuclear Zeeman Hamiltonian
 
-The nuclear spin environment of \Ca is predominantly composed of \W nuclear spins, which have a natural abundance of 14.4\% and a relatively low gyromagnetic ratio, $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T \sidecite{knight_solidstate_1986}. The combination of a low density of nuclear spins and a weak gyromagnetic ratio results in an environment with a reduced magnetic moment density.
-\sidenote{There are other stable calcium and oxygen isotopes with non-zero nuclear spin, namely $^{43}$Ca, $^{15}$O and $^{17}$O with $I=7/2$, $I=1/2$ and $I=5/2$, respectively, but their natural abundances are low (0.1\%, 0.003\% and <0.003\%, respectively) and are not considered in our discussion.}
-As such, the magnetic noise perceived by any paramagnetic impurity hosted in the crystal is significantly reduced compared to other hosts used in quantum applications, such as yttrium orthosilicate (Y$_2$SiO$_5$, YSO) and yttrium oxide (Y$_2$O$_3$). This results in slow spectral diffusion and reduced decoherence rates for any paramagnetic impurity hosted in the crystal.
+\begin{equation}
+    \cH{nZ} = \gamma_n \mathbf{B_0}\cdot\mathbf{I},
+\end{equation}
 
-In addition to the nuclear spin bath, paramagnetic impurities—such as other rare-earth ions or transition metal ions—can also contribute significantly to the magnetic environment experienced by a single \Er ion. These electronic spins have a much larger gyromagnetic response and are more spatially delocalized than the point-like nuclear spins. At high concentrations, the magnetic noise is dominated by the paramagnetic impurities rather than the nuclear bath. Therefore, minimizing the dopant concentration is crucial to achieve long coherence times. Indeed, by reducing the concentration of rare-earth ions to the 1--100 parts per billion (ppb) range and exploiting the low magnetic density, ensemble spin coherence times as long as 23~ms have been demonstrated for \Er:\Ca \sidecite{ledantec_twentythreemillisecond_2021}.
+\noindent where $\gamma_n$ is the nuclear gyromagnetic ratio and $\mathbf{I}$ the nuclear spin operator which are inherent properties of a nucleus. The gyromagnetic ratio of a proton is $\gamma_p/2\pi = 42.57716$~MHz/T \red{ref} which is approximately 500 times smaller than the Bohr magneton. Given the large difference in magnetic response, the Zeeman energy of the electron spin is in general the dominating term in interacting systems. 
 
-The sample used for this work was grown using high-purity, natural-abundance materials and no paramagnetic impurities were added during crystal growth\sidenote{Specific details on the growth of a similar sample can be found in \cite{erb_growth_2013}.}. Nevertheless, trace amounts in the precursors result in a concentration of \Er of 3.1~ppb, measured using electron spin resonance (ESR) techniques \red{appendix}. There are four calcium sites in a single unit cell with volume $V_{\text{unit cell}}\sim310\ \text{\AA}^3$. This results in in average distance between ions of 0.3 \textmu m. \sidenote{The Ca site density is 
-\begin{equation*}
-    4/310 \approx 1.3\times10^{-2} \text{~A}^{-3}
-\end{equation*} 
-With [\Er]=3.1~ppb, the \Er density is 
-\begin{equation*}
-    n_{\text{\Er}} \approx 4.0\times10^{-11} \text{~A}^{-3}
-\end{equation*} 
-and the characteristic spacing is
-\begin{equation*}
-    n_{\text{\Er}}^{-1/3} \approx 2.9\times10^{3}\text{~A}\approx0.29\text{~\textmu m} 
-\end{equation*}
-} 
-This distance is large enough that interactions between paramagnetic impurities can be effectively neglected except in specific cases where two ions are, by chance, in close proximity. Consequently, we consider that the magnetic environment in the crystal is dominated by \W nuclear spin.
-
+In addition, when the nuclear spin magnetic quantum number $I$ is larger than 1/2, the nuclear spin wavefunctions will not be spherical. Consequently, the charge distribution of the spin will be elongated and the pressence of an Electric Field Gradient (EFG) will introduce a new term in the Hamiltonian, known as the \textbf{quadrupole interaction}. We now proceed to derive the shape of the quadrupole Hamiltonian. 
 
 \subsection{Electric Quadrupole interaction}
 
-In section \red{labsec} we discuss the measurements performed in a system consisting of an \Er spin and a \Nb nuclear spin in close proximity. Although unexpected, the presence of a \Nb spin gave us the chance to study a more complex system, as it boasts a high nuclear spin $I=9/2$. This requires introducing the nuclear quadrupole interaction\sidenote{The quadrupole is strictly zero for $I=\tfrac12$}, which couples the nuclear electric quadrupole moment to the local electric-field gradient (EFG)
-
-Physically, the quadrupole effect arrises from the non-sphericity of the nuclear wavefunctions of $I\geq1$ nuclear spins. The charge distribution inside of the nuclear spin will be elongated and when subject to an external field gradient certain orientations of the charge will be favoured. \reffig{charge_orientatons} sketches this intuition by placing an elongated positively charged distribution between four charges, two $+q$ in the $x$-axis and two $-q$ in the $y$-axis. Due to the electrostatic attraction between the positive and negative charges, the vertical orientation will be energetically favoured.
+%In section \red{labsec} we discuss the measurements performed in a system consisting of an \Er spin and a \Nb nuclear spin in close proximity. Although unexpected, the presence of a \Nb spin gave us the chance to study a more complex system, as it boasts a high nuclear spin $I=9/2$. This requires introducing the nuclear quadrupole interaction\sidenote{The quadrupole is strictly zero for $I=\tfrac12$}, which couples the nuclear electric quadrupole moment to the local electric-field gradient (EFG)
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/charge_orientatons.pdf}
     \caption[Quadrupole charge diagram]{Non-spherical charge distribution with four charges, two $+q$ in the $x$-axis and two $-q$ in the $y$-axis. The positively charged distribution has two orientations: perpendicular and horizonatal. The perpendicular orientation is energetically more favourable.}
     \labfig{charge_orientatons}
 \end{marginfigure}
+
+Physically, the quadrupole effect arrises from the non-sphericity of the nuclear wavefunctions of $I\geq1$ nuclear spins. The charge distribution inside of the nuclear spin will be elongated and when subject to an external field gradient certain orientations of the charge will be favoured. \reffig{charge_orientatons} sketches this intuition by placing an elongated positively charged distribution between four charges, two $+q$ in the $x$-axis and two $-q$ in the $y$-axis. Due to the electrostatic attraction between the positive and negative charges, the vertical orientation will be energetically favoured.
 
 We now proceed to sketch the derivation of the quadrupole interaction in terms of the spin operators which can be found in full in \sidecite{slichter_principles_1996}. We begin by considering the classical case of a charge distribution $\rho(\mathbf{r})$ under an electric potential $V(\mathbf{r})$. The energy associated to this system is given by
 
@@ -324,6 +312,29 @@ Q_m \;\mapsto\; e^{-im\zeta}\, Q_m,
 under a physical rotation of angle $\zeta$ about the $z$-axis. Since the energy levels of the Hamiltonian are insensitive to these phase factors and depend only on invariants such as $Q_0$, $|Q_{\pm 1}|^2$, and $|Q_{\pm 2}|^2$, the energy spectrum is invariant under such rotations. 
 
 This is a subtle point with an important consequence: any two tensors related by a rotation in the $xy$ plane produce identical NMR spectra for a fixed field orientation. Equivalently, no matter how precise the measurement of the nuclear transition frequencies, one can reconstruct the quadrupole tensor only up to a rotation about the field axis. Consequently, the only way to lift this degeneracy is by measuring with a different quantization axis of the nuclear spin\sidenote{At zero magnetic field, no orientation information can be extracted, only the magnitudes of the principal components of the quadrupole}.
+
+\subsection{Magnetic spin environment}
+
+The nuclear spin environment of \Ca is predominantly composed of \W nuclear spins, which have a natural abundance of 14.4\% and remarkably low gyromagnetic ratio\sidenote{It is 0.041 times smaller than the proton's gryomagnetic factor!}, $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T \sidecite{knight_solidstate_1986}. The combination of a low density of nuclear spins and a weak gyromagnetic ratio results in an environment with a reduced magnetic moment density.
+\sidenote{There are other stable calcium and oxygen isotopes with non-zero nuclear spin, namely $^{43}$Ca, $^{15}$O and $^{17}$O with $I=7/2$, $I=1/2$ and $I=5/2$, respectively, but their natural abundances are low (0.1\%, 0.003\% and <0.003\%, respectively) and are not considered in our discussion.}
+As such, the magnetic noise perceived by any paramagnetic impurity hosted in the crystal is significantly reduced compared to other hosts used in quantum applications, such as yttrium orthosilicate (Y$_2$SiO$_5$, YSO) and yttrium oxide (Y$_2$O$_3$). This results in slow spectral diffusion and reduced decoherence rates for any paramagnetic impurity hosted in the crystal.
+
+In addition to the nuclear spin bath, paramagnetic impurities—such as other rare-earth ions or transition metal ions—can also contribute significantly to the magnetic environment experienced by a single \Er ion. These electronic spins have a much larger gyromagnetic response and are more spatially delocalized than the point-like nuclear spins. At high concentrations, the magnetic noise is dominated by the paramagnetic impurities rather than the nuclear bath. Therefore, minimizing the dopant concentration is crucial to achieve long coherence times. Indeed, by reducing the concentration of rare-earth ions to the 1--100 parts per billion (ppb) range and exploiting the low magnetic density, ensemble spin coherence times as long as 23~ms have been demonstrated for \Er:\Ca \sidecite{ledantec_twentythreemillisecond_2021}.
+
+The sample used for this work was grown using high-purity, natural-abundance materials and no paramagnetic impurities were added during crystal growth\sidenote{Specific details on the growth of a similar sample can be found in \cite{erb_growth_2013}.}. Nevertheless, trace amounts in the precursors result in a concentration of \Er of 3.1~ppb, measured using electron spin resonance (ESR) techniques \red{appendix}. There are four calcium sites in a single unit cell with volume $V_{\text{unit cell}}\sim310\ \text{\AA}^3$. This results in in average distance between ions of 0.3 \textmu m. \sidenote{The Ca site density is 
+\begin{equation*}
+    4/310 \approx 1.3\times10^{-2} \text{~A}^{-3}
+\end{equation*} 
+With [\Er]=3.1~ppb, the \Er density is 
+\begin{equation*}
+    n_{\text{\Er}} \approx 4.0\times10^{-11} \text{~A}^{-3}
+\end{equation*} 
+and the characteristic spacing is
+\begin{equation*}
+    n_{\text{\Er}}^{-1/3} \approx 2.9\times10^{3}\text{~A}\approx0.29\text{~\textmu m} 
+\end{equation*}
+} 
+This distance is large enough that interactions between paramagnetic impurities can be effectively neglected except in specific cases where two ions are, by chance, in close proximity. Consequently, we consider that the magnetic environment in the crystal is dominated by \W nuclear spin.
 
 \section{Interaction between two spins}
 \labsec{interaction_between_to_spins}

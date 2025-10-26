@@ -581,10 +581,10 @@ The relative strength between the parameters is controlled by the orientation of
 The last step corresponds to the rotating-wave approximation. When the spin and the resonator are close to resonance $(\omega_{s}-\omega_{r}) \ll \omega_{s}, \omega_r$ and there is a significant difference between the rotation speed in the Bloch sphere between the different terms in the equation. The rotating-approximation is performed by disregarding the fast rotating terms, which correspond to those which do not conserve the number of excitations in the system constant. \sidenote{For the rotating-wave approximation to be valid, the interaction strength must also be small compared to the energies of the resonator and the spin \[g_0 \ll (\omega_{s}+\omega_{r})\]} In the laboratory frame, the resulting Hamiltonian is given by
 
 \begin{equation}
-    \cH{r-s} = \hbar\omega_r(\hat{a}^\dagger \hat{a} + 1/2) +  \omega_S S_z + g_{0} \Big( \hat{a}\hat{S}_{+} + \hat{a}^{\dagger}\hat{S}_{-} \Big), \\
+    \cH{JC} = \hbar\omega_r(\hat{a}^\dagger \hat{a} + 1/2) +  \omega_S S_z + g_{0} \Big( \hat{a}\hat{S}_{+} + \hat{a}^{\dagger}\hat{S}_{-} \Big), \\
 \end{equation}
 
-\noindent also known as the Jaynes-Cummings Hamiltonian \sidecite{jaynes_comparison_1963}. The effect of the interaction term is the coherent exchange of photons between the spin and the resonator
+\noindent also known as the Jaynes-Cummings Hamiltonian \sidecite{jaynes_comparison_1963}, which can be used to accurately describe the interaction of a two-level system (be it an atom, a transmon or an electron spin) with a single electromagnetic mode of light. The effect of the interaction term is the coherent exchange of photons between the spin and the resonator
 
 \subsection{Resonator design}
 
@@ -652,6 +652,81 @@ At exact resonance ($\omega_r=\omega_S$) this reduces to $\Gamma_{P}=4g_0^2/\kap
 A more in-depth derivation of the Purcell effect can be found in \sidecite{haroche_exploring_2006}.
 
 \subsection{Controlling the state of the \Er ion}
+
+In this section, we derive how a coherent drive on the resonator induces Rabi oscillations of the spin which naturally reveals the role of the cavity as a Lorentzian filter. We begin by considering the Jaynes-Cummings Hamiltonian, where the resonator is under the effect of a drive with complex amplitude $\epsilon_d$ and frequency $\omega_d$
+
+\begin{equation}
+    \frac{\cH{JC}}{\hbar} = \omega_r\,\hat{a}^\dagger \hat{a} +  \frac{\omega_S}{2} \hat{\sigma}_z + g_{0} ( \hat{a}\hat{\sigma}_{+} + \hat{a}^{\dagger}\hat{\sigma}_{-} ) + (\epsilon_d e^{-i\omega_d t} \hat{a}^\dagger + \epsilon_d^* e^{i\omega_d t} \hat{a}),
+\end{equation}
+
+Here we have dropped the factor $1/2$ from the resonator's energy and introduced the Pauli operators $S_i = \hbar / 2 \, \sigma_i$. In the rotating frame of the drive\sidenote{The unitary of the transformation is given by \[\hat{U}(t) = \exp{i\omega_d t \left(\hat{a}^\dagger \hat{a} +  \frac{1}{2} \hat{\sigma}_z \right)} \]} and applying the rotating wave approximation, the Hamiltonian becomes time independant and can be written as
+
+\begin{equation}
+    \frac{\cH{JC, R}}{\hbar} = \Delta_r\,\hat{a}^\dagger \hat{a} +  \frac{\Delta_S}{2} \hat{\sigma}_z + g_{0} ( \hat{a}\hat{\sigma}_{+} + \hat{a}^{\dagger}\hat{\sigma}_{-} ) + (\epsilon_d \hat{a}^\dagger + \epsilon_d^* \hat{a}),
+\end{equation}
+
+\noindent where $\Delta_r = \omega_r - \omega_d$ and $\Delta_S = \omega_S - \omega_d$. The driving term in the Hamiltonian will induce the cavity to develop a large coherent field $\alpha$ which translates as a non-zero photon occupation. From input-output theory \sidecite{blais_circuit_2020}, the equation of motion for the coherent state of the resonator under drive is given by  
+
+\begin{equation}
+    \dot{\alpha} = - \left( i\Delta_r + \frac{\kappa}{2}\right)\alpha - i\epsilon_d.
+\end{equation}
+
+For the steady state $\dot{\alpha}=0$, 
+
+\begin{equation}
+    \alpha = -\frac{\epsilon_d}{\Delta_r- i\kappa/2}.
+\end{equation}
+
+From this equation, we can see that the resonator beheaves as a Lorentzian filter: the coherent amplitude of the resonator is damped at large detunnings and broadened by $\kappa$. Given the non-zero cavity field, it is convinient to displace the Hamiltonian to be centered around $\alpha$ by introducing the displacement operator 
+
+\begin{equation}
+D(\alpha) = \exp\!\left(\alpha \hat{a}^\dagger - \alpha^* \hat{a}\right),
+\end{equation}
+
+which redefines the annihilation operator so that $\hat{a}$ describes only quantum fluctuations around the coherent amplitude. After the transformation the Hamiltonian becomes
+
+
+\begin{equation}
+    \frac{\cH{JC, R}'}{\hbar} = \Delta_r\,\hat{a}^\dagger \hat{a} +  \frac{\Delta_S}{2} \hat{\sigma}_z + g_{0} \left( (\hat{a} + \alpha)\hat{\sigma}_{x} + (\hat{a}^{\dagger} + \alpha^\dagger)\hat{\sigma}_{y} \right),
+\end{equation}
+
+By reorganizing terms we can distinguish three contributions:
+
+\begin{align}
+\begin{split}
+    \frac{\cH{JC, R}'}{\hbar} = \underbrace{\Delta_r\,\hat{a}^\dagger \hat{a}}_\text{resonator} + \underbrace{\frac{\Delta_S}{2} \hat{\sigma}_z + g_{0} \left( \alpha\hat{\sigma}_{+} + \alpha^\dagger\hat{\sigma}_{-} \right)}_\text{spin} + \underbrace{g_{0} \left( \hat{a}\hat{\sigma}_{+} + \hat{a}^{\dagger}\hat{\sigma}_{-} \right)}_\text{coupling}.
+\end{split}
+\end{align}
+
+If the amplitude of the coherent state is sufficiently large ($|\alpha|\gg1$) the coupling interaction between the resonator and the spin can be treated as a perturbation and the dynamics of the spin and the resonator can be disentangled. The resulting Hamiltonian for the spin is
+
+\begin{equation}
+    \frac{\cH{S, d}}{\hbar} = \frac{\Delta_S}{2} \hat{\sigma}_z + \frac{\Omega_d}{2} \left( \cos{\phi}\hat{\sigma}_{x} + \sin{\phi}\hat{\sigma}_{y} \right),
+\end{equation}
+
+\noindent where $\alpha = |\alpha| e^{i\phi}$ and $\Omega_d = 2g_0|\alpha|$. This corresponds to the classical two-level-system under drive and has an analytical solution. The dynamics of this effective two-level system under drive are exactly solvable.  If the spin is initially in the ground state, the excited-state population at time $t$ is
+
+
+\begin{marginfigure}
+    \includegraphics{chapter2/figures/qubit_dynamics.pdf}
+    \caption[Spin dynamics]{Quantum trajectory of the spin in the Bloch sphere under a coherent drive. The detuning $\Delta_S$ and the drive $\Omega_d$ are represented as green and red arrows respectively and the resulting drive vector is plot in black. The trajectory is shown as a black curve.}
+    \labfig{spin_trajectory}
+\end{marginfigure}
+
+\begin{equation}
+    P_e(t) 
+    = \frac{\Omega_d^2}{\Omega_d^2 + \Delta_S^2}\,
+      \sin^2\!\left(\tfrac{1}{2}\sqrt{\Omega_d^2 + \Delta_S^2}\;t\right).
+\end{equation}
+
+At resonance ($\Delta_S=0$), this reduces to simple Rabi oscillations
+
+\begin{equation}
+    P_e(t) = \sin^2\!\left(\tfrac{\Omega_d}{2}\,t\right),
+\end{equation}
+
+
+with Rabi frequency $\Omega_d = 2g_0|\alpha|$, which grows as the square root of the mean intracavity photon number, $\Omega_d \propto \sqrt{\langle n \rangle}$. \reffig{spin_trajectory} shows the quantum trajectory of the spin in the Bloch sphere under the influence of a detuned drive with phase $\phi=0$. The state evolves from the ground state $\ket{\Downarrow}$ and is coherently excite. However, full population transfer to the excited state is only possible when $\Delta_S=0$.
 
 \section{Single Microwave Photon Detector (SMPD)}
 \labsec{SMPD}

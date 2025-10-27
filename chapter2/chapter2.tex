@@ -704,7 +704,7 @@ If the amplitude of the coherent state is sufficiently large ($|\alpha|\gg1$) th
     \frac{\cH{S, d}}{\hbar} = \frac{\Delta_S}{2} \hat{\sigma}_z + \frac{\Omega_d}{2} \left( \cos{\phi}\hat{\sigma}_{x} + \sin{\phi}\hat{\sigma}_{y} \right),
 \end{equation}
 
-\noindent where $\alpha = |\alpha| e^{i\phi}$ and $\Omega_d = 2g_0|\alpha|$. This corresponds to the classical two-level-system under drive and has an analytical solution. The dynamics of this effective two-level system under drive are exactly solvable.  If the spin is initially in the ground state, the excited-state population at time $t$ is
+\noindent where $\alpha = |\alpha| e^{i\phi}$ and $\Omega_d = 2g_0|\alpha|$. This corresponds to the classical two-level-system under drive and has an analytical solution.  If the spin is initially in the ground state, the excited-state population at time $t$ is
 
 
 \begin{marginfigure}
@@ -728,8 +728,42 @@ At resonance ($\Delta_S=0$), this reduces to simple Rabi oscillations
 
 with Rabi frequency $\Omega_d = 2g_0|\alpha|$, which grows as the square root of the mean intracavity photon number, $\Omega_d \propto \sqrt{\langle n \rangle}$. \reffig{spin_trajectory} shows the quantum trajectory of the spin in the Bloch sphere under the influence of a detuned drive with phase $\phi=0$. The state evolves from the ground state $\ket{\Downarrow}$ and is coherently excite. However, full population transfer to the excited state is only possible when $\Delta_S=0$.
 
-\section{Single Microwave Photon Detector (SMPD)}
+
+\section[Detecting individual Er3+ ions through their fluorescence]{Detecting \Er ions through their fluorescence}
+\labsec{Detecting_individual_Er}
+
+Single-electron spin sensitivity has been recently demonstrated in our group through the use of a unique device known as the Single Microwave Photon Counter (SMPD) \sidecite{wang_addressing_2023}. Unlike traditional single-spin readout methods that rely on spin-dependent optical fluorescence \sidecite{wrachtrup_optical_1993} or on transport-based spin-to-charge conversion (STM \sidecite{elzerman_singleshot_2004} or quantum-dot readout \sidecite{rugar_single_2004}), the SMPD operates entirely in the microwave regime and does not require system specific mechanisms like optical transitions or spin-to-charge conversion. 
+
+The measurement is performed by monitoring the Purcell enhanced microwave fluorescence emission of the \Er ion. The detector  effectively behaves as a counter, mapping every incoming microwave photon within its bandwidth to a discrete event. In the following section we describe the SMPD architecture, its operating principle, and the key performance metrics (efficiency, dark-count rate and temporal resolution) relevant for detecting microwave fluorescence from individual \Er ions.
+
+\subsection{Single Microwave Photon Detector}
 \labsec{SMPD}
+
+The detection of single optical photons is performed routinly with the use of photomultipliers or superconducting nanowire photon detectors. However, microwaves are five orders of magitude less energetic than optical photons. As such, single microwave detection is challenging and a large number of schemes have been proposed \red{check Zhiren}. Our group proposed and developed \sidecite{lescanne_irreversible_2020} a detector based on circuit Quantum Electrodynamics (cQED). This thesis only presents the working principle and performance of the detector used in this work and a thorough characterization of the device can be found in \sidecite{pallegoix_enhancing_2025}. For a more exhaustive description of the SMPD refer to previous thesis of the group, particularly \sidecite{albertinale_detecting_2021,balembois_magnetic_2023,pallegoix_high_2025}.
+
+\subsubsection{Working principle}
+
+The operatring principle of the SMPD can be summarised as follows: an arriving photon is detected by performing an irreversible frequency conversion into a qubit excitation. After the detection window, the qubit is dispersively readout, revealing the arrival of the photon. The architecture is based on the irreversibility of the process, enabled by an engineered dissipation mechanism. 
+
+At the center of the SMPD lies a superconducting transmon qubit\sidecite{koch_chargeinsensitive_2007}. This element behaves as a non-linear oscillator and can be treated as an effective two-level-system with frequency $\omega_q$ and levels $\ket{g}$ and $\ket{e}$. The qubit is simultaneously coupled to two independent resonators: the \textit{buffer} resonator with frequency $\omega_b$ and the \textit{waste} resonator with frequency $\omega_w$. The process that enables the frequency conversion is a parametric four-wave mixing (4WM), in which an \textit{buffer} photon is mixed with a coherent pump tone to produce an excitation on the qubit and a \textit{waste} photon.
+
+The impinging photon is first captured by the \textit{buffer} resonator and waits for the 4WM process to begin, hence its name. The process is parametrically controlled with a coherent pump tone with frequency $\omega_p$. For the 4WM process to take place, the following energy conservation relation must be followed
+
+\begin{equation}
+    \omega_b + \omega_p = \omega_q + \omega_w,
+\end{equation}
+
+which can be ensured by modifying the frequency of the pump tone. When this condition is met, the \textit{buffer} photon is coherently transformed into a qubit excitation and a photon on the \textit{waste} resonator. To avoid the inverse process, a dissipation channel on the \textit{waste} resonator is engineered by strongly coupling it to the microwave lines. Consequently the \textit{waste} photon is rapidly lost, blocking the inverse process from ever taking place. Finally the state of the qubit is reset and the process can start again. This allows the detection of any incoming photons during the detection window, which is defined by the duration of the pump tone, in a cyclic manner. \red{reffig} shows a schematic view of the process. 
+
+\begin{figure*}
+    \includegraphics{chapter2/figures/SMPD.pdf}
+    \caption[SMPD circuit]{SMPD circuit. \red{write text, check what you need and do caption}}
+    \labfig{SMPD_circuit}
+\end{figure*}
+
+\subsubsection{Performance metrics}
+
+\subsection{Detection scheme}
 
 \setchapterpreamble[u]{\margintoc}
 \chapter{Nuclear spin control via microwaves}

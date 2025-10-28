@@ -745,15 +745,58 @@ The detection of single optical photons is performed routinly with the use of ph
 
 The operatring principle of the SMPD can be summarised as follows: an arriving photon is detected by performing an irreversible frequency conversion into a qubit excitation. After the detection window, the qubit is dispersively readout, revealing the arrival of the photon. The architecture is based on the irreversibility of the process, enabled by an engineered dissipation mechanism. 
 
-At the center of the SMPD lies a superconducting transmon qubit\sidecite{koch_chargeinsensitive_2007}. This element behaves as a non-linear oscillator and can be treated as an effective two-level-system with frequency $\omega_q$ and levels $\ket{g}$ and $\ket{e}$. The qubit is simultaneously coupled to two independent resonators: the \textit{buffer} resonator with frequency $\omega_b$ and the \textit{waste} resonator with frequency $\omega_w$. The process that enables the frequency conversion is a parametric four-wave mixing (4WM), in which an \textit{buffer} photon is mixed with a coherent pump tone to produce an excitation on the qubit and a \textit{waste} photon.
+\begin{marginfigure}
+    \includegraphics{chapter2/figures/SMPD_principle.pdf}
+    \caption[SMPD working principle]{Working principle of the SMPD. At the heart of the SMPD lies a qubit with states $\ket{g}$ and $\ket{e}$. There are two resonators coupeld to the qubit, the buffer and the waste in orange and green respectively, as well as a transmission line to drive and pump the qubit. The capturing process is divided in three steps. First, capture of the incoming photon. Second, four-wave mixing, where the buffer photon is transformed into a qubit excitation. Third, dissipation of the waste, which inhibits the reverse process.}
+    \labfig{SMPD_principle}
+\end{marginfigure}
 
-The impinging photon is first captured by the \textit{buffer} resonator and waits for the 4WM process to begin, hence its name. The process is parametrically controlled with a coherent pump tone with frequency $\omega_p$. For the 4WM process to take place, the following energy conservation relation must be followed
+At the center of the SMPD lies a superconducting transmon qubit\sidecite{koch_chargeinsensitive_2007}. This element behaves as a non-linear oscillator and can be treated as an effective two-level-system with frequency $\omega_q$ and levels $\ket{g}$ and $\ket{e}$. The qubit is simultaneously coupled to two independent resonators: the \textit{buffer} resonator with frequency $\omega_b$ and the \textit{buffer} resonator with frequency $\omega_w$. The process that enables the frequency conversion is a parametric four-wave mixing (4WM), in which an buffer photon is mixed with a coherent pump tone to produce an excitation on the qubit and a waste photon. The detection process is divided on two disctinct phases, the capture phase, when the qubit excitation via 4WM takes place, and the readout phase, when the state of the qubit is measured.
+
+The capturing process can be summarised in three independent steps which are schematized in \reffig{SMPD_principle}.
+
+\begin{enumerate}
+    \item A photon traveling in the microwave lines with frequency $\omega_b$ arrives to the input of the detector, populating the buffer resonator. Meanwhile the SMPD is being illuminated with a coherent pump tone at frequency $\omega_p$.
+    \item With the input resonator populated, the 4WM process transforms the buffer photon and a pump photon into a qubit excitation and a waste photon. 
+    \item To avoid the inverse process, a dissipation channel on the waste resonator is engineered by strongly coupling it to the microwave lines. Consequently the waste photon is rapidly lost, hence its name, blocking the reverse parameteric process from ever taking place.
+\end{enumerate}
+
+It is important to note that for the 4WM process to take place, the energy conservation principle must be followed, 
 
 \begin{equation}
     \omega_b + \omega_p = \omega_q + \omega_w,
 \end{equation}
 
-which can be ensured by modifying the frequency of the pump tone. When this condition is met, the \textit{buffer} photon is coherently transformed into a qubit excitation and a photon on the \textit{waste} resonator. To avoid the inverse process, a dissipation channel on the \textit{waste} resonator is engineered by strongly coupling it to the microwave lines. Consequently the \textit{waste} photon is rapidly lost, blocking the inverse process from ever taking place. Finally the state of the qubit is reset and the process can start again. This allows the detection of any incoming photons during the detection window, which is defined by the duration of the pump tone, in a cyclic manner. \red{reffig} shows a schematic view of the process. 
+This relation can be ensured by modifying the frequency of the pump tone. 
+
+After the capturing process, the state of the qubit is dispersively readout with the use of a coherent tone on the waste resonator \sidecite{wallraff_strong_2004}. If the qubit is found in the ground state, the detection cycle can restart. However, if the qubit is in the excited state, it first needs to be reset to the ground state before restarting the capturing phase. One could just wait for the qubit to spontaneouly relax but the detector is not operational during this process, effectively reducing the detection efficiency. We implement a conditional reset, in which a $\pi$-pulse is applied if the qubit is found on the excited state, subsequently followed by another readout step. This repeats until the qubit is in its ground state. Thanks to the fidelity of the excited state readout this procedure also effectively cools down the qubit. The detection process is performed cyclically in a continous manner and can be visualized in \reffig{SMPD_cycle}. We define the capture, readout and reset times as $\tau_\text{capture}$, $\tau_\text{ro}$ and $\tau_\text{reset}$ respectively.
+
+\begin{figure}
+    \includegraphics{chapter2/figures/SMPD_cycle.pdf}
+    \caption[SMPD cycle]{The SMPD cycle is divided in two parts, capture and readout phase, separated by a dashed line. During the detection phase the pump tone at frequency $\omega_p$ illuminates the qubit continously. A photon arriving triggers 4WM and the qubit is excited while the waste photon is rapidly dissipated. During the readout phase the qubit is measured using the dispersive shift of the waste resonator. If the qubit is excited, a $\pi$-pulse is applied through the pump line with frequency $\omega_q$ then readout again until is found in the ground state.}
+    \labfig{SMPD_cycle}
+\end{figure}
+
+We note that only photons that arrive during the capturing phase will be detected, as the 4WM process is turned off during the readout phase. In addition if a second photon arrives to the detector, the 4WM process will not take place as the qubit is already in the excited state. Consequently, if the input photon rate is larger than the SMPD cycle rate, the detector will saturate, and is effectivebly "blinded".
+
+\subsubsection{SMPD Circuit}
+
+\begin{marginfigure}
+    \includegraphics{chapter2/figures/SMPD_micrograph.pdf}
+    \caption[SMPD micrograph]{SMPD micrograph. \red{write text, check what you need and do caption}}
+    \labfig{SMPD_micrograph}
+\end{marginfigure}
+
+We now proceed to describe the individual components of the SMPD. \reffig{SMPD_micrograph} is a false color micrograph of the device and \reffig{SMPD_circuit} shows a schematic representation of the circuit. 
+
+\begin{enumerate}
+    \item \textbf{Qubit}
+    \item \textbf{Buffer}
+    \item \textbf{Purcell filter of the buffer}
+    \item \textbf{Waste}
+    \item \textbf{Purcell filter of the waste}
+    \item \textbf{Qubit drive line}
+\end{enumerate}
 
 \begin{figure*}
     \includegraphics{chapter2/figures/SMPD.pdf}

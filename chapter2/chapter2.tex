@@ -787,24 +787,89 @@ We note that only photons that arrive during the capturing phase will be detecte
     \labfig{SMPD_micrograph}
 \end{marginfigure}
 
-We now proceed to describe the individual components of the SMPD. \reffig{SMPD_micrograph} is a false color micrograph of the device and \reffig{SMPD_circuit} shows a schematic representation of the circuit. 
-
-\begin{enumerate}
-    \item \textbf{Qubit}
-    \item \textbf{Buffer}
-    \item \textbf{Purcell filter of the buffer}
-    \item \textbf{Waste}
-    \item \textbf{Purcell filter of the waste}
-    \item \textbf{Qubit drive line}
-\end{enumerate}
-
 \begin{figure*}
     \includegraphics{chapter2/figures/SMPD.pdf}
-    \caption[SMPD circuit]{SMPD circuit. \red{write text, check what you need and do caption}}
+    \caption[SMPD circuit]{SMPD schematic circuit. The qubit (blue) has a fixed frequency and is capacitively coupled to both the waste and the buffer resonators. Both the buffer and its Purcell filter (dark and light orange respectively) embed a SQUID, used to tune their frequencies. The SQUID of the buffer is strongly asymmetric to reduce spectral difussion due to magnetic noise. The Purcell's buffer is capacitevly coupled to the input microwave line. The waste and its Purcell have a fixed frequency. Contrary to the buffer's, the waste's Purcell is galvanically coupled to the output microwave line, which ensures a rapid disipation of any waste photon. The qubit is also capacitevely coupled to a CPW line, used to pump the 4WM process and coherently control its state.}
     \labfig{SMPD_circuit}
 \end{figure*}
 
+We now proceed to describe the individual components of the SMPD. The device is fabricated from a tantalum thin film on a saphire chip using standard nanofabrication techniques and all Josephson junctions are made from a trilayer of Al/AlO$_x$/Al \sidecite{pallegoix_high_2025} . \reffig{SMPD_micrograph} is a false color micrograph of the device and \reffig{SMPD_circuit} shows a schematic representation of the circuit. 
+
+\begin{itemize}
+    \item \textbf{Qubit.} Transmon design with a Josephson junction and shunted capacitor. It is dispersively coupled to both buffer and waste resonators. For robustness, the frequency of the qubit is non-tunable.
+    \item \textbf{Buffer} The buffer resonator is the capture port for incoming photons. It takes the form of a half-wave coplanar waveguide (CPW) with open ends. One end couples capacitively to the qubit. The resonator has a SQUID embeded in its design\sidenote{A Superconducting QUantum Interference Device (SQUID) is a non-linear element with a tunable inductance. It is composed of two Josephson junctions in parallel forming a loop. The magnetic flux threading the loop modulates periodically the inductance of the element. Experimentally, the flux is controlled by means of a DC current that runs on a near grounded line, which generates a local magnetic field.}. The SQUID is highly asymetric to reduce spectral diffusion of the buffer resonator. 
+    \item \textbf{Buffer's Purcell filter} The middle of the buffer resonator is capacitevely coupled to the buffer's Purcell filter. This second resonator prevents the qubit from rapidly decaying to the microwave lines due to it's interaction with the buffer. Additionally, the Purcell also embeds a SQUID element in the middle of its design. By frequency tunning the Purcell filter, the effective detection bandwidth can also be controlled.
+    \item \textbf{Waste and it's Purcell} The waste resonator receives the converted photon produced by the four-wave mixing process and is also used for dispersive readout. It is galvanically coupled to the microwave lines so that the waste photon is rapidly lost and the conversion becomes effectively irreversible. The Purcell filter is designed with the same principle as buffer's.
+    \item \textbf{Qubit drive line.} The dedicated pump line delivers the coherent pump tone at $\omega_p$ used for 4WM as well as controlling the state of the qubit. The line is designed as a simple CPW element capacitively coupled to the qubit.
+\end{itemize}
+
+All relevant frequencies and linewitdths of the elements from the SMPD used in this work are displayed in \reftab{SMPD_frequencies}. 
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Resonator} & \textbf{Frequency} (GHz) & \textbf{Linewidth} (MHz) \\ \hline
+Buffer & $\omega_{b}/2\pi \in [7.70;7.76]$ & $\sim[0;2.5]$ \\ \hline
+Buffer Purcell & $\omega_{b, P}/2\pi \in [7.26;7.78]$ & 20 \\ \hline
+Qubit & $\omega_{q}/2\pi = 6.533$ & 0.016 \\ \hline
+Waste & $\omega_{w}/2\pi = 8.475$ & 1.75 \\ \hline
+Waste Purcell & $\omega_{w, P}/2\pi \approx 8.39$ & 400 \\ \hline
+\end{tabular}
+\caption[SMPD frequencies]{Frequencies and linewidths of different elements of the SMPD. The linewidth of the buffer is controlled by tuning the freqeuncy of the buffer's Purcell filter. The data was taken from \cite{pallegoix_enhancing_2025}.}
+\labtab{SMPD_frequencies}
+\end{table}
+
 \subsubsection{Performance metrics}
+
+In order to characterize the detector we define a series of performance metrics, namely the efficiency, the dark count rate and the bandwidth of the detector. We now proceed to discuss each of them and how they relate to the performance of the detector.
+
+\paragraph{Efficiency}
+
+We define the efficiency $\eta_\text{SMPD}$ as the probability of a successfull detection of an arriving photon to the detector. There are numerous sources of detection infidelity:
+
+\begin{itemize}
+    \item \textbf{Conversion efficiency}. The 4WM process is not instantaneous, it is a coherent process with an associated rate. Given the finite losses of the buffer resonator, some photons will be inevitably lost during the conversion process. The efficiency of the process can be estimated as\sidenote{Here we are assuming that the cooperativity of the parametric process is equal to 1. A more in detail study of the 4WM process is outside the scope of this thesis and can be found in \cite{pallegoix_high_2025}} \[\eta_\text{b, loss} = \frac{1}{1 + \tfrac{\kappa_\text{b, i}}{\kappa_\text{b, c}}},\] where we separate the losses of the buffer between internal ($\kappa_\text{b, i}$) and coupling ($\kappa_\text{b, c}$) contributions.
+    
+    \item \textbf{Duty cycle}. During the readout phase of the detector, the parametric conversion is turned off. This interval defines the dead time of the detector. The efficiency associated to the dead time can be estimated by \[\eta_\text{dead} = \frac{\tau_\text{capture}}{\tau_\text{capture} + \tau_\text{ro}},\] where we have assumed that the reset time is negligable due to the low photon arrival rate. This can be maximized by extending the capture time with respect to the readout time.
+    
+    \item \textbf{Qubit lifetime}. Given the finite lifetime of the qubit $T_{1, q}\approx80$~\textmu s any excitation will be eventually lost. The efficiency associated with this loss channel is given by averaging the loss probability at a specific time during the detection window \[\eta_{q} = \frac{1}{\tau_\text{capture}}\int_0^{\tau_\text{capture}} e^{-(\tau_\text{capture} - t)/T_1}dt = \frac{T_1}{\tau_\text{capture}} \left(1 -e^{-\tau_\text{capture}/T_1} \right) \] assuming that $\tau_\text{capture}<<T_1$ we arrive to \[\eta_{q}\approx 1 - \frac{\tau_\text{capture}}{2T_1},\] from this expression we conclude that a short detection window with respect to the decay time of the qubit will minimize the losses in the qubit.
+    
+    \item \textbf{Measurement efficiency}. After the conversion, the qubit is dispersively readout. The measurement has a finite fidelity $\eta_\text{q, meas}$, which increases with qubit readout time. In our experiments the single-shot threshold is chosen to minimise false positives (dark counts) at the expense of increased false negatives. This choice is made due to the low number of arriving photons, a large false positive rate will disproportionately corrupt the measurement statistics.
+  
+\end{itemize}
+
+The total efficiency of the detector is obtained by combining all sources of infidelity
+
+\begin{equation}
+    \eta_\text{SMPD} = \eta_{b, \text{loss}} \times \eta_\text{dead} \times \eta_{q} \times \eta_{q, \text{meas}}
+\end{equation}
+
+We can see that there are conflicting requirements to maximize both $\eta_{q}$ and $\eta_\text{dead}$. Extending the detection window will increase $\eta_\text{dead}$ while reducing $\eta_q$ and a compromise must be made. In addition, incresing the readout time to achieve a high readout fidelity will effectively increase the dead time of the detector. In the end, we set the detection window and the readout time to $\tau_\text{capture}=17$~\textmu s and $\tau_\text{ro}=1$~\textmu s from which we estimate $\eta_\text{dead}=0.94$, $\eta_{q}=0.90$ and $\eta_{q, \text{meas}}=$ with a heavily supressed false positive probability $P(e|g)=$\red{check number} which is close to the optimal condition.
+
+Experimentally, the efficiency is measured by shining a calibrated tone on the SMPD and calculating the ratio between detected and the arriving photons. \red{add graph}
+
+\paragraph{Dark counts} 
+
+The dark count rate of the detector $\alpha_\text{SMPD}$ is defined as the detection rate when the device is operated without any input signal. As we approach the unity efficiency, dark counts become the limiting factor on the detection sensitivity and a large effort of the group is directed towards minimizing them \sidecite{may_noise_2025}. The origin of the dark counts can be traced back to two main effects, spurious qubit excitations and thermal photons on the microwave lines.
+
+Given that the experiments are performed at finite temperature $T\approx10$~mK, the qubit has a non-zero probability of being in the excited state. Even if no photon has arrived at the end of the detection window, the detector can still measure a count due to the finite probability of excitation. Thanks to the conditional reset, the qubit es effectively cooled down at the end of every cycle, but the population will evolve to the state with the characteristic time $T_1$. The contrinution to the dark count rate will be given by 
+
+\begin{equation}
+    \alpha_q = \frac{p_q}{ \tau_\text{capture} + \tau_\text{ro}}, 
+\end{equation}
+
+where $p_q$ is the population of the qubit at the end of the detection window.
+
+The second contribution originates from the impinging photons due to the finite temperature of the microwave lines, which emit black body radiation. In addition, thermal radiation from upper stages of the cryogenic setup can add to this source of noise if the attenuation of the lines is not properly considered. Naturally, the contribution to the dark count rate from impinging thermal photons will depend on the detector's bandwidth\sidenote{For cooperativity equal to 1, this value is double the buffer's bandwidth\[\kappa_d = 2\kappa_b\]} $\kappa_d$. If we take $\bar{n}_b$ as the photon ocupation number of the buffer, the total thermal dark count rate is given by 
+
+\begin{equation}
+    \alpha_\text{th} = \frac{\bar{n}_b \eta_\text{SMPD} \kappa_d}{4},
+\end{equation}
+
+where we have considered that the detector has a lorentzian lineshape and that $\bar{n}_b$ is constant in its bandwidth. The total contribution to the dark count rate is then given by the addition of the two rates $\alpha_\text{SMPD} = \alpha_\text{th} + \alpha_q$ and can be experimentally characterized by simply running the detection cycle without any input signal.
+
+\paragraph{Detector bandwidth}
 
 \subsection{Detection scheme}
 

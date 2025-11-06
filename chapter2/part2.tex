@@ -285,26 +285,26 @@ The measurement is performed by monitoring the Purcell enhanced microwave fluore
 \subsection{Single Microwave Photon Detector}
 \labsec{SMPD}
 
-The detection of single optical photons is performed routinly with the use of photomultipliers or superconducting nanowire photon detectors. However, microwaves are five orders of magitude less energetic than optical photons. As such, single microwave detection is challenging and a large number of schemes have been proposed \red{check Zhiren}. Our group proposed and developed \sidecite{lescanne_irreversible_2020} a detector based on circuit Quantum Electrodynamics (cQED). This thesis only presents the working principle and performance of the detector used in this work and a thorough characterization of the device can be found in \sidecite{pallegoix_enhancing_2025}. For a more exhaustive description of the SMPD refer to previous thesis of the group, particularly \sidecite{albertinale_detecting_2021,balembois_magnetic_2023,pallegoix_high_2025}.
+The detection of single optical photons is performed routinely with the use of photomultipliers or superconducting nanowire photon detectors. However, microwaves are five orders of magnitude less energetic than optical photons. As such, single microwave detection is challenging and many schemes have been proposed \red{check Zhiren}. Our group proposed and developed \sidecite{lescanne_irreversible_2020} a detector based on circuit Quantum Electrodynamics (cQED). This thesis only presents the working principle and performance of the detector used in this work and a thorough characterization of the device can be found in \sidecite{pallegoix_enhancing_2025}. For a more exhaustive description of the SMPD refer to previous thesis of the group, particularly \sidecite{albertinale_detecting_2021,balembois_magnetic_2023,pallegoix_high_2025}.
 
 \subsubsection{Working principle}
 
-The operatring principle of the SMPD can be summarised as follows: an arriving photon is detected by performing an irreversible frequency conversion into a qubit excitation. After the detection window, the qubit is dispersively readout, revealing the arrival of the photon. The architecture is based on the irreversibility of the process, enabled by an engineered dissipation mechanism. 
+The operating principle of the SMPD can be summarized as follows: an arriving photon is detected by performing an irreversible frequency conversion into a qubit excitation. After the detection window, the qubit is dispersively readout, revealing the arrival of the photon. The architecture is based on the irreversibility of the process, enabled by an engineered dissipation mechanism. 
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/SMPD_principle.pdf}
-    \caption[SMPD working principle]{Working principle of the SMPD. At the heart of the SMPD lies a qubit with states $\ket{g}$ and $\ket{e}$. There are two resonators coupeld to the qubit, the buffer and the waste in orange and green respectively, as well as a transmission line to drive and pump the qubit. The capturing process is divided in three steps. First, capture of the incoming photon. Second, four-wave mixing, where the buffer photon is transformed into a qubit excitation. Third, dissipation of the waste, which inhibits the reverse process.}
+    \caption[SMPD working principle]{Working principle of the SMPD. At the heart of the SMPD lies a qubit with states $\ket{g}$ and $\ket{e}$. There are two resonators coupled to the qubit, the buffer and the waste in orange and green respectively, as well as a transmission line to drive and pump the qubit. The capturing process is divided in three steps. First, capture of the incoming photon. Second, four-wave mixing, where the buffer photon is transformed into a qubit excitation. Third, dissipation of the waste, which inhibits the reverse process.}
     \labfig{SMPD_principle}
 \end{marginfigure}
 
 At the center of the SMPD lies a superconducting transmon qubit\sidecite{koch_chargeinsensitive_2007}. This element behaves as a non-linear oscillator and can be treated as an effective two-level-system with frequency $\omega_q$ and levels $\ket{g}$ and $\ket{e}$. The qubit is simultaneously coupled to two independent resonators: the \textit{buffer} resonator with frequency $\omega_b$ and the \textit{buffer} resonator with frequency $\omega_w$. The process that enables the frequency conversion is a parametric four-wave mixing (4WM), in which an buffer photon is mixed with a coherent pump tone to produce an excitation on the qubit and a waste photon. The detection process is divided on two disctinct phases, the capture phase, when the qubit excitation via 4WM takes place, and the readout phase, when the state of the qubit is measured.
 
-The capturing process can be summarised in three independent steps which are schematized in \reffig{SMPD_principle}.
+The capturing process can be summarized in three independent steps which are schematized in \reffig{SMPD_principle}.
 
 \begin{enumerate}
-    \item A photon traveling in the microwave lines with frequency $\omega_b$ arrives to the input of the detector, populating the buffer resonator. Meanwhile the SMPD is being illuminated with a coherent pump tone at frequency $\omega_p$.
+    \item A photon traveling in the microwave lines with frequency $\omega_b$ arrives to the input of the detector, populating the buffer resonator. Meanwhile, the SMPD is being illuminated with a coherent pump tone at frequency $\omega_p$.
     \item With the input resonator populated, the 4WM process transforms the buffer photon and a pump photon into a qubit excitation and a waste photon. 
-    \item To avoid the inverse process, a dissipation channel on the waste resonator is engineered by strongly coupling it to the microwave lines. Consequently the waste photon is rapidly lost, hence its name, blocking the reverse parameteric process from ever taking place.
+    \item To avoid the inverse process, a dissipation channel on the waste resonator is engineered by strongly coupling it to the microwave lines. Consequently, the waste photon is rapidly lost, hence its name, blocking the reverse parametric process from ever taking place.
 \end{enumerate}
 
 It is important to note that for the 4WM process to take place, the energy conservation principle must be followed, 
@@ -315,15 +315,15 @@ It is important to note that for the 4WM process to take place, the energy conse
 
 This relation can be ensured by modifying the frequency of the pump tone. 
 
-After the capturing process, the state of the qubit is dispersively readout with the use of a coherent tone on the waste resonator \sidecite{wallraff_strong_2004}. If the qubit is found in the ground state, the detection cycle can restart. However, if the qubit is in the excited state, it first needs to be reset to the ground state before restarting the capturing phase. One could just wait for the qubit to spontaneouly relax but the detector is not operational during this process, effectively reducing the detection efficiency. We implement a conditional reset, in which a $\pi$-pulse is applied if the qubit is found on the excited state, subsequently followed by another readout step. This repeats until the qubit is in its ground state. Thanks to the fidelity of the excited state readout this procedure also effectively cools down the qubit. The detection process is performed cyclically in a continous manner and can be visualized in \reffig{SMPD_cycle}. We define the capture, readout and reset times as $\tau_\text{capture}$, $\tau_\text{ro}$ and $\tau_\text{reset}$ respectively.
+After the capturing process, the state of the qubit is dispersively readout with the use of a coherent tone on the waste resonator \sidecite{wallraff_strong_2004}. If the qubit is found in the ground state, the detection cycle can restart. However, if the qubit is in the excited state, it first needs to be reset to the ground state before restarting the capturing phase. One could just wait for the qubit to spontaneously relax, but the detector is not operational during this process, effectively reducing the detection efficiency. We implement a conditional reset, in which a $\pi$-pulse is applied if the qubit is found on the excited state, subsequently followed by another readout step. This repeats until the qubit is in its ground state. Thanks to the fidelity of the excited state readout this procedure also effectively cools down the qubit. The detection process is performed cyclically in a continuous manner and can be visualized in \reffig{SMPD_cycle}. We define the capture, readout and reset times as $\tau_\text{capture}$, $\tau_\text{ro}$ and $\tau_\text{reset}$ respectively.
 
 \begin{figure}
     \includegraphics{chapter2/figures/SMPD_cycle.pdf}
-    \caption[SMPD cycle]{The SMPD cycle is divided in two parts, capture and readout phase, separated by a dashed line. During the detection phase the pump tone at frequency $\omega_p$ illuminates the qubit continously. A photon arriving triggers 4WM and the qubit is excited while the waste photon is rapidly dissipated. During the readout phase the qubit is measured using the dispersive shift of the waste resonator. If the qubit is excited, a $\pi$-pulse is applied through the pump line with frequency $\omega_q$ then readout again until is found in the ground state.}
+    \caption[SMPD cycle]{The SMPD cycle is divided in two parts, capture and readout phase, separated by a dashed line. During the detection phase the pump tone at frequency $\omega_p$ illuminates the qubit continuously. A photon arriving triggers 4WM and the qubit is excited while the waste photon is rapidly dissipated. During the readout phase the qubit is measured using the dispersive shift of the waste resonator. If the qubit is excited, a $\pi$-pulse is applied through the pump line with frequency $\omega_q$ then readout again until is found in the ground state.}
     \labfig{SMPD_cycle}
 \end{figure}
 
-We note that only photons that arrive during the capturing phase will be detected, as the 4WM process is turned off during the readout phase. In addition if a second photon arrives to the detector, the 4WM process will not take place as the qubit is already in the excited state. Consequently, if the input photon rate is larger than the SMPD cycle rate, the detector will saturate, and is effectivebly "blinded".
+We note that only photons that arrive during the capturing phase will be detected, as the 4WM process is turned off during the readout phase. In addition, if a second photon arrives to the detector, the 4WM process will not take place as the qubit is already in the excited state. Consequently, if the input photon rate is larger than the SMPD cycle rate, the detector will saturate, and is effectively "blinded".
 
 \subsubsection{SMPD Circuit}
 
@@ -335,21 +335,21 @@ We note that only photons that arrive during the capturing phase will be detecte
 
 \begin{figure*}
     \includegraphics{chapter2/figures/SMPD.pdf}
-    \caption[SMPD circuit]{SMPD schematic circuit. The qubit (blue) has a fixed frequency and is capacitively coupled to both the waste and the buffer resonators. Both the buffer and its Purcell filter (dark and light orange respectively) embed a SQUID, used to tune their frequencies. The SQUID of the buffer is strongly asymmetric to reduce spectral difussion due to magnetic noise. The Purcell's buffer is capacitevly coupled to the input microwave line. The waste and its Purcell have a fixed frequency. Contrary to the buffer's, the waste's Purcell is galvanically coupled to the output microwave line, which ensures a rapid disipation of any waste photon. The qubit is also capacitevely coupled to a CPW line, used to pump the 4WM process and coherently control its state.}
+    \caption[SMPD circuit]{SMPD schematic circuit. The qubit (blue) has a fixed frequency and is capacitively coupled to both the waste and the buffer resonators. Both the buffer and its Purcell filter (dark and light orange respectively) embed a SQUID, used to tune their frequencies. The SQUID of the buffer is strongly asymmetric to reduce spectral diffusion due to magnetic noise. The Purcell's buffer is capacitively coupled to the input microwave line. The waste and its Purcell have a fixed frequency. Contrary to the buffer's, the waste's Purcell is galvanically coupled to the output microwave line, which ensures a rapid dissipation of any waste photon. The qubit is also capacitively coupled to a CPW line, used to pump the 4WM process and coherently control its state.}
     \labfig{SMPD_circuit}
 \end{figure*}
 
-We now proceed to describe the individual components of the SMPD. The device is fabricated from a tantalum thin film on a saphire chip using standard nanofabrication techniques and all Josephson junctions are made from a trilayer of Al/AlO$_x$/Al \sidecite{pallegoix_high_2025} . \reffig{SMPD_micrograph} is a false color micrograph of the device and \reffig{SMPD_circuit} shows a schematic representation of the circuit. 
+We now proceed to describe the individual components of the SMPD. The device is fabricated from a tantalum thin film on a sapphire chip using standard nanofabrication techniques and all Josephson junctions are made from a tri-layer of Al/AlO$_x$/Al \sidecite{pallegoix_high_2025}. \reffig{SMPD_micrograph} is a false color micrograph of the device and \reffig{SMPD_circuit} shows a schematic representation of the circuit. 
 
 \begin{itemize}
     \item \textbf{Qubit.} Transmon design with a Josephson junction and shunted capacitor. It is dispersively coupled to both buffer and waste resonators. For robustness, the frequency of the qubit is non-tunable.
-    \item \textbf{Buffer} The buffer resonator is the capture port for incoming photons. It takes the form of a half-wave coplanar waveguide (CPW) with open ends. One end couples capacitively to the qubit. The resonator has a SQUID embeded in its design\sidenote{A Superconducting QUantum Interference Device (SQUID) is a non-linear element with a tunable inductance. It is composed of two Josephson junctions in parallel forming a loop. The magnetic flux threading the loop modulates periodically the inductance of the element. Experimentally, the flux is controlled by means of a DC current that runs on a near grounded line, which generates a local magnetic field.}. The SQUID is highly asymetric to reduce spectral diffusion of the buffer resonator. 
-    \item \textbf{Buffer's Purcell filter} The middle of the buffer resonator is capacitevely coupled to the buffer's Purcell filter. This second resonator prevents the qubit from rapidly decaying to the microwave lines due to it's interaction with the buffer. Additionally, the Purcell also embeds a SQUID element in the middle of its design. By frequency tunning the Purcell filter, the effective detection bandwidth can also be controlled.
-    \item \textbf{Waste and it's Purcell} The waste resonator receives the converted photon produced by the four-wave mixing process and is also used for dispersive readout. It is galvanically coupled to the microwave lines so that the waste photon is rapidly lost and the conversion becomes effectively irreversible. The Purcell filter is designed with the same principle as buffer's.
+    \item \textbf{Buffer} The buffer resonator is the capture port for incoming photons. It takes the form of a half-wave coplanar waveguide (CPW) with open ends. One end couples capacitively to the qubit. The resonator has a SQUID embedded in its design \sidenote{A Superconducting Quantum Interference Device (SQUID) is a non-linear element with a tunable inductance. It is composed of two Josephson junctions in parallel forming a loop. The magnetic flux threading the loop modulates periodically the inductance of the element. Experimentally, the flux is controlled by means of a DC current that runs on a near grounded line, which generates a local magnetic field.}. The SQUID is highly asymmetric to reduce spectral diffusion of the buffer resonator. 
+    \item \textbf{Buffer's Purcell filter} The middle of the buffer resonator is capacitively coupled to the buffer's Purcell filter. This second resonator prevents the qubit from rapidly decaying to the microwave lines due to its interaction with the buffer. Additionally, the Purcell also embeds a SQUID element in the middle of its design. By frequency tuning the Purcell filter, the effective detection bandwidth can also be controlled.
+    \item \textbf{Waste and it's Purcell} The waste resonator receives the converted photon produced by the four-wave mixing process and is also used for dispersive readout. It is galvanically coupled to the microwave lines so that the waste photon is rapidly lost, and the conversion becomes effectively irreversible. The Purcell filter is designed with the same principle as buffer's.
     \item \textbf{Qubit drive line.} The dedicated pump line delivers the coherent pump tone at $\omega_p$ used for 4WM as well as controlling the state of the qubit. The line is designed as a simple CPW element capacitively coupled to the qubit.
 \end{itemize}
 
-All relevant frequencies and linewitdths of the elements from the SMPD used in this work are displayed in \reftab{SMPD_frequencies}. 
+All relevant frequencies and linewidths of the elements from the SMPD used in this work are displayed in \reftab{SMPD_frequencies}. 
 
 \begin{table}[h!]
 \centering
@@ -362,7 +362,7 @@ Qubit & $\omega_{q}/2\pi = 6.533$ & 0.016 \\ \hline
 Waste & $\omega_{w}/2\pi = 8.475$ & 1.75 \\ \hline
 Waste Purcell & $\omega_{w, P}/2\pi \approx 8.39$ & 400 \\ \hline
 \end{tabular}
-\caption[SMPD frequencies]{Frequencies and linewidths of different elements of the SMPD. The linewidth of the buffer is controlled by tuning the freqeuncy of the buffer's Purcell filter. The data was taken from \cite{pallegoix_enhancing_2025}.}
+\caption[SMPD frequencies]{Frequencies and linewidths of different elements of the SMPD. The linewidth of the buffer is controlled by tuning the frequency of the buffer's Purcell filter. The data was taken from \cite{pallegoix_enhancing_2025}.}
 \labtab{SMPD_frequencies}
 \end{table}
 
@@ -372,16 +372,16 @@ In order to characterize the detector we define a series of performance metrics,
 
 \paragraph{Efficiency}
 
-We define the efficiency $\eta_\text{SMPD}$ as the probability of a successfull detection of an arriving photon to the detector. There are numerous sources of detection infidelity:
+We define the efficiency $\eta_\text{SMPD}$ as the probability of a successful detection of an arriving photon to the detector. There are numerous sources of detection infidelity:
 
 \begin{itemize}
-    \item \textbf{Conversion efficiency}. The 4WM process is not instantaneous, it is a coherent process with an associated rate. Given the finite losses of the buffer resonator, some photons will be inevitably lost during the conversion process. The efficiency of the process can be estimated as\sidenote{Here we are assuming that the cooperativity of the parametric process is equal to 1. A more in detail study of the 4WM process is outside the scope of this thesis and can be found in \cite{pallegoix_high_2025}} \[\eta_\text{b, loss} = \frac{1}{1 + \tfrac{\kappa_\text{b, i}}{\kappa_\text{b, c}}},\] where we separate the losses of the buffer between internal ($\kappa_\text{b, i}$) and coupling ($\kappa_\text{b, c}$) contributions.
+    \item \textbf{Conversion efficiency}. The 4WM process is not instantaneous, it is a coherent process with an associated rate. Given the finite losses of the buffer resonator, some photons will be inevitably lost during the conversion process. The efficiency of the process can be estimated as \sidenote{Here we are assuming that the cooperativity of the parametric process is equal to 1. A more in detail study of the 4WM process is outside the scope of this thesis and can be found in \cite{pallegoix_high_2025}} \[\eta_\text{b, loss} = \frac{1}{1 + \tfrac{\kappa_\text{b, i}}{\kappa_\text{b, c}}},\] where we separate the losses of the buffer between internal ($\kappa_\text{b, i}$) and coupling ($\kappa_\text{b, c}$) contributions.
     
-    \item \textbf{Duty cycle}. During the readout phase of the detector, the parametric conversion is turned off. This interval defines the dead time of the detector. The efficiency associated to the dead time can be estimated by \[\eta_\text{dead} = \frac{\tau_\text{capture}}{\tau_\text{capture} + \tau_\text{ro}},\] where we have assumed that the reset time is negligable due to the low photon arrival rate. This can be maximized by extending the capture time with respect to the readout time.
+    \item \textbf{Duty cycle}. During the readout phase of the detector, the parametric conversion is turned off. This interval defines the dead time of the detector. The efficiency associated to the dead time can be estimated by \[\eta_\text{dead} = \frac{\tau_\text{capture}}{\tau_\text{capture} + \tau_\text{ro}},\] where we have assumed that the reset time is negligible due to the low photon arrival rate. This can be maximized by extending the capture time with respect to the readout time.
     
     \item \textbf{Qubit lifetime}. Given the finite lifetime of the qubit $T_{1, q}\approx80$~\textmu s any excitation will be eventually lost. The efficiency associated with this loss channel is given by averaging the loss probability at a specific time during the detection window \[\eta_{q} = \frac{1}{\tau_\text{capture}}\int_0^{\tau_\text{capture}} e^{-(\tau_\text{capture} - t)/T_1}dt = \frac{T_1}{\tau_\text{capture}} \left(1 -e^{-\tau_\text{capture}/T_1} \right) \] assuming that $\tau_\text{capture}<<T_1$ we arrive to \[\eta_{q}\approx 1 - \frac{\tau_\text{capture}}{2T_1},\] from this expression we conclude that a short detection window with respect to the decay time of the qubit will minimize the losses in the qubit.
     
-    \item \textbf{Measurement efficiency}. After the conversion, the qubit is dispersively readout. The measurement has a finite fidelity $\eta_\text{q, meas}$, which increases with qubit readout time. In our experiments the single-shot threshold is chosen to minimise false positives (dark counts) at the expense of increased false negatives. This choice is made due to the low number of arriving photons, a large false positive rate will disproportionately corrupt the measurement statistics.
+    \item \textbf{Measurement efficiency}. After the conversion, the qubit is dispersively readout. The measurement has a finite fidelity $\eta_\text{q, meas}$, which increases with qubit readout time. In our experiments the single-shot threshold is chosen to minimize false positives (dark counts) at the expense of increased false negatives. This choice is made due to the low number of arriving photons, a large false positive rate will disproportionately corrupt the measurement statistics.
   
 \end{itemize}
 
@@ -391,7 +391,7 @@ The total efficiency of the detector is obtained by combining all sources of inf
     \eta_\text{SMPD} = \eta_{b, \text{loss}} \times \eta_\text{dead} \times \eta_{q} \times \eta_{q, \text{meas}}
 \end{equation}
 
-We can see that there are conflicting requirements to maximize both $\eta_{q}$ and $\eta_\text{dead}$. Extending the detection window will increase $\eta_\text{dead}$ while reducing $\eta_q$ and a compromise must be made. In addition, incresing the readout time to achieve a high readout fidelity will effectively increase the dead time of the detector. In the end, we set the detection window and the readout time to $\tau_\text{capture}=17$~\textmu s and $\tau_\text{ro}=1$~\textmu s from which we estimate $\eta_\text{dead}=0.94$, $\eta_{q}=0.90$ and $\eta_{q, \text{meas}}=$ with a heavily supressed false positive probability $P(e|g)=$\red{check number} which is close to the optimal condition.
+We can see that there are conflicting requirements to maximize both $\eta_{q}$ and $\eta_\text{dead}$. Extending the detection window will increase $\eta_\text{dead}$ while reducing $\eta_q$ and a compromise must be made. In addition, increasing the readout time to achieve a high readout fidelity will effectively increase the dead time of the detector. In the end, we set the detection window and the readout time to $\tau_\text{capture}=17$~\textmu s and $\tau_\text{ro}=1$~\textmu s from which we estimate $\eta_\text{dead}=0.94$, $\eta_{q}=0.90$ and $\eta_{q, \text{meas}}=$ with a heavily suppressed false positive probability $P(e|g)=$\red{check number} which is close to the optimal condition.
 
 Experimentally, the efficiency is measured by shining a calibrated tone on the SMPD and calculating the ratio between detected and the arriving photons. \red{add graph}
 
@@ -399,7 +399,7 @@ Experimentally, the efficiency is measured by shining a calibrated tone on the S
 
 The dark count rate of the detector $\alpha_\text{SMPD}$ is defined as the detection rate when the device is operated without any input signal. As we approach the unity efficiency, dark counts become the limiting factor on the detection sensitivity and a large effort of the group is directed towards minimizing them \sidecite{may_noise_2025}. The origin of the dark counts can be traced back to two main effects, spurious qubit excitations and thermal photons on the microwave lines.
 
-Given that the experiments are performed at finite temperature $T\approx10$~mK, the qubit has a non-zero probability of being in the excited state. Even if no photon has arrived at the end of the detection window, the detector can still measure a count due to the finite probability of excitation. Thanks to the conditional reset, the qubit es effectively cooled down at the end of every cycle, but the population will evolve to the state with the characteristic time $T_1$. The contrinution to the dark count rate will be given by 
+Given that the experiments are performed at finite temperature $T\approx10$~mK, the qubit has a non-zero probability of being in the excited state. Even if no photon has arrived at the end of the detection window, the detector can still measure a count due to the finite probability of excitation. Thanks to the conditional reset, the qubit is effectively cooled down at the end of every cycle, but the population will evolve to the state with the characteristic time $T_1$. The contribution to the dark count rate will be given by 
 
 \begin{equation}
     \alpha_q = \frac{p_q}{ \tau_\text{capture} + \tau_\text{ro}}, 
@@ -407,7 +407,7 @@ Given that the experiments are performed at finite temperature $T\approx10$~mK, 
 
 where $p_q$ is the population of the qubit at the end of the detection window.
 
-The second contribution originates from the impinging photons due to the finite temperature of the microwave lines, which emit black body radiation. In addition, thermal radiation from upper stages of the cryogenic setup can add to this source of noise if the attenuation of the lines is not properly considered. Naturally, the contribution to the dark count rate from impinging thermal photons will depend on the detector's bandwidth\sidenote{For cooperativity equal to 1, this value is double the buffer's bandwidth\[\kappa_d = 2\kappa_b\]} $\kappa_d$. If we take $\bar{n}_b$ as the photon ocupation number of the buffer, the total thermal dark count rate is given by 
+The second contribution originates from the impinging photons due to the finite temperature of the microwave lines, which emit black body radiation. In addition, thermal radiation from upper stages of the cryogenic setup can add to this source of noise if the attenuation of the lines is not properly considered. Naturally, the contribution to the dark count rate from impinging thermal photons will depend on the detector's bandwidth \sidenote{For cooperativity equal to 1, this value is double the buffer's bandwidth\[\kappa_d = 2\kappa_b\]} $\kappa_d$. If we take $\bar{n}_b$ as the photon occupation number of the buffer, the total thermal dark count rate is given by 
 
 \begin{equation}
     \alpha_\text{th} = \frac{\bar{n}_b \eta_\text{SMPD} \kappa_d}{4},
@@ -419,7 +419,7 @@ where we have considered that the detector has a lorentzian lineshape and that $
 
 We now proceed to discuss the experimental setup used in this work. 
 
-\red{probably goes in the intro} The measurement scheme is well summarised by the diagram presented in \red{nice good figure}. The crystalline \Ca sample where the \Er ions are hosted takes the form of a rectangular slab. On the surface of the crystal, a superconducting Nb thin film resonator is fabricated which couples to the ions through the magnetic field generated by the nanowire inductive element. A microwave pulse is generated at room temperature with a frequency that is resonant with the superconducting resonator. If an \Er ion is also resonant with the cavity, it will be excited and the microwave flourescence, enhanced through the Purcell effect, will be directed to the microwave lines. The photon will be routed to the SMPD which detects the excitation. 
+\red{probably goes in the intro} The measurement scheme is well summarized by the diagram presented in \red{nice good figure}. The crystalline \Ca sample where the \Er ions are hosted takes the form of a rectangular slab. On the surface of the crystal, a superconducting Nb thin film resonator is fabricated which couples to the ions through the magnetic field generated by the nanowire inductive element. A microwave pulse is generated at room temperature with a frequency that is resonant with the superconducting resonator. If an \Er ion is also resonant with the cavity, it will be excited and the microwave fluorescence, enhanced through the Purcell effect, will be directed to the microwave lines. The photon will be routed to the SMPD which detects the excitation. 
 
 \subsection{Measurement setup}
 
@@ -429,7 +429,7 @@ We now proceed to discuss the experimental setup used in this work.
 \end{itemize}
 
 
-In order for the SMPD to properly operate and for the spin population to be polarized in the ground state, the experiments need to be performed at cryogenic temperature. In order to achieve this requirement, both the sample and the SMPD are mounted at the bottom stage of a dilution refrigerator, where a temperature of 10~mK can be achieved. We use microwave coaxial cable and low temperature components to deliver the microwave signals and interface the devices. The wiring diagram of the fridge is presented in \reffig{wiring_diagram}.  During the wiring of the cryostat, special care was taken to properly attenuate the lines that are directly connected to the SMPD. Lack of propper attenuation leads to increased thermal dark counts, degrading the performance of the detector.  \red{do room temperature diagram}
+In order for the SMPD to properly operate and for the spin population to be polarized in the ground state, the experiments need to be performed at cryogenic temperature. In order to achieve this requirement, both the sample and the SMPD are mounted at the bottom stage of a dilution refrigerator, where a temperature of 10~mK can be achieved. We use microwave coaxial cable and low temperature components to deliver the microwave signals and interface the devices. The wiring diagram of the fridge is presented in \reffig{wiring_diagram}.  During the wiring of the cryostat, special care was taken to properly attenuate the lines that are directly connected to the SMPD. Lack of proper attenuation leads to increased thermal dark counts, degrading the performance of the detector.  \red{do room temperature diagram}
 
 We note that during the course of this thesis two measurement configurations were employed: a reflection configuration and a transmission configuration. These correspond to the two experimental runs that comprise the bulk of the results. The first run, performed in reflection mode, comprises the work presented in chapters \red{refsec}. The results of the second run were obtained in transmission mode and are presented in \red{refsec}. The motivation for switching to the transmission configuration was the expectation that placing the microwave cavity between the room-temperature environment and the SMPD input would reduce the flux of thermal photons reaching the detector and therefore lower the dark-count rate. In practice this we did not measure any significant effect. In addition, when switching to the transmission configuration, a second TWPA was added at the output of the resonator with the intention of performing a specific experiment, which has not taken place yet.
 
@@ -439,9 +439,9 @@ We note that during the course of this thesis two measurement configurations wer
     \labfig{wiring_diagram}
 \end{figure*}
 
-To deliver microwave signals to the spin resonator, the sample was mounted inside a 3D copper cavity and coupled to the microwave lines via a pin antenna\sidenote{In transmission mode the resonator is coupled to two antennas connected to separate outputs.}. The antenna is soldered to an SMA connector and passes through a small pinhole in the cavity wall; the coupling is tuned by adjusting the antenna insertion depth. The sample is affixed to a silicon bridge with vacuum grease, and the bridge is held in place by compression between the cavity halves. See \red{reffig}. The 3D cavity is then mounted on the fridge with a three-axis magnet surrounding the assembly. 
+To deliver microwave signals to the spin resonator, the sample was mounted inside a 3D copper cavity and coupled to the microwave lines via a pin antenna \sidenote{In transmission mode the resonator is coupled to two antennas connected to separate outputs.}. The antenna is soldered to an SMA connector and passes through a small pinhole in the cavity wall; the coupling is tuned by adjusting the antenna insertion depth. The sample is affixed to a silicon bridge with vacuum grease, and the bridge is held in place by compression between the cavity halves. See \red{reffig}. The 3D cavity is then mounted on the fridge with a three-axis magnet surrounding the assembly. 
 
-The magnet is a 1T/1T/1T superconducting vector magnet, which can produce magnetic field along the three orthogonal directions $X$, $Y$ and $Z$. The coils are independently driven by three current surces which can be individually shunted on demand which allows the magnets to go into \textit{persistent mode} which locks the current going through the superconducting magnet. Consequently, when performing any single spin measurements the magnet is always set into persistent mode as the stability of the field is greatly increased. Given that the resonator is a superconducting film, the magnetic field needs to be applied on the plane of the resonator, as any small out-of-plane component will destry the superconducting its properties.
+The magnet is a 1T/1T/1T superconducting vector magnet, which can produce magnetic field along the three orthogonal directions $X$, $Y$ and $Z$. The coils are independently driven by three current sources which can be individually shunted on demand which allows the magnets to go into \textit{persistent mode} which locks the current going through the superconducting magnet. Consequently, when performing any single spin measurements the magnet is always set into persistent mode as the stability of the field is greatly increased. Given that the resonator is a superconducting film, the magnetic field needs to be applied on the plane of the resonator, as any small out-of-plane component will destory the superconducting its properties.
 
 
 \subsection{Superconducting resonator characterization}
@@ -458,7 +458,7 @@ The initial characterization of the resonator is performed at zero magnetic fiel
 
 During the mounting process, the resonator assembly is fixed such that the $Y$ and $Z$ axes of the magnet are close to the plane of the resonator. Due to the limited precision of manual alignment, we begin the experimental run by measuring the relative alignment between these coordinate frames. We follow the procedure described in \sidecite{dantec_electron_2022}, which we briefly summarize below.
 
-The working principle of the alignment procedure is the strong dependence of the resonator frequency on any out-of-plane component of the magnetic field\sidenote{A magnetic field increases the penetration depth, which increases the kinetic inductance and reduces the resonator frequency. This effect is also present for in-plane fields but is drastically stronger for out-of-plane components.}. By measuring the dependence of the frequency on the components of the field we can map a rotation from the magnetic-field axes $X$, $Y$, and $Z$ to the resonator-plane axes $x$, $y$, and $z$. The steps of the procedure, shown in a diagram in \reffig{field_alignment}, are:
+The working principle of the alignment procedure is the strong dependence of the resonator frequency on any out-of-plane component of the magnetic field \sidenote{A magnetic field increases the penetration depth, which increases the kinetic inductance and reduces the resonator frequency. This effect is also present for in-plane fields but is drastically stronger for out-of-plane components.}. By measuring the dependence of the frequency on the components of the field we can map a rotation from the magnetic-field axes $X$, $Y$, and $Z$ to the resonator-plane axes $x$, $y$, and $z$. The steps of the procedure, shown in a diagram in \reffig{field_alignment}, are:
 
 \begin{enumerate}
     \item Apply a 50~mT field along the $Y$ axis.
@@ -466,34 +466,61 @@ The working principle of the alignment procedure is the strong dependence of the
     \item Ramp down the magnetic field along $Y$ to 0~mT.
     \item Ramp up the magnetic field along $Z$ to 50~mT.
     \item Repeat the procedure described in step 2. The angle $\psi_0$ in the ($Y'$, $Z$)-plane defines the aligned coordinate system $x$, $y$, and $z$ (see \reffig{field_alignment}.b). 
-    \item Define $\theta$ as the angle in the resonator plane with respect to the $z$ axis.
+    \item Define $\theta$ as the angle in the resonator plane with respect to the $z$ axis (see \reffig{field_alignment}.c).
 \end{enumerate}
 
-The resonator frequency as a function of $\varphi$ and $\psi$ is plot in \reffig{field_alignment}.d and \reffig{field_alignment}.e, respectively. The data were fit to a parabola and the top gives the values of $\varphi_0$ and $\psi_0$. 
-
-
-\begin{figure}
+\begin{figure}[b]
     \includegraphics{chapter2/figures/b_field_alignment_scheme.pdf}
-    \caption[Magnetic field alignment]{Magnetic field alignment scheme and data. Figures a, b and c show the subsequent rotations performed to arrive to the resonator reference frame. Figures d and e plot the frequency of the resonator as a function of the out of plane angle during step 2 and 5 of the aligning procedure (see text). The data were fit to a parabola and the alignment angles $\varphi_0$ and $\psi_0$ correspond to the top of the parabollic fit.}
+    \caption[Magnetic field alignment]{Magnetic field alignment scheme and data. Figures a, b and c show the subsequent rotations performed to arrive to the resonator reference frame. Figures d and e plot the frequency of the resonator as a function of the out of plane angle during step 2 and 5 of the aligning procedure (see text). The data were fit to a parabola and the alignment angles $\varphi_0$ and $\psi_0$ correspond to the top of the parabolic fit.}
     \labfig{field_alignment}
 \end{figure}
 
+The resonator frequency as a function of $\varphi$ and $\psi$ is plot in \reffig{field_alignment}.d and \reffig{field_alignment}.e, respectively. The data were fit to a parabola and the top gives the values of $\varphi_0$ and $\psi_0$. The applied magnetic field in the resonator plane can be then expressed in the laboratory frame as
+
+\begin{equation}
+    \mathbf{B}_{0} = B_{0}
+    \begin{pmatrix}
+    -\cos\theta \,\sin\psi_0 \,\cos\phi_0 + \sin\theta \,\sin\phi_0 \\
+    \cos\theta \,\sin\psi_0 \,\sin\phi_0 + \sin\theta \,\cos\phi_0 \\
+    \cos\theta \,\cos\psi_0
+    \end{pmatrix}
+\end{equation}
+
+
+
+
 \begin{itemize}
     \item \red{VNA spectroscopy}
-    \item \red{SMPD autocalibration procedure}
+    \item \red{SMPD automatic calibration procedure}
 \end{itemize}
 
-\subsection{Single \Er spins detection}
+\subsection{Erbium spin detection}
+
+Before performing single spin manipulation we begin by characterizing the \Er ensemble. We ramp the magnetic field along the $z$-axis (which is close to the $c$-axis) to approximately 440~mT and proceed with the following measurement. We apply a strong microwave pulse with a duration of 100~\textmu s \red{check} at the frequency of the resonator $\omega_r$. After the pulse, we collect the number of counts impinging on the SMPD during an integration window of $\tau_\text{int}=200$~ms. We average the total number of counts during the integration time over a number of iterations to obtain the ensemble average counts $\langle C \rangle$. We repeat this measurement while sweeping the magnetic field. Due to the dependence of the resonator frequency with the applied magnetic field, we re-tune the SMPD center frequency for every value of $B_0$. \reffig{high_power_spectroscopy} plots $\langle C \rangle$ as a function of $B_0$, where the increase in counts corresponds to the EPR signal of an ensemble of \Er ions. 
+
 
 \begin{figure}
     \includegraphics{chapter2/figures/high_power_spectroscopy.pdf}
-    \caption[High power spectroscopy]{High power spectroscopy.}
+    \caption[High power spectroscopy]{High power spectroscopy. Ensemble average of counts after microwave excitation $\langle C \rangle$ as a function of the magnetic field along the $z$-axis. The data points are fit to a Lorentzian curve (black line). \textit{Top right inset.} Pulse sequence. \textit{Top left inset} Microwave count rate as a function of time for the green and red data points. The integral of the curve, which corresponds to $\langle C \rangle$, is highlighted with the respective colors. The dark count rate of the SMPD is plot as a dashed horizontal line.}
     \labfig{high_power_spectroscopy}
 \end{figure}
 
+
+The inset plot shows the count rate $\langle \dot C \rangle$ after the excitation pulse at $t=0$ for two different magnetic fields. The integral of the curves yields $\langle C \rangle$ of the red and green points in the main plot. When the resonator is not resonant with the ensemble (red curve), the count rate is flat and equal to the dark count rate of the SMPD, shown as a black dashed line. The first point of the curve escapes that trend, and we attribute this increase in counts to heating of the microwave lines and attenuators due to the pulse. In contrast, when the ensemble is resonant the count rate displays a non-exponential decay over a period of time longer than 200~ms, consistent with the excitation of an ensemble of \Er spins with different coupling strength.
+
+The data is fit to a lorentzian which yields the center field of the resonance. We note that the \Er main line is \textit{not} found at the expected field\sidenote{
+    At $B_0\approx440$~mT, the resonator's frequency is $\omega_r \approx 7.7492$~GHz, so the expected field is \[\omega_r / \gamma_\parallel \approx 444\text{~mT}.\]
+}, which indicates that the crystalline and the resonator axis are not parallel to each other. The misalignment comes from fabrication constraints, as the crystal sample is cut from a larger \textit{boule} and the precision of the cut is limited to approximately one degree. This results in a misalignment angle $\beta_0$ between the surface of the crystal, parallel to the resonator plane, and the $c$-axis. We begin by measuring the projection of the $c$-axis in the resonator plane by following the \Er resonance as a function of the in-plane angle $\theta$. By fitting the data to a parabola, we obtain the angle between the $z$-axis and the projection of the $c$-axis in the $(y, z)$-plane, $\theta_0$ (see \reffig{sample_field_alignment}.a \& b). At this angle, we apply an out of plane component along the $x$-axis and measure the center frequency of the resonance as a function of the out-of-plane angle $\beta$. \reffig{sample_field_alignment}.c plots the gyromagnetic factor $\gamma$ associated to the measured resonance\sidenote{
+    As discussed above, a magnetic field will modify the resonator frequency. This effect can be ignored for small changes of in-plane field, but \textit{not} for out-of-plane components. We take into consideration this effect by measuring $\gamma \equiv \omega_r(B_0) / B_0$ instead.
+} as function of $\beta$, and the data is fit to a parabola which yields $\beta_0=-0.57$º. After this characterization the sample is brought to 10~K and then cooled down again, to the magnetic vortices in the superconducting film which reduce the quality factor of the resonator. For all following measurements in this thesis, the field is always applied along the $(y, z)$-plane, but the characterization of the misalignment angles is crucial for the understanding of the experimental results. 
+
 \begin{figure}
     \includegraphics{chapter2/figures/sample_field_alignment.pdf}
-    \caption[Sample Field Alignment]{Sample Field Alignment.}
+    \caption[Sample Field Alignment]{Sample Field Alignment. 
+    \textbf{a.} Axis diagram including the magnetic field in the $(y, z)$-plane and the misalignment angles $\theta_0$ and $\beta_0$.
+    \textbf{b.} \Er resonant field as a function of the in-plane angle $\theta$. The data is fit to a parabola (black line) which yields $\theta_0=3.49$º
+    \textbf{c.} Gyromagnetic factor $\gamma$ as a function of the out-of-plane angle $\beta$ while fixing $\theta=\theta_0$. The parabolic fit (black line) gives  $\beta_0=-0.57$º. Dashed horizontal line shows the literature value for $\gamma_\parallel$.
+    }
     \labfig{sample_field_alignment}
 \end{figure}
 
@@ -505,7 +532,7 @@ The resonator frequency as a function of $\varphi$ and $\psi$ is plot in \reffig
 
 \begin{itemize}
     \item \red{High power spectroscopy}
-    \item \red{Angle dependence we now measure and define all missalignment angles}
+    \item \red{Angle dependence we now measure and define all misalignment angles}
     \item \red{Low power spectroscopy}
     \item \red{Rotation pattern}
     \item \red{Characterization of the single spin detection.}

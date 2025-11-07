@@ -10,6 +10,8 @@ In this chapter we describe the techniques used to coherently controlling a nucl
 
 If one wishes to drive the state of a nuclear spin, the most straightforward way is to apply a radiofrequency (rf) pulse resonant with a nuclear spin transition. However, as detailed in \refsec{rabi_oscillations_theory}, in our setup the superconducting resonator acts as a narrow band-pass filter centered around $\omega_r\approx7.7$~GHz. Consequently, all rf drives applied to the sample will be reflected from the resonator and direct driving of a nuclear spin becomes impossible.
 
+\subsection{Sideband driving}
+
 In order to find an alternative driving scheme, we now consider the Hamiltonian of an \Er spin-1/2 coupled via hyperfine interaction to a nuclear spin-1/2 while under a magnetic field $B_0$. As described in \refch{electron_nuclear_interaction}, the Hamiltonian under the secular approximation can be written as
 
 \begin{equation}
@@ -20,33 +22,70 @@ This Hamiltonian is analytically solvable \sidecite{schweiger_principles_2001} a
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/energy_levels_half.pdf}
-    \caption[Energy level diagram of an Er3+ coupled to a nuclear spin-1/2]{Energy level diagram of an \Er coupled to a nuclear spin-1/2.}
+    \caption[Energy level diagram of an Er3+ coupled to a nuclear spin-1/2]{Energy level diagram of an \Er coupled to a nuclear spin-1/2. Because the electron and nuclear gyromagnetic factors have opposite signs ($\omega_I < 0 < \omega_S$) the ground state has an antiparallel configuration.}
     \labfig{energy_levels_half}
 \end{marginfigure}
 
 \begin{align}
 \begin{split}   
-     \omega_I^{(\Uparrow)} &= \left(\omega_I + \frac{A_\parallel}{2}\right) \cos \eta_\alpha - \frac{A_\perp}{2} \sin \eta_\alpha, \\ 
-    \omega_I^{(\Downarrow)} &= \left(\omega_I - \frac{A_\parallel}{2}\right) \cos \eta_\beta - \frac{A_\perp}{2} \sin \eta_\beta, \\ \\
-    \omega_S^{(\uparrow)} &= \omega_S + \frac{1}{2} \left( \omega_I^{(\Uparrow)} - \omega_I^{(\Downarrow)} \right) \\ 
-    \omega_S^{(\downarrow)} &= \omega_S - \frac{1}{2} \left( \omega_I^{(\Uparrow)} + \omega_I^{(\Downarrow)} \right) \\ \\
-    \eta_{\alpha, \beta} &= \arctan{\left(\frac{-A_\perp}{A_\parallel \pm 2\omega_I}\right)}.
+     \omega_I^{(\Uparrow)} &= \left(\omega_I + \frac{A_\parallel}{2}\right) \cos \eta_\alpha - \frac{A_\perp}{2} \sin \eta_\alpha \approx \omega_I + \frac{A_\parallel}{2}, \\ 
+    \omega_I^{(\Downarrow)} &= \left(\omega_I - \frac{A_\parallel}{2}\right) \cos \eta_\beta - \frac{A_\perp}{2} \sin \eta_\beta \approx \omega_I - \frac{A_\parallel}{2}, \\ \\
+    \omega_S^{(\uparrow)} &= \omega_S + \frac{1}{2} \left( \omega_I^{(\Uparrow)} - \omega_I^{(\Downarrow)} \right) \approx \omega_S + \frac{A_\parallel}{2}, \\ 
+    \omega_S^{(\downarrow)} &= \omega_S - \frac{1}{2} \left( \omega_I^{(\Uparrow)} - \omega_I^{(\Downarrow)} \right) \approx \omega_S - \frac{A_\parallel}{2} \\ \\
+    \eta_{\alpha, \beta} &= \arctan{\left(\frac{-A_\perp}{A_\parallel \pm 2\omega_I}\right)} \approx \mp \frac{A_\perp}{2\omega_I} \ll 1.
 \end{split}    
 \end{align}
 
-where $\eta_{\alpha, \beta}$ are the mixing angles. 
+where $\eta_{\alpha, \beta}$ are the mixing angles, and we have taken the high-field regime approximation, $|\omega_I| \gg |A_\parallel|, |A_\perp|$. 
 
-In the high-field regime, $|\omega_I| \gg |A_\parallel|, |A_\perp|$, the mixing angles vanish and the eigenstates are well approximated by the uncoupled spin states $\ket{\Downarrow \uparrow}$, $\ket{\Downarrow \downarrow}$, $\ket{\Uparrow \uparrow}$, $\ket{\Uparrow \downarrow}$, as illustrated in \reffig{energy_levels_half}. Because the electron and nuclear gyromagnetic factors have opposite signs ($\omega_I < 0 < \omega_S$) the ground state has the two spins antiparallel. Under these conditions the transition energies can be approximated to
+In the high field regime, we consider as a perturbation all terms that do not commute with $S_z$ and $I_z$ in the Hamiltonian, that is, the perpendicular hyperfine term $A_\perp S_zI_x$.
 
 \begin{align}
 \begin{split}
-    \omega_I^{(\Uparrow)} = \omega_I + \frac{A_\parallel}{2}, &\qquad \omega_I^{(\Downarrow)} = \omega_I - \frac{A_\parallel}{2}, \\
-    \omega_S^{(\uparrow)} = \omega_S + \frac{A_\parallel}{2}, &\qquad \omega_S^{(\downarrow)} = \omega_I - \frac{A_\parallel}{2}.
-\end{split}    
+        \mathcal{H} &= \mathcal{H}_0+V, \\
+        \mathcal{H}_0 &= \omega_S\cdot S_z + \omega_I\cdot I_z + A_\parallel S_z I_z,  \\
+         V & = A_\perp S_z I_x.
+\end{split}
 \end{align}
 
+The eigenstates of $\mathcal{H}_0$ correspond to the uncoupled spin states $\ket{\Downarrow \uparrow}$, $\ket{\Downarrow \downarrow}$, $\ket{\Uparrow \uparrow}$, $\ket{\Uparrow \downarrow}$, as illustrated in \reffig{energy_levels_half}. At first order, the perturbed states will be
+
+\begin{align}
+\begin{split}
+    \ket{\psi_{m_S,\uparrow}} \approx \ket{m_S, \uparrow} - \frac{m_S}{2}\frac{A_\perp}{\omega_I+A_\parallel m_S} \ket{m_S, \downarrow}, \\
+    \ket{\psi_{m_S,\downarrow}} \approx \ket{m_S, \downarrow} + \frac{m_S}{2}\frac{A_\perp}{\omega_I+A_\parallel m_S} \ket{m_S, \uparrow}, \\
+\end{split}
+\end{align}
+
+with $m_S\in\{\uparrow\,\equiv1/2 ,\; \downarrow\,\equiv-1/2\}$ being the electron magnetic number. This results in a weak admixture of the nuclear spin states. In particular, the nuclear wavefunctions are different depending on the state of the electron spin, as the perturbation term is proportional to $m_S$, which result in the following non-zero matrix elements
+
+\begin{equation}
+    \bra{\Uparrow \downarrow} S_x \ket{\Downarrow \uparrow} \approx - \bra{\Uparrow \downarrow} S_x \ket{\Downarrow \uparrow} \approx \frac{A_\perp}{2\omega_I} \ll 1.
+\end{equation}
 
 
+Consequently, these \textit{a priori} forbidden transitions become weakly allowed. They involve simultaneous flips of the electron and nuclear spins and are referred to as zero-quantum (ZQ) and double-quantum (DQ) transitions\sidenote{The names indicate the net change in the total magnetic quantum number: in a ZQ transition the electron and nuclear spins flip in opposite directions, while for a DQ transition they flip in the same direction.} or red and blue sidebands. The frequency of these transitions is given by
+
+\begin{align}
+\begin{split}
+    \omega_\text{ZQ} = |\omega_S^{(\downarrow)}| - |\omega_I^{(\Uparrow)}| \approx \omega_S - \omega_I, \\
+    \omega_\text{DQ} = |\omega_S^{(\uparrow)}|   + |\omega_I^{(\Uparrow)}| \approx \omega_S + \omega_I,
+\end{split}
+\end{align}
+
+which are close to the frequency of the electron spin transitions. When the resonator is tuned to the electron spin, the ZQ and DQ transitions can be driven through a microwave tone. 
+
+\subsection{AC-Zeeman shifts}
+
+We now introduce the concept of AC-Zeeman shifts, also known as the magnetic AC-Stark shift. When a two-level system is driven by an off-resonant pulse (with detuning $\Delta$), the transition frequency will be "repelled" from the drive by a factor $\Omega^2/2\Delta$ (see \red{makefig}). This effect has its origin in \red{find}
+
+Our system consists on 2 two-level systems that are weakly mixed to each other, and to drive either of the two sideband transitions, we must apply a pulse that is inevitably off-resonant from the electron spin transitions. In addition, the low oscillator strength of the sideband transitions require large pulse amplitudes.  
+
+\red{do this section at some point}
+
+\subsection{Cross-relaxation probability}
+
+The mixing of the nuclear spin wavefunctions also creates a relaxation path through the zero and double-quantum transitions. These paths will also be enhanced by the Purcell effect which results in the following relaxation rate
 
 \begin{itemize}
     \item Hamiltonian and weakly allowed transitions

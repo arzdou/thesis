@@ -198,6 +198,7 @@ At exact resonance ($\omega_r=\omega_S$) this reduces to $\Gamma_{P}=4g_0^2/\kap
 A more in-depth derivation of the Purcell effect can be found in \sidecite{haroche_exploring_2006}.
 
 \subsection{Controlling the state of the \Er ion}
+\labsec{rabi_oscillations_theory}
 
 In this section, we derive how a coherent drive on the resonator induces Rabi oscillations of the spin which naturally reveals the role of the cavity as a Lorentzian filter. We begin by considering the Jaynes-Cummings Hamiltonian, where the resonator is under the effect of a drive with complex amplitude $\epsilon_d$ and frequency $\omega_d$
 
@@ -205,7 +206,7 @@ In this section, we derive how a coherent drive on the resonator induces Rabi os
     \frac{\cH{JC}}{\hbar} = \omega_r\,\hat{a}^\dagger \hat{a} +  \frac{\omega_S}{2} \hat{\sigma}_z + g_{0} ( \hat{a}\hat{\sigma}_{+} + \hat{a}^{\dagger}\hat{\sigma}_{-} ) + (\epsilon_d e^{-i\omega_d t} \hat{a}^\dagger + \epsilon_d^* e^{i\omega_d t} \hat{a}),
 \end{equation}
 
-Here we have dropped the factor $1/2$ from the resonator's energy and introduced the Pauli operators $S_i = \hbar / 2 \, \sigma_i$. In the rotating frame of the drive\sidenote{The unitary of the transformation is given by \[\hat{U}(t) = \exp{i\omega_d t \left(\hat{a}^\dagger \hat{a} +  \frac{1}{2} \hat{\sigma}_z \right)} \]} and applying the rotating wave approximation, the Hamiltonian becomes time independant and can be written as
+Here we have dropped the factor $1/2$ from the resonator's energy and introduced the Pauli operators $S_i = \hbar / 2 \, \sigma_i$. In the rotating frame of the drive\sidenote{The unitary of the transformation is given by \[\hat{U}(t) = \exp{i\omega_d t \left(\hat{a}^\dagger \hat{a} +  \frac{1}{2} \hat{\sigma}_z \right)} \]} and applying the rotating wave approximation, the Hamiltonian becomes time independent and can be written as
 
 \begin{equation}
     \frac{\cH{JC, R}}{\hbar} = \Delta_r\,\hat{a}^\dagger \hat{a} +  \frac{\Delta_S}{2} \hat{\sigma}_z + g_{0} ( \hat{a}\hat{\sigma}_{+} + \hat{a}^{\dagger}\hat{\sigma}_{-} ) + (\epsilon_d \hat{a}^\dagger + \epsilon_d^* \hat{a}),
@@ -431,7 +432,7 @@ We now proceed to discuss the experimental setup used in this work.
 
 In order for the SMPD to properly operate and for the spin population to be polarized in the ground state, the experiments need to be performed at cryogenic temperature. In order to achieve this requirement, both the sample and the SMPD are mounted at the bottom stage of a dilution refrigerator, where a temperature of 10~mK can be achieved. We use microwave coaxial cable and low temperature components to deliver the microwave signals and interface the devices. The wiring diagram of the fridge is presented in \reffig{wiring_diagram}.  During the wiring of the cryostat, special care was taken to properly attenuate the lines that are directly connected to the SMPD. Lack of proper attenuation leads to increased thermal dark counts, degrading the performance of the detector.  \red{do room temperature diagram}
 
-We note that during the course of this thesis two measurement configurations were employed: a reflection configuration and a transmission configuration. These correspond to the two experimental runs that comprise the bulk of the results. The first run, performed in reflection mode, comprises the work presented in chapters \red{refsec}. The results of the second run were obtained in transmission mode and are presented in \red{refsec}. The motivation for switching to the transmission configuration was the expectation that placing the microwave cavity between the room-temperature environment and the SMPD input would reduce the flux of thermal photons reaching the detector and therefore lower the dark-count rate. In practice this we did not measure any significant effect. In addition, when switching to the transmission configuration, a second TWPA was added at the output of the resonator with the intention of performing a specific experiment, which has not taken place yet.
+We note that during the course of this thesis two measurement configurations were employed: a reflection configuration and a transmission configuration. These correspond to the two experimental runs that comprise the bulk of the results. The first run, performed in reflection mode, comprises the work presented in chapters \ref{ch:detection_and_control_of_individual_w} and \red{ch}. The results of the second run were obtained in transmission mode and are presented in \red{refsec}. The motivation for switching to the transmission configuration was the expectation that placing the microwave cavity between the room-temperature environment and the SMPD input would reduce the flux of thermal photons reaching the detector and therefore lower the dark-count rate. In practice this we did not measure any significant effect. In addition, when switching to the transmission configuration, a second TWPA was added at the output of the resonator with the intention of performing a specific experiment, which has not taken place yet.
 
 \begin{figure*}[h!]
     \includegraphics{chapter2/figures/wiring_diagram.pdf}

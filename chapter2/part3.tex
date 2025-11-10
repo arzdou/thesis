@@ -22,7 +22,9 @@ This Hamiltonian is analytically solvable \sidecite{schweiger_principles_2001} a
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/energy_levels_half.pdf}
-    \caption[Energy level diagram of an Er3+ coupled to a nuclear spin-1/2]{Energy level diagram of an \Er coupled to a nuclear spin-1/2. Because the electron and nuclear gyromagnetic factors have opposite signs ($\omega_I < 0 < \omega_S$) the ground state has an antiparallel configuration.}
+    \caption[Energy level diagram of an Er3+ coupled to a nuclear spin-1/2]{\textbf{a.} Energy level diagram of an \Er coupled to a nuclear spin-1/2. Electron spin transitions are marked with a black arrow while zero and double quantum transitions are marked with blue and red arrows respectively.
+    \textbf{b.} Schematic of the transitions, superimposed with the resonator response shown as a gray Lorentzian of FWHM
+    $\kappa$. Allowed transitions (black peaks) are quasi-resonant with $\omega_r$, forbidden transitions (red and blue) are detuned by $\sim \omega_I$}
     \labfig{energy_levels_half}
 \end{marginfigure}
 
@@ -48,7 +50,7 @@ In the high field regime, we consider as a perturbation all terms that do not co
 \end{split}
 \end{align}
 
-The eigenstates of $\mathcal{H}_0$ correspond to the uncoupled spin states $\ket{\Downarrow \uparrow}$, $\ket{\Downarrow \downarrow}$, $\ket{\Uparrow \uparrow}$, $\ket{\Uparrow \downarrow}$, as illustrated in \reffig{energy_levels_half}. At first order, the perturbed states will be
+The eigenstates of $\mathcal{H}_0$ correspond to the uncoupled spin states $\ket{\Downarrow \uparrow}$, $\ket{\Downarrow \downarrow}$, $\ket{\Uparrow \uparrow}$, $\ket{\Uparrow \downarrow}$, as illustrated in \reffig{energy_levels_half}a. At first order, the perturbed states will be
 
 \begin{align}
 \begin{split}
@@ -64,7 +66,7 @@ with $m_S\in\{\uparrow\,\equiv1/2 ,\; \downarrow\,\equiv-1/2\}$ being the electr
 \end{equation}
 
 
-Consequently, these \textit{a priori} forbidden transitions become weakly allowed. They involve simultaneous flips of the electron and nuclear spins and are referred to as zero-quantum (ZQ) and double-quantum (DQ) transitions\sidenote{The names indicate the net change in the total magnetic quantum number: in a ZQ transition the electron and nuclear spins flip in opposite directions, while for a DQ transition they flip in the same direction.} or red and blue sidebands. The frequency of these transitions is given by
+Consequently, these \textit{a priori} forbidden transitions become weakly allowed. They involve simultaneous flips of the electron and nuclear spins and are referred to as zero-quantum (ZQ) and double-quantum (DQ) transitions\sidenote{The names indicate the net change in the total magnetic quantum number: in a ZQ transition the electron and nuclear spins flip in opposite directions, while for a DQ transition they flip in the same direction.} or blue and red sidebands. The frequency of these transitions is given by
 
 \begin{align}
 \begin{split}
@@ -85,14 +87,28 @@ Our system consists on 2 two-level systems that are weakly mixed to each other, 
 
 \subsection{Cross-relaxation probability}
 
-The mixing of the nuclear spin wavefunctions also creates a relaxation path through the zero and double-quantum transitions. These paths will also be enhanced by the Purcell effect which results in the following relaxation rate
+The main relaxation channel for the electron in the excited state is the Purcell enhanced electron spin transition, which leave the nuclear spin state invariant. These transitions have an oscillator strength of approximately 1/2, no matter the nuclear spin state, but two electron spin transitions have slightly different frequencies $\omega_S^{(\uparrow, \downarrow)}$. However, since the resonator linewidth is much larger than the frequency difference between the two transitions ($\kappa \gg A_\parallel$), the Purcell enhancement for both transitions is approximately equal and given by Equation \ref{eq:Purcell_formula}. Experimentally, we tune the electron spin Larmor frequency close to the resonator frequency (see \reffig{energy_levels_half}b), and the relaxation rate is given by $\Gamma_\text{S}=4g_0^2/\kappa$.
 
-\begin{itemize}
-    \item Hamiltonian and weakly allowed transitions
-    \item Matrix element calculation
-    \item AC-Zeeman shift
-    \item Cross-relaxation probability
-\end{itemize}
+However, the mixing of the nuclear spin wavefunctions also creates a relaxation path through the zero and double-quantum transitions with a much smaller oscillator strength. The relaxation rate can be calculated by considering the Purcell enhancement of the transition and rescaling by the relative oscillator strength
+
+\begin{align}
+\begin{split}
+   \Gamma_\text{ZQ} &= \frac{\kappa g_0^2}{\kappa^2/4 + (\omega_r - \omega_\text{ZQ})^2} \, \frac{|\bra{\Downarrow \uparrow}S_x\ket{\Uparrow \downarrow}|^2}{|\bra{\Downarrow \downarrow}S_x\ket{\Uparrow \downarrow}|^2}, \\
+   \Gamma_\text{DQ} &= \frac{\kappa g_0^2}{\kappa^2/4 + (\omega_r - \omega_\text{DQ})^2} \, \frac{|\bra{\Downarrow \downarrow}S_x\ket{\Uparrow \uparrow}|^2}{|\bra{\Downarrow \uparrow}S_x\ket{\Uparrow \uparrow}|^2}.
+\end{split}
+\end{align}
+
+By again considering that $\omega_S \approx \omega_r$ the two rates become equal,
+
+\begin{equation}
+    \Gamma_\text{ZQ} \approx \Gamma_\text{DQ} \approx \frac{\Gamma_\text{S}}{1 + 4\omega_I^2 / \kappa^2} \, \frac{A_\perp^2}{\omega_I^2}.
+\end{equation}
+
+We also introduce the cross relaxation probability
+
+\begin{equation}
+    p_\text{ZQ, DQ} = \frac{\Gamma_\text{ZQ, DQ}}{\Gamma_\text{ZQ, DQ} + \Gamma_\text{S}} \approx  \frac{\Gamma_\text{ZQ, DQ}}{\Gamma_\text{S}} = \frac{1}{1 + 4\omega_I^2 / \kappa^2} \, \frac{A_\perp^2}{\omega_I^2}.
+\end{equation}
 
 \section{Stimulated Raman driving}
 \labsec{raman_driving}

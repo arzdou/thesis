@@ -124,31 +124,58 @@ Finally, using these rates we define the probability of a cross-relaxation event
 \section{Stimulated Raman driving}
 \labsec{raman_driving}
 
-As discussed in the previous section, a pulse resonant with a sideband transition can be used to coherently drive the nuclear spin state. This driving scheme is mainly limited by the electron spin coherence as the drive involves both the electron and nuclear spin. In addition, the ZQ and DQ transition have small oscillator strength and need a microwave large amplitude to achieve driving Rabi rates faster than the electron spin coherence $T_2^*$. Consequently, sideband driving is not the appropriate scheme to perform high fidelity nuclear spin manipulation. In this section we introduce stimulated Raman driving, which can be used to coherently control the state of the nuclear spin without populating the electron spin excited state. 
+As discussed in the previous section, a pulse resonant with a sideband transition can be used to coherently drive the nuclear spin state. This driving scheme is mainly limited by the electron spin coherence as the drive involves both the electron and nuclear spin. In addition, the ZQ and DQ transition have small oscillator strength and need a microwave large amplitude to achieve driving Rabi rates faster than the electron spin coherence $T_2^*$. Consequently, sideband driving is not the appropriate scheme to perform high fidelity nuclear spin manipulation. In this section we introduce stimulated Raman driving, a two-photon process used to coherently control the state of the nuclear spin without populating the electron spin excited state. 
 
-As a starting point, we consider a three-level system with a $\Lambda$-structure: two uncoupled ground states and an excited state. The two ground-to-excited transitions are driven by microwave tones with complex Rabi rates $\Omega_\mathrm{A}$ and $\Omega_\mathrm{B}$. The frequency difference between the one of the drives and the transition is given by $\Delta$ and the detuning between the two drives by $\delta$ (see \red{make fig}). In the dispersive regime ($|\Delta| \gg |\Omega_\mathrm{A, B}|$) the excited state can be adiabatically eliminated \red{cite} and when $\delta$ matches the frequency difference between the two ground states there is a coherent drive with Rabi rate 
+As a starting point, we consider a three-level system with a $\Lambda$-structure: two uncoupled ground states and an excited state. The two ground-to-excited transitions are driven by microwave tones with Rabi rates $\Omega_\mathrm{A}$ and $\Omega_\mathrm{B}$. The frequency difference between the one of the drives and the transition is given by $\Delta$ and the detuning between the two drives by $\delta$ (see \red{make fig}). In the dispersive regime ($|\Delta| \gg |\Omega_\mathrm{A, B}|$) the excited state can be adiabatically eliminated \red{cite} and when $\delta$ matches the frequency difference between the two ground states there is a coherent drive with Rabi rate 
 
 \begin{equation}
-    \Omega_\mathrm{Raman} = \frac{\Omega_\mathrm{A}\Omega_\mathrm{B}^*}{2\Delta}.
+    \Omega_\mathrm{Ram} = \frac{\Omega_\mathrm{A}\Omega_\mathrm{B}}{2\Delta}.
 \end{equation}
 
-We now take the system of an electron spin coupled to a nuclear spin-1/2 described in the previous section. Compared to the $\Lambda$-system, there is an extra excited level, simultaneously coupled to the two ground states. When applying two stimulated Raman pulses, there are now two paths for the transition, through $\ket{\Uparrow \uparrow}$ or $\ket{\Uparrow \downarrow}$ (see \red{makefig}) and the total Rabi rate results from the addition of the independent rates
+\begin{marginfigure}
+    \includegraphics{chapter2/figures/raman_scheme.pdf}
+    \caption[Stimulated Raman Scheme]{Stimulated Raman Scheme.}
+    \labfig{raman_scheme}
+\end{marginfigure}
+
+We now take the system of an electron spin coupled to a nuclear spin-1/2 described in the previous section. Compared to the $\Lambda$-system, there is an extra excited level, simultaneously coupled to the two ground states. In addition, the cavity filters the microwave amplitude as
 
 \begin{equation}
-\begin{split}    
-    \Omega_{\mathrm{Raman}} =&\; \Omega_{\mathrm{Raman},1} +\Omega_{\mathrm{Raman},2} \\ \\
-    \Omega_{\mathrm{Raman},1} =&\; 
-    \frac{\Omega_A\Omega_B}{2\Delta} \cdot \frac{\bra{\Uparrow \uparrow} S_x \ket{\Downarrow \downarrow}}{\bra{\Uparrow \downarrow} S_x \ket{\Downarrow \downarrow}}, \\ 
-    \Omega_{\mathrm{Raman},2} =&\; 
-    \frac{\Omega_A\Omega_B}{2\left(\Delta + \omega_n\right)} \cdot \frac{\bra{\Uparrow \downarrow} S_x \ket{\Downarrow \uparrow}}{\bra{\Uparrow \uparrow} S_x \ket{\Downarrow \uparrow}}.
+\begin{split}
+    \Omega_\text{A} = \frac{\Omega_{e}}{\alpha_\text{A}} \cdot \frac{1}{\sqrt{1 + 4\frac{(\omega_r-(\omega_S^{(\uparrow)}-\Delta))^2}{\kappa^2}}}, \\
+    \Omega_\text{B} = \frac{\Omega_{e}}{\alpha_\text{B}} \cdot \frac{1}{\sqrt{1 + 4\frac{(\omega_r-(\omega_S^{(\uparrow)}-\Delta-\delta))^2}{\kappa^2}}},
 \end{split}
 \end{equation}
 
+where $\alpha_\text{A,B}$ is a linear scaling factor to account for differences in pulse amplitudes. Because each Raman pulse can couple the ground states to either of two excited states, $\ket{\Uparrow\uparrow}$ or $\ket{\Uparrow\downarrow}$ (see \reffig{raman_scheme}), the stimulated Raman transition is mediated by both paths. The total Rabi rate results from the combination of the independent rates
 
-\begin{itemize}
-    \item Principles
-    \item Stimulated Raman shift
-\end{itemize}
+\begin{equation}
+\begin{split}    
+    \Omega_{\mathrm{Ram}} =&\; \Omega_{\mathrm{Ram},1} +\Omega_{\mathrm{Ram},2} \\ \\
+    \Omega_{\mathrm{Ram},1} =&\; 
+    \frac{\Omega_A\Omega_B}{2\Delta} \, \frac{\bra{\Uparrow \uparrow} S_x \ket{\Downarrow\downarrow}}{\bra{\Uparrow\downarrow} S_x \ket{\Downarrow\downarrow}} 
+    \approx -\frac{\Omega_A\Omega_B}{2\Delta} \frac{A_\perp}{2\omega_I} \\ \\
+    \Omega_{\mathrm{Ram},2} =&\; 
+    \frac{\Omega_A\Omega_B}{2(\Delta + \omega_I^{(\Uparrow)})} \, \frac{\bra{\Uparrow\downarrow} S_x \ket{\Downarrow \uparrow}}{\bra{\Uparrow \uparrow} S_x \ket{\Downarrow \uparrow}}
+    \approx + \frac{\Omega_A\Omega_B}{2(\Delta + \omega_I^{(\Uparrow)})} \frac{A_\perp}{2\omega_I}
+\end{split}
+\end{equation}
+
+We note that the two Rabi rates have opposite signs. Consequently, maximum value for the total Rabi frequency $\Omega_{\text{Ram}}$ is given for $\Delta=-\omega_I^{(\Uparrow)}/2$, as driving in between the two excited states compensates the sign difference, resulting in
+
+\begin{equation}
+    \Omega_{\mathrm{Ram}} = \frac{\Omega_A\Omega_B}{\omega_I^{(\Uparrow)}} \frac{A_\perp}{\omega_I} \approx \frac{\Omega_A\Omega_B A_\perp}{\omega_I^2}
+\end{equation}
+
+\paragraph{Differential AC-Zeeman shift}
+
+The two stimulated Raman drives are detuned with respect to the electron spin transitions, which hold most of the oscillator strength. As discussed in \red{refsec}, this will induce an AC-Zeeman shift on the energy levels of the system. The combination of shifts will modify the nuclear spin transition frequency and effectively change the resonant condition for the stimulated Raman transition to $\delta = \omega_I^{(\Downarrow)} + \delta_\text{AC}$. The shift can be directly calculated as the combined shift of each drive on every electron transition,
+
+\begin{equation}
+    \delta_\text{AC} = \frac{\Omega_A^2}{4} \cdot \left(\frac{1}{\Delta} - \frac{1}{\Delta + \omega_I^{(\Uparrow)} -  \omega_I^{(\Downarrow)}}\right) + \frac{\Omega_B^2}{4} \cdot \left(\frac{1}{\Delta + \omega_I^{(\Downarrow)}} - \frac{1}{\Delta + \omega_I^{(\Uparrow)}}\right).
+\end{equation}
+
+In this equation, the first term corresponds to the shift of the A drive to the electron spin transition when the nuclear spin is in $\uparrow$ and $\downarrow$ respectively and the second term corresponds to the shift of the B drive on the same electron transitions. As before, we disregard any shifts on the ZQ and DQ transitions as the oscillator strength is much smaller.
 
 \section{High-spin generalization}
 \labsec{high_spin_generalization}

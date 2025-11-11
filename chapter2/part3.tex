@@ -90,11 +90,25 @@ Because the matrix elements and the cavity filtering are nearly the same for the
 
 \subsection{AC-Zeeman shifts}
 
-We now introduce the concept of AC-Zeeman shifts, also known as the magnetic AC-Stark shift. When a two-level system is driven by an off-resonant pulse (with detuning $\Delta$), the transition frequency will be "repelled" from the drive by a factor $\Omega^2/2\Delta$ (see \red{makefig}). This effect has its origin in \red{find}
+We now introduce the concept of AC-Zeeman shifts, also known as the magnetic AC-Stark shift. This effect is derived by treating the coherent drive as a time-dependent perturbation and using second-order perturbation theory \red{cite}. For a single electron transition driven with Rabi rate $\Omega$ and detuning $\Delta$ (defined the difference between the transition and the drive frequencies) the drive produces an energy shift of the two levels so that the driven transition frequency is shifted by
 
-Our system consists on 2 two-level systems that are weakly mixed to each other, and to drive either of the two sideband transitions, we must apply a pulse that is inevitably off-resonant from the electron spin transitions. In addition, the low oscillator strength of the sideband transitions require large pulse amplitudes.  
+\begin{equation}
+    \delta\omega_\mathrm{AC} = \frac{\Omega^2}{2\Delta}.
+\end{equation}
 
-\red{do this section at some point}
+\begin{marginfigure}
+    \includegraphics{chapter2/figures/ac_zeeman_diagram.pdf}
+    \caption[AC Zeeman shift diagram]{AC Zeeman shift diagram. Driving the ZQ transition induces AC-Zeeman shifts on the electron spin transitions ($\delta\omega^{(\uparrow)}_\mathrm{AC}$, $\delta\omega^{(\downarrow)}_\mathrm{AC}$), which modify the resonance condition for the sideband transition.}
+    \labfig{ac_zeeman_diagram}
+\end{marginfigure}
+
+In the four-level system considered here, any non‑resonant microwave drive produces AC-Zeeman shifts on transitions with nonzero oscillator strength. Because the electron spin transitions carry the dominant oscillator strength, we neglect the direct AC-Zeeman shifts of the ZQ and DQ sidebands. Nevertheless, the shifts of the electron levels change the energies of the states involved and therefore modify the effective resonance conditions of the ZQ and DQ transitions. We can quantify this effect by computing the AC-Zeeman shifts induced on the two electron spin transitions and summing their net contribution to the sideband detunings (see \reffig{ac_zeeman_diagram}):
+
+\begin{equation}
+\delta_{ZQ, DQ}(\Omega) = \mp \frac{1}{2} \left(\delta\omega^{(\uparrow)}_\mathrm{AC} + \delta\omega^{(\downarrow)}_\mathrm{AC}\right) \approx \mp \frac{1}{2} \left(\frac{\Omega^{2}}{2\omega_I^{(\Uparrow)}} + \frac{\Omega^{2}}{2\omega_I^{(\Downarrow)}}\right).
+\end{equation}
+
+This approximation holds when the induced AC-Zeeman shifts are small compared to the intrinsic sideband detuning, ($|\delta_{ZQ,DQ}|\ll \omega_I$) so that the drive frequency remains effectively unchanged with respect to the unperturbed ZQ/DQ transitions.
 
 \subsection{Cross-relaxation probability}
 

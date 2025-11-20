@@ -6,15 +6,51 @@
 \chapter{Detection and control of individual \W nuclear spins}
 \label{ch:detection_and_control_of_individual_w}
 
-In this chapter we discuss the experimental results concerning the detection and control of single \W nuclear spins in \Ca using an \Er ion acting as local probe. We begin by describing characterization of the superconducting resonator and the tuning procedure used to put the SMPD in resonance. We then describe the steps taken to measure individual \Er ions in the sample. 
+Pushing the sensitivity of nuclear magnetic resonance spectroscopy to the single spin level would have a major impact in chemistry and biology and is the goal of intense research efforts~\cite{budakian_roadmap_2024,grob_magnetic_2019,mamin_nanoscale_2013}. Individual nuclear spins have been detected via their hyperfine coupling to an individual electronic paramagnetic system, itself measured by optical~\cite{neumann_singleshot_2010,taminiau_detection_2012,bourassa_entanglement_2020,uysal_coherent_2023} or electrical~\cite{vincent_electronic_2012,pla_highfidelity_2013,pla_coherent_2014,willke_hyperfine_2018,asaad_coherent_2020} means. These methods are however only applicable when suitable optical transitions or electron-spin-to-charge conversion mechanisms exist, and a more universal method is currently lacking. In this chapter, we report spectroscopic measurements of individual $^{183}\mathrm{W}$ nuclear spins in a CaWO$_4$ crystal via their hyperfine interaction with a neighboring $\mathrm{Er}^{3+}$ ion detected by microwave photon counting at millikelvin temperatures~\cite{lescanne_irreversible_2020,balembois_cyclically_2024,albertinale_detecting_2021,wang_singleelectron_2023}. We observe real-time quantum jumps of the nuclear spin state, a proof of their individual nature. We perform single-spin ELDOR-detected NMR spectroscopy~\cite{schosseler_pulsed_1994} by microwave driving the zero- and double-quantum transitions of the $^{183}$W--Er$^{3+}$ coupled system. By repeated driving of these transitions, we also achieve single-spin solid-effect dynamical nuclear polarization~\cite{abragama.proctorw._nouvelle_1958,abragam_principles_1978}. Relying exclusively on microwave driving and microwave detection, the methods reported here apply in principle to any nuclear spin coupled to a paramagnetic impurity, and therefore open the way to single-nuclear-spin spectroscopy in a large class of samples.
 
 \section{Single \Er spins characterization}
 
-\begin{itemize}
-    \item \red{Characterization of the single spins}
-\end{itemize}
+In this chapter we focus on five independent \Er ions, which we label Er$_i$ with $i=\{1,2,3,4,5\}$. After identifying an individual \Er ion we characterize it following the procedure described in \refsec{erbium_spin_detection}. This yields the values shown in \reftab{electron_characterization}. Due to time constraints, some coherence times were not measured for certain ions.
+
+\begin{table}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+                 & \textbf{$\mathrm{Er}_1$} & \textbf{$\mathrm{Er}_2$} & \textbf{$\mathrm{Er}_3$} & \textbf{$\mathrm{Er}_4$} & \textbf{$\mathrm{Er}_5$}  \\ \hline
+$T_1$ (ms)       & 2.0$\pm$0.3              & 0.71$\pm$0.1             & 0.90$\pm$0.1         & 0.80$\pm$0.3         & 1.24$\pm$0.1          \\ \hline
+$g_0/2\pi$ (kHz) & 3.6$\pm$0.2              & 6.0$\pm$0.2              & 5.3$\pm$0.2          & 5.6$\pm$0.2          & 4.5$\pm$0.1          \\ \hline
+$T^*_2$ ($\upmu$s) & -                      & 53$\pm$5                 & -                    & 170$\pm$5            & 81$\pm$2           \\ \hline
+$T_2$ (ms)       & -                        & -                        & -                    & 2.05$\pm$0.03        & 1.3$\pm$0.1           \\ \hline
+
+\end{tabular}
+\caption[Electron spin characterization]{Electron spin characterization for 5 different ions Er$_i$. Dashes are in place when the measurement was not performed.}
+\labtab{electron_characterization}
+\end{table}
+
+\red{probably extend this section? Maybe singe ion detection should go here instead of the previous section}
 
 \section{Nuclear spin quantum jumps}
+
+After the identifying and characterizing individual \Er ions, we perform high-resolution spectroscopy by exciting the spin with an 80 \textmu s long Gaussian-shaped microwave $\pi$-pulse, with frequency $\omega$ followed by microwave fluorescence detection, sweeping $\delta = \omega - \omega_0$ over $2\pi \times 100$\,kHz. Each sweep is averaged 200 times to obtain the ensemble-averaged number of counts $\langle C \rangle (\omega)$. \red{figure} shows such spectra measured repeatedly during 150 minutes for Er$_1$. displays a single line, whose center frequency fluctuates on a timescale of several minutes, and on a frequency scale of $\sim 20$\,kHz. This spectral diffusion is attributed to a combination of $B_0$ drift, charge noise, and re-arrangements of the weakly coupled nuclear spin bath, and was observed for all measured ions although with a different intensity (see discussion below). Because the drift is slow, it can be compensated by various frequency-tracking strategies (see App. \ref{section:tracking}) which are used in all the measurements reported later in this work.
+
+
+%, for five representative ions labeled as $\mathrm{Er}_1 - \mathrm{Er}_5$. Ion $\mathrm{Er}_1$ displays a single line, whose center frequency fluctuates on a time scale of several minutes, and on a frequency scale of $\sim 20$\,kHz. This spectral diffusion is attributed to a combination of $B_0$ drift, charge noise, and re-arrangements of the weakly coupled nuclear spin bath, and was observed for all measured ions although with a different intensity (see discussion below). Because the drift is slow, it can be compensated by various frequency-tracking strategies (see App. \ref{section:tracking}) which are used in all the measurements reported later in this work. In contrast, the electron spin frequencies of ions $\mathrm{Er}_2$, $\mathrm{Er}_3$, and $\mathrm{Er}_5$ display a clear telegraphic noise between two frequencies, four in the case of $\mathrm{Er}_4$. As demonstrated in the following, these jumps occur when one nearby $^{183}\mathrm{W}$ nuclear spin changes state. Quantum jumps are a hallmark of the measurement of individual quantum systems, and have been observed for trapped ions~\cite{nagourney_shelved_1986,bergquist_observation_1986,sauter_observation_1986}, photons in a high-Q microwave cavity~\cite{gleyzes_quantum_2007,guerlin_progressive_2007}, superconducting circuits~\cite{vijay_observation_2011-1}, and various nuclear spin systems~\cite{neumann_single-shot_2010,pla_high-fidelity_2013,thiele_electrical_2013}; here, we report their observation on individual $^{183}\mathrm{W}$ nuclear spins by microwave fluorescence detection.
+
+\subsection{Tracking procedure}
+
+
+As discussed in this section, the spectral diffusion of the electron spin transition is on the same order of magnitude as its linewidth, approximately 20~kHz. The origin of the drift can be attributed to a combination of $B_0$ drifts, nuclear spin environment dynamics, and charge noise, but it was not studied in depth in this work.  \red{cont.}
+
+
+In our system, the drift has a characteristic timescale in of minutes, which is slow when compared to the duration of our pulse sequences. Therefore, it is possible to track the drift in between averages, which allows to compensate it during the next sequence. 
+
+A rudimentary but straightforward tracking protocol can be implemented by performing high-resolution spectroscopy with a small sweeping range around the electron transition frequency\sidenote{To account for nearby nuclear spins, we perform dynamical nuclear polarization before tracking (see \red{refsec})}. The ensemble averaged number of counts $\langle C \rangle (\delta)$ is then fitted to a Lorentzian, as shown in \red{figure} The center of the fit yields the new electron spin transition frequency and the pulses are updated for the next measurement. This algorithm is straightforward and reliable, but the main drawback is the time it takes to obtain a reasonable fit, approximately 1 minute. Therefore, can only be realistically run a limited number of times, resulting in poor tracking.
+
+Due to the limitations of the direct tracking procedure, we envisioned a second algorithm which is focused on speed rather than fine control. This method exploits the properties of a Ramsey sequence as frequency sensor. Let's begin by considering a Ramsey measurement, where the spin is sent to the equatorial plane of the Bloch sphere by a $\pi/2$-pusle where it freely evolves during a time $\tau$ before another $\pi/2$-pulse is applied and the population of the spin state is measured, in our case through via the number of counts $C$. During the free evolution time, the electron spin acquires a phase proportional to the transition frequency and $\tau$. As such, any drift will be mapped to the accumulated phase\sidenote{As measured before, the drift in our system has a timescale of minutes, while the coherence of the electron is on the hundreds of \textmu s. It is therefore reasonable to assume that the transition frequency is constant during the evolution time of the Ramsey sequence.} $\phi = (\omega_S + \delta \omega) \tau$. However, the frequency of the transition is much larger than any possible detuning ($\omega_S\gg\delta\omega$) and directly measuring phase differences can be challenging. To address this, the second pulse of the Ramsey sequence can include an artificial phase to partially compensates the rapid phase acquisition. 
+
+A possible strategy for tracking the drift would be to measure the full Ramsey curve and fit the oscillation frequency, but this method will be again limited by the long time required to obtain all data points. The speed of the tracking can be greatly improved by simply probing a single point on the Ramsey curve, chosen for maximal sensitivity instead of acquiring the full oscillation. This point corresponds to the zero crossing of the Ramsey oscillation, where the population of the electron spin is linear to $\delta \omega$. Given the cyclic nature of an oscillation, there are many points that qualify, but sensitivity is maximized for $\tau\sim T_2^*$ as it balances long phase accumulation time with information loss due to decoherence.
+
+However, the presence of fluctuating dark counts introduces a non-constant offset on our measured quantity $C$. This is removed by phase-cycling the sequence, that is measuring the counts $\bar C$ the same time point while introducing a $pi$ shift on the phase and subtracting the results, $C - \bar C$. The resulting quantity has a zero offset and is linear on the detuning, as long as $\tau \ll 2\pi/\Delta\omega$.
+
 
 \begin{itemize}
     \item \red{Time traces. explain and analysis}

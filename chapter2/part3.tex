@@ -5,88 +5,97 @@
 
 In this chapter we describe the techniques used to coherently controlling a nuclear spin that is strongly coupled to an \Er ion.  We begin in \refsec{driving_nuclear_spin_half} by describing a system of an electron spin coupled to a nuclear spin-1/2, and introduce the concept of sideband driving. We then discuss stimulated Raman driving as a means of coherently controlling the state of the nuclear spin in \refsec{raman_driving}. Finally, we generalize the results to a nuclear spin-9/2 (\refsec{high_spin_generalization}).
 
+
+%In order to find an alternative driving scheme, we now consider the Hamiltonian of an \Er spin-1/2 coupled via hyperfine interaction to a nuclear spin-1/2 while under a magnetic field $B_0$. As described in \refch{electron_nuclear_interaction}, the Hamiltonian under the secular approximation can be written as
+
+%\begin{equation}
+%    \cH{}/\hbar = \omega_S \hat{S}_z + \omega_I \hat{I}_z + A_\parallel \hat{S}_z \hat{I}_z + A_\perp \hat{S}_z \hat{I}_x.
+%\end{equation}
+
+%This Hamiltonian is analytically solvable \sidecite{schweiger_principles_2001}. However, in the high-field the regime, the system can be treated under perturbation theory which simplifies the understanding. We consider as a perturbation the perpendicular hyperfine term $A_\perp S_zI_x$, since it does not commute with $S_z$ and $I_z$, 
+
+%\begin{marginfigure}
+%    \includegraphics{chapter2/figures/energy_levels_half.pdf}
+%    \caption[Energy level diagram of an Er3+ coupled to a nuclear spin-1/2]{\textbf{a.} Energy level diagram of an \Er coupled to a nuclear spin-1/2. Electron spin transitions are marked with a black arrow while zero and double quantum transitions are marked with blue and red arrows respectively.
+%    \textbf{b.} Schematic of the transitions, superimposed with the resonator response shown as a gray Lorentzian of FWHM$\kappa$. Allowed transitions (black peaks) are quasi-resonant with $\omega_r$, forbidden transitions (red and blue) are detuned by $\sim \omega_I$}
+%    \labfig{energy_levels_half}
+%\end{marginfigure}
+
+%\begin{align}
+%\begin{split}
+%        \mathcal{H} &= \mathcal{H}_0+V, \\
+%        \mathcal{H}_0/\hbar &= \omega_S\cdot S_z + \omega_I\cdot I_z + A_\parallel S_z I_z,  \\
+%         V/\hbar & = A_\perp S_z I_x.
+%\end{split}
+%\end{align}
+
+%The eigenstates of $\mathcal{H}_0$ correspond to the uncoupled spin states $\ket{\Downarrow \uparrow}$, $\ket{\Downarrow %\downarrow}$, $\ket{\Uparrow \uparrow}$, $\ket{\Uparrow \downarrow}$, as illustrated in \reffig{energy_levels_half}a. The %transition energies of the unperturbed system are given by 
+
+%\begin{align}
+%\begin{split}   
+%     \omega_I^{(\Uparrow)} & \approx \omega_I + \frac{A_\parallel}{2}, \qquad% \left(\omega_I + \frac{A_\parallel}{2}\right) \cos \eta_\alpha - \frac{A_\perp}{2} \sin \eta_\alpha \approx  \\ 
+%    \omega_I^{(\Downarrow)} \approx \omega_I - \frac{A_\parallel}{2}, \\ %= \left(\omega_I - \frac{A_\parallel}{2}\right) \cos \eta_\beta - \frac{A_\perp}{2} \sin \eta_\beta \approx \omega_I - \frac{A_\parallel}{2}, \\ \\
+%    \omega_S^{(\uparrow)} &\approx \omega_S + \frac{A_\parallel}{2}, \qquad %= \omega_S + \frac{1}{2} \left( \omega_I^{(\Uparrow)} - \omega_I^{(\Downarrow)} \right) \approx \omega_S + \frac{A_\parallel}{2}, \\ 
+%    \omega_S^{(\downarrow)} \approx \omega_S - \frac{A_\parallel}{2}. \\ % \omega_S - \frac{1}{2} \left( \omega_I^{(\Uparrow)} - \omega_I^{(\Downarrow)} \right) \approx \omega_S - \frac{A_\parallel}{2} \\ \\
+%    %\eta_{\alpha, \beta} &= \arctan{\left(\frac{-A_\perp}{A_\parallel \pm 2\omega_I}\right)} \approx \mp \frac{A_\perp}{2\omega_I} \ll 1.
+%\end{split}    
+%\end{align}
+
+%where $\eta_{\alpha, \beta}$ are the mixing angles, and we have taken the high-field regime approximation, $|\omega_I| \gg |A_\parallel|, |A_\perp|$. 
+
+
 \section{Driving a nuclear spin-1/2}
 \labsec{driving_nuclear_spin_half}
 
-If one wishes to drive the state of a nuclear spin, the most straightforward way is to apply a radiofrequency (rf) pulse resonant with a nuclear spin transition. However, as detailed in \refsec{rabi_oscillations_theory}, in our setup the superconducting resonator acts as a narrow band-pass filter centered around $\omega_r\approx7.7$~GHz. Consequently, all rf drives applied to the sample will be reflected from the resonator and direct driving of a nuclear spin becomes impossible.
+If one wishes to drive the state of a nuclear spin, the most straightforward way is to apply a radiofrequency (rf) pulse resonant with the allowed NMR transitions. However, the superconducting resonator in our setup acts as a narrow band-pass filter centered around $\omega_r\approx7.7$~GHz, as detailed in \refsec{rabi_oscillations_theory}. Consequently, all rf drives applied to the sample will be reflected from the resonator and direct driving of a nuclear spin becomes impossible.
 
-\subsection{Sideband driving}
+For \W at a field of 0.45~T, the ZQ and DQ transitions are detuned from the electron spin transition $\sim$800~kHz; within the resonator linewidth $\kappa$. Therefore, when the resonator is tuned to the electron spin, the ZQ and DQ transitions can be excited through a microwave tone. By driving these transitions, one can coherently control the state of the electron and the nuclear spin simultaneously. We now proceed to derive the Rabi rate of ZQ and DQ transitions via direct driving. We begin by recalling the Hamiltonian and energy level system derived in \refsec{w_er_hamiltonian}
 
-In order to find an alternative driving scheme, we now consider the Hamiltonian of an \Er spin-1/2 coupled via hyperfine interaction to a nuclear spin-1/2 while under a magnetic field $B_0$. As described in \refch{electron_nuclear_interaction}, the Hamiltonian under the secular approximation can be written as
+\begin{marginfigure}
+    \includegraphics{chapter2/figures/energy_levels_half.pdf}
+    \caption[Energy level diagram of an Er3+ coupled to a nuclear spin-1/2]{\textbf{a.} Energy level diagram of an \Er coupled to a nuclear spin-1/2. Electron spin transitions are marked with a black arrow while zero and double quantum transitions are marked with blue and red arrows respectively.
+    \textbf{b.} Schematic of the transitions, superimposed with the resonator response shown as a gray Lorentzian of FWHM$\kappa$. Allowed transitions (black peaks) are quasi-resonant with $\omega_r$, forbidden transitions (red and blue) are detuned by $\sim \omega_I$}
+    \labfig{energy_levels_half}
+\end{marginfigure}
 
 \begin{equation}
     \cH{}/\hbar = \omega_S \hat{S}_z + \omega_I \hat{I}_z + A_\parallel \hat{S}_z \hat{I}_z + A_\perp \hat{S}_z \hat{I}_x.
 \end{equation}
 
-This Hamiltonian is analytically solvable \sidecite{schweiger_principles_2001}. However, in the high-field the regime, the system can be treated under perturbation theory which simplifies the understanding. We consider as a perturbation the perpendicular hyperfine term $A_\perp S_zI_x$, since it does not commute with $S_z$ and $I_z$, 
-
-\begin{marginfigure}
-    \includegraphics{chapter2/figures/energy_levels_half.pdf}
-    \caption[Energy level diagram of an Er3+ coupled to a nuclear spin-1/2]{\textbf{a.} Energy level diagram of an \Er coupled to a nuclear spin-1/2. Electron spin transitions are marked with a black arrow while zero and double quantum transitions are marked with blue and red arrows respectively.
-    \textbf{b.} Schematic of the transitions, superimposed with the resonator response shown as a gray Lorentzian of FWHM
-    $\kappa$. Allowed transitions (black peaks) are quasi-resonant with $\omega_r$, forbidden transitions (red and blue) are detuned by $\sim \omega_I$}
-    \labfig{energy_levels_half}
-\end{marginfigure}
+which results in the four energy levels shown in \reffig{energy_levels_half}a which approximately correspond to the unperturbed spin states in the high-field regime:
 
 \begin{align}
 \begin{split}
-        \mathcal{H} &= \mathcal{H}_0+V, \\
-        \mathcal{H}_0/\hbar &= \omega_S\cdot S_z + \omega_I\cdot I_z + A_\parallel S_z I_z,  \\
-         V/\hbar & = A_\perp S_z I_x.
+    \ket{1} &\approx \tfrac{1}{\mathcal{N}}\left(\ket{\Uparrow\uparrow}     + \tfrac{A_\perp}{4\omega_I} \ket{\Uparrow\downarrow}\right) , \\
+    \ket{2} &\approx \tfrac{1}{\mathcal{N}}\left(\ket{\Uparrow\downarrow}   - \tfrac{A_\perp}{4\omega_I} \ket{\Uparrow\uparrow}\right), \\
+    \ket{3} &\approx \tfrac{1}{\mathcal{N}}\left(\ket{\Downarrow\uparrow}   - \tfrac{A_\perp}{4\omega_I} \ket{\Downarrow\downarrow}\right) , \\
+    \ket{4} &\approx \tfrac{1}{\mathcal{N}}\left(\ket{\Downarrow\downarrow} + \tfrac{A_\perp}{4\omega_I} \ket{\Downarrow\uparrow}\right),
 \end{split}
 \end{align}
 
-The eigenstates of $\mathcal{H}_0$ correspond to the uncoupled spin states $\ket{\Downarrow \uparrow}$, $\ket{\Downarrow \downarrow}$, $\ket{\Uparrow \uparrow}$, $\ket{\Uparrow \downarrow}$, as illustrated in \reffig{energy_levels_half}a. The transition energies of the unperturbed system are given by 
 
-\begin{align}
-\begin{split}   
-     \omega_I^{(\Uparrow)} & \approx \omega_I + \frac{A_\parallel}{2}, \qquad% \left(\omega_I + \frac{A_\parallel}{2}\right) \cos \eta_\alpha - \frac{A_\perp}{2} \sin \eta_\alpha \approx  \\ 
-    \omega_I^{(\Downarrow)} \approx \omega_I - \frac{A_\parallel}{2}, \\ %= \left(\omega_I - \frac{A_\parallel}{2}\right) \cos \eta_\beta - \frac{A_\perp}{2} \sin \eta_\beta \approx \omega_I - \frac{A_\parallel}{2}, \\ \\
-    \omega_S^{(\uparrow)} &\approx \omega_S + \frac{A_\parallel}{2}, \qquad %= \omega_S + \frac{1}{2} \left( \omega_I^{(\Uparrow)} - \omega_I^{(\Downarrow)} \right) \approx \omega_S + \frac{A_\parallel}{2}, \\ 
-    \omega_S^{(\downarrow)} \approx \omega_S - \frac{A_\parallel}{2}. \\ % \omega_S - \frac{1}{2} \left( \omega_I^{(\Uparrow)} - \omega_I^{(\Downarrow)} \right) \approx \omega_S - \frac{A_\parallel}{2} \\ \\
-    %\eta_{\alpha, \beta} &= \arctan{\left(\frac{-A_\perp}{A_\parallel \pm 2\omega_I}\right)} \approx \mp \frac{A_\perp}{2\omega_I} \ll 1.
-\end{split}    
-\end{align}
+where $\mathcal{N}$ is a normalization constant.
 
-%where $\eta_{\alpha, \beta}$ are the mixing angles, and we have taken the high-field regime approximation, $|\omega_I| \gg |A_\parallel|, |A_\perp|$. 
-
-The parallel hyperfine interaction lifts the degeneracy both for the electron and nuclear spin transitions. At first order, the perturbed states will be
-
-\begin{align}
-\begin{split}
-    \ket{\psi_{m_S,\uparrow}} \approx \ket{m_S, \uparrow} - \frac{m_S}{2}\frac{A_\perp}{\omega_I+A_\parallel m_S} \ket{m_S, \downarrow}, \\
-    \ket{\psi_{m_S,\downarrow}} \approx \ket{m_S, \downarrow} + \frac{m_S}{2}\frac{A_\perp}{\omega_I+A_\parallel m_S} \ket{m_S, \uparrow}, \\
-\end{split}
-\end{align}
-
-with $m_S\in\{\uparrow\,\equiv1/2 ,\; \downarrow\,\equiv-1/2\}$ being the electron magnetic number. The perpendicular hyperfine coupling creates a weak admixture of the nuclear spin states. In particular, the nuclear wavefunctions are different depending on the state of the electron spin, as the perturbation term is proportional to $m_S$, which result in the following non-zero matrix elements
+The perturbed states produce non-zero, though small, matrix elements between the mixed states. From the first-order wavefunctions we find
 
 \begin{equation}
-    \bra{\psi_{\Uparrow,\downarrow}} S_x \ket{\psi_{\Downarrow,\uparrow}} \approx - \bra{\psi_{\Uparrow,\uparrow}} S_x \ket{\psi_{\Downarrow,\downarrow}} \approx \frac{A_\perp}{2\omega_I} \ll 1.
-    \label{eq:matrix_element_1o2}
+    \bra{1} S_x \ket{4} \approx - \bra{2} S_x \ket{3} \approx \frac{A_\perp}{4\omega_I} \ll 1.
+    \label{eq:zq_dq_matrix_elements}
 \end{equation}
 
-Consequently, these \textit{a priori} forbidden transitions become weakly allowed. They involve simultaneous flips of the electron and nuclear spins and are referred to as zero-quantum (ZQ) and double-quantum (DQ) transitions\sidenote{The names indicate the net change in the total magnetic quantum number: in a ZQ transition the electron and nuclear spins flip in opposite directions, while for a DQ transition they flip in the same direction.} or blue and red sidebands. The frequency of these transitions is given by
-
-\begin{align}
-\begin{split}
-    \omega_\text{ZQ} = |\omega_S^{(\downarrow)}| - |\omega_I^{(\Uparrow)}| \approx \omega_S - \omega_I, \\
-    \omega_\text{DQ} = |\omega_S^{(\uparrow)}|   + |\omega_I^{(\Uparrow)}| \approx \omega_S + \omega_I,
-\end{split}
-\end{align}
-
-for the case of \W at a field of 0.45~T, the sideband transitions are detuned from the electron spin transition $\sim$800~kHz, within the resonator linewidth $\kappa$. Therefore, when the resonator is tuned to the electron spin, the ZQ and DQ transitions can be driven through a microwave tone. By driving these transitions, one can coherently control the state of the electron and the nuclear spin simultaneously. 
-
-To derive the ZQ and DQ Rabi frequency, we recall from \refsec{rabi_oscillations_theory} that the Rabi frequency of an allowed transition of the electron spin when the cavity is resonant is given by $\Omega_d = 8g_0 \epsilon_d^2 / \kappa^2$, where $\epsilon_d$ is the microwave amplitude of the drive. The ZQ and DQ Rabi rate at the same microwave amplitude can be estimated by rescaling $\Omega_d$ by the relative matrix elements (Equation \ref{eq:matrix_element_1o2}) and the cavity filtering due to the detuned drive,
+so the zero- and double-quantum transitions are weakly allowed, but with a much smaller oscillator strength than the allowed EPR transitions
 
 \begin{equation}
-\begin{split}
-    \Omega_\text{ZQ} &= \Omega_d \, \frac{\bra{\Uparrow \downarrow} S_x \ket{\Downarrow \uparrow}}{\bra{\Uparrow \uparrow} S_x \ket{\Downarrow \uparrow}} \, \frac{1}{\sqrt{1 + 4\omega_I^2/\kappa^2}} \\
-    &\approx \frac{\Omega_d \, A_\perp}{\omega_I} \, \frac{1}{\sqrt{1 + 4\omega_I^2/\kappa^2}} .
-\end{split}
+    \bra{1} S_x \ket{3} \approx \bra{2} S_x \ket{4} \approx 1/2,
 \end{equation}
 
-Because the matrix elements and the cavity filtering are nearly the same for the ZQ and DQ sidebands, their driven Rabi rates are essentially equal, $\Omega_\text{ZQ}\approx\Omega_\text{DQ}$. However, sideband driving necessarily involves the electron spin, so the operation is limited by the much faster electron dephasing time $T_2^*$ rather than by the long nuclear coherence. Consequently, electron spin decoherence rate imposes a fundamental limit on the fidelity of nuclear-spin gates implemented via sideband drives.
+The Rabi rate of an allowed EPR transition with a resonant the cavity is given in \refsec{rabi_oscillations_theory} by $\Omega_d = \frac{8 g_0 \epsilon_d^2}{\kappa^2}$, where $\epsilon_d$ is the applied microwave amplitude. To obtain the ZQ and DQ Rabi rates at the \textit{same} drive amplitude we simply rescale $\Omega_d$ by the ratio of the relevant matrix elements. Including the cavity filtering (the sideband is detuned from the cavity by $\sim\omega_I$) gives the final ZQ/DQ Rabi rate
+
+\begin{equation}
+    \Omega_{\text{ZQ}} \approx \Omega_{\text{DQ}} \approx \Omega_d \cdot \frac{A_\perp}{2\omega_I}\cdot\frac{1}{\sqrt{1+4\omega_I^2/\kappa^2}}.
+\end{equation}
+
+Because the matrix elements and the cavity filtering are nearly the same for the ZQ and DQ sidebands, their driven Rabi rates are essentially equal. However, sideband driving necessarily involves the electron spin, so the operation is limited by the much faster electron dephasing time $T_2^*$ rather than by the long nuclear coherence. Consequently, electron spin decoherence rate imposes a fundamental limit on the fidelity of nuclear-spin gates implemented via sideband drives.
 
 \subsection{AC-Zeeman shifts}
 \labsec{ac-zeeman_shifts}
@@ -115,22 +124,13 @@ This approximation holds when the induced AC-Zeeman shifts are small compared to
 
 The main relaxation channel for the electron in the excited state is the Purcell enhanced electron spin transition, which leave the nuclear spin state invariant. These transitions have an oscillator strength of approximately 1/2, no matter the nuclear spin state, but two electron spin transitions have slightly different frequencies $\omega_S^{(\uparrow, \downarrow)}$. However, since the resonator linewidth is much larger than the frequency difference between the two transitions ($\kappa \gg A_\parallel$), the Purcell enhancement for both transitions is approximately equal and given by Equation \ref{eq:Purcell_formula}. Experimentally, we tune the electron spin Larmor frequency close to the resonator frequency (see \reffig{energy_levels_half}b), and the relaxation rate is given by $\Gamma_\text{S}=4g_0^2/\kappa$.
 
-However, the mixing of the nuclear spin wavefunctions also creates a relaxation path through the zero and double-quantum transitions with a much smaller oscillator strength. The relaxation rate can be calculated by considering the Purcell enhancement of the transition and rescaling by the relative oscillator strength
-
-\begin{align}
-\begin{split}
-   \Gamma_\text{ZQ} &= \frac{\kappa g_0^2}{\kappa^2/4 + (\omega_r - \omega_\text{ZQ})^2} \, \frac{|\bra{\Downarrow \uparrow}S_x\ket{\Uparrow \downarrow}|^2}{|\bra{\Downarrow \downarrow}S_x\ket{\Uparrow \downarrow}|^2}, \\
-   \Gamma_\text{DQ} &= \frac{\kappa g_0^2}{\kappa^2/4 + (\omega_r - \omega_\text{DQ})^2} \, \frac{|\bra{\Downarrow \downarrow}S_x\ket{\Uparrow \uparrow}|^2}{|\bra{\Downarrow \uparrow}S_x\ket{\Uparrow \uparrow}|^2}.
-\end{split}
-\end{align}
-
-By again considering that $\omega_S \approx \omega_r$ the two rates become equal,
+However, the mixing of the nuclear spin wavefunctions also creates a relaxation path through the zero and double-quantum transitions with a much smaller oscillator strength. The relaxation rate can be calculated by considering the Purcell enhancement of the transition and rescaling by the relative oscillator strength,
 
 \begin{equation}
     \Gamma_\text{ZQ} \approx \Gamma_\text{DQ} \approx \frac{\Gamma_\text{S}}{1 + 4\omega_I^2 / \kappa^2} \, \frac{A_\perp^2}{\omega_I^2}.
 \end{equation}
 
-Finally, using these rates we define the probability of a cross-relaxation event after the electron spin has been excited
+Where we have assumed that the spin is tuned to the cavity ($\omega_r = \omega_S$). Finally, using these rates we define the probability of a cross-relaxation event after the electron spin has been excited
 
 \begin{equation}
     p_\text{ZQ, DQ} = \frac{\Gamma_\text{ZQ, DQ}}{\Gamma_\text{ZQ, DQ} + \Gamma_\text{S}} \approx  \frac{\Gamma_\text{ZQ, DQ}}{\Gamma_\text{S}} = \frac{1}{1 + 4\omega_I^2 / \kappa^2} \, \frac{A_\perp^2}{\omega_I^2}.
@@ -162,21 +162,15 @@ We now take the system of an electron spin coupled to a nuclear spin-1/2 describ
 \end{split}
 \end{equation}
 
-where $\alpha_\text{A,B}$ is a linear scaling factor to account for differences in pulse amplitudes. Because each Raman pulse can couple the ground states to either of two excited states, $\ket{\Uparrow\uparrow}$ or $\ket{\Uparrow\downarrow}$ (see \reffig{raman_scheme}), the stimulated Raman transition is mediated by both paths. The total Rabi rate results from the combination of the independent rates
+where $\alpha_\text{A,B}$ is a linear scaling factor to account for differences in pulse amplitudes. Because each Raman pulse can couple the ground states to either of two excited states, $\ket{\Uparrow\uparrow}$ or $\ket{\Uparrow\downarrow}$ (see \reffig{raman_scheme}), the stimulated Raman transition is mediated by both paths. The total Rabi rate results from the combination of the independent rates, rescaled by the corresponding relative matrix elements,
 
 \begin{equation}
 \begin{split}    
-    \Omega_{\mathrm{Ram}} =&\; \Omega_{\mathrm{Ram},1} +\Omega_{\mathrm{Ram},2} \\ \\
-    \Omega_{\mathrm{Ram},1} =&\; 
-    \frac{\Omega_A\Omega_B}{2\Delta} \, \frac{\bra{\Uparrow \uparrow} S_x \ket{\Downarrow\downarrow}}{\bra{\Uparrow\downarrow} S_x \ket{\Downarrow\downarrow}} 
-    \approx -\frac{\Omega_A\Omega_B}{2\Delta} \frac{A_\perp}{2\omega_I} \\ \\
-    \Omega_{\mathrm{Ram},2} =&\; 
-    \frac{\Omega_A\Omega_B}{2(\Delta + \omega_I^{(\Uparrow)})} \, \frac{\bra{\Uparrow\downarrow} S_x \ket{\Downarrow \uparrow}}{\bra{\Uparrow \uparrow} S_x \ket{\Downarrow \uparrow}}
-    \approx + \frac{\Omega_A\Omega_B}{2(\Delta + \omega_I^{(\Uparrow)})} \frac{A_\perp}{2\omega_I}
+    \Omega_{\mathrm{Ram}} =&\; \Omega_{\mathrm{Ram},1} +\Omega_{\mathrm{Ram},2}  \approx -\frac{\Omega_A\Omega_B}{2\Delta} \frac{A_\perp}{2\omega_I} + \frac{\Omega_A\Omega_B}{2(\Delta + \omega_I^{(\Uparrow)})} \frac{A_\perp}{2\omega_I}.
 \end{split}
 \end{equation}
 
-We note that the two Rabi rates have opposite signs. Consequently, maximum value for the total Rabi frequency $\Omega_{\text{Ram}}$ is given for $\Delta=-\omega_I^{(\Uparrow)}/2$, as driving in between the two excited states compensates the sign difference, resulting in
+Because the ZQ and DQ matrix elements have opposite signs (Eq. \ref{eq:zq_dq_matrix_elements}), the resulting Raman Rabi rates necessarily carry opposite signs as well. Consequently, the maximum value for the total Rabi frequency $\Omega_{\text{Ram}}$ is given for $\Delta=-\omega_I^{(\Uparrow)}/2$, as driving in between the two excited states compensates the sign difference, resulting in
 
 \begin{equation}
     \Omega_{\mathrm{Ram}} = \frac{\Omega_A\Omega_B}{\omega_I^{(\Uparrow)}} \frac{A_\perp}{\omega_I} \approx \frac{\Omega_A\Omega_B A_\perp}{\omega_I^2}
@@ -194,6 +188,8 @@ In this equation, the first term corresponds to the shift of the A drive to the 
 
 \section{High-spin generalization}
 \labsec{high_spin_generalization}
+
+\red{WEAK REWRITE}
 
 In this section we generalize the sideband and stimulated Raman results derived above to the case of a nuclear spin I=9/2. The starting point is again the electron-nuclear Hamiltonian of \refch{electron_nuclear_interaction}, here accompanied by the nuclear quadrupole interaction:
 

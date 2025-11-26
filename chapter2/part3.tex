@@ -121,19 +121,20 @@ In the four-level system considered here, any non-resonant microwave drive produ
 This approximation holds when the induced AC-Zeeman shifts are small compared to the intrinsic sideband detuning, ($|\delta_{ZQ,DQ}|\ll \omega_I$) so that the drive frequency remains effectively unchanged with respect to the unperturbed ZQ/DQ transitions.
 
 \subsection{Cross-relaxation probability}
+\labsec{cross_relaxation_half}
 
 The main relaxation channel for the electron in the excited state is the Purcell enhanced electron spin transition, which leave the nuclear spin state invariant. These transitions have an oscillator strength of approximately 1/2, no matter the nuclear spin state, but two electron spin transitions have slightly different frequencies $\omega_S^{(\uparrow, \downarrow)}$. However, since the resonator linewidth is much larger than the frequency difference between the two transitions ($\kappa \gg A_\parallel$), the Purcell enhancement for both transitions is approximately equal and given by Equation \ref{eq:Purcell_formula}. Experimentally, we tune the electron spin Larmor frequency close to the resonator frequency (see \reffig{energy_levels_half}b), and the relaxation rate is given by $\Gamma_\text{S}=4g_0^2/\kappa$.
 
 However, the mixing of the nuclear spin wavefunctions also creates a relaxation path through the zero and double-quantum transitions with a much smaller oscillator strength. The relaxation rate can be calculated by considering the Purcell enhancement of the transition and rescaling by the relative oscillator strength,
 
 \begin{equation}
-    \Gamma_\text{ZQ} \approx \Gamma_\text{DQ} \approx \frac{\Gamma_\text{S}}{1 + 4\omega_I^2 / \kappa^2} \, \frac{A_\perp^2}{\omega_I^2}.
+    \Gamma_\text{ZQ} \approx \Gamma_\text{DQ} \approx \frac{\Gamma_\text{S}}{1 + 4\omega_I^2 / \kappa^2} \, \frac{A_\perp^2}{2\omega_I^2}.
 \end{equation}
 
 Where we have assumed that the spin is tuned to the cavity ($\omega_r = \omega_S$). Finally, using these rates we define the probability of a cross-relaxation event after the electron spin has been excited
 
 \begin{equation}
-    p_\text{ZQ, DQ} = \frac{\Gamma_\text{ZQ, DQ}}{\Gamma_\text{ZQ, DQ} + \Gamma_\text{S}} \approx  \frac{\Gamma_\text{ZQ, DQ}}{\Gamma_\text{S}} = \frac{1}{1 + 4\omega_I^2 / \kappa^2} \, \frac{A_\perp^2}{\omega_I^2}.
+    p_\text{ZQ, DQ} = \frac{\Gamma_\text{ZQ, DQ}}{\Gamma_\text{ZQ, DQ} + \Gamma_\text{S}} \approx  \frac{\Gamma_\text{ZQ, DQ}}{\Gamma_\text{S}} = \frac{1}{1 + 4\omega_I^2 / \kappa^2} \, \frac{A_\perp^2}{2\omega_I^2}.
 \end{equation}
 
 \section{Stimulated Raman driving}

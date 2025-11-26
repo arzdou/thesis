@@ -30,35 +30,131 @@ $T_2$ (ms)       & -                        & -                        & -      
 
 \section{Nuclear spin quantum jumps}
 
-After the identifying and characterizing individual \Er ions, we perform high-resolution spectroscopy by exciting the spin with an 80 \textmu s long Gaussian-shaped microwave $\pi$-pulse, with frequency $\omega$ followed by microwave fluorescence detection, sweeping $\delta = \omega - \omega_0$ over $2\pi \times 100$\,kHz. Each sweep is averaged 200 times to obtain the ensemble-averaged number of counts $\langle C \rangle (\omega)$. \red{figure} shows such spectra measured repeatedly during 150 minutes for Er$_1$. displays a single line, whose center frequency fluctuates on a timescale of several minutes, and on a frequency scale of $\sim 20$\,kHz. This spectral diffusion is attributed to a combination of $B_0$ drift, charge noise, and re-arrangements of the weakly coupled nuclear spin bath, and was observed for all measured ions although with a different intensity (see discussion below). Because the drift is slow, it can be compensated by various frequency-tracking strategies (see App. \ref{section:tracking}) which are used in all the measurements reported later in this work.
 
+\begin{figure*}
+    \includegraphics{chapter3/figures/quantum_jumps.pdf}
+    \caption[\Er time traces]{\Er time traces. 
+    \textbf{a.} \textit{(top)} Fluorescence detection spectroscopy pulse scheme. A Gaussian $\pi$-pulse of 80 \textmu s of duration and frequency $\omega_0$ + $\delta$ is applied to the sample. Ensemble-averaged number of counts $\langle C \rangle$ is subsequently measured during an integration time window, $\tau_{\mathrm{int}}$. The sequence is then repeated without any delay, with the excitation pulse frequency updated.
+    \textit{(bottom)}. High-resolution spectra of five $\mathrm{Er}^{3+}$ ion spins, measured consecutively during $150$\,minutes. Each spectrum is recorded by averaging $200$ sweeps of $\delta$, yielding the ensemble-averaged number of counts $\langle C \rangle (\delta)$. The integration time $\tau_{\mathrm{int}}$ is 1.6 ms for $\mathrm{Er}_1$, 2.0 ms for $\mathrm{Er}_{2,3}$ and 3.6 ms for $\mathrm{Er}_{4,5}$. The increase in counts corresponds to the detected fluorescence after exciting an EPR-allowed transition. The resonance frequency evolves in time with a slow drift and sudden telegraphic jumps. Each spectrum is fitted as a Lorentzian and the center $\tilde{\delta}$ is shown as a function of time for $\mathrm{Er}_2$ as a black continuous line. 
+    \textbf{b.} Histograms of $\tilde{\delta}$ for the five ions.}
+    \labfig{quantum_jumps}
+\end{figure*}
 
-%, for five representative ions labeled as $\mathrm{Er}_1 - \mathrm{Er}_5$. Ion $\mathrm{Er}_1$ displays a single line, whose center frequency fluctuates on a time scale of several minutes, and on a frequency scale of $\sim 20$\,kHz. This spectral diffusion is attributed to a combination of $B_0$ drift, charge noise, and re-arrangements of the weakly coupled nuclear spin bath, and was observed for all measured ions although with a different intensity (see discussion below). Because the drift is slow, it can be compensated by various frequency-tracking strategies (see App. \ref{section:tracking}) which are used in all the measurements reported later in this work. In contrast, the electron spin frequencies of ions $\mathrm{Er}_2$, $\mathrm{Er}_3$, and $\mathrm{Er}_5$ display a clear telegraphic noise between two frequencies, four in the case of $\mathrm{Er}_4$. As demonstrated in the following, these jumps occur when one nearby $^{183}\mathrm{W}$ nuclear spin changes state. Quantum jumps are a hallmark of the measurement of individual quantum systems, and have been observed for trapped ions~\cite{nagourney_shelved_1986,bergquist_observation_1986,sauter_observation_1986}, photons in a high-Q microwave cavity~\cite{gleyzes_quantum_2007,guerlin_progressive_2007}, superconducting circuits~\cite{vijay_observation_2011-1}, and various nuclear spin systems~\cite{neumann_single-shot_2010,pla_high-fidelity_2013,thiele_electrical_2013}; here, we report their observation on individual $^{183}\mathrm{W}$ nuclear spins by microwave fluorescence detection.
+After identifying and characterizing individual \Er ions, we perform high-resolution spectroscopy by exciting the spin with an 80 \textmu s long Gaussian-shaped microwave $\pi$-pulse, with frequency $\omega$ followed by microwave fluorescence detection, sweeping $\delta = \omega - \omega_0$ over $2\pi \times 100$\,kHz. Each sweep is averaged 200 times to obtain the ensemble-averaged number of counts $\langle C \rangle (\omega)$. \reffig{quantum_jumps}.a shows such spectra measured repeatedly during 150 minutes for $\mathrm{Er}_1 - \mathrm{Er}_5$. Ion $\mathrm{Er}_1$ displays a single line, whose center frequency fluctuates on a timescale of several minutes, and on a frequency scale of $\sim 20$\,kHz. This spectral diffusion is attributed to a combination of $B_0$ drift, charge noise, and re-arrangements of the weakly coupled nuclear spin bath, and was observed for all measured ions although with a different intensity (see discussion below). Because the drift is slow, it can be compensated by various frequency-tracking strategies (see discussion below) which are used in all the measurements reported later in this chapter. In contrast, the electron spin frequencies of ions $\mathrm{Er}_2$, $\mathrm{Er}_3$, and $\mathrm{Er}_5$ display a clear telegraphic noise between two frequencies, four in the case of $\mathrm{Er}_4$. As demonstrated in the following, these jumps occur when one nearby $^{183}\mathrm{W}$ nuclear spin changes state. Quantum jumps are a hallmark of the measurement of individual quantum systems, and have been observed for trapped ions~\sidecite{nagourney_shelved_1986,bergquist_observation_1986,sauter_observation_1986}, photons in a high-Q microwave cavity~\sidecite{gleyzes_quantum_2007,guerlin_progressive_2007}, superconducting circuits~\sidecite{vijay_observation_2011}, and various nuclear spin systems~\sidecite{neumann_singleshot_2010,pla_highfidelity_2013,thiele_electrical_2013}; here, we report their observation on individual $^{183}\mathrm{W}$ nuclear spins by microwave fluorescence detection.
+
+The transition frequency of each spectrum $\tilde{\delta}(t)$ is obtained from a Lorentzian fit, shown as a histogram in \reffig{quantum_jumps}.b for the five ions. Each histogram presents a different number of resolved distributions. For $\mathrm{Er}_2$, $\mathrm{Er}_3$ and $\mathrm{Er}_5$, the two resolved distributions indicate the presence of a strongly coupled neighboring nuclear spin. In contrast, $\mathrm{Er}_4$, shows four resolved distributions which correspond to two strongly coupled nuclear spins. The pair will be referred as $\mathrm{Er}_4^{(1)}$ and $\mathrm{Er}_4^{(2)}$ in the following. We note that the standard deviation of the individual distributions is significantly different for each ion, indicating that part of the drift originates from their local environment, likely from unresolved nuclear spin jumps.
+
+\subsection{Time trace analysis}
+
+The energy level structure presented in \refsec{w_er_hamiltonian} dictates that the difference in frequency between the two EPR-allowed transitions is a good estimate of the parallel hyperfine coupling $|A_\parallel|$ in the high-field regime. To extract this value we measure the difference in frequency between each time window 
+
+\begin{equation}
+    \Delta \tilde \delta (\tau) = \tilde \delta (\tau) - \tilde \delta (\tau - \Delta t), 
+\end{equation}
+
+which is plot in \reffig{trace_analysis}.a as a function of time for Er$_2$. Depending on the number of strongly coupled nuclear spins, the value distribution of $\Delta \tilde \delta$ will show different number of peaks (see \reffig{trace_analysis}.b).  The peak centered at $0$ arises when no resolved jump occurs in-between two consecutive traces. A Gaussian fit yields a Full-Width-Half-Maximum varying from 4.5 to 10 kHz, indicating that the short-term noise (at the minute scale) also varies significantly from ion to ion. The extra peaks observed for $\mathrm{Er}_{2-5}$ arise from resolved nuclear spin quantum jumps. Gaussian fits to these peaks yield the mean frequency jump size which corresponds to $|A_\parallel|$. The measured values are shown in \reftab{hyperfine_parallel_meas}. We note that the standard deviation of the satellite peaks is similar in value to the central peak, as expected. 
+
+\begin{figure}
+    \includegraphics{chapter3/figures/trace_analysis.pdf}
+    \caption[\Er time trace analysis]{
+    \textbf{a.} \textit{(top)} Lorentzian fit center $\tilde \delta$ as a function of time for Er$_2$. 
+    \textit{(bottom)} Difference between consecutive values of the fitted frequency $\Delta \tilde \delta$  as a function of time. 
+    \textbf{a.} Histograms of $\Delta \tilde \delta$ for the five ions. The satellite peaks have been rescaled by an arbitrary factor for visibility. Each peak has been fit to a Gaussian distribution (black line). The difference between their centers yields the parallel hyperfine coupling constant of each nuclear spin, $A_\parallel$}
+    \labfig{trace_analysis}
+\end{figure}
+
+The direct relaxation rate of $^{183}$W nuclear spins proximal to \Er impurities in \Ca is exceedingly slow at 10\,mK, with an upper bound of $\sim 10^{-6}\,\mathrm{s}^{-1}$~\sidecite{wang_monthlonglifetime_2024}. Therefore, we attribute this effect to cross-relaxation events, during which the electron spin relaxes through the weakly allowed ZQ and DQ transitions. This enables to determine the cross-relaxation probabilities introduced in \refsec{cross_relaxation_half} for the ZQ and DQ transitions,
+
+\begin{equation}
+    p_\text{ZQ, DQ} \approx \frac{\Gamma_{ZQ, DQ}}{\Gamma_R} \approx \frac{1}{1 + 4\tfrac{\omega_I^2}{\kappa^2}} \, \frac{A_\perp^2}{\omega_I^2}.
+    \label{eq:cross_relaxation_prob}
+\end{equation}
+
+\begin{margintable}
+\begin{tabular}{|c|c|c|}
+\hline
+                                & $p_{ZQ} \cdot 10^{5}$   & $p_{ZQ} \cdot 10^{5}$   \\ \hline
+\textbf{$\mathrm{Er}_2$}        & 1.5(7)       & 0.8(3)       \\ \hline
+\textbf{$\mathrm{Er}_3$}        & 5.8(6)       & 4.2(4)       \\ \hline
+\textbf{$\mathrm{Er}_4^{(1)}$}  & 18(2)        & 9(1)         \\ \hline
+\textbf{$\mathrm{Er}_4^{(2)}$}  & 1.6(7)       & 0.7(3)       \\ \hline
+\textbf{$\mathrm{Er}_5$}        & 24(2)        & 24(2)        \\ \hline
+\end{tabular}
+\caption{Cross-relaxation probability measured through the time-trace analysis. The uncertainties of the cross-relaxation probabilities are estimated through the Wald method with a 1 sigma confidence interval.}
+\labtab{cross_relaxation_prob}
+\end{margintable}
+
+These probabilities can be measured by counting the number of jumps relative to the number of electron excitation events. The total number of jumps for the ZQ and DQ transitions $N_\text{ZQ, DQ}$ is straightforward to obtain from the histograms presented in \reffig{trace_analysis}.b as each event under the satellite peaks corresponds to a single cross-relaxation event. The number of electron excitations $N_\text{ex}$ depends on the step-size of the frequency sweep. Because detuned $\pi$-pulses still drive the electron spin when they fall within the linewidth, every pulse contributes with a weight set by the lineshape. Thus, the total excitation count per sweep can be estimated by summing over all applied pulses, each weighted by a Lorentzian profile with the fitted linewidth. The cross-relaxation probability is given by 
+
+\begin{equation}
+    p_\text{ZQ, DQ} = \frac{N_{ZQ, DQ}}{N_\text{ex}}
+\end{equation}
+
+Table I shows the cross-relaxation probabilities for the coupled nuclear spins of $\mathrm{Er}_{2-5}$. We note that, for $\mathrm{Er}_{4}^{(1)}$, there is significant difference between $p_{ZQ}$ and $p_{DQ}$. This is consistent with the nuclear spin spending a considerably longer amount of time in one of the states compared to the other, as noted through visual inspection of \reffig{quantum_jumps}. A large detuning with respect to the resonator center can induce this effect, as the Purcell enhancement of the two transitions is equal only when $\omega_S=\omega_r$. However, the measured detuning is not enough to explain the large disagreement between the two cross-relaxation rates. Further studies are needed to understand the origin of this difference, but a working hypothesis is the existence of an extra, non-radiative relaxation channel mediated through another \Er spin. Finally, from Eq. \ref{eq:cross_relaxation_prob} we estimate $A_\perp$ by averaging both probabilities, which is presented alongside with $A_\parallel$ in \reftab{hyperfine_parallel_meas}.
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        & \textbf{$\mathrm{Er}_2$} & \textbf{$\mathrm{Er}_3$} & \textbf{$\mathrm{Er}_4^{(1)}$} & \textbf{$\mathrm{Er}_4^{(1)}$} & \textbf{$\mathrm{Er}_5$} \\ \hline
+        $|A_\parallel|/2\pi$ (kHz)  
+        & 21(1) & 36.3(6) & 38.5(8) & 19(1) & 39.6(5) \\ \hline        
+        $|A_\perp|/2\pi$ (kHz)  
+        & 12(3) & 27(3) & 40(5) & 11(3) & 103(5)  \\ \hline
+        $\theta$ & -0.3 & -0.2 & - 0.1 &-0.1 &0.1 \\ \hline
+        site & 3 & 1\,|\,2 &  1\,|\,2 & 3 & 1 \\ \hline
+    \end{tabular}
+    \caption[Hyperfine coupling measurement]{Hyperfine coupling between the neighbouring \W of each \Er spin and site assignment.}
+    \labtab{hyperfine_parallel_meas}
+\end{table}
+
+Based on calculated values of $A_\parallel$ and $A_\perp$ and assuming a purely dipolar interaction, we can tentatively assign the crystalline site of each nuclear spin. As detailed in \refsec{interaction_between_to_spins}, we distinguish three types of magnetically similar sites within a unit cell centered around the \Er impurity. \red{figure} plots the hyperfine parameters bounds for each site with respect to the in-plane angle $\theta$ while taking into consideration the misalignment $\beta_0$. As shown in the figure, we assign $\mathrm{Er}_{2}$ and $\mathrm{Er}_{4}^{(2)}$ to type 3 sites, the nuclear spin of $\mathrm{Er}_{5}$ to a type 1 site, and the nuclear spin of $\mathrm{Er}_{3}$ and $\mathrm{Er}_{4}^{(1)}$ to either a type 1 or a type 2 site.
 
 \subsection{Tracking procedure}
 
+\begin{marginfigure}
+    \includegraphics{chapter3/figures/rough_tracking.pdf}
+    \caption[Rudimentary tracking scheme]{Rudimentary tracking scheme. Ensemble average number of counts $\langle C \rangle$ as a function of the pulse frequency $\omega_r + \delta$ after polarization of the neighboring \W spins (see text). The two traces are separated by $\Delta t \sim 2$ minutes and the data (dots) are fit to a Lorentzian (line). The red arrow indicates the drift in the EPR-allowed transition after the waiting time.}
+    \labfig{rough_tracking}
+\end{marginfigure}
 
-As discussed in this section, the spectral diffusion of the electron spin transition is on the same order of magnitude as its linewidth, approximately 20~kHz. The origin of the drift can be attributed to a combination of $B_0$ drifts, nuclear spin environment dynamics, and charge noise, but it was not studied in depth in this work.  \red{cont.}
+As discussed in the previous section, the frequency drift on the EPR-allowed frequencies is on the same order of magnitude as the linewidth of the transition. Without active tracking and compensation of the drift, the fluorescent intensity of the transition will not be constant, resulting in a reduced SNR. However, the noise has a characteristic timescale of minutes, which is slow when compared to the duration of our pulse sequences. Therefore, it is possible to track the drift in between averages, which allows to compensate it during the next sequence. 
 
-
-In our system, the drift has a characteristic timescale in of minutes, which is slow when compared to the duration of our pulse sequences. Therefore, it is possible to track the drift in between averages, which allows to compensate it during the next sequence. 
-
-A rudimentary but straightforward tracking protocol can be implemented by performing high-resolution spectroscopy with a small sweeping range around the electron transition frequency\sidenote{To account for nearby nuclear spins, we perform dynamical nuclear polarization before tracking (see \red{refsec})}. The ensemble averaged number of counts $\langle C \rangle (\delta)$ is then fitted to a Lorentzian, as shown in \red{figure} The center of the fit yields the new electron spin transition frequency and the pulses are updated for the next measurement. This algorithm is straightforward and reliable, but the main drawback is the time it takes to obtain a reasonable fit, approximately 1 minute. Therefore, can only be realistically run a limited number of times, resulting in poor tracking.
+A rudimentary but straightforward tracking protocol can be implemented by performing high-resolution spectroscopy with a small sweeping range around the electron transition frequency\sidenote{To account for nearby nuclear spins, we perform dynamical nuclear polarization before tracking (see \red{refsec})}. The ensemble averaged number of counts $\langle C \rangle (\delta)$ is then fitted to a Lorentzian, as shown in \reffig{rough_tracking} The center of the fit yields the new electron spin transition frequency and the pulses are updated for the next measurement. This algorithm is straightforward and reliable, but the main drawback is the time it takes to obtain a reasonable fit, approximately 1 minute. Therefore, can only be realistically run a limited number of times, resulting in poor tracking.
 
 Due to the limitations of the direct tracking procedure, we envisioned a second algorithm focused on speed rather than fine control. This method exploits the properties of a Ramsey measurement as frequency sensor. Let's begin by considering a Ramsey measurement, where the spin is sent to the equatorial plane of the Bloch sphere by a $\pi/2$-pusle where it freely evolves during a time $\tau$ before another $\pi/2$-pulse is applied and the population of the spin state is measured. In our case, the measurement is performed via the SMPD and results in a number of counts $C$. 
 
 During the free evolution period, the electron spin accumulates a phase proportional to the transition frequency and the evolution time. Any drift $\delta \omega$ in the transition frequency therefore appears as an additional phase shift\sidenote{As measured before, the drift in our system has a timescale of minutes, while the coherence of the electron is on the hundreds of \textmu s. It is therefore reasonable to assume that the transition frequency is constant during the evolution time of the Ramsey sequence.} $\phi = (\omega_S + \delta \omega) \tau$. Since $\omega_S \gg \delta\omega$, directly resolving small changes in $\phi$ is difficult. To address this, the second Ramsey pulse includes an artificial phase that effectively compensates most of the rapid oscillation due to $\omega_S$, leaving only the slower drift-dependent component.
 
-One possible strategy for tracking the drift would be to measure the full Ramsey fringe and fit the oscillation frequency, but this method will again be limited by the data acquisition time. Instead, the tracking can be greatly accelerated by probing only a single time point on the Ramsey curve, chosen for maximal sensitivity. This point corresponds to the zero crossing of the Ramsey oscillation, where the population of the electron spin is linear to $\delta \omega$. Given the cyclic nature of an oscillation, there are many points that qualify, but sensitivity is maximized when $\tau\sim T_2^*$ as it balances long phase accumulation time with information loss due to decoherence.
+One possible strategy for tracking the drift would be to measure the full Ramsey fringe and fit the oscillation frequency, but this method will again be limited by the data acquisition time. Instead, the tracking can be greatly accelerated by probing only a single time point on the Ramsey curve, chosen for maximal sensitivity. This point corresponds to the zero crossing of the Ramsey oscillation, where the population of the electron spin is linear to $\delta \omega$. For this single-point Ramsey sensor, sensitivity is maximized when $\tau\sim T_2^*$ as it balances long phase accumulation time with low information loss due to decoherence.
 
-In practice, fluctuating dark counts introduce a varying offset in the measured counts $C$. We remove this offset by phase cycling: the Ramsey sequence is repeated with an added $\pi$ phase shift on the second pulse, producing a second measurement $\bar C$. Subtracting the two, $C - \bar C$, cancels the offset and yields a signal that is linear in $\delta\omega$, provided that $\tau \ll 2\pi / \Delta\omega$.
+\begin{figure*}
+    \includegraphics{chapter3/figures/tracking.pdf}
+    \caption[Ramsey tracking scheme]{Ramsey tracking scheme. 
+    \textbf{a.} \textit{(top)} Simulated Ramsey measurement under phase cycling. The signal was generated with a dephasing time of 50~\textmu s and artificial detuning of 20~kHz and 21~kHz (red and gray respectively). The resulting quantity, $C - \bar C$ is plot as a function of the interpulse delay $\tau$. 
+    \textit{(bottom)} A single point Ramsey at $\tau = \tau_0$ as a function of $\delta \omega$. This quantity has a stable setpoint at zero (dashed horizontal line) and is linear with the detuning for small values of $\delta \omega$
+    \textbf{b.} Feedback loop diagram. The PI loop is run after every measurement to correct any shift in the frequencies of the system.}
+    \labfig{tracking_ramsey}
+\end{figure*}
 
 
-\begin{itemize}
-    \item \red{Time traces. explain and analysis}
-    \item \red{Measurement of A parallel and A perp}
-    \item \red{Tracking procedure}
-\end{itemize}
+In practice, fluctuating dark counts introduce a varying offset in the measured counts $C$. We remove this offset by phase cycling: the Ramsey sequence is repeated with an added $\pi$ phase shift on the second pulse, producing a second measurement $\bar C$. Subtracting the two, $C - \bar C$, cancels the offset and yields a signal that is linear in $\delta\omega$, provided that $\tau \ll 2\pi / \Delta\omega$ (see \reffig{tracking_ramsey}a).
+
+The quantity $C - \bar C$ can be used as the process variable of a Proportional-Integral (PI) loop with a setpoint at zero, integrated within the FPGA logic. In practice, we define the variable $Y_i$ which carries a short memory by filtering the values of the sensor output for every iteration $i$ of the PI loop,
+
+\begin{equation}
+Y_i = \sum_{j=0}^{i} (C_{j} - \bar{C}_{j})\, e^{-(j-i)/f} \approx (1 - 1/f)\, Y_{i-1} + (C_{i} - \bar{C}_{i}),
+\end{equation}
+
+where $f = 2000$ is the memory of the system. Finally, the PI controller calculates the frequency correction to be applied on the pulses through a proportional and an integral channel,
+
+\begin{equation}
+\delta\omega_{i} = P\, Y_{i} + I \sum_{j=0}^{i} Y_{j}.
+\end{equation}
+
+The values for P and I were set by manually optimizing the convergence time after artificially detuning the pulse frequency. \reffig{tracking_ramsey}b shows a block diagram with the control loop.
+
+The second tracking procedure is used to compensate for the drift in all measurements presented in this chapter and the next, unless explicitly stated.
 
 \section{Single-Shot readout}
 
@@ -66,6 +162,76 @@ In practice, fluctuating dark counts introduce a varying offset in the measured 
     \item \red{Single shot readout procedure.}
     \item \red{Characterization and measurement of A perp}
 \end{itemize}
+
+We leverage the ability to spectrally resolve the different allowed transition frequencies of the electronic spin to perform a projective, quantum-non-demolition measurement of the nuclear spin state. We apply sequences of frequency-resolved excitation pulses at $\omega_S - A/2$ and $\omega_S + A/2$. The pulses are Gaussian-shaped, 80~\textmu s-long and spaced by an integration time $\tau_{\mathrm{int}}$ during which the fluorescence counts are measured; repeating this $N_\mathrm{RO}$ times yields the number of counts after each sequence $C_\uparrow$ and $C_\downarrow$. \red{fig} shows the described pulse sequence.
+
+We continuously record $C_\uparrow$ and $C_\downarrow$ for ion $\mathrm{Er}_2$ over a 7-hour period using $N_{\mathrm{RO}}=10^3$ readout pulses per sequence. The two time traces (see \red{fig}) are strongly anti-correlated. The photon-counting histograms for each trace in \red{fig} show two well separated distributions. We note that the distribution centers are not identical, and we measure a lower count signal for $C_\uparrow$. We attribute this difference to imperfect tuning of the SMPD center frequency and the resulting bias in detector efficiency. 
+
+The histogram of the count difference $\delta C \equiv C_\Downarrow - C_\Uparrow$ shows two symmetric and well resolved peaks (see \red{fig}). We define a threshold which enables single-shot readout of the nuclear spin state. 
+
+We prepare the nuclear spin in state $\ket{\downarrow}$ (resp. $\ket{\uparrow}$) (see the proceeding section), and measure $P_{\ket{\downarrow}}$ (resp. $P_{\ket{\uparrow}}$) as a function of the number of readout pulses, $N_{RO}$, for ion $\mathrm{Er}_5$. At first, the probability of a correct read-out increases with $N_{RO}$, due to the increase in signal-to-noise ratio. After reaching a maximum value, the probability slowly decreases with $N_{RO}$, due to the finite cross-relaxation probability $p_{ZQ, DQ}$ at each readout step. 
+
+The probability of correctly assigning the state of the nuclear spin after $N_{RO}$ measurements is obtained from a combination of two effects: the increase of the signal-to-noise ratio (SNR) as a function of the number of measurements and the evolution of the nuclear spin states populations due to cross-transition events.
+
+Let us consider the measurement of a single nuclear spin that is completely polarized in $\ket{\downarrow}$. As detailed in the main text, $C_\Uparrow$ and $C_\Downarrow$ are the total number of counts measured after applying a $\pi$ pulse and an SMPD measurement $N_{RO}$ times at the two EPR-allowed frequencies of the electron spin. Since the nuclear spin is completely polarized, the only contributions to $C_\Uparrow$ will be the dark counts of the detector, which results in a Poissonian distribution with rate $\lambda = N_{RO} \cdot \Gamma_{DC}\cdot t_D$ where $\Gamma_{DC}$ is the dark count rate of the detector and $t_D$ is the duration of the detection window. On the other hand, $C_\Downarrow$ will be the result of two processes, the aforementioned Poissonian events due to dark counts and the real detection events, which follow a binomial distribution with $n = N_{RO}$ and probability $p = \eta$. The direct addition of the two distributions is not straightforward, however, both the Poisson and binomial distributions can be approximated to a Gaussian distribution when $\lambda >> 1$ and $n>>1$ respectively. Under this approximation the addition of the two Gaussian distributions is trivially performed by adding the means and variances. The distributions for $C_\Uparrow$ and $C_\Downarrow$ are then
+
+\begin{equation}
+\begin{split}
+    &C_\Uparrow \sim \mathcal{N} (\mu_{DC}, \sigma^2_{DC}) \\
+    &\mu_{DC} = \sigma^2_{DC} = N_{RO} \cdot \Gamma_{DC}/2\pi\cdot t_D
+\end{split} 
+\end{equation}
+
+\begin{equation}
+\begin{split}
+    &C_\Downarrow \sim \mathcal{N} (\mu, \sigma^2) \\
+    &\mu = N_{RO} \left(\eta + \Gamma_{DC}\cdot t_D \right) \\
+    &\sigma^2 = N_{RO} \left(\eta \cdot (1 - \eta) +  \Gamma_{DC}/2\pi\cdot t_D \right)
+\end{split}
+\end{equation}
+
+The difference in counts $\delta C = C_\Downarrow - C_\Uparrow$ is used to measure the state of the nuclear spin. The integral between 0 and $\infty$ of the distribution for $\delta C$ is a direct measure of $P\Downarrow$. Since $C_\Downarrow$ and $ C_\Uparrow$ are Gaussian distributions,
+
+\begin{equation}
+\begin{split}
+    \delta C &\sim \mathcal{N} (\mu - \mu_{DC}, \sigma^2 + \sigma^2_{DC}) \\     
+    P_\Downarrow &= \int_0^\infty \frac{e^{-\frac{(x - (\mu - \mu_{DC}))^2}{2\cdot\left(\sigma^2 + \sigma^2_{DC}\right)}}}{\sqrt{2\pi\cdot\left(\sigma^2 + \sigma^2_{DC}\right)}} dx = \\
+    &= \frac{1}{2}\left(1 - \text{Erf}\left[\frac{\text{SNR}}{\sqrt{2}}\right]\right) \\
+    \text{SNR} =& \frac{\eta}{\sqrt{\eta \cdot (1 - \eta) +  2\Gamma_{DC}/2\pi\cdot t_D}} \cdot \sqrt{N_{RO}}
+\end{split}
+\end{equation}
+
+The SNR increases with $\sqrt{N_{RO}}$ which leads to an exponential increase of the probability of a correct detection with $N_{RO}$. The prefactor is calculated from the fluorescence curve of the same measurement, from which the following parameters were obtained, $\eta = 0.18$, $\Gamma_{DC} = 150$ s$^{-1}$, $t_D = 2.6$ ms.
+
+The cross-relaxation events introduce a dynamic change in the population of the nuclear spin states. Due to the finite probability $\eta^{z,d}$ to relax into the opposite state, the evolution of the population can be modeled via the following rate equations
+
+\begin{equation}
+\begin{split}
+    \frac{\Delta P_{\ket{\downarrow}}}{\Delta N_{RO}} \: = \: &p_\text{DQ} P_{\ket{\uparrow}} - p_\text{ZQ} P_{\ket{\downarrow}}, \\
+    \frac{\Delta P_{\ket{\uparrow}}}{\Delta N_{RO}}  \: = \: &p_\text{ZQ} P_{\ket{\downarrow}} - p_\text{DQ} P_{\ket{\uparrow}}, \\
+    P_{\ket{\uparrow}} + &P_{\ket{\downarrow}} = 1.
+\end{split}
+\end{equation}
+
+In order to account for preparation errors the initial condition $P_{\ket{\downarrow}}(0) = p_0 < 1$ is used. Since $\eta^{z,d} \ll 1$, the dynamics of the system are much slower than the step size of $N_{RO}$ and it can be approximated to $\frac{\Delta P_{\ket{\downarrow}}}{\Delta N_{RO}} \approx \frac{d P_{\ket{\downarrow}}}{d N_{RO}}$. Solving the equations 
+
+\begin{equation}
+    P_{\ket{\downarrow}}(N_{RO}) \: = \: (p_0 - \frac{p_\text{DQ}}{p_\text{DQ} + p_\text{ZQ}})\cdot e^{-(p_\text{DQ} + p_\text{ZQ})\cdot N_{RO}} + \frac{p_\text{DQ}}{p_\text{DQ} + p_\text{ZQ}}, 
+\end{equation}
+
+In the case of $\mathrm{Er}_5$, $p_\text{ZQ} \approx p_\text{DQ} = \eta$ (see App.\ref{section:traces}) and 
+
+\begin{equation}
+    P_{\ket{\downarrow}}(N_{RO}) \: \approx \: (p_0 - \frac{1}{2})\cdot e^{- 2\eta\cdot N_{RO}} + \frac{1}{2}, 
+\end{equation}
+
+Since SNR$(N_{RO}) \gg 2\eta\cdot N_{RO}$ the two processes can be considered independent and the total fidelity of the read-out can be approximated to
+
+\begin{equation}
+    P_\Downarrow \approx \frac{1}{2}\left(1 - \text{Erf}\left[\frac{\text{SNR}}{\sqrt{2}}\right]\right) \cdot P_{\ket{\downarrow}}(N_{RO})
+\end{equation}
+
+An equivalent expression can be found for the complementary process when preparing into $\ket{\uparrow}$. Fitting the model to the experimental data we obtain $p_0=0.97\pm0.02$ and $\eta=3.2\pm0.2 \cdot 10^{-4}$ for the cross-relaxation $\ket{\downarrow} \rightarrow \ket{\uparrow}$. For the complementary transition, $p_0=0.94\pm0.02$ and $\eta=2.6\pm0.2 \cdot 10^{-4}$. Using the relation presented in the main text $\eta =  \frac{B^2}{4\omega_I^2 } \frac{\kappa^2}{\kappa^2 + 4\omega_I^2}$ we obtain $B/2\pi=74\pm7$ kHz  and $B/2\pi=67\pm6$ kHz respectively. Within error, the two values are the similar. However, the measurement does not capture the tail of the exponential reducing the accuracy of the result.
 
 \section{Sideband driving and nuclear spin identification}
 

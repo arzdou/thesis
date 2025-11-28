@@ -26,8 +26,6 @@ $T_2$ (ms)       & -                        & -                        & -      
 \labtab{electron_characterization}
 \end{table}
 
-\red{probably extend this section? Maybe singe ion detection should go here instead of the previous section}
-
 \section{Nuclear spin quantum jumps}
 
 
@@ -84,13 +82,13 @@ The direct relaxation rate of $^{183}$W nuclear spins proximal to \Er impurities
 \labtab{cross_relaxation_prob}
 \end{margintable}
 
-These probabilities can be measured by counting the number of jumps relative to the number of electron excitation events. The total number of jumps for the ZQ and DQ transitions $N_\text{ZQ, DQ}$ is straightforward to obtain from the histograms presented in \reffig{trace_analysis}.b as each event under the satellite peaks corresponds to a single cross-relaxation event. The number of electron excitations $N_\text{ex}$ depends on the step-size of the frequency sweep. Because detuned $\pi$-pulses still drive the electron spin when they fall within the linewidth, every pulse contributes with a weight set by the lineshape. Thus, the total excitation count per sweep can be estimated by summing over all applied pulses, each weighted by a Lorentzian profile with the fitted linewidth. The cross-relaxation probability is given by 
+These probabilities can be measured by counting the number of jumps relative to the number of electron excitation events. The total number of jumps for the ZQ and DQ transitions $N_\text{ZQ, DQ}$ is straightforward to obtain from the histograms presented in \reffig{trace_analysis}.b as each event under the satellite peaks corresponds to a single cross-relaxation event. The number of electron excitations $N_\text{ex}$ depends on the step-size of the frequency sweep. Because detuned $\pi$-pulses still drive the electron spin when they fall within the linewidth, every pulse contributes with a weight set by the lineshape. Thus, the total excitation count per sweep can be estimated by summing over all applied pulses, each weighted by a Lorentzian profile with the fitted linewidth. The cross-relaxation probability is given by
 
 \begin{equation}
     p_\text{ZQ, DQ} = \frac{N_{ZQ, DQ}}{N_\text{ex}}
 \end{equation}
 
-Table I shows the cross-relaxation probabilities for the coupled nuclear spins of $\mathrm{Er}_{2-5}$. We note that, for $\mathrm{Er}_{4}^{(1)}$, there is significant difference between $p_{ZQ}$ and $p_{DQ}$. This is consistent with the nuclear spin spending a considerably longer amount of time in one of the states compared to the other, as noted through visual inspection of \reffig{quantum_jumps}. A large detuning with respect to the resonator center can induce this effect, as the Purcell enhancement of the two transitions is equal only when $\omega_S=\omega_r$. However, the measured detuning is not enough to explain the large disagreement between the two cross-relaxation rates. Further studies are needed to understand the origin of this difference, but a working hypothesis is the existence of an extra, non-radiative relaxation channel mediated through another \Er spin. Finally, from Eq. \ref{eq:cross_relaxation_prob} we estimate $A_\perp$ by averaging both probabilities, which is presented alongside with $A_\parallel$ in \reftab{hyperfine_parallel_meas}.
+Table I shows the cross-relaxation probabilities for the coupled nuclear spins of $\mathrm{Er}_{2-5}$. The measured values were extracted from longer traces, this is particularly important when the cross-relaxation rate is low as significant statistics require long measurement time. We note that, for $\mathrm{Er}_{4}^{(1)}$, there is significant difference between $p_{ZQ}$ and $p_{DQ}$. This is consistent with the nuclear spin spending a considerably longer amount of time in one of the states compared to the other, as noted through visual inspection of \reffig{quantum_jumps}. A large detuning with respect to the resonator center can induce this effect, as the Purcell enhancement of the two transitions is equal only when $\omega_S=\omega_r$. However, the measured detuning is not enough to explain the large disagreement between the two cross-relaxation rates. Further studies are needed to understand the origin of this difference, but a working hypothesis is the existence of an extra, non-radiative relaxation channel mediated through another \Er spin. Finally, from Eq. \ref{eq:cross_relaxation_prob} we estimate $A_\perp$ by averaging both probabilities, which is presented alongside with $A_\parallel$ in \reftab{hyperfine_parallel_meas}.
 
 \begin{table}
     \centering
@@ -120,7 +118,7 @@ Based on calculated values of $A_\parallel$ and $A_\perp$ and assuming a purely 
 
 As discussed in the previous section, the frequency drift on the EPR-allowed frequencies is on the same order of magnitude as the linewidth of the transition. Without active tracking and compensation of the drift, the fluorescent intensity of the transition will not be constant, resulting in a reduced SNR. However, the noise has a characteristic timescale of minutes, which is slow when compared to the duration of our pulse sequences. Therefore, it is possible to track the drift in between averages, which allows to compensate it during the next sequence. 
 
-A rudimentary but straightforward tracking protocol can be implemented by performing high-resolution spectroscopy with a small sweeping range around the electron transition frequency\sidenote{To account for nearby nuclear spins, we perform dynamical nuclear polarization before tracking (see \red{refsec})}. The ensemble averaged number of counts $\langle C \rangle (\delta)$ is then fitted to a Lorentzian, as shown in \reffig{rough_tracking} The center of the fit yields the new electron spin transition frequency and the pulses are updated for the next measurement. This algorithm is straightforward and reliable, but the main drawback is the time it takes to obtain a reasonable fit, approximately 1 minute. Therefore, can only be realistically run a limited number of times, resulting in poor tracking.
+A rudimentary but straightforward tracking protocol can be implemented by performing high-resolution spectroscopy with a small sweeping range around the electron transition frequency\sidenote{To account for nearby nuclear spins, we perform dynamical nuclear polarization before tracking (see \refsec{dnp_half})}. The ensemble averaged number of counts $\langle C \rangle (\delta)$ is then fitted to a Lorentzian, as shown in \reffig{rough_tracking} The center of the fit yields the new electron spin transition frequency and the pulses are updated for the next measurement. This algorithm is straightforward and reliable, but the main drawback is the time it takes to obtain a reasonable fit, approximately 1 minute. Therefore, can only be realistically run a limited number of times, resulting in poor tracking.
 
 Due to the limitations of the direct tracking procedure, we envisioned a second algorithm focused on speed rather than fine control. This method exploits the properties of a Ramsey measurement as frequency sensor. Let's begin by considering a Ramsey measurement, where the spin is sent to the equatorial plane of the Bloch sphere by a $\pi/2$-pusle where it freely evolves during a time $\tau$ before another $\pi/2$-pulse is applied and the population of the spin state is measured. In our case, the measurement is performed via the SMPD and results in a number of counts $C$. 
 
@@ -158,91 +156,199 @@ The second tracking procedure is used to compensate for the drift in all measure
 
 \section{Single-Shot readout}
 
-\begin{itemize}
-    \item \red{Single shot readout procedure.}
-    \item \red{Characterization and measurement of A perp}
-\end{itemize}
+We leverage the ability to spectrally resolve the different allowed transition frequencies of the electronic spin to perform a projective, quantum-non-demolition measurement of the nuclear spin state (see \reffig{single_shot_readout_pulses}.a). We apply sequences of frequency-resolved excitation pulses at $\omega_S - A/2$ and $\omega_S + A/2$. The pulses are Gaussian-shaped, 80~\textmu s-long and spaced by an integration time $\tau_{\mathrm{int}}$ during which the fluorescence counts are measured; repeating this $N_\mathrm{RO}$ times yields the number of counts after each sequence $C_\uparrow$ and $C_\downarrow$. \reffig{single_shot_readout_pulses}.b shows the described pulse sequence.
 
-We leverage the ability to spectrally resolve the different allowed transition frequencies of the electronic spin to perform a projective, quantum-non-demolition measurement of the nuclear spin state. We apply sequences of frequency-resolved excitation pulses at $\omega_S - A/2$ and $\omega_S + A/2$. The pulses are Gaussian-shaped, 80~\textmu s-long and spaced by an integration time $\tau_{\mathrm{int}}$ during which the fluorescence counts are measured; repeating this $N_\mathrm{RO}$ times yields the number of counts after each sequence $C_\uparrow$ and $C_\downarrow$. \red{fig} shows the described pulse sequence.
+\begin{marginfigure}
+    \includegraphics{chapter3/figures/single_shot_readout_pulses.pdf}
+    \caption[Nuclear single shot readout pulse sequence]{
+        \textbf{a.} Energy level diagram of an $^{183}$W-Er$^{3+}$ coupled system. EPR-allowed transitions are represented as solid bright and dark red lines and the respective radiative decays in dashed lines of the same color. 
+        \textbf{b.} Single-shot nuclear readout pulse sequence. Resonant pulses are applied on each EPR-allowed transition and the number of counts are recorded independently for the two frequencies. The sequence is repeated $N_{RO}$ times, yielding the number of counts after each sequence, $C_\downarrow$ and $C_\uparrow$.
+    }
+    \labfig{single_shot_readout_pulses}
+\end{marginfigure}
 
-We continuously record $C_\uparrow$ and $C_\downarrow$ for ion $\mathrm{Er}_2$ over a 7-hour period using $N_{\mathrm{RO}}=10^3$ readout pulses per sequence. The two time traces (see \red{fig}) are strongly anti-correlated. The photon-counting histograms for each trace in \red{fig} show two well separated distributions. We note that the distribution centers are not identical, and we measure a lower count signal for $C_\uparrow$. We attribute this difference to imperfect tuning of the SMPD center frequency and the resulting bias in detector efficiency. 
+\begin{figure*}[b!]
+    \includegraphics{chapter3/figures/single_shot_readout.pdf}
+    \caption[Nuclear single shot readout trace]{Single shot readout trace. 
+    \textbf{a.} \textit{Left} Integrated counts $C_\downarrow$ (resp. $C_\uparrow$) as a function of time as a dark red (resp. light red) solid line. The data was taken for $\mathrm{Er_2}$ with integration time $\tau_{\mathrm{int}}$ = 1.6 ms and $N_{RO}$ = 10$^3$. Quantum jumps appear as abrupt changes in the number of counts with telegraphic trajectory. The two traces are anti-correlated and the state of the nuclear spin can be mapped to $\ket{\downarrow}$ when C$_\downarrow$>C$_\uparrow$, represented by a black continuous line. \textit{Right} Readout histograms of C$_\downarrow$ and C$_\uparrow$. The lower number of counts in state $\uparrow$ is attributed to imperfect SMPD frequency tuning, resulting in different fluorescence intensities. 
+    \textbf{b.} Histogram of $\delta C$ $\equiv$ $C_\Downarrow$ - $C_\Uparrow$. A bimodal Gaussian distribution fit is plotted as black solid line. Vertical black dashed line shows the threshold for single-shot read-out.
+    }
+    \labfig{single_shot_readout}
+\end{figure*}
 
-The histogram of the count difference $\delta C \equiv C_\Downarrow - C_\Uparrow$ shows two symmetric and well resolved peaks (see \red{fig}). We define a threshold which enables single-shot readout of the nuclear spin state. 
+We continuously record $C_\uparrow$ and $C_\downarrow$ for ion $\mathrm{Er}_2$ over a 7-hour period using $N_{\mathrm{RO}}=10^3$ readout pulses per sequence. The two time traces (see \reffig{single_shot_readout}.a) are strongly anti-correlated. The photon-counting histograms for each trace show two well separated distributions. We note that the distribution centers are not identical, and we measure a lower count signal for $C_\uparrow$. We attribute this difference to imperfect tuning of the SMPD center frequency and the resulting bias in detector efficiency. 
 
-We prepare the nuclear spin in state $\ket{\downarrow}$ (resp. $\ket{\uparrow}$) (see the proceeding section), and measure $P_{\ket{\downarrow}}$ (resp. $P_{\ket{\uparrow}}$) as a function of the number of readout pulses, $N_{RO}$, for ion $\mathrm{Er}_5$. At first, the probability of a correct read-out increases with $N_{RO}$, due to the increase in signal-to-noise ratio. After reaching a maximum value, the probability slowly decreases with $N_{RO}$, due to the finite cross-relaxation probability $p_{ZQ, DQ}$ at each readout step. 
+The histogram of the count difference $\delta C \equiv C_\downarrow - C_\uparrow$ shows two symmetric and well resolved peaks (see \reffig{single_shot_readout}.b). We define a threshold at the minimum of the distribution which enables single-shot readout of the nuclear spin state. 
 
-The probability of correctly assigning the state of the nuclear spin after $N_{RO}$ measurements is obtained from a combination of two effects: the increase of the signal-to-noise ratio (SNR) as a function of the number of measurements and the evolution of the nuclear spin states populations due to cross-transition events.
+We characterize the fidelity of the readout of $\mathrm{Er}_5$ as a function of $N_{\mathrm{RO}}$ by deterministically preparing the nuclear spin in a specific state (see the proceeding section) and measuring the population of the prepared state as a function of $N_{\mathrm{RO}}$ (see \reffig{single_shot_vs_NRO}). At first, the probability of a correct assignment with $N_\mathrm{RO}$, due to the increase in Signal-to-Noise Ratio (SNR). After reaching a maximum value, the probability exponentially decreases with $N_\mathrm{RO}$, due to the finite cross-relaxation probability $p_{ZQ, DQ}$ at each readout step. A quantitative model can be created by independently considering these two effects.
 
-Let us consider the measurement of a single nuclear spin that is completely polarized in $\ket{\downarrow}$. As detailed in the main text, $C_\Uparrow$ and $C_\Downarrow$ are the total number of counts measured after applying a $\pi$ pulse and an SMPD measurement $N_{RO}$ times at the two EPR-allowed frequencies of the electron spin. Since the nuclear spin is completely polarized, the only contributions to $C_\Uparrow$ will be the dark counts of the detector, which results in a Poissonian distribution with rate $\lambda = N_{RO} \cdot \Gamma_{DC}\cdot t_D$ where $\Gamma_{DC}$ is the dark count rate of the detector and $t_D$ is the duration of the detection window. On the other hand, $C_\Downarrow$ will be the result of two processes, the aforementioned Poissonian events due to dark counts and the real detection events, which follow a binomial distribution with $n = N_{RO}$ and probability $p = \eta$. The direct addition of the two distributions is not straightforward, however, both the Poisson and binomial distributions can be approximated to a Gaussian distribution when $\lambda >> 1$ and $n>>1$ respectively. Under this approximation the addition of the two Gaussian distributions is trivially performed by adding the means and variances. The distributions for $C_\Uparrow$ and $C_\Downarrow$ are then
+\begin{figure}[b!]
+    \includegraphics{chapter3/figures/single_shot_vs_NRO.pdf}
+    \caption[Nuclear single shot readout fidelity]{Single shot readout fidelity. 
+    Probability of measuring state $\ket{\downarrow}$ and $\ket{\uparrow}$ (resp. dark and light red) as a function of $N_{RO}$, after preparation in the respective state. Experimental data are shown as red dots and the fit is shown as a solid black line  The data were obtained for $\mathrm{Er}_5$ with integration time $\tau_{\mathrm{int}}$ = 2 ms. \textit{Inset.} Pulse sequence. The nuclear spin is initialized into state $\downarrow$ (resp. $\uparrow$) through a DNP sequence (see \refsec{dnp_half}) followed by state readout with variable $N_{RO}$.
+    }
+    \labfig{single_shot_vs_NRO}
+\end{figure}
+
+\paragraph{SNR of the measurement}
+
+We consider a nuclear spin prepared in $\ket{\downarrow}$. Since the spin is completely polarized, the measured counts $C_\uparrow$ will arise solely from detector dark-counts and can be modelled as a Poissonian random variable with rate $N_\mathrm{RO} \, \Gamma_\mathrm{DC}\, t_\mathrm{d}$ where $\Gamma_\mathrm{DC}$ is the detector  dark-count rate and $t_\mathrm{d}$ is the duration of each detection window. 
+
+In contrast, the measured counts $C_\downarrow$ contain both detector dark counts and real fluorescence clicks. We model the fluorescence clicks as a binomial variable with sample size $N_\mathrm{RO}$ and success probability $\eta$ (the spin-to-click efficiency). The total distribution for $C_\downarrow$ is obtained from direct addition of these two distributions which is not trivial. However, when the Poissonian rate and the binomial sample size are large, both distributions can be approximated to Gaussian, and the sum is simply a Gaussian with mean and variance given by the sum of the means and variances respectively. 
+
+The distributions for $C_\uparrow$ and $C_\downarrow$ are then
 
 \begin{equation}
 \begin{split}
-    &C_\Uparrow \sim \mathcal{N} (\mu_{DC}, \sigma^2_{DC}) \\
-    &\mu_{DC} = \sigma^2_{DC} = N_{RO} \cdot \Gamma_{DC}/2\pi\cdot t_D
+    &C_\uparrow \sim \mathcal{N} (\mu_{\uparrow}, \sigma^2_{\uparrow}) \\
+    &\mu_{\uparrow} = \sigma^2_{\uparrow} = N_\mathrm{RO} \, \Gamma_\mathrm{DC} \, t_\mathrm{d}
 \end{split} 
 \end{equation}
 
 \begin{equation}
 \begin{split}
-    &C_\Downarrow \sim \mathcal{N} (\mu, \sigma^2) \\
-    &\mu = N_{RO} \left(\eta + \Gamma_{DC}\cdot t_D \right) \\
-    &\sigma^2 = N_{RO} \left(\eta \cdot (1 - \eta) +  \Gamma_{DC}/2\pi\cdot t_D \right)
+    &C_\downarrow \sim \mathcal{N} (\mu_{\downarrow}, \sigma_{\downarrow}^2) \\
+    &\mu_{\downarrow} = N_\mathrm{RO} \left(\eta + \Gamma_\mathrm{DC}\, t_\mathrm{d} \right) \\
+    &\sigma^2_{\downarrow} = N_\mathrm{RO} \left(\eta \, (1 - \eta) +  \Gamma_\mathrm{DC} \, t_\mathrm{d} \right)
 \end{split}
 \end{equation}
 
-The difference in counts $\delta C = C_\Downarrow - C_\Uparrow$ is used to measure the state of the nuclear spin. The integral between 0 and $\infty$ of the distribution for $\delta C$ is a direct measure of $P\Downarrow$. Since $C_\Downarrow$ and $ C_\Uparrow$ are Gaussian distributions,
+The quantity used for single-shot readout corresponds to the difference in counts $\delta C = C_\downarrow - C_\uparrow$, which is given by 
 
 \begin{equation}
 \begin{split}
-    \delta C &\sim \mathcal{N} (\mu - \mu_{DC}, \sigma^2 + \sigma^2_{DC}) \\     
-    P_\Downarrow &= \int_0^\infty \frac{e^{-\frac{(x - (\mu - \mu_{DC}))^2}{2\cdot\left(\sigma^2 + \sigma^2_{DC}\right)}}}{\sqrt{2\pi\cdot\left(\sigma^2 + \sigma^2_{DC}\right)}} dx = \\
-    &= \frac{1}{2}\left(1 - \text{Erf}\left[\frac{\text{SNR}}{\sqrt{2}}\right]\right) \\
-    \text{SNR} =& \frac{\eta}{\sqrt{\eta \cdot (1 - \eta) +  2\Gamma_{DC}/2\pi\cdot t_D}} \cdot \sqrt{N_{RO}}
+    &\delta C \sim \mathcal{N} (\mu_{\delta}, \sigma_{\delta}^2) \\
+    &\mu_{\delta} = \mu_{\downarrow} - \mu_{\uparrow} =   N_\mathrm{RO} \eta \\
+    &\sigma^2_{\delta} = \sigma^2_{\downarrow} + \sigma^2_{\uparrow} = N_\mathrm{RO} \left(\eta \, (1 - \eta) + 2 \Gamma_\mathrm{DC} \, t_\mathrm{d} \right)
 \end{split}
 \end{equation}
 
-The SNR increases with $\sqrt{N_{RO}}$ which leads to an exponential increase of the probability of a correct detection with $N_{RO}$. The prefactor is calculated from the fluorescence curve of the same measurement, from which the following parameters were obtained, $\eta = 0.18$, $\Gamma_{DC} = 150$ s$^{-1}$, $t_D = 2.6$ ms.
+The threshold-based nuclear spin state assignment translates to an integral of the probability density function of the $\delta C$ distribution from the threshold (here taken as 0 since we do not include detector bias in the model) and $\infty$ and the probability of measuring the prepared state is
 
-The cross-relaxation events introduce a dynamic change in the population of the nuclear spin states. Due to the finite probability $\eta^{z,d}$ to relax into the opposite state, the evolution of the population can be modeled via the following rate equations
+\begin{equation}
+    p_\mathrm{SNR}(\downarrow | \downarrow, N_\mathrm{RO}) = \int_0^\infty \frac{1}{\sigma_\delta \sqrt{2\pi}} \, e^{-\frac{(x - \mu_\delta)^2}{2\sigma^2_\delta}} dx = \frac{1}{2}\left(1 - \text{Erf}\left[\frac{\text{SNR}}{\sqrt{2}}\right]\right)
+\end{equation}
+
+where SNR corresponds to the Signal-to-Noise Ratio,
+
+\begin{equation}
+    \text{SNR} = \frac{\mu_\delta}{\sigma_\delta} = \frac{\eta}{\sqrt{\eta \cdot (1 - \eta) +  2\Gamma_{DC}\, t_D}} \cdot \sqrt{N_{RO}}.
+\end{equation}
+
+The SNR is proportional to $\sqrt{N_\mathrm{RO}}$ which leads to $\mathcal{F}_\mathrm{SNR}$ with $N_\mathrm{RO}$. The prefactor contains detector specific parameters which can be measured from the fluorescence curve of the spin as detailed in \refsec{individual_er_ion_characterization}, which for this precise measurement yield $\eta = 0.18$, $\Gamma_\mathrm{DC} = 150$ s$^{-1}$, $t_\mathrm{d} = 2.6$ ms.
+
+\paragraph{Population evolution due to cross-relaxation}
+
+The cross-relaxation events introduce a dynamic change in the population of the nuclear spin states. The population evolution can be modeled through a system of discrete rate equations by considering the finite probabilities of cross-relaxation $p_\mathrm{ZQ,DQ}$,
 
 \begin{equation}
 \begin{split}
-    \frac{\Delta P_{\ket{\downarrow}}}{\Delta N_{RO}} \: = \: &p_\text{DQ} P_{\ket{\uparrow}} - p_\text{ZQ} P_{\ket{\downarrow}}, \\
-    \frac{\Delta P_{\ket{\uparrow}}}{\Delta N_{RO}}  \: = \: &p_\text{ZQ} P_{\ket{\downarrow}} - p_\text{DQ} P_{\ket{\uparrow}}, \\
-    P_{\ket{\uparrow}} + &P_{\ket{\downarrow}} = 1.
+    \frac{\Delta P_\downarrow}{\Delta N_\mathrm{RO}} \: = \: &p_\text{DQ} P_\uparrow - p_\text{ZQ} P_\downarrow, \\
+    \frac{\Delta P_\uparrow}{\Delta N_\mathrm{RO}}  \: = \: &p_\text{ZQ} P_\downarrow - p_\text{DQ} P_\uparrow, \\
+    P_\uparrow + &P_\downarrow = 1.
 \end{split}
 \end{equation}
 
-In order to account for preparation errors the initial condition $P_{\ket{\downarrow}}(0) = p_0 < 1$ is used. Since $\eta^{z,d} \ll 1$, the dynamics of the system are much slower than the step size of $N_{RO}$ and it can be approximated to $\frac{\Delta P_{\ket{\downarrow}}}{\Delta N_{RO}} \approx \frac{d P_{\ket{\downarrow}}}{d N_{RO}}$. Solving the equations 
+However, $p_\mathrm{ZQ,DQ} \ll 1$ and the dynamics of the system are much slower than the step size of $N_\mathrm{RO}$, and it can be approximated to $\frac{\Delta P_\downarrow}{\Delta N_\mathrm{RO}} \approx \frac{d P_\downarrow}{d N_\mathrm{RO}}$. We solve the equations by considering the initial condition $P_\downarrow(0) = P_0 < 1$ which yields
 
 \begin{equation}
-    P_{\ket{\downarrow}}(N_{RO}) \: = \: (p_0 - \frac{p_\text{DQ}}{p_\text{DQ} + p_\text{ZQ}})\cdot e^{-(p_\text{DQ} + p_\text{ZQ})\cdot N_{RO}} + \frac{p_\text{DQ}}{p_\text{DQ} + p_\text{ZQ}}, 
+    P_\downarrow(N_\mathrm{RO}) \: = \: (P_0 - \frac{p_\text{DQ}}{p_\text{DQ} + p_\text{ZQ}})\cdot e^{-(p_\text{DQ} + p_\text{ZQ})\cdot N_\mathrm{RO}} + \frac{p_\text{DQ}}{p_\text{DQ} + p_\text{ZQ}}.
 \end{equation}
 
-In the case of $\mathrm{Er}_5$, $p_\text{ZQ} \approx p_\text{DQ} = \eta$ (see App.\ref{section:traces}) and 
+The populations exponentially converge to a stable state which depends on the relative cross-relaxation probabilities. In the following, we consider that both cross-relaxation rates are equal $p_\text{ZQ} \approx p_\text{DQ} = p_\text{x}$, and complete polarization of the nuclear spin state at the beginning of the sequence $P_0=1$ and the equation can be simplified to
 
 \begin{equation}
-    P_{\ket{\downarrow}}(N_{RO}) \: \approx \: (p_0 - \frac{1}{2})\cdot e^{- 2\eta\cdot N_{RO}} + \frac{1}{2}, 
+    P_\downarrow(N_\mathrm{RO}) \: \approx \: \frac{1}{2}\left( 1 + e^{- 2 p_\text{x} \, N_\mathrm{RO}}\right), 
 \end{equation}
 
-Since SNR$(N_{RO}) \gg 2\eta\cdot N_{RO}$ the two processes can be considered independent and the total fidelity of the read-out can be approximated to
+And the system converges to a balanced mixed state when $N_\mathrm{RO} \gg p_\text{x}$; larger $p_x$ gives faster deterioration of the prepared nuclear population and thus limits the number of usable readout pulses.
+
+\paragraph{Total fidelity of the measurement} The final readout fidelity is set by a combination of the two processes described above, with different scaling on $N_\mathrm{RO}$. On one hand the SNR of the measurement improves with repetitions and larger values of $N_\mathrm{RO}$ result in better discrimination between the two states ($\mathrm{SNR} \propto \sqrt{N_{\mathrm{RO}}}$). On the other hand, each pulse carries a small probability to flip the nuclear spin through a cross-relaxation event, which accumulates and drives the nuclear population towards a mixed state with an exponential dependence on $N_{\mathrm{RO}}$.
+
+Because these two effects act approximately independently on the assignment probability, the overall probability to correctly read out a prepared state can be well approximated by weighting the discrimination success by the population remaining in the prepared level:
 
 \begin{equation}
-    P_\Downarrow \approx \frac{1}{2}\left(1 - \text{Erf}\left[\frac{\text{SNR}}{\sqrt{2}}\right]\right) \cdot P_{\ket{\downarrow}}(N_{RO})
+    p(\downarrow \; \mid \; \downarrow, N_{\mathrm{RO}}) \approx p_{\mathrm{SNR}}(\downarrow \; \mid \; \downarrow, N_{\mathrm{RO}})\; P_{\downarrow}(N_{\mathrm{RO}}),
 \end{equation}
 
-An equivalent expression can be found for the complementary process when preparing into $\ket{\uparrow}$. Fitting the model to the experimental data we obtain $p_0=0.97\pm0.02$ and $\eta=3.2\pm0.2 \cdot 10^{-4}$ for the cross-relaxation $\ket{\downarrow} \rightarrow \ket{\uparrow}$. For the complementary transition, $p_0=0.94\pm0.02$ and $\eta=2.6\pm0.2 \cdot 10^{-4}$. Using the relation presented in the main text $\eta =  \frac{B^2}{4\omega_I^2 } \frac{\kappa^2}{\kappa^2 + 4\omega_I^2}$ we obtain $B/2\pi=74\pm7$ kHz  and $B/2\pi=67\pm6$ kHz respectively. Within error, the two values are the similar. However, the measurement does not capture the tail of the exponential reducing the accuracy of the result.
+This model only has one fitting parameter, $p_x$, and an equivalent expression can be found for the complementary process when preparing into $\ket{\uparrow}$. Fitting the model to the experimental data of \reffig{single_shot_vs_NRO} returns $p_x \approx 2.9\pm0.3\times 10^{-4}$ as an average over preparations in $\ket{\downarrow}$ and $\ket{\uparrow}$.
+
+Using the relation between the cross-relaxation probability and the perpendicular hyperfine coupling given by Eq. \ref{eq:cross_relaxation_probability_half}, the measured value of $p_x$ corresponds to a perpendicular hyperfine coupling $A_\perp/2\pi \approx 71 \pm 7$~kHz. \red{compare to other measurement}
+
+The model also yields an upper bound on the achievable single-shot readout fidelity by optimizing $N_{\mathrm{RO}}$ to balance SNR gain and cross-relaxation loss. For the parameters of our detector and the extracted $p_x$, this optimal average fidelity is
+
+\begin{equation}
+    \mathcal{F}_\mathrm{RO} =\frac{1}{2} \left[p\left(\downarrow \; \mid \; \downarrow, N^{(\max)}_{\mathrm{RO}}\right) + p\left(\uparrow \; \mid \; \uparrow, N^{(\max)}_{\mathrm{RO}}\right) \right] = 0.93.
+\end{equation}
+
+The fidelity of the readout is ultimately limited by the nuclear spin cross-relaxation rate. To further increase the performance of the scheme, two strategies are possible. First, enhancing detector sensitivity will yield an increase of SNR, in the ideal limit of unit efficiency and vanishing dark counts, a single electron excitation would suffice for nuclear spin single shot readout where the probability of cross-relaxation, and thus the fidelity of the scheme, is $1/p_x$. However, there is an intrinsic trade off with coherent control of the nuclear spin. As discussed in the following sections, a larger perpendicular hyperfine coupling increases control speed but also increases $p_x$, therefore degrading readout fidelity. Consequently, improving readout quality requires pursuing schemes that reduce cross-relaxation. For example, active control of the resonator's bandwidth has been demonstrated in the context of ESR spectroscopy \red{yutian reference}. Reducing the bandwidth of the resonator during the nuclear spin readout will also suppress the Purcell enhancement of the ZQ and DQ transitions, and thus reducing the cross-relaxation probability $p_x$.
 
 \section{Sideband driving and nuclear spin identification}
 
-\begin{itemize}
-    \item \red{Spectroscopy analysis and W identification}
-    \item \red{Sideband rabi and measurement of A perp}
-    \item \red{Assignment using dipole simulations}
-\end{itemize}
+Nuclear spin spectroscopy is achieved by driving the forbidden transitions, in a single-spin version of the Electron-Double-Resonance-detected NMR (ELDOR-detected NMR) experiment ~\sidecite{schosseler_pulsed_1994}. Following preparation in state $\ket{\downarrow}$ (resp. $\ket{\uparrow}$) (see \refsec{dnp_half}) a flattop-shaped pulse is applied at a frequency $\omega_S + \delta$, The maximum amplitude of the pulse, $\Omega$, is quantified by the Rabi frequency of the allowed transitions. A reduction (resp. increase) in the nuclear spin state probability $P_\Downarrow$ is observed when $\omega_S + \delta$ matches the forbidden DQ and ZQ transitions. Data are shown in \reffig{sb_spectroscopy}.a \& b for $3$ values of $\Omega$, showing a frequency shift and power-broadening.
+
+\begin{figure*}
+    \includegraphics{chapter3/figures/sb_spectroscopy.pdf}
+    \caption[\W sideband spectroscopy]{
+    \textbf{a \& b}. Measured (dots) nuclear spin $\downarrow$ probability as a function of $\delta$ for three values of $\Omega$ with pulse duration $\tau_f$ equal to 60 $\upmu$s, 32 $\upmu$s and 22 $\upmu$s in increasing order of $\Omega$. Panel $a$ and $b$ respectively show DQ and ZQ transition. Solid lines are Lorentzian fits, yielding the measured transition frequency $\delta_\mathrm{DQ}$ and $\delta_\mathrm{ZQ}$ respectively. Pulse sequences are shown above the data.
+    \textbf{c.} Measured ZQ and DQ frequency $|\delta_\mathrm{ZQ, DQ}|$ (blue and red respectively) as a function of $\Omega$. Solid line corresponds to the AC-Zeeman shift model described in \refsec{ac-zeeman_shifts}.
+    }
+    \labfig{sb_spectroscopy}
+\end{figure*}
+
+The fitted frequencies for the ZQ and DQ transitions,  $\delta_\text{ZQ, DQ}$, are shown in \reffig{sb_spectroscopy}.c as a function of $\Omega$. As discussed in \refsec{ac-zeeman_shifts}, $\delta_\text{ZQ, DQ}$ depend quadratically on the driving amplitude. The shift originates in the off-resonant driving of the allowed transitions, which leads to AC-Zeeman shifts of the energy levels. The measured data is fit to the expression derived in \refsec{ac-zeeman_shifts},
+
+\begin{equation}
+\delta_{ZQ, DQ}(\Omega) = \mp \frac{1}{2} \left(\delta\omega^{(\uparrow)}_\mathrm{AC} + \delta\omega^{(\downarrow)}_\mathrm{AC}\right) \approx \mp \frac{1}{2} \left(\frac{\Omega^{2}}{2\omega_I^{(\Uparrow)}} + \frac{\Omega^{2}}{2\omega_I^{(\Downarrow)}}\right).
+\end{equation}
+
+The fit yields the nuclear spin Larmor frequency, $\omega_I/2\pi = - 788.1\pm4$ kHz. The corresponding gyromagnetic factor of $1.767\pm1$~MHz/T is close to the value expected for $^{183}\mathrm{W}$ in \Ca, $\gamma_W/2\pi = 1.774$~MHz/T \sidecite{knight_solidstate_1986}, thus confirming the nature of the nuclear spin. 
+
+Driving the forbidden transitions provides an alternative method to determine $A_\perp$, as discussed in \refsec{driving_nuclear_spin_half}. Indeed, the ZQ and DQ Rabi frequency $\Omega_\text{ZQ, DQ}$ are related to the allowed-transition Rabi frequency as 
+
+\begin{equation}
+    \Omega_{\text{ZQ}} \approx \Omega_{\text{DQ}} \approx \Omega \, \frac{A_\perp}{2\omega_I}\,\frac{1}{\sqrt{1+4\omega_I^2/\kappa^2}}.
+\end{equation}
+
+The DQ and ZQ Rabi oscillations are plot in \reffig{sb_rabi} and the oscillation frequencies are fit to the above equation, from which we obtain  $|A_\perp|/2\pi=103\pm7$~kHz. This value is significantly larger than the one obtained using the readout analysis in the previous section. We associate this to a lower accuracy of the readout \red{continue talking about needing more values of Nro} 
+
+\begin{figure}
+    \includegraphics{chapter3/figures/sb_rabi.pdf}
+    \caption[\W sideband Rabi oscillations]{
+        \textbf{a \& b}. Measured nuclear spin $\downarrow$ probability as a function of $\tau$ for the DQ and ZQ Rabi measurement ($a$ and $b$ side-panels), with $\delta$ set at resonance, for $\Omega/2\pi = 220$ kHz. Black solid lines are cosine fits, yielding a Rabi frequency $\Omega_\mathrm{ZQ, DQ}/2\pi \:\sim$ 15 kHz for both of them. Pulse sequences are shown on top.
+    }
+    \labfig{sb_rabi}
+\end{figure}
 
 \section{Solid effect DNP}
+\refsec{dnp_half}
 
-\begin{itemize}
-    \item \red{Pumping principle and results}
-\end{itemize}
+
+\begin{marginfigure}
+    \includegraphics{chapter3/figures/dnp_trace.pdf}
+    \caption[Time traces under DNP]{
+        Ensemble-averaged counts $\langle C \rangle$ measured in a fluorescence detection spectroscopy experiment as a function of frequency during 20 minutes. Data obtained for $\mathrm{Er_4}$ which has 2 neighboring nuclear spins. From top to bottom, the nuclear spins are prepared through solid-effect DNP to $\ket{\uparrow \uparrow}$, $\ket{\downarrow \downarrow}$ and no preparation. When preparing the state, the electron spin frequency $\tilde{\delta}$ remains constant (except three spectra where preparation was unsuccessful). In absence of state preparation, the frequency $\tilde{\delta}$ changes after each quantum jump.
+    }
+    \labfig{dnp_trace}
+\end{marginfigure}
+
+The nuclear spin state can be initialized via solid-effect Dynamic Nuclear Polarization (DNP) \cite{a.abragham_nouvelle_1958, abragam_principles_1978, wenckebach_solid_2008}. To initialize the nuclear spin in $\ket{\uparrow}$ (see \reffig{dnp}.a), we apply a pulse on the zero-quantum transition, wait for a time $\tau_\mathrm{w}$ (taken to be close to $\Gamma_R^{-1}$), and repeat $N_{\mathrm{prep}}$ times. $P_\downarrow$ increases rapidly, reaching $\approx 0.8$ for $2$ pulses (\reffig{dnp}.b). This demonstrates single-atom solid-effect nuclear spin polarization. The maximum value is limited by nuclear-spin read-out errors and out-of-equilibrium excitations of the electron spin, and can likely be improved in future experiments.
+
+\begin{figure}
+    \includegraphics{chapter3/figures/dnp.pdf}
+    \caption[Solid-effect DNP]{
+         \textbf{a.} Pulse sequence for preparing the nuclear spin in $\downarrow$ (respectively, $\uparrow$) through solid-effect DNP. One $\pi$-pulse at $\omega_S + \delta_\mathrm{ZQ}$ (respectively, $\omega_S + \delta_\mathrm{ZQ}$), followed by a relaxation time $\tau_\mathrm{w}$, prepares the nuclear spin state to the desired state. The sequence is repeated $N_{\mathrm{prep}}$ times for higher efficiency. 
+        \textbf{b.} Measured (dots) nuclear spin $\downarrow$ probability as a function of the number of preparation pulses $N_{\mathrm{prep}}$ into this state. Solid line shows an exponential fit. \textit{Inset.} Pulse sequence diagram. The nuclear spin is initialized into the $\uparrow$ state. Then, the preparation sequence for different $N_{\mathrm{prep}}$ and $\tau_\mathrm{w}$ = 3 ms is applied, followed by nuclear spin readout.
+        \textbf{c.} Probability of measuring the nuclear spin in state $\downarrow$ in an ELDOR-detected NMR experiment for the ZQ and DQ transitions after preparation in the $\downarrow$ state. \textit{Inset.} ELDOR-detected NMR sequence. $N_{\mathrm{prep}}$ = 10 pulses and $\tau_\mathrm{w}$ = 5 ms are used for preparation.
+    }
+    \labfig{dnp}
+\end{figure}
+
+
+State preparation is also confirmed spectroscopically (\reffig{dnp}.c). After polarizing the state of the nuclear spin to $\ket{\downarrow}$, a pulse is applied at a frequency $\omega_S + \delta$, with the amplitude corresponding to a $\pi$-pulse for the forbidden transition at resonance, followed by nuclear spin state readout. The probability $P_\downarrow$ shows a clear dip at the frequency corresponding to the double-quantum resonance, but no dip on the zero-quantum transition, which is further evidence for nuclear spin polarization.
+
+The solid-effect DNP is also effective when multiple spins are present, as seen in \reffig{dnp_trace} where it is applied to $\mathrm{Er}_4$. The polarization protocol into $\ket{\downarrow \downarrow}$, involves sending pulses at each of the zero-quantum transition frequencies. A $20$-minute time trace of the allowed-transitions spectrum is shown in \reffig{dnp_trace} in absence of (bottom), with polarization into $\ket{\downarrow \downarrow}$ (middle), and into $\ket{\uparrow \uparrow}$ (top). The polarization sequence is applied at the beginning of every spectrum. Whereas the trace with no polarization shows nuclear spin quantum jumps as reported in \reffig{dnp_trace}, the two other traces show dominantly the one allowed transition corresponding to the polarized state. 
+
+\section{Conclusion and outlook}
+
+A logical next step will be to extend these methods to nuclear spins more weakly coupled to the electron spin, using methods demonstrated with NV centers in diamond~\sidecite{taminiau_detection_2012,cujia_tracking_2019,du_singlemolecule_2024}. This would open the way to $^{183}\mathrm{W}$-nuclear-spin-based quantum registers operated and read-out via the $\mathrm{Er}^{3+}$ spin, generalizing recent $^{13}\mathrm{C}$ quantum registers demonstrations operated by a NV center in diamond~\sidecite{bradley_tenqubit_2019,abobeih_faulttolerant_2022}. Perhaps the most interesting aspect of the methods reported here is their applicability to a large range of nuclear spin systems in a large variety of samples, crystalline or not. Indeed, individual paramagnetic centers can be detected by microwave fluorescence provided their Purcell relaxation rate $\Gamma_R$ can be increased above $\sim 10^3 \mathrm{s}^{-1}$, and above their non-radiative relaxation rate at $10$\,mK. These conditions can likely be met in a variety of paramagnetic systems, ranging from organic radicals to transition-metal ions in metallo-enzymes, which could be deposited on top of the resonator constriction in the form of small molecular crystals or even frozen solutions. Applying the techniques demonstrated here may then yield their hyperfine couplings to individual ligand nuclear spins with a higher spectral resolution than reached with ensemble measurements. 

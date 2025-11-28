@@ -255,32 +255,32 @@ By reorganizing terms we can distinguish three contributions:
 If the amplitude of the coherent state is sufficiently large ($|\alpha|\gg1$) the coupling interaction between the resonator and the spin can be treated as a perturbation and the dynamics of the spin and the resonator can be disentangled. The resulting Hamiltonian for the spin is
 
 \begin{equation}
-    \frac{\cH{S, d}}{\hbar} = \frac{\Delta_S}{2} \hat{\sigma}_z + \frac{\Omega_d}{2} \left( \cos{\phi}\hat{\sigma}_{x} + \sin{\phi}\hat{\sigma}_{y} \right),
+    \frac{\cH{S, d}}{\hbar} = \frac{\Delta_S}{2} \hat{\sigma}_z + \frac{\Omega}{2} \left( \cos{\phi}\hat{\sigma}_{x} + \sin{\phi}\hat{\sigma}_{y} \right),
 \end{equation}
 
-\noindent where $\alpha = |\alpha| e^{i\phi}$ and $\Omega_d = 2g_0|\alpha|$. This corresponds to the classical two-level-system under drive and has an analytical solution.  If the spin is initially in the ground state, the excited-state population at time $t$ is
+\noindent where $\alpha = |\alpha| e^{i\phi}$ and $\Omega = 2g_0|\alpha|$. This corresponds to the classical two-level-system under drive and has an analytical solution.  If the spin is initially in the ground state, the excited-state population at time $t$ is
 
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/qubit_dynamics.pdf}
-    \caption[Spin dynamics]{Quantum trajectory of the spin in the Bloch sphere under a coherent drive. The detuning $\Delta_S$ and the drive $\Omega_d$ are represented as green and red arrows respectively and the resulting drive vector is plot in black. The trajectory is shown as a black curve.}
+    \caption[Spin dynamics]{Quantum trajectory of the spin in the Bloch sphere under a coherent drive. The detuning $\Delta_S$ and the drive $\Omega$ are represented as green and red arrows respectively and the resulting drive vector is plot in black. The trajectory is shown as a black curve.}
     \labfig{spin_trajectory}
 \end{marginfigure}
 
 \begin{equation}
     P_e(t) 
-    = \frac{\Omega_d^2}{\Omega_d^2 + \Delta_S^2}\,
-      \sin^2\!\left(\tfrac{1}{2}\sqrt{\Omega_d^2 + \Delta_S^2}\;t\right).
+    = \frac{\Omega^2}{\Omega^2 + \Delta_S^2}\,
+      \sin^2\!\left(\tfrac{1}{2}\sqrt{\Omega^2 + \Delta_S^2}\;t\right).
 \end{equation}
 
 At resonance ($\Delta_S=0$), this reduces to simple Rabi oscillations
 
 \begin{equation}
-    P_e(t) = \sin^2\!\left(\tfrac{\Omega_d}{2}\,t\right),
+    P_e(t) = \sin^2\!\left(\tfrac{\Omega}{2}\,t\right),
 \end{equation}
 
 
-with Rabi frequency $\Omega_d = 2g_0|\alpha| = 8g_0 \epsilon_d^2 / \kappa^2$, which grows as the square root of the mean intracavity photon number, $\Omega_d \propto \sqrt{\langle n \rangle}$. \reffig{spin_trajectory} shows the quantum trajectory of the spin in the Bloch sphere under the influence of a detuned drive with phase $\phi=0$. The state evolves from the ground state $\ket{\Downarrow}$ and is coherently excite. However, full population transfer to the excited state is only possible when $\Delta_S=0$.
+with Rabi frequency $\Omega = 2g_0|\alpha| = 8g_0 \epsilon_d^2 / \kappa^2$, which grows as the square root of the mean intracavity photon number, $\Omega \propto \sqrt{\langle n \rangle}$. \reffig{spin_trajectory} shows the quantum trajectory of the spin in the Bloch sphere under the influence of a detuned drive with phase $\phi=0$. The state evolves from the ground state $\ket{\Downarrow}$ and is coherently excite. However, full population transfer to the excited state is only possible when $\Delta_S=0$.
 
 
 \section[Detecting individual Er3+ ions through their fluorescence]{Detecting \Er ions through their fluorescence}
@@ -406,6 +406,7 @@ The data is fit to a lorentzian which yields the center field of the resonance. 
 
 
 \subsubsection{Individual \Er spins}
+\refsec{individual_er_ion_characterization}
 
 We now proceed to describe the procedure to detect and characterize single \Er spins. Due to spectral crowding in ensemble resonance, it is not possible to detect spins that are spectrally close to the main line. We leverage the large inhomogeneous broadening of REI in crystals by measuring 4 or 5~mT above the main \Er ensemble line. With this separation, the reduced spectral density allows for a clear identification of single emitters. At this field, we set the $Z$-axis of the magnet in persistent mode to increase the stability of the field. The detection scheme for single spins follows the same principle as the spectroscopy measurement described in the previous section. However, the amplitude of the pulse is reduced by a factor \red{check} and its duration to 10~\textmu s and the integration time is set to $\tau_\text{int} = 10$~ms. \reffig{electron_characterization}.a plots $\langle C \rangle$ as a function of the magnetic field in the $y$-axis. The data shows a constant background with a distribution of narrow and reproducible peaks which we attribute to the fluorescence of individual \Er ions. 
 

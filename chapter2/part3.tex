@@ -250,3 +250,46 @@ Given that the value of the coefficients is not negligible, the nuclear spin mag
 \end{align}
 
 %We note that even if the mixing between $\Delta m_I=2$ wavefunctions is larger by an order of magnitude, the change in nuclear wavefunctions between $\ket{\uparrow n}$ and $\ket{\downarrow n}$ is mainly dominated by the $M_{\pm1}$ coefficients, due to the proportionality to $m_S$ and the corresponding change of sign between the two states. However, the matrix elements for $i=\pm2$ are non-negligible, specially for high $n$. This indicates that higher order sidebands are also weakly allowed in this system, enabled by the quadrupole non-diagonal elements.
+
+
+Analogous to the spin-1/2 system, the nuclear spin population can be controlled by resonantly driving the ZQ and DQ sidebands, weakly allowed thanks to the perpendicular hyperfine coupling. Additionally, the quadrupole interaction enables extra paths by coupling nuclear-spin states with $m_I \pm 2$. In the weak-quadrupole regime, these transitions have a much smaller oscillator strength than the hyperfine-allowed ones. In addition, the resonant transition frequencies are more detuned with respect to the center of the resonator, which increase the amplitude filtering effect. Consequently, nuclear spin driving $m_I \pm 2$ transitions is considerably more difficult.
+
+Analogous to the $I=1/2$ case, the nuclear population of the $I=9/2$ system can be addressed by resonantly driving the weakly allowed sideband transitions. The perpendicular hyperfine term is responsible for the dominant $\Delta m_I = \pm 1$ ZQ and DQ sidebands, while the non-diagonal quadrupole terms open additional $\Delta m_I = \pm 2$ paths. In the weak-quadrupole regime these $\Delta m_I = \pm 2$ matrix elements produce much smaller oscillator strength than the hyperfine-allowed transitions. Moreover, the $\Delta m_I = \pm 2$ lines are typically farther detuned from the resonator center, so cavity filtering further suppresses the effective drive amplitude. The net effect is that driving $\Delta m_I = \pm 2$ transitions requires substantially higher microwave power and yields much slower Rabi rates, and we do not treat them in the following.
+
+We arbitrarily consider the ZQ transitions from state $n$ to $n+1$ with frequency $\omega_n^{(+1)}$, but the following derivation is analogous for the DQ transitions. As in the previous section, the oscillation frequency $\Omega^{(n)}_{\text{ZQ}}$ depends on two factors: the matrix element of the transition and the amplitude of the applied microwave field, quantified by an electron Rabi frequency $\Omega_e$ measure at a reference pulse amplitude. Using $\Omega_e$ as a calibration point, we express the drive amplitude for any pulse as a relative factor $\alpha$. The corresponding sideband Rabi frequency is then 
+
+\begin{equation}
+\begin{split}
+    \Omega^{(n)}_{\text{ZQ}} =\; \frac{A_\perp C^+_{n}}{2\alpha\cdot\left(\omega_I+\omega'_Q\!\left(n+\tfrac12\right)\right)}\frac{\Omega_{e}}{\sqrt{1 + 4\frac{(\omega_r-\omega_n^{(+1)})^2}{\kappa^2}} } 
+\end{split}
+\end{equation}
+
+As for the case of the nuclear-spin $I=1/2$, the oscillation frequency is proportional to the coupling strength. However, the ladder factors $C^+_{n}$ will modulate the driving speed depending on the state of the nuclear spin, with the highest factor for the $n=4$ to $n=5$ transition which approximately corresponds to the $m_I=1/2$ to $m_I=-1/2$ transition (see \red{reffig}).
+
+\subsection{Cross-relaxation rates}
+
+Using the calculated matrix elements we now proceed to give an estimation of the relaxation rate of the electron spin through all the available pathways. The main relaxation channel for the electron spin leaves the nuclear spin invariant. Moreover, the oscillator strength for these transitions is approximately 1/2 no matter the state of the nuclear spin. However, due to the hyperfine interaction, the frequency of these transitions ($\omega_0, \dots,\omega_9$)  is nuclear spin dependent. As such, when the resonator is centered at $\omega_0$ the Purcell factor for each of them will be different. The electron relaxation rate when the nuclear spin is in state $n$, $\Gamma_R^{(n)}$, is given by
+
+\begin{equation}
+    \Gamma^{(n)}_R = \frac{\kappa g_0^2}{\kappa^2/4 + (\omega_r - \omega_n)^2} =  \Gamma^{(0)}_R \cdot \frac{1}{1 + 4\frac{(\omega_r - \omega_n)^2}{\kappa^2}}
+\end{equation}
+
+
+where $\Gamma^{(0)}_R$ is the electron decay rate when $n=0$. For a cross-relaxation where the state of the nuclear spin is changed from $n$ to $n+i$ and with transition frequency $\omega_{n}^{(i)}$, the decay rate is obtained by rescaling the relaxation rate given by the Purcell effect by the oscillator strength
+
+\begin{align}
+\begin{split}
+    \Gamma^{(n)}_{i} =&\, \frac{\kappa g_0^2}{\kappa^2/4 + (\omega_r - \omega_n^{(i)})^2} \cdot \frac{|\bra{\downarrow n+i}S_x\ket{\uparrow n}|^2}{|\bra{\downarrow n}S_x\ket{\uparrow n}|^2} = \\ 
+    =&\, 2\,\Gamma^{(0)}_R \cdot \frac{|\bra{\downarrow n+i}S_x\ket{\uparrow n}|^2}{1 + 4\frac{(\omega_r - \omega_{n}^{(i)})^2}{\kappa^2}}
+\end{split}
+\end{align}
+
+The total relaxation rate for $\ket{\uparrow n}$ is given by $\Gamma^{(n)} = \Gamma^{(n)}_R +\sum_i\Gamma^{(n)}_i$. We naturally introduce the cross-relaxation probability
+
+\begin{equation}
+    p^{(n)}_{x,i} = \frac{\Gamma^{(n)}_i}{\Gamma^{(n)}} \approx \frac{\Gamma^{(n)}_i}{\Gamma^{(n)}_R} = \frac{2|\bra{\downarrow n+i}S_x\ket{\uparrow n}|^2}{1 + 4\frac{(\omega_r - \omega^{(n)}_i)^2}{\kappa^2}}.
+\end{equation}
+
+Due to the difference in scale of the matrix elements between the $\Delta m_I \pm 1$ and $\Delta m_I \pm 2$ transitions, the dominant contribution to the relaxation dynamics arises from the ZQ and DQ transitions, while the $\Delta m_I = \pm2$ transitions are orders of magnitude weaker.
+
+

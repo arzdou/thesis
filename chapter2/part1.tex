@@ -260,6 +260,7 @@ where $\mathcal{Q}$ denotes the quadrupole moment, obtained from the integral of
 
 \begin{equation}
 \cH{Q} = \frac{\hbar \omega_Q}{6}\left[ 3 I_{\mathcal{P}_1}^2 - I(I+1) + \eta(I_{\mathcal{P}_2}^2 - I_{\mathcal{P}_3}^2)\right],
+\label{eq:quadrupole_ppaxis}
 \end{equation}
 
 where $\hbar \omega_Q$ is the quadrupole energy,
@@ -515,4 +516,57 @@ The ZQ and DQ transitions are approximately detuned from the electron spin trans
 
 In conclusion, for the \W-\Er coupled system, there are two EPR and two NMR allowed transitions which individually change the state of the electron and nuclear spin respectively. In addition, the perpendicular hyperfine coupling mixes the nuclear spin wavefunctions which enables driving of the ZQ and DQ transitions, which modify the state of the electron and nuclear spin simultaneously.
 
+\section{\Nb-\Er Hamiltonian}
+\labsec{nb_er_hamiltonian}
 
+\begin{marginfigure}
+    \includegraphics{chapter2/figures/energy_levels_ninehalf.pdf}
+    \caption[Energy level diagram of an Er3+ coupled to a nuclear spin-9/2]{Energy level diagram of an Er3+ coupled to a nuclear spin-9/2. EPR-allowed transitions are depicted as red arrows while nuclear spin transitions are shown as multicolored arrows. \red{notation of electron spin}}
+    \labfig{energy_levels_ninehalf}
+\end{marginfigure}
+
+In chapter \red{refch} we report the observation of an \Er electron-spin coupled to a $I=9/2$ nuclear spin. Through spectroscopic analysis of the nuclear spin transitions, we identify the nature of the spin as a \Nb. The Hamiltonian for this system extends the \W--\Er model by including the nuclear electric quadrupole interaction, which is present for all nuclei with $I\ge 1$ (see \refsec{electric_quadrupole}). In this section we describe the Hamiltonian of the system, the resulting energy levels and the transition frequencies at first order approximation. In addirtionWe note that the gyromagnetic factor of \Nb is approximately an order of magnitude larger than \W, which result in a larger separation of the nuclear spin levels. 
+
+The Hamiltonian of the \Nb-\Er system is
+
+\begin{equation}
+    \cH{}/\hbar = \omega_S \hat{S}_z + \omega_I \hat{I}_z + A_\parallel \hat{S}_z \hat{I}_z + A_\perp \hat{S}_z \hat{I}_x + \hat{\mathbf{I}} \cdot \bar{\bar{Q}} \cdot \hat{\mathbf{I}}.
+   \label{eq:hamiltonian_spin_9o2}
+\end{equation}
+
+This Hamiltonian yields twenty energy levels, illustrated in \reffig{energy_levels_ninehalf}. Under the secular approximation the electron spin projection $m_S$ remains a good quantum number, so the full manifold effectively separates into two submanifolds $(m_S = \Uparrow, \Downarrow)$ of ten nuclear-spin levels each. By contrast, the nuclear-spin states are influenced by both the hyperfine coupling and the electric quadrupole interaction, which mix states with different $m_I$. It is useful to distinguish three regimes according to the relative strength of the nuclear Zeeman and quadrupole terms:
+
+\begin{itemize}
+    \item Weak-quadrupole regime: \(\omega_I \gg \|\bar{\bar{Q}}\|\). The quadrupole interaction can be treated perturbatively and nuclear eigenstates are approximately the Zeeman states \(\ket{I,m_I}\), split by small quadrupolar corrections.
+    \item Strong-quadrupole regime: \(\omega_I \ll \|\bar{\bar{Q}}\|\). Quadrupole effects dominate and the Zeeman term is the perturbation; nuclear eigenstates are then close to the quadrupole principal-axis eigenstates.
+    \item Intermediate regime: \(\omega_I \sim \|\bar{\bar{Q}}\|\). Both interactions are significant and need to be treated simultaneously. The energy levels of the system are not trivial
+\end{itemize}
+
+In Chapter \red{refch} the measured system lies between the weak- and intermediate-quadrupole regimes: the nuclear Zeeman term still dominates, so most eigenstates are well approximated by the magnetic quantum number $m_I$, but the quadrupolar interaction produces noticeable mixing for the lower-frequency levels. We label the nuclear eigenstates by \(n\in\{0,1,\dots,9\}\) in order of increasing energy (see \reffig{energy_levels_ninehalf}), which at first-order approximation to $m_I = 9/2 - n$. Consequently, the ten EPR-allowed transitions, labeled as $\omega_n$ for each nuclear spin state, have frequencies given by
+
+\begin{equation}
+    \omega_n \approx \omega_S + m_I A_\parallel = \omega_S + \left(\tfrac{9}{2}-n\right) A_\parallel,
+\end{equation}
+
+although small corrections to these frequencies arise from second-order quadrupolar shifts, but are considerably smaller than the linewidth of the transitions and can be disregarded.
+
+Our measurements reveal that the quadrupole's principal axis $\mathcal{P}_3$ is approximately parallel to the crystalline $c$-axis. Therefore, the other two axes must lie in the $(a,b)$-plane and make an arbitrary angle $\alpha_Q$ with respect to the crystalline $a$-axis. Because $B_0$ is nearly parallel to $c$, we adopt the approximation\sidenote{In the nuclear-spin operator frame the $z$-axis is defined by the external field $B_0$ (approximately parallel to the crystal $c$-axis). The $x$- and $y$-axes therefore lie in the $(a,b)$-plane, and the x-axis makes an angle $\alpha_\text{hf}$ with the crystalline $a$-axis; $\alpha_\text{hf}$ depends on the field orientation and the hyperfine tensor.} $z \parallel c \parallel \mathcal{P}_3$. Under this approximation the quadrupole Hamiltonian (given by Eq. \ref{eq:quadrupole_ppaxis}) can be written as
+
+\begin{align}
+\begin{split}
+        \cH{Q}/\hbar &= \frac{\omega_Q'}{6} \left[3\hat{I}_{z}^2 + \frac{\eta'}{2}(e^{-2i\alpha}\hat{I}_+^2-e^{2i\alpha}\hat{I}_{-}^2)\right] \\
+        \omega_Q' &= -\frac{\eta+1}{2} \, \omega_Q, \\ 
+        \eta' &= \frac{\eta-3}{1+\eta}.
+\end{split}
+\end{align} 
+
+where $\alpha=\alpha_\text{hf} - \alpha_Q$. Therefore, the Hamiltonian of the system can be approximated by 
+
+\begin{align}
+\begin{split}
+       \cH{}/\hbar &= \omega_S \hat{S}_z + \omega_I \hat{I}_z + A_\parallel \hat{S}_z \hat{I}_z + A_\perp \hat{S}_z \hat{I}_x + \\ 
+        &+ \frac{\omega_Q'}{6} \left[3\hat{I}_{z}^2 + \frac{\eta'}{2}(e^{-2i\alpha}\hat{I}_+^2-e^{2i\alpha}\hat{I}_{-}^2)\right].
+\end{split}
+\end{align}
+
+ \red{nuclear spin transitions}

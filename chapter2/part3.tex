@@ -191,32 +191,7 @@ In this equation, the first term corresponds to the shift of the A drive to the 
 \section{High-spin generalization}
 \labsec{high_spin_generalization}
 
-\red{WEAK REWRITE}
-
-In this section we generalize the sideband and stimulated Raman results derived above to the case of a nuclear spin I=9/2. The starting point is again the electron-nuclear Hamiltonian of \refch{electron_nuclear_interaction}, here accompanied by the nuclear quadrupole interaction:
-
-\begin{equation}
-    \cH{}/\hbar = \omega_S \hat{S}_z + \omega_I \hat{I}_z + A_\parallel \hat{S}_z \hat{I}_z + A_\perp \hat{S}_z \hat{I}_x + \hat{\mathbf{I}} \cdot \bar{\bar{Q}} \cdot \hat{\mathbf{I}}.
-   \label{eq:hamiltonian_spin_9o2}
-\end{equation}
-
-In the basis of the principal axis of the quadrupole tensor ($\mathcal{P}_1$, $\mathcal{P}_2$, $\mathcal{P}_3$) the quadrupole Hamiltonian takes the following form (see \refsec{electric_quadrupole}),
-
-\begin{equation}
-    \cH{Q}/\hbar = \frac{\omega_Q}{6}\left[ 3 \hat{I}_{\mathcal{P}_1}^2 - I(I+1) + \eta(\hat{I}_{\mathcal{P}_2}^2 - \hat{I}_{\mathcal{P}_3}^2)\right],
-\end{equation}
-
-We note that the principal axes of the quadrupole tensor need not coincide with the nuclear-spin operator axes\sidenote{In the nuclear-spin operator frame the $z$-axis is defined by the external field $B_0$ (approximately parallel to the crystal $c$-axis). The $x$- and $y$-axes therefore lie in the $(a,b)$-plane, and the x-axis makes an angle $\alpha_\text{hf}$ with the crystalline $a$-axis; $\alpha_\text{hf}$ depends on the field orientation and the hyperfine tensor.}. In \red{refch} we show that one of the principal axis of the quadrupole of the measured system ($\mathcal{P}_3$) lies along the crystalline $c$-axis. The other two axis lie in the $(a,b)$-plane and the $\mathcal{P}_1$ axis makes an angle $\alpha_Q$ with respect to the crystalline $a$-axis. Because $B_0$ is nearly parallel to $c$, we adopt the approximation $z \parallel c \parallel \mathcal{P}_3$. Under this approximation the quadrupole Hamiltonian can be written as
-
-\begin{align}
-\begin{split}
-        \cH{Q}/\hbar &= \frac{\omega_Q'}{6} \left[3\hat{I}_{z}^2 + \frac{\eta'}{2}(e^{-2i\alpha}\hat{I}_+^2-e^{2i\alpha}\hat{I}_{-}^2)\right] + \text{cnt}, \\
-        \omega_Q' &= -\frac{\eta+1}{2} \, \omega_Q, \\ 
-        \eta' &= \frac{\eta-3}{1+\eta}.
-\end{split}
-\end{align} 
-
-where $\alpha=\alpha_\text{hf} - \alpha_Q$. Therefore, the Hamiltonian of the system can be approximated by 
+In this section we extend the results calculated above for a \W nuclear spin with total spin number $I=1/2$ to a \Nb high-nuclear spin $I=9/2$. We recall from \refsec{nb_er_hamiltonian} the Hamiltonian of such a system,
 
 \begin{align}
 \begin{split}
@@ -225,7 +200,7 @@ where $\alpha=\alpha_\text{hf} - \alpha_Q$. Therefore, the Hamiltonian of the sy
 \end{split}
 \end{align}
 
-We consider as a perturbation all terms that do not commute with $\hat{S}_z$ and $\hat{I}_z$, that is, the perpendicular hyperfine term $A_\perp \hat{S}_z\hat{I}_x$ and the non-diagonal quadrupole terms.
+As discussed before, the electron wavefunctions are well described by the magnetic number $m_S$, but the nuclear spin states are mixed to varying degree due to the electric quadrupole interaction. In order to calculate the relevant matrix element we will treat the wavefunctions of the Hamiltonian in first-order perturbation theory. We consider as a perturbation all terms that do not commute with $\hat{S}_z$ and $\hat{I}_z$, that is, the perpendicular hyperfine term $A_\perp \hat{S}_z\hat{I}_x$ and the non-diagonal quadrupole terms.
 
 \begin{align}
 \begin{split}
@@ -261,15 +236,7 @@ where
 \end{split}
 \end{align}
 
-Given that the value of the coefficients is not negligible, the nuclear spin magnetic numbers are not good quantum numbers anymore, and we introduce the notation $\ket{m_S, n} = \ket{\psi_{m_s, 9/2-m_I}}$ with $n\in\{0,\dots,9\}$ in ascending order of energy. 
-
-\reffig{energy_levels_ninehalf} sketches the energy level structure of the system as well as the electron and nuclear spin transitions. There are ten different electron spin transitions which depend on the state of the nuclear spin
-
-\begin{equation}
-    \omega_n \approx \omega_S + A_\parallel \, (n-9/2).
-\end{equation}
-
-In addition, there are eighteen single-quantum nuclear spin transitions labeled $\omega_{n(n+1)}^{(m_S)}$. Due to the admixing of the nuclear spin wavefunctions, the oscillator strength for the allowed and weakly allowed transitions are given by 
+Given that the value of the coefficients is not negligible, the nuclear spin magnetic numbers are not good quantum numbers anymore, and we introduce the notation $\ket{m_S, n} = \ket{\psi_{m_s, 9/2-m_I}}$ with $n\in\{0,\dots,9\}$ in ascending order of energy. Due to the admixing of the nuclear spin wavefunctions, the oscillator strength for the allowed and weakly allowed transitions are given by 
 
 \begin{align}
 \begin{split}
@@ -282,4 +249,4 @@ In addition, there are eighteen single-quantum nuclear spin transitions labeled 
 \end{split}
 \end{align}
 
-We note that even if the mixing between $\Delta m_I=2$ wavefunctions is larger by an order of magnitude, the change in nuclear wavefunctions between $\ket{\uparrow n}$ and $\ket{\downarrow n}$ is mainly dominated by the $M_{\pm1}$ coefficients, due to the proportionality to $m_S$ and the corresponding change of sign between the two states. However, the matrix elements for $i=\pm2$ are non-negligible, specially for high $n$. This indicates that higher order sidebands are also weakly allowed in this system, enabled by the quadrupole non-diagonal elements.
+%We note that even if the mixing between $\Delta m_I=2$ wavefunctions is larger by an order of magnitude, the change in nuclear wavefunctions between $\ket{\uparrow n}$ and $\ket{\downarrow n}$ is mainly dominated by the $M_{\pm1}$ coefficients, due to the proportionality to $m_S$ and the corresponding change of sign between the two states. However, the matrix elements for $i=\pm2$ are non-negligible, specially for high $n$. This indicates that higher order sidebands are also weakly allowed in this system, enabled by the quadrupole non-diagonal elements.

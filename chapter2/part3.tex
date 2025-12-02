@@ -267,18 +267,18 @@ We arbitrarily consider the ZQ transitions from state $n$ to $n+1$ with frequenc
 \end{split}
 \end{equation}
 
-As for the case of the nuclear-spin $I=1/2$, the oscillation frequency is proportional to the coupling strength. However, the ladder factors $C^+_{n}$ will modulate the driving speed depending on the state of the nuclear spin, with the highest factor for the $n=4$ to $n=5$ transition which approximately corresponds to the $m_I=1/2$ to $m_I=-1/2$ transition (see \reffig{ninehalf_matrix_elements}).
+As for the case of the nuclear-spin $I=1/2$, the oscillation frequency is proportional to the coupling strength. However, the ladder factors $C^+_{n}$ will modulate the driving speed depending on the state of the nuclear spin, with the highest factor for the $n=4$ to $n=5$ transition which approximately corresponds to the $m_I=1/2$ to $m_I=-1/2$ transition (see \reffig{ninehalf_matrix_elements}). In addition, when driving the ZQ and DQ transitions, the energy levels will experience an AC-Zeeman shift, as described in \refsec{ac-zeeman_shifts}.
 
 \subsection{Cross-relaxation rates}
 
-Using the calculated matrix elements we now proceed to give an estimation of the relaxation rate of the electron spin through all the available pathways. The main relaxation channel for the electron spin leaves the nuclear spin invariant. Moreover, the oscillator strength for these transitions is approximately 1/2 no matter the state of the nuclear spin. However, due to the hyperfine interaction, the frequency of these transitions ($\omega_0, \dots,\omega_9$)  is nuclear spin dependent. As such, when the resonator is centered at $\omega_0$ the Purcell factor for each of them will be different. The electron relaxation rate when the nuclear spin is in state $n$, $\Gamma_R^{(n)}$, is given by
+Using the calculated matrix elements we now proceed to give an estimation of the relaxation rate of the electron spin through all the available pathways. The main relaxation channel for the electron spin comes from the EPR-allowed transitions, which leave the nuclear spin invariant, and the oscillator strength for these transitions is approximately 1/2 no matter the state of the nuclear spin. However, the hyperfine interaction shifts the frequency of these transitions ($\omega_0, \dots,\omega_9$) depending on the state of the nuclear spin. Experimentally, we tune the spin such that $\omega_0=\omega_r$ which results in different Purcell factors for every transition. The electron relaxation rate when the nuclear spin is in state $n$, $\Gamma_R^{(n)}$, is given by
 
 \begin{equation}
     \Gamma^{(n)}_R = \frac{\kappa g_0^2}{\kappa^2/4 + (\omega_r - \omega_n)^2} =  \Gamma^{(0)}_R \cdot \frac{1}{1 + 4\frac{(\omega_r - \omega_n)^2}{\kappa^2}}
 \end{equation}
 
 
-where $\Gamma^{(0)}_R$ is the electron decay rate when $n=0$. For a cross-relaxation where the state of the nuclear spin is changed from $n$ to $n+i$ and with transition frequency $\omega_{n}^{(i)}$, the decay rate is obtained by rescaling the relaxation rate given by the Purcell effect by the oscillator strength
+where $\Gamma^{(0)}_R$ is the electron decay rate when $n=0$. We denote the frequency for a cross-relaxation where the state of the nuclear spin is changed from $n$ to $n+i$ as $\omega_{n}^{(i)}$. The decay rate is obtained by rescaling the relaxation rate given by the Purcell effect by the oscillator strength
 
 \begin{align}
 \begin{split}
@@ -293,6 +293,6 @@ The total relaxation rate for $\ket{\uparrow n}$ is given by $\Gamma^{(n)} = \Ga
     p^{(n)}_{x,i} = \frac{\Gamma^{(n)}_i}{\Gamma^{(n)}} \approx \frac{\Gamma^{(n)}_i}{\Gamma^{(n)}_R} = \frac{2|\bra{\downarrow n+i}S_x\ket{\uparrow n}|^2}{1 + 4\frac{(\omega_r - \omega^{(n)}_i)^2}{\kappa^2}}.
 \end{equation}
 
-Due to the difference in scale of the matrix elements between the $\Delta m_I \pm 1$ and $\Delta m_I \pm 2$ transitions, the dominant contribution to the relaxation dynamics arises from the ZQ and DQ transitions, while the $\Delta m_I = \pm2$ transitions are orders of magnitude weaker.
+Due to the difference in scale of the matrix elements between the $\Delta m_I \pm 1$ and $\Delta m_I \pm 2$ transitions, the dominant contribution to the relaxation dynamics arises from the ZQ and DQ transitions, while the probability of a cross-relaxation event with $\Delta m_I = \pm2$ is orders of magnitude weaker.
 
 

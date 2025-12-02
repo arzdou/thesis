@@ -138,7 +138,7 @@ Where we have assumed that the spin is tuned to the cavity ($\omega_r = \omega_S
     p_\text{ZQ, DQ} = \frac{\Gamma_\text{ZQ, DQ}}{\Gamma_\text{ZQ, DQ} + \Gamma_\text{S}} \approx  \frac{\Gamma_\text{ZQ, DQ}}{\Gamma_\text{S}} = \frac{1}{1 + 4\omega_I^2 / \kappa^2} \, \frac{A_\perp^2}{2\omega_I^2}.
 \end{equation}
 
-\section{Stimulated Raman driving}
+\subsection{Stimulated Raman driving}
 \labsec{raman_driving}
 
 As discussed in the previous section, a pulse resonant with a sideband transition can be used to coherently drive the nuclear spin state. This driving scheme is mainly limited by the electron spin coherence as the drive involves both the electron and nuclear spin. In addition, the ZQ and DQ transition have small oscillator strength and need a microwave large amplitude to achieve driving Rabi rates faster than the electron spin coherence $T_2^*$. Consequently, sideband driving is not the appropriate scheme to perform high fidelity nuclear spin manipulation. In this section we introduce stimulated Raman driving, a two-photon process used to coherently control the state of the nuclear spin without populating the electron spin excited state. 
@@ -162,6 +162,7 @@ We now take the system of an electron spin coupled to a nuclear spin-1/2 describ
     \Omega_\text{A} = \frac{\Omega_{e}}{\alpha_\text{A}} \cdot \frac{1}{\sqrt{1 + 4\frac{(\omega_r-(\omega_S^{(\uparrow)}-\Delta))^2}{\kappa^2}}}, \\
     \Omega_\text{B} = \frac{\Omega_{e}}{\alpha_\text{B}} \cdot \frac{1}{\sqrt{1 + 4\frac{(\omega_r-(\omega_S^{(\uparrow)}-\Delta-\delta))^2}{\kappa^2}}},
 \end{split}
+\label{raman_amplitudes}
 \end{equation}
 
 where $\alpha_\text{A,B}$ is a linear scaling factor to account for differences in pulse amplitudes. Because each Raman pulse can couple the ground states to either of two excited states, $\ket{\Uparrow\uparrow}$ or $\ket{\Uparrow\downarrow}$ (see \reffig{raman_scheme}), the stimulated Raman transition is mediated by both paths. The total Rabi rate results from the combination of the independent rates, rescaled by the corresponding relative matrix elements,
@@ -296,3 +297,23 @@ The total relaxation rate for $\ket{\uparrow n}$ is given by $\Gamma^{(n)} = \Ga
 Due to the difference in scale of the matrix elements between the $\Delta m_I \pm 1$ and $\Delta m_I \pm 2$ transitions, the dominant contribution to the relaxation dynamics arises from the ZQ and DQ transitions, while the probability of a cross-relaxation event with $\Delta m_I = \pm2$ is orders of magnitude weaker.
 
 
+\subsection{Stimulated Raman driving}
+\labsec{stimulated_raman_driving_ninehalf}
+
+In this section we derive the expressions for the Rabi frequency of a Raman drive for the case of a nuclear-spin $I=9/2$ by generalizing the results of \refsec{raman_driving}. As in this previous section, the stimulated Raman scheme allows to transfer the population between the two adjacent nuclear spin levels $\ket{\Downarrow n}$ and $\ket{\Downarrow n+1}$ through the use of two off-resonant microwave drives with amplitudes $\Omega_\text{A}$ and $\Omega_\text{B}$ (see Eq. \ref{raman_amplitudes}). When the difference in frequency between the two drives matches the nuclear spin transition frequency, a two-photon process enables the coherent control of the nuclear spin population between the two levels. This is possible by leveraging the coupling of the two levels of interest to their electron excited counterparts: $\ket{\Uparrow n}$ and $\ket{\Uparrow n+1}$. As in the previous section, the presence of two electron excited states creates two possible paths for the scheme, which interfere with each other,
+
+\begin{equation}
+\begin{split}    
+    \Omega_{\mathrm{Ram}} =&\; \Omega_{\mathrm{Ram},1} +\Omega_{\mathrm{Ram},2} \\ \\
+    \Omega_{\mathrm{Ram},1} \approx&\; -\frac{\Omega_A\Omega_B}{4\Delta} \frac{A_\perp C^+_{n}}{\omega_I+\omega'_Q\!\left(n+\tfrac12\right)} \\ \\
+    \Omega_{\mathrm{Ram},2} \approx&\; + \frac{\Omega_A\Omega_B}{4\left(\Delta + \omega_n\right)} \frac{A_\perp C^+_{n}}{\omega_I+\omega'_Q\!\left(n+\tfrac12\right)},
+\end{split}
+\end{equation}
+
+where we have used that $C^+_{m_I} = C^-_{m_I+1}$. We note that the maximum value for the total Rabi frequency $\Omega_{\text{Ram}}$ is given for $\Delta=-\omega_n/2$, as driving in between the states compensates the difference in sign between the two drive amplitudes, resulting in
+
+\begin{equation}
+    \Omega_{\mathrm{Ram}} = \frac{\Omega_A\Omega_B}{\omega_n} \frac{A_\perp C^+_{n}}{\omega_I+\omega'_Q\!\left(n+\tfrac12\right)} \approx A_\perp C^+_{n}\frac{\Omega_A\Omega_B}{\omega_n^2}
+\end{equation}
+
+The final Rabi rate is the same as in the spin-1/2 case, but scaled by the ladder-operator factor $C^+_n$.

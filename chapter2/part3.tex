@@ -191,7 +191,7 @@ In this equation, the first term corresponds to the shift of the A drive to the 
 \section{High-spin generalization}
 \labsec{high_spin_generalization}
 
-In this section we extend the results calculated above for a \W nuclear spin with total spin number $I=1/2$ to a \Nb high-nuclear spin $I=9/2$. We recall from \refsec{nb_er_hamiltonian} the Hamiltonian of such a system,
+In Chapter \red{refch} we experimentally identify a strongly coupled spin $I=9/2$, which we spectroscopically identify as \Nb. In this section we develop the analytical model used to interpret the results from our measurements, by generalizing the derivations for a \W nuclear-spin-$1/2$ to to a high-spin with $I=9/2$. As discussed in \refsec{nb_er_hamiltonian}, the main differences between the two systems are the larger Hilbert space, which spans twenty energy levels, and the introduction of the nuclear-quadrupole interaction, which couples the nuclear spin to the electric field gradient at the \Nb position. The Hamiltonian of the system is given by
 
 \begin{align}
 \begin{split}
@@ -200,7 +200,7 @@ In this section we extend the results calculated above for a \W nuclear spin wit
 \end{split}
 \end{align}
 
-As discussed before, the electron wavefunctions are well described by the magnetic number $m_S$, but the nuclear spin states are mixed to varying degree due to the electric quadrupole interaction. In order to calculate the relevant matrix element we will treat the wavefunctions of the Hamiltonian in first-order perturbation theory. We consider as a perturbation all terms that do not commute with $\hat{S}_z$ and $\hat{I}_z$, that is, the perpendicular hyperfine term $A_\perp \hat{S}_z\hat{I}_x$ and the non-diagonal quadrupole terms.
+In the secular approximation, the electron wavefunctions are well described by the magnetic number $m_S$. However, the nuclear spin states are mixed to varying degree due to the hyperfine and the electric quadrupole interaction. In order to calculate the relevant matrix element we will treat the wavefunctions of the Hamiltonian in first-order perturbation theory. We consider as a perturbation $\hat{V}$ all terms that do not commute with $\hat{S}_z$ and $\hat{I}_z$, that is, 
 
 \begin{align}
 \begin{split}
@@ -217,7 +217,7 @@ As discussed before, the electron wavefunctions are well described by the magnet
 \end{marginfigure}
 
 
-The eigenstates of the unperturbed system correspond to $\ket{m_s m_I}$, where $m_I \in \{-9/2,\dots,9/2\}$ are the nuclear spin quantum numbers. The hyperfine and quadrupole perturbations will mix terms with $m_I \pm 1$ and $m_I \pm 2$ respectively. At first order, the perturbed states will be
+The eigenstates of the unperturbed system $\cH{0}$ correspond to $\ket{m_S m_I}$, where $m_I \in \{-9/2,\dots,9/2\}$ are the nuclear spin quantum numbers. At first order, the hyperfine and quadrupole perturbations will mix terms with $m_I \pm 1$ and $m_I \pm 2$ respectively and the wavefunctions are given by
 
 \begin{equation}
 \label{seq:first-order-wfn}
@@ -231,12 +231,18 @@ where
 \label{seq:mixing_coefficients}
     &M_{\pm1}^{(m_S,m_I)} =  \mp\frac{C^\pm_{m_I} \cdot A_\perp m_S / 2}{\omega_I+A_\parallel m_S + \omega'_Q (m_I\pm1/2)}, \\
     &M_{\pm2}^{(m_S,m_I)} = \mp\frac{e^{\mp2i\alpha}D^\pm_{m_I} \cdot \omega_Q'\eta'/12}{2(\omega_I+A_\parallel m_S + \omega'_Q (m_I\pm1))}.\\ \\
-    &C^\pm_{m_I} = \bra{m_I+1}I_\pm\ket{m_I} = \sqrt{I(I+1)-m_I(m_I\pm1)},\\
-    &D^\pm_{m_I} = \bra{m_I+2}I_\pm\ket{m_I} = C^\pm_{m_I}~\cdot~C^\pm_{m_I+1}\,.
+    &C^\pm_{m_I} = \bra{m_I\pm1}I_\pm\ket{m_I} = \sqrt{I(I+1)-m_I(m_I\pm1)},\\
+    &D^\pm_{m_I} = \bra{m_I\pm2}I_\pm\ket{m_I} = C^\pm_{m_I}~\cdot~C^\pm_{m_I+1}\,.
 \end{split}
 \end{align}
 
-Given that the value of the coefficients is not negligible, the nuclear spin magnetic numbers are not good quantum numbers anymore, and we introduce the notation $\ket{m_S, n} = \ket{\psi_{m_s, 9/2-m_I}}$ with $n\in\{0,\dots,9\}$ in ascending order of energy. Due to the admixing of the nuclear spin wavefunctions, the oscillator strength for the allowed and weakly allowed transitions are given by 
+\begin{marginfigure}
+    \includegraphics{chapter2/figures/ninehalf_matrix_elements.pdf}
+    \caption[Spin ladder operators for $I=9/2$]{Spin ladder operators for a spin $I=9/2$ as a function of the spin magnetic number $m_I$. We note that $C^+_{m_I} = C^-_{m_I+1}$ and $D^+_{m_I} = D^-_{m_I+2}$.}
+    \labfig{ninehalf_matrix_elements}
+\end{marginfigure}
+
+Due to the hyperfine and quadrupole induced mixing, the nuclear spin magnetic numbers are not good quantum numbers anymore, and we introduce the notation $\ket{m_S, n} = \ket{\psi_{m_S, 9/2-m_I}}$ with $n\in\{0,\dots,9\}$ in ascending order of energy. Due to the admixing of the nuclear spin wavefunctions, the oscillator strength for the allowed and weakly allowed transitions are given by 
 
 \begin{align}
 \begin{split}
@@ -251,20 +257,17 @@ Given that the value of the coefficients is not negligible, the nuclear spin mag
 
 %We note that even if the mixing between $\Delta m_I=2$ wavefunctions is larger by an order of magnitude, the change in nuclear wavefunctions between $\ket{\uparrow n}$ and $\ket{\downarrow n}$ is mainly dominated by the $M_{\pm1}$ coefficients, due to the proportionality to $m_S$ and the corresponding change of sign between the two states. However, the matrix elements for $i=\pm2$ are non-negligible, specially for high $n$. This indicates that higher order sidebands are also weakly allowed in this system, enabled by the quadrupole non-diagonal elements.
 
+Analogous to the $I=1/2$ case, the nuclear population of the $I=9/2$ system can be addressed by resonantly driving the weakly allowed sideband transitions. The perpendicular hyperfine term is responsible for the dominant $\Delta m_I = \pm 1$ ZQ and DQ sidebands, while the non-diagonal quadrupole terms open additional $\Delta m_I = \pm 2$ paths. In the weak-quadrupole regime these $\Delta m_I = \pm 2$ matrix elements produce much smaller oscillator strength than the hyperfine-allowed transitions. Moreover, the $\Delta m_I = \pm 2$ lines are typically farther detuned from the resonator center, so cavity filtering further suppresses the effective drive amplitude. The net effect is that driving $\Delta m_I = \pm 2$ transitions requires higher microwave power with much slower Rabi rates, and we do not treat them in the following.
 
-Analogous to the spin-1/2 system, the nuclear spin population can be controlled by resonantly driving the ZQ and DQ sidebands, weakly allowed thanks to the perpendicular hyperfine coupling. Additionally, the quadrupole interaction enables extra paths by coupling nuclear-spin states with $m_I \pm 2$. In the weak-quadrupole regime, these transitions have a much smaller oscillator strength than the hyperfine-allowed ones. In addition, the resonant transition frequencies are more detuned with respect to the center of the resonator, which increase the amplitude filtering effect. Consequently, nuclear spin driving $m_I \pm 2$ transitions is considerably more difficult.
-
-Analogous to the $I=1/2$ case, the nuclear population of the $I=9/2$ system can be addressed by resonantly driving the weakly allowed sideband transitions. The perpendicular hyperfine term is responsible for the dominant $\Delta m_I = \pm 1$ ZQ and DQ sidebands, while the non-diagonal quadrupole terms open additional $\Delta m_I = \pm 2$ paths. In the weak-quadrupole regime these $\Delta m_I = \pm 2$ matrix elements produce much smaller oscillator strength than the hyperfine-allowed transitions. Moreover, the $\Delta m_I = \pm 2$ lines are typically farther detuned from the resonator center, so cavity filtering further suppresses the effective drive amplitude. The net effect is that driving $\Delta m_I = \pm 2$ transitions requires substantially higher microwave power and yields much slower Rabi rates, and we do not treat them in the following.
-
-We arbitrarily consider the ZQ transitions from state $n$ to $n+1$ with frequency $\omega_n^{(+1)}$, but the following derivation is analogous for the DQ transitions. As in the previous section, the oscillation frequency $\Omega^{(n)}_{\text{ZQ}}$ depends on two factors: the matrix element of the transition and the amplitude of the applied microwave field, quantified by an electron Rabi frequency $\Omega_e$ measure at a reference pulse amplitude. Using $\Omega_e$ as a calibration point, we express the drive amplitude for any pulse as a relative factor $\alpha$. The corresponding sideband Rabi frequency is then 
+We arbitrarily consider the ZQ transitions from state $n$ to $n+1$ with frequency $\omega_n^{(+1)}$, but the following derivation is analogous for the DQ transitions. As in the previous section, the oscillation frequency $\Omega^{(n)}_{\text{ZQ}}$ depends on two factors: the matrix element of the transition and the amplitude of the applied microwave field, quantified by an electron Rabi frequency $\Omega_e$ measured at a reference pulse amplitude. Using $\Omega_e$ as a calibration point, we express the drive amplitude for any pulse as a relative factor $\alpha$. The corresponding sideband Rabi frequency is then 
 
 \begin{equation}
 \begin{split}
-    \Omega^{(n)}_{\text{ZQ}} =\; \frac{A_\perp C^+_{n}}{2\alpha\cdot\left(\omega_I+\omega'_Q\!\left(n+\tfrac12\right)\right)}\frac{\Omega_{e}}{\sqrt{1 + 4\frac{(\omega_r-\omega_n^{(+1)})^2}{\kappa^2}} } 
+    \Omega^{(n)}_{\text{ZQ}} =\; \frac{\Omega_e}{\alpha} \, \frac{A_\perp\, C^+_{n}}{2\,\left(\omega_I+\omega'_Q\!\left(n+\tfrac12\right)\right)}\, \frac{1}{\sqrt{1 + 4\frac{(\omega_r-\omega_n^{(+1)})^2}{\kappa^2}} } 
 \end{split}
 \end{equation}
 
-As for the case of the nuclear-spin $I=1/2$, the oscillation frequency is proportional to the coupling strength. However, the ladder factors $C^+_{n}$ will modulate the driving speed depending on the state of the nuclear spin, with the highest factor for the $n=4$ to $n=5$ transition which approximately corresponds to the $m_I=1/2$ to $m_I=-1/2$ transition (see \red{reffig}).
+As for the case of the nuclear-spin $I=1/2$, the oscillation frequency is proportional to the coupling strength. However, the ladder factors $C^+_{n}$ will modulate the driving speed depending on the state of the nuclear spin, with the highest factor for the $n=4$ to $n=5$ transition which approximately corresponds to the $m_I=1/2$ to $m_I=-1/2$ transition (see \reffig{ninehalf_matrix_elements}).
 
 \subsection{Cross-relaxation rates}
 

@@ -262,11 +262,18 @@ By reorganizing terms we can distinguish three contributions:
 If the amplitude of the coherent state is sufficiently large ($|\alpha|\gg1$) the coupling interaction between the resonator and the spin can be treated as a perturbation and the dynamics of the spin and the resonator can be disentangled. The resulting Hamiltonian for the spin is
 
 \begin{equation}
-    \frac{\cH{d}}{\hbar} = \frac{\Delta_S}{2} \hat{S}_z + \frac{\Omega}{2} \left( \cos{\phi}\hat{S}_{x} + \sin{\phi}\hat{S}_{y} \right),
+    \cH{d} / \hbar = \frac{\Delta_S}{2} \hat{S}_z + \frac{\Omega}{2} \left( \cos{\phi}\hat{S}_{x} + \sin{\phi}\hat{S}_{y} \right),
 \end{equation}
 
-\noindent where $\alpha = |\alpha| e^{i\phi}$ and $\Omega = 2g_0|\alpha|$. This corresponds to the classical two-level-system under drive and has an analytical solution.  If the spin is initially in the ground state, the excited-state population at time $t$ is
+\noindent where $\alpha = |\alpha| e^{i\phi}$ and $\Omega$ is the Rabi frequency of the drive, given by
 
+\begin{equation}
+    \Omega = 2g_0|\alpha| = \frac{2g_0\epsilon_d}{\sqrt{\Delta_r^2 + \kappa^2/4}} \propto \frac{\bra{\Uparrow} S_x \ket{\Downarrow}}{\sqrt{\Delta_r^2 + \kappa^2/4}}.
+\end{equation}
+
+This corresponds to the classical two-level-system under drive and has an analytical solution. In addition, we note that $\Omega$ scales proportionally to the $S_x$ matrix element between the two relevant states and is filtered by  a Lorentzian function centered around the cavity frequency. These concepts will be relevant in the following section, when considering weakly allowed transitions with small oscillator strength.
+
+If the spin is initially in the ground state, the excited-state population at time $t$ is
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/qubit_dynamics.pdf}
@@ -286,14 +293,7 @@ At resonance ($\Delta_S=0$), this reduces to simple Rabi oscillations
     P_e(t) = \sin^2\!\left(\tfrac{\Omega}{2}\,t\right),
 \end{equation}
 
-
-and the with Rabi frequency is
-
-\begin{equation}
-    \Omega = 2g_0|\alpha| = \frac{8g_0 \epsilon_d^2}{\kappa^2} \propto \sqrt{\langle n \rangle} \bra{\Uparrow} \, S_x \ket{\Downarrow}.
-\end{equation}
-
-In the equation above we highlight the fact that the Rabi frequency scales proportionally to the square root of the mean interactivity photon number as well as the $S_x$ matrix element between the two relevant states. This last concept will be relevant in the following section when considering weakly allowed transitions with small oscillator strength.
+and the with resonant Rabi frequency given by  $\Omega = 2g_0|\alpha| = 4g_0 \epsilon_d / \kappa $
 
 \reffig{spin_trajectory} shows the quantum trajectory of the spin in the Bloch sphere under the influence of a detuned drive with phase $\phi=0$. The state evolves from the ground state $\ket{\Downarrow}$ and is coherently excite. However, full population transfer to the excited state is only possible when $\Delta_S=0$.
 

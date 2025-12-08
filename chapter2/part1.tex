@@ -1,29 +1,55 @@
-
-
 \setchapterpreamble[u]{\margintoc}
-\chapter{Electron spins, nuclear-spins and their interaction}
+\chapter{Electron spins, nuclear spins and their interaction}
 \labch{electron_nuclear_interaction}
 
-This chapter is dedicated to the description of the \Er electron-spin and the nuclear-spins in \Ca along with their interactions. The chapter will be organised as follows. \refsec{erbium_ions_in_ca} begins with the description of the energy levels of a Rare-Earth Ions (REIs) impurity in a crystal to arrive to an effective electron-spin-1/2 approximation. This is followed in \refsec{nuclear_spins_ca} by a description of the nuclear-spin Hamiltonian including the quadrupole interaction. Finally, the hyperfine interaction between an electron and a nuclear spin is discussed in \refsec{interaction_between_to_spins}.
+\begin{quote}
+\itshape
+In this chapter, we introduce the spin Hamiltonian, which describes how an electron spin interacts with nearby nuclear spins and with external electric and magnetic fields, with a focus on \Er impurities in \Ca. We start by walking through the approximations that let us treat the \Er:\Ca ion as an effective spin-1/2 system at cryogenic temperatures, and we highlight how this differs from the behavior of a free electron. We then look at how \Er:\Ca interacts with its surrounding nuclear spins, especially the hyperfine coupling to nearby \W nuclei. Finally, we introduce \Nb, a high-nuclear spin element that will play an important role in the last chapter of this thesis.
+\end{quote}
+
+%This chapter is dedicated to the description of the \Er electron spin and the nuclear spins in \Ca along with their interactions. The chapter will be organized as follows. \refsec{erbium_ions_in_ca} begins with the description of the energy levels of a Rare-Earth Ions (REIs) impurity in a crystal to arrive to an effective electron spin-1/2 approximation. This is followed in \refsec{nuclear_spins_ca} by a description of the nuclear spin Hamiltonian including the quadrupole interaction. Finally, the hyperfine interaction between an electron and a nuclear spin is discussed in \refsec{interaction_between_to_spins}.
+
+
+\section{An electron in free space}
+
+We begin this chapter by describing the properties of a single electron spin in a magnetic field. This simple system introduces key concepts of the spin Hamiltonian, and its behavior provides a useful baseline for comparison with the effective spin-1/2 nature of \Er:\Ca. 
+
+Electrons are elementary particles with negative charge and an inherent magnetic moment arising from their spin
+
+\begin{equation}
+    \mathbf{\mu}_e = - \gamma_e \mathbf{S} 
+\end{equation}
+
+where $\mathbf{S}= (S_x, S_y, S_z)$ correspond to the spin-1/2 operators and $\gamma_e \approx 28$~GHz/T is the gyromagnetic moment of the electron spin. In a constant magnetic field $\mathbf{B_0}$ an electron in free space can be described with the following Hamiltonian,
+
+\begin{equation}
+    \cH{e} = - \mathbf{B_0} \cdot \mathbf{\mu}_e = \omega_e S_{z'}.
+\end{equation}
+
+where $\omega_e = \lVert\gamma_e \, \mathbf{B_0}\rVert$ is the Larmor frequency of the electron spin and $z'$ corresponds to the quantization axis of the spin, which aligns with $\mathbf{B_0}$. This interaction is known as the Zeeman effect; for a spin-1/2 it describes a two-level-system that splits linearly with $|\mathbf{B_0}|$ (see \red{fig}). The two states of the system are labeled $\ket{\Downarrow}$ and $\ket{\Uparrow}$. We highlight the following properties:
+
+\begin{itemize}
+    \item \textbf{Isotropy}. The electron's gyromagnetic factor is isotropic, meaning it is identical along all spatial directions. As a result, the quantization axis is aligned with the external magnetic field $(z' \parallel \mathbf{B_0})$.
+    \item \textbf{Opposite magnetic moments.} The two eigenstates correspond to antiparallel and parallel alignment with the field, in increasing order of energy. Their magnetic moments are equal in magnitude and opposite in direction.
+    \item \textbf{No electric dipole}. An electron spin in free space does not exhibit a permanent electric dipole, as it is a single, point-like charge.
+\end{itemize}
+
+In the following section, we explore how some paramagnetic centers in solids, in particular \Er in \Ca, can be treated as an effective spin-1/2 at cryogenic temperatures. However, these are complex, multielectron systems with strong spin-orbit coupling which lead deviations from the simple free electron system. 
 
 \section{\Er ions in \Ca}
 \labsec{erbium_ions_in_ca}
 
-Erbium belongs to the family of lanthanides, which in solids become a trivalent ion whose common property is a partially filled $4f$ shell. With eleven electrons in the $4f$ manifold, an odd number, the ion possesses an unpaired electron, which is the origin of its paramagnetic properties. The common property for lanthanides is the shielding of the $4f$ shell by the more external electrons of the $5s$ and $5p$ closed shells. This protection reduces the interaction with ligand electrons and phonons in solids. This allows one to treat the electrostatics of the crystal as a perturbation to the Free-Ion Hamiltonian. 
-
-In this section we sketch a derivation of the Free-Ion Hamiltonian of \Er, based on \sidecite{weissbluth_atoms_2012, abragam_electron_2012}. From the multi-electron Hamiltonian we arrive to an electronic system of degenerate manifolds of well-defined total angular momentum $J$ with a $16$-fold-degenerate ground state manifold with $J=15/2$.
+Erbium belongs to the family of lanthanides, which in solids become a trivalent ion whose common property is a partially filled $4f$ shell. The common property for lanthanides is the shielding of the $4f$ shell by the more external electrons of the $5s$ and $5p$ closed shells. This protection reduces the interaction with ligand electrons and phonons in solids. This allows one to treat the electrostatics of the crystal as a perturbation to the Free-Ion Hamiltonian. In addition, lanthanide ions with an odd number of electrons in their $4f$ manifold are paramagnetic, and receive the name of Kramers ions. This is the case for  \Er with 11 electrons.
 
 \subsection{Free-ion Hamiltonian}
+
+Here, we sketch a derivation of the Free-Ion Hamiltonian of \Er, based on \sidecite{weissbluth_atoms_2012, abragam_electron_2012}. From the multielectron Hamiltonian we arrive to an electronic system of degenerate manifolds of well-defined total angular momentum $J$ with a $16$-fold-degenerate ground state manifold with $J=15/2$ and a first excited level with $J=13/2$ separated by an optical transition. at $\sim$1.5~\textmu s.
 
 The Hamiltonian that describes an $N$-electron ion in free space can be expressed as
 
 \begin{align}
 \begin{split}
-\mathcal{H}_{FI} &= \mathcal{H}_0 + \mathcal{H}_C + \mathcal{H}_{SO}, \\
-\mathcal{H}_0 &= - \sum_{i=1}^N \frac{\hbar^2}{2m} \nabla_i^2 
-- \sum_{i=1}^N \frac{Ze^2}{r_i}, \\
-\mathcal{H}_C &= \sum_{i<j}^N \frac{e^2}{r_{ij}}, \\
-\mathcal{H}_{SO} &= \sum_{i=1}^N \xi(r_i)\,\mathbf{l}_i \cdot \mathbf{s}_i.
+    \cH{fi} &= \underbrace{\sum_{i=1}^N \frac{\hbar^2}{2m} \nabla_i^2 - \sum_{i=1}^N \frac{Ze^2}{r_i}}_{\cH{0} \rightarrow \text{ Kinetic and Potential}} + \underbrace{\sum_{i<j}^N \frac{e^2}{r_{ij}}}_{\cH{C} \rightarrow \text{ Coulomb}} + \underbrace{\sum_{i=1}^N \xi(r_i)\,\mathbf{L}_i \cdot \mathbf{S}_i.}_{\cH{SO} \rightarrow \text{ Spin-Orbit}}
 \end{split}
 \end{align}
 
@@ -31,20 +57,20 @@ Where $r_i$ is the distance of each electron to the nucleus and $r_{ij}$ are the
 
 \begin{align}
 \begin{split}
-    \cH{FI} \approx& \cH{C} + \cH{NC} + \cH{SO}, \\
-    \cH{C} =& \sum_{i=1}^N \frac{\hbar^2}{2m} \nabla_i^2  - \sum_{i=1}^N \frac{Ze^2}{r_i} + \left\langle\sum_{\text{pairs}} \frac{e^2}{r_{ij}}\right\rangle\\
-    \cH{NC} =& \sum_{\text{pairs}} \frac{e^2}{r_{ij}} - \left\langle\sum_{\text{pairs}} \frac{e^2}{r_{ij}}\right\rangle
+    \cH{fi} = \underbrace{\cH{0} + \left\langle\sum_{\text{pairs}} \frac{e^2}{r_{ij}}\right\rangle}_{\cH{c} \rightarrow \text{ Central}} + \underbrace{\cH{C} - \left\langle\sum_{\text{pairs}} \frac{e^2}{r_{ij}}\right\rangle}_{\cH{nc} \rightarrow \text{ Non-central}} + \cH{SO}.
 \end{split}
 \end{align}
 
-From this expression, it is clear that $\cH{NC}$ is merely a perturbation on $\cH{C}$. This allows to separate $\cH{0}$ into $N$ independent single-electron equations with the same angular properties as the Hydrogen atom. Each electron $i$ will be described by the four quantum numbers $(n, l, m_l, m_s)$, respectively the principal quantum number, the angular momentum quantum number ($0\leq l<n-1$), the magnetic quantum number ($-l\leq m_l\leq +l$) and the spin quantum number ($m_s=\pm\tfrac{1}{2}$). For lanthanides, the valence shell is located in the $n=4$ and $l=3$ configuration and is generally refered as the $4f$ shell \sidenote{The actual electronic wavefunctions are given by a Slater determinant, which enforces the Pauli exclusion principle and the anti-symmetric behaviour under electron exchange that is characteristic of fermionic particles.}. The averaged electron interaction term is not known, but it can be treated using the Hartree--Fock approximation (see \sidecite{weissbluth_atoms_2012}).
+From this expression, it is clear that non-central term $\cH{nc}$ is merely a perturbation on the central term $\cH{c}$. Importantly, $\cH{c}$ can be described by single-electron equations with the same angular properties as the Hydrogen atom. Each electron $i$ will be described by the four quantum numbers $(n, l, m_l, m_s)$, respectively the principal quantum number, the angular momentum quantum number ($0\leq l<n-1$), the magnetic quantum number ($-l\leq m_l\leq +l$) and the spin quantum number ($m_s=\pm\tfrac{1}{2}$). For lanthanides, the valence shell is located in the $n=4$ and $l=3$ configuration and is generally referred as the $4f$ shell \sidenote{The actual electronic wavefunctions are given by a Slater determinant, which enforces the Pauli exclusion principle and the antisymmetric behavior under electron exchange that is characteristic of fermionic particles.}. The averaged electron interaction term is not known, but it can be treated using the Hartree--Fock approximation (see \sidecite{weissbluth_atoms_2012}).
 
-To calculate the effect of the non-central Hamiltonian $\cH{NC}$, the matrix elements of the Hamiltonian are calculated in a shared diagonal basis. This basis exploits the fact that both the angular momentum operators $\mathbf{L}$ and the spin operators $\mathbf{S}$ commute with $\cH{FI}$. This allows one to define a common basis with the set of eigenvectors of $\mathbf{L}^2$ and $\mathbf{S}^2$ (Russell--Saunders coupling).
+To calculate the effect of the non-central Hamiltonian $\cH{nc}$, the matrix elements of the Hamiltonian are calculated in a shared diagonal basis. This basis exploits the fact that both the angular momentum operators $\mathbf{L}$ and the spin operators $\mathbf{S}$ commute with $\cH{fi}$. This allows one to define a common basis with the set of eigenvectors of $\mathbf{L}^2$ and $\mathbf{S}^2$ (Russell--Saunders coupling).
 
-Lastly, we consider the effects of the spin--orbit coupling on the energy structure. For light ions, with radially confined orbitals, this term is smaller than the rest of the interactions and can be treated as a perturbation. However, it is important to note that this term does not commute independently with $\mathbf{L}$ and $\mathbf{S}$ but with the combination of the two operators $\mathbf{J} = \mathbf{L} + \mathbf{S}$. Thus, the perturbation splits the degeneracy of the Russell--Saunders ground state into levels with a specific value of $J$, which are ($2J+1$)-degenerate. The labels are given by Russell--Saunders notation as $^{2S+1}L_J$\sidenote{Since erbium is a medium-sized ion, this approximation is not entirely valid, given that the spin--orbit coupling is no longer perturbative. Thus, $J$ and $S$ are no longer good quantum numbers, but remain relatively accurate for low-energy transitions.}. In the case of \Er, the free-ion ground state corresponds to $^4I_{15/2}$, a 16-fold degenerate level. The first excidecited level is separated by 1.5~\textmu m. In the following work, the \Ca crystal and the ions are cooled down to 10~mK. Consequently, only the ground state will be populated, which can be effectively approximated as a spin $J=15/2$.
+Lastly, we consider the effects of the spin--orbit coupling on the energy structure. For light ions, with radially confined orbitals, this term is smaller than the rest of the interactions and can be treated as a perturbation. However, it is important to note that this term does not commute independently with $\mathbf{L}$ and $\mathbf{S}$ but with the combination of the two operators $\mathbf{J} = \mathbf{L} + \mathbf{S}$. Thus, the perturbation splits the degeneracy of the Russell--Saunders ground state into levels with a specific value of $J$, which are ($2J+1$)-degenerate. The labels are given by Russell--Saunders notation as $^{2S+1}L_J$.%\sidenote{Since erbium is a medium-sized ion, this approximation is not entirely valid, given that the spin--orbit coupling is no longer perturbative. Thus, $J$ and $S$ are no longer good quantum numbers, but remain relatively accurate for low-energy transitions.}. 
 
-\subsection{Crystal-field Hamiltonian}
-\labsec{crystal_field}
+In the case of \Er, the free-ion ground state corresponds to $^4I_{15/2}$, a 16-fold degenerate level. The first excidecited level is separated by 1.5~\textmu m. In the following work, the \Ca crystal and the ions are cooled down to 10~mK. Consequently, only the ground state will be populated, which can be described as a spin $J=15/2$.
+
+\subsection{\Ca crystal}
+\labsec{crystal_details}
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/crystal.pdf}
@@ -52,14 +78,19 @@ Lastly, we consider the effects of the spin--orbit coupling on the energy struct
     \labfig{crystal_structure}
 \end{marginfigure}
 
-Calcium tungstate (\Ca), also known as scheelite, is a tetragonal crystal appearing as dipyramidal pseudo-octahedra and belongs to the $I4_1/a$ symmetry group (see \reffig{crystal_structure}). The crystal structure of \Ca\ consists of Ca$^{2+}$ and W$^{6+}$ ions coordinated by O$^{2-}$ ions. Each Ca$^{2+}$ ion is surrounded by eight O$^{2-}$ ions, forming a distorted dodecahedral environment, while each W$^{6+}$ ion is tetrahedrally coordinated by four O$^{2-}$ ions. The arrangement of these polyhedra leads to orthogonal principal axis (labeled as $a$, $b$ and $c$). Due to the symmetry of the crystal the $a$- and $b$- axis are equivalent. The unit cell parameters at cryogenic temperature are $a=b=5.23643$~\AA\,and $c=11.3381$~\AA\,\sidecite{senyshyn_lattice_2004}. 
+Calcium tungstate (\Ca), also known as scheelite, is a tetragonal crystal appearing as dipyramidal pseudo-octahedra and belongs to the $I4_1/a$ symmetry group. The crystal structure of \Ca\ is depicted in see \reffig{crystal_structure} and consists of Ca$^{2+}$ and W$^{6+}$ ions coordinated by O$^{2-}$ ions. Each Ca$^{2+}$ ion is surrounded by eight O$^{2-}$ ions, forming a distorted dodecahedral environment, while each W$^{6+}$ ion is tetrahedrally coordinated by four O$^{2-}$ ions. The arrangement of these polyhedra leads to orthogonal principal axis (labeled as $a$, $b$ and $c$). Due to the symmetry of the crystal the $a$- and $b$- axis are equivalent. The unit cell parameters at cryogenic temperature are $a=b=5.23643$~\AA\,and $c=11.3381$~\AA\,\sidecite{senyshyn_lattice_2004}. 
 
-Lanthanide ions enter the crystal in substitution to Ca$^{2+}$, a site with an $S_4$ symmetry\sidenote{Due to the charge difference between the two ions, charge compensation mechanisms take place inside the crystal, which can be achieved by the presence of interstitial ions, vacancies, or other defects.}. Inside a solid, the energy levels of the \Er ion are perturbed by the electrostatic potential $V$ at the ion's location produced by the neighboring atoms of the lattice. This potential can be expressed as a multipole expansion, and written by separating terms that are even and odd under the inversion symmetry ($r \leftrightarrow -r$), $V = V_\mathrm{odd} + V_\mathrm{even}$. Because the \Er insertion site (of symmetry $S_4$) does not present inversion symmetry, $V_\mathrm{odd} \neq 0$.
+\Er ions are found to substitute Ca$^{2+}$ ions in \Ca, which are located in a site with an $S_4$ point-symmetry. Due to the charge difference between the two ions, charge compensation mechanisms take place inside the crystal, which can take the form of interstitial ions, vacancies, or other defects. 
 
-The crystal-field Hamiltonian is used to describe the interaction between the ion and the crystal and is generally described in terms of the extended Stevens operators $\hat{O}^q_k$ with $k=1,2,3,\dots$ and $q \in \{-k,\dots, k\}$ \sidecite{abragam_electron_2012,stevens_matrix_1952}
+\subsection{Crystal-field Hamiltonian}
+\labsec{crystal_field}
+
+Inside the crystal, the energy levels of the \Er ion are perturbed by the electrostatic potential $V$ at the ion's location produced by the neighboring atoms of the lattice. This potential can be expressed as a multipole expansion, and written by separating terms that are even and odd under the inversion symmetry ($r \leftrightarrow -r$), $V = V_\mathrm{odd} + V_\mathrm{even}$. Because the \Er insertion site (of symmetry $S_4$) does not present inversion symmetry, $V_\mathrm{odd} \neq 0$. 
+
+The strong spin-orbital coupling of the valence electrons of \Er will lift the degeneracy of the $J=15/2$ ground state. However, the $4f$ valence shell is very confined compared to the more external $5s$ and $5p$ closed shells. The external electrons will screen the electric fields of the crystal on the $4f$ shell. As a result, the effect of the crystal-field can be treated as a perturbation of the free-ion Hamiltonian. The crystal-field Hamiltonian is used to describe the interaction between the ion and the crystal and is generally described in terms of the extended Stevens operators $\hat{O}^q_k$ with $k=1,2,3,\dots$ and $q \in \{-k,\dots, k\}$ \sidecite{abragam_electron_2012,stevens_matrix_1952}
 
 \begin{equation}
-    \cH{CF} = \sum_{k}^{1,2,3,\dots}\sum_{q}^{-k,...k} B_k^q \hat{O}^q_k \,
+    \cH{cf} = \sum_{k}^{1,2,3,\dots}\sum_{q}^{-k,...k} B_k^q \hat{O}^q_k \,
 \end{equation}
 
 Where the coefficients $B_k^q$ are real-valued crystal-field parameters. Terms with even and odd rank $k$-index belong to the even and odd electrostatic potential ($V_{\mathrm{even}}$,$V_{\mathrm{odd}}$) respectively.
@@ -72,6 +103,12 @@ The extended Stevens operators are constructed as polynomial combinations of the
     \hat{O}_4^4 &= \tfrac{1}{2} \left( \hat{J}_+^4 + \hat{J}_-^4 \right).
 \end{split}
 \end{align}
+
+\begin{figure}
+    \includegraphics{chapter2/figures/full_energy_splitting.pdf}
+    \caption[Energy splitting diagram from free-ion to effective spin-1/2]{Energy splitting diagram from the electronic configuration to the effective spin-1/2. The electronic $4f$ shell is split into optically addressable states by electron--electron interaction and spin--orbit coupling. The free-ion ground state corresponds to $^4I_{15/2}$, a 16-fold degenerate level, and the first excidecited level is separated by an optical transition of 1.5~\textmu m. In \Ca, the $J=15/2$ ground state is split into eight doublets ($Z_{1,\dots,8}$) due to the crystal-field. Finally, a magnetic field lifts the doublet degeneracy through to the Zeeman effect.}
+    \labfig{full_energy_splitting}
+\end{figure}
 
 The maximum power of the angular moment operators in the polynomial expansion of the Stevens operator is given by the $k$ index, while the maximum power of the $J_\pm$ operators is given by the $q$ index. This allows the crystal field to encode the symmetry properties of the crystal site in a reduced number of terms. 
 
@@ -96,7 +133,7 @@ $B_6^{-4}$ & 75~cm$^{-1}$
 To accurately describe the \Er energy level system, we rely on the crystal-field Hamiltonian derived by Bernal \cite{enrique_optical_1971} for \Er:\Ca through a series of optical spectroscopy measurements:
 
 \begin{equation}
-    \cH{CF} = 
+    \cH{cf} = 
     \alpha \, B_2^0 \hat{O}_2^0 + 
     \beta \, \left(B_4^0 \hat{O}_4^0 + B_4^4 \hat{O}_4^4\right) +
     \gamma \, \left(B_6^0 \hat{O}_6^0 + B_6^4 \hat{O}_6^4 + B_6^{-4} \hat{O}_6^{-4}\right) \,
@@ -119,24 +156,18 @@ Under a magnetic field $\mathbf{B_0}$, the Hamiltonian of the ground $J=15/2$-mu
     \mathcal{H}_J = \mu_B \ g_J\mathbf{B_0}\cdot \mathbf{J} + \mathcal{H}_{\mathrm{CF}},
 \end{equation}
 
-The first term represents the Zeeman interaction, where $\mu_B/2\pi = 13.996$~GHz/T is the Bohr magneton and $g_J = 6/5$ is the Landé factor for the \Er ground state. \reffig{energy_levels_vs_Bz_all} illustrates the magnetic-field-induced splitting of the energy levels along the $c$-axis, obtained by direct diagonalization of the Hamiltonian in Eq.~\ref{eq:J-CF_Hamiltonian}. Each $Z_i$ doublet splits into two levels, with an effective, anisotropic gyromagnetic tensor that varies for each doublet. This anisotropy is evident from the differing transition frequencies observed when a 500~mT magnetic field is applied parallel versus perpendicular to the $c$-axis. 
+The first term represents the Zeeman interaction, where $\mu_B/2\pi = 13.996$~GHz/T is the Bohr magneton and $g_J = 6/5$ is the Landé factor for the \Er ground state. \reffig{energy_levels_vs_Bz_all} illustrates the magnetic-field-induced splitting of the energy levels along the $c$-axis, obtained by direct diagonalization of the Hamiltonian in Eq.~\ref{eq:J-CF_Hamiltonian}. Each $Z_i$ doublet splits into two levels, with an effective, anisotropic gyromagnetic tensor that varies for each doublet. This anisotropy is evident from the differing transition frequencies observed when a 500~mT magnetic field is applied parallel versus perpendicular to the $c$-axis.
 
 \subsection{Spin-1/2 approximation}
 
-The energy separation between the $Z_1$ and $Z_2$ doublets is approximately 650 GHz, which corresponds to a temperature of 50~K. Thus, at the working temperature of 10~mK, only the $Z_1$ doublet will be populated. This doublet can be effectively treated as a spin-1/2 with an anisotropic gyromagnetic tensor,
-
-\begin{marginfigure}
-    \includegraphics{chapter2/figures/energy_levels_vs_Bz_Z1.pdf}
-    \caption[Zeeman splitting of the $Z_1$ doublet]{Energy levels of the $Z_1$ doublet as a function of magnetic field along the $c$-axis. The curves were obtaioned by direct diagonalization of Eq. \ref{eq:J-CF_Hamiltonian} and Eq. \ref{eq:er_spin_hamiltonian} (solid and dot-dashed resp.).}
-    \labfig{energy_levels_vs_Bz_Z1}
-\end{marginfigure}
+The energy separation between the $Z_1$ and $Z_2$ doublets is approximately 650 GHz, which corresponds to a temperature of 50~K. Thus, at the working temperature of 10~mK, only the $Z_1$ doublet will be populated. This doublet can be effectively treated as a spin-1/2 with an anisotropic gyromagnetic tensor. Under a magnetic field, the Hamiltonian of the spin is
 
 \begin{equation}
     \label{eq:er_spin_hamiltonian}
-    \mathcal{H}_S = \mathbf{B_0}\cdot \bar{\bar{\gamma}}_{^{3+}\text{Er}}\cdot\mathbf{S}
+    \cH{eZ} = \mathbf{B_0}\cdot \bar{\bar{\gamma}}_{^{3+}\text{Er}}\cdot\mathbf{S} = \omega_S\, S_{z'}
 \end{equation}
 
-with two eigenstates $\ket{\Downarrow}$ and $\ket{\Uparrow}$. The effective gyromagnetic tensor $\bar{\bar{\gamma}}_{^{3+}\text{Er}}$ is diagonal along the principal axes of the crystal, with values \sidecite{antipina.a._anisotropy_1981}
+where $\omega_S = \lVert \mathbf{B_0}\cdot \bar{\bar{\gamma}}_{^{3+}\text{Er}}\rVert$ is the Larmor frequency of the spin and $z'$ corresponds to its quantization axis. The two eigenstates of the system are labeled $\ket{\Downarrow}$ and $\ket{\Uparrow}$. The effective gyromagnetic tensor $\bar{\bar{\gamma}}_{^{3+}\text{Er}}$ is diagonal along the principal axes of the crystal, with values \sidecite{antipina.a._anisotropy_1981}
 
 \begin{align}
 \begin{split}
@@ -145,18 +176,18 @@ with two eigenstates $\ket{\Downarrow}$ and $\ket{\Uparrow}$. The effective gyro
 \end{split}
 \end{align}
 
-Throughout this thesis, we will primarily use this effective spin-1/2 approximation for the energy structure of the \Er. Nevertheless, it is important to note that as the magnetic field increases, mixing between doublets becomes significant, leading to deviations from the simple linear Zeeman splitting. This effect is illustrated in \reffig{energy_levels_vs_Bz_Z1}, where the energy levels of the $Z_1$ doublet are shown alongside the linear approximation as a function of magnetic field along the $c$-axis. Compared to the linear behaviour of the spin-1/2 approximation, the energy levels obtained from the crystal-field Hamiltonian "bend" as the magnetic field increases. A direct result of this non-linear behaviour is the appearance of a non-zero average magnetic moment
+Because the effective gyromagnetic tensor is anisotropic, the spin quantization axis of the spin is not in general parallel to the applied magnetic field. Indeed, the unitary vector of the quantization axis is given by
 
 \begin{equation}
-    \langle \mu_z \rangle = \frac{\partial E_\Downarrow}{\partial B_0} - \frac{\partial E_\Uparrow}{\partial B_0} \neq 0
+    \mathbf{u}_{z'} = \frac{\mathbf{B_0}\cdot \bar{\bar{\gamma}}_{^{3+}\text{Er}}}{\lVert \mathbf{B_0}\cdot \bar{\bar{\gamma}}_{^{3+}\text{Er}}\rVert}.
 \end{equation}
 
-where $E_\Downarrow$ and $E_\Uparrow$ are the energies of the system as a function of the applied magnetic field $B_z$. This non-linearity is the origin of the pseudo-Zeeman \sidecite{baker_paramagnetic_1997} and pseudo-Quadrupole effects \sidecite{foley_secondorder_1947}, which are taken into account when interpreting the high-resolution spectroscopy experiments detailed in \red{labch}
+This axis coincides with $\mathbf{B_0}$ only when the field is aligned with one of the crystal principal axes $a$, $b$ or $c$.
 
-\subsection{Magneto-Electric effect}
+\subsection{Induced electric dipole}
 \label{sec:magneto-optic}
 
-As discussed in \refsec{crystal_field}, paramagnetic ions in solids, occupying non-centrosymmetric sites acquire a gyromagnetic tensor that depends on both the magnitude and direction of an applied static electric field \sidecite{ham_linear_1961}. This magneto-electric coupling is pronounced in \Er:\Ca \sidecite{mims_electric_1965} and can noticeably modify electron-spin decoherence \sidecite{ledantec_twentythreemillisecond_2021}. Microscopically, the effect can be viewed as a magnetic-field-induced electric dipole whose local electric field perturbs nearby spins. In Section \red{reference} we perform high-resolution NMR spectroscopy where the electric field generated by this induced dipole is an important effect for interpreting the observed spectral shifts. We follow with an explanation of this effect.
+As discussed in \refsec{crystal_field}, paramagnetic ions in solids, occupying non-centrosymmetric sites acquire a gyromagnetic tensor that depends on both the magnitude and direction of an applied static electric field \sidecite{ham_linear_1961}. This magneto-electric coupling is pronounced in \Er:\Ca \sidecite{mims_electric_1965} and can noticeably modify electron spin decoherence \sidecite{ledantec_twentythreemillisecond_2021}. Microscopically, the effect can be viewed as a magnetic-field-induced electric dipole whose local electric field perturbs nearby spins. In Section \red{reference} we perform high-resolution NMR spectroscopy where the electric field generated by this induced dipole is an important effect for interpreting the observed spectral shifts. We follow with an explanation of this effect.
 
 As noted earlier, \Er:\Ca occupies a site with $S_4$ symmetry, which lacks inversion symmetry. This allows odd terms $(k=1,3,5,\dots)$ to appear in the crystal-field Hamiltonian. These terms do not affect the ion's energy level structure in the absence of an external electric field and are not given in \reftab{cf_parameters}. The origin of these magneto-electric shifts lies in field-induced mixing between odd and even crystal-field terms which shifts the energy structure \sidecite{kiel_electricfieldinduced_1970}. This interaction can be modeled with the Hamiltonian:
 
@@ -189,44 +220,87 @@ Even if the energy shifts are zero in the absence of and electric field, this in
 \label{seq:electric_dipole}
 \end{align}
 
-where $\langle S_i \rangle$ corresponds to the expected value of the electron-spin. The dipole in turn generates an electric field around the position of the \Er, whose effects will be revisited in \red{refsec}
+where $\langle S_i \rangle$ corresponds to the expected value of the electron spin. 
+
+In conclusion, paramagnetic impurities in non-centrosymmetric sites posses a magnetically induced electric dipole due to the coupling to higher energy levels with opposite parity.
+
+\subsubsection{Conclusion} 
+
+We can summarize the results of this section by comparing the properties of the effective spin-1/2 of \Er:\Ca to a free electron, described at the beginning of the chapter:
+
+\begin{marginfigure}
+    \includegraphics{chapter2/figures/energy_levels_vs_Bz_Z1.pdf}
+    \caption[Zeeman splitting of the $Z_1$ doublet]{Energy levels of the $Z_1$ doublet as a function of magnetic field along the $c$-axis. The curves were obtaioned by direct diagonalization of Eq. \ref{eq:J-CF_Hamiltonian} and Eq. \ref{eq:er_spin_hamiltonian} (solid and dot-dashed resp.).}
+    \labfig{energy_levels_vs_Bz_Z1}
+\end{marginfigure}
+
+\begin{itemize}
+    \item \textbf{Anisotropy}. In the crystalline axis basis, the gyromagnetic tensor of \Er:\Ca is given by
+    \[
+         \bar{\bar{\gamma}}_{^{3+}\text{Er}} = \begin{pmatrix}
+            117.3 & 0 & 0 \\
+            0 & 117.3 & 0 \\
+            0 & 0 & 17.45
+         \end{pmatrix}\,\frac{\text{GHz}}{\text{T}}
+    \]
+    This tensor is highly anisotropic, in contrast to that of the free electron spin. In addition, the gyromagnetic factor along the $a$ and $b$ axes is four times larger than $\gamma_e$, which is key to achieve a large inductive coupling strengths. Finally, the anisotropy of the electron spin yields in a quantization axis which is not parallel to the external magnetic field, unless $\mathbf{B_0}$ is applied along one of the crystalline axis.
+    \item \textbf{Average magnetic moment.}  We note that as the magnetic field increases, mixing between the doublets ($Z_1,\,Z_2,\,\dots$) leads to deviations from the effective spin-1/2 approximation. This effect is illustrated in \reffig{energy_levels_vs_Bz_Z1}, where the energy levels of the $Z_1$ doublet, $E_\Downarrow$ and $E_\Uparrow$, are shown as a function of the applied magnetic field along the $c$-axis. Both the effective spin-1/2 model and direct diagonalization of the crystal-field Hamiltonian are shown together (dashed and solid lines). Compared to the linear behavior of the spin-1/2 model, the energy levels of the crystal field present clear non-linear behavior. This indicates that the magnetic moment of the two states is not opposite:
+
+    \[ \frac{\partial E_\Downarrow}{\partial B_0} \neq - \frac{\partial E_\Uparrow}{\partial B_0} \]
+
+    This results in an average magnetic moment which induces a pseudo-Zeeman shift on nearby spins by modifying the effective magnetic field on their location, thereby shifting their resonant frequency \sidecite{baker_paramagnetic_1997}.
+
+    \item \textbf{Induced electric dipole}. The non-centrosymmetric nature of the insertion site (of symmetry $S_4$) yields non-zero odd terms on the crystal field Hamiltonian. These terms do not contribute to the energy splitting of the free-ion eigenstates  but create magnetic-field-induced electric dipole. 
+\end{itemize}
 
 
-\section[Nuclear spins in CaWO4]{Nuclear spins in \Ca}
+
+\section{Nuclear spins in \Ca}
 \labsec{nuclear_spins_ca}
+
+In contrast to electrons, nuclei are not elementary particles but a combination of protons and neutrons, bound together by the strong nuclear force. What we refer as the \textit{nuclear spin} $I$ is actually the total angular momentum of the ground state of the nuclear Hamiltonian \sidecite{kuprov_spin_2023}. The combination of both spin and orbital angular momentum in the nucleus can yield nuclear spin numbers as large as $I=7$ for the case of $^{176}$Lu. 
+
+In Chapters \ref{ch:detection_and_control_of_individual_w} and \ref{ch:individual_nuclear_spins_quantum_information} we report the detection and coherent control of individual \W nuclear spins, and in Chapter \red{ref} we identify a nearby impurity as \Nb with nuclear spin $I=9/2$ via spectroscopy. This section summarizes how external magnetic and electric fields couple to nuclear moments, focusing on the interactions that dominate our experiments, principally the nuclear Zeeman effect and the electric quadrupole coupling, and describes their influence on the level structure and transition frequencies of \W and \Nb.
 
 \subsection{Nuclear Zeeman interaction}
 
-The coupling of a nuclear-spin to a static magnetic field can be generally described with a nuclear Zeeman Hamiltonian
+A nuclear spin in an external magnetic field is described by the Zeeman Hamiltonian, analogous to the electron case:
 
 \begin{equation}
-    \cH{nZ} = \gamma_n \mathbf{B_0}\cdot\mathbf{I},
+    \cH{nZ} = \gamma_n\, \mathbf{B_0}\cdot\mathbf{I} = \omega_I \, I_{z'},
 \end{equation}
 
-\noindent where $\gamma_n$ is the nuclear gyromagnetic ratio and $\mathbf{I}$ the nuclear-spin operator which are inherent properties of a nucleus. The gyromagnetic ratio of a proton is $\gamma_p/2\pi = 42.57716$~MHz/T \red{ref} which is approximately 500 times smaller than the Bohr magneton. Given the large difference in magnetic response, the Zeeman energy of the electron-spin is in general the dominating term in interacting systems. 
+\noindent where $\gamma_n$ is the isotropic nuclear gyromagnetic factor, $\mathbf{I}=(I_z,I_y,I_z)$ are the nuclear spin operators, $\omega_I = \lVert \gamma_n\, \mathbf{B_0} \rVert$ the Larmor frequency and $z'$ the quantization axis of the nuclear spin.  This term splits the nuclear manifold into $2I + 1$ energy levels, uniquely described by the magnetic quantum number $m_I \in \{-I, -I+1, \dots I\}$. For the species relevant to this work the gyromagnetic ratios are $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T and $\gamma_{\text{\Nb}}/2\pi = 10.4213$~MHz/T \sidecite{knight_solidstate_1986}\red{cite!}.
 
-In addition, when the nuclear-spin magnetic quantum number $I$ is larger than 1/2, the nuclear-spin wavefunctions will not be spherical. Consequently, the charge distribution of the spin will be elongated and the pressence of an Electric Field Gradient (EFG) will introduce a new term in the Hamiltonian, known as the \textbf{quadrupole interaction}. We now proceed to derive the shape of the quadrupole Hamiltonian. 
+These values lie in the MHz/T range, which is roughly $10^{-4}$ times smaller than an electron. In addition, we note that the sign of the gyromagnetic ratios is positive\sidenote{Given that the nuclear spin is a complex combination of the spin and orbital momentum of nucleons, the gyromagnetic ratio can also be negative under particular circumstances, as is the case for $^{15}$N.}, which means that the Zeeman ground state is $m_I=I$ and parallel to the applied magnetic field, in contrast to the electron spin.
+
+
+%The gyromagnetic ratio of a proton is $\gamma_p/2\pi = 42.57716$~MHz/T \red{ref} which is approximately 500 times smaller than the Bohr magneton. Given the large difference in magnetic response, the Zeeman energy of the electron spin is in general the dominating term in interacting systems. 
+
+
 
 \subsection{Electric Quadrupole interaction}
 \labsec{electric_quadrupole}
 
-%In section \red{labsec} we discuss the measurements performed in a system consisting of an \Er spin and a \Nb nuclear-spin in close proximity. Although unexpected, the presence of a \Nb spin gave us the chance to study a more complex system, as it boasts a high nuclear-spin $I=9/2$. This requires introducing the nuclear quadrupole interaction\sidenote{The quadrupole is strictly zero for $I=\tfrac12$}, which couples the nuclear electric quadrupole moment to the local electric-field gradient (EFG)
+%In section \red{labsec} we discuss the measurements performed in a system consisting of an \Er spin and a \Nb nuclear spin in close proximity. Although unexpected, the presence of a \Nb spin gave us the chance to study a more complex system, as it boasts a high nuclear spin $I=9/2$. This requires introducing the nuclear quadrupole interaction\sidenote{The quadrupole is strictly zero for $I=\tfrac12$}, which couples the nuclear electric quadrupole moment to the local electric-field gradient (EFG)
+
+For nuclei with $I\geq 1$ the ground-state charge distribution is not spherically symmetric, and the nucleus therefore possesses an electric quadrupole moment. In the presence of a non-zero electric-field gradient (EFG) at the nuclear site, this quadrupole moment couples to the EFG, giving rise to the nuclear quadrupole interaction which must be included in the spin Hamiltonian. In the following we derive the operator form of this interaction and describe its effect on the nuclear spin energy levels.
+
+Physically, the quadrupole effect arrives from the non-sphericity of the nuclear wavefunctions of $I\geq1$ nuclear spins. The charge distribution inside the nuclear spin will be elongated and when subject to an external field gradient certain orientations of the charge will be favored. \reffig{charge_orientatons} sketches this intuition by placing an elongated positively charged distribution between four charges, two $+q$ in the $x$-axis and two $-q$ in the $y$-axis. Due to the electrostatic attraction between the positive and negative charges, the vertical orientation will be energetically favored.
+
+We now proceed to sketch the derivation of the quadrupole interaction in terms of the spin operators which can be found in full in \sidecite{slichter_principles_1996}. We begin by considering the classical case of a charge distribution $\rho(\mathbf{r})$ under an electric potential $V(\mathbf{r})$. The energy associated to this system is given by
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/charge_orientatons.pdf}
-    \caption[Quadrupole charge diagram]{Non-spherical charge distribution with four charges, two $+q$ in the $x$-axis and two $-q$ in the $y$-axis. The positively charged distribution has two orientations: perpendicular and horizonatal. The perpendicular orientation is energetically more favourable.}
+    \caption[Quadrupole charge diagram]{Non-spherical charge distribution with four charges, two $+q$ in the $x$-axis and two $-q$ in the $y$-axis. The positively charged distribution has two orientations: perpendicular and horizontal. The perpendicular orientation is energetically more favorable.}
     \labfig{charge_orientatons}
 \end{marginfigure}
-
-Physically, the quadrupole effect arrises from the non-sphericity of the nuclear wavefunctions of $I\geq1$ nuclear-spins. The charge distribution inside of the nuclear-spin will be elongated and when subject to an external field gradient certain orientations of the charge will be favoured. \reffig{charge_orientatons} sketches this intuition by placing an elongated positively charged distribution between four charges, two $+q$ in the $x$-axis and two $-q$ in the $y$-axis. Due to the electrostatic attraction between the positive and negative charges, the vertical orientation will be energetically favoured.
-
-We now proceed to sketch the derivation of the quadrupole interaction in terms of the spin operators which can be found in full in \sidecite{slichter_principles_1996}. We begin by considering the classical case of a charge distribution $\rho(\mathbf{r})$ under an electric potential $V(\mathbf{r})$. The energy associated to this system is given by
 
 \begin{equation}
     E = \int \rho(\mathbf{r}) \times V(\mathbf{r}) d\mathcal{V}.
 \end{equation}
 
-We can approach this problem through the multi-pole expansion, which consists on writing the potential as a Taylor series at the center of mass of the nucleus and treating each term independently, 
+We can approach this problem through the multipole expansion, which consists on writing the potential as a Taylor series at the center of mass of the nucleus and treating each term independently, 
 
 \begin{equation}
 V(\mathbf{r}) = V(0) 
@@ -248,7 +322,7 @@ E =&\, V(0) \int \rho \, d\mathcal{V}
 \end{split}
 \end{align}
 
-Respectively, each term corresponds to the electrostatic energy of a point-charge nucleus, the energy due to the dipole moment \sidenote{Given that the center of mass and the center of charge are equal, the dipole energy tends to zero} and the quadrupolar term. To describe the quadrupole interaction, it is particularly useful to introduce the following quantities 
+Respectively, each term corresponds to the electrostatic energy of a point-charge nucleus, the energy due to the dipole moment \sidenote{Given that the center of mass and the center of charge are equal, the dipole energy tends to zero} and the quadrupolar term. Higher-order energy terms correspond to the octuple and hexadecapole interaction which can induce minute shifts on the energy levels \red{maybe extend, add cites, state of the art?} To describe the quadrupole interaction, it is particularly useful to introduce the following quantities 
 
 \begin{equation}
     Q_{\alpha \beta} = \int \big( 3 x_{\alpha} x_{\beta} - \delta_{\alpha \beta} r^{2} \big) \, \rho \, d\mathcal{V}
@@ -260,7 +334,7 @@ as the energy of the quadrupole can be written in a compact form
     E_\text{Q} = \tfrac16 \sum_{\alpha, \beta} Q_{\alpha \beta} V_{\alpha \beta}.
 \end{equation}
 
-To quantize this expression one must take the quantum mechanical expression for the charge density of the constituting protons of the nucleus and apply the Wigner-Eckart theorem to evaluate the resulting integrals and express the interaction in terms of the nuclear-spin operator $\mathbf{I}$ 
+To quantize this expression one must take the quantum mechanical expression for the charge density of the constituting protons of the nucleus and apply the Wigner-Eckart theorem to evaluate the resulting integrals and express the interaction in terms of the nuclear spin operator $\mathbf{I}$ 
 
 \begin{equation}
 \cH{Q} = \frac{e\mathcal{Q}}{6I(2I-1)} 
@@ -270,7 +344,7 @@ To quantize this expression one must take the quantum mechanical expression for 
 \label{eq:quadrupole}
 \end{equation}
 
-where $\mathcal{Q}$ denotes the quadrupole moment, obtained from the integral of the nuclear charge distribution and measured in Barns. The quadrupole Hamiltonian can be writen the following compact form
+where $\mathcal{Q}$ denotes the quadrupole moment, obtained from the integral of the nuclear charge distribution and measured in Barns. The quadrupole Hamiltonian can be written the following compact form
 
 \begin{equation}
     \cH{Q} = \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I},
@@ -295,12 +369,14 @@ where $\hbar \omega_Q$ is the quadrupole energy,
     \omega_Q \equiv  \frac{3e\mathcal{Q}V_{11}}{2I(2I-1)\hbar}.
 \end{equation}
 
-Based on the value of the asymmetry parameter $\eta$ we can distinguish two regimes. First, if $\eta=0$ the quadrupole is said to be axial and the Hamiltonian is diagonal in the $\ket{I,m_I}$ basis. The quadrupole then splits the nuclear energy levels by $m_I^2 \omega_Q/2 $, where $m_I$ is the projection of the nuclear-spin along the $\mathcal{P}_1$ axis. Second, when $\eta\neq0$ the term proportional to $\eta$ mixes states differing by $\Delta m_I=\pm2$ and creates a non-trivial energy level structure. 
+Based on the value of the asymmetry parameter $\eta$ we can distinguish two regimes. First, if $\eta=0$ the quadrupole is said to be axial and the Hamiltonian is diagonal in the $\ket{I,m_I}$ basis. The quadrupole then splits the nuclear energy levels by $m_I^2 \omega_Q/2 $, where $m_I$ is the projection of the nuclear spin along the $\mathcal{P}_1$ axis. Second, when $\eta\neq0$ the term proportional to $\eta$ mixes states differing by $\Delta m_I=\pm2$ and creates a non-trivial energy level structure. 
 
 
 \subsubsection{Rotational invariance of the quadrupolar energy spectrum}
 
-When measuring the nuclear-spin transitions under a specific magnetic field orientation, the resulting frequencies are generally not enough to describe the full quadrupole tensor. 
+\red{Move to the relevant chapter!}
+
+When measuring the nuclear spin transitions under a specific magnetic field orientation, the resulting frequencies are generally not enough to describe the full quadrupole tensor. 
 
 It is useful to express the quadrupole in the basis of the rank-2 spherical tensors\sidenote{
 The rank-2 spherical tensors are related to the spin operator basis by
@@ -334,51 +410,85 @@ Q_m \;\mapsto\; e^{-im\zeta}\, Q_m,
 \end{equation}
 under a physical rotation of angle $\zeta$ about the $z$-axis. Since the energy levels of the Hamiltonian are insensitive to these phase factors and depend only on invariants such as $Q_0$, $|Q_{\pm 1}|^2$, and $|Q_{\pm 2}|^2$, the energy spectrum is invariant under such rotations. 
 
-This is a subtle point with an important consequence: any two tensors related by a rotation in the $xy$ plane produce identical NMR spectra for a fixed field orientation. Equivalently, no matter how precise the measurement of the nuclear transition frequencies, one can reconstruct the quadrupole tensor only up to a rotation about the field axis. Consequently, the only way to lift this degeneracy is by measuring with a different quantization axis of the nuclear-spin\sidenote{At zero magnetic field, no orientation information can be extracted, only the magnitudes of the principal components of the quadrupole}.
+This is a subtle point with an important consequence: any two tensors related by a rotation in the $xy$ plane produce identical NMR spectra for a fixed field orientation. Equivalently, no matter how precise the measurement of the nuclear transition frequencies, one can reconstruct the quadrupole tensor only up to a rotation about the field axis. Consequently, the only way to lift this degeneracy is by measuring with a different quantization axis of the nuclear spin\sidenote{At zero magnetic field, no orientation information can be extracted, only the magnitudes of the principal components of the quadrupole}.
 
-\subsection{Magnetic spin environment}
-
-The nuclear-spin environment of \Ca is predominantly composed of \W nuclear-spins, which have a natural abundance of 14.4\% and remarkably low gyromagnetic ratio\sidenote{It is 0.041 times smaller than the proton's gryomagnetic factor!}, $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T \sidecite{knight_solidstate_1986}. The combination of a low density of nuclear-spins and a weak gyromagnetic ratio results in an environment with a reduced magnetic moment density.
-\sidenote{There are other stable calcium and oxygen isotopes with non-zero nuclear-spin, namely $^{43}$Ca, $^{15}$O and $^{17}$O with $I=7/2$, $I=1/2$ and $I=5/2$, respectively, but their natural abundances are low (0.1\%, 0.003\% and <0.003\%, respectively) and are not considered in our discussion.}
-As such, the magnetic noise perceived by any paramagnetic impurity hosted in the crystal is significantly reduced compared to other hosts used in quantum applications, such as yttrium orthosilicate (Y$_2$SiO$_5$, YSO) and yttrium oxide (Y$_2$O$_3$). This results in slow spectral diffusion and reduced decoherence rates for any paramagnetic impurity hosted in the crystal.
-
-In addition to the nuclear-spin bath, paramagnetic impurities—such as other rare-earth ions or transition metal ions—can also contribute significantly to the magnetic environment experienced by a single \Er ion. These electronic spins have a much larger gyromagnetic response and are more spatially delocalized than the point-like nuclear-spins. At high concentrations, the magnetic noise is dominated by the paramagnetic impurities rather than the nuclear bath. Therefore, minimizing the dopant concentration is crucial to achieve long coherence times. Indeed, by reducing the concentration of rare-earth ions to the 1--100 parts per billion (ppb) range and exploiting the low magnetic density, ensemble spin coherence times as long as 23~ms have been demonstrated for \Er:\Ca \sidecite{ledantec_twentythreemillisecond_2021}.
-
-We can estimate the average distance between \Er ions by considering the ion's density in crystal of 3.1~ppb (see \refsec{sample_details}). There are four calcium sites in a single unit cell with volume $V_{\text{unit cell}}\sim310\ \text{\AA}^3$. This results in in average distance between ions of 0.3 \textmu m. \sidenote{The Ca site density is 
-\begin{equation*}
-    4/310 \approx 1.3\times10^{-2} \text{~A}^{-3}
-\end{equation*} 
-With [\Er]=3.1~ppb, the \Er density is 
-\begin{equation*}
-    n_{\text{\Er}} \approx 4.0\times10^{-11} \text{~A}^{-3}
-\end{equation*} 
-and the characteristic spacing is
-\begin{equation*}
-    n_{\text{\Er}}^{-1/3} \approx 2.9\times10^{3}\text{~A}\approx0.29\text{~\textmu m} 
-\end{equation*}
-} 
-This distance is large enough that interactions between paramagnetic impurities can be effectively neglected except in specific cases where two ions are, by chance, in close proximity. Consequently, we consider that the magnetic environment in the crystal is dominated by \W nuclear-spin.
-
-\section{Electron-nucleus interaction}
+\section{Hyperfine interaction}
 \labsec{interaction_between_to_spins}
 
-In this thesis, individual \Er ions in \Ca are used as ancilla spins to address individual nuclear-spins in their vecinity. We now proceed to consider the interaction between the two spin species which is mainly dominated via the long-range dipolar interaction\sidenote{
-    We do not consider exchange interaction between the electron and nuclear-spins. The \Er and W ions in the crystal are coordinated by an oxygen ion (see \labfig{crystal_structure}) which prevents direct overlap between the spin wavefunctions. 
-}.
+When an electron and a nuclear spins are close to each other, they will interact magnetically via two distinct mechanisms. The Fermi contact term is an isotropic, short-range interaction that appears when the nuclear and electron spin wavefunctions overlap with each other. The magnetic dipole-dipole interaction is a long-range and anisotropic coupling between two magnetic dipole moments
 
-The magnetic interaction between two dipoles with magnetic vector moments $\boldsymbol{\mu}_1$ and $\boldsymbol{\mu}_2$ is expressed as\sidecite{abragam_electron_2012}
+In this work we neglect the Fermi contact contribution for three reasons. First, the electronic wavefunctions of \Er:\Ca are highly localized $4f$ orbitals, screened by the outer $5s$ and $5p$ shells. Second, in the crystal the \Er and \W ions are separated and coordinated by intervening oxygen ligands (see \labfig{crystal_structure}), which prevents direct overlap of their electronic wavefunctions. Third, the typical interatomic separations in our samples are large enough that any residual contact contribution is orders of magnitude smaller than the dipolar coupling. 
+
+Treating the nucleus as a point dipole and the \Er as a localized magnetic moment, the magnetic dipole-dipole interaction between two moments $\boldsymbol{\mu}_1$ and $\boldsymbol{\mu}_2$ is given by as \sidecite{abragam_electron_2012}
 
 \begin{equation}
-    \mathcal{H}_{dd} = \frac{\mu_0}{4\pi} r^{-3} 
+    \cH{hf} = \frac{\mu_0}{4\pi} r^{-3} 
     \left[ \boldsymbol{\mu}_1 \cdot \boldsymbol{\mu}_2 
     - 3r^{-2} (\boldsymbol{\mu}_1 \cdot \mathbf{r})(\boldsymbol{\mu}_2 \cdot \mathbf{r}), \right]
+    \label{eq:base_hyperfine}
 \end{equation}
 
-\noindent where $\mathbf{r}$ is the vector separating the two spins. In the case of \Er and a neighboring nuclear-spin $\boldsymbol{\mu}_1 = \bar{\bar{\gamma}}_{^{3+}\text{Er}} \cdot \mathbf{S}$ and $\boldsymbol{\mu}_2 = \gamma_n \mathbf{I}$. Expanding the expression in terms of the spin operators yields
+\noindent where $\mathbf{r}$ is the vector separating the two spins. In the case of \Er and a neighboring nuclear spin $\boldsymbol{\mu}_1 = g_L \mu_B \, \mathbf{J}$ and $\boldsymbol{\mu}_2 = \gamma_n \mathbf{I}$. Expanding the expression in terms of the spin operators yields
 
 \begin{equation}
 \begin{aligned}
-H_\text{hf} &= 
+% \cH{hf} &= 
+% \frac{\mu_0 \gamma_\text{\W}}{4\pi r^3} \Big[ 
+% \gamma_{\perp} S_{a} I_{a} \big( 1 - 3 \sin^2 \theta_r \cos^2 \phi_r \big) \\
+% &\quad + \gamma_{\perp} S_{b} I_{b} \big( 1 - 3 \sin^2 \theta_r \sin^2 \phi_r \big) \\
+% &\quad + \gamma_{\parallel} S_{c} I_{c} \big( 1 - 3 \cos^2 \theta_r \big) \\
+% &\quad - 3 \sin^2 \theta_r \cos \phi_r \sin \phi_r 
+% \big( \gamma_{\perp} S_{a} I_{b} + \gamma_{\perp} S_{b} I_{a} \big) \\
+% &\quad - 3 \sin \theta_r \cos \phi_r \cos \theta_r 
+% \big( \gamma_{\perp} S_{a} I_{c} + \gamma_{\parallel} S_{c} I_{a} \big) \\
+% &\quad - 3 \sin \theta_r \sin \phi_r \cos \theta_r 
+% \big( \gamma_{\perp} S_{b} I_{c} + \gamma_{\parallel} S_{c} I_{b} \big) 
+% \Big].
+\cH{hf} &= 
+g_L \mu_B \gamma_n \frac{\mu_0}{4\pi} r^{-3} \Big[ 
+ \hat{J}_{x} \hat{I}_{x} \big( 1 - 3 \sin^2 \theta_r \cos^2 \phi_r \big) \\
+&\quad + \hat{J}_{y} \hat{I}_{y} \big( 1 - 3 \sin^2 \theta_r \sin^2 \phi_r \big) \\
+&\quad + \hat{J}_{z} \hat{I}_{z} \big( 1 - 3 \cos^2 \theta_r \big) \\
+&\quad - 3 \sin^2 \theta_r \cos \phi_r \sin \phi_r 
+\big( \hat{J}_{x} \hat{I}_{y} + \hat{J}_{y} \hat{I}_{x} \big) \\
+&\quad - 3 \sin \theta_r \cos \phi_r \cos \theta_r 
+\big( \hat{J}_{x} \hat{I}_{z} + \hat{J}_{z} \hat{I}_{x} \big) \\
+&\quad - 3 \sin \theta_r \sin \phi_r \cos \theta_r 
+\big( \hat{J}_{y} \hat{I}_{z} + \hat{J}_{z} \hat{I}_{y} \big) 
+\Big]
+\end{aligned}
+\end{equation}
+
+\noindent where $\theta_r$ and $\phi_r$ are, respectively, the polar and azimuthal angles of the vector $\mathbf{r}$ and the spin operators are expressed in the crystal axis basis. This interaction can be written in a more compact form:
+
+\begin{equation}
+    \cH{hf} = \mathbf{J} \cdot \bar{\bar {A}} \cdot \mathbf{I},
+\end{equation}
+
+\noindent where the complexity of the dipolar interaction is encoded in the hyperfine tensor $\bar{\bar{A}}$. This interaction is strongly anisotropic and depends on the relative position and orientation between the two spins. 
+
+\section{The spin Hamiltonian}
+
+We now summarize the previous derivations and assemble a compact spin Hamiltonian for a single \Er:\Ca ion coupled to one nearby nuclear spin. The model below applies to both to \W and \Nb. The nuclear quadrupole term is included generally and set to zero for \W (which has $I=1/2$). We employ three nested levels of approximations, each appropriate in different parameter regimes and used throughout this thesis:
+
+\subsubsection{Full $J$-manifold} 
+
+The most general description retains the entire $J=15/2$ manifold and includes the crystal-field, Zeeman, nuclear Zeeman, nuclear quadrupole and the full hyperfine coupling:
+    
+\begin{equation}
+    \cH{$\tfrac{15}{2}$} = g_L \mu_B \, J_{z'} + \cH{cf} + \omega_I \, I_{z'} + \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I} + \mathbf{J} \cdot \bar{\bar {A}} \cdot \mathbf{I}.
+\end{equation}
+
+We note that, at this level of approximation, the two Zeeman terms are isotropic and the operators $J_{z'}$ and $I_{z'}$ refer to the same axis $z'$, parallel to the magnetic field $B_0$.
+
+\subsubsection{Effective spin-1/2} 
+
+At cryogenic temperatures only the ground state of the lowest energy Kramers doublet $Z_1$ is populated, and the electron spin can be projected to an effective electron spin-1/2 with anisotropic gyromagnetic tensor. The hyperfine interaction is also projected into the spin-1/2 manifold, which can be performed analytically by considering the anisotropic magnetic moment $\boldsymbol{\mu}_1 = \bar{\bar{\gamma}}_{^{3+}\text{Er}} \cdot \mathbf{S}$ in Eq. \ref{eq:base_hyperfine}. 
+
+
+\begin{equation}
+\begin{aligned}
+\cH{hf} &= 
 \frac{\mu_0 \gamma_\text{\W}}{4\pi r^3} \Big[ 
 \gamma_{\perp} S_{a} I_{a} \big( 1 - 3 \sin^2 \theta_r \cos^2 \phi_r \big) \\
 &\quad + \gamma_{\perp} S_{b} I_{b} \big( 1 - 3 \sin^2 \theta_r \sin^2 \phi_r \big) \\
@@ -389,75 +499,94 @@ H_\text{hf} &=
 \big( \gamma_{\perp} S_{a} I_{c} + \gamma_{\parallel} S_{c} I_{a} \big) \\
 &\quad - 3 \sin \theta_r \sin \phi_r \cos \theta_r 
 \big( \gamma_{\perp} S_{b} I_{c} + \gamma_{\parallel} S_{c} I_{b} \big) 
-\Big].
+\Big] = \mathbf{S} \cdot \bar{\bar {A}}_{S} \cdot \mathbf{I}
+\label{eq:half_hyperfine}
 \end{aligned}
 \end{equation}
 
-\noindent where $\theta_r$ and $\phi_r$ are, respectively, the polar and azimuthal angles of the vector $\mathbf{r}$ and the spin operators are expressed in the crystal axis basis. This interaction can be written in a more compact form:
-
+Note that this Hamiltonian is written in the basis in the basis of the crystalline principal axis. The effective spin-1/2 Hamiltonian becomes
+    
 \begin{equation}
-    \cH{d-d} = \mathbf{S} \cdot \bar{\bar {A}} \cdot \mathbf{I},
+    \cH{$\tfrac12$} = \omega_S \, S_{z''} + \omega_I \, I_{z'} + \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I} + \mathbf{S} \cdot \bar{\bar {A}}_{S} \cdot \mathbf{I}
 \end{equation}
 
-\noindent where the complexity of the dipolar interaction is encoded in the hyperfine tensor $\bar{\bar{A}}$. This interaction is strongly anisotropic and depends on the relative position and orientation between the two spins. In line with the experimental conditions discussed later, we take the magnetic field to be approximately parallel to the $c$-axis of the crystal.Therefore, their coupling will depend on the orientation of the external magnetic field. In the high-field regime\sidenote{This corresponds to
+We note that, given the anisotropy of the electron spin gyromagnetic factor, the quantization axis of the nuclear spin $z'$ and of the electron spin $z''$ are not necessarily parallel to each other.
+
+\subsubsection{High-field (secular) approximation} 
+
+When the electron Zeeman splitting dominates the hyperfine terms
+\sidenote{This corresponds to
 \begin{equation*}
 |\bar{\bar{\gamma}}_{^{3+}\text{Er}} \cdot \mathbf{B_0}| \gg \bar{\bar A}.
 \end{equation*}
 If the separation between the spins is $a$, the condition can be approximated as
 \begin{equation*}
 |\mathbf{B_0}| \gg \frac{\gamma_{\text{\W}} \mu_0}{ 8\pi a^3} \approx 1\text{~mT}.
-\end{equation*}} the dominant term in the Hamiltonian is the Zeeman energy of \Er and non-commuting terms can be treated as perturbations to the energy-level structure. In particular, hyperfine interaction terms involving $S_x$ and $S_y$ can be disregarded in what is known as the secular approximation. The resulting Hamiltonian is given by\sidenote{}
+\end{equation*}} 
+the hyperfine terms proportional to $S_{x''}$ and $S_{y''}$ average out and one retains only the secular components:
 
 \begin{align}
 \begin{split}
-    \cH{d-d} \approx A_\perp I_x + A_\parallel I_z,
+    \cH{hf} \approx A_\perp  S_{x''}\,I_{z'} + A_\parallel  S_{z''}\,I_{z'}
 \end{split}
 \end{align}
 
-\noindent where the $x$-axis has been chosen to be parallel to the direction of the perpendicular hyperfine coupling.
+\noindent where the ${x''}$-axis has been chosen to be parallel to the direction of the perpendicular hyperfine coupling. Intuitively, the secular approximation can be understood by considering the effects of each term in the \Er spin Bloch sphere. The dominant Zeeman term induces a precession of the electron spin around the ${z''}$-axis with frequency $\omega_S$. By contrast, the hyperfine terms involving $S_{x''}$ and $S_{y''}$ correspond to rotations around the ${x''}$- and ${y''}$-axes, with much smaller frequencies. Because of the large difference in frequency scales, the transverse rotations effectively average to zero and can be neglected.
 
-Intuitively, the secular approximation can be understood by considering the effects of each term in the \Er spin Bloch sphere. The dominant Zeeman term induces a precession of the electron-spin around the $z$-axis with frequency $\gamma_\parallel B_0$. By contrast, the hyperfine terms involving $S_x$ and $S_y$ correspond to rotations around the $x$- and $y$-axes, with much smaller frequencies. Because of the large difference in frequency scales, the transverse rotations effectively average to zero and can be neglected.
+In order numerically estimate $A_\parallel$ and $A_\perp$, we project the hyperfine Hamiltonian in Eq. \ref{eq:half_hyperfine} to the spin operators in the quantization basis using the Hilbert-Schmidt inner product
 
-\begin{figure}
-    \includegraphics{chapter2/figures/hyperfine_tensor_vs_angle.pdf}
-    \caption[Hyperfine coupling parameter]{Parallel and perpendicular hyperfine couplings as a function of the angle $\theta$ between the magnetic field $B_0$ (contained in the $(a, c)$-plane) and the $c$-axis of the crystal for the three types of W-sites.}
-    \labfig{hyperfine_tensor_vs_angle}
-\end{figure}
+\begin{align}
+    A_\parallel = \frac{\text{Tr}\{ H_\text{hf} \times (S_{z''}I_{z'})^\dagger\}}{\text{Tr}\{ S_{z''}I_{z'}\times( S_{z''}I_{z'})^\dagger \}},  \quad A_\perp = \frac{\text{Tr}\{ H_\text{hf} \times ( S_{x''}I_{z'})^\dagger\}}{\text{Tr}\{  S_{x''}I_{z'}\times( S_{x''}I_{z'})^\dagger \}}.
+\end{align} 
 
-
-\begin{margintable}[]
-\begin{tabular}{l|l}
-       & distance (\AA) \\ \hline
-type 1 & $(+2.62, +2.62,  0) $           \\
-       & $(+2.62, -2.62,  0)  $          \\
-       & $(-2.62, +2.62,  0)$            \\
-       & $(-2.62, -2.62,  0)$            \\ \hline
-type 2 & $(+2.62,  0, -2.84)$            \\
-       & $(-2.62,  0, -2.84)$            \\
-       & $(0, +2.62, +2.84)$             \\
-       & $(0, -2.62, +2.84)$             \\ \hline
-type 3 & $(0, 0, +5.69)$                 \\
-       & $(0, 0, -5.69)$                
-\end{tabular}
-\caption[\W atomic positions]{W site positions in \Ca, separated in three types depending on their relative position to the central \Er ion}
-\labtab{w_positions}
-\end{margintable}
-
-Within the first unit cell, and with $B_0$ applied parallel to the $c$-axis, three sets of magnetically-equivalent \W atoms can be found, called types 1, 2, and 3 in the following. All \W nuclear-spins beyond the first unit cell have lower couplings and are not resolved in this work. Table \reftab{w_positions} indicates the atomic positions of the ten W-sites within a unit cell centered around an \Er ion. The value of the hyperfine parameters $A_\parallel$ and $A_\perp$ are plot as a function of the angle between the applied magnetic field and the $c$-axis is \reffig{hyperfine_tensor_vs_angle}. The strong dependence of the hyperfine coupling with the angle evidences the anisotropic nature of the interaction, with values that can change from a zero to hundreds of kHz in less than 10º.
-
-We can also consider the interaction between two \W nuclear-spins. Since both spins are have an isotropic gyromagnetic factor, they will both be aligned to the externally applied field in the high field regime. For the two aligned spins the interaction is then simplified to
+The Hamiltonian in this regime is
 
 \begin{equation}
-    \cH{d-d} = \frac{\mu_0\gamma_{\text{\W}}^2}{4\pi r^3}  \mathbf{I_1} \mathbf{I_2} \left[ 1 - 3\cos(\theta_r) \right],
+    \cH{secular} = \omega_S \, S_{z''} + \omega_I \, I_{z'} + \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I} + A_\perp  S_{x''}\,I_{z'} + A_\parallel  S_{z''}\,I_{z'},
 \end{equation}
 
-\noindent and the average strength of the interaction is
+In the following two sections we describe the energy level system of this Hamiltonian for the case of \W and \Nb nuclear spins respectively. We use the Hamiltonian to derive the relevant transition frequencies that allow control of the electron and nuclear spin via single spin EPR techniques. For notational simplicity, the rest of this thesis will denote the spin quantization axes simply by $z$, omitting the primes used above ($z'$ and $z''$).
 
-\begin{equation}
-    \frac{\mu_0\gamma_{\text{\W}}^2}{8\pi a^3} \approx 1\text{~Hz}, 
-\end{equation} 
+% \begin{figure}
+%     \includegraphics{chapter2/figures/hyperfine_tensor_vs_angle.pdf}
+%     \caption[Hyperfine coupling parameter]{Parallel and perpendicular hyperfine couplings as a function of the angle $\theta$ between the magnetic field $B_0$ (contained in the $(a, c)$-plane) and the $c$-axis of the crystal for the three types of W-sites.}
+%     \labfig{hyperfine_tensor_vs_angle}
+% \end{figure}
 
-\noindent which is orders of magnitude smaller than the \Er-\W coupling and Zeeman terms. Therefore, the nuclear-spin bath interactions will be slow compared to the dynamics of the paramagnetic ion and the neighbouring nuclear-spins.
+
+% \begin{margintable}[]
+% \begin{tabular}{l|l}
+%        & distance (\AA) \\ \hline
+% type 1 & $(+2.62, +2.62,  0) $           \\
+%        & $(+2.62, -2.62,  0)  $          \\
+%        & $(-2.62, +2.62,  0)$            \\
+%        & $(-2.62, -2.62,  0)$            \\ \hline
+% type 2 & $(+2.62,  0, -2.84)$            \\
+%        & $(-2.62,  0, -2.84)$            \\
+%        & $(0, +2.62, +2.84)$             \\
+%        & $(0, -2.62, +2.84)$             \\ \hline
+% type 3 & $(0, 0, +5.69)$                 \\
+%        & $(0, 0, -5.69)$                
+% \end{tabular}
+% \caption[\W atomic positions]{W site positions in \Ca, separated in three types depending on their relative position to the central \Er ion}
+% \labtab{w_positions}
+% \end{margintable}
+
+% Within the first unit cell, and with $B_0$ applied parallel to the $c$-axis, three sets of magnetically-equivalent \W atoms can be found, called types 1, 2, and 3 in the following. All \W nuclear spins beyond the first unit cell have lower couplings and are not resolved in this work. Table \reftab{w_positions} indicates the atomic positions of the ten W-sites within a unit cell centered around an \Er ion. The value of the hyperfine parameters $A_\parallel$ and $A_\perp$ are plot as a function of the angle between the applied magnetic field and the $c$-axis is \reffig{hyperfine_tensor_vs_angle}. The strong dependence of the hyperfine coupling with the angle evidences the anisotropic nature of the interaction, with values that can change from a zero to hundreds of kHz in less than 10º.
+
+% We can also consider the interaction between two \W nuclear spins. Since both spins are have an isotropic gyromagnetic factor, they will both be aligned to the externally applied field in the high field regime. For the two aligned spins the interaction is then simplified to
+
+% \begin{equation}
+%     \cH{d-d} = \frac{\mu_0\gamma_{\text{\W}}^2}{4\pi r^3}  \mathbf{I_1} \mathbf{I_2} \left[ 1 - 3\cos(\theta_r) \right],
+% \end{equation}
+
+% \noindent and the average strength of the interaction is
+
+% \begin{equation}
+%     \frac{\mu_0\gamma_{\text{\W}}^2}{8\pi a^3} \approx 1\text{~Hz}, 
+% \end{equation} 
+
+% \noindent which is orders of magnitude smaller than the \Er-\W coupling and Zeeman terms. Therefore, the nuclear spin bath interactions will be slow compared to the dynamics of the paramagnetic ion and the neighbouring nuclear spins.
 
 %\subsection{Exchange interaction}
 
@@ -467,24 +596,24 @@ We can also consider the interaction between two \W nuclear-spins. Since both sp
 %    \cH{exch} = \mathbf{S_1} \cdot \bar{\bar {J}}_\text{exch} \cdot \mathbf{S_2}
 %\end{equation}
 
-%Contact interactions only occur when the spin wavefunctions overlap with each other and the typical interaction range is $\sim$1.5~nm \sidecite{schweiger_principles_2001}. We do not consider contact interactions between two nuclear-spins as the wavefunctions are almost point-like.
+%Contact interactions only occur when the spin wavefunctions overlap with each other and the typical interaction range is $\sim$1.5~nm \sidecite{schweiger_principles_2001}. We do not consider contact interactions between two nuclear spins as the wavefunctions are almost point-like.
 
-%The wavefunctions of \Er ions are highly localized thanks to the $5s$ and $5p$ shielding. Additionally, thanks to the low density of \Er ions we can discard any possible contact term between two distant electron-spins. 
+%The wavefunctions of \Er ions are highly localized thanks to the $5s$ and $5p$ shielding. Additionally, thanks to the low density of \Er ions we can discard any possible contact term between two distant electron spins. 
 
-%In the case of electron and nuclear-spin interaction, the \Er and W ions in the crystal are coordinated by an oxygen ion (see \labfig{crystal}) which prevents direct overlap between the spin wavefunctions. We conclude that contact interaction between proximal \Er ions and \W nuclear-spins is not the primary coupling; at most they may produce small isotropic shifts.
+%In the case of electron and nuclear spin interaction, the \Er and W ions in the crystal are coordinated by an oxygen ion (see \labfig{crystal}) which prevents direct overlap between the spin wavefunctions. We conclude that contact interaction between proximal \Er ions and \W nuclear spins is not the primary coupling; at most they may produce small isotropic shifts.
 
 %We conclude that the dominating interaction mechanism between two spins in our system is the free-space dipolar coupling.
 
 \section{\W-\Er Hamiltonian}
 \labsec{w_er_hamiltonian}
 
-We now consider the Hamiltonian of an \Er spin-1/2 coupled via hyperfine interaction to a nuclear-spin-1/2 while under a magnetic field $B_0$. As described in this chapter, the Hamiltonian will be
+We now consider the Hamiltonian of an \Er spin-1/2 coupled via hyperfine interaction to a \W nuclear spin while under a magnetic field $B_0$ (see \reffig{energy_levels_half_v2}a). As described in this chapter, the Hamiltonian of this system is
 
 \begin{equation}
     \cH{}/\hbar = \omega_S \hat{S}_z + \omega_I \hat{I}_z + A_\parallel \hat{S}_z \hat{I}_z + A_\perp \hat{S}_z \hat{I}_x.
 \end{equation}
 
-We remark that the $S_z$ and $I_z$ operators should be understood as the electron and nuclear-spin quantization axis respectively. For the case of the isotropic nuclear-spin, this axis is parallel $\mathbf{B_0}$, but the quantization axis of the electron-spin differs from the applied magnetic field direction due to its anisotropic gyromagnetic tensor (see \reffig{energy_levels_half_v2}a).
+%We remark that the $S_z$ and $I_z$ operators should be understood as the electron and nuclear spin quantization axis respectively. For the case of the isotropic nuclear spin, this axis is parallel $\mathbf{B_0}$, but the quantization axis of the electron spin differs from the applied magnetic field direction due to its anisotropic gyromagnetic tensor (see \reffig{energy_levels_half_v2}a).
 
 This Hamiltonian defines a four-level system and can be analytically solved \sidecite{schweiger_principles_2001}. The resulting energy levels of the system can be described as an admixture of the uncoupled spin states $\ket{\Downarrow \uparrow}$, $\ket{\Downarrow \downarrow}$, $\ket{\Uparrow \uparrow}$, $\ket{\Uparrow \downarrow}$: 
 
@@ -518,35 +647,48 @@ This Hamiltonian defines a four-level system and can be analytically solved \sid
     \eta_{\Uparrow} = \arctan{\left(\frac{-A_\perp}{A_\parallel + 2\omega_I}\right)}, \qquad \eta_{\Downarrow} = \arctan{\left(\frac{-A_\perp}{A_\parallel - 2\omega_I}\right)}.
 \end{equation}
 
-However, in the high-field the regime, both $\eta_{\Uparrow} \approx - \eta_{\Downarrow} \approx -A_\perp / 2\omega_I \ll 1$ and the energy levels are close to the unperturbed states (see \reffig{energy_levels_half_v2}b). The nuclear and electron-spin transitions are then given by
+However, in the high-field the regime, both $\eta_{\Uparrow} \approx - \eta_{\Downarrow} \approx -A_\perp / 2\omega_I \ll 1$ and the energy levels are close to the unperturbed states (see \reffig{energy_levels_half_v2}b). 
+
+The nuclear spin frequencies are
 
 \begin{align}
 \begin{split}   
      \omega_I^{(\Uparrow)} &= \left(\omega_I + \frac{A_\parallel}{2}\right) \cos \eta_\Uparrow - \frac{A_\perp}{2} \sin \eta_\Uparrow \approx \omega_I + \frac{A_\parallel}{2}, \\ 
-    \omega_I^{(\Downarrow)} &= \left(\omega_I - \frac{A_\parallel}{2}\right) \cos \eta_\Downarrow - \frac{A_\perp}{2} \sin \eta_\Downarrow \approx \omega_I - \frac{A_\parallel}{2}, \\ 
+    \omega_I^{(\Downarrow)} &= \left(\omega_I - \frac{A_\parallel}{2}\right) \cos \eta_\Downarrow - \frac{A_\perp}{2} \sin \eta_\Downarrow \approx \omega_I - \frac{A_\parallel}{2}.
+\end{split}    
+\end{align}
+
+which correspond to the NMR-allowed transitions between states $\ket{1} \leftrightarrow \ket{2}$ and $\ket{3} \leftrightarrow \ket{4}$ and can be resonantly driven to coherently control the nuclear spin population. We note that the two transition frequencies are different by $A_\parallel$ depending on if the electron spin is in the excited or the ground state, respectively.
+
+Analogously, there are two electron spin frequencies,
+
+\begin{align}
+\begin{split}  
     \omega_S^{(\uparrow)} &= \omega_S + \frac{1}{2} \left( \omega_I^{(\Uparrow)} - \omega_I^{(\Downarrow)} \right) \approx \omega_S + \frac{A_\parallel}{2}, \\ 
     \omega_S^{(\downarrow)}  &= \omega_S - \frac{1}{2} \left( \omega_I^{(\Uparrow)} - \omega_I^{(\Downarrow)} \right) \approx \omega_S - \frac{A_\parallel}{2}.
 \end{split}    
 \end{align}
 
-These correspond the allowed NMR and EPR transitions which can be driven resonantly to change independently the state of the nuclear or the electron-spin respectively. However, the admixing of the wavefunctions weakly allows otherwise forbidden transitions which simultaneously change the state of the two spins. These are known as zero-quantum (ZQ) and double-quantum (DQ) transitions or simply blue and red sidebands\sidenote{The names ZQ and DQ indicate the net change in the total magnetic quantum number: in a ZQ transition the electron and nuclear-spins flip in opposite directions, while for a DQ transition they flip in the same direction. Likewise the name blue and red sidebands indicate the frequency shift with respect to the electron-spin frequency $\omega_S$} and are shown in \reffig{energy_levels_half_v2}b as blue and red arrows respectively. The frequency of these transitions is given by
+These EPR-allowed transitions couple $\ket{1} \leftrightarrow \ket{3}$ and $\ket{2} \leftrightarrow \ket{4}$ respectively. They are also spectrally separated and depend on the state of the nuclear spin, as denoted by the superindex.
+
+Additionally, the admixing of the wavefunctions weakly allows otherwise forbidden transitions which simultaneously change the state of the two spins. These are known as zero-quantum (ZQ) and double-quantum (DQ) transitions or simply blue and red sidebands\sidenote{The names ZQ and DQ indicate the net change in the total magnetic quantum number: in a ZQ transition the electron and nuclear spins flip in opposite directions, while for a DQ transition they flip in the same direction. Likewise the name blue and red sidebands indicate the frequency shift with respect to the electron spin frequency $\omega_S$} and are shown in \reffig{energy_levels_half_v2}b as blue and red arrows respectively. The frequency of these transitions is given by
 
 \begin{align}
 \begin{split}
-    \omega_\text{ZQ} = |\omega_S^{(\downarrow)}| - |\omega_I^{(\Uparrow)}| \approx \omega_S - \omega_I, \\
-    \omega_\text{DQ} = |\omega_S^{(\uparrow)}|   + |\omega_I^{(\Uparrow)}| \approx \omega_S + \omega_I,
+    \omega_\text{ZQ} = |\omega_S^{(\uparrow)}|   + |\omega_I^{(\Uparrow)}| \approx \omega_S + \omega_I, \\
+    \omega_\text{DQ} = |\omega_S^{(\downarrow)}| - |\omega_I^{(\Uparrow)}| \approx \omega_S - \omega_I.
 \end{split}
 \end{align} 
 
-The ZQ and DQ transitions are approximately detuned from the electron-spin transitions by the Larmor frequency of the nuclear-spin. As such, it is possible to drive the nuclear-spin transitions with a microwave pulse and we explore this driving scheme in \refsec{driving_nuclear_spin_half}.
+The ZQ and DQ transitions are approximately detuned from the electron spin transitions by the Larmor frequency of the nuclear spin. As such, it is possible to drive the nuclear spin transitions with a microwave pulse and we explore this driving scheme in \refsec{driving_nuclear_spin_half}.
 
-In conclusion, for the \W-\Er coupled system, there are two EPR and two NMR allowed transitions which individually change the state of the electron and nuclear-spin respectively. In addition, the perpendicular hyperfine coupling mixes the nuclear-spin wavefunctions which enables driving of the ZQ and DQ transitions, which modify the state of the electron and nuclear-spin simultaneously.
+In conclusion, for the \W-\Er coupled system, there are two EPR and two NMR allowed transitions which individually change the state of the electron and nuclear spin respectively. In addition, the perpendicular hyperfine coupling mixes the nuclear spin wavefunctions which enables driving of the ZQ and DQ transitions, which modify the state of the electron and nuclear spin simultaneously.
 
 \section{\Nb-\Er Hamiltonian}
 \labsec{nb_er_hamiltonian}
 
 
-In chapter \red{refch} we report the observation of an \Er electron-spin coupled to a $I=9/2$ nuclear-spin. Through spectroscopic analysis of the nuclear-spin transitions, we identify the nature of the spin as a \Nb. The Hamiltonian for this system extends the \W--\Er model by including the nuclear electric quadrupole interaction, which is present for all nuclei with $I\ge 1$ (see \refsec{electric_quadrupole}). In this section we describe the Hamiltonian of the system, the resulting energy levels and the transition frequencies at first order approximation. In addirtion. We note that the gyromagnetic factor of \Nb is approximately an order of magnitude larger than \W, which result in a larger separation of the nuclear-spin levels. 
+In chapter \red{refch} we report the observation of an \Er electron spin coupled to a $I=9/2$ nuclear spin. Through spectroscopic analysis of the nuclear spin transitions, we identify the nature of the spin as a \Nb. The Hamiltonian for this system extends the \W--\Er model by including the nuclear electric quadrupole interaction, which is present for all nuclei with $I\ge 1$ (see \refsec{electric_quadrupole}). In this section we describe the Hamiltonian of the system, the resulting energy levels and the transition frequencies at first order approximation. In addirtion. We note that the gyromagnetic factor of \Nb is approximately an order of magnitude larger than \W, which result in a larger separation of the nuclear spin levels. 
 
 The Hamiltonian of the \Nb-\Er system is
 
@@ -555,7 +697,7 @@ The Hamiltonian of the \Nb-\Er system is
    \label{eq:hamiltonian_spin_9o2}
 \end{equation}
 
-This Hamiltonian yields twenty energy levels, illustrated in \reffig{energy_levels_ninehalf}. Under the secular approximation the electron-spin projection $m_S$ remains a good quantum number, so the full manifold effectively separates into two submanifolds $(m_S = \Uparrow, \Downarrow)$ of ten nuclear-spin levels each. By contrast, the nuclear-spin states are influenced by both the hyperfine coupling and the electric quadrupole interaction, which mix states with different $m_I$. It is useful to distinguish three regimes according to the relative strength of the nuclear Zeeman and quadrupole terms:
+This Hamiltonian yields twenty energy levels, illustrated in \reffig{energy_levels_ninehalf}. Under the secular approximation the electron spin projection $m_S$ remains a good quantum number, so the full manifold effectively separates into two submanifolds $(m_S = \Uparrow, \Downarrow)$ of ten nuclear spin levels each. By contrast, the nuclear spin states are influenced by both the hyperfine coupling and the electric quadrupole interaction, which mix states with different $m_I$. It is useful to distinguish three regimes according to the relative strength of the nuclear Zeeman and quadrupole terms:
 
 \begin{itemize}
     \item Weak-quadrupole regime: \(\omega_I \gg \|\bar{\bar{Q}}\|\). The quadrupole interaction can be treated perturbatively and nuclear eigenstates are approximately the Zeeman states \(\ket{I,m_I}\), split by small quadrupolar corrections.
@@ -566,13 +708,13 @@ This Hamiltonian yields twenty energy levels, illustrated in \reffig{energy_leve
 
 \begin{figure}
     \includegraphics{chapter2/figures/energy_levels_ninehalf_w_sidebands.pdf}
-    \caption[Energy level diagram of an Er3+ coupled to a nuclear-spin-9/2]{Energy level diagram of an Er3+ coupled to a \Nb nuclear-spin-9/2. The twenty energy levels are separated in two manifolds, depending on the state of the electron-spin. In order, the following transitions are represented as arrows: NMR-allowed in multiple colors, EPR-allowed in red, ZQ in blue and DQ in orange.}
+    \caption[Energy level diagram of an Er3+ coupled to a nuclear spin-9/2]{Energy level diagram of an Er3+ coupled to a \Nb nuclear spin-9/2. The twenty energy levels are separated in two manifolds, depending on the state of the electron spin. In order, the following transitions are represented as arrows: NMR-allowed in multiple colors, EPR-allowed in red, ZQ in blue and DQ in orange.}
     \labfig{energy_levels_ninehalf}
 \end{figure}
 
 In Chapter \red{refch} the measured system lies between the weak- and intermediate-quadrupole regimes: the nuclear Zeeman term still dominates, so most eigenstates are well approximated by the magnetic quantum number $m_I$, but the quadrupolar interaction produces noticeable mixing for the lower-frequency levels. We label the nuclear eigenstates by \(n\in\{0,1,\dots,9\}\) in order of increasing energy (see \reffig{energy_levels_ninehalf}).
 
-Our measurements reveal that the quadrupole's principal axis $\mathcal{P}_3$ is approximately parallel to the crystalline $c$-axis. Therefore, the other two axes must lie in the $(a,b)$-plane and make an arbitrary angle $\alpha_Q$ with respect to the crystalline $a$-axis. Because $B_0$ is nearly parallel to $c$, we adopt the approximation\sidenote{In the nuclear-spin operator frame the $z$-axis is defined by the external field $B_0$ (approximately parallel to the crystal $c$-axis). The $x$- and $y$-axes therefore lie in the $(a,b)$-plane, and the x-axis makes an angle $\alpha_\text{hf}$ with the crystalline $a$-axis; $\alpha_\text{hf}$ depends on the field orientation and the hyperfine tensor.} $z \parallel c \parallel \mathcal{P}_3$. Under this approximation the quadrupole Hamiltonian (given by Eq. \ref{eq:quadrupole_ppaxis}) can be written as
+Our measurements reveal that the quadrupole's principal axis $\mathcal{P}_3$ is approximately parallel to the crystalline $c$-axis. Therefore, the other two axes must lie in the $(a,b)$-plane and make an arbitrary angle $\alpha_Q$ with respect to the crystalline $a$-axis. Because $B_0$ is nearly parallel to $c$, we adopt the approximation\sidenote{In the nuclear spin operator frame the $z$-axis is defined by the external field $B_0$ (approximately parallel to the crystal $c$-axis). The $x$- and $y$-axes therefore lie in the $(a,b)$-plane, and the x-axis makes an angle $\alpha_\text{hf}$ with the crystalline $a$-axis; $\alpha_\text{hf}$ depends on the field orientation and the hyperfine tensor.} $z \parallel c \parallel \mathcal{P}_3$. Under this approximation the quadrupole Hamiltonian (given by Eq. \ref{eq:quadrupole_ppaxis}) can be written as
 
 \begin{align}
 \begin{split}
@@ -591,7 +733,7 @@ where $\alpha=\alpha_\text{hf} - \alpha_Q$. Therefore, the Hamiltonian of the sy
 \end{split}
 \end{align}
 
-We now give an estimation of the electron- and nuclear-spin allowed transition frequencies at first order. In this limit, the nuclear-spin wavefunctions are well approximated by the magnetic spin number $m_I = 9/2 - n$. There are ten allowed transitions for the electron-spin whose frequency depends on the nuclear-spin state $n$,  
+We now give an estimation of the electron and nuclear spin allowed transition frequencies at first order. In this limit, the nuclear spin wavefunctions are well approximated by the magnetic spin number $m_I = 9/2 - n$. There are ten allowed transitions for the electron spin whose frequency depends on the nuclear spin state $n$,  
 
 \begin{equation}
     \omega_n \approx \omega_S + m_I A_\parallel = \omega_S + \left(\tfrac{9}{2}-n\right) A_\parallel,
@@ -599,7 +741,7 @@ We now give an estimation of the electron- and nuclear-spin allowed transition f
 
 Second order corrections to these frequencies arise from quadrupolar mixing of the nuclear states, but are considerably smaller than the linewidth of the transitions and are not considered in this work. 
 
-There are eighteen allowed nuclear-spin transitions separated into two manifolds, depending on the state of the \Er spin. These transitions couple two adjacent nuclear-spin levels ($n$ and $n+1$) and, at first order, their frequency is given by\sidenote{Note that $\omega_I < 0$}
+There are eighteen allowed nuclear spin transitions separated into two manifolds, depending on the state of the \Er spin. These transitions couple two adjacent nuclear spin levels ($n$ and $n+1$) and, at first order, their frequency is given by\sidenote{Note that $\omega_I < 0$}
 
 \begin{align}
 \begin{split}
@@ -608,10 +750,10 @@ There are eighteen allowed nuclear-spin transitions separated into two manifolds
 \end{split}
 \end{align}
 
-In the absence of quadrupole coupling, all nuclear-spin transitions would occur at the same frequency, independent of 
-$n$. In the weak-quadrupole regime, the quadrupole interaction lifts this degeneracy, shifting the transition frequencies linearly with the nuclear-spin projection. The state dependent transition frequencies allow coherent control of the nuclear spin population between adjacent nuclear-spin states without leakage into the rest of the space.
+In the absence of quadrupole coupling, all nuclear spin transitions would occur at the same frequency, independent of 
+$n$. In the weak-quadrupole regime, the quadrupole interaction lifts this degeneracy, shifting the transition frequencies linearly with the nuclear spin projection. The state dependent transition frequencies allow coherent control of the nuclear spin population between adjacent nuclear spin states without leakage into the rest of the space.
 
-The ZQ and DQ transitions can also be driven in this system, enabled by the perpendicular hyperfine coupling. Each nuclear spin state $n$ has one ZQ and one DQ transition with frequencies $\omega_n^\text{(ZQ, DQ)}$. The exceptions are the edges of the nuclear-spin state ladder, $n=0$ and $n=9$, for which there is no DQ and ZQ transition respectively. The transition frequencies are given by
+The ZQ and DQ transitions can also be driven in this system, enabled by the perpendicular hyperfine coupling. Each nuclear spin state $n$ has one ZQ and one DQ transition with frequencies $\omega_n^\text{(ZQ, DQ)}$. The exceptions are the edges of the nuclear spin state ladder, $n=0$ and $n=9$, for which there is no DQ and ZQ transition respectively. The transition frequencies are given by
 
 \begin{align}
 \begin{split}
@@ -620,4 +762,4 @@ The ZQ and DQ transitions can also be driven in this system, enabled by the perp
 \end{split}
 \end{align}
 
-In conclusion, for the \Nb-\Er coupled system, there are ten EPR and eighteen NMR allowed transitions which individually change the state of the electron and nuclear-spin respectively. In the weak-quadrupole regime, the electron-spin transitions are spectrally separated by $A_\parallel$ and the nuclear-spin transitions are linearly by split by the quadrupole. We separate the eighteen nuclear-spin transitions in two manifolds, depending on the \Er state. In addition, the perpendicular hyperfine coupling mixes the nuclear-spin wavefunctions which weakly allows eight ZQ and eight DQ transitions.
+In conclusion, for the \Nb-\Er coupled system, there are ten EPR and eighteen NMR allowed transitions which individually change the state of the electron and nuclear spin respectively. In the weak-quadrupole regime, the electron spin transitions are spectrally separated by $A_\parallel$ and the nuclear spin transitions are linearly by split by the quadrupole. We separate the eighteen nuclear spin transitions in two manifolds, depending on the \Er state. In addition, the perpendicular hyperfine coupling mixes the nuclear spin wavefunctions which weakly allows eight ZQ and eight DQ transitions.

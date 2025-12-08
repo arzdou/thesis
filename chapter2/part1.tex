@@ -17,13 +17,13 @@ We begin this chapter by describing the properties of a single electron spin in 
 Electrons are elementary particles with negative charge and an inherent magnetic moment arising from their spin
 
 \begin{equation}
-    \mathbf{\mu}_e = - \gamma_e \mathbf{S} 
+    \hat{\boldsymbol{\mu}}_e = - \gamma_e \hat{\mathbf{S}} 
 \end{equation}
 
-where $\mathbf{S}= (S_x, S_y, S_z)$ correspond to the spin-1/2 operators and $\gamma_e \approx 28$~GHz/T is the gyromagnetic moment of the electron spin. In a constant magnetic field $\mathbf{B_0}$ an electron in free space can be described with the following Hamiltonian,
+where $\hat{\mathbf{S}}= (\hat{S}_x, \hat{S}_y, \hat{S}_z)$ correspond to the spin-1/2 operators and $\gamma_e \approx 28$~GHz/T is the gyromagnetic moment of the electron spin. In a constant magnetic field $\mathbf{B_0}$ an electron in free space can be described with the following Hamiltonian,
 
 \begin{equation}
-    \cH{e} = - \mathbf{B_0} \cdot \mathbf{\mu}_e = \omega_e S_{z'}.
+    \cH{e} = - \mathbf{B_0} \cdot \hat{\boldsymbol{\mu}}_e = \omega_e \hat{S}_{z'}.
 \end{equation}
 
 where $\omega_e = \lVert\gamma_e \, \mathbf{B_0}\rVert$ is the Larmor frequency of the electron spin and $z'$ corresponds to the quantization axis of the spin, which aligns with $\mathbf{B_0}$. This interaction is known as the Zeeman effect; for a spin-1/2 it describes a two-level-system that splits linearly with $|\mathbf{B_0}|$ (see \red{fig}). The two states of the system are labeled $\ket{\Downarrow}$ and $\ket{\Uparrow}$. We highlight the following properties:
@@ -49,7 +49,7 @@ The Hamiltonian that describes an $N$-electron ion in free space can be expresse
 
 \begin{align}
 \begin{split}
-    \cH{fi} &= \underbrace{\sum_{i=1}^N \frac{\hbar^2}{2m} \nabla_i^2 - \sum_{i=1}^N \frac{Ze^2}{r_i}}_{\cH{0} \rightarrow \text{ Kinetic and Potential}} + \underbrace{\sum_{i<j}^N \frac{e^2}{r_{ij}}}_{\cH{C} \rightarrow \text{ Coulomb}} + \underbrace{\sum_{i=1}^N \xi(r_i)\,\mathbf{L}_i \cdot \mathbf{S}_i.}_{\cH{SO} \rightarrow \text{ Spin-Orbit}}
+    \cH{fi} &= \underbrace{\sum_{i=1}^N \frac{\hbar^2}{2m} \nabla_i^2 - \sum_{i=1}^N \frac{Ze^2}{r_i}}_{\cH{0} \rightarrow \text{ Kinetic and Potential}} + \underbrace{\sum_{i<j}^N \frac{e^2}{r_{ij}}}_{\cH{C} \rightarrow \text{ Coulomb}} + \underbrace{\sum_{i=1}^N \xi(r_i)\,\hat{\mathbf{L}}_i \cdot \hat{\mathbf{S}}_i}_{\cH{SO} \rightarrow \text{ Spin-Orbit}}.
 \end{split}
 \end{align}
 
@@ -63,9 +63,9 @@ Where $r_i$ is the distance of each electron to the nucleus and $r_{ij}$ are the
 
 From this expression, it is clear that non-central term $\cH{nc}$ is merely a perturbation on the central term $\cH{c}$. Importantly, $\cH{c}$ can be described by single-electron equations with the same angular properties as the Hydrogen atom. Each electron $i$ will be described by the four quantum numbers $(n, l, m_l, m_s)$, respectively the principal quantum number, the angular momentum quantum number ($0\leq l<n-1$), the magnetic quantum number ($-l\leq m_l\leq +l$) and the spin quantum number ($m_s=\pm\tfrac{1}{2}$). For lanthanides, the valence shell is located in the $n=4$ and $l=3$ configuration and is generally referred as the $4f$ shell \sidenote{The actual electronic wavefunctions are given by a Slater determinant, which enforces the Pauli exclusion principle and the antisymmetric behavior under electron exchange that is characteristic of fermionic particles.}. The averaged electron interaction term is not known, but it can be treated using the Hartree--Fock approximation (see \sidecite{weissbluth_atoms_2012}).
 
-To calculate the effect of the non-central Hamiltonian $\cH{nc}$, the matrix elements of the Hamiltonian are calculated in a shared diagonal basis. This basis exploits the fact that both the angular momentum operators $\mathbf{L}$ and the spin operators $\mathbf{S}$ commute with $\cH{fi}$. This allows one to define a common basis with the set of eigenvectors of $\mathbf{L}^2$ and $\mathbf{S}^2$ (Russell--Saunders coupling).
+To calculate the effect of the non-central Hamiltonian $\cH{nc}$, the matrix elements of the Hamiltonian are calculated in a shared diagonal basis. This basis exploits the fact that both the angular momentum operators $\hat{\mathbf{L}}$ and the spin operators $\hat{\mathbf{S}}$ commute with $\cH{fi}$. This allows one to define a common basis with the set of eigenvectors of $\hat{\mathbf{L}}^2$ and $\hat{\mathbf{S}}^2$ (Russell--Saunders coupling).
 
-Lastly, we consider the effects of the spin--orbit coupling on the energy structure. For light ions, with radially confined orbitals, this term is smaller than the rest of the interactions and can be treated as a perturbation. However, it is important to note that this term does not commute independently with $\mathbf{L}$ and $\mathbf{S}$ but with the combination of the two operators $\mathbf{J} = \mathbf{L} + \mathbf{S}$. Thus, the perturbation splits the degeneracy of the Russell--Saunders ground state into levels with a specific value of $J$, which are ($2J+1$)-degenerate. The labels are given by Russell--Saunders notation as $^{2S+1}L_J$.%\sidenote{Since erbium is a medium-sized ion, this approximation is not entirely valid, given that the spin--orbit coupling is no longer perturbative. Thus, $J$ and $S$ are no longer good quantum numbers, but remain relatively accurate for low-energy transitions.}. 
+Lastly, we consider the effects of the spin--orbit coupling on the energy structure. For light ions, with radially confined orbitals, this term is smaller than the rest of the interactions and can be treated as a perturbation. However, it is important to note that this term does not commute independently with $\hat{\mathbf{L}}$ and $\hat{\mathbf{S}}$ but with the combination of the two operators $\hat{\mathbf{J}} = \hat{\mathbf{L}} + \hat{\mathbf{S}}$. Thus, the perturbation splits the degeneracy of the Russell--Saunders ground state into levels with a specific value of $J$, which are ($2J+1$)-degenerate. The labels are given by Russell--Saunders notation as $^{2S+1}L_J$.%\sidenote{Since erbium is a medium-sized ion, this approximation is not entirely valid, given that the spin--orbit coupling is no longer perturbative. Thus, $J$ and $S$ are no longer good quantum numbers, but remain relatively accurate for low-energy transitions.}. 
 
 In the case of \Er, the free-ion ground state corresponds to $^4I_{15/2}$, a 16-fold degenerate level. The first excidecited level is separated by 1.5~\textmu m. In the following work, the \Ca crystal and the ions are cooled down to 10~mK. Consequently, only the ground state will be populated, which can be described as a spin $J=15/2$.
 
@@ -153,7 +153,7 @@ Under a magnetic field $\mathbf{B_0}$, the Hamiltonian of the ground $J=15/2$-mu
 
 \begin{equation}
     \label{eq:J-CF_Hamiltonian}
-    \mathcal{H}_J = \mu_B \ g_J\mathbf{B_0}\cdot \mathbf{J} + \mathcal{H}_{\mathrm{CF}},
+    \cH{J} = \mu_B \ g_J\mathbf{B_0}\cdot \hat{\mathbf{J}} + \cH{CF},
 \end{equation}
 
 The first term represents the Zeeman interaction, where $\mu_B/2\pi = 13.996$~GHz/T is the Bohr magneton and $g_J = 6/5$ is the Landé factor for the \Er ground state. \reffig{energy_levels_vs_Bz_all} illustrates the magnetic-field-induced splitting of the energy levels along the $c$-axis, obtained by direct diagonalization of the Hamiltonian in Eq.~\ref{eq:J-CF_Hamiltonian}. Each $Z_i$ doublet splits into two levels, with an effective, anisotropic gyromagnetic tensor that varies for each doublet. This anisotropy is evident from the differing transition frequencies observed when a 500~mT magnetic field is applied parallel versus perpendicular to the $c$-axis.
@@ -164,7 +164,7 @@ The energy separation between the $Z_1$ and $Z_2$ doublets is approximately 650 
 
 \begin{equation}
     \label{eq:er_spin_hamiltonian}
-    \cH{eZ} = \mathbf{B_0}\cdot \bar{\bar{\gamma}}_{^{3+}\text{Er}}\cdot\mathbf{S} = \omega_S\, S_{z'}
+    \cH{eZ} = \mathbf{B_0}\cdot \bar{\bar{\gamma}}_{^{3+}\text{Er}}\cdot\hat{\mathbf{S}} = \omega_S\, \hat{S}_{z'}
 \end{equation}
 
 where $\omega_S = \lVert \mathbf{B_0}\cdot \bar{\bar{\gamma}}_{^{3+}\text{Er}}\rVert$ is the Larmor frequency of the spin and $z'$ corresponds to its quantization axis. The two eigenstates of the system are labeled $\ket{\Downarrow}$ and $\ket{\Uparrow}$. The effective gyromagnetic tensor $\bar{\bar{\gamma}}_{^{3+}\text{Er}}$ is diagonal along the principal axes of the crystal, with values \sidecite{antipina.a._anisotropy_1981}
@@ -192,7 +192,7 @@ As discussed in \refsec{crystal_field}, paramagnetic ions in solids, occupying n
 As noted earlier, \Er:\Ca occupies a site with $S_4$ symmetry, which lacks inversion symmetry. This allows odd terms $(k=1,3,5,\dots)$ to appear in the crystal-field Hamiltonian. These terms do not affect the ion's energy level structure in the absence of an external electric field and are not given in \reftab{cf_parameters}. The origin of these magneto-electric shifts lies in field-induced mixing between odd and even crystal-field terms which shifts the energy structure \sidecite{kiel_electricfieldinduced_1970}. This interaction can be modeled with the Hamiltonian:
 
 \begin{equation}
-    \mathcal{H}_{\text{m-e}} = \sum_{i,j,k}^{\{a,b,c\}} T_{k, i, j} S_{i} B_j E_k
+    \cH{m-e} = \sum_{i,j,k}^{\{a,b,c\}} T_{k, i, j} \hat{S}_{i} B_j E_k
 \end{equation}
 
 \begin{margintable}
@@ -214,13 +214,13 @@ Even if the energy shifts are zero in the absence of and electric field, this in
 
 \begin{align}
 \begin{split}
-    \mathcal{H}_{\text{m-e}} &= \sum_k-d_k E_k = -\mathbf{d} \cdot \mathbf{E}, \\
-    d_k &= - \sum_{i,j} T_{k, i, j} \langle S_{i}\rangle B_j.
+    \cH{m-e} &= \sum_k-d_k E_k = -\mathbf{d} \cdot \mathbf{E}, \\
+    d_k &= - \sum_{i,j} T_{k, i, j} \langle \hat{S}_{i}\rangle B_j.
 \end{split}
 \label{seq:electric_dipole}
 \end{align}
 
-where $\langle S_i \rangle$ corresponds to the expected value of the electron spin. 
+where $\langle \hat{S}_i \rangle$ corresponds to the expected value of the electron spin. 
 
 In conclusion, paramagnetic impurities in non-centrosymmetric sites posses a magnetically induced electric dipole due to the coupling to higher energy levels with opposite parity.
 
@@ -230,7 +230,7 @@ We can summarize the results of this section by comparing the properties of the 
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/energy_levels_vs_Bz_Z1.pdf}
-    \caption[Zeeman splitting of the $Z_1$ doublet]{Energy levels of the $Z_1$ doublet as a function of magnetic field along the $c$-axis. The curves were obtaioned by direct diagonalization of Eq. \ref{eq:J-CF_Hamiltonian} and Eq. \ref{eq:er_spin_hamiltonian} (solid and dot-dashed resp.).}
+    \caption[Zeeman splitting of the $Z_1$ doublet]{Energy levels of the $Z_1$ doublet as a function of magnetic field along the $c$-axis. The curves were obtained by direct diagonalization of Eq. \ref{eq:J-CF_Hamiltonian} and Eq. \ref{eq:er_spin_hamiltonian} (solid and dot-dashed resp.).}
     \labfig{energy_levels_vs_Bz_Z1}
 \end{marginfigure}
 
@@ -267,7 +267,7 @@ In Chapters \ref{ch:detection_and_control_of_individual_w} and \ref{ch:individua
 A nuclear spin in an external magnetic field is described by the Zeeman Hamiltonian, analogous to the electron case:
 
 \begin{equation}
-    \cH{nZ} = \gamma_n\, \mathbf{B_0}\cdot\mathbf{I} = \omega_I \, I_{z'},
+    \cH{nZ} = \gamma_n\, \mathbf{B_0}\cdot\hat{\mathbf{I}} = \omega_I \, \hat{I}_{z'},
 \end{equation}
 
 \noindent where $\gamma_n$ is the isotropic nuclear gyromagnetic factor, $\mathbf{I}=(I_z,I_y,I_z)$ are the nuclear spin operators, $\omega_I = \lVert \gamma_n\, \mathbf{B_0} \rVert$ the Larmor frequency and $z'$ the quantization axis of the nuclear spin.  This term splits the nuclear manifold into $2I + 1$ energy levels, uniquely described by the magnetic quantum number $m_I \in \{-I, -I+1, \dots I\}$. For the species relevant to this work the gyromagnetic ratios are $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T and $\gamma_{\text{\Nb}}/2\pi = 10.4213$~MHz/T \sidecite{knight_solidstate_1986}\red{cite!}.
@@ -339,15 +339,15 @@ To quantize this expression one must take the quantum mechanical expression for 
 \begin{equation}
 \cH{Q} = \frac{e\mathcal{Q}}{6I(2I-1)} 
 \sum_{\alpha,\beta} V_{\alpha\beta} 
-\left[ \tfrac{3}{2} \left( I_{\alpha} I_{\beta} + I_{\beta} I_{\alpha} \right) 
-- \delta_{\alpha\beta} I^{2} \right].
+\left[ \tfrac{3}{2} \left( \hat{I}_{\alpha} \hat{I}_{\beta} + \hat{I}_{\beta} \hat{I}_{\alpha} \right) 
+- \delta_{\alpha\beta} \hat{I}^{2} \right].
 \label{eq:quadrupole}
 \end{equation}
 
 where $\mathcal{Q}$ denotes the quadrupole moment, obtained from the integral of the nuclear charge distribution and measured in Barns. The quadrupole Hamiltonian can be written the following compact form
 
 \begin{equation}
-    \cH{Q} = \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I},
+    \cH{Q} = \hat{\mathbf{I}} \cdot \bar{\bar{Q}} \cdot \hat{\mathbf{I}},
 \end{equation}
 
 \noindent where $\bar{\bar{Q}}$ is the quadrupole tensor, proportional to the EFG. The EFG satisfies Laplace's equation, so its components obey $V_{xx}+V_{yy}+V_{zz}=0$, and by electrostatic symmetry $V_{\alpha\beta}=V_{\beta\alpha}$. Consequently, the EFG (and thus $\bar{\bar{Q}}$) is a real, symmetric, traceless rank-2 tensor and can be diagonalized. In the principal-axis frame $(\mathcal{P}_1,\mathcal{P}_2,\mathcal{P}_3)$, choosing the $\mathcal{P}_1$ axis so that $|V_{11}|\ge|V_{22}|\ge|V_{33}|$, one defines the conventional asymmetry parameter
@@ -359,7 +359,7 @@ where $\mathcal{Q}$ denotes the quadrupole moment, obtained from the integral of
 \noindent and the Hamiltonian in the principal-axis system can be expressed as
 
 \begin{equation}
-\cH{Q} = \frac{\hbar \omega_Q}{6}\left[ 3 I_{\mathcal{P}_1}^2 - I(I+1) + \eta(I_{\mathcal{P}_2}^2 - I_{\mathcal{P}_3}^2)\right],
+\cH{Q} = \frac{\hbar \omega_Q}{6}\left[ 3 \hat{I}_{\mathcal{P}_1}^2 - I(I+1) + \eta(\hat{I}_{\mathcal{P}_2}^2 - \hat{I}_{\mathcal{P}_3}^2)\right],
 \label{eq:quadrupole_ppaxis}
 \end{equation}
 
@@ -390,7 +390,7 @@ T^{(2)}_{\pm 2} &= I_{\pm}^2 .
 }. By algebraic manipulation of Eq. \ref{eq:quadrupole} we can rewrite the Hamiltonian as
 
 \begin{equation}
-    \cH{Q} = \sum_{m = -2}^2 Q_m T^{(2)}_m(\mathbf{I})
+    \cH{Q} = \sum_{m = -2}^2 Q_m T^{(2)}_m(\hat{\mathbf{I}})
     \label{eq:quadrupole_spherical}
 \end{equation}
 
@@ -424,11 +424,11 @@ Treating the nucleus as a point dipole and the \Er as a localized magnetic momen
 \begin{equation}
     \cH{hf} = \frac{\mu_0}{4\pi} r^{-3} 
     \left[ \boldsymbol{\mu}_1 \cdot \boldsymbol{\mu}_2 
-    - 3r^{-2} (\boldsymbol{\mu}_1 \cdot \mathbf{r})(\boldsymbol{\mu}_2 \cdot \mathbf{r}), \right]
+    - 3r^{-2} (\boldsymbol{\mu}_1 \cdot \mathbf{r})(\boldsymbol{\mu}_2 \cdot \mathbf{r}) \right]
     \label{eq:base_hyperfine}
 \end{equation}
 
-\noindent where $\mathbf{r}$ is the vector separating the two spins. In the case of \Er and a neighboring nuclear spin $\boldsymbol{\mu}_1 = g_L \mu_B \, \mathbf{J}$ and $\boldsymbol{\mu}_2 = \gamma_n \mathbf{I}$. Expanding the expression in terms of the spin operators yields
+\noindent where $\mathbf{r}$ is the vector separating the two spins. In the case of \Er and a neighboring nuclear spin $\boldsymbol{\mu}_1 = g_L \mu_B \, \hat{\mathbf{J}}$ and $\boldsymbol{\mu}_2 = \gamma_n \hat{\mathbf{I}}$. Expanding the expression in terms of the spin operators yields
 
 \begin{equation}
 \begin{aligned}
@@ -462,7 +462,7 @@ g_L \mu_B \gamma_n \frac{\mu_0}{4\pi} r^{-3} \Big[
 \noindent where $\theta_r$ and $\phi_r$ are, respectively, the polar and azimuthal angles of the vector $\mathbf{r}$ and the spin operators are expressed in the crystal axis basis. This interaction can be written in a more compact form:
 
 \begin{equation}
-    \cH{hf} = \mathbf{J} \cdot \bar{\bar {A}} \cdot \mathbf{I},
+    \cH{hf} = \hat{\mathbf{J}} \cdot \bar{\bar {A}} \cdot \hat{\mathbf{I}},
 \end{equation}
 
 \noindent where the complexity of the dipolar interaction is encoded in the hyperfine tensor $\bar{\bar{A}}$. This interaction is strongly anisotropic and depends on the relative position and orientation between the two spins. 
@@ -476,7 +476,7 @@ We now summarize the previous derivations and assemble a compact spin Hamiltonia
 The most general description retains the entire $J=15/2$ manifold and includes the crystal-field, Zeeman, nuclear Zeeman, nuclear quadrupole and the full hyperfine coupling:
     
 \begin{equation}
-    \cH{$\tfrac{15}{2}$} = g_L \mu_B \, J_{z'} + \cH{cf} + \omega_I \, I_{z'} + \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I} + \mathbf{J} \cdot \bar{\bar {A}} \cdot \mathbf{I}.
+    \cH{15/2} = g_L \mu_B \, \hat{J}_{z'} + \cH{cf} + \omega_I \, \hat{I}_{z'} + \hat{\mathbf{I}} \cdot \bar{\bar{Q}} \cdot \hat{\mathbf{I}} + \hat{\mathbf{J}} \cdot \bar{\bar {A}} \cdot \hat{\mathbf{I}}.
 \end{equation}
 
 We note that, at this level of approximation, the two Zeeman terms are isotropic and the operators $J_{z'}$ and $I_{z'}$ refer to the same axis $z'$, parallel to the magnetic field $B_0$.

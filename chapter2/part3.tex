@@ -80,17 +80,17 @@ This Hamiltonian defines a four level system, shown in \reffig{energy_levels_hal
 \end{align}
 
 
-where $\mathcal{N}$ is a normalization constant. The eigenstates therefore correspond to the uncoupled product states with a small admixture of the opposite nuclear spin component. This mixing produces a small, but nonzero, $S_x$ matrix elements:
+where $\mathcal{N}$ is a normalization constant. The eigenstates therefore correspond to the uncoupled product states with a small admixture of the opposite nuclear spin component. This mixing produces a small, but nonzero, $\hat{S}_x$ matrix elements:
 
 \begin{equation}
-    \bra{1} S_x \ket{4} \approx - \bra{2} S_x \ket{3} \approx \frac{A_\perp}{4\omega_I} \ll 1.
+    \bra{1} \hat{S}_x \ket{4} \approx - \bra{2} \hat{S}_x \ket{3} \approx \frac{A_\perp}{4\omega_I} \ll 1.
     \label{eq:zq_dq_matrix_elements}
 \end{equation}
 
 Therefore, the zero- and double-quantum transitions $\ket{1}\leftrightarrow\ket{4}$ and $\ket{2}\leftrightarrow\ket{3}$, which are strictly forbidden in the absence of mixing, become weakly allowed with oscillator strength on the order of $A_\perp/(4\omega_I)$, much smaller than that of the allowed EPR transitions:
 
 \begin{equation}
-    \bra{1} S_x \ket{3} \approx \bra{2} S_x \ket{4} \approx 1/2,
+    \bra{1} \hat{S}_x \ket{3} \approx \bra{2} \hat{S}_x \ket{4} \approx 1/2,
 \end{equation}
 
 The Rabi rate of an allowed EPR transition with a resonant the cavity is given in \refsec{rabi_oscillations_theory} by $\Omega_d = \frac{8 g_0 \epsilon_d^2}{\kappa^2}$, where $\epsilon_d$ is the applied microwave amplitude. To obtain the ZQ and DQ Rabi rates at the \textit{same} drive amplitude we simply rescale $\Omega_d$ by the ratio of the relevant matrix elements. Including the cavity filtering (the sideband is detuned from the cavity by $\sim\omega_I$) gives the final ZQ/DQ Rabi rate
@@ -242,8 +242,8 @@ where
 \label{seq:mixing_coefficients}
     &M_{\pm1}^{(m_S,m_I)} =  \mp\frac{C^\pm_{m_I} \cdot A_\perp m_S / 2}{\omega_I+A_\parallel m_S + \omega'_Q (m_I\pm1/2)}, \\
     &M_{\pm2}^{(m_S,m_I)} = \mp\frac{e^{\mp2i\alpha}D^\pm_{m_I} \cdot \omega_Q'\eta'/12}{2(\omega_I+A_\parallel m_S + \omega'_Q (m_I\pm1))}.\\ \\
-    &C^\pm_{m_I} = \bra{m_I\pm1}I_\pm\ket{m_I} = \sqrt{I(I+1)-m_I(m_I\pm1)},\\
-    &D^\pm_{m_I} = \bra{m_I\pm2}I_\pm\ket{m_I} = C^\pm_{m_I}~\cdot~C^\pm_{m_I+1}\,.
+    &C^\pm_{m_I} = \bra{m_I\pm1}\hat{I}_\pm\ket{m_I} = \sqrt{I(I+1)-m_I(m_I\pm1)},\\
+    &D^\pm_{m_I} = \bra{m_I\pm2}\hat{I}_\pm\ket{m_I} = C^\pm_{m_I}~\cdot~C^\pm_{m_I+1}\,.
 \end{split}
 \end{align}
 
@@ -257,10 +257,10 @@ Due to the hyperfine and quadrupole induced mixing, the nuclear spin magnetic nu
 
 \begin{align}
 \begin{split}
-    &\bra{\downarrow n}S_x\ket{\uparrow n} \approx 1/2\\
-    &\bra{\downarrow n\pm1}S_x\ket{\uparrow n} \approx \mp\frac{1}{4}
+    &\bra{\downarrow n}\hat{S}_x\ket{\uparrow n} \approx 1/2\\
+    &\bra{\downarrow n\pm1}\hat{S}_x\ket{\uparrow n} \approx \mp\frac{1}{4}
 \frac{A_\perp C^\pm_{n}}{\omega_I+\omega'_Q\!\left(n\pm\tfrac12\right)}\\
-    &\bra{\downarrow n\pm2}S_x\ket{\uparrow n} \approx \mp \frac{\omega'_Q\eta'}{24}\,
+    &\bra{\downarrow n\pm2}\hat{S}_x\ket{\uparrow n} \approx \mp \frac{\omega'_Q\eta'}{24}\,
 \frac{A_\parallel\,e^{\mp2i\alpha}\,D^\pm_{n}}{2\left(\omega_I+\omega'_Q(n\pm1)\right)^2}
 , \\[6pt]
 \end{split}
@@ -293,15 +293,15 @@ where $\Gamma^{(0)}_R$ is the electron decay rate when $n=0$. We denote the freq
 
 \begin{align}
 \begin{split}
-    \Gamma^{(n)}_{i} =&\, \frac{\kappa g_0^2}{\kappa^2/4 + (\omega_r - \omega_n^{(i)})^2} \cdot \frac{|\bra{\downarrow n+i}S_x\ket{\uparrow n}|^2}{|\bra{\downarrow n}S_x\ket{\uparrow n}|^2} = \\ 
-    =&\, 2\,\Gamma^{(0)}_R \cdot \frac{|\bra{\downarrow n+i}S_x\ket{\uparrow n}|^2}{1 + 4\frac{(\omega_r - \omega_{n}^{(i)})^2}{\kappa^2}}
+    \Gamma^{(n)}_{i} =&\, \frac{\kappa g_0^2}{\kappa^2/4 + (\omega_r - \omega_n^{(i)})^2} \cdot \frac{|\bra{\downarrow n+i}\hat{S}_x\ket{\uparrow n}|^2}{|\bra{\downarrow n}\hat{S}_x\ket{\uparrow n}|^2} = \\ 
+    =&\, 2\,\Gamma^{(0)}_R \cdot \frac{|\bra{\downarrow n+i}\hat{S}_x\ket{\uparrow n}|^2}{1 + 4\frac{(\omega_r - \omega_{n}^{(i)})^2}{\kappa^2}}
 \end{split}
 \end{align}
 
 The total relaxation rate for $\ket{\uparrow n}$ is given by $\Gamma^{(n)} = \Gamma^{(n)}_R +\sum_i\Gamma^{(n)}_i$. We naturally introduce the cross-relaxation probability
 
 \begin{equation}
-    p^{(n)}_{x,i} = \frac{\Gamma^{(n)}_i}{\Gamma^{(n)}} \approx \frac{\Gamma^{(n)}_i}{\Gamma^{(n)}_R} = \frac{2|\bra{\downarrow n+i}S_x\ket{\uparrow n}|^2}{1 + 4\frac{(\omega_r - \omega^{(n)}_i)^2}{\kappa^2}}.
+    p^{(n)}_{x,i} = \frac{\Gamma^{(n)}_i}{\Gamma^{(n)}} \approx \frac{\Gamma^{(n)}_i}{\Gamma^{(n)}_R} = \frac{2|\bra{\downarrow n+i}\hat{S}_x\ket{\uparrow n}|^2}{1 + 4\frac{(\omega_r - \omega^{(n)}_i)^2}{\kappa^2}}.
 \end{equation}
 
 Due to the difference in scale of the matrix elements between the $\Delta m_I \pm 1$ and $\Delta m_I \pm 2$ transitions, the dominant contribution to the relaxation dynamics arises from the ZQ and DQ transitions, while the probability of a cross-relaxation event with $\Delta m_I = \pm2$ is orders of magnitude weaker.

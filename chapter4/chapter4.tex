@@ -3,5 +3,64 @@
 \chapter{Individual nuclear spins in the solid state for quantum information}
 \label{ch:individual_nuclear_spins_quantum_information}
 
+\begin{quote}
+\itshape
+In this chapter we focus on a single spin system, formed by two \W nuclear spins coupled to a single \Er impurity. Using the techniques demonstrated in the previous chapter of single-shot nuclear readout and DNP, we expand on the control of the spins by driving stimulated Raman transitions, which can be used to define single- and two-qubit gates. Using these techniques, we further show that certain Bell states exist in a so-called decoherence free subspace and are inherently resilient to magnetic field noise, extending by a factor two the coherence of the two-qubit protected state with respect to the individual qubits.
+\end{quote}
 
-Nuclear spins in the solid-state are attractive candidates for quantum computing, offering long coherence times~\cite{steger_quantum_2012,pla_highfidelity_2013a, zhong_optically_2015, maurer_roomtemperature_2012a} and high density. However, the typically weak coupling of nuclear spins to their environment that enables such long coherence times makes their control and readout challenging. Single-shot QND readout and control of the electron spin of rare earth ion defects in the solid state via their optical transitions using nanophotonic cavities has been demonstrated\cite{raha_optical_2020a, kindem_control_2020a}. Furthermore, a frequency-erasing photon detection scheme was recently used to herald remote entanglement between up to three such ions\cite{ruskuc_scalable_2024}. However, nuclear spin qubits are usually addressed through their hyperfine coupling to an electron spin ancilla~\cite{pla_coherent_2014a, madzik_precision_2022, abobeih_onesecond_2018a, waldherr_quantum_2014}, which then needs to be detected. Electrical detection of electron spin donors in silicon enabled the demonstration of long-lived single-$^{31}$P nuclear spin qubits in isotopically-enriched silicon~\cite{muhonen_storing_2014a}, the operation of a two-$^{31}$P quantum gate~\cite{madzik_precision_2022}, and the control~\cite{fernandezdefuentes_navigating_2024} and preparation of a $^{123}$Sb $7/2$-nuclear spin in a Schr\"odinger-cat state~\cite{yu_creation_2024}. Electrical detection was used also for TbPc$_2$ molecular quantum dots, enabling the manipulation and readout of a spin-3/2 $^{159}$Tb nuclear spin~\cite{thiele_electrically_2014a} and the implementation of Grover's search algorithm on a single $^{159}$Tb nucleus~\cite{godfrin_operating_2017}. Optical detection of individual NV center electron spins in diamond enabled the operation of a register of up to ten $^{13}$C nuclear spin qubits~\cite{bradley_tenqubit_2019}, the fault-tolerant operation of a logical qubit utilizing five $^{13}$C nuclear-spin qubits~\cite{abobeih_faulttolerant_2022b}, and the demonstration of high-fidelity single- and two-qubit gates with a $^{14}\mathrm{N}$ nuclear spin~\cite{bartling_universal_2024}. Individual nuclear spin control has also been demonstrated using other color centres in diamond~\cite{beukers_control_2025, maity_mechanical_2022, nguyen_quantum_2019}, rare earth ions~\cite{uysal_coherent_2023a} and SiC~\cite{babin_fabrication_2022}.
+%Nuclear spins in the solid-state are attractive candidates for quantum computing, offering long coherence times~\cite{steger_quantum_2012,pla_highfidelity_2013a, zhong_optically_2015, maurer_roomtemperature_2012a} and high density. However, the typically weak coupling of nuclear spins to their environment that enables such long coherence times makes their control and readout challenging. Single-shot QND readout and control of the electron spin of rare earth ion defects in the solid state via their optical transitions using nanophotonic cavities has been demonstrated\cite{raha_optical_2020a, kindem_control_2020a}. Furthermore, a frequency-erasing photon detection scheme was recently used to herald remote entanglement between up to three such ions\cite{ruskuc_scalable_2024}. However, nuclear spin qubits are usually addressed through their hyperfine coupling to an electron spin ancilla~\cite{pla_coherent_2014a, madzik_precision_2022, abobeih_onesecond_2018a, waldherr_quantum_2014}, which then needs to be detected. Electrical detection of electron spin donors in silicon enabled the demonstration of long-lived single-$^{31}$P nuclear spin qubits in isotopically-enriched silicon~\cite{muhonen_storing_2014a}, the operation of a two-$^{31}$P quantum gate~\cite{madzik_precision_2022}, and the control~\cite{fernandezdefuentes_navigating_2024} and preparation of a $^{123}$Sb $7/2$-nuclear spin in a Schr\"odinger-cat state~\cite{yu_creation_2024}. Electrical detection was used also for TbPc$_2$ molecular quantum dots, enabling the manipulation and readout of a spin-3/2 $^{159}$Tb nuclear spin~\cite{thiele_electrically_2014a} and the implementation of Grover's search algorithm on a single $^{159}$Tb nucleus~\cite{godfrin_operating_2017}. Optical detection of individual NV center electron spins in diamond enabled the operation of a register of up to ten $^{13}$C nuclear spin qubits~\cite{bradley_tenqubit_2019}, the fault-tolerant operation of a logical qubit utilizing five $^{13}$C nuclear-spin qubits~\cite{abobeih_faulttolerant_2022b}, and the demonstration of high-fidelity single- and two-qubit gates with a $^{14}\mathrm{N}$ nuclear spin~\cite{bartling_universal_2024}. Individual nuclear spin control has also been demonstrated using other color centres in diamond~\cite{beukers_control_2025, maity_mechanical_2022, nguyen_quantum_2019}, rare earth ions~\cite{uysal_coherent_2023a} and SiC~\cite{babin_fabrication_2022}.
+
+%In this chapter, we present an alternative hybrid architecture to control and read out individual nuclear spin qubits via an electron spin defect ancilla by magnetically coupling this ancilla to a high-Q superconducting resonator. Requiring relatively straightforward fabrication techniques, this approach permits a single resonator to control numerous coherent spin defects. The techniques used are also readily applicable to a wide range of paramagnetic defects with nearby nuclear spins. By detecting spin fluorescence~\cite{albertinale_detecting_2021} via a superconducting resonator using a superconducting circuit-based Single Microwave Photon Detector (SMPD)~\cite{balembois_cyclically_2024,lescanne_irreversible_2020}, detection of individual electron spins has recently been demonstrated \cite{wang_singleelectron_2023}. Leveraging this technique, we use single Er$^{3+}$ spin impurities in a CaWO$_4$ crystal to control and read-out neighboring spin-1/2 $^{183}$W nuclei via the hyperfine interaction. This method permits single-shot Quantum Non-Demolition (QND) readout of individual $^{183}$W nuclear spin qubits~\cite{travesedo_allmicrowave_2025}. Individual all-microwave qubit control on a timescale of milliseconds is achieved by driving a stimulated Raman transition. Two-qubit gates are achieved by taking advantage of induced AC-Zeeman shifts on the energy level structure of the electron and nuclear spin system. We use this to construct a NOT gate and generate Bell states of the two nuclear spin qubits. We further show that certain Bell states exist in a so-called decoherence free subspace and are inherently resilient to magnetic field noise, extending $T_2^*$ from $0.8(2)~$s and $1.2(3)~$s for the individual qubits to $1.7(2)~$s for the two-qubit protected state.
+
+\section{Spin system}
+
+\begin{marginfigure}
+    \includegraphics{chapter4/figures/crystal.pdf}
+    \caption[\Ca with two \W nuclear spins]{\Er:\Ca with two \W nuclear spins. The position of the nuclear spins corresponds to Er$_4$ nuclear spin positions, estimated by comparing the hyperfine coupling measurements to dipole-dipole calculations.}
+    \labfig{crystal_2_W}
+\end{marginfigure}
+
+
+In the following, we fully focus on one of the spin systems presented in the previous chapter, Er$_4$, which is composed of two \W nuclear spins strongly coupled to a single \Er spin. The position of the \W spins was estimated in the previous chapter by matching the measured hyperfine coupling between the electron and the nuclear spins to dipole-dipole simulations, and a schematic view of the system is shown in \reffig{crystal_2_W}. 
+
+The spin Hamiltonian of this system is
+
+\begin{equation}
+\hat{H} = \omega_S \hat{S}_{z} + \sum_{i\in\{1,2\}} \omega_{I,i} \hat{I}_{z,1} + A_\parallel^{(i)} \hat{S}_z \hat{I}_{z,i} + A_\perp^{(i)} \hat{S}_z \hat{I}_{x,i},
+\end{equation}
+
+where $\omega_S$ is the Er spin frequency, $\hat{\mathbf{S}} = [\hat{S}_x, \hat{S}_y, \hat{S}_z]$ is the Erbium spin operator, $\omega_{I,i}$ are the nuclear spin frequencies, $\hat{\mathbf{I}}_i = [\hat{I}_{x,i}, \hat{I}_{y,i}, \hat{I}_{z,i}]$ are the nuclear spin operators and $A_\parallel^{(i)}$, $A_\perp^{(i)}$ are the $zz$ and $zx$ hyperfine coupling constants between the electron and nuclear spins, for $i\in1,2$. Here we have kept only the hyperfine terms proportional to $S_z$ according to the secular approximation. This Hamiltonian gives rise to an 8 level system, as shown in \red{fig}. In the following, we utilize the two nuclear spins as qubits, designated Qb1 and Qb2, and the electron spin as an ancilla to control and read-out the nuclear spin qubits.
+
+In addition, the characteristics of the Er$_4$ spin are reminded to the reader in .
+
+\begin{table}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$T_1$ (ms) 
+& $g_0/2\pi$ (kHz) 
+& $T^*_2$ ($\upmu$s) 
+& $T_2$ (ms) \\ \hline
+0.80(3) 
+& 5.6(0.2) 
+& 170(5) 
+& 2.05(3) \\ \hline
+\end{tabular}
+
+\vspace{0.8em}
+
+% --- Hyperfine parameters ---
+\begin{tabular}{|c|c|c|c|}
+\hline
+$A_\parallel^{(1)}/2\pi$ (kHz) 
+& $A_\perp^{(1)}/2\pi$ (kHz) 
+& $A_\parallel^{(2)}/2\pi$ (kHz) 
+& $A_\perp^{(2)}/2\pi$ (kHz) \\ \hline
+36(1) 
+& 40(5) 
+& 19(1) 
+& 11(3) \\ \hline
+\end{tabular}
+
+\caption{Er$_4$ characterization}
+\label{tab:electron_characterization_er4}
+\end{table}

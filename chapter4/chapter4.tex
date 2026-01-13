@@ -108,17 +108,46 @@ $\Delta_x$ ($\Delta_y$) effectively "traces out" the state of Qb2 (Qb1) as well 
 
 A straightforward method to implement single-qubit gates on the qubits would be to directly drive the nuclear transitions in the radiofrequency regime. However, we are constrained by the experimental setup, since the electron spins are addressed via a resonator, filtering any excitation outside its bandwidth. Therefore, we require a different method to control the nuclear spins, which can be implemented with microwave pulses. As discussed in \refch{nuclea_spin_control}, the method of choice used for coherent control of the \W nuclear spins is stimulated Raman driving.
 
-In \refsec{raman_driving} we introduce the principle of stimulated Raman driving, derived the analytical Rabi frequency and discussed the concept of the \textit{differetial AC-Zeeman shift}. We now proceed to briefly remind the reader the concept of stimulated Raman driving in the case of a single qubit and introduce the subtleties that arise when a second \W qubit is strongly coupled to the \Er spin, from which we naturally implement two-qubit gates.
+In \refsec{raman_driving} we introduce the principle of stimulated Raman driving, derived the analytical Rabi frequency and discussed the concept of the \textit{differential AC-Zeeman shift}. We now proceed to briefly remind the reader the concept of stimulated Raman driving in the case of a single qubit and introduce the subtleties that arise when a second \W qubit is strongly coupled to the \Er spin, from which we naturally implement two-qubit gates.
 
-Let us first consider a single \W qubit coupled to the \Er spin.  
+Let us first consider a single \W qubit coupled to the \Er spin. To control the state of the nuclear spin through stimulated Raman driving, we simultaneously apply two detuned microwave pulses with amplitudes $\Omega_\text{A}$ and $\Omega_\text{B}$. The frequency detuning between the two pulses is defined as $\delta$ and the frequency detuning between the drive A and the $\ket{\Downarrow \uparrow} \leftrightarrow \ket{\Uparrow \uparrow}$ is defined as $\Delta$, as depicted in \reffig{raman_scheme_v2}. A coherent transfer of population between the two lower nuclear spin levels is activated when $\delta = \omega_I^{(\Downarrow)} + \delta_\text{AC}$, where $\omega_I^{(\Downarrow)}$ is the bare NMR transition frequency and $\delta_\text{AC}$ corresponds to the differential AC-Zeeman shift due to the off-resonant driving of the microwave pulses.
+
+\begin{figure}
+    \includegraphics{chapter4/figures/raman_scheme.pdf}
+    \caption[Stimulated Raman Scheme]{\textit{(left)} Bare energy levels of an \Er spin coupled to a single \W nuclear spin qubit. We highlight the nuclear spin transition in the ground state of the \Er ground state with frequency $\omega_I^{(\Downarrow)}$. \textit{(right)} Two microwave pulses with amplitude $\Omega_\text{A, B}$ are applied on a four-level system. The detuning between drive A and the $\ket{\Downarrow \uparrow} \leftrightarrow \ket{\Uparrow \uparrow}$ is defined as $\Delta$. The frequency difference between the two pulses is defined as $\delta$. The bare energy levels (gray dashed lines) have been AC-Zeeman shifted by the strong off-resonance drives. The combined AC-Zeeman shift of the system results in an effective shift of the nuclear spin transition by $\delta_\text{AC}$}
+    \labfig{raman_scheme_v2}
+\end{figure}
+
+We now return to the system with two \W nuclear spins. In the following, we concentrate on the control of Qb1, as the same methods apply to Qb2. We differentiate two cases, depending on the state of Qb2, highlighted in different colors in \reffig{2q_raman_scheme}a. The key point in the diagram comes from the different Raman shifts $\Delta^{\uparrow, \downarrow}$ depending on the state of Qb2. The origin of this difference lies on the split of the electron allowed frequencies and is evident that for the same Raman drive, $\Delta^{\uparrow} \approx \Delta^{\downarrow} + A_{\parallel}^{(2)}$.
+
+Using Eq. \ref{eq:ac_zeeman} we can calculate the expected differential AC-Zeeman shift on the Qb1 transition for both possible states of Qb2 (see \reffig{2q_raman_scheme}b). Stimulated Raman driving is a second order process that requires $\Delta \gg \Omega_\text{Ram}$ and the figure only plots $\delta^{\downarrow, \uparrow}_\text{AC}$ where this condition is met. As expected, the two quantities are similar but not equal, and we naturally introduce the following quantities:
+
+\begin{align}
+\begin{split}
+    \delta_{2qb} &\equiv \delta^\uparrow_\text{AC} - \delta^\downarrow_\text{AC}, \\
+    \bar{\delta}_\text{AC} &\equiv (\delta^\uparrow_\text{AC} + \delta^\downarrow_\text{AC})/2,
+\end{split}
+\end{align}
+
+\reffig{2q_raman_scheme}c shows $\delta_{2qb}$ as a function of $\Delta^\uparrow$. Based on the value of $\delta_{2qb}$ we can distinguish two regimes:
 
 \begin{itemize}
-    \item \red{Subtleties about stimulated Raman driving with two qubits}
-    \item \red{Introduction of $\delta_{2qb}$ and 2qubit differential shift}
-    \item \red{Two regimes}
+    \item \textbf{Unconditional driving.} In this regime the Qb1 transition frequency is effectively independent of Qb2. It is obtained for $\Delta^{\uparrow}\approx -\omega_{I,1}/2 - A_\parallel^{(2)}/2$, where the driving speed is also close to its maximum. Experimentally, this is realized when $|\delta_{2qb}| \ll \Omega_\text{Ram}$. For $\Omega_\text{Ram}\approx0.5\,$kHz we observe tolerance for $\Delta^{\uparrow}$ variations of order $\sim 10\,$kHz while remaining unconditional.
+    \item \textbf{Conditional driving.} For all other values of $\Delta^{\uparrow}$, the transition frequency for Qb1 is conditioned on the state of Qb2.
 \end{itemize}
 
+These two regimes respectively define the single- and two-qubit gates. To implement a single-qubit gate, the frequency of the nuclear spin transition should not depend on the state any other qubit of the register, which is preserved in the unconditional regime. On the contrary, the conditional driving creates a native CNOT gate, as we discuss in the following sections.
+
+
+\begin{figure*}
+    \includegraphics{chapter4/figures/2q_raman_scheme.pdf}
+    \caption[Two-qubit Raman driving]{Two-qubit stimulated Raman drive. \textbf{a} Energy level diagram under stimulated Raman drive. The bare energy levels shown in \reffig{8_level_system} (gray dashed lines) have been AC-Zeeman shifted by the strong off-resonance drives plot as green arrows. The colored boxes differentiate the two possible states of Qb2. When Qb2 is in $\ket{\downarrow}$ ($\ket{\uparrow}$), the Raman detuning is given by $\Delta^{\downarrow}$ ($\Delta^{\uparrow}$) and the AC-Zeeman shift on the Qb1 transition frequency is $\delta_\text{AC}^{\downarrow}$ ($\delta_\text{AC}^{\uparrow}$). \textbf{b} Two-qubit differential AC-Zeeman shift.} 
+    \labfig{2q_raman_scheme}
+\end{figure*}
+
 \subsection{Single-qubit gates}
+
+We now perform spectroscopy and characterization of the two \W nuclear spins using the stimulated Raman driving in the unconditional regime. As such, we fix the Raman shift to $\Delta^{\uparrow} = -404.8\,\text{kHz} \approx -\omega_{I,1}/2 - A_\parallel^{(2)}/2$
 
 \begin{itemize}
     \item \red{$\Delta=0$ Spectroscopy}

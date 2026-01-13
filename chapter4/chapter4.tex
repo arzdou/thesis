@@ -16,12 +16,12 @@ In this chapter we focus on a single spin system, formed by two \W nuclear spins
 
 \begin{marginfigure}
     \includegraphics{chapter4/figures/crystal.pdf}
-    \caption[\Ca with two \W nuclear spins]{\Er:\Ca with two \W nuclear spins. The position of the nuclear spins corresponds to Er$_4$ nuclear spin positions, estimated by comparing the hyperfine coupling measurements to dipole-dipole calculations.}
+    \caption[\Ca with two \W nuclear spins]{\Er:\Ca with two \W nuclear spins. The location of the nuclear spins corresponds to Er$_4$ nuclear spin positions, estimated by comparing the hyperfine coupling measurements to dipole-dipole calculations.}
     \labfig{crystal_2_W}
 \end{marginfigure}
 
 
-In the following, we fully focus on one of the spin systems presented in the previous chapter, Er$_4$, which is composed of two \W nuclear spins strongly coupled to a single \Er spin. The position of the \W spins was estimated in the previous chapter by matching the measured hyperfine coupling between the electron and the nuclear spins to dipole-dipole simulations, and a schematic view of the system is shown in \reffig{crystal_2_W}. 
+In the following, we fully focus on one of the spin systems presented in the previous chapter, Er$_4$, which is composed by two \W nuclear spins strongly coupled to a single \Er spin. The position of the \W spins was estimated in the previous chapter by matching the measured hyperfine coupling between the electron and the nuclear spins to dipole-dipole simulations, and a schematic view of the system is shown in \reffig{crystal_2_W}. 
 
 The spin Hamiltonian of this system is
 
@@ -29,11 +29,19 @@ The spin Hamiltonian of this system is
 \hat{H} = \omega_S \hat{S}_{z} + \sum_{i\in\{1,2\}} \omega_{I,i} \hat{I}_{z,1} + A_\parallel^{(i)} \hat{S}_z \hat{I}_{z,i} + A_\perp^{(i)} \hat{S}_z \hat{I}_{x,i},
 \end{equation}
 
-where $\omega_S$ is the Er spin frequency, $\hat{\mathbf{S}} = [\hat{S}_x, \hat{S}_y, \hat{S}_z]$ is the Erbium spin operator, $\omega_{I,i}$ are the nuclear spin frequencies, $\hat{\mathbf{I}}_i = [\hat{I}_{x,i}, \hat{I}_{y,i}, \hat{I}_{z,i}]$ are the nuclear spin operators and $A_\parallel^{(i)}$, $A_\perp^{(i)}$ are the $zz$ and $zx$ hyperfine coupling constants between the electron and nuclear spins, for $i\in1,2$. Here we have kept only the hyperfine terms proportional to $S_z$ according to the secular approximation. This Hamiltonian gives rise to an 8 level system, as shown in \red{fig}. In the following, we utilize the two nuclear spins as qubits, designated Qb1 and Qb2, and the electron spin as an ancilla to control and read-out the nuclear spin qubits.
 
-In addition, the characteristics of the Er$_4$ spin are reminded to the reader in .
+\begin{figure}[b]
+    \includegraphics{chapter4/figures/8_level_system.pdf}
+    \caption[Energy level system of one \Er spin with two \W nuclear spins]{Energy level diagram of the system of an \Er spin $\mathbf{S}=1/2$ electron (double arrow) coupled to two \W nuclear spin $\mathbf{I_\mathrm{1,2}}=1/2$ (single arrows). Electron spin transitions occur at $\omega_{\uparrow\uparrow}, \omega_{\uparrow\downarrow}, \omega_{\downarrow\uparrow}$ and $\omega_{\downarrow\downarrow}$ (blue, orange, green and red, respectively) depending on the nuclear spin state. Simultaneous nuclear and electron spin-flip events are also possible via sideband transitions (grey dashed arrows).}
+    \labfig{8_level_system}
+\end{figure}
 
-\begin{table}
+
+where $\omega_S$ is the Er spin frequency, $\hat{\mathbf{S}} = [\hat{S}_x, \hat{S}_y, \hat{S}_z]$ is the Erbium spin operator, $\omega_{I,i}$ are the nuclear spin frequencies, $\hat{\mathbf{I}}_i = [\hat{I}_{x,i}, \hat{I}_{y,i}, \hat{I}_{z,i}]$ are the nuclear spin operators and $A_\parallel^{(i)}$, $A_\perp^{(i)}$ are the $zz$ and $zx$ hyperfine coupling constants between the electron and nuclear spins, for $i\in1,2$. Here we have kept only the hyperfine terms proportional to $S_z$ according to the secular approximation. This Hamiltonian gives rise to an 8 level system, as shown in \reffig{8_level_system}. In the following, we utilize the two nuclear spins as qubits, designated Qb1 and Qb2, and the electron spin as an ancilla to control and read-out the nuclear spin qubits.
+
+In addition, the characteristics of the Er$_4$ spin, Qb1 and Qb2 are reminded to the reader in \reftab{electron_characterization_er4}
+
+\begin{table}[h!]
 \begin{tabular}{|c|c|c|c|}
 \hline
 $T_1$ (ms) 
@@ -61,6 +69,79 @@ $A_\parallel^{(1)}/2\pi$ (kHz)
 & 11(3) \\ \hline
 \end{tabular}
 
-\caption{Er$_4$ characterization}
-\label{tab:electron_characterization_er4}
+\caption{Er$_4$ characterization. The top table details the parameters of the \Er spin and the bottom table the parameters of the \W nuclear spin, as measured in Chapter \ref{ch:detection_and_control_of_individual_w}.}
+\labtab{electron_characterization_er4}
 \end{table}
+
+\section{Readout and preparation}
+
+We extend the readout and preparation protocols from the previous chapter to the two nuclear spin Er$_4$ system. Preparation into arbitrary nuclear spin states is done through a combination of sideband pumping (see \refsec{dnp_half}) and single-qubit gates (see next section). Sideband pumping is achieved by driving the electron-nuclear transitions (represented as gray arrows in \reffig{8_level_system}) with a $\tau_{\mathrm{prep}}=3.5$~ms length square pulse followed by $\tau_\text{w}$ = 2~ms of wait time, allowing the electron spin to decay. This sequence is then repeated $N_\text{prep}=50$ times to maximize the preparation efficiency. To prepare $\ket{\downarrow \downarrow}$ we drive the high frequency sidebands. To cover both Qb1 and Qb2 sidebands, the frequency of the pulse is chirped 50 kHz. To prepare other states, we apply the appropriate single-qubit gates after initializing in $\ket{\downarrow \downarrow}$.
+
+
+\begin{figure}[t!]
+    \includegraphics{chapter4/figures/spectra_electron.pdf}
+    \caption[Electron spin spectra for each nuclear spin state]{High-resolution spectroscopy of the electron spin transitions. Each trace was obtained by preparing each nuclear spin state deterministically and measuring the ensemble averaged counts $\langle C\rangle$ number of counts as a function of the frequency of the excitation pulse of $80$~\textmu s of duration. The data was taken with an integration time of $\tau_\text{int}=1$~ms}
+    \labfig{spectra_electron}
+\end{figure}
+
+
+Readout exploits the spectral separation of the electron allowed transitions $\omega_{\uparrow\uparrow}$, $\omega_{\uparrow\downarrow}$, $\omega_{\downarrow\uparrow}$ and $\omega_{\downarrow\downarrow}$ (blue, orange, green and red in \reffig{8_level_system}). The linewidth of the resonator $\kappa \approx 700$~kHz and the bandwidth of the SMPD $\sim200$~kHz are sufficient to span the four possible frequencies and the measured spin coherence $T_2^*=170$~\textmu s, allows us to frequency-resolve them. \reffig{spectra_electron} shows four photon-counting spectra obtained by high-resolution spectroscopy with an $80$~\textmu s electron excitation pulse. Each trace was acquired after deterministically preparing the nuclear spins in one of the four possible nuclear spin configurations.  We see that the peak photon count occurs at a different frequency for each of the four nuclear spin states, and that the peaks are all clearly distinguishable, allowing for high fidelity readout of the nuclear spin state.
+
+\begin{marginfigure}
+    \includegraphics{chapter4/figures/kmeans.pdf}
+    \caption[Two \W nuclear spin readout]{Four-state readout of the nuclear spin state. Each point corresponds to the value of $\Delta_x$ and $\Delta_y$ measured after preparing in a specific state. The color indicates the prepared state: blue, orange, green and red correspond to $\ket{\uparrow \uparrow}$, $\ket{\uparrow \downarrow}$, $\ket{\downarrow \uparrow}$ and $\ket{\downarrow \downarrow}$ respectively. Background color indicates the state assignment regions calculated using a $k$-means algorithm.}
+    \labfig{kmeans}
+\end{marginfigure}
+
+To measure the state of the nuclear spin we use the photon counting statistics obtained after sending a $\pi$-pulse at each of the four resonant frequencies. We define $C_{\uparrow \uparrow}$, $C_{\downarrow \uparrow}$, $C_{\uparrow \downarrow}$ and $C_{\downarrow \downarrow}$ as the accumulated number of counts after applying a $\pi$-pulse with frequency matching each of the electron spin transitions respectively. We then introduce 
+
+\begin{equation}
+\begin{split}
+   \Delta_x &= (C_{\uparrow \uparrow} + C_{\uparrow \downarrow}) - (C_{\downarrow \uparrow} + C_{\downarrow \downarrow}), \\
+   \Delta_y &= (C_{\uparrow \uparrow} + C_{\downarrow \uparrow}) - (C_{\uparrow \downarrow} + C_{\downarrow \downarrow}).
+\end{split} 
+\end{equation}
+
+$\Delta_x$ ($\Delta_y$) effectively "traces out" the state of Qb2 (Qb1) as well as cancelling the contribution of the dark counts to the photon counting statistics. \reffig{kmeans} plots the measured $\Delta_y$ versus $\Delta_x$ for each possible state of the nuclear spin manifold with $N_\text{RO}=200$ readout pulses. The color of the points represents the state in which the system was prepared before the measurement took place. There are four well resolved distributions, each corresponding to a different prepared state of the two-nuclear-spin system. We use a $k$-means algorithm to separate the space corresponding to each distribution, displayed in the plot with the corresponding background color. The boundaries approximately correspond to the $x=0$ and $y=0$ curves as expected. The skewness in the boundaries can be attributed to inaccurate calibration of the driving frequencies $\omega_{\uparrow\uparrow}$, $\omega_{\downarrow\uparrow}$, $\omega_{\uparrow\downarrow}$ and $\omega_{\downarrow\downarrow}$, which would result in different counting statistics for each state. The measurement probability after preparation is of 0.91, 0.93, 0.92 and 0.95 to be in the desired state $\ket{\uparrow\uparrow}$, $\ket{\uparrow\downarrow}$, $\ket{\downarrow\uparrow}$ and $\ket{\downarrow\downarrow}$, respectively. As discussed in the previous chapter, the main limiting factor of this scheme is the non-zero probability for the electron spin to relax through a nuclear spin flipping transition, which is proportional to $\left(A_\perp / 2\omega_I \right)^2$ (see \red{section ref}). These cross-relaxation events limit the number of readout pulses that can be applied before the readout becomes non-QND.
+
+\section{Stimulated Raman driving.}
+
+A straightforward method to implement single-qubit gates on the qubits would be to directly drive the nuclear transitions in the radiofrequency regime. However, we are constrained by the experimental setup, since the electron spins are addressed via a resonator, filtering any excitation outside its bandwidth. Therefore, we require a different method to control the nuclear spins, which can be implemented with microwave pulses. As discussed in \refch{nuclea_spin_control}, the method of choice used for coherent control of the \W nuclear spins is stimulated Raman driving.
+
+In \refsec{raman_driving} we introduce the principle of stimulated Raman driving, derived the analytical Rabi frequency and discussed the concept of the \textit{differetial AC-Zeeman shift}. We now proceed to briefly remind the reader the concept of stimulated Raman driving in the case of a single qubit and introduce the subtleties that arise when a second \W qubit is strongly coupled to the \Er spin, from which we naturally implement two-qubit gates.
+
+Let us first consider a single \W qubit coupled to the \Er spin.  
+
+\begin{itemize}
+    \item \red{Subtleties about stimulated Raman driving with two qubits}
+    \item \red{Introduction of $\delta_{2qb}$ and 2qubit differential shift}
+    \item \red{Two regimes}
+\end{itemize}
+
+\subsection{Single-qubit gates}
+
+\begin{itemize}
+    \item \red{$\Delta=0$ Spectroscopy}
+    \item \red{Rabi oscillations and calculation of $A_\perp$}
+\end{itemize}
+
+\subsection{Two-qubit gates}
+
+\begin{itemize}
+    \item \red{2qubit gate native CNOT}
+    \item \red{Bell state generation}
+    \item \red{Tomography}
+\end{itemize}
+
+\section{Coherence measurements}
+
+\begin{itemize}
+    \item \red{T2* and T2}
+    \item \red{Direct coupling measurement}
+\end{itemize}
+
+\section{Decoherence free subspace}
+
+\begin{itemize}
+    \item \red{DFS, anti-DFS and explanation}
+\end{itemize}

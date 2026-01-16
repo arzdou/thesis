@@ -21,9 +21,18 @@ Major progress in spectral resolution was brought by recent experiments carried 
 
 \section{Spin system}
 
-As discussed in previous chapters, the sample hosts many addressable single \Er spins, each with its unique nuclear spin environment. The coupled \Nb -- \Er spin system was discovered fortuitously in the same \Ca sample used during the previous experiments. \red{fig} shows a large range electron spin 2D-spectroscopy, where both the amplitude and the in-plane angle of the external magnetic field $B_0$ are swept. 
+\begin{figure*}[t!]
+    \includegraphics{chapter5/figures/spectra_2d.pdf}
+    \caption[Rotation pattern and time trace of \Nb -- \Er system]{Rotation pattern and time trace of \Nb -- \Er system. \textbf{(a)} Rotation pattern. The ensemble averaged counts $\langle C \rangle$ is plot as a function of the magnetic field amplitude and the angle $\theta$. The black arrow marks the \Er spin that is strongly coupled to the \Nb nuclear spin. The red star marks the magnetic field amplitude and $\theta$ used for this work.
+    \textbf{b.} Spectroscopy of the \Er - \Nb coupled system as a function of time. A Gaussian pulse with duration 40 \textmu s and frequency $\omega/2\pi$ is first applied to the sample. After a waiting time $\tau_{\text{w}}=120$~\textmu s, photon counts from the SMPD are integrated over a window of length $\tau_{int}=2$~ms. The same pulse-and-readout sequence is then repeated at the next pulse frequency. The ensemble-averaged signal $\langle C \rangle$ is obtained by averaging 1000 integrated count values. The bottom plot shows the time averaged signal $\langle C\rangle _{\mathrm{total}}$  as a function of pulse frequency. Gray dashed lines have been plot as a guide for the eye for each EPR transition with frequencies $\omega_{n}$.}
+    \labfig{spectra_2d}
+\end{figure*}
 
-To characterize the \Er spin, we first set $B_0$ to match the ion resonance condition. Unless otherwise specified, the measurements of this chapter were taken at the point marked in \red{fig} as a red star. We then repeatedly measure the \Er resonance spectrum by sweeping the excitation pulse frequency and monitoring the subsequent fluorescence. Strongly coupled nuclear spins are revealed by sudden jumps of the \Er resonance, due to the surrounding nuclear spin state change induced by nuclear-spin-flipping relaxation of the \Er spin. Ten evenly-spaced resonances are observed with vastly different cross-relaxation lifetimes, indicating the coupling to a spin-9/2 nuclear spin impurity.  
+As discussed in previous chapters, the sample hosts many addressable single \Er spins, each with its unique nuclear spin environment. The coupled \Nb -- \Er spin system was discovered fortuitously in the same \Ca sample used during the previous experiments. \reffig{spectra_2d}a shows a large range electron spin 2D-spectroscopy, where both the amplitude and the in-plane angle of the external magnetic field $B_0$ are swept. The spin of interest in this chapter is marked with a black arrow.
+
+To characterize the \Er spin \red{missing the actual characterization}, we first set $B_0$ to match the ion resonance condition. Unless otherwise specified, the measurements of this chapter were taken at the point marked in \reffig{spectra_2d}a as a red star. We then measure a spectroscopic time trace\sidenote{Similar to the ones presented in \refsec{nuclear_spin_quantum_jumps}} repeatedly measuring the \Er resonance spectrum by sweeping the excitation pulse frequency and monitoring the subsequent fluorescence. Note, that the operating bandwidth of the SMPD is $\sim300$~kHz, much smaller than the span of the scan. To measure this trace we actively tune the frequency of the detector using DC pulses sent through the buffer's flux line, which modifies the magnetic flux threading the coupled SQUID, therefore changing the frequency of the SMPD. 
+
+As shown in Chapter \ref{ch:detection_and_control_of_individual_w}, strongly coupled nuclear spins are revealed by sudden jumps of the \Er resonance, due to changes on the state of neighboring nuclear spins, strongly coupled to the \Er ion via hyperfine interaction. In \reffig{spectra_2d}b, ten evenly-spaced resonances are observed, they are separated by $\sim$130~kHz and have with vastly different cross-relaxation lifetimes, indicating the coupling to a spin-9/2 nuclear spin impurity.  
 
 As discussed in \refsec{nb_er_hamiltonian} the Hamiltonian of such a coupled spin system is given by
 
@@ -44,15 +53,67 @@ where the terms correspond, in order, to the \Er spin Zeeman energy, the high-nu
 
 \noindent  $\mathcal{H}^{(m_S)}$ is the nuclear spin Hamiltonian when the \Er spin is in $m_S = \downarrow$ or $m_S = \uparrow$. As a result of the hyperfine interaction, the nuclear spin quantization axis $z^{(m_S)}$ and Larmor frequency $\omega_I^{(m_S)} \simeq \omega_I + m_S A_\parallel/2 $ depend on the \Er spin state. In the usual coupled spin description, the quadrupolar tensor should not depend on $m_S$. In this chapter we focus on testing this property by separately measuring the tensors $\bar{\bar{Q}}^{(\downarrow)}$ and $\bar{\bar{Q}}^{(\uparrow)}$ for each \Er spin orientation. 
 
-We now recall the energy level system defined by this Hamiltonian. \red{fig} shows the $20$ energy levels of the coupled spins, grouped in the two $m_S = \downarrow$ or $m_S = \uparrow$ manifolds. The nuclear spin eigenstates are mixed by the quadrupolar interaction and are therefore labeled as $\ket{n}$ in increasing order of energy, with $n$ varying between $0$ and $9$. Ten transitions between $\ket{\downarrow, n}$ and $\ket{\uparrow, n}$ at $\omega_n$ are EPR-allowed. Transitions between $\ket{m_S, n}$ and $\ket{m_S, n+1}$ at frequencies $\omega_{n,n+1}^{m_S} $ are NMR-allowed. Double- or Zero-quantum transitions between $\ket{\downarrow, n}$ and $\ket{\uparrow, n \pm 1}$ are weakly authorized because of the slight difference of nuclear spin wave function when the \Er spin is $\ket{\downarrow}$ and $\ket{\uparrow}$.
+\begin{marginfigure}
+    \includegraphics{chapter5/figures/energy_levels_ninehalf.pdf}
+    \caption[Energy level diagram of an Er3+ coupled to a nuclear spin-9/2]{Energy level diagram of an Er3+ coupled to a \Nb nuclear spin-9/2. The twenty energy levels are separated in two manifolds, depending on the state of the electron spin. NMR-allowed and EPR-allowed transitions are represented as multi-colors and red arrows respectively.}
+    \labfig{energy_levels_ninehalf_ch5}
+\end{marginfigure}
+
+We now recall the energy level system defined by this Hamiltonian. \reffig{energy_levels_ninehalf_ch5} shows the $20$ energy levels of the coupled spins, grouped in the two $m_S = \downarrow$ or $m_S = \uparrow$ manifolds. The nuclear spin eigenstates are mixed by the quadrupolar interaction and are therefore labeled as $\ket{n}$ in increasing order of energy, with $n$ varying between $0$ and $9$. Ten transitions between $\ket{\downarrow, n}$ and $\ket{\uparrow, n}$ at $\omega_n$ are EPR-allowed. Transitions between $\ket{m_S, n}$ and $\ket{m_S, n+1}$ at frequencies $\omega_{n,n+1}^{m_S} $ are NMR-allowed. Double- or Zero-quantum transitions between $\ket{\downarrow, n}$ and $\ket{\uparrow, n \pm 1}$ are weakly authorized because of the slight difference of nuclear spin wave function when the \Er spin is $\ket{\downarrow}$ and $\ket{\uparrow}$.
 
 
 \section{Readout, preparation and control}
 
-\red{this section needs some structure}
+After the identification of the high-nuclear spin species we proceed to extend the nuclear spin single-shot readout, DNP and coherent control techniques developed in the previous chapters for the characterization of \W nuclear spins.
 
-We now describe nuclear spin readout, polarization, and control, of the spin-9/2 impurity \red{ref}. Readout on state $\ket{0}$ is achieved by applying $\sim 200$ successive $\pi$ pulses at $\omega_0$ and counting the number of clicks, $C$. Its distribution shows a well-resolved histogram, depending on whether the spin is prepared in $\ket{0}$ or in another state (Fig.~\ref{fig2}a). 
+\subsubsection{Single-shot readout}
 
-For solid-effect polarization, all double- and zero-quantum transition frequencies are first determined by spectroscopy \red{app section}. Polarization into $\ket{\downarrow,0}$ is achieved with a probability close to $1$ at the beginning of each sequence by successive driving of all the $9$ double-quantum transitions using chirped pulses \red{app:dnp}. In addition, the $^{183}\mathrm{W}$ environment is also polarized at the beginning of every sequence to further narrow down the linewidth. 
+\begin{marginfigure}
+    \includegraphics{chapter5/figures/readout_singleshot.pdf}
+    \caption[Single-shot readout of the \Nb spin state]{Single-shot readout of the \Nb spin state. 
+    \textit{(top)} Readout is defined as the application of 600 $\pi$-pulses with frequency $\omega_0$ and averaging the number of counts during an integration time $\tau_\text{int}=1$~ms after each pulse.
+    \textit{(bottom)} Readout histograms after preparing the \Nb spin in $\ket{0}$ and $\ket{1}$, red and pink respectively. Inset shows the pulse sequence. A vertical dashed line marks the threshold used for state assignment.}
+    \labfig{readout_singleshot}
+\end{marginfigure}
+
+During the experiments performed in Chapters \ref{ch:detection_and_control_of_individual_w} and \ref{ch:individual_nuclear_spins_quantum_information} with \W, the frequency separation between the electron spin transitions was in the order of $\sim50$~kHz, well within the SMPD and the resonator bandwidth. This allowed us to monitor the population of each of the nuclear spin states independently by exciting the appropriate electron spin transition and measuring the subsequent fluorescence (see \refsec{single_shot_ro_singlespin}). However, the ten distinct electron spin frequencies of this system are separated each by $\sim130$~kHz spanning more than 1~MHz, considerably larger than the SMPD and the resonator bandwidth. Additionally, the cross-relaxation probability of the different nuclear states is vastly difference, as evidenced by the different effective nuclear spin lifetimes in \reffig{spectra_2d}b. Consequently, we focus the nuclear spin readout protocol in the longest lived transition, the one with the highest frequency $\omega_0$. To maximize the Purcell effect in this transition we slightly tune the magnetic field such that $\omega_r = \omega_0$.
+
+Readout on state $\ket{0}$ is achieved by applying $\sim 200$ successive $\pi$ pulses at $\omega_0$ and counting the number of clicks, $C$. Its distribution shows a well-resolved histogram, depending on whether the spin is prepared in $\ket{0}$ or in another state as shown in \reffig{readout_singleshot}. 
+
+\subsubsection{Solid-effect polarization}
+
+\begin{marginfigure}
+    \includegraphics{chapter5/figures/zq_single_transition.pdf}
+    \caption[ZQ transition spectroscopy]{Zero-quantum transition spectroscopy. $\ket{0}$ state population as a function of $\omega$ fit to a Lorentzian curve (solid line). The inset presents the energy diagram, where the straight arrow is the pumping pulse and the wavy line shows the most likely decay path.\red{replace to ZQ}}
+    \labfig{zq_single_transition}
+\end{marginfigure}
+
+In the previous chapters we demonstrated how to perform solid-effect DNP to deterministically prepare the state of strongly coupled \W nuclear spins. The generalization to a high-nuclear spin $I=9/2$ is straightforward, as it only requires pumping all the $9$ DQ transitions to prepare $\ket{0}$. A crude approach would be to send a chirped pulse that covers a large frequency band of $10$~MHz under the electron spin transitions, this pulse would eventually excite one of the DQ transitions, bringing the nuclear spin state closer to $\ket{0}$. However, this technique is not time-efficient, as it chirps the pulse is mostly not resonant with any transition, and direct driving of the ZQ transitions is preferable. Therefore, we begin by characterizing all ZQ and DQ transitions through resonant spectroscopy.
+
+We begin by preparing the nuclear spin into $\ket{0}$\sidenote{Naturally, the first characterization was performed using the "crude" method described in the previous paragraph. Subsequent measurements (as the ones showed here) use the known frequencies of the ZQ and DQ transitions to gather well averaged data more efficiently.}. We scan the frequency of the driving microwave pulse and monitor the population of state $\ket{0}$. As shown in \reffig{zq_single_transition}, we measure a depletion of the population in $\ket{0}$ centered around $\omega_0 - 7.42~$MHz, which indicates successful excitation of the ZQ transition.
+
+We can measure the rest of the ZQ and DQ transition similarly. The resulting spectroscopy and Rabi measurements for the DQ transitions are displayed in \reffig{zq_transitions}a. Note that the nuclear spin state is prepared into the corresponding state by a combination of solid-effect DNP and stimulated Raman $\pi$-pulses (see next section). With the knowledge of the driving frequency we can now modify the duration of the driving pulse to observe Rabi oscillations (see \reffig{zq_transitions}b), with contrast limited by the coherence of the electron spin. As discussed in \red{ref}, the Rabi frequency is proportional to the perpendicular hyperfine coupling term $A_\perp$. We use Eq. \red{ref} to estimate the value of the perpendicular hyperfine coupling independently for each transition which averages to $A_\perp=46(9)$~kHz (see \red{fig}). We note that the error is mainly dominated by the uncertainty of the resonator losses $\kappa$, which can fluctuate as a function of time.
+
+\begin{figure*}
+    \includegraphics{chapter5/figures/zq_transitions.pdf}
+    \caption[Nine ZQ transitions and Rabi oscillations]{Zero-quantum transitions and Rabi oscillations.
+    \textbf{a.}
+    \textit{(top)} Pulse sequence. The nuclear spin state is prepared in $\ket{n}$ A single $\pi$-pulse with frequency $\omega$ is applied on the sample and the $\ket{n}$ population is subsequently readout.
+    \textit{(bottom)} Magnified view of every individual zero-quantum transition.
+    \textbf{b.} 
+    \textit{(top)} Pulse sequence. The pulse duration $\tau$ is swept at fixed frequency.
+    \textit{(bottom)} Rabi oscillations for the zero-quantum transitions fitted to a decaying cosine oscillation (black line) for $n\in\{0,...,8\}$.}
+    \labfig{zq_transitions}
+\end{figure*}
+
+\begin{marginfigure}
+    \includegraphics{chapter5/figures/A_perp_sb.pdf}
+    \caption[short]{Estimated value of $A_\perp$ using the independent Rabi frequencies of the measurements in \reffig{zq_transitions}b.}
+    \labfig{A_perp_sb}
+\end{marginfigure}
+
+The final pulse sequence used to polarize to state $\ket{0}$ is shown in \red{fig}. We sequentially drive all double-quantum transitions, starting from $n=8$ down to $n=0$, using 1~ms microwave pulses. Each pulse is followed by a 1~\textmu s delay to allow the electron spin to relax to its ground state. Because of their small matrix elements and large detuning relative to the allowed transitions, the zero- and double-quantum transitions experience large AC-Zeeman shifts, causing their resonance frequencies to be sensitive to the applied microwave amplitude. To compensate for microwave-power fluctuations and spectral drift, all pulses are chirped by 100~kHz. Due to the low Rabi rates of the sideband transitions, a single pulse is insufficient to achieve full population transfer. We therefore apply 15 repetitions of the pumping sequence to ensure reliable preparation of the \Nb nuclear spin. An additional 15 pulses are applied to the $n=0$ transition, which has the smallest matrix element and was experimentally found to be particularly difficult to polarize. Polarization into $\ket{0}$ is achieved with a probability close to $1$ at the beginning of each sequence. In addition, the $^{183}\mathrm{W}$ environment is also polarized at the beginning of every sequence to reduce the magnetic noise from the neighboring \W nuclear spins (see \red{ref}).
+
+\subsubsection{Stimulated Raman driving}
 
 Coherent driving of the NMR transitions is performed by stimulated Raman driving at microwave frequency. Spectroscopy of the $\ket{\downarrow,0} \leftrightarrow \ket{\downarrow,1}$ transition is shown in \red{fig}. To measure the $\ket{\downarrow,n} \leftrightarrow \ket{\downarrow,n+1}$ transitions with $n>0$, we first prepare the system in $\ket{\downarrow,n}$ by successive application of microwave Raman $\pi$ pulses from state $\ket{\downarrow,0}$. We then sweep the Raman detuning $\delta$. We finally measure the probability to find the system in $\ket{\downarrow,n}$, by successive applications of $\pi$ pulses in reverse order followed by the measurement of $P_{\ket{0}}$. 

@@ -23,7 +23,7 @@ Major progress in spectral resolution was brought by recent experiments carried 
 
 \begin{figure*}[t!]
     \includegraphics{chapter5/figures/spectra_2d.pdf}
-    \caption[Rotation pattern and time trace of \Nb -- \Er system]{Rotation pattern and time trace of \Nb -- \Er system. \textbf{(a)} Rotation pattern. The ensemble averaged counts $\langle C \rangle$ is plot as a function of the magnetic field amplitude and the angle $\theta$. The black arrow marks the \Er spin that is strongly coupled to the \Nb nuclear spin. The red star marks the magnetic field amplitude and $\theta$ used for this work.
+    \caption[Rotation pattern and time trace of \Nb -- \Er system]{Rotation pattern and time trace of \Nb -- \Er system. \textbf{a.} Rotation pattern. The ensemble averaged counts $\langle C \rangle$ is plot as a function of the magnetic field amplitude and the angle $\theta$. The black arrow marks the \Er spin that is strongly coupled to the \Nb nuclear spin. The red star marks the magnetic field amplitude and $\theta$ used for this work.
     \textbf{b.} Spectroscopy of the \Er - \Nb coupled system as a function of time. A Gaussian pulse with duration 40 \textmu s and frequency $\omega/2\pi$ is first applied to the sample. After a waiting time $\tau_{\text{w}}=120$~\textmu s, photon counts from the SMPD are integrated over a window of length $\tau_{int}=2$~ms. The same pulse-and-readout sequence is then repeated at the next pulse frequency. The ensemble-averaged signal $\langle C \rangle$ is obtained by averaging 1000 integrated count values. The bottom plot shows the time averaged signal $\langle C\rangle _{\mathrm{total}}$  as a function of pulse frequency. Gray dashed lines have been plot as a guide for the eye for each EPR transition with frequencies $\omega_{n}$.}
     \labfig{spectra_2d}
 \end{figure*}
@@ -90,9 +90,9 @@ Readout on state $\ket{0}$ is achieved by applying $\sim 200$ successive $\pi$ p
 
 In the previous chapters we demonstrated how to perform solid-effect DNP to deterministically prepare the state of strongly coupled \W nuclear spins. The generalization to a high-nuclear spin $I=9/2$ is straightforward, as it only requires pumping all the $9$ DQ transitions to prepare $\ket{0}$. A crude approach would be to send a chirped pulse that covers a large frequency band of $10$~MHz under the electron spin transitions, this pulse would eventually excite one of the DQ transitions, bringing the nuclear spin state closer to $\ket{0}$. However, this technique is not time-efficient, as it chirps the pulse is mostly not resonant with any transition, and direct driving of the ZQ transitions is preferable. Therefore, we begin by characterizing all ZQ and DQ transitions through resonant spectroscopy.
 
-We begin by preparing the nuclear spin into $\ket{0}$\sidenote{Naturally, the first characterization was performed using the "crude" method described in the previous paragraph. Subsequent measurements (as the ones showed here) use the known frequencies of the ZQ and DQ transitions to gather well averaged data more efficiently.}. We scan the frequency of the driving microwave pulse and monitor the population of state $\ket{0}$. As shown in \reffig{zq_single_transition}, we measure a depletion of the population in $\ket{0}$ centered around $\omega_0 - 7.42~$MHz, which indicates successful excitation of the ZQ transition.
+We begin by preparing the nuclear spin into $\ket{0}$\sidenote{Naturally, the first characterization was performed using the "crude" method described in the previous paragraph. Subsequent measurements (as the ones showed here) use the known frequencies of the ZQ and DQ transitions to gather well averaged data more efficiently.}. We scan the frequency of the driving microwave pulse and monitor the population of state $\ket{0}$. As shown in \reffig{zq_single_transition}, we measure a depletion of the population in $\ket{0}$ centered around $\omega_0 - 7.418~$MHz, which indicates successful excitation of the ZQ transition.
 
-We can measure the rest of the ZQ and DQ transition similarly. The resulting spectroscopy and Rabi measurements for the DQ transitions are displayed in \reffig{zq_transitions}a. Note that the nuclear spin state is prepared into the corresponding state by a combination of solid-effect DNP and stimulated Raman $\pi$-pulses (see next section). With the knowledge of the driving frequency we can now modify the duration of the driving pulse to observe Rabi oscillations (see \reffig{zq_transitions}b), with contrast limited by the coherence of the electron spin. As discussed in \red{ref}, the Rabi frequency is proportional to the perpendicular hyperfine coupling term $A_\perp$. We use Eq. \red{ref} to estimate the value of the perpendicular hyperfine coupling independently for each transition which averages to $A_\perp=46(9)$~kHz (see \red{fig}). We note that the error is mainly dominated by the uncertainty of the resonator losses $\kappa$, which can fluctuate as a function of time.
+We can measure the rest of the ZQ and DQ transition similarly. The resulting spectroscopy and Rabi measurements for the DQ transitions are displayed in \reffig{zq_transitions}a. Note that the nuclear spin state is prepared into the corresponding state by a combination of solid-effect DNP and stimulated Raman $\pi$-pulses (see next section). With the knowledge of the driving frequency we can now modify the duration of the driving pulse to observe Rabi oscillations (see \reffig{zq_transitions}b), with contrast limited by the coherence of the electron spin. As discussed in \red{ref}, the Rabi frequency is proportional to the perpendicular hyperfine coupling term $A_\perp$. We use Eq. \red{ref} to estimate the value of the perpendicular hyperfine coupling independently for each transition which averages to $A_\perp=46(9)$~kHz (see \reffig{A_perp_sb}). We note that the error is mainly dominated by the uncertainty of the resonator losses $\kappa$, which can fluctuate as a function of time.
 
 \begin{figure*}
     \includegraphics{chapter5/figures/zq_transitions.pdf}
@@ -112,8 +112,61 @@ We can measure the rest of the ZQ and DQ transition similarly. The resulting spe
     \labfig{A_perp_sb}
 \end{marginfigure}
 
-The final pulse sequence used to polarize to state $\ket{0}$ is shown in \red{fig}. We sequentially drive all double-quantum transitions, starting from $n=8$ down to $n=0$, using 1~ms microwave pulses. Each pulse is followed by a 1~\textmu s delay to allow the electron spin to relax to its ground state. Because of their small matrix elements and large detuning relative to the allowed transitions, the zero- and double-quantum transitions experience large AC-Zeeman shifts, causing their resonance frequencies to be sensitive to the applied microwave amplitude. To compensate for microwave-power fluctuations and spectral drift, all pulses are chirped by 100~kHz. Due to the low Rabi rates of the sideband transitions, a single pulse is insufficient to achieve full population transfer. We therefore apply 15 repetitions of the pumping sequence to ensure reliable preparation of the \Nb nuclear spin. An additional 15 pulses are applied to the $n=0$ transition, which has the smallest matrix element and was experimentally found to be particularly difficult to polarize. Polarization into $\ket{0}$ is achieved with a probability close to $1$ at the beginning of each sequence. In addition, the $^{183}\mathrm{W}$ environment is also polarized at the beginning of every sequence to reduce the magnetic noise from the neighboring \W nuclear spins (see \red{ref}).
+The final pulse sequence used to polarize to state $\ket{0}$ is shown in \reffig{polarization_seq}. We sequentially drive all double-quantum transitions, starting from $n=8$ down to $n=0$, using 1~ms microwave pulses. Each pulse is followed by a 1~\textmu s delay to allow the electron spin to relax to its ground state. Because of their small matrix elements and large detuning relative to the allowed transitions, the zero- and double-quantum transitions experience large AC-Zeeman shifts, causing their resonance frequencies to be sensitive to the applied microwave amplitude. To compensate for microwave-power fluctuations and spectral drift, all pulses are chirped by 100~kHz. Due to the low Rabi rates of the sideband transitions, a single pulse is insufficient to achieve full population transfer. We therefore apply 15 repetitions of the pumping sequence to ensure reliable preparation of the \Nb nuclear spin. An additional 15 pulses are applied to the $n=0$ transition, which has the smallest matrix element and was experimentally found to be particularly difficult to polarize. Polarization into $\ket{0}$ is achieved with a probability close to $1$ at the beginning of each sequence. In addition, the $^{183}\mathrm{W}$ environment is also polarized at the beginning of every sequence to reduce the magnetic noise from the neighboring \W nuclear spins (see \red{ref}).
+
+\begin{figure}
+    \includegraphics{chapter5/figures/polarization_seq.pdf}
+    \caption[Polarization sequence]{Pulse sequence for the DNP. The sequence is separated in two distinct parts: the preparation of the \Nb spin in $\ket{0}$ and the polarization of the \W nuclear spin bath via solid effect. Pulse durations are noted as black arrows and the chirp is explicitly stated under every pulse.}
+    \labfig{polarization_seq}
+\end{figure}
 
 \subsubsection{Stimulated Raman driving}
 
-Coherent driving of the NMR transitions is performed by stimulated Raman driving at microwave frequency. Spectroscopy of the $\ket{\downarrow,0} \leftrightarrow \ket{\downarrow,1}$ transition is shown in \red{fig}. To measure the $\ket{\downarrow,n} \leftrightarrow \ket{\downarrow,n+1}$ transitions with $n>0$, we first prepare the system in $\ket{\downarrow,n}$ by successive application of microwave Raman $\pi$ pulses from state $\ket{\downarrow,0}$. We then sweep the Raman detuning $\delta$. We finally measure the probability to find the system in $\ket{\downarrow,n}$, by successive applications of $\pi$ pulses in reverse order followed by the measurement of $P_{\ket{0}}$. 
+Coherent driving of the NMR transitions is performed by stimulated Raman driving at microwave frequency. Spectroscopy of the $\ket{\downarrow,0} \leftrightarrow \ket{\downarrow,1}$ transition is shown in \reffig{raman_spectroscopy_nb}. To measure the $\ket{\downarrow,n} \leftrightarrow \ket{\downarrow,n+1}$ transitions with $n>0$, we first prepare the system in $\ket{\downarrow,n}$ by successive application of microwave Raman $\pi$ pulses from state $\ket{\downarrow,0}$, also known as a Givens rotation \red{cite}. We then sweep the Raman detuning $\delta$. We finally measure the probability to find the system in $\ket{\downarrow,n}$, by successive applications of $\pi$ pulses in reverse order followed by the measurement of $P_{\ket{0}}$. 
+
+\begin{figure*}
+    \includegraphics{chapter5/figures/raman_spectroscopy.pdf}
+    \caption[NMR spectroscopy of a \Nb nuclear spin.]{
+    NMR spectroscopy of a \Nb nuclear spin. 
+    \textbf{a.} Raman spectroscopy for $n=0$. Population of $\ket{0}$ as a function of $\delta$. Solid black line correspond to a cardinal sine fit on the measurement data. The inset presents a diagram of the Raman driving scheme on the four-levels of interest. $\Delta$ is the detuning of one of the first pulse with the EPR transition and $\delta$ is the frequency difference between the two drives. The detuning is set to $\Delta = \omega_{01}/2$.
+    \textbf{b.} \textit{(top)} Pulse sequence of spectroscopy between states $\ket{\downarrow n}$ and $\ket{\downarrow n+1}$. The nuclear spin is first unconditionally polarized into $\ket{0}$ followed by a Givens rotation that prepares the \Nb spin into $\ket{n}$. A Raman pulse of frequency $\delta$ is then applied. The Givens rotation is then inverted. Finally, the state of the \Nb spin is read-out. 
+    \textit{(bottom)} Raman spectroscopy of all NMR transitions.  Black arrow marks the transition corresponding to the previous plot. For each transition $\Delta = \omega_{n, \ n+1}/2$.}
+    \labfig{raman_spectroscopy_nb}
+\end{figure*}
+
+The spectrum of all ground state manifold NMR transitions is shown in \reffig{raman_spectroscopy_nb}b. Their frequencies span a large range, from $1.5$\,MHz to $8$\,MHz, indicating that the quadrupolar interaction has comparable magnitude to the Zeeman energy. The measured NMR frequency spectrum sheds light on the vastly different cross-relaxation lifetimes observed in \reffig{spectra_2d}b, since they scale like $\sim \omega_{n,n+1}^{2}$, explaining why low-$n$ states appear more stable.
+
+\section{Identification and site assignment}
+
+\begin{margintable}
+\centering
+\begin{tabular}{l|c}
+\hline
+Isotope & $\gamma / 2\pi$ (MHz/T) \\ \hline
+$^{73}$Ge  & $-1.489$ \\
+$^{83}$Kr  & $-1.644$ \\
+$^{87}$Sr  & $-1.851$ \\
+$^{93}$Nb  & $+10.452$ \\
+$^{113}$In & $+9.365$ \\
+$^{115}$In & $+9.386$ \\
+$^{209}$Bi & $+6.962$ \\ \hline
+\end{tabular}
+\caption{Gyromagnetic ratios of stable nuclei with spin $I=9/2$.}
+\labtab{nuclear_spin_gyromagnetic}
+\end{margintable}
+
+The $\ket{\downarrow,4} \leftrightarrow \ket{\downarrow,5}$ transition frequency is particularly interesting as it is only sensitive to the quadrupolar interaction to second-order, and its frequency is therefore close to the Zeeman frequency $\omega_I + A_\parallel/2$. By comparison of $(\omega^{(\Downarrow)}_{45} - A_\parallel/2) / B_0 \simeq 10.80$~MHz/T with the tabulated values of the gyromagnetic ratio of stable nuclei with spin-9/2 (see \reftab{nuclear_spin_gyromagnetic}) we determine that the impurity is a $^{93}\mathrm{Nb}$ atom.
+
+This impurity may originate from the crystal growth, or from the niobium film sputtering during resonator fabrication. We hypothesize that the niobium atom enters in substitution of a $\mathrm{W}^{6+}$ atom in a pentavalent state, thus compensating the \Er extra positive charge compared to $\mathrm{Ca}^{2+}$. From $A_\parallel/2\pi \sim 130$\,kHz (see Fig.~\reffig{spectra_2d}b), and $A_\perp/2\pi \sim 50$\,kHz, we determine that the \Nb is located 0.5\,nm from the \Er along the $c$ axis, as shown in \red{fig}. We confirm this assignment by measuring $A_\parallel$ and $A_\perp$ for various in-plane angles $\theta$.
+
+\begin{figure*}
+    \includegraphics{chapter5/figures/site_assignment.pdf}
+    \caption[Measured and calculated hyperfine coupling as a function of $\theta$]{Measured and calculated hyperfine coupling as a function of $\theta$.
+    \textbf{a.} Calculated hyperfine couplings $A_{\parallel}$ and $A_{\perp}$ (left and right panels, respectively) as a function of the in-plane angle $\theta$ between \Er and \Nb for all ten neighboring W sites in the first unit cell (colored lines), together with the experimentally measured values (black points). The numerical estimates take into consideration the misalignment angle $\beta_0$ between the resonator plane and the crystal $c$-axis.
+    \textbf{b.} Magnified view of the relevant region only showing the coupling for the assigned site. Error-bars for the $A_\parallel$ measurement are plot, but hidden by the marker.
+    }
+    \labfig{site_assignment}
+\end{figure*}
+
+\reffig{site_assignment}a plots the measured values of $A_\parallel$ and $A_\perp$ along with the numerical estimations for all 10 possible W positions in the first unit cell. The numerical estimations quantitatively agree with the measured coupling for the assigned site with the coupling for a type 3 position, which lies directly along the $c$-axis. Figure \reffig{site_assignment}b shows a magnified version of the plot. We note a systematic shift for the values of $A_\parallel$ of less than 1\% with respect to the measured values, which may be due a breakdown of the point-dipole approximation, or to a slight shift of the \Nb position with respect to the \W site, possibly also impacted by strain caused by differential thermal contraction of the \Nb thin-film and the \Ca substrate \cite{pla_straininduced_2018,billaud_electron_2025}. 
+

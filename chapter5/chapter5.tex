@@ -30,7 +30,22 @@ Major progress in spectral resolution was brought by recent experiments carried 
 
 As discussed in previous chapters, the sample hosts many addressable single \Er spins, each with its unique nuclear spin environment. The coupled \Nb -- \Er spin system was discovered fortuitously in the same \Ca sample used during the previous experiments. \reffig{spectra_2d}a shows a large range electron spin 2D-spectroscopy, where both the amplitude and the in-plane angle of the external magnetic field $B_0$ are swept. The spin of interest in this chapter is marked with a black arrow.
 
-To characterize the \Er spin \red{missing the actual characterization}, we first set $B_0$ to match the ion resonance condition. Unless otherwise specified, the measurements of this chapter were taken at the point marked in \reffig{spectra_2d}a as a red star. We then measure a spectroscopic time trace\sidenote{Similar to the ones presented in \refsec{nuclear_spin_quantum_jumps}} repeatedly measuring the \Er resonance spectrum by sweeping the excitation pulse frequency and monitoring the subsequent fluorescence. Note, that the operating bandwidth of the SMPD is $\sim300$~kHz, much smaller than the span of the scan. To measure this trace we actively tune the frequency of the detector using DC pulses sent through the buffer's flux line, which modifies the magnetic flux threading the coupled SQUID, therefore changing the frequency of the SMPD. 
+\begin{margintable}
+    \centering
+    \begin{tabular}{l|c}
+    Parameter & Value \\ \hline
+    $T_1$        & 0.47(2) ms  \\ 
+    $g_0/2\pi$   & 9.3(0.1) kHz \\ 
+    $T^*_2$      & 0.10(2) ms   \\ 
+    $T_2$        & 0.35(1) ms  \\
+    \end{tabular}
+    \caption[\Er characterization]{\Er characterization.}
+    \labtab{er_characterization_nb}
+\end{margintable}
+
+To characterize the \Er spin, we first set $B_0$ to match the ion resonance condition. Unless otherwise specified, the measurements of this chapter were taken at the point marked in \reffig{spectra_2d}a as a red star. The results of the basic electron spin characterization are detailed in \reftab{er_characterization_nb}.
+
+We then measure a spectroscopic time trace\sidenote{Similar to the ones presented in \refsec{nuclear_spin_quantum_jumps}} repeatedly measuring the \Er resonance spectrum by sweeping the excitation pulse frequency and monitoring the subsequent fluorescence. Note, that the operating bandwidth of the SMPD is $\sim300$~kHz, much smaller than the span of the scan. To measure this trace we actively tune the frequency of the detector using DC pulses sent through the buffer's flux line, which modifies the magnetic flux threading the coupled SQUID, therefore changing the frequency of the SMPD. 
 
 As shown in Chapter \ref{ch:detection_and_control_of_individual_w}, strongly coupled nuclear spins are revealed by sudden jumps of the \Er resonance, due to changes on the state of neighboring nuclear spins, strongly coupled to the \Er ion via hyperfine interaction. In \reffig{spectra_2d}b, ten evenly-spaced resonances are observed, they are separated by $\sim$130~kHz and have with vastly different cross-relaxation lifetimes, indicating the coupling to a spin-9/2 nuclear spin impurity.  
 
@@ -92,7 +107,7 @@ In the previous chapters we demonstrated how to perform solid-effect DNP to dete
 
 We begin by preparing the nuclear spin into $\ket{0}$\sidenote{Naturally, the first characterization was performed using the "crude" method described in the previous paragraph. Subsequent measurements (as the ones showed here) use the known frequencies of the ZQ and DQ transitions to gather well averaged data more efficiently.}. We scan the frequency of the driving microwave pulse and monitor the population of state $\ket{0}$. As shown in \reffig{zq_single_transition}, we measure a depletion of the population in $\ket{0}$ centered around $\omega_0 - 7.418~$MHz, which indicates successful excitation of the ZQ transition.
 
-We can measure the rest of the ZQ and DQ transition similarly. The resulting spectroscopy and Rabi measurements for the DQ transitions are displayed in \reffig{zq_transitions}a. Note that the nuclear spin state is prepared into the corresponding state by a combination of solid-effect DNP and stimulated Raman $\pi$-pulses (see next section). With the knowledge of the driving frequency we can now modify the duration of the driving pulse to observe Rabi oscillations (see \reffig{zq_transitions}b), with contrast limited by the coherence of the electron spin. As discussed in \red{ref}, the Rabi frequency is proportional to the perpendicular hyperfine coupling term $A_\perp$. We use Eq. \red{ref} to estimate the value of the perpendicular hyperfine coupling independently for each transition which averages to $A_\perp=46(9)$~kHz (see \reffig{A_perp_sb}). We note that the error is mainly dominated by the uncertainty of the resonator losses $\kappa$, which can fluctuate as a function of time.
+We can measure the rest of the ZQ and DQ transition similarly. The resulting spectroscopy and Rabi measurements for the DQ transitions are displayed in \reffig{zq_transitions}a. Note that the nuclear spin state is prepared into the corresponding state by a combination of solid-effect DNP and stimulated Raman $\pi$-pulses (see next section). With the knowledge of the driving frequency we can now modify the duration of the driving pulse to observe Rabi oscillations (see \reffig{zq_transitions}b), with contrast limited by the coherence of the electron spin. As discussed in \refsec{zero_double_quantum_ninehalf}, the Rabi frequency is proportional to the perpendicular hyperfine coupling term $A_\perp$. We use Eq. \ref{eq:zero_double_quantum_ninehalf_rabi} to estimate the value of the perpendicular hyperfine coupling independently for each transition which averages to $A_\perp=46(9)$~kHz (see \reffig{A_perp_sb}). We note that the error is mainly dominated by the uncertainty of the resonator losses $\kappa$, which can fluctuate as a function of time.
 
 \begin{figure*}
     \includegraphics{chapter5/figures/zq_transitions.pdf}
@@ -122,7 +137,7 @@ The final pulse sequence used to polarize to state $\ket{0}$ is shown in \reffig
 
 \subsubsection{Stimulated Raman driving}
 
-Coherent driving of the NMR transitions is performed by stimulated Raman driving at microwave frequency. Spectroscopy of the $\ket{\downarrow,0} \leftrightarrow \ket{\downarrow,1}$ transition is shown in \reffig{raman_spectroscopy_nb}. To measure the $\ket{\downarrow,n} \leftrightarrow \ket{\downarrow,n+1}$ transitions with $n>0$, we first prepare the system in $\ket{\downarrow,n}$ by successive application of microwave Raman $\pi$ pulses from state $\ket{\downarrow,0}$, also known as a Givens rotation \red{cite}. We then sweep the Raman detuning $\delta$. We finally measure the probability to find the system in $\ket{\downarrow,n}$, by successive applications of $\pi$ pulses in reverse order followed by the measurement of $P_{\ket{0}}$. 
+Coherent driving of the NMR transitions is performed by stimulated Raman driving at microwave frequency. Spectroscopy of the $\ket{\downarrow,0} \leftrightarrow \ket{\downarrow,1}$ transition is shown in \reffig{raman_spectroscopy_nb}. To measure the $\ket{\downarrow,n} \leftrightarrow \ket{\downarrow,n+1}$ transitions with $n>0$, we first prepare the system in $\ket{\downarrow,n}$ by successive application of microwave Raman $\pi$ pulses from state $\ket{\downarrow,0}$, also known as a Givens rotation \sidecite{cybenko_reducing_2001}. We then sweep the Raman detuning $\delta$. We finally measure the probability to find the system in $\ket{\downarrow,n}$, by successive applications of $\pi$ pulses in reverse order followed by the measurement of $P_{\ket{0}}$. 
 
 \begin{figure*}
     \includegraphics{chapter5/figures/raman_spectroscopy.pdf}
@@ -157,7 +172,13 @@ $^{209}$Bi & $+6.962$ \\ \hline
 
 The $\ket{\downarrow,4} \leftrightarrow \ket{\downarrow,5}$ transition frequency is particularly interesting as it is only sensitive to the quadrupolar interaction to second-order, and its frequency is therefore close to the Zeeman frequency $\omega_I + A_\parallel/2$. By comparison of $(\omega^{(\Downarrow)}_{45} - A_\parallel/2) / B_0 \simeq 10.80$~MHz/T with the tabulated values of the gyromagnetic ratio of stable nuclei with spin-9/2 (see \reftab{nuclear_spin_gyromagnetic}) we determine that the impurity is a $^{93}\mathrm{Nb}$ atom.
 
-This impurity may originate from the crystal growth, or from the niobium film sputtering during resonator fabrication. We hypothesize that the niobium atom enters in substitution of a $\mathrm{W}^{6+}$ atom in a pentavalent state, thus compensating the \Er extra positive charge compared to $\mathrm{Ca}^{2+}$. From $A_\parallel/2\pi \sim 130$\,kHz (see Fig.~\reffig{spectra_2d}b), and $A_\perp/2\pi \sim 50$\,kHz, we determine that the \Nb is located 0.5\,nm from the \Er along the $c$ axis, as shown in \red{fig}. We confirm this assignment by measuring $A_\parallel$ and $A_\perp$ for various in-plane angles $\theta$.
+\begin{marginfigure}
+    \includegraphics{chapter5/figures/crystal_with_nb.pdf}
+    \caption[\Ca crystal structure with \Nb]{\Ca crystal structure with the \Er and \Nb impurities in their assigned sites.}
+    \labfig{crystal_with_nb}
+\end{marginfigure}
+
+This impurity may originate from the crystal growth, or from the niobium film sputtering during resonator fabrication. We hypothesize that the niobium atom enters in substitution of a $\mathrm{W}^{6+}$ atom in a pentavalent state, thus compensating the \Er extra positive charge compared to $\mathrm{Ca}^{2+}$. From $A_\parallel/2\pi \sim 130$\,kHz (see \reffig{spectra_2d}b), and $A_\perp/2\pi \sim 50$\,kHz, we determine that the \Nb is located 0.5\,nm from the \Er along the $c$ axis, as shown in \reffig{crystal_with_nb}. We confirm this assignment by measuring $A_\parallel$ and $A_\perp$ for various in-plane angles $\theta$.
 
 \begin{figure*}
     \includegraphics{chapter5/figures/site_assignment.pdf}
@@ -169,4 +190,3 @@ This impurity may originate from the crystal growth, or from the niobium film sp
 \end{figure*}
 
 \reffig{site_assignment}a plots the measured values of $A_\parallel$ and $A_\perp$ along with the numerical estimations for all 10 possible W positions in the first unit cell. The numerical estimations quantitatively agree with the measured coupling for the assigned site with the coupling for a type 3 position, which lies directly along the $c$-axis. Figure \reffig{site_assignment}b shows a magnified version of the plot. We note a systematic shift for the values of $A_\parallel$ of less than 1\% with respect to the measured values, which may be due a breakdown of the point-dipole approximation, or to a slight shift of the \Nb position with respect to the \W site, possibly also impacted by strain caused by differential thermal contraction of the \Nb thin-film and the \Ca substrate \cite{pla_straininduced_2018,billaud_electron_2025}. 
-

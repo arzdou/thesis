@@ -151,6 +151,8 @@ Coherent driving of the NMR transitions is performed by stimulated Raman driving
 
 The spectrum of all ground state manifold NMR transitions is shown in \reffig{raman_spectroscopy_nb}b. Their frequencies span a large range, from $1.5$\,MHz to $8$\,MHz, indicating that the quadrupolar interaction has comparable magnitude to the Zeeman energy. The measured NMR frequency spectrum sheds light on the vastly different cross-relaxation lifetimes observed in \reffig{spectra_2d}b, since they scale like $\sim \omega_{n,n+1}^{2}$, explaining why low-$n$ states appear more stable.
 
+\red{Add Raman Rabi.}
+
 \section{Identification and site assignment}
 
 \begin{margintable}
@@ -180,7 +182,9 @@ The $\ket{\downarrow,4} \leftrightarrow \ket{\downarrow,5}$ transition frequency
 
 This impurity may originate from the crystal growth, or from the niobium film sputtering during resonator fabrication. We hypothesize that the niobium atom enters in substitution of a $\mathrm{W}^{6+}$ atom in a pentavalent state, thus compensating the \Er extra positive charge compared to $\mathrm{Ca}^{2+}$. From $A_\parallel/2\pi \sim 130$\,kHz (see \reffig{spectra_2d}b), and $A_\perp/2\pi \sim 50$\,kHz, we determine that the \Nb is located 0.5\,nm from the \Er along the $c$ axis, as shown in \reffig{crystal_with_nb}. We confirm this assignment by measuring $A_\parallel$ and $A_\perp$ for various in-plane angles $\theta$.
 
-\begin{figure*}
+\reffig{site_assignment}a plots the measured values of $A_\parallel$ and $A_\perp$ along with the numerical estimations for all 10 possible W positions in the first unit cell. The numerical estimations quantitatively agree with the measured coupling for the assigned site with the coupling for a type 3 position, which lies directly along the $c$-axis. Figure \reffig{site_assignment}b shows a magnified version of the plot. We note a systematic shift for the values of $A_\parallel$ of less than 1\% with respect to the measured values, which may be due a breakdown of the point-dipole approximation, or to a slight shift of the \Nb position with respect to the \W site, possibly also impacted by strain caused by differential thermal contraction of the \Nb thin-film and the \Ca substrate \cite{pla_straininduced_2018,billaud_electron_2025}. 
+
+\begin{figure*}[b!]
     \includegraphics{chapter5/figures/site_assignment.pdf}
     \caption[Measured and calculated hyperfine coupling as a function of $\theta$]{Measured and calculated hyperfine coupling as a function of $\theta$.
     \textbf{a.} Calculated hyperfine couplings $A_{\parallel}$ and $A_{\perp}$ (left and right panels, respectively) as a function of the in-plane angle $\theta$ between \Er and \Nb for all ten neighboring W sites in the first unit cell (colored lines), together with the experimentally measured values (black points). The numerical estimates take into consideration the misalignment angle $\beta_0$ between the resonator plane and the crystal $c$-axis.
@@ -189,13 +193,35 @@ This impurity may originate from the crystal growth, or from the niobium film sp
     \labfig{site_assignment}
 \end{figure*}
 
-\reffig{site_assignment}a plots the measured values of $A_\parallel$ and $A_\perp$ along with the numerical estimations for all 10 possible W positions in the first unit cell. The numerical estimations quantitatively agree with the measured coupling for the assigned site with the coupling for a type 3 position, which lies directly along the $c$-axis. Figure \reffig{site_assignment}b shows a magnified version of the plot. We note a systematic shift for the values of $A_\parallel$ of less than 1\% with respect to the measured values, which may be due a breakdown of the point-dipole approximation, or to a slight shift of the \Nb position with respect to the \W site, possibly also impacted by strain caused by differential thermal contraction of the \Nb thin-film and the \Ca substrate \cite{pla_straininduced_2018,billaud_electron_2025}. 
-
 \section{Precision NMR spectroscopy}
 
-Precision measurement of the NMR spectrum requires pulsed spectroscopy using the Ramsey sequence, to avoid the differential AC-Zeeman shifts caused by the application of the Raman drives and discussed in \red{ref}. We first measure the ground-state-manifold frequencies $\omega^\downarrow_{n,n+1}$. We prepare the system in $\ket{\downarrow,n}$, apply two Raman $\pi/2$ pulses on the $\ket{\downarrow,n} \leftrightarrow \ket{\downarrow,n+1}$ transition separated by a time $\tau$, and measure the resulting probability to find the \Nb in $\ket{n}$.
+\begin{figure}
+    \includegraphics{chapter5/figures/ramsey_ninehalf.pdf}
+    \caption[\Nb Ramsey measurements]{\Nb Ramsey measurements. 
+    \textbf{a.} \textit{(top)} Ramsey, pulse sequence between states $\ket{\downarrow n-1}$ and $\ket{\downarrow n}$. 
+    \textit{(bottom)} Population of $\ket{0}$ as a function of $\tau$ for $n=0$. Solid black line corresponds to a cosine fit with a decaying exponential.
+    \textbf{c.} \textit{(top)} Excited Ramsey pulse sequence.
+    \textit{(left)} Population of $\ket{0}$ as a function of $\tau$ for $n=1$. Solid black line corresponds to a cosine fit with a decaying exponential.}
+    \labfig{ramsey_ninehalf}
+\end{figure}
 
-All curves are measured in an interleaved manner, in order to avoid possible drifts. Data are shown in \red{flipping} for $n=0$, together with an exponential fit yielding a coherence time $T_2^{*(\downarrow)} = 150$\,ms, that corresponds to a standard deviation on the inferred frequency of $\pm 1$\,Hz. Similar coherence times are measured on all transitions (see Fig.~\ref{fig3}a), except on $n=5$ where it is slightly lower for unknown reasons \red{full dataset}. This indicates that magnetic noise is the dominant contribution to the Ramsey dephasing, since electric noise would impact more strongly transitions with extremal values of $n$, as was observed in an individual $^{123}\mathrm{Sb}$ nuclear spin in silicon \sidecite{fernandezdefuentes_navigating_2024}. 
+The accuracy of the NMR spectra measured in \red{sec} is reduced due to the differential AC-Zeeman shifts, that renormalize the energy levels of the system under the stimulated Raman pulses. A straightforward way to increase both the accuracy and the precision of the measurement is to leverage the long coherence time of the nuclear spins through a Ramsey sequence. Indeed, the frequency of the oscillations in a Ramsey measurement directly map to the bare frequency difference between the two levels of interest, provided that no pulse is applied during the free-evolution time of the sequence. 
 
-The excited-state manifold frequencies $\omega^\uparrow_{n,n+1}$ are then measured. The sequence includes two $\pi$ pulses on the \Er separated by $\tau$, applied in-between two Raman $\pi/2$ pulses kept at a constant time delay of $1$\,ms. The oscillation frequency directly yields $\omega^\downarrow_{n,n+1}-\omega^\uparrow_{n,n+1}$ (see \red{fig}). The coherence time $T_2^{*(\downarrow)} = 0.8$\,ms is limited by the \Er relaxation time, leading to a $\sim 30$\,Hz uncertainty on the frequency measurement. We observe that $T_2^{*(\uparrow)}$ slightly increases with $n$, due to the increased detuning of the $\ket{\downarrow,n} \leftrightarrow \ket{\uparrow,n}$ transition from the resonator (see Fig.~\ref{fig3}b). The increase is less than expected from the Purcell effect, suggesting that this \Er has a relatively short non-radiative lifetime, of order $\sim 3$\,ms, possibly linked to the proximal \Nb impurity. 
+We first measure the ground-state-manifold frequencies $\omega^\downarrow_{n,n+1}$. We prepare the system in $\ket{\downarrow,n}$, apply two Raman $\pi/2$-pulses on the $\ket{\downarrow,n} \leftrightarrow \ket{\downarrow,n+1}$ transition separated by a time $\tau$, and measure the resulting probability to find the \Nb in $\ket{n}$. The phase of the second $\pi$-pulse has an artificial detuning to compensate for the rapid natural oscillations of the population. The data for all transitions is shown in \reffig{ramsey_ninehalf}a, together with an exponential cosine fit. 
+
+The excited-state manifold frequencies $\omega^\uparrow_{n,n+1}$ are then measured by including two \Er $\pi$-pulses separated by $\tau$, applied in-between two Raman $\pi/2$ pulses kept at a constant time delay of $1$\,ms. The oscillation frequency directly yields $\omega^\downarrow_{n,n+1}-\omega^\uparrow_{n,n+1}$ (see \reffig{ramsey_ninehalf}b). 
+
+\begin{figure}
+    \includegraphics{chapter5/figures/freqs_t2s.pdf}
+    \caption[Fitted \Nb frequencies and coherence]{
+    \textbf{a.} \Nb nuclear spin transition frequency $\omega^{(\downarrow)}_{n, \ n+1}$ and $\omega^{(\uparrow)}_{n, \ n+1}$ (green and blue markers resp.) as a function of $n$. 
+    \textbf{b.} Coherence $T_2^{*, (\downarrow)}$ for each transition $\ket{\downarrow n}\leftrightarrow\ket{\downarrow, n+1}$.    
+    \textbf{c.}  Coherence $T_2^{*, (\uparrow)}$ for each transition $\ket{\uparrow n}\leftrightarrow\ket{\uparrow, n+1}$. Solid line gives an upper bound to the coherence from the relaxation rate through the Purcell effect. 
+    Error bars in the figures correspond to the 1-$\sigma$ fit uncertainty.}
+    \labfig{freqs_t2s}
+\end{figure}
+
+The fitted coherence time for all transitions in plot in \red{fig}, were a constant behavior is observed at $T_2^*\approx150$~ms.\sidenote{We note that for $n=5$ the coherence time is slightly lower for unknown reasons.} This indicates that magnetic noise is the dominant contribution to the Ramsey dephasing, since electric noise would impact more strongly transitions with extremal values of $n$, as was observed in an individual $^{123}\mathrm{Sb}$ nuclear spin in silicon \sidecite{fernandezdefuentes_navigating_2024}. 
+
+The coherence time $T_2^{*(\downarrow)} = 0.8$\,ms is limited by the \Er relaxation time, leading to a $\sim 30$\,Hz uncertainty on the frequency measurement. We observe that $T_2^{*(\uparrow)}$ slightly increases with $n$, due to the increased detuning of the $\ket{\downarrow,n} \leftrightarrow \ket{\uparrow,n}$ transition from the resonator (see Fig.~\ref{fig3}b). The increase is less than expected from the Purcell effect, suggesting that this \Er has a relatively short non-radiative lifetime, of order $\sim 3$\,ms, possibly linked to the proximal \Nb impurity. 
 

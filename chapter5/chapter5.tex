@@ -127,7 +127,7 @@ We can measure the rest of the ZQ and DQ transition similarly. The resulting spe
     \labfig{A_perp_sb}
 \end{marginfigure}
 
-The final pulse sequence used to polarize to state $\ket{0}$ is shown in \reffig{polarization_seq}. We sequentially drive all double-quantum transitions, starting from $n=8$ down to $n=0$, using 1~ms microwave pulses. Each pulse is followed by a 1~\textmu s delay to allow the electron spin to relax to its ground state. Because of their small matrix elements and large detuning relative to the allowed transitions, the zero- and double-quantum transitions experience large AC-Zeeman shifts, causing their resonance frequencies to be sensitive to the applied microwave amplitude. To compensate for microwave-power fluctuations and spectral drift, all pulses are chirped by 100~kHz. Due to the low Rabi rates of the sideband transitions, a single pulse is insufficient to achieve full population transfer. We therefore apply 15 repetitions of the pumping sequence to ensure reliable preparation of the \Nb nuclear spin. An additional 15 pulses are applied to the $n=0$ transition, which has the smallest matrix element and was experimentally found to be particularly difficult to polarize. Polarization into $\ket{0}$ is achieved with a probability close to $1$ at the beginning of each sequence. In addition, the $^{183}\mathrm{W}$ environment is also polarized at the beginning of every sequence to reduce the magnetic noise from the neighboring \W nuclear spins (see \red{ref}).
+The final pulse sequence used to polarize to state $\ket{0}$ is shown in \reffig{polarization_seq}. We sequentially drive all double-quantum transitions, starting from $n=8$ down to $n=0$, using 1~ms microwave pulses. Each pulse is followed by a 1~\textmu s delay to allow the electron spin to relax to its ground state. Because of their small matrix elements and large detuning relative to the allowed transitions, the zero- and double-quantum transitions experience large AC-Zeeman shifts, causing their resonance frequencies to be sensitive to the applied microwave amplitude. To compensate for microwave-power fluctuations and spectral drift, all pulses are chirped by 100~kHz. Due to the low Rabi rates of the sideband transitions, a single pulse is insufficient to achieve full population transfer. We therefore apply 15 repetitions of the pumping sequence to ensure reliable preparation of the \Nb nuclear spin. An additional 15 pulses are applied to the $n=0$ transition, which has the smallest matrix element and was experimentally found to be particularly difficult to polarize. Polarization into $\ket{0}$ is achieved with a probability close to $1$ at the beginning of each sequence. In addition, the $^{183}\mathrm{W}$ environment is also polarized at the beginning of every sequence to reduce the magnetic noise from the neighboring \W nuclear spins (as discussed in the next section).
 
 \begin{figure}
     \includegraphics{chapter5/figures/polarization_seq.pdf}
@@ -227,6 +227,8 @@ This impurity may originate from the crystal growth, or from the niobium film sp
 
 The accuracy of the NMR spectra measured in \red{sec} is reduced due to the differential AC-Zeeman shifts, that renormalize the energy levels of the system under the stimulated Raman pulses. A straightforward way to increase both the accuracy and the precision of the measurement is to leverage the long coherence time of the nuclear spins through a Ramsey sequence. Indeed, the frequency of the oscillations in a Ramsey measurement directly map to the bare frequency difference between the two levels of interest, provided that no pulse is applied during the free-evolution time of the sequence. 
 
+\subsubsection{Ramsey measurements}
+
 We first measure the ground-state-manifold frequencies $\omega^\downarrow_{n,n+1}$. We prepare the system in $\ket{\downarrow,n}$, apply two Raman $\pi/2$-pulses on the $\ket{\downarrow,n} \leftrightarrow \ket{\downarrow,n+1}$ transition separated by a time $\tau$, and measure the resulting probability to find the \Nb in $\ket{n}$. The phase of the second $\pi$-pulse has an artificial detuning to compensate for the rapid natural oscillations of the population. The data for all transitions is shown in \reffig{ramsey_ninehalf}a, together with an exponential cosine fit. 
 
 The excited-state manifold frequencies $\omega^\uparrow_{n,n+1}$ are then measured by including two \Er $\pi$-pulses separated by $\tau$, applied in-between two Raman $\pi/2$ pulses kept at a constant time delay of $1$\,ms. The oscillation frequency directly yields $\omega^\downarrow_{n,n+1}-\omega^\uparrow_{n,n+1}$ (see \reffig{ramsey_ninehalf}b). 
@@ -243,7 +245,30 @@ The fitted coherence time for ground and excited Ramseys are in plot in \reffig{
 
 From the fitted coherence we estimate that the uncertainty of the measured frequencies is approximately $\sim 1$~Hz for the ground state and $\sim 20$~Hz for the excited state. We confirm this conclusion by monitoring the frequency drift of the $\ket{\Downarrow 0} \leftrightarrow \ket{\Downarrow 1}$ transition during a prolonged period of 60 hours. \reffig{drift} plots the frequency drift $\delta \omega$ as a function of time, which remains confined within $\pm1$~Hz.
 
-\subsubsection{Schrodinger spin-cat states}
+\subsubsection{The effect of the \W bath}
 
-In addition, the large nuclear spin of \Nb offers interesting perspectives for quantum sensing. Indeed, the magnetic moment of states $0$ and $n$ differ by $\sim n \, \mu_\text{\Nb}$, implying that the state $\ket{0} + \ket{n}$ is $\sim n$ times more sensitive to a small magnetic signal than $\ket{0} + \ket{1}$. Such "Schrodinger spin-cat" states have been studied in a Sb donor in silicon~\sidecite{yu_creation_2024}, and used in magnetometry with Rydberg atoms sensing \sidecite{dietsche_highsensitivity_2019}. We perform a preliminary characterization of the magnetic sensitivity of these states by measuring the echo coherence of the state $\ket{\downarrow \, 0} + \ket{\downarrow \, n+1}$. Figure \ref{sfig:echo}a \& b show a schematic of the pulse sequence along with the signal, fitted to an exponentially decaying cosine which yield the coherence time $T_{2}$. The decoherence rate $1/T_2$ is seen to increase linearly with $n$ (see Fig.~\ref{fig3}c), indicating that decoherence occurs mainly because of magnetic noise. These measurements were taken in a different magnetic field configuration with a misalignment angle $\theta=-0.3^\circ$. 
+The nuclear spin bath, consisting of neighboring \W\ nuclear spins, significantly contributes to the spectral drift of the \Nb\ transition frequencies. To mitigate this effect, we polarize the spin bath using solid-effect DNP by applying microwave pulses resonant with the double-quantum transitions of the coupled \W\ spins. To be able to effectively drive weakly coupled \W nuclear spins, we employ 40~ms pulses separated by 10~ms delays to allow the microwave lines to cool, and repeat this sequence 15 times. The strong pulse amplitudes induce a substantial AC-Zeeman shift, and we account for this by chirping the pulse 350~kHz around $\omega^{\mathrm{(W)}}/2\pi = 725$~kHz. Note that it is crucial that the \W\ polarization sequence is applied \emph{after} the \Nb\ preparation, since the electron-spin allowed transition depends on the \Nb\ state, and the \W\ double-quantum transition is correspondingly detuned relative to this transition.
 
+\begin{figure}
+    \includegraphics{chapter5/figures/polarized_vs_unpolarized.pdf}
+    \caption[Effect of \W polarization]{Ramsey sequence with and without \W polarization pulses. Measurement data (dots) are fit to an exponentially decaying (line) which yields $T_2^*=22$~ms and $T_2^*=331$~ms for the unpolarized and the polarized case respectively.}
+    \labfig{polarized_vs_unpolarized}
+\end{figure}
+
+To demonstrate the impact of the \W polarization, \reffig{polarized_vs_unpolarized} shows a \Nb Ramsey measurement with and without \W polarization. The \Nb coherence time $T_2^*$ without \W polarization is $26$\,ms, and it increases up to 331~ms upon polarizing the \W bath.
+
+\subsubsection{Hahn echo measurements}
+
+In addition, the large nuclear spin of \Nb offers interesting perspectives for quantum sensing. Indeed, the magnetic moment of states $0$ and $n$ differ by $\sim n \, \mu_\text{\Nb}$, implying that the state $\ket{0} + \ket{n}$ is $\sim n$ times more sensitive to a small magnetic signal than $\ket{0} + \ket{1}$. Such "Schrödinger spin-cat" states have been studied in a Sb donor in silicon~\sidecite{yu_creation_2024}, and used in magnetometry with Rydberg atoms sensing \sidecite{dietsche_highsensitivity_2019}. We perform a preliminary characterization of the magnetic sensitivity of these states by measuring the echo coherence of the state $\ket{\downarrow \, 0} + \ket{\downarrow \, n+1}$. Figure \reffig{echo_nb}a \& b show a schematic of the pulse sequence along with the signal, fitted to an exponentially decaying cosine which yield the coherence time $T_{2}$. The decoherence rate $1/T_2$ is seen to increase linearly with $n$ (see \reffig{echo_nb}c), indicating that decoherence occurs mainly because of magnetic noise. Due to the accumulation of coherent errors on the pulses, we only measure these states until $n=$. These measurements were taken in a different magnetic field configuration with a misalignment angle $\theta=-0.3^\circ$. 
+
+\begin{figure*}
+    \includegraphics{chapter5/figures/echo.pdf}
+    \caption[Hahn echo coherence]{Hahn echo for all $\ket{\downarrow 0}$ and $\ket{\downarrow n}$ pairs.
+    \textbf{a.} Pulse sequence. 
+    \textbf{b.} Measurement data (dots) is plot alongside an exponentially decaying fit (black solid lines). 
+    \textbf{c.} Decoherence rate $1/T_2$ for all $\ket{\downarrow 0}$ and $\ket{\downarrow n}$ pairs. Measurements (dots) are fit to a linear trend (black line).}
+    \labfig{echo_nb}
+\end{figure*}
+
+
+\section{Hamiltonian fit}

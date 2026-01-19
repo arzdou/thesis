@@ -53,20 +53,22 @@ As discussed in \refsec{nb_er_hamiltonian} the Hamiltonian of such a coupled spi
 
 \begin{equation}
     \cH{}/\hbar = \omega_S \hat{S}_z + \omega_I \hat{I}_z + A_\parallel \hat{S}_z \hat{I}_z + A_\perp \hat{S}_z \hat{I}_x + \hat{\mathbf{I}} \cdot \bar{\bar{Q}} \cdot \hat{\mathbf{I}}.
+    \label{eq:hamiltonian_ninehalf_full}
 \end{equation}
 
 where the terms correspond, in order, to the \Er spin Zeeman energy, the high-nuclear spin Zeeman energy the parallel and perpendicular interaction hyperfine interaction and the quadrupolar term. This last term describes the nucleus electrostatic energy in the electric field gradient caused by the surrounding charges. The Hamiltonian can be re-written as
 
 \begin{align}
 \begin{split}
-    \mathcal{H} = &\ket{\downarrow}\bra{\downarrow}\otimes \mathcal{H}^{(\downarrow)} + \ket{\uparrow}\bra{\uparrow}\otimes \mathcal{H}^{(\uparrow)} \\
-    \mathcal{H}^{(\downarrow)}/\hbar &= -\omega_S / 2 + \omega_I^{(\downarrow)} I_z^{(\downarrow)} + \mathbf{I}\cdot \bar{\bar{Q}}^{(\downarrow)}\cdot \mathbf{I} \\ 
-    \mathcal{H}^{(\uparrow)}/\hbar &= +\omega_S / 2 + \omega_I^{(\uparrow)}I_z^{(\uparrow)} + \mathbf{I}\cdot \bar{\bar{Q}}^{(\uparrow)} \cdot\mathbf{I}.
+    \mathcal{H} = &\ket{\Downarrow}\bra{\Downarrow}\otimes \mathcal{H}^{(\Downarrow)} + \ket{\Uparrow}\bra{\Uparrow}\otimes \mathcal{H}^{(\Uparrow)} \\
+    \mathcal{H}^{(\Downarrow)}/\hbar &= -\omega_S / 2 + \omega_I^{(\Downarrow)} I_z^{(\Downarrow)} + \mathbf{I}\cdot \bar{\bar{Q}}^{(\Downarrow)}\cdot \mathbf{I} \\ 
+    \mathcal{H}^{(\Uparrow)}/\hbar &= +\omega_S / 2 + \omega_I^{(\Uparrow)}I_z^{(\Uparrow)} + \mathbf{I}\cdot \bar{\bar{Q}}^{(\Uparrow)} \cdot\mathbf{I}.
 \end{split}
+\label{eq:up_down_hamiltonian}
 \end{align}
 
 
-\noindent  $\mathcal{H}^{(m_S)}$ is the nuclear spin Hamiltonian when the \Er spin is in $m_S = \downarrow$ or $m_S = \uparrow$. As a result of the hyperfine interaction, the nuclear spin quantization axis $z^{(m_S)}$ and Larmor frequency $\omega_I^{(m_S)} \simeq \omega_I + m_S A_\parallel/2 $ depend on the \Er spin state. In the usual coupled spin description, the quadrupolar tensor should not depend on $m_S$. In this chapter we focus on testing this property by separately measuring the tensors $\bar{\bar{Q}}^{(\downarrow)}$ and $\bar{\bar{Q}}^{(\uparrow)}$ for each \Er spin orientation. 
+\noindent  $\mathcal{H}^{(m_S)}$ is the nuclear spin Hamiltonian when the \Er spin is in $m_S = \Downarrow$ or $m_S = \Uparrow$. As a result of the hyperfine interaction, the nuclear spin quantization axis $z^{(m_S)}$ and Larmor frequency $\omega_I^{(m_S)} \simeq \omega_I + m_S A_\parallel/2 $ depend on the \Er spin state. In the usual coupled spin description, the quadrupolar tensor should not depend on $m_S$. In this chapter we focus on testing this property by separately measuring the tensors $\bar{\bar{Q}}^{(\Downarrow)}$ and $\bar{\bar{Q}}^{(\Uparrow)}$ for each \Er spin orientation. 
 
 \begin{marginfigure}
     \includegraphics{chapter5/figures/energy_levels_ninehalf.pdf}
@@ -74,7 +76,7 @@ where the terms correspond, in order, to the \Er spin Zeeman energy, the high-nu
     \labfig{energy_levels_ninehalf_ch5}
 \end{marginfigure}
 
-We now recall the energy level system defined by this Hamiltonian. \reffig{energy_levels_ninehalf_ch5} shows the $20$ energy levels of the coupled spins, grouped in the two $m_S = \downarrow$ or $m_S = \uparrow$ manifolds. The nuclear spin eigenstates are mixed by the quadrupolar interaction and are therefore labeled as $\ket{n}$ in increasing order of energy, with $n$ varying between $0$ and $9$. Ten transitions between $\ket{\downarrow, n}$ and $\ket{\uparrow, n}$ at $\omega_n$ are EPR-allowed. Transitions between $\ket{m_S, n}$ and $\ket{m_S, n+1}$ at frequencies $\omega_{n,n+1}^{m_S} $ are NMR-allowed. Double- or Zero-quantum transitions between $\ket{\downarrow, n}$ and $\ket{\uparrow, n \pm 1}$ are weakly authorized because of the slight difference of nuclear spin wave function when the \Er spin is $\ket{\downarrow}$ and $\ket{\uparrow}$.
+We now recall the energy level system defined by this Hamiltonian. \reffig{energy_levels_ninehalf_ch5} shows the $20$ energy levels of the coupled spins, grouped in the two $m_S = \Downarrow$ or $m_S = \Uparrow$ manifolds. The nuclear spin eigenstates are mixed by the quadrupolar interaction and are therefore labeled as $\ket{n}$ in increasing order of energy, with $n$ varying between $0$ and $9$. Ten transitions between $\ket{\Downarrow, n}$ and $\ket{\Uparrow, n}$ at $\omega_n$ are EPR-allowed. Transitions between $\ket{m_S, n}$ and $\ket{m_S, n+1}$ at frequencies $\omega_{n,n+1}^{m_S} $ are NMR-allowed. Double- or Zero-quantum transitions between $\ket{\Downarrow, n}$ and $\ket{\Uparrow, n \pm 1}$ are weakly authorized because of the slight difference of nuclear spin wave function when the \Er spin is $\ket{\Downarrow}$ and $\ket{\Uparrow}$.
 
 
 \section{Readout, preparation and control}
@@ -137,14 +139,14 @@ The final pulse sequence used to polarize to state $\ket{0}$ is shown in \reffig
 
 \subsubsection{Stimulated Raman driving}
 
-Coherent driving of the NMR transitions is performed by stimulated Raman driving at microwave frequency. Spectroscopy of the $\ket{\downarrow,0} \leftrightarrow \ket{\downarrow,1}$ transition is shown in \reffig{raman_spectroscopy_nb}. To measure the $\ket{\downarrow,n} \leftrightarrow \ket{\downarrow,n+1}$ transitions with $n>0$, we first prepare the system in $\ket{\downarrow,n}$ by successive application of microwave Raman $\pi$ pulses from state $\ket{\downarrow,0}$, also known as a Givens rotation \sidecite{cybenko_reducing_2001}. We then sweep the Raman detuning $\delta$. We finally measure the probability to find the system in $\ket{\downarrow,n}$, by successive applications of $\pi$ pulses in reverse order followed by the measurement of $P_{\ket{0}}$. 
+Coherent driving of the NMR transitions is performed by stimulated Raman driving at microwave frequency. Spectroscopy of the $\ket{\Downarrow,0} \leftrightarrow \ket{\Downarrow,1}$ transition is shown in \reffig{raman_spectroscopy_nb}. To measure the $\ket{\Downarrow,n} \leftrightarrow \ket{\Downarrow,n+1}$ transitions with $n>0$, we first prepare the system in $\ket{\Downarrow,n}$ by successive application of microwave Raman $\pi$ pulses from state $\ket{\Downarrow,0}$, also known as a Givens rotation \sidecite{cybenko_reducing_2001}. We then sweep the Raman detuning $\delta$. We finally measure the probability to find the system in $\ket{\Downarrow,n}$, by successive applications of $\pi$ pulses in reverse order followed by the measurement of $P_{\ket{0}}$. 
 
 \begin{figure*}
     \includegraphics{chapter5/figures/raman_spectroscopy.pdf}
     \caption[NMR spectroscopy of a \Nb nuclear spin.]{
     NMR spectroscopy of a \Nb nuclear spin. 
     \textbf{a.} Raman spectroscopy for $n=0$. Population of $\ket{0}$ as a function of $\delta$. Solid black line correspond to a cardinal sine fit on the measurement data. The inset presents a diagram of the Raman driving scheme on the four-levels of interest. $\Delta$ is the detuning of one of the first pulse with the EPR transition and $\delta$ is the frequency difference between the two drives. The detuning is set to $\Delta = \omega_{01}/2$.
-    \textbf{b.} \textit{(top)} Pulse sequence of spectroscopy between states $\ket{\downarrow n}$ and $\ket{\downarrow n+1}$. The nuclear spin is first unconditionally polarized into $\ket{0}$ followed by a Givens rotation that prepares the \Nb spin into $\ket{n}$. A Raman pulse of frequency $\delta$ is then applied. The Givens rotation is then inverted. Finally, the state of the \Nb spin is read-out. 
+    \textbf{b.} \textit{(top)} Pulse sequence of spectroscopy between states $\ket{\Downarrow n}$ and $\ket{\Downarrow n+1}$. The nuclear spin is first unconditionally polarized into $\ket{0}$ followed by a Givens rotation that prepares the \Nb spin into $\ket{n}$. A Raman pulse of frequency $\delta$ is then applied. The Givens rotation is then inverted. Finally, the state of the \Nb spin is read-out. 
     \textit{(bottom)} Raman spectroscopy of all NMR transitions.  Black arrow marks the transition corresponding to the previous plot. For each transition $\Delta = \omega_{n, \ n+1}/2$.}
     \labfig{raman_spectroscopy_nb}
 \end{figure*}
@@ -171,7 +173,7 @@ The spectrum of all ground state manifold NMR transitions is shown in \reffig{ra
 \begin{figure}
     \includegraphics{chapter5/figures/raman_rabi.pdf}
     \caption[Rabi oscillations for all \Nb transitions]{Rabi oscillations for all NMR transitions. 
-    \textit{(top)} Pulse sequence. We prepare state $\ket{\downarrow n}$ followed by a resonant Raman pulse with duration $\tau$. The population of nuclear state $\ket{n+1}$ subsequently readout.
+    \textit{(top)} Pulse sequence. We prepare state $\ket{\Downarrow n}$ followed by a resonant Raman pulse with duration $\tau$. The population of nuclear state $\ket{n+1}$ subsequently readout.
     \textit{(bottom}. Measured Rabi oscillations (colored dots) and cosine fit (solid dark line) as a function of $\tau$. The amplitude of the drives $\Omega_A$ and $\Omega_B$ was calibrated to give similar Raman Rabi frequencies.}
     \labfig{raman_rabi}
 \end{figure}
@@ -182,12 +184,12 @@ The spectrum of all ground state manifold NMR transitions is shown in \reffig{ra
     \labfig{A_perp_sb}
 \end{marginfigure}
 
-We confirm the measurement of $A_\perp$ using the ZQ Rabi rate by estimating the value of this parameter using the stimulated Raman Rabi rate. \reffig{raman_rabi} shows the \Nb Rabi oscillations between all 9 NMR-allowed transitions fit to a cosine curve. As demonstrated in \refch{nuclea_spin_control}, the Rabi rate is proportional to $A_\perp$, and we can use Eq. \ref{eq:stimulated_raman_ninehalf_aperp} to estimate the value of this quantity. \reffig{A_perp_sb} plots the estimated $A_\perp$ as a function of $n$. The data points are centered around 50(11)~kHz. The value matches quantitatively with the one measured through the sideband driving. We attribute the origin of remaining positive trend to small miss-characterization of $\omega_0$ and $\kappa$ at the time of the measurement. The resonator plays a crucial role on the filtering of the microwave amplitudes and its parameters can slowly change over time.
+We confirm the measurement of $A_\perp$ using the ZQ Rabi rate by estimating the value of this parameter using the stimulated Raman Rabi rate. \reffig{raman_rabi} shows the \Nb Rabi oscillations between all 9 NMR-allowed transitions fit to a cosine curve. As demonstrated in \refch{nuclea_spin_control}, the Rabi rate is proportional to $A_\perp$, and we can use Eq. \ref{eq:stimulated_raman_ninehalf_aperp} to estimate the value of this quantity. \reffig{A_perp_sb} plots the estimated $A_\perp$ as a function of $n$. The data points are centered around $A_\perp=50(11)$~kHz. The value matches quantitatively with the one measured through the sideband driving. We attribute the origin of remaining positive trend to small miss-characterization of $\omega_0$ and $\kappa$ at the time of the measurement. The resonator plays a crucial role on the filtering of the microwave amplitudes and its parameters can slowly change over time.
 
 
 \section{Identification and site assignment}
 
-The $\ket{\downarrow,4} \leftrightarrow \ket{\downarrow,5}$ transition frequency is particularly interesting as it is only sensitive to the quadrupolar interaction to second-order, and its frequency is therefore close to the Zeeman frequency $\omega_I + A_\parallel/2$. By comparison of $(\omega^{(\Downarrow)}_{45} - A_\parallel/2) / B_0 \simeq 10.80$~MHz/T with the tabulated values of the gyromagnetic ratio of stable nuclei with spin-9/2 (see \reftab{nuclear_spin_gyromagnetic}) we determine that the impurity is a $^{93}\mathrm{Nb}$ atom.
+The $\ket{\Downarrow,4} \leftrightarrow \ket{\Downarrow,5}$ transition frequency is particularly interesting as it is only sensitive to the quadrupolar interaction to second-order, and its frequency is therefore close to the Zeeman frequency $\omega_I + A_\parallel/2$. By comparison of $(\omega^{(\Downarrow)}_{45} - A_\parallel/2) / B_0 \simeq 10.80$~MHz/T with the tabulated values of the gyromagnetic ratio of stable nuclei with spin-9/2 (see \reftab{nuclear_spin_gyromagnetic}) we determine that the impurity is a $^{93}\mathrm{Nb}$ atom.
 
 \begin{marginfigure}
     \includegraphics{chapter5/figures/crystal_with_nb.pdf}
@@ -214,13 +216,13 @@ This impurity may originate from the crystal growth, or from the niobium film sp
 \begin{figure*}
     \includegraphics{chapter5/figures/ramsey_ninehalf.pdf}
     \caption[\Nb Ramsey measurements]{Ramsey measurements of the \Nb transitions. 
-    \textbf{a.} \textit{(top)} Ramsey, pulse sequence between states $\ket{\downarrow n-1}$ and $\ket{\downarrow n}$. 
+    \textbf{a.} \textit{(top)} Ramsey, pulse sequence between states $\ket{\Downarrow n-1}$ and $\ket{\Downarrow n}$. 
     \textit{(bottom)} Population of $\ket{0}$ as a function of $\tau$ for $n=0$. Solid black line corresponds to a cosine fit with a decaying exponential.
     \textbf{b.} \textit{(top)} Excited Ramsey pulse sequence.
     \textit{(left)} Population of $\ket{0}$ as a function of $\tau$ for $n=1$. Solid black line corresponds to a cosine fit with a decaying exponential.
-    \textbf{c.} \Nb nuclear spin transition frequency $\omega^{(\downarrow)}_{n, \ n+1}$ and $\omega^{(\uparrow)}_{n, \ n+1}$ (green and blue markers resp.) as a function of $n$. 
-    \textbf{d.} Coherence $T_2^{*, (\downarrow)}$ for each transition $\ket{\downarrow n}\leftrightarrow\ket{\downarrow, n+1}$.    
-    \textbf{e.}  Coherence $T_2^{*, (\uparrow)}$ for each transition $\ket{\uparrow n}\leftrightarrow\ket{\uparrow, n+1}$. Solid line gives an upper bound to the coherence from the relaxation rate through the Purcell effect. 
+    \textbf{c.} \Nb nuclear spin transition frequency $\omega^{(\Downarrow)}_{n, \ n+1}$ and $\omega^{(\Uparrow)}_{n, \ n+1}$ (green and blue markers resp.) as a function of $n$. 
+    \textbf{d.} Coherence $T_2^{*, (\Downarrow)}$ for each transition $\ket{\Downarrow n}\leftrightarrow\ket{\Downarrow, n+1}$.    
+    \textbf{e.}  Coherence $T_2^{*, (\Uparrow)}$ for each transition $\ket{\Uparrow n}\leftrightarrow\ket{\Uparrow, n+1}$. Solid line gives an upper bound to the coherence from the relaxation rate through the Purcell effect. 
     Error bars in the figures correspond to the 1-$\sigma$ fit uncertainty.}
     \labfig{ramsey_ninehalf}
 \end{figure*}
@@ -229,13 +231,13 @@ The accuracy of the NMR spectra measured in \red{sec} is reduced due to the diff
 
 \subsubsection{Ramsey measurements}
 
-We first measure the ground-state-manifold frequencies $\omega^\downarrow_{n,n+1}$. We prepare the system in $\ket{\downarrow,n}$, apply two Raman $\pi/2$-pulses on the $\ket{\downarrow,n} \leftrightarrow \ket{\downarrow,n+1}$ transition separated by a time $\tau$, and measure the resulting probability to find the \Nb in $\ket{n}$. The phase of the second $\pi$-pulse has an artificial detuning to compensate for the rapid natural oscillations of the population. The data for all transitions is shown in \reffig{ramsey_ninehalf}a, together with an exponential cosine fit. 
+We first measure the ground-state-manifold frequencies $\omega^\Downarrow_{n,n+1}$. We prepare the system in $\ket{\Downarrow,n}$, apply two Raman $\pi/2$-pulses on the $\ket{\Downarrow,n} \leftrightarrow \ket{\Downarrow,n+1}$ transition separated by a time $\tau$, and measure the resulting probability to find the \Nb in $\ket{n}$. The phase of the second $\pi$-pulse has an artificial detuning to compensate for the rapid natural oscillations of the population. The data for all transitions is shown in \reffig{ramsey_ninehalf}a, together with an exponential cosine fit. 
 
-The excited-state manifold frequencies $\omega^\uparrow_{n,n+1}$ are then measured by including two \Er $\pi$-pulses separated by $\tau$, applied in-between two Raman $\pi/2$ pulses kept at a constant time delay of $1$\,ms. The oscillation frequency directly yields $\omega^\downarrow_{n,n+1}-\omega^\uparrow_{n,n+1}$ (see \reffig{ramsey_ninehalf}b). 
+The excited-state manifold frequencies $\omega^\Uparrow_{n,n+1}$ are then measured by including two \Er $\pi$-pulses separated by $\tau$, applied in-between two Raman $\pi/2$ pulses kept at a constant time delay of $1$\,ms. The oscillation frequency directly yields $\omega^\Downarrow_{n,n+1}-\omega^\Uparrow_{n,n+1}$ (see \reffig{ramsey_ninehalf}b). 
 
 \reffig{ramsey_ninehalf}c plots the fitted NMR frequencies as a function of the transition index $n$, both for the ground and excited state of the \Er spin (green and blue resp.). The ground state transitions and consistently larger than their excited state counterparts, which indicate a positive value of $A_\parallel\approx130$~kHz. 
 
-The fitted coherence time for ground and excited Ramseys are in plot in \reffig{ramsey_ninehalf}d and e respectively. The ground state transitions display a constant behavior with $T_2^*\approx150$~ms.\sidenote{We note that for $n=5$ the coherence time is slightly lower for unknown reasons.}. This indicates that magnetic noise is the dominant contribution to the Ramsey dephasing, since electric noise would impact more strongly transitions with extremal values of $n$, as was observed in an individual $^{123}\mathrm{Sb}$ nuclear spin in silicon \sidecite{fernandezdefuentes_navigating_2024}. As expected, the coherence time of the excited state Ramsey measurements is limited by the \Er relaxation time. We observe that $T_2^{*(\uparrow)}$ slightly increases with $n$, due to the increased detuning of the $\ket{\downarrow,n} \leftrightarrow \ket{\uparrow,n}$ transition from the resonator. The increase is less than expected from the Purcell effect, shown as a purple line in the plot, suggesting that this \Er has a relatively short non-radiative lifetime, of order $\sim 3$\,ms, possibly linked to the proximal \Nb impurity. 
+The fitted coherence time for ground and excited Ramseys are in plot in \reffig{ramsey_ninehalf}d and e respectively. The ground state transitions display a constant behavior with $T_2^*\approx150$~ms.\sidenote{We note that for $n=5$ the coherence time is slightly lower for unknown reasons.}. This indicates that magnetic noise is the dominant contribution to the Ramsey dephasing, since electric noise would impact more strongly transitions with extremal values of $n$, as was observed in an individual $^{123}\mathrm{Sb}$ nuclear spin in silicon \sidecite{fernandezdefuentes_navigating_2024}. As expected, the coherence time of the excited state Ramsey measurements is limited by the \Er relaxation time. We observe that $T_2^{*(\Uparrow)}$ slightly increases with $n$, due to the increased detuning of the $\ket{\Downarrow,n} \leftrightarrow \ket{\Uparrow,n}$ transition from the resonator. The increase is less than expected from the Purcell effect, shown as a purple line in the plot, suggesting that this \Er has a relatively short non-radiative lifetime, of order $\sim 3$\,ms, possibly linked to the proximal \Nb impurity. 
 
 \begin{marginfigure}
     \includegraphics{chapter5/figures/drift.pdf}
@@ -259,16 +261,191 @@ To demonstrate the impact of the \W polarization, \reffig{polarized_vs_unpolariz
 
 \subsubsection{Hahn echo measurements}
 
-In addition, the large nuclear spin of \Nb offers interesting perspectives for quantum sensing. Indeed, the magnetic moment of states $0$ and $n$ differ by $\sim n \, \mu_\text{\Nb}$, implying that the state $\ket{0} + \ket{n}$ is $\sim n$ times more sensitive to a small magnetic signal than $\ket{0} + \ket{1}$. Such "Schrödinger spin-cat" states have been studied in a Sb donor in silicon~\sidecite{yu_creation_2024}, and used in magnetometry with Rydberg atoms sensing \sidecite{dietsche_highsensitivity_2019}. We perform a preliminary characterization of the magnetic sensitivity of these states by measuring the echo coherence of the state $\ket{\downarrow \, 0} + \ket{\downarrow \, n+1}$. Figure \reffig{echo_nb}a \& b show a schematic of the pulse sequence along with the signal, fitted to an exponentially decaying cosine which yield the coherence time $T_{2}$. The decoherence rate $1/T_2$ is seen to increase linearly with $n$ (see \reffig{echo_nb}c), indicating that decoherence occurs mainly because of magnetic noise. Due to the accumulation of coherent errors on the pulses, we only measure these states until $n=$. These measurements were taken in a different magnetic field configuration with a misalignment angle $\theta=-0.3^\circ$. 
+In addition, the large nuclear spin of \Nb offers interesting perspectives for quantum sensing. Indeed, the magnetic moment of states $0$ and $n$ differ by $\sim n \, \mu_\text{\Nb}$, implying that the state $\ket{0} + \ket{n}$ is $\sim n$ times more sensitive to a small magnetic signal than $\ket{0} + \ket{1}$. Such "Schrödinger spin-cat" states have been studied in a Sb donor in silicon~\sidecite{yu_creation_2024}, and used in magnetometry with Rydberg atoms sensing \sidecite{dietsche_highsensitivity_2019}. We perform a preliminary characterization of the magnetic sensitivity of these states by measuring the echo coherence of the state $\ket{\Downarrow \, 0} + \ket{\Downarrow \, n+1}$. Figure \reffig{echo_nb}a \& b show a schematic of the pulse sequence along with the signal, fitted to an exponentially decaying cosine which yield the coherence time $T_{2}$. The decoherence rate $1/T_2$ is seen to increase linearly with $n$ (see \reffig{echo_nb}c), indicating that decoherence occurs mainly because of magnetic noise. Due to the accumulation of coherent errors on the pulses, we only measure these states until $n=$. These measurements were taken in a different magnetic field configuration with a misalignment angle $\theta=-0.3^\circ$. 
 
 \begin{figure*}
     \includegraphics{chapter5/figures/echo.pdf}
-    \caption[Hahn echo coherence]{Hahn echo for all $\ket{\downarrow 0}$ and $\ket{\downarrow n}$ pairs.
+    \caption[Hahn echo coherence]{Hahn echo for all $\ket{\Downarrow 0}$ and $\ket{\Downarrow n}$ pairs.
     \textbf{a.} Pulse sequence. 
     \textbf{b.} Measurement data (dots) is plot alongside an exponentially decaying fit (black solid lines). 
-    \textbf{c.} Decoherence rate $1/T_2$ for all $\ket{\downarrow 0}$ and $\ket{\downarrow n}$ pairs. Measurements (dots) are fit to a linear trend (black line).}
+    \textbf{c.} Decoherence rate $1/T_2$ for all $\ket{\Downarrow 0}$ and $\ket{\Downarrow n}$ pairs. Measurements (dots) are fit to a linear trend (black line).}
     \labfig{echo_nb}
 \end{figure*}
 
 
 \section{Hamiltonian fit}
+
+\subsection{Fitting $\mathcal{H}^{(\Downarrow)}$ and $\mathcal{H}^{(\Uparrow)}$}
+
+We now analyze the frequency data shown in \reffig{ramsey_ninehalf}c to extract the nuclear spin parameters.  We first fit the frequencies in the \Er ground and the excited state using $\mathcal{H}^{(\Downarrow)}$ and $\mathcal{H}^{(\Uparrow)}$, respectively (Eq. \ref{eq:up_down_hamiltonian}). These fits are independent and can be effectively understood as describing a nuclear spin experiencing different effective magnetic fields in the two states, differing in both magnitude and orientation due to the parallel and perpendicular components of the hyperfine interaction. Before proceeding to the fit, we note an intrinsic degeneracy of the quadrupole spectrum when only measured along a single magnetic field orientation.
+
+\subsubsection{Rotational invariance of the quadrupolar energy spectrum}
+
+When fitting the nuclear transition frequencies in this work, we consider the measurements with a single orientation of the magnetic field. Under these conditions, the measured NMR frequencies are not sufficient to describe the full quadrupole tensor. It is intuitively clear that the measured spectrum should be invariant under a rotation around the applied field direction $z$, and that therefore only parameters $4$ can be determined at best. This is clearly evidenced when expressing the quadrupole tensor as a function of rank-2 spherical tensors $T^{(2)}_{m}$, instead of Cartesian coordinates. \sidenote{
+The rank-2 spherical tensors are related to the spin operator basis by
+\begin{equation*}
+\begin{split}
+T^{(2)}_{0} &= 3 I_z^2 - I(I+1), \\
+T^{(2)}_{\pm 1} &= \mp \left( I_z I_{\pm} + I_{\pm} I_z \right), \\
+T^{(2)}_{\pm 2} &= I_{\pm}^2 .
+\end{split}
+\end{equation*}
+}. By algebraic manipulation we can rewrite the quadrupolar interaction as
+
+\begin{equation}
+    \cH{Q} / \hbar = \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I} = \sum_{m = -2}^2 Q_m T^{(2)}_m(\hat{\mathbf{I}})
+    \label{eq:quadrupole_spherical}
+\end{equation}
+
+\noindent with
+
+\begin{equation}
+\begin{aligned}
+Q_{0} &= Q_{zz}, \\
+Q_{\pm 1} &= Q_{zx} \pm i Q_{zy}, \\
+Q_{\pm 2} &= \tfrac{1}{2}(Q_{xx} - Q_{yy}) \pm i Q_{xy}.
+\end{aligned}
+\end{equation}
+
+One can show (Appendix \ref{app:rotations_quadrupole}) that the coefficients transform as 
+\begin{equation}
+Q_m \;\mapsto\; e^{-im\zeta}\, Q_m,
+\end{equation}
+under a physical rotation of angle $\zeta$ about the $z$-axis. Since the energy levels of the Hamiltonian are insensitive to these phase factors and depend only on invariants such as $Q_0$, $|Q_{\pm 1}|^2$, and $|Q_{\pm 2}|^2$, the energy spectrum is invariant under such rotations. The matrix form of the quadrupole tensor in terms of these invariants is
+
+\begin{align}
+\begin{split}
+    \bar{\bar{Q}}(\zeta) =&\begin{pmatrix}
+-|S_2| \cos(2\zeta+2\Delta)-\frac{S_0}{2}&  |S_2|\sin(2\zeta+2\Delta) & |S_1|\cos(\zeta) \\ 
+|S_2| \sin(2\zeta+2\Delta)  & |S_2|\cos(2\zeta+2\Delta)-\frac{S_0}{2} & |S_1|\sin(\zeta) \\
+|S_1|\cos(\zeta) & |S_1|\sin(\zeta) & S_0\end{pmatrix} \\\\
+\end{split}
+\end{align}
+
+where $\Delta$ is the phase difference between $S_{+2}$ and $S_{+1}$
+
+\begin{equation}
+\Delta = \Delta_2 - \Delta_1 = \arctan\left(\frac{2Q_{xy}}{Q_{xx}-Q_{yy}}\right) -  \arctan\left(\frac{Q_{yz}}{Q_{xz}}\right)
+\end{equation}
+
+For single axis measurements, this leaves $S_0$, $|S_1|$, $|S_2|$, and $\Delta$ to be determined, whereas $\zeta$ can be fixed to an arbitrary value. This is a subtle point with an important consequence: any two tensors related by a rotation in the $xy$ plane produce identical NMR spectra for a fixed field orientation\sidenote{It is straightforward to see that the Zeeman term is also degenerate under rotations along the axis of $B_0$.}. Equivalently, no matter how precise the measurement of the nuclear transition frequencies, one can only reconstruct the quadrupole tensor up to a rotation about the field axis. Consequently, the only way to lift this degeneracy is by measuring with a different quantization axis of the nuclear spin\sidenote{At zero magnetic field, no orientation information can be extracted, only the magnitudes of the principal components of the quadrupole}.
+
+\subsubsection{Monte Carlo Markov Chains}
+
+We now focus on fitting the ground state Hamiltonian $\mathcal{H}^{(\Downarrow)}$ to the measured data, but the procedure is identical for $\mathcal{H}^{(\Uparrow)}$. We recall that 
+
+\begin{equation}
+    \mathcal{H}^{(\Downarrow)}/\hbar = -\omega_S / 2 + \omega_I^{(\Downarrow)} I_z^{(\Downarrow)} + \mathbf{I^{(\Downarrow)}}\cdot \bar{\bar{Q}}^{(\Downarrow)}\cdot \mathbf{I^{(\Downarrow)}}.
+\end{equation}
+
+The parameters to fit are $B^{(\Downarrow)}_0 = - \omega_I^{(\Downarrow)} / \gamma_\text{\Nb}$ and $\bar{\bar{Q}}^{(\Downarrow)}$, where $B^{(\Downarrow)}_0$ is the effective magnetic field the \Nb spin observes when the \Er is in the ground state, which combines the external field $B_0$ and the effective field generated by the \Er spin. When parameterizing the quadrupole in terms of the rank-2 spherical tensors, the total set of variables to fit is defined as $\mathcal{V^{(\Downarrow)}} \equiv\{B^{(\Downarrow)}_0, S^{(\Downarrow)}_0, S^{(\Downarrow)}_1, S^{(\Downarrow)}_2, \Delta^{(\Downarrow)}\}$ and $\zeta$ is arbitrarily set to 0. We note that another degeneracy inherent to the one-axis nature of the measurement is the sign of $S_1^{(\Downarrow)}$ and $S_2^{(\Downarrow)}$ as well as $\Delta^{(\Downarrow)}$, that is periodic between $-\pi/4$ and $\pi/4$. For the purposes of the fit, we set the following priors
+
+\begin{equation}
+    S_1^{(\Downarrow)} > 0 \quad | \quad S_2^{(\Downarrow)}>0 \quad | \quad -\pi/4 <\Delta^{(\Downarrow)} < \pi/4
+\end{equation}
+
+The ground state NMR transitions $\omega_{n,\ n+1}^{\text{fit}}(\mathcal{V^{(\Downarrow)}})$ are calculated by numerically diagonalizing $H^{(\Downarrow)}(\mathcal{V}^{(\Downarrow)})$ and taking the energy differences between the relevant energy levels. We define the following likelihood
+
+\begin{equation}
+    \mathcal{L}^{(\Downarrow)}(\mathcal{V}^{(\Downarrow)}) = \sum_{n=0}^9 \left(\frac{\omega^{(\Downarrow)}_{n, \ n+1} - \omega_{n, \ n+1}^{\text{fit}}(\mathcal{V^{(\Downarrow)}})}{\sigma^{(\Downarrow)}_{n, \ n+1}}\right)^2,
+\end{equation}
+
+where $\sigma^{(\Downarrow)}_n=1$~Hz is the measurement uncertainty. The Hamiltonian fit was performed via Monte-Carlo Markov-Chain simulation \cite{foreman-mackey_emcee_2013}. In brief, the algorithm initializes an arbitrary number of walkers, or particles, in the parameter space. After an evaluation of the logarithm of the likelihood function, the positions of the walkers are updated through the "stretch move" \cite{goodman_ensemble_2010} with the objective of minimizing the evaluation for the next iteration. We run the algorithm with 64 walkers and 60000 iterations, from which we obtain the following median values for the ground and excited state parameters
+
+\begin{align}
+\begin{split}
+    &B^{(\Downarrow)}_0 =  460.8320(4)\text{~mT} \; | \; S^{(\Downarrow)}_0 = -237.3609(6)\text{~kHz}\\  
+    S^{(\Downarrow)}_1& = 2.08(5) \text{~kHz} \; | \;  S^{(\Downarrow)}_2 = 149.456(6)\text{~kHz}\; | \; \Delta^{(\Downarrow)} = 0.2(1) \\ 
+    \\
+    &B^{(\Uparrow)}_0 = 447.994(6)\text{~mT} \; | \; S^{(\Uparrow)}_0 = -237.256(9)\text{~kHz} \\
+    S^{(\Uparrow)}_1& = 5.0(3)\text{~kHz} \; | \; S^{(\Uparrow)}_2 = 149.48(8)\text{~kHz}\; | \; \Delta^{(\Uparrow)} = 0.2(1)
+\end{split}
+\end{align}
+
+\begin{figure}
+    \includegraphics{chapter5/figures/fit_residuals.pdf}
+    \caption[Residuals for the $\mathcal{H}^{(\Downarrow)}$ and $\mathcal{H}^{(\Uparrow)}$ fit]{Residuals for the $\mathcal{H}^{(\Downarrow)}$ and $\mathcal{H}^{(\Uparrow)}$ fit, top and bottom respectively. Error-bars correspond to the uncertainty of the measured values. Dashed line corresponds to zero deviation.}
+    \labfig{fit_residuals}
+\end{figure}
+
+The residuals of the two fits are shown in \reffig{fit_residuals}. The results agree up to statistical uncertainty ($1$\,Hz for the $\Downarrow$ data, $20$\,Hz for the $\Uparrow$ data), and the residuals show no discernible trend.  We calculate the reduced chi-squared for the ground and excited state and obtain $\chi^{2,(\Downarrow)}_\nu=0.75$ and $\chi^{2,(\Uparrow)}_\nu=1.14$, respectively. The proximity of these values to 1 indicates that the model correctly describes the data while avoiding over-fitting. We remark that the uncertainty of $S_1^{(\Downarrow)}$ and $\Delta^{(\Downarrow)}$ is much larger than the other parameters. This is readily explained by the effect of these quantities on the energy levels of the Hamiltonian. On the one hand, $S_1$, $\Delta$ are closely related to the values of the quadrupole perpendicular to $B_0$, and are only observable as second and third order effects respectively. On the other hand, $B_0$, $S_0$ and $S_2$ are responsible for zero and first order effects and their estimation is more precise. 
+
+The fit returns the quadrupolar tensors $\bar{\bar{Q}}^{(\Downarrow)}$ and $\bar{\bar{Q}}^{(\Uparrow)}$, up to an arbitrary rotation around the $z^{(\Downarrow)}$ and $z^{(\Uparrow)}$ axes, respectively. We compare the principal values of the tensor obtained via diagonalization\sidenote{The tensors are expressed in different Cartesian bases, determined by the nuclear spin quantization axis in each manifold, which means that direct component-wise comparison is inappropriate}. This analysis reveals that the principal axis associated with the largest eigenvalue (denoted $X$) lies approximately within the crystal $(a,b)$-plane, up to an undetermined in-plane angle. The second-strongest principal axis (denoted as $Z$) is approximately parallel to the crystal $c$-axis and therefore to $B_0$. 
+
+\begin{figure}
+    \includegraphics{chapter5/figures/q_histograms.pdf}
+    \caption[Quadrupole principal values]{Posterior distribution of the quadrupole tensor principal components for $\mathcal{H}^{(\Downarrow)}$ and $\mathcal{H}^{(\Uparrow)}$ (green and orange resp.). The distributions are normalized to the same height for visual clarity.}
+    \labfig{q_histograms}
+\end{figure}
+
+\red{should we show the full set of posterior distributions?}
+
+The posterior distribution of the quadrupole principal values are shown in \reffig{q_histograms} for both \Er spin states. The main result is the existence of a statistically-significant ($3\sigma$) difference between the values of $Q_{Z}^{(\Uparrow)}$ and $Q_{Z}^{(\Downarrow)}$. Due to the larger uncertainty on $Q_{X}$ and $Q_{Y}$, this observation is not reproduced on $X$ or $Y$. Consequently, our results indicate the existence of a new term in the spin Hamiltonian Eq.~\ref{eq:hamiltonian_ninehalf_full}, which modifies the nuclear quadrupolar interaction depending on the electron spin state. 
+
+\subsection{Fitting $\mathcal{H}$}
+
+To further test our model, we take a step back in the approximations and fit the complete frequency dataset. In addition, we now introduce a term that models the electron spin dependent nuclear quadrupole. Given that our measurements are maximally sensitive along the $z$ axis, we approximate this term in analogy to a standard quadrupole term, 
+
+\begin{equation}\label{eq:SDQ}
+\mathcal{H}_\mathrm{sdq} = \frac{C_\mathrm{sdq}}{4 I (2I-1)} S_z \left(3 I_z^2 - I(I+1) \right).
+\end{equation}
+
+Where $C_\mathrm{sdq}$ is the interaction coupling strength. Moreover, to account for the high spectral resolution of our data we include in the Hamiltonian higher order terms we have previously disregarded. 
+
+%First, we consider non-secular hyperfine terms, which are estimated by magnetic dipole interaction simulations (see \red{ref}) and are fixed during the fitting procedure. 
+
+\subsubsection{Lamb shift}
+
+First, we consider the Lamb shift of the electron spin transitions, which renormalize the \Nb transitions in the excited state of the \Er spin. As discussed in \red{sec}, the Lamb shift of the excited state of a spin-1/2 coupled to a resonator in its (vacuum) ground state, with coupling strength $g_0$ and detuning $\Delta$ is given by
+
+\begin{equation}
+\Delta\omega = \Delta \frac{g_0^2}{\Delta^2 + \kappa^2/4}.
+\end{equation}
+
+In the case of the coupled \Nb--\Er system, the \Er excited state levels $\ket{\uparrow,n}$ are shifted by $\Delta \omega_n = g_0^2 \frac{\Delta_n}{\Delta_n^2 + \kappa^2/4}$, where $\Delta_n = \omega_0 - \omega_n$ is the detuning of the EPR-allowed transition from the resonator frequency. The order of magnitude is $\Delta \omega \sim g_0^2 / \kappa \sim 2\pi \times 100\,\mathrm{rad}\cdot \mathrm{s}^{-1}$ and the dependence on $n$ causes shifts $\Delta_{n+1} - \Delta_n$ of the NMR transition frequencies $\omega_{n,n+1}^\Uparrow $, which therefore must be taken into account in our analysis. 
+
+This is achieved by adding a term
+
+\begin{equation}
+    \mathcal{H}_L = \Delta \omega_n \ket{\Uparrow,n}\bra{\Uparrow,n}
+\end{equation}
+
+\subsubsection{Non-secular hyperfine}
+
+Second we consider non-secular hyperfine terms, which are estimated by magnetic dipole interaction simulations (see \red{ref}) and are fixed during the fitting procedure. Additionally, we fix the perpendicular hyperfine term to the measured value in \red{sec} $A_\perp = 46$~kHz to effectively reduce the number of variables to fit.
+
+
+\subsubsection{Final Hamiltonian}
+
+Combining all the terms, the full Hamiltonian of an \Er:\Ca spin coupled to a \Nb nuclear spin (and to its detection resonator) is
+
+\begin{align}
+\begin{split}
+        \mathcal{H}/\hbar &= \omega_S\cdot S_z + \omega_I\cdot I_z +\mathbf{S} \cdot \bar{\bar{A}} \cdot \mathbf{I} + \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I} + \\ 
+        &+ \frac{C_\mathrm{sdq}}{4 I (2I-1)} S_z [3 I_z^2 - I(I+1) ]  + \Delta \omega_n \ket{\uparrow,n}\bra{\uparrow,n}
+\end{split}
+\end{align}
+
+Note that because the Hamiltonian is not invariant by rotation around the $z$ axis, the full quadrupolar tensor can now be obtained. Following the parameterization presented in \red{ref}, the set of eight variables to fit is defined as $\mathcal{V}\equiv\{B_0, A_\parallel, S_0,S_1,S_2,\Delta,\zeta,Q^{\text{(SDQ)}}_{zzz}\}$. Naturally, we define the total likelihood as
+
+\begin{equation}
+    \mathcal{L}(\mathcal{V}) = \mathcal{L}^{(\downarrow)}(\mathcal{V}) + \mathcal{L}^{(\uparrow)}(\mathcal{V}).
+\end{equation}
+
+The fit is performed by repeating the MCMC algorithm described in the previous section for 400 different values of $A_\perp$, sampled from a Gaussian distribution with a standard deviation of 9~kHz. The median values for the parameters, obtained from the resulting ensemble of fits, are given by
+
+\begin{align}
+\label{seq:full_fit_results}
+\begin{split}
+    B_0 =  454.408(3)\text{~mT} \; &| \; A_\parallel =  133.751(5)\text{~kHz} \\ 
+    S_0 = -237.314(3)\text{~kHz} \; &| \; S_1 = -3.44(1) \text{~kHz} \\
+    S_2 = -149.457(5)\text{~kHz}\; &| \;  \red{Q_{zzz}^{(SDQ)} = 76(4)} \text{~Hz}\\
+    \Delta = 1.62(2)\; &| \;\zeta = 0.9(1), \\
+\end{split}
+\end{align}
+
+\noindent with a reduced chi-squared of $\chi^2_\nu=1.2$, with similar residuals as the ones reported in \reffig{fit_residuals}. 
+
+From these values, we reconstruct the nuclear quadrupole tensor $\bar{\bar{Q}}$ and diagonalize it to obtain its principal axes $X$, $Y$, and $Z$. We find that the $Z$ axis is tilted by $0.06(3)^\circ$ with respect to the crystal $c$ axis, while the $X$ axis is rotated by $-10(6)^\circ$ relative to the crystal $a$ axis. The corresponding principal values are $Q_X = 268.138(9)$~kHz, $Q_Y = -30.799(7)$~kHz, and $Q_Z = -237.338(3)$~kHz. These values correspond to a quadrupolar interaction strength of $C_q / 2\pi = 19.3059(7)\,\mathrm{MHz}$ and a biaxiality parameter $\eta = 0.77026(7)$.
+
+The quadrupolar tensor $\bar{\bar{Q}}$ is graphically represented in the crystal frame in \red{fig}. We compare the fitted quadrupole tensor with DFT calculations performed by our theory collaborator Thibault Charpentier. The simulations yield $C_{q,\text{DFT}}=22.7$~MHz, $\eta_{\text{DFT}}=0.76$, and similar orientation of the principal axes, in close agreement with the fitted values. This confirms that $\mathrm{Nb}^{5+}$ replaces $\mathrm{W}^{6+}$. Finally, the SDQ term \red{$Q^{(\text{SDQ})}_{zzz}/2\pi= 76(4)$~Hz} is fitted to a non-zero value with a high degree of confidence. We check the consistency and reproducibility of our analysis by repeating these measurements for a small range of in-plane angles $\theta$ (see \red{fig}). Despite the vastly different values of the Hamiltonian parameters (in particular, $\omega_I$ and $A$), the values extracted for \red{$Q^\text{(SDQ)}_{zzz}$} remain approximately unchanged. 

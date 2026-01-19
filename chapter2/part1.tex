@@ -371,47 +371,6 @@ where $\hbar \omega_Q$ is the quadrupole energy,
 
 Based on the value of the asymmetry parameter $\eta$ we can distinguish two regimes. First, if $\eta=0$ the quadrupole is said to be axial and the Hamiltonian is diagonal in the $\ket{I,m_I}$ basis. The quadrupole then splits the nuclear energy levels by $m_I^2 \omega_Q/2 $, where $m_I$ is the projection of the nuclear spin along the $\mathcal{P}_1$ axis. Second, when $\eta\neq0$ the term proportional to $\eta$ mixes states differing by $\Delta m_I=\pm2$ and creates a non-trivial energy level structure. 
 
-
-\subsubsection{Rotational invariance of the quadrupolar energy spectrum}
-
-\red{Move to the relevant chapter!}
-
-When measuring the nuclear spin transitions under a specific magnetic field orientation, the resulting frequencies are generally not enough to describe the full quadrupole tensor. 
-
-It is useful to express the quadrupole in the basis of the rank-2 spherical tensors\sidenote{
-The rank-2 spherical tensors are related to the spin operator basis by
-\begin{equation*}
-\begin{split}
-T^{(2)}_{0} &= 3 I_z^2 - I(I+1), \\
-T^{(2)}_{\pm 1} &= \mp \left( I_z I_{\pm} + I_{\pm} I_z \right), \\
-T^{(2)}_{\pm 2} &= I_{\pm}^2 .
-\end{split}
-\end{equation*}
-}. By algebraic manipulation of Eq. \ref{eq:quadrupole} we can rewrite the Hamiltonian as
-
-\begin{equation}
-    \cH{Q} / \hbar = \sum_{m = -2}^2 Q_m T^{(2)}_m(\hat{\mathbf{I}})
-    \label{eq:quadrupole_spherical}
-\end{equation}
-
-\noindent with
-
-\begin{equation}
-\begin{aligned}
-Q_{0} &= Q_{zz}, \\
-Q_{\pm 1} &= Q_{zx} \pm i Q_{zy}, \\
-Q_{\pm 2} &= \tfrac{1}{2}(Q_{xx} - Q_{yy}) \pm i Q_{xy}.
-\end{aligned}
-\end{equation}
-
-One can show (Appendix \ref{app:rotations_quadrupole}) that the coefficients transform as 
-\begin{equation}
-Q_m \;\mapsto\; e^{-im\zeta}\, Q_m,
-\end{equation}
-under a physical rotation of angle $\zeta$ about the $z$-axis. Since the energy levels of the Hamiltonian are insensitive to these phase factors and depend only on invariants such as $Q_0$, $|Q_{\pm 1}|^2$, and $|Q_{\pm 2}|^2$, the energy spectrum is invariant under such rotations. 
-
-This is a subtle point with an important consequence: any two tensors related by a rotation in the $xy$ plane produce identical NMR spectra for a fixed field orientation. Equivalently, no matter how precise the measurement of the nuclear transition frequencies, one can reconstruct the quadrupole tensor only up to a rotation about the field axis. Consequently, the only way to lift this degeneracy is by measuring with a different quantization axis of the nuclear spin\sidenote{At zero magnetic field, no orientation information can be extracted, only the magnitudes of the principal components of the quadrupole}.
-
 \section{Hyperfine interaction}
 \labsec{interaction_between_to_spins}
 

@@ -49,7 +49,7 @@ In this chapter we describe the techniques used to coherently controlling a nucl
 \section{Driving a \W nuclear spin through the \Er spin}
 \labsec{driving_nuclear_spin_half}
 
-If one wishes to drive the state of a nuclear spin, the most straightforward way is to apply a radiofrequency (rf) pulse resonant with the allowed NMR transitions. However, the superconducting resonator in our setup acts as a narrow band-pass filter centered around $\omega_r\approx7.7$~GHz, as detailed in \refsec{rabi_oscillations_theory}. Consequently, all rf drives applied to the sample will be reflected from the resonator and direct driving of a nuclear spin becomes impossible.
+If one wishes to drive the state of a nuclear spin, the most straightforward way is to apply a radiofrequency (rf) pulse resonant with the allowed NMR transitions. However, the superconducting resonator in our setup acts as a narrow band-pass filter centered around $\omega_r\approx7.7$~GHz, as detailed in \refsec{spin_coupled_to_resonator}. Consequently, all rf drives applied to the sample will be reflected from the resonator and direct driving of a nuclear spin becomes impossible.
 
 For the \Er spin to be resonant with the cavity, the strength of the magnetic field along the $c$-axis must be $B_0\approx0.45$~mT. At this field, the Larmor frequency of \W is  $\omega_I\approx800$~kHz and direct rf-driving of the NMR transitions is completely filtered by the resonator. However, the ZQ and DQ transitions, which simultaneously change the electron and nuclear spin population, are detuned from the EPR-transitions by the \W Larmor frequency and therefore within the linewidth of the cavity. Consequently, resonant driving of the ZQ and DQ transitions becomes a viable method for control of the nuclear spin population.
 
@@ -93,7 +93,7 @@ Therefore, the zero- and double-quantum transitions $\ket{1}\leftrightarrow\ket{
     \bra{1} \hat{S}_x \ket{3} \approx \bra{2} \hat{S}_x \ket{4} \approx 1/2,
 \end{equation}
 
-The Rabi rate of an allowed EPR transition with a resonant the cavity is given in \refsec{rabi_oscillations_theory} by $\Omega_d = \frac{8 g_0 \epsilon_d^2}{\kappa^2}$, where $\epsilon_d$ is the applied microwave amplitude. To obtain the ZQ and DQ Rabi rates at the \textit{same} drive amplitude we simply rescale $\Omega_d$ by the ratio of the relevant matrix elements. Including the cavity filtering (the sideband is detuned from the cavity by $\sim\omega_I$) gives the final ZQ/DQ Rabi rate
+The Rabi rate of an allowed EPR transition with a resonant the cavity is given in \refsec{spin_coupled_to_resonator} by $\Omega_d = \frac{8 g_0 \epsilon_d^2}{\kappa^2}$, where $\epsilon_d$ is the applied microwave amplitude. To obtain the ZQ and DQ Rabi rates at the \textit{same} drive amplitude we simply rescale $\Omega_d$ by the ratio of the relevant matrix elements. Including the cavity filtering (the sideband is detuned from the cavity by $\sim\omega_I$) gives the final ZQ/DQ Rabi rate
 
 \begin{equation}
     \Omega_{\text{ZQ}} \approx \Omega_{\text{DQ}} \approx \Omega_d \cdot \frac{A_\perp}{2\omega_I}\cdot\frac{1}{\sqrt{1+4\omega_I^2/\kappa^2}}.

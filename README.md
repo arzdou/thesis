@@ -1,4 +1,4 @@
-# PhD thesis (LaTeX)
+# Jaime Travesedo's PhD thesis source
 
 LaTeX source for my thesis **“Precision spectroscopy and control of individual nuclear spins in the solid state”** performed in the Quantronics group between 2022 and 2026.
 

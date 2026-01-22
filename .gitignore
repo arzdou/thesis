@@ -50,3 +50,4 @@ deprec/
 thesis_ideas.txt
 main.pdf
 .vscode/
+*.synctex*

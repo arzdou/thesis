@@ -1,6 +1,6 @@
 # Jaime Travesedo's PhD thesis source
 
-LaTeX source for my thesis **“Precision spectroscopy and control of individual nuclear spins in the solid state”** performed in the Quantronics group between 2022 and 2026.
+LaTeX source for my thesis **“Precision spectroscopy and control of individual nuclear spins in the solid state”** performed in the Quantronics group between 2022 and 2026. The document uses the [kaobook class](https://github.com/fmarotta/kaobook).
 
 - Main entry point: `main.tex`
 - Bibliography: `bibliography.bib` (compiled with **biber** via `biblatex`/`kaobiblio`)
@@ -14,8 +14,8 @@ LaTeX source for my thesis **“Precision spectroscopy and control of individual
 - `latexmk`
 - `biber` (for the bibliography)
 - `makeindex` (for the index)
-- The `kaobook` class (the document uses `\documentclass{kaobook}`).
-  - If it’s not available in your TeX distribution, install it (e.g. via `tlmgr`) or place the `kaobook` files in your local `TEXMF` tree.
+- The [`kaobook` class](https://github.com/fmarotta/kaobook) (the document uses `\documentclass{kaobook}`).
+  - If it’s not available in your TeX distribution, follow the installation instructions in the kaobook repository.
 
 ### Compile to PDF
 

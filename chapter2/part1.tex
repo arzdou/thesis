@@ -613,8 +613,9 @@ This Hamiltonian defines a four-level system and can be analytically solved \sid
 
 However, in the high-field the regime, both $\eta_{\Uparrow} \approx - \eta_{\Downarrow} \approx -A_\perp / 2\omega_I \ll 1$ and the energy levels are close to the unperturbed states (see \reffig{energy_levels_half_v2}b). 
 
+It is useful to separate the transitions of this system in three groups.
 
-The nuclear spin frequencies are
+\paragraph{NMR transitions} They correspond to $\ket{1}\leftrightarrow\ket{2}$ and $\ket{3}\leftrightarrow\ket{4}$. The state of the nuclear spin can be controlled by resonantly driving these transitions with frequencies given by
 
 \begin{align}
 \begin{split}   
@@ -623,9 +624,9 @@ The nuclear spin frequencies are
 \end{split}    
 \end{align}
 
-which correspond to the NMR-allowed transitions between states $\ket{1} \leftrightarrow \ket{2}$ and $\ket{3} \leftrightarrow \ket{4}$ and can be resonantly driven to coherently control the nuclear spin population. We note that the two transition frequencies are different by $A_\parallel$ depending on if the electron spin is in the excited or the ground state, respectively.
+The frequency of these transitions generally lies in the radiofrequency side of the spectrum. We note that the two frequencies are different by $A_\parallel$ depending on if the electron spin is in the excited or the ground state, respectively.
 
-Analogously, there are two electron spin frequencies,
+\paragraph{EPR transitions} The EPR-allowed transitions couple $\ket{1} \leftrightarrow \ket{3}$ and $\ket{2} \leftrightarrow \ket{4}$ and have the following frequences,
 
 \begin{align}
 \begin{split}  
@@ -634,9 +635,9 @@ Analogously, there are two electron spin frequencies,
 \end{split}    
 \end{align}
 
-These EPR-allowed transitions couple $\ket{1} \leftrightarrow \ket{3}$ and $\ket{2} \leftrightarrow \ket{4}$ respectively. They are also spectrally separated and depend on the state of the nuclear spin, as denoted by the superindex.
+Analogously to the NMR allowed transitions, they spectrally separated and depend on the state of the nuclear spin, which we denote with a superindex.
 
-Additionally, the admixing of the wavefunctions weakly allows otherwise forbidden transitions which simultaneously change the state of the two spins. These are known as zero-quantum (ZQ) and double-quantum (DQ) transitions or simply blue and red sidebands\sidenote{The names ZQ and DQ indicate the net change in the total magnetic quantum number: in a ZQ transition the electron and nuclear spins flip in opposite directions, while for a DQ transition they flip in the same direction. Likewise the name blue and red sidebands indicate the frequency shift with respect to the electron spin frequency $\omega_S$} and are shown in \reffig{energy_levels_half_v2}b as blue and red arrows respectively. The frequency of these transitions is given by
+\paragraph{Zero- and double-quantum transitions} Historically named "forbidden" transitions\sidenote{We refrain from using this nomenclature, as they can be evidently driven, which makes them "unforbidden" transitions.}, the admixing of the wavefunctions weakly allows transitions that simultaneously change the state of the two spins. Depending on their frequency with respect to the EPR transitions, they recieve the name of zero-quantum (ZQ) and double-quantum (DQ) transitions or simply blue and red sidebands. The names ZQ and DQ indicate the net change in the total magnetic quantum number: in a ZQ transition the electron and nuclear spins flip in opposite directions, while for a DQ transition they flip in the same direction. The transitions couple $\ket{3} \leftrightarrow \ket{2}$ and $\ket{1} \leftrightarrow \ket{4}$ and are shown in \reffig{energy_levels_half_v2}b as blue and red arrows respectively. Their frequency is given by
 
 \begin{align}
 \begin{split}
@@ -645,9 +646,9 @@ Additionally, the admixing of the wavefunctions weakly allows otherwise forbidde
 \end{split}
 \end{align} 
 
-The ZQ and DQ transitions are approximately detuned from the electron spin transitions by the Larmor frequency of the nuclear spin. As such, it is possible to drive the nuclear spin transitions with a microwave pulse and we explore this driving scheme in \refsec{driving_nuclear_spin_half}.
+The ZQ and DQ transitions are approximately detuned from the electron spin transitions by the Larmor frequency of the nuclear spin. As such, it is possible to drive the nuclear spin transitions with a microwave pulse. Electron-double-resonance detected NMR (EDNMR) techniques routinly leverage these transitions to probe hyperfine structure in a broad range of systems~\cite{goldfarb_eldordetected_2017}.
 
-In conclusion, for the \W-\Er coupled system, there are two EPR and two NMR allowed transitions which individually change the state of the electron and nuclear spin respectively. In addition, the perpendicular hyperfine coupling mixes the nuclear spin wavefunctions which enables driving of the ZQ and DQ transitions, which modify the state of the electron and nuclear spin simultaneously.
+In conclusion, the \W-\Er coupled system displays two EPR and two NMR allowed transitions which individually change the state of the electron and nuclear spin respectively. In addition, the perpendicular hyperfine coupling mixes the nuclear spin wavefunctions which enables driving of the ZQ and DQ transitions, which modify the state of the electron and nuclear spin simultaneously.
 
 \section[Quadrupolar spins]{Quadrupolar nucleus: Energy states and wavefunctions}
 \labsec{nb_er_hamiltonian}

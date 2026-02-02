@@ -6,18 +6,18 @@
 \begin{quote}
 \itshape
 
-In this chapter we introduce the required techniques used to achieve single spin resolution in our measurements. 
-Our detection scheme is based on single microwave photon counting using a detector that is designed and fabricated in-house.
-By inductively coupling the \Er spins to a superconducting resonator we enhance the radiative decay rate of the spins via the Purcell effect, which allows the extraction of microwave fluorescence from the spins after a resonant excitation. These photons are routed to the detector where they are readout.
+In this chapter we introduce the methods used to achieve single spin resolution. 
+Our detection scheme relies on a single microwave photon detector (SMPD) designed and fabricated in-house.
+By inductively coupling the \Er spins to a superconducting resonator we enhance the radiative decay rate of the spins via the Purcell effect, The spontaneously emitted microwave photons are routed towards the SMPD, where they are detected.
 
-We begin with a discussion of a superconducting circuit inductively coupled to an \Er spin, with the objective of arriving to a quantitative description of the Purcell effect. We then follow with a qualitative description of the detector and its performance metrics.
+We begin with a discussion of a superconducting circuit inductively coupled to an \Er spin, and describe the Purcell effect. We then follow with a qualitative description of the detector and its performance metrics.
 
 \end{quote}
 
 \section{Quantum circuits}
 \labsec{quantum_circuits}
 
-We consider a lumped element resonator, where the capacitance $C$ and the inductance $L$ can be considered as separate elements (see \reffig{resonator}). Classically, the energy of the system is given by the voltage $V$ that accumulates on the capacitor and the current $I$ that goes through the inductor 
+We consider a lumped element resonator \red{ref}, where the capacitance $C$ and the inductance $L$ can be considered as separate elements (see \reffig{resonator}). Classically, the energy of the system is given by the voltage $V$ that accumulates on the capacitor and the current $I$ that goes through the inductor 
 
 \begin{equation}
     E = \frac{1}{2}LI^2 + \frac{1}{2}CV^2
@@ -48,8 +48,8 @@ where $Q$ is the charge on the capacitor and $\phi$ is is the flux of the induct
 \begin{align}
 \begin{split}
     \cH{r} / \hbar = \omega_r(\hat{a}^\dagger \hat{a} + 1/2), \\
-    \hat{\phi} = \sqrt{\frac{\hbar Z_r}{2}} (\hat{a}^\dagger + \hat{a}) = \delta \hat{\phi} (\hat{a}^\dagger + \hat{a}), \\
-    \hat{Q} = i \sqrt{\frac{\hbar}{2 Z_r}} (\hat{a}^\dagger - \hat{a}) = i \delta \hat{Q} (\hat{a}^\dagger - \hat{a}),
+    \hat{\phi} = \sqrt{\frac{\hbar Z_r}{2}} (\hat{a}^\dagger + \hat{a}) = \delta \phi (\hat{a}^\dagger + \hat{a}), \\
+    \hat{Q} = i \sqrt{\frac{\hbar}{2 Z_r}} (\hat{a}^\dagger - \hat{a}) = i \delta Q (\hat{a}^\dagger - \hat{a}),
 \end{split}
 \end{align}
 
@@ -57,7 +57,7 @@ where $Q$ is the charge on the capacitor and $\phi$ is is the flux of the induct
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/resonator_energy.pdf}
-    \caption[Energy of a harmonic oscillator]{Energy diagram (black) and potential (green) of a harmonic oscillator with $\phi_0=  h/2e$. The levels are all separated by $\hbar\omega_r$}
+    \caption[Energy of a harmonic oscillator]{Energy diagram (black) and potential (green) of a harmonic oscillator with \red{$\phi_0=  h/2e$}. The levels are all separated by $\hbar\omega_r$}
     \labfig{resonator_energy}
 \end{marginfigure}
 
@@ -71,19 +71,20 @@ where $Q$ is the charge on the capacitor and $\phi$ is is the flux of the induct
 The electric and magnetic field have their associated ZPF ($\boldsymbol{\delta}\mathbf{E}(\mathbf{r})$ and $\boldsymbol{\delta}\mathbf{B}(\mathbf{r})$). These quantities have a spatial distribution: the magnetic field ZPF will be located close to the inductor and the electric field ZPF will be stronger between the capacitor plates.
 
 
-Throughout this work, the thermal energy of the system $k_B T$ is constantly lower than the energy of the resontor $\hbar \omega_r$ which ensures its quantum nature. 
+Throughout this work, the thermal energy of the system $k_B T$ is constantly lower than the energy of the resonator $\hbar \omega_r$ which ensures that the oscillator is at its vacuum state at thermal equilibrium. 
 
 \section{A spin inductively coupled to a resonator}
 \labsec{spin_coupled_to_resonator}
 
+We now consider the case of a single \Er spin in the $S=1/2$ approximation (see \red{ref}) coupled to a resonator. The Hamiltonian modeling the interaction between the two can be written as \sidecite{haroche_exploring_2006}:
 
-Since the \Er spins are intrinsic magnetic dipoles, they couple inductively to the resonator. Without loss of generality, the Hamiltonian that models the interaction between the two can be written as 
+%Since the \Er spins are intrinsic magnetic dipoles, they couple inductively to the resonator. Without loss of generality, 
 
 \begin{align}
     \cH{r-s} / \hbar = \omega_r(\hat{a}^\dagger \hat{a} + 1/2) +  \omega_S \hat{S}_z + \cH{int},
 \end{align}
 
-\noindent where $\omega_S = | \mathbf{B_0} \cdot \bar{\bar{\gamma}}_{\text{\Er}} | $ is the Larmor frequency of the \Er and we have arbitrarily chosen the $z$-axis as the orientation of $B_0$. The interaction Hamiltonian will be proportional to the magnetic field $\mathbf{B_1}$, generated by the resonator at the spin's position,
+\noindent where $\omega_S = | \mathbf{B_0} \cdot \bar{\bar{\gamma}}_{\text{\Er}} | $ is the Larmor frequency of the spin, and we have arbitrarily chosen the $z$-axis as the orientation of $B_0$. The spin couples inductively to the magnetic field generated by the resonator $B_1$, and the interaction Hamiltonian $\cH{int}$ is given by
 
 \begin{equation}
     \cH{int} / \hbar = \hat{\mathbf{B}}_1 \cdot \bar{\bar{\gamma}}_{\text{\Er}} \cdot \hat{\mathbf{S}} = (\hat{a}^\dagger + \hat{a}) \, \boldsymbol{\delta}\mathbf{B} \cdot \bar{\bar{\gamma}}_{\text{\Er}} \cdot \hat{\mathbf{S}},
@@ -111,7 +112,7 @@ Since the \Er spins are intrinsic magnetic dipoles, they couple inductively to t
 \end{split}
 \end{align}
 
-The relative strength between the parameters is controlled by the orientation of $\mathbf{B_1}$ with respect to the quantization axis of the \Er spin, $g_0$ is maximized when they are perpendicular to each other and zero when parallel. The effect of this interaction is more easily understood in the rotating frame of the resonator and the spin. The unitarty transformation to this frame is given by
+The relative strength between the parameters is controlled by the orientation of $\mathbf{B_1}$ with respect to the quantization axis of the \Er spin, $g_0$ is maximized when they are perpendicular to each other and zero when parallel. The effect of this interaction is more easily understood in the rotating frame of the resonator and the spin. The unitary transformation to this frame is given by
 
 \begin{align}
     \hat{U}(t) = \exp{i\left(\hbar\omega_r(\hat{a}^\dagger \hat{a} + 1/2) +  \omega_S \hat{S}_z\right)t/\hbar},
@@ -141,7 +142,7 @@ The last step corresponds to the rotating-wave approximation. When the spin and 
 
 \subsection{Resonator design}
 
-The design of the resonator used throughout this work is depicted in \reffig{sample}.a. It is composed of two plates separated by an interdigitated capacitor and connected through a small constriction: a nanowire with a width of 300~nm parallel to the $c$-axis. The resonator is designed to maximize the coupling strength $g_0$.
+The design of the resonator used throughout this work is depicted in \reffig{sample}.a. It is composed of two superconducting electrodes separated by an interdigitated capacitor and connected through a small constriction: a nanowire with a width of 300~nm parallel to the $c$-axis. The resonator is designed to maximize the coupling strength $g_0$.
 
 From this geometry we can estimate the coupling to the spins when the static magnetic field is applied along the $c$-axis. The spins will couple to the resonator through the magnetic field generated by the the nanowire, which can be estimated  using the Biot-Savart law
 
@@ -179,7 +180,8 @@ Using finite element simulations we estimate the capacitance and inductance of t
 
 \subsection{The effect of the environment: losses and the Purcell effect}
 
-We have considered the system of a resonator coupled to a spin isolated from the environment. In reality, both interact with the outside world in ways that are not tractable through unitary Hamiltonian evolution and require a more indirect approach. These external degrees of freedom effectively induce energy losses on both the resonator and the spin, as shown in \reffig{resonator_spin_lines}. The resonator can lose energy into the dielectric at a rate $\kappa_i$ and is capacitively coupled to microwave transmission lines, with which it exchanges energy at a rate $\kappa_c$. Therefore, the total loss rate of the resonator is $\kappa = \kappa_i + \kappa_c$. \sidenote{We say the resonator is overcoupled when the total loss is dominated by the capacitive coupling ($\kappa_c>\kappa_i$), undercoupled when the internal damping dominates ($\kappa_c<\kappa_i$), and critically coupled when they are balanced ($\kappa_c=\kappa_i$).} The spins, on the other hand, can spontaneously decay into the lattice via phonons. The non-radiative decay rate for \Er:\Ca at 10~mK is $\Gamma_\text{NR}/2\pi \approx 200$~kHz \sidecite{ledantec_electron_2022} and the surrounding magnetic environment induces decoherence at a rate $\Gamma_2$.
+So far, we have considered a resonator coupled to a spin isolated from the environment. In reality, the coupling to the environment requires an open-system description. These external degrees of freedom effectively induce energy losses on both the resonator and the spin, as shown in \reffig{resonator_spin_lines}. The resonator can lose energy into the dielectric at a rate $\kappa_i$ and is capacitively coupled to microwave transmission lines, with which it exchanges energy at a rate $\kappa_c$. Therefore, the total loss rate of the resonator is $\kappa = \kappa_i + \kappa_c$. \sidenote{We say the resonator is overcoupled when the total loss is dominated by the capacitive coupling ($\kappa_c>\kappa_i$), undercoupled when the internal damping dominates ($\kappa_c<\kappa_i$), and critically coupled when they are balanced ($\kappa_c=\kappa_i$).} The spins, on the other hand, can spontaneously decay into the lattice via phonons. The non-radiative decay of \Er at $8$~GHz and $10$~mK with $B_0$ along the c axis has been measured to be $\Gamma_\text{NR} = 5$~s$^-1$ \sidecite{ledantec_electron_2022}. In addition, the surrounding magnetic environment induces decoherence at a rate $\Gamma_2$.
+
 
 \begin{figure}
     \includegraphics{chapter2/figures/resonator_spin_lines.pdf}
@@ -194,7 +196,7 @@ Depending on the relative magnitude of the coupling $g_0$ and the relevant loss 
     \item \textit{Weak coupling regime}: $g_0 \ll \kappa, \Gamma_2$, where energy is damped before any coherent oscillations can occur.
 \end{itemize}
 
-The as measured in \refch{sample_and_setup}, the total losses of the resonator used in this work are $\kappa/2\pi \approx 700$~kHz. By comparing the losses to the expected coupling to the spins $g_0/2\pi \approx 10$~kHz $\ll \kappa$ we conclude we are deep in the weak-coupling regime. Nevertheless, the resonator enhances the density of states at the resonant frequency therefore boosting the radiative decay rate of any resonant \Er spin via the Purcell effect \sidecite{purcell_resonance_1946}. The Purcell radiative relaxation rate\sidenote{An in-depth derivation of the Purcell effect can be found in \cite{haroche_exploring_2006}.} is given by
+The as measured in \refch{sample_and_setup}, the total losses of the resonator used in this work are $\kappa/2\pi \approx 700$~kHz. By comparing the losses to the expected coupling to the spins $g_0/2\pi \approx 10$~kHz $\ll \kappa$ we conclude we are deep in the weak-coupling regime. Nevertheless, the resonator enhances the density of states at the resonant frequency therefore enhancing the radiative decay rate of any resonant \Er spin via the Purcell effect \sidecite{purcell_resonance_1946}. The Purcell radiative relaxation rate\sidenote{An in-depth derivation of the Purcell effect can be found in \cite{haroche_exploring_2006}.} is given by
 
 \begin{equation}
 \label{eq:Purcell_formula}
@@ -207,11 +209,11 @@ The as measured in \refch{sample_and_setup}, the total losses of the resonator u
 \Delta\omega(\omega_S) = (\omega_r-\omega_S)\, \frac{g_0^2}{(\omega_r-\omega_S)^2 + \kappa^2/4}.
 \end{equation}
 
-At exact resonance ($\omega_r=\omega_S$) the shift vanishes and the Purcell rate is given by $\Gamma_\text{R}=4g_0^2/\kappa$, and the corresponding Purcell-limited lifetime is $\tau_P = 1/\Gamma_{S}$. Using the parameter estimates above gives $\Gamma_\text{R}\sim10^3\ \mathrm{s}^{-1}$, which is several orders of magnitude larger than the intrinsic phonon-limited relaxation. Consequently, the main relaxation path for resonant \Er spins becomes radiative.
+At exact resonance ($\omega_r=\omega_S$) the shift vanishes and the Purcell rate is given by $\Gamma_\text{R}=4g_0^2/\kappa$. Using the parameter estimates above gives $\Gamma_\text{R}\sim10^3\ \mathrm{s}^{-1}$, which is several orders of magnitude larger than $\Gamma_\text{NR}$. Consequently, the main relaxation mechanisms for resonant \Er spins becomes radiative.
 
-The resulting photons can either be dissipated due to material losses in the substrate or sent to the coupled microwave lines, depending on the ratio between the $\kappa_i$ and $\kappa_c$. As demonstrated in previous work the optimal ratio for single photon detection is $\kappa_i = \kappa_c$ \sidecite{wang_addressing_2023} which are approximately the conditions achieved for this thesis (see \refsec{sample_details}).
+The resulting photons can either be dissipated due to material losses or sent to the coupled microwave lines, depending on the ratio between the $\kappa_i$ and $\kappa_c$. In this experimental chapters of this manuscript, we work at the critical coupling regime, where $\kappa_i = \kappa_c$ (see \refsec{sample_details}).
 
-\subsection{Controlling the state of the \Er spin}
+\subsection{Driving the \Er spin}
 \labsec{rabi_oscillations_theory}
 
 In this section, we derive how a coherent drive on the resonator induces Rabi oscillations of the spin which naturally reveals the role of the cavity as a Lorentzian filter. We begin by considering the Jaynes-Cummings Hamiltonian, where the resonator is under the effect of a drive with complex amplitude $\epsilon_d$ and frequency $\omega_d$
@@ -271,7 +273,7 @@ If the amplitude of the coherent state is sufficiently large ($|\alpha|\gg1$) th
     \Omega = 2g_0|\alpha| = \frac{2g_0\epsilon_d}{\sqrt{\Delta_r^2 + \kappa^2/4}} \propto \frac{\bra{\Uparrow} S_x \ket{\Downarrow}}{\sqrt{\Delta_r^2 + \kappa^2/4}}.
 \end{equation}
 
-This corresponds to the classical two-level-system under drive and has an analytical solution. In addition, we note that $\Omega$ scales proportionally to the $S_x$ matrix element between the two relevant states and is filtered by  a Lorentzian function centered around the cavity frequency. These concepts will be relevant in the following section, when considering weakly allowed transitions with small oscillator strength.
+This corresponds to a driven two-level system Hamiltonian. We note that $\Omega$ scales proportionally to the $S_x$ matrix element between the two relevant states and is filtered by  a Lorentzian function centered around the cavity frequency. These considerations will be relevant in the following section, when treating weakly allowed transitions with small oscillator strength.
 
 If the spin is initially in the ground state, the excited-state population at time $t$ is
 
@@ -293,26 +295,32 @@ At resonance ($\Delta_S=0$), this reduces to simple Rabi oscillations
     P_e(t) = \sin^2\!\left(\tfrac{\Omega}{2}\,t\right),
 \end{equation}
 
-and the with resonant Rabi frequency given by  $\Omega = 2g_0|\alpha| = 4g_0 \epsilon_d / \kappa $
+with resonant Rabi frequency given by  $\Omega = 2g_0|\alpha| = 4g_0 \epsilon_d / \kappa $
 
-\reffig{spin_trajectory} shows the quantum trajectory of the spin in the Bloch sphere under the influence of a detuned drive with phase $\phi=0$. The state evolves from the ground state $\ket{\Downarrow}$ and is coherently excite. However, full population transfer to the excited state is only possible when $\Delta_S=0$.
+\reffig{spin_trajectory} shows the quantum trajectory of the spin in the Bloch sphere under the influence of a detuned drive with phase $\phi=0$. The state evolves from the ground state $\ket{\Downarrow}$ and is coherently excited. Full population transfer to the excited state is only possible when $\Delta_S=0$.
 
 
 \section[Detecting individual Er3+ ions through their fluorescence]{Microwave photon counting}
 \labsec{Detecting_individual_Er}
 
-Single-electron spin sensitivity has been recently demonstrated in our group through the use of a unique device known as the Single Microwave Photon Counter (SMPD) \sidecite{wang_addressing_2023}. The device is based on a superconducting circuit, designed to detect individual microwave photons with high efficiency in a narrow frequency bandwidth \sidecite{lescanne_irreversible_2020}. The device consists of a transmon qubit coupled to two coplanar waveguide resonators, called the \textit{buffer} and the \textit{waste} resonators. In brief, the incoming photon arrives to the buffer resonator and is converted to an excitation in the qubit and the waste through a parametric process controlled by a pump tone. The waste is strongly coupled to the microwave lines and the excitation on this resonator is rapidly dissipated, which blocks the reverse process from happening. Finally, we dispersively readout the qubit and depending on its state a detection is tallied or not. After resetting the state of the qubit to the ground state, we repeat the detection cycle. 
+Single-electron spin sensitivity has been recently demonstrated in our group through the use of a unique device known as the Single Microwave Photon Counter (SMPD) \sidecite{wang_addressing_2023}. The device is based on a superconducting circuit, designed to detect individual microwave photons with high efficiency in a narrow frequency bandwidth \sidecite{lescanne_irreversible_2020}. The device consists of a transmon qubit coupled to two coplanar waveguide resonators, called the \textit{buffer} and the \textit{waste} resonators. The incoming photon impinges the buffer resonator and is converted to an excitation in the qubit and the waste through a parametric process controlled by a pump tone. The waste is strongly coupled to the microwave lines and the excitation on this resonator is rapidly dissipated, rendering the process irreversible. Finally, the state of the qubit is measured via dispersive readout through the waste resonator. The qubit is conditionally reset with a $pi$-pulse and subsequently readout until it's measured in its ground states. This process is repeated cyclically.
 
 The detector used in this work was designed, fabricated and characterized by Louis Pallegoix and an in depth study can be found in \sidecite{pallegoix_high_2025, pallegoix_enhancing_2025}. The main improvement of this design with respect to the previous generation is the tunable input bandwidth between $\sim$100~kHz and $\sim$1~MHz. For our purposes, we only discuss the relevant performance metrics: the dark count rate and the quantum efficiency. Appendix \ref{app:SMPD} gives a summary explanation of the operation and characteristics of the device. 
 
-The quantum efficiency of the detector is the rate between detected photons and input photons. The dark count rate corresponds to the detection rate when the device is operated without any input signal. Its origin can be traced back to two main effects, spurious qubit excitations and thermal photons on the microwave lines. By reducing the input bandwidth of the detector, we can minimize the effect of the microwave lines radiation. \red{fig} shows a series of traces as a function of calibrated input power: at zero power, the detection events correspond to the dark count rate of the detector, as the power increases the number of counts also does so, until the detector saturates. We measure the efficiency of the detector by fitting the number of detection events as a function of the calibrated input power with a linear curve (see \red{fig}). In this work we operate the SMPD at 300~$kHz$ where the quantum efficiency is approximately 0.8 and the dark count rate fluctuates between 50 and 100 counts/s.
+The quantum efficiency of the detector is the ratio between the number of counts and the number of incoming photons. The dark count rate is the count rate when the device is operated without any input signal. Its origin can be traced back to two main effects, spurious qubit excitations and thermal photons on the microwave lines. 
+%By reducing the input bandwidth of the detector, we can minimize the effect of the microwave lines radiation. 
+\red{fig} shows a series of traces as a function of calibrated input power: at zero power, the detection events correspond to the dark count rate of the detector, as the power increases the number of counts also does so, until the detector saturates. We measure the efficiency of the detector by fitting the number of detection events as a function of the calibrated input power with a linear curve (see \red{fig}). In this work we operate the SMPD at $300$~kHz where the quantum efficiency is approximately 0.8 and the dark count rate fluctuates between 50 and 100~counts/s.
 
-Our measurements are performed by monitoring the Purcell enhanced microwave fluorescence of the \Er spin after a resonant excitation using the SMPD. Unlike traditional single-spin readout methods that rely on spin-dependent optical fluorescence \sidecite{wrachtrup_optical_1993} or on transport-based spin-to-charge conversion (STM \sidecite{elzerman_singleshot_2004} or quantum-dot readout \sidecite{rugar_single_2004}), microwave photon counting operates entirely in the microwave regime and does not require system specific mechanisms like optical transitions or spin-to-charge conversion. 
+\section{Single-spin detection by microwave photon counting}
+\labsec{single_spin_detection_microwave_photon_counting}
 
-The measurement scheme is summarized by the diagram presented in \reffig{resonator_spin_SMPD}. The crystalline \Ca sample, where the \Er spins are hosted, takes the form of a rectangular monocrystalline slab. On the surface of the crystal, a superconducting Nb thin film resonator is fabricated. The \Er spins are inductively coupled to the resonator through the magnetic field generated by the nanowire inductive element, thereby enhancing their radiative relaxation rate via the Purcell effect. A microwave pulse is generated at room temperature with a frequency that is resonant with the cavity. If an \Er ion is also resonant with the cavity, it will be excited and the microwave fluorescence will be routed with a microwave circulator to the SMPD, where it is
-
-\begin{figure*}[b!]
+\begin{figure*}
     \includegraphics{chapter2/figures/resonator_spin_SMPD.pdf}
     \caption[Detection Scheme]{Detection Scheme. An microwave pulse (black arrow) is sent to the superconducting resonator (orange), fabricated on the surface of a \Ca crystal, which excites a resonant \Er spin (red). Via the Purcell effect, the spontaneous microwave emission (red arrow) is collected in the microwave lines and routed through a circulator to the SMPD where it is detected as a count.}
     \labfig{resonator_spin_SMPD}
 \end{figure*}
+
+
+Most of the measurements shown in this manuscript are performed by monitoring the Purcell enhanced microwave fluorescence of the \Er spin after a resonant excitation using the SMPD. Unlike traditional single-spin readout methods that rely on spin-dependent optical fluorescence \sidecite{wrachtrup_optical_1993} or on transport-based spin-to-charge conversion (STM \sidecite{elzerman_singleshot_2004} or quantum-dot readout \sidecite{rugar_single_2004}), microwave photon counting operates entirely in the microwave regime and does not require system specific mechanisms like optical transitions or spin-to-charge conversion. 
+
+The measurement scheme is summarized by the diagram presented in \reffig{resonator_spin_SMPD}. The crystalline \Ca sample, where the \Er spins are hosted, takes the form of a rectangular monocrystalline slab. On the surface of the crystal, a superconducting Nb thin film resonator is fabricated. The \Er spins are inductively coupled to the resonator through the magnetic field generated by the nanowire inductive element, thereby enhancing their radiative relaxation rate via the Purcell effect. A microwave pulse is generated at room temperature with a frequency that is resonant with the cavity. If an \Er spin is resonant with the cavity, it will be excited. The spin with subsequently spontaneously relax into a microwave photon, routed with a microwave circulator to the SMPD, where it is detected.

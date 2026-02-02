@@ -2,58 +2,55 @@
 \chapter{Sample and setup}
 \labch{sample_and_setup}
 
-In this section \red{blabla}
 
+\begin{quote}
+\itshape
 
+In this chapter \red{blabla}
+
+\end{quote}
 
 \section{Sample details}
 \labsec{sample_details}
 
-\begin{itemize}
-    \item details
-    \item Resonator simulations ?
-    \item Resonator Fab ?
-    \item 3D cavity
-\end{itemize}
+The experiments presented in this thesis were carried out on a single monocrystalline \Ca sample on which a superconducting thin-film resonator was fabricated. 
 
-The experiments presented in this thesis were carried out on a single monocrystalline \Ca sample on which a superconducting thin-film resonator was fabricated. The fabrication followed the procedures developed by previous group members \sidecite{ledantec_electron_2022a, wang_addressing_2023}. The key modification implemented in this work was the reduction of the nanowire thickness from 500~nm to 300~nm, resulting in an increased magnetic coupling strength to the \Er ions.
+The \Ca sample used in this work was grown from high-purity, natural-abundance materials and no paramagnetic impurities were added during crystal growth\sidenote{Specific details on the growth of a similar sample can be found in \cite{erb_growth_2013}.}. Standard ESR measurements yield a residual \Er concentration of 3.1~ppb (see \red{appendix}), a level low enough to strongly suppress dipolar interactions between impurities. In addition, the nuclear-spin environment of \Ca is dominated by \W nuclear-spins, which have a natural abundance of 14.4\% and a remarkably low gyromagnetic ratio $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T \sidecite{knight_solidstate_1986}. The combination of a low density of nuclear-spins and a weak gyromagnetic ratio results in an environment with a reduced magnetic moment density. As such, the magnetic noise perceived by any paramagnetic impurity hosted in the crystal is significantly smaller when compared to other hosts used in quantum applications, such as yttrium orthosilicate (Y$_2$SiO$_5$) and yttrium oxide (Y$_2$O$_3$). Extremely low doping and low magnetic moment density are crucial for achieving long spin coherence, as demonstrated by previous work of the group performed by Marianne le Dantec, where ensemble coherence times up to 23~ms were measured in a sample of similar characteristics \sidecite{ledantec_twentythreemillisecond_2021}. 
 
-The \Ca sampled used for this work was grown using high-purity, natural-abundance materials and no paramagnetic impurities were added during crystal growth\sidenote{Specific details on the growth of a similar sample can be found in \cite{erb_growth_2013}.}. Nevertheless, the sample contains a residual concentration of \Er impurities of 3.1~ppb, measured using electron-spin resonance (ESR) techniques \red{appendix}. Such a low concentration of paramagnetic ions is crucial to achieve large spin coherence times for \Er, as demonstrated by earlier work of the group where ensemble spin coherence times as long as 23~ms have been demonstrated for \Er:\Ca \sidecite{ledantec_twentythreemillisecond_2021}.
+\subsection{Resonator design and fabrication}
 
-The \Ca sample used in this work was grown from high-purity, natural-abundance materials and no paramagnetic impurities were added during crystal growth\sidenote{Specific details on the growth of a similar sample can be found in \cite{erb_growth_2013}.}. Standard ESR measurements yield a residual \Er concentration of 3.1~ppb (see \red{appendix}), a level low enough to strongly suppress dipolar interactions between impurities. This extremely low doping is crucial for achieving long spin coherence, as demonstrated by previous work of the group, where ensemble coherence times up to 23~ms were measured in \Er:\Ca \sidecite{ledantec_twentythreemillisecond_2021}.
+\begin{marginfigure}
+    \includegraphics{chapter2/figures/sample_alone.pdf}
+    \caption[Sample micrograph]{False color micrograph of a Nb thin-film resonator of the same design fabricated on a \Ca crystal. The nanowire is colored in red while the rest of the resonator is colored yellow. The picture is stitched from 2 independent images.} 
+    \labfig{sample_alone}
+\end{marginfigure}
 
-A key property of \Ca that enables long spin coherence is its low magnetic density. The nuclear-spin environment of \Ca is predominantly composed of \W nuclear-spins, which have a natural abundance of 14.4\% and remarkably low gyromagnetic ratio $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T \sidecite{knight_solidstate_1986}. The combination of a low density of nuclear-spins and a weak gyromagnetic ratio results in an environment with a reduced magnetic moment density. As such, the magnetic noise perceived by any paramagnetic impurity hosted in the crystal is significantly reduced compared to other hosts used in quantum applications, such as yttrium orthosilicate (Y$_2$SiO$_5$, YSO) and yttrium oxide (Y$_2$O$_3$). This results in slow spectral diffusion and increased coherence times for any paramagnetic impurity hosted in the crystal.
+A superconducting resonator is fabricated on top of the \Ca sample. The resonator is made of a 50~nm thick Nb film which is shown in \reffig{sample_alone}. It is composed of two superconducting electrodes separaited by an interdigitated capacitor and connected through a small constriction: a nanowire with a length of 50~\textmu m and a width of 300~nm parallel to the $c$-axis. The design parameters of the resonator are discussed in \refch{spins_coupled_to_a_cavity}.
 
-% Based on the measured concentration we can estimate that the average distance between \Er ions is approximately 0.3 \textmu m  \sidenote{There are four calcium sites in a single unit cell with volume $V_{\text{unit cell}}\sim310\ \text{\AA}^3$. The Ca site density is then
-% \begin{equation*}
-%     4/310 \approx 1.3\times10^{-2} \text{~A}^{-3}
-% \end{equation*} 
-% With [\Er]=3.1~ppb, the \Er density is 
-% \begin{equation*}
-%     n_{\text{\Er}} \approx 4.0\times10^{-11} \text{~A}^{-3}
-% \end{equation*} 
-% and the characteristic spacing is
-% \begin{equation*}
-%     n_{\text{\Er}}^{-1/3} \approx 2.9\times10^{3}\text{~A}\approx0.29\text{~\textmu m} 
-% \end{equation*}
-% } 
-% This distance is large enough that interactions between paramagnetic impurities can be effectively neglected except in specific cases where two ions are, by chance, in close proximity. Consequently, we consider that the magnetic environment in the crystal is dominated by \W nuclear-spin.
+The parameters of the resonator where tailored using finite element simulations in \texttt{HFFS} and the fabrication of the resonator was performed following the procedures developed by Zhiren Wang and Marianne le Dantec, previous group members. The key modification implemented in this work was the reduction of the nanowire thickness from 500~nm to 300~nm, resulting in an increased magnetic coupling strength to the \Er spins. Given that no major design changes were performed for the resonator compared to previous work, we point the reader to their respective thesis for a detailed discussion on the microwave simulations and the fabrication techniques \sidecite{ledantec_electron_2022a, wang_addressing_2023}.
+
 
 \subsubsection{Sample assembly}
 
-To deliver microwave signals to the spin resonator, the sample was mounted inside a 3D copper cavity and coupled to the microwave lines via a pin antenna \sidenote{In transmission mode the resonator is coupled to two antennas connected to separate outputs.}. The antenna is soldered to an SMA connector and passes through a small pinhole in the cavity wall and the coupling is tuned by adjusting the antenna insertion depth. The sample is affixed to a silicon bridge with vacuum grease, and the bridge is held in place by compression between the cavity halves. See \red{reffig}. The 3D cavity is then mounted on the fridge with a three-axis magnet surrounding the assembly. 
+\begin{figure*}[b!]
+    \includegraphics{chapter2/figures/wiring_diagram.pdf}
+    \caption[Wiring diagram]{Cryogenic wiring diagram with the two configurations used in this work. Two different setups were used during the course of this thesis. The main changes are outlined in the bottom separating the components between the reflection and the transmission setups. Line names are marked at the top which indicate: $i$ for input, $o$ for output, $p$ for TWPA pumping and $dc$ for DC bias lines}
+    \labfig{wiring_diagram}
+\end{figure*}
+
+
+To deliver microwave signals to the spin resonator, the sample was mounted inside a 3D copper cavity with low quality factor. During this work two different setups were used: first, in Chapters \ref{ch:detection_and_control_of_individual_w} and \ref{ch:individual_nuclear_spins_quantum_information} we use a reflection configuration with a single pin antenna, capacitively couples the resonator to the microwave lines. Second, in Chapter \ref{ch:nb_nuclear_spin} a transmission setup used, where the resonator is coupled with two antennas to separate lines, one for input and one for output. The antennas are soldered to an SMA connector and pass through a small pinhole in the cavity wall. The coupling of the resonator to the antennas is tuned by adjusting the antenna insertion depth. The sample is affixed to a silicon bridge with vacuum grease, and the bridge is held in place by compression between the cavity halves. See \red{reffig}. The 3D cavity is then mounted on the fridge with a three-axis magnet surrounding the assembly. 
 
 \section{Measurement setup}
 
-In order for the SMPD to properly operate and for the spin population to be polarized in the ground state, the experiments need to be performed at cryogenic temperature. In order to achieve this requirement, both the sample and the SMPD are mounted at the bottom stage of a dilution refrigerator, where a temperature of 10~mK can be achieved. We use microwave coaxial cable and low temperature components to deliver the microwave signals and interface the devices. The wiring diagram of the fridge is presented in \reffig{wiring_diagram}.  During the wiring of the cryostat, special care was taken to properly attenuate the lines that are directly connected to the SMPD. Lack of proper attenuation leads to increased thermal dark counts, degrading the performance of the detector.  \red{do room temperature diagram}
+In order for the SMPD to properly operate and for the spin population to be polarized in the ground state, the experiments need to be performed at cryogenic temperature. In order to achieve this requirement, both the sample and the SMPD are mounted at the bottom stage of a dilution refrigerator, where a temperature of 10~mK can be achieved. We use microwave coaxial cable and low temperature components to deliver the microwave signals and interface the devices. In the reflection setup, the coupling of the antenna to the resonator is tuned to achieve critical coupling. In transmission configuration the coupling rates of the two antennas are dissimilar by a factor $\sim10$, with the larger one being the output line, so that most of the fluorescent photons are directed to the SMPD. 
 
-We note that during the course of this thesis two measurement configurations were employed: a reflection configuration and a transmission configuration. These correspond to the two experimental runs that comprise the bulk of the results. The first run, performed in reflection mode, comprises the work presented in chapters \ref{ch:detection_and_control_of_individual_w} and \red{ch}. The results of the second run were obtained in transmission mode and are presented in \red{refsec}. The motivation for switching to the transmission configuration was the expectation that placing the microwave cavity between the room-temperature environment and the SMPD input would reduce the flux of thermal photons reaching the detector and therefore lower the dark-count rate. In practice this we did not measure any significant effect. In addition, when switching to the transmission configuration, a second TWPA was added at the output of the resonator with the intention of performing a specific experiment, which has not taken place yet.
+The wiring diagram of the fridge is presented in \reffig{wiring_diagram}. During the wiring of the cryostat, special care was taken to properly attenuate the lines that are directly connected to the SMPD. Lack of proper attenuation leads to increased thermal dark counts, degrading the performance of the detector.  \red{do room temperature diagram}
 
-\begin{figure*}[h!]
-    \includegraphics{chapter2/figures/wiring_diagram.pdf}
-    \caption[Wiring diagram]{Cryogenic wiring diagram with the two configurations used in this work. Two different setups were used during the course of this thesis. The main changes are outlined in the bottom separating the components between the reflection and the transmission setups.}
-    \labfig{wiring_diagram}
-\end{figure*}
+As with the cavity setup, we note that two measurement configurations were employed: a reflection and a transmission configuration. These correspond to the two experimental runs that comprise the bulk of the results. The motivation for switching to the transmission configuration was the expectation that placing the microwave cavity between the room-temperature environment and the SMPD input would reduce the flux of thermal photons reaching the detector and therefore lower the dark-count rate. In practice, we did not measure any significant effect. In addition, when switching to the transmission configuration, a second TWPA was added at the output of the resonator with the intention of performing a particular experiment, which has not taken place yet.
+
+The SMPD has been described in \refsec{Detecting_individual_Er}, Appendix~\ref{app:SMPD} and ref.\sidecite{pallegoix_enhancing_2025}. The SMPD pump is sent through line $i3$. The frequency and bandwidth are tuned by sending current through lines $dc1$ and $dc2$, respectively. The SMPD input line being filtered by the resonator, we instead use the qubit drive line ($i3$), coupled to the buffer input by weak capacitive coupling, to tune the SMPD parameters (pump frequency and amplitude) for maximum detection efficiency. Readout pulses are sent through line $i2$, and the reflected signals are directed to output line $o1$, which contains a TWPA1 pumped through line $p1$.
+
 
 The magnet is a 1T/1T/1T superconducting vector magnet, which can produce magnetic field along the three orthogonal directions $X$, $Y$ and $Z$. The coils are independently driven by three current sources which can be individually shunted on demand which allows the magnets to go into \textit{persistent mode} which locks the current going through the superconducting magnet. Consequently, when performing any single spin measurements the magnet is always set into persistent mode as the stability of the field is greatly increased. Given that the resonator is a superconducting film, the magnetic field needs to be applied on the plane of the resonator, as any small out-of-plane component will destory the superconducting its properties.
 
@@ -69,6 +66,14 @@ The initial characterization of the resonator is performed at zero magnetic fiel
     \labfig{resonator_fit}
 \end{marginfigure}
 
+To tune the SMPD input frequency to $\omega_r$, we sweep a weak probe tone around the resonator frequency on $i1$ while varying the voltage applied to the DC tuning line $dc1$. The probe tone is filtered by the resonator before entering the SMPD, while the DC voltage tunes the SMPD transition frequency.
+
+The SMPD response for different DC voltages appears as a set of narrow resonance lines with linewidths of approximately 300 kHz, shown in different colors in \red{fig}. Each individual trace is well described by a Lorentzian lineshape, and the extracted peak positions (red triangles) form a broader envelope corresponding to the resonator response. Fitting this envelope yields a resonator linewidth of 740 kHz. We observe a slight asymmetry in the envelope lineshape, which we attribute to weak parasitic transmission interfering with the resonant response. This asymmetry is well captured by a Fano model; however, the extracted linewidth agrees with the Lorentzian fit within uncertainty, and the large Fano asymmetry parameter indicates that the parasitic contribution is weak and does not affect the linewidth determination.
+
+In \red{fig}, the SMPD resonance frequency is plotted as a function of the applied DC voltage and fitted with a linear relation. Using this calibration, we set the DC voltage corresponding to the resonator frequency, thereby aligning the SMPD to the resonator. 
+%This information is also used to tune the SMPD frequency across different electron transition frequencies in Fig. \ref{fig1}c since they span wider than the SMPD bandwidth.
+
+\section{Magnetic field alignment}
 
 During the mounting process, the resonator assembly is fixed such that the $Y$ and $Z$ axes of the magnet are close to the plane of the resonator. Due to the limited precision of manual alignment, we begin the experimental run by measuring the relative alignment between these coordinate frames. We follow the procedure described in \sidecite{dantec_electron_2022}, which we briefly summarize below.
 

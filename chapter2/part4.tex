@@ -6,16 +6,20 @@
 \begin{quote}
 \itshape
 
-In this Chapter we detail the experimental setup and procedures used during the experimental chapters of this work. We describe the \Ca sample and the resonator that is fabricated on its surface. We describe the assembly of the sample and its integration in the dilution refrigeration along with the SMPD. Then, we present the resonator characterization at zero field and the protocol we use to tune the detection frequency of the SMPD to the resonator frequency. After this preliminary characterization, we summarize the magnetic-field alignment procedure and ensemble \Er spectroscopy using microwave photon counting. Finally, we outline the protocols used to detect, address and coherently control individual \Er spins as well characterize their relaxation and decoherence times.
+In this Chapter we detail the setup and procedures used in the experimental chapters. We describe the \Ca sample and the superconducting micro-resonator. We describe the assembly of the sample and its integration in the dilution refrigeration along with the SMPD. Then, we present the resonator characterization at zero field and the protocol we use to tune the detection frequency of the SMPD to the resonator frequency. After this preliminary characterization, we summarize the magnetic-field alignment procedure and ensemble \Er spectroscopy using microwave photon counting. Finally, we outline the methods used to detect, address and coherently control individual \Er spins as well characterize their relaxation and decoherence times.
 
 \end{quote}
 
-\section{Sample details}
+\section{Sample}
 \labsec{sample_details}
 
-The experiments presented in this thesis were carried out on a single monocrystalline \Ca sample on which a superconducting thin-film resonator was fabricated. 
+The experiments reported in this thesis were all carried out on one monocrystalline \Ca sample on which a superconducting thin-film resonator was fabricated. 
 
-The \Ca sample used in this work was grown by Philippe Goldner from high-purity, natural-abundance materials and no paramagnetic impurities were added during crystal growth\sidenote{Specific details on the growth of a similar sample can be found in \cite{erb_growth_2013}.}. Standard ESR measurements performed by Sylvain Bertrana yield a residual \Er concentration of 3.1~ppb, a level low enough to strongly suppress dipolar interactions between impurities. In addition, the nuclear-spin environment of \Ca is dominated by \W nuclear-spins, which have a natural abundance of 14.4\% and a remarkably low gyromagnetic ratio $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T \sidecite{knight_solidstate_1986}. The combination of a low density of nuclear-spins and a weak gyromagnetic ratio results in an environment with a reduced magnetic moment density. As such, the magnetic noise perceived by any paramagnetic impurity hosted in the crystal is significantly smaller when compared to other hosts used in quantum applications, such as yttrium orthosilicate (Y$_2$SiO$_5$) and yttrium oxide (Y$_2$O$_3$). Extremely low doping and low magnetic moment density are crucial for achieving long spin coherence, as demonstrated by previous work of the group performed by Marianne le Dantec, where ensemble coherence times up to 23~ms were measured in a sample of similar characteristics \sidecite{ledantec_twentythreemillisecond_2021}. 
+The sample was grown by Philippe Goldner using the Czochralski~\sidecite{erb_growth_2013} method from from CaCO3 (99.95\% purity) and WO3 (99.9\% purity). No paramagnetic impurities were added during crystal growth. Standard EPR measurements performed by Sylvain Bertrana on sample from the same \textit{boule} yield a residual \Er concentration of 3.1(2)~ppb~\sidecite{ledantec_electron_2022a}. The average distance between \Er ions at this concentration is 300~nm, far enough to suppress dipolar interactions between paramagnetic impurities. 
+
+The sample used in this work was cut out on a rectangular slab shape. Its dimensions are 7 mm by 4 mm by 2 mm, with its surface approximately along the $(a,c)$-plane of the crystal and the $c$-axis along the short edge. The polishing of the surface, performed by SurfaceNet GmbH, was reduced the thickness down to 0.5~mm.
+
+% The nuclear-spin environment of \Ca is dominated by \W nuclear-spins, which have a natural abundance of 14.4\% and a remarkably low gyromagnetic ratio $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T \sidecite{knight_solidstate_1986}. The combination of a low density of nuclear-spins and a weak gyromagnetic ratio results in an environment with a reduced magnetic moment density. As such, the magnetic noise perceived by any paramagnetic impurity hosted in the crystal is significantly smaller when compared to other hosts used in quantum applications, such as yttrium orthosilicate (Y$_2$SiO$_5$) and yttrium oxide (Y$_2$O$_3$). Extremely low doping and low magnetic moment density are crucial for achieving long spin coherence, as demonstrated by previous work of the group performed by Marianne le Dantec, where ensemble coherence times up to 23~ms were measured in a sample of similar characteristics \sidecite{ledantec_twentythreemillisecond_2021}. 
 
 \subsection{Resonator design and fabrication}
 
@@ -25,29 +29,40 @@ The \Ca sample used in this work was grown by Philippe Goldner from high-purity,
     \labfig{sample_alone}
 \end{marginfigure}
 
-A superconducting resonator is fabricated on top of the \Ca sample. The resonator is made of a 50~nm thick Nb film which is shown in \reffig{sample_alone}. It is composed of two superconducting electrodes separaited by an interdigitated capacitor and connected through a small constriction: a nanowire with a length of 50~\textmu m and a width of 300~nm parallel to the $c$-axis. The design parameters of the resonator are discussed in \refch{spins_coupled_to_a_cavity}.
+A superconducting resonator is fabricated on top of the \Ca sample, out of a 50-nm-thick niobium film, and is shown in \reffig{sample_alone}. It consists of two superconducting electrodes separated by an interdigitated capacitor and connected through a small constriction: a nanowire with a length of 50~\textmu m and a width of 300~nm parallel to the $c$-axis. The design parameters of the resonator are discussed in \refch{spins_coupled_to_a_cavity}.
 
-The parameters of the resonator where tailored using finite element simulations in \texttt{HFFS} and the fabrication of the resonator was performed following the procedures developed by Zhiren Wang and Marianne le Dantec, previous group members. The key modification implemented in this work was the reduction of the nanowire thickness from 500~nm to 300~nm, resulting in an increased magnetic coupling strength to the \Er spins. Given that no major design changes were performed for the resonator compared to previous work, we point the reader to their respective thesis for a detailed discussion on the microwave simulations and the fabrication techniques \sidecite{ledantec_electron_2022a, wang_addressing_2023}.
+The parameters of the resonator where tailored using finite element simulations in \texttt{HFFS} and the fabrication of the resonator was performed following the procedures developed by Zhiren Wang and Marianne le Dantec in ref.~\sidecite{ledantec_electron_2022a} \& \sidecite{wang_addressing_2023}. The key modification implemented in this work was the reduction of the nanowire width from 500~nm to 300~nm, resulting in an increased magnetic coupling strength to the \Er spins. Given that no major design changes were performed for the resonator compared to previous work, we point the reader to the previous references for a detailed discussion on the microwave simulations and the fabrication techniques
 
 
 \subsubsection{Sample assembly}
 
-\begin{figure*}[b!]
-    \includegraphics{chapter2/figures/wiring_diagram.pdf}
-    \caption[Wiring diagram]{Cryogenic wiring diagram with the two configurations used in this work. Two different setups were used during the course of this thesis. The main changes are outlined in the bottom separating the components between the reflection and the transmission setups. Line names are marked at the top which indicate: $i$ for input, $o$ for output, $p$ for TWPA pumping and $dc$ for DC bias lines}
-    \labfig{wiring_diagram}
+\begin{figure*}
+    \includegraphics{chapter2/figures/resonator_assembly.pdf}
+    \caption[Resonator assembly]{Resonator and copper cavity assembly. Since the sample remains in the fridge at the time of writing this manuscript, the image was taken from ref.~\cite{wang_addressing_2023}, which used a similar assembly.
+    \textbf{a.} Zoomed view of the sample. The \Ca sample in the figure $4 \times 7$~mm and three resonators have been fabricated on top. We note that in the real sample used for this work, the chip broke during fabrication but left one resonator unharmed. The sample is affixed to a silicon bridge (dark rectangle) supported by the copper cavity.
+    \textbf{b.} Open copper cavity. The cavity is set up in the reflection configuration, where only one metallic antenna is present. The antenna is soldered to a SMA port which connects to the microwave lines. A second hole (visible as a small speck on top of the antenna) is used to introduce a second antenna in the transmission configuration. The hole is covered with copper tape in the outside in the reflection setup.}
+    \labfig{resonator_assembly}
 \end{figure*}
 
 
-To deliver microwave signals to the spin resonator, the sample was mounted inside a 3D copper cavity with low quality factor. During this work two different setups were used: first, in Chapters \ref{ch:detection_and_control_of_individual_w} and \ref{ch:individual_nuclear_spins_quantum_information} we use a reflection configuration with a single pin antenna, capacitively couples the resonator to the microwave lines. Second, in Chapter \ref{ch:nb_nuclear_spin} a transmission setup used, where the resonator is coupled with two antennas to separate lines, one for input and one for output. The antennas are soldered to an SMA connector and pass through a small pinhole in the cavity wall. The coupling of the resonator to the antennas is tuned by adjusting the antenna insertion depth. In the reflection setup, the coupling of the antenna to the resonator is tuned to achieve critical coupling. In transmission configuration the coupling rates of the two antennas are dissimilar by a factor $\sim10$, with the larger one being the output line, so that most of the fluorescent photons are directed towards the detector.  The sample is affixed to a silicon bridge with vacuum grease, and the bridge is held in place by compression between the cavity halves. See \red{reffig}. The 3D cavity is then mounted on the fridge with a three-axis magnet surrounding the assembly. 
+The sample is mounted in a copper sample holder. The resonator is coupled capacitively to the SMA connectors used as antennas. The sample is affixed to a silicon bridge with vacuum grease, and the bridge is held in place by compression between the cavity halves. See \reffig{resonator_assembly}. The copper cavity is then mounted on the fridge with a three-axis magnet surrounding the assembly. 
+
+During this work two different setups were used: first, in Chapters \ref{ch:detection_and_control_of_individual_w} \& \ref{ch:individual_nuclear_spins_quantum_information} we use a reflection configuration with a single pin antenna, capacitively couples the resonator to the microwave lines. Second, in Chapter \ref{ch:nb_nuclear_spin} a transmission setup used, where the resonator is coupled with two antennas to separate lines, one for input and one for output. The antennas are soldered to an SMA connector and pass through a small pinhole in the cavity wall. The coupling of the resonator to the antennas is tuned by adjusting the antenna insertion depth. In the reflection setup, the coupling of the antenna to the resonator is tuned to achieve critical coupling. In transmission configuration the coupling rates of the two antennas are dissimilar by a factor $\sim10$, with the larger one being the output line, so that most of the fluorescent photons are directed towards the detector.  
+
+
+\begin{figure*}[t!]
+    \includegraphics{chapter2/figures/wiring_diagram.pdf}
+    \caption[Wiring diagram]{Cryogenic wiring diagram with the two configurations used in this work. Two different setups were used during the course of this thesis. The main changes are outlined in the bottom separating the components between the reflection and the transmission setups. Line names are marked at the top which indicate: $i$ for input, $o$ for output, $p$ for TWPA pumping and $dc$ for DC bias lines. For the transmission setup, a large \textmu-metal shield surrounding the dilution fridge at room temperature was introduced to shield the interior from stray magnetic fields.}
+    \labfig{wiring_diagram}
+\end{figure*}
 
 \section{Measurement setup}
 
-The experiments are carried out at 10~mK. This requirement is constrained by the figures of merit of the SMPD, as low temperatures will exponentially suppress microwave radiation and the qubit population, reducing the number of dark counts and enhancing the SNR of the detector. Both the sample and the SMPD are mounted at the bottom stage of a dilution refrigerator. We use microwave coaxial cable and low temperature components to deliver the microwave signals and interface the devices. 
+Both the sample and the SMPD are mounted at the bottom stage of a dilution refrigerator at a temperature of 10~mK. We use microwave coaxial cable and low temperature components to deliver the microwave signals and interface the devices. The experiments need to be carried at low temperatures, since the SNR of the SMPD is closely tied to the thermal population of the environment. Reducing the temperature will exponentially suppress microwave thermal radiation at the input as the qubit population, enhancing the SNR of the detector\sidenote{For a more comprehensive study of the detector SNR and, we direct the reader to the thesis of Louis Pallegoix~\cite{pallegoix_high_2025}, who fabricated and characterized the device used during these experiments.}. In addition, we use a superconducting microwave cable to minimize the losses between the resonator and the SMPD.
 
-The wiring diagram of the fridge is presented in \reffig{wiring_diagram}. During the wiring of the cryostat, special care was taken to properly attenuate the lines that are directly connected to the SMPD. Lack of proper attenuation leads to increased thermal dark counts, degrading the performance of the detector.  \red{do room temperature diagram?}
+The wiring diagram of the fridge is presented in \reffig{wiring_diagram}. Line $i1$ is directly connected to the SMPD input and is therefore well attenuated (-20 dB at 4~K, -10 dB at 800~mK -40 dB at 10 mK) to reduce the number of thermal photons per mode. Reducing the thermal population at the input of the detector is required to achieve low dark counts and high SNR, as discussed in Appendix \ref{app:SMPD}. \red{do room temperature diagram?} 
 
-As with the cavity setup, we note that two measurement configurations were employed: a reflection and a transmission configuration. These correspond to the two experimental runs that comprise the bulk of the results. The motivation for switching to the transmission configuration was the expectation that placing the microwave cavity between the room-temperature environment and the SMPD input would reduce the flux of thermal photons reaching the detector and therefore lower the dark-count rate. In practice, we did not measure any significant effect. In addition, when switching to the transmission configuration, a second TWPA was added at the output of the resonator with the intention of performing a particular experiment, which has not taken place yet.
+As with the cavity setup, we note that two measurement configurations were employed: a reflection and a transmission configuration (see \reffig{wiring_diagram}). These correspond to the two experimental runs that comprise the bulk of the results\sidenote{The motivation for switching to the transmission configuration was the expectation that placing the microwave cavity between the room-temperature environment and the SMPD input would reduce the flux of thermal photons reaching the detector and therefore lower the dark-count rate. In practice, we did not measure any significant effect.}. In addition, when switching to the transmission configuration, a second TWPA was added at the output of the resonator with the intention of performing a particular experiment, which has not taken place yet.
 
 The sample is surrounded by a 1T/1T/1T superconducting vector magnet, which can produce an arbitrary vector field along the three orthogonal directions $X$, $Y$ and $Z$. The coils are independently driven by three current sources which can be individually shunted on demand which allows the magnets to go into \textit{persistent mode} which locks the current going through the superconducting magnet, greatly increasing the stability of the field. Consequently, when performing any single spin measurements the magnet is always set into persistent mode to reduce magnetic field drift. Given that the resonator is a superconducting film, the magnetic field needs to be applied on the plane of the resonator, as small out-of-plane component will strongly reduce its quality factor.
 
@@ -56,31 +71,21 @@ In the reflection setup, we use $i1$ to  tune the SMPD parameters (pump frequenc
 
 \section{Superconducting resonator characterization}
 
-The initial characterization of the resonator is performed at zero magnetic field using a Vector Network Analyzer. By fitting the complex reflection parameter $S_{11}$ we obtain the internal and coupling losses, $\kappa_i/2\pi=319.23$~kHz and $\kappa_c/2\pi = 421.96$~kHz, respectively (see \reffig{resonator_fit}).
-
+The initial characterization of the resonator is performed at zero magnetic field using a Vector Network Analyzer in the reflection configuration. \reffig{resonator_fit} shows the complex reflection parameter as a function of frequency. By fitting the model we obtain the internal and coupling losses of the resonator, $\kappa_i/2\pi=320$~kHz and $\kappa_c/2\pi = 420$~kHz.
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/resonator_fit.pdf}
-    \caption[Zero-field resonator fit]{Reflection signal of the resonator at zero magnetic field. The data is fit to a standard reflection model (black lines) which yields $\omega_r/2\pi=7.74845$~GHz and a quality factor of $Q\approx10\,000$.}
+    \caption[Zero-field resonator fit]{Reflection signal of the resonator at zero magnetic field. The data is fit to a standard reflection model (black lines) which yields $\omega_r/2\pi=7.74845$~GHz and a quality factor of $Q\approx10^5$.}
     \labfig{resonator_fit}
 \end{marginfigure}
 
-To tune the SMPD input frequency to $\omega_r$, we sweep a weak probe tone around the resonator frequency on $i1$ while varying the voltage applied to the DC tuning line $dc1$. The probe tone is filtered by the resonator before entering the SMPD, while the DC voltage tunes the SMPD transition frequency.
+Both the resonance frequency $\omega_{r}$ and the internal losses $\kappa_{i}$ of the superconducting resonator show a response to the externally applied magnetic field. These shifts are primarily driven by the field-dependent modulation of the thin-film kinetic inductance. The magnitude and character of this response depend on the alignment of the $B_0$ relative to the plane of the superconducting resonator film. 
 
-\begin{figure}
-    \includegraphics{chapter2/figures/buffer_autocalibration.pdf}
-    \caption[Buffer frequency tuning]{SMPD buffer resonator frequency calibration.
-    \textbf{a.} Response of the SMPD as a function of probe frequency for different DC tuning voltages (faint colored circles). For clarity only a few have been plotted. Each trace is fitted to a Lorentzian (faint dashed lines), yielding narrow linewidths of approximately 300 kHz. The extracted peak centers (black triangles) form an envelope reflecting the resonator response. Fitting this envelope yields a resonator linewidth of 740 kHz. A slight asymmetry in the envelope is attributed to weak parasitic transmission between the two antennas and is well described by a Fano resonance.
-    \textbf{b.} SMPD resonance frequency as a function of DC bias voltage, showing a linear dependence used to tune the SMPD to the resonator frequency.}
-    \labfig{buffer_autocalibration}
-\end{figure}
+For an in-plane field, the resonance frequency exhibits a characteristic shift as shown in \red{fig}, while the quality factor remains relatively robust up to higher field magnitudes, as illustrated in \red{fig}. In contrast, the resonator response to an out-of-plane field component is considerably more dramatic, even a marginal perpendicular component of $B_{0}$ can facilitate lead to significant inductive shifts and enhanced dissipative losses. 
 
-The SMPD response for different DC voltages appears as a set of narrow resonance lines with linewidths of approximately 300 kHz, shown in different colors in \reffig{buffer_autocalibration}a. Each individual trace is well described by a Lorentzian lineshape, and the extracted peak positions (red triangles) form a broader envelope corresponding to the resonator response. Fitting this envelope yields a resonator linewidth of 740 kHz. We observe a slight asymmetry in the envelope lineshape, which we attribute to weak parasitic transmission interfering with the resonant response. This asymmetry is well captured by a Fano model; however, the extracted linewidth agrees with the Lorentzian fit within uncertainty, and the large Fano asymmetry parameter indicates that the parasitic contribution is weak and does not affect the linewidth determination.
+To maintain the high quality factors required for efficient spin coupling, the magnetic field must be precisely aligned in-plane. The alignment procedure used to calibrate this orientation is described in the following.
 
-In \reffig{buffer_autocalibration}b, the SMPD resonance frequency is plotted as a function of the applied DC voltage and fitted with a linear relation. Using this calibration, we set the DC voltage corresponding to the resonator frequency, thereby aligning the SMPD to the resonator. 
-%This information is also used to tune the SMPD frequency across different electron transition frequencies in Fig. \ref{fig1}c since they span wider than the SMPD bandwidth.
-
-\section{Magnetic field alignment}
+\subsection{Magnetic field alignment}
 
 During the mounting process, the resonator assembly is fixed such that the $Y$ and $Z$ axes of the magnet are close to the plane of the resonator. Due to the limited precision of manual alignment, we begin the experimental run by measuring the relative alignment between these coordinate frames. We follow the procedure described in ref.~\sidecite{dantec_electron_2022}, which we briefly summarize below.
 
@@ -113,14 +118,37 @@ The resonator frequency as a function of $\varphi$ and $\psi$ is plot in \reffig
     \end{pmatrix}
 \end{equation}
 
-In the following, the magnetic field will always be applied in the $(y, z)$-plane unless otherwise stated.
+In the following, the magnetic field will always be applied in the plane of the resonator, unless otherwise stated.
 
-\section{Erbium spin detection}
+\section{SMPD calibration}
+
+We now describe the frequency calibration procedure of the SMPD used to tune the input frequency of the detector to the spin resonator. This procedure is required both as an initial calibration as well as measurements where the magnetic field is swept as the frequency of the resonator will shift with the applied field (see \red{fig}). 
+
+To tune the SMPD input frequency to $\omega_r$, we sweep a weak probe tone around the resonator frequency on $i1$ while varying the voltage applied to the DC tuning line $dc1$ to tune the input frequency of the detector. In the reflection measurement the probe signal arrives directly to the SMPD. In the transmission measurement, the probe tone is filtered by the resonator before entering the SMPD.
+
+\begin{figure}
+    \includegraphics{chapter2/figures/buffer_autocalibration.pdf}
+    \caption[Buffer frequency tuning]{SMPD buffer resonator frequency calibration in transmission configuration.
+    \textbf{a.} Response of the SMPD as a function of probe frequency for different DC tuning voltages (faint colored circles). For clarity only a few have been plotted. Each trace is fitted to a Lorentzian (faint dashed lines), yielding narrow linewidths of approximately 300 kHz. The extracted peak centers (black triangles) form an envelope reflecting the resonator response. Fitting the envelope to a Fano resonance yields a resonator linewidth of 740 kHz.
+    \textbf{b.} SMPD resonance frequency as a function of DC bias voltage, showing a linear dependence used to tune the SMPD to the resonator frequency.}
+    \labfig{buffer_autocalibration}
+\end{figure}
+
+We now show the procedure for the transmission setup. \reffig{buffer_autocalibration}a shows the SMPD response for different DC voltages which appears as a set of narrow resonance lines with linewidths of approximately 300 kHz (the detector bandwidth). Each individual trace is well described by a Lorentzian lineshape, and the extracted peak positions (red triangles) form a broader envelope corresponding to the resonator response. Fitting this envelope yields a resonator linewidth of 740 kHz. We observe a slight asymmetry in the envelope lineshape, which we attribute to weak parasitic transmission between the two antennas interfering with the resonant response. This asymmetry is well captured by a Fano model; however, the extracted linewidth agrees with the Lorentzian fit within uncertainty, and the large Fano asymmetry parameter indicates that the parasitic contribution is weak and does not affect the linewidth determination. In contrast, for the reflection measurement the resonator appears as a dip on the detected amplitude, and a resonator model is enough to capture the behavior as there is no parasitic transmission.
+
+In \reffig{buffer_autocalibration}b, the SMPD resonance frequency is plotted as a function of the applied DC voltage and fitted with a linear relation. Using this calibration, we set the DC voltage corresponding to the resonator frequency, thereby aligning the SMPD to the resonator. 
+%This information is also used to tune the SMPD frequency across different electron transition frequencies in Fig. \ref{fig1}c since they span wider than the SMPD bandwidth.
+
+\section{Erbium ensemble spectrosocpy}
 \labsec{erbium_spin_detection}
 
-\subsection{Spin ensemble}
+We now perform spectroscopy of the \Er spin ensemble. Given the gyromagnetic ratio of \Er spins (see \refsec{erbium_ions_in_ca}) the expected magnetic field along the $c$-axis for which the resonator is tuned to the ensemble is given by
 
-Before performing single spin manipulation we begin by characterizing the \Er ensemble. We ramp the magnetic field along the $z$-axis (which is close to the $c$-axis) to approximately 440~mT and proceed with the following measurement. We apply a strong microwave pulse with a duration of 100~\textmu s at the frequency of the resonator $\omega_r$. After the pulse, we collect the number of counts impinging on the SMPD during an integration window of $\tau_\text{int}=200$~ms. We average the total number of counts during the integration time over a number of iterations to obtain the ensemble average counts $\langle C \rangle$. We repeat this measurement while sweeping the magnetic field. Due to the dependence of the resonator frequency with the applied magnetic field, we re-tune the SMPD center frequency for every value of $B_0$. \reffig{high_power_spectroscopy} plots $\langle C \rangle$ as a function of $B_0$, where the increase in counts corresponds to the EPR signal of an ensemble of \Er ions. 
+\begin{equation}
+    B_0 = \frac{\omega_r}{\gamma_\parallel} \approx 440~\text{mT} 
+\end{equation}
+
+We ramp the magnetic field along the $z$-axis (which is close to the $c$-axis) to this value and perform photon counting spectroscopy. We apply a strong microwave pulse with a duration of 100~\textmu s at the frequency of the resonator $\omega_r$. After the pulse, we measure the number of counts on the SMPD during an integration window of $\tau_\text{int}=200$~ms. We average the total number of counts during the integration time over a number of iterations to obtain the ensemble average counts $\langle C \rangle$. We repeat this measurement while sweeping the magnetic field. Due to the dependence of the resonator frequency with the applied magnetic field, we re-tune the SMPD center frequency for every value of $B_0$. 
 
 
 \begin{figure}
@@ -130,16 +158,15 @@ Before performing single spin manipulation we begin by characterizing the \Er en
 \end{figure}
 
 
-The inset plot shows the count rate $\langle \dot C \rangle$ after the excitation pulse at $t=0$ for two different magnetic fields. The integral of the curves yields $\langle C \rangle$ of the red and green points in the main plot. When the resonator is not resonant with the ensemble (red curve), the count rate is flat and equal to the dark count rate of the SMPD, shown as a black dashed line. The first point of the curve escapes that trend, and we attribute this increase in counts to heating of the microwave lines and attenuators due to the pulse. In contrast, when the ensemble is resonant the count rate displays a non-exponential decay over a period of time longer than 200~ms, consistent with the excitation of an ensemble of \Er spins with different coupling strength.
+\reffig{high_power_spectroscopy} plots $\langle C \rangle$ as a function of $B_0$, showing a significant increase in counts centered around $B_0^\text{max}$. The inset plot shows the count rate $\langle \dot C \rangle$ after the excitation pulse at $t=0$ for two different magnetic fields (marked as red and green markers in the main figure). When the resonator is not resonant with the ensemble (red curve), the count rate is flat and equal to the dark count rate of the SMPD, shown as a black dashed line. The first point of the curve escapes that trend, and we attribute this increase in counts to heating of the microwave lines and attenuators due to the pulse. In contrast, when the ensemble is resonant the count rate displays a non-exponential decay over a period of time longer than 200~ms, consistent with the excitation of an ensemble of \Er spins with different coupling strength.
 
-The data is fit to a lorentzian which yields the center field of the main line $B_0^\mathrm{max}$. We repeat this measurement as a function of $\theta$, the angle between $B_0$ and the $z$-axis. \reffig{sample_field_alignment}.a shows the Lorentzian centers as a function of the angle and fit to a parabola. We note that the maximum frequency for the \Er main line is \textit{not} found at the expected field\sidenote{
-    At $B_0\approx440$~mT, the resonator's frequency is $\omega_r \approx 7.7492$~GHz, so the expected field is \[\omega_r / \gamma_\parallel \approx 444\text{~mT}.\]
-}, which indicates that the crystalline and the resonator axis are not parallel to each other. Indeed, the $c$-axis of the crystal is not necessarily contained within the resonator plane: the sample is cut from a larger \textit{boule} and, due to fabrication constraints, the alignment precision is approximately one degree. To measure the misalignment, we apply at $\theta=0$ an out of plane component along the $x$-axis and measure the center frequency of the resonance as a function of the out-of-plane angle $\beta$. \reffig{sample_field_alignment}.b plots the gyromagnetic factor $\gamma$ associated to the measured resonance\sidenote{
+The crystal $c$-axis is typically not coplanar with the resonator plane due to fabrication tolerances. We define $\theta$ as the angle of $B_0$ with respect to the projection of the $c$-axis on the plane, and $\beta$ as the out-of-plane tilt relative to the resonator plane. In addition, we define $\beta_0$ as the angle between the $c$-axis and the $z$-axis (see \reffig{sample_field_alignment} inset).
+
+The orientation of the $c$-axis is determined by a parabolic fit of $B_0^\text{max}$ as a function $\theta$, shown in \reffig{sample_field_alignment}.a. To measure $\beta_0$, we apply at an out-of-plane component along the $x$-axis and measure the center frequency of the resonance as a function of the out-of-plane angle $\beta$. \reffig{sample_field_alignment}.b plots the gyromagnetic factor $\gamma$ associated to the measured resonance\sidenote{
     As discussed above, a magnetic field will modify the resonator frequency. This effect can be ignored for small changes of in-plane field, but \textit{not} for out-of-plane components. We take into consideration this effect by measuring $\gamma \equiv \omega_r(B_0) / B_0$ instead.
-} as function of $\beta$, and the data is fit to a parabola which yields $\beta_0=-0.57$º. 
+} as function of $\beta$, and the data is fit to a parabola which yields $\beta_0=-0.57^\circ$. 
 
-By comparing the measured gyromagnetic factor along the $c$-axis to the literature value \sidecite{antipina.a._anisotropy_1981}, we find that the magnetic field is miss calibrated by a factor $1.002$, possibly due to the introduction of a magnetic shield surrounding the cryostat. This correction is taken into account as a global factor in all the measurements, so that we estimate the uncertainty on the applied field to less than $\sim 10^{-3}$.
-
+By comparing the measured gyromagnetic factor along the $c$-axis to the literature value \sidecite{antipina.a._anisotropy_1981}, we find that the magnetic field introduced in the transmission setup is miss calibrated by a factor $1.002$, possibly due to the introduction of a magnetic shield surrounding the cryostat. This correction is taken into account as a global factor in all the measurements of Chapter \ref{ch:nb_nuclear_spin}, so that we estimate the uncertainty on the applied field to less than $\sim 10^{-3}$.
 
 After this characterization the sample is brought to 10~K and then cooled down again, to remove any magnetic vortices in the superconducting film, which reduce the quality factor of the resonator. For all following measurements in this thesis, the field is always applied along the $(y, z)$-plane, but the characterization of the misalignment angles is crucial for the understanding of the experimental results. 
 
@@ -151,18 +178,16 @@ After this characterization the sample is brought to 10~K and then cooled down a
     \includegraphics{chapter2/figures/sample_field_alignment.pdf}
     \caption[Sample Field Alignment]{Sample Field Alignment. 
     \textbf{a.} \Er main line resonant field as a function of the in-plane angle $\theta$. The data is fit to a parabola (black line).
-    \textbf{b.} Gyromagnetic factor $\gamma$ as a function of the out-of-plane angle $\beta$ for $\theta=0$. The parabolic fit (black line) gives  $\beta_0=-0.57$º. Dashed horizontal line shows the literature value for $\gamma_\parallel$.
+    \textbf{b.} Gyromagnetic factor $\gamma$ as a function of the out-of-plane angle $\beta$ for $\theta=0$. The parabolic fit (black line) gives  $\beta_0=-0.57^\circ$ marked with a dash-dot line. Dashed horizontal line shows the literature value for $\gamma_\parallel$.
     }
     \labfig{sample_field_alignment}
 \end{figure}
 
 
-\subsection{Individual \Er spins}
+\section{Individual \Er spins}
 \labsec{individual_er_ion_characterization}
 
-We now proceed to describe the procedure to detect and characterize single \Er spins. Due to spectral crowding in ensemble resonance, it is not possible to detect spins that are spectrally close to the main line. We leverage the large inhomogeneous broadening of REI in crystals by measuring 4 or 5~mT above the main \Er ensemble line. With this separation, the reduced spectral density allows for a clear identification of single emitters. At this field, we set the $Z$-axis of the magnet in persistent mode to increase the stability of the field. The detection scheme for single spins follows the same principle as the spectroscopy measurement described in the previous section. However, the amplitude of the pulse is reduced by a factor $\sim50$ and its duration to 10~\textmu s and the integration time is set to $\tau_\text{int} = 10$~ms. \reffig{electron_characterization}.a plots $\langle C \rangle$ as a function of the magnetic field in the $y$-axis. The data shows a constant background with a distribution of narrow and reproducible peaks which we attribute to the fluorescence of individual \Er ions. 
-
-To individually address one spin, we ramp $B_y$ to the resonant value and set the remaining two axes of the magnetic field in persistent mode. We systematically characterize each spin with the following procedure:
+Single-spin resolution is achieved by addressing \Er spins located far from the ensemble central frequency. Because individual detection is not feasible within the main line due to the high density of spins, measurements are performed at a detuning of approximately $4\text{--}5\,\mathrm{mT}$ above the ensemble center. To detect single spins, we reduce the amplitude of the driving pulse by a factor $\sim50$, its duration to 10~\textmu s and the integration time is set to $\tau_\text{int} = 10$~ms. In addition, we switch $B_X$ and $B_Z$ to persistent mode and sweep the field with $B_Y$. \reffig{electron_characterization}.a plots $\langle C \rangle$ as a function of the magnetic field and shows a constant background with a distribution of narrow and reproducible peaks. Previous work performed by Zhiren Wang demonstrated that each peak corresponds to a single \Er spin through instensity-instensity correlation analysis \sidecite{wang_singleelectron_2023}.  
 
 \begin{figure*}
     \includegraphics{chapter2/figures/electron_characterization.pdf}
@@ -175,19 +200,31 @@ To individually address one spin, we ramp $B_y$ to the resonant value and set th
     \labfig{electron_characterization}
 \end{figure*}
 
-\begin{itemize}
-    \item \textbf{Rabi oscillations}. We measure $\langle C\rangle$ as a function of the duration of the driving microwave pulse (see \reffig{electron_characterization}.b). On top of the Rabi oscillations, we note a linearly increasing background that we attribute to the heating of the microwave lines. The data is fit to a cosine oscillation with a linearly increasing background which yields the Rabi frequency $\Omega_S$ for this specific microwave amplitude.
-    \item \textbf{Fluorescence}. We measure the count rate $\langle \dot C\rangle$ as a function of the time $t$ after the microwave pulse (see \reffig{electron_characterization}.b). To avoid any signal coming from the heating of the microwave lines, we wait a time $\tau_\text{w}=120$~\textmu s after the pulse before measuring. The data is fit to a single exponential decay with a constant background. Given that the signal comes from a single emitter, the integral of the signal minus the background rate gives the \textit{spin-to-click} efficiency $\eta_\text{spin}$. During the experiments presented in this thesis, $\eta_\text{spin}\approx0.3--0.4$, a considerable improvement from previous demonstrations \sidecite{wang_singleelectron_2023}, thanks to the increased sensitivity of the SMPD used in this work \sidecite{pallegoix_enhancing_2025}.
-    In addition, the fit yields the relaxation time of the spin $T_1$. Since the relaxation is completely dominated by the Purcell rate, we calculate the coupling to the resonator as $g_0 = \tfrac12 \sqrt{\kappa / T_1}$.
-    \item \textbf{Ramsey and Hahn echo coherence}. We measure $\langle C\rangle$ after a Ramsey and a Hahn echo sequence as a function of the interpulse delay between the two $\pi/2$ pulses. The data are fit to an exponentially decaying cosine which yield $T_2^*$ and $T_2$ respectively.
-\end{itemize}
+We systematically characterize each \Er spin with the following procedure: 
 
-In addition, previous work of the group has demonstrated that each peak corresponds to a single emiter through instensity-instensity correlation analysis \sidecite{wang_singleelectron_2023}. 
+\paragraph{Rabi oscillations} We measure $\langle C\rangle$ as a function of the duration of the driving microwave pulse (see \reffig{electron_characterization}.b). On top of the Rabi oscillations, we note a linearly increasing background that we attribute to the heating of the microwave lines~\sidecite{wang_addressing_2023}. The data is fit to a cosine oscillation with a linearly increasing background. The fit yields the Rabi frequency $\Omega$ for the specific microwave amplitude.
 
-Finally, we can perform a 2D spectroscopy by simultaneously sweeping the field amplitude and the in-plane angle $\theta$. \reffig{2d_spectroscopy} shows a large map created by stitching several of such measurements. The data shows many individual ions, each with a different gyromagnetic tensor, as well as a small section of the main line. This can be explained by the individual strain and charge compensation conditions of each spin which induce a local electric field at the ion's position. As discussed in \refsec{induced_dipole}, \Er in \Ca has a magnetically-induced electric dipole, and variations on local electric conditions will yield different shifts of the spin transition.
+\paragraph{Fluorescence} We measure the count rate $\langle \dot C\rangle$ as a function of the time $t$ after the microwave pulse (see \reffig{electron_characterization}.c). To avoid any signal coming from the heating of the microwave lines, we wait a time $\tau_\text{w}=120$~\textmu s after the pulse before measuring. The data is fit to a single exponential decay with a constant background. Given that the signal comes from a single emitter, the integral of the signal minus the background rate gives the \textit{spin-to-click} efficiency $\eta_\text{spin}$. During the experiments presented in this thesis, $\eta_\text{spin}\approx0.3-0.4$, a considerable improvement from previous demonstrations \sidecite{wang_singleelectron_2023}, thanks to the increased sensitivity of the SMPD used in this work \sidecite{pallegoix_enhancing_2025}. 
+
+In addition, the fit yields the relaxation time of the spin $T_1$. Since the relaxation is completely dominated by the Purcell rate, we calculate the coupling to the resonator as 
+
+\begin{equation}
+    g_0 = \frac12 \sqrt{\frac{\kappa}{T_1}}
+\end{equation}
+
+In this work we measure $g_0$ up to 9~kHz, a noticeable increase compared to ref.~\sidecite{wang_addressing_2023} where typical couplings ranged between 1--4~kHz. The enhanced coupling can be attributed to Thanks to the modifications to the geometry of the nanowire (see \refsec{sample_details}). This results in considerably faster measurements, as the repetition time of the experiment is limited by the relaxation time of the spin $T_1 \propto g_0^2$.
+
+\paragraph{Ramsey and Hahn echo coherence}. We measure $\langle C\rangle$ after a Ramsey and a Hahn echo sequence as a function of the interpulse delay between the two $\pi/2$ pulses (see \reffig{electron_characterization}.d \& e). The data are fit to an exponentially decaying cosine which yield $T_2^*$ and $T_2$ respectively. The relatively long spin coherence times can be attributed to the low magnetic density of \Ca, mainly dominated by the low-abundance and weakly interacting \W nuclear spins.
 
 \begin{figure*}
     \includegraphics{chapter2/figures/2d_spectroscopy.pdf}
-    \caption[2D single spin spectroscopy]{2D single spin spectroscopy. The map is created by stitching several individual measurements. Each measurement sweeps both the amplitude and the in-plane angle $\theta$ of the magnetic field. The SMPD is re-tuned to the resonator approximately every 0.5~mT.}
+    \caption[2D single spin spectroscopy]{2D single spin spectroscopy. The map is created by stitching several individual measurements. Each measurement sweeps both the amplitude and the in-plane angle $\theta$ of the magnetic field. The SMPD is re-tuned to the resonator approximately every 0.5~mT. The total acquisition time was approximately 1 week}
     \labfig{2d_spectroscopy}
 \end{figure*}
+
+Finally, we can perform a 2D spectroscopy of the single-spin environment by simultaneously varying the magnetic field magnitude and the in-plane angle $\theta$. \reffig{2d_spectroscopy} presents a wide-range spectroscopic map concatenated from several measurement sets. We note that the span of the map is considerably larger than ones performed in ref.~\sidecite{wang_addressing_2023}. This increase is facilitated by the enhanced detection SNR granted by the larger coupling to the spin and improvements on the SMPD.
+
+Individual $\mathrm{Er}^{3+}$ resonances are clearly resolved as distinct trajectories that can be readily traced as a function of $\theta$. This visualization provides a direct manifestation of the inhomogeneous broadening mechanism, wherein local crystalline distortions modify the effective gyromagnetic tensor of each ion. We qualitatively observe that spins further detuned from the ensemble central frequency typically experience stronger coupling to the resonator.
+
+This observation is consistent with the correlation between enhanced coupling and increased inhomogeneous broadening reported in \sidecite{billaud_electron_2025}. This is explained by the proximity of the ions to the resonator surface. Spins located closer to the superconducting wire experience both stronger coupling and heightened local strain. This strain originates from the differential thermal contraction between the metallic resonator and the \Ca substrate when cooling the sample to 10~mK.
+

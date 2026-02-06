@@ -15,7 +15,7 @@ In this Chapter we detail the setup and procedures used in the experimental chap
 
 The experiments reported in this thesis were all carried out on one monocrystalline \Ca sample on which a superconducting thin-film resonator was fabricated. 
 
-The sample was grown by Philippe Goldner using the Czochralski~\sidecite{erb_growth_2013} method from from CaCO3 (99.95\% purity) and WO3 (99.9\% purity). No paramagnetic impurities were added during crystal growth. Standard EPR measurements performed by Sylvain Bertrana on sample from the same \textit{boule} yield a residual \Er concentration of 3.1(2)~ppb~\sidecite{ledantec_electron_2022a}. The average distance between \Er ions at this concentration is 300~nm, far enough to suppress dipolar interactions between paramagnetic impurities. 
+The sample was grown by Philippe Goldner using the Czochralski~\sidecite{erb_growth_2013} method from from CaCO3 (99.95\% purity) and WO3 (99.9\% purity). No paramagnetic impurities were added during crystal growth. Standard EPR measurements performed by Sylvain Bertrana on sample from the same \textit{boule} yield a residual \Er concentration of 3.1(2)~ppb~\sidecite{ledantec_electron_2022}. The average distance between \Er ions at this concentration is 300~nm, far enough to suppress dipolar interactions between paramagnetic impurities. 
 
 The sample used in this work was cut out on a rectangular slab shape. Its dimensions are 7 mm by 4 mm by 2 mm, with its surface approximately along the $(a,c)$-plane of the crystal and the $c$-axis along the short edge. The polishing of the surface, performed by SurfaceNet GmbH, was reduced the thickness down to 0.5~mm.
 
@@ -31,7 +31,7 @@ The sample used in this work was cut out on a rectangular slab shape. Its dimens
 
 A superconducting resonator is fabricated on top of the \Ca sample, out of a 50-nm-thick niobium film, and is shown in \reffig{sample_alone}. It consists of two superconducting electrodes separated by an interdigitated capacitor and connected through a small constriction: a nanowire with a length of 50~\textmu m and a width of 300~nm parallel to the $c$-axis. The design parameters of the resonator are discussed in \refch{spins_coupled_to_a_cavity}.
 
-The parameters of the resonator where tailored using finite element simulations in \texttt{HFFS} and the fabrication of the resonator was performed following the procedures developed by Zhiren Wang and Marianne le Dantec in ref.~\sidecite{ledantec_electron_2022a} \& \sidecite{wang_addressing_2023}. The key modification implemented in this work was the reduction of the nanowire width from 500~nm to 300~nm, resulting in an increased magnetic coupling strength to the \Er spins. Given that no major design changes were performed for the resonator compared to previous work, we point the reader to the previous references for a detailed discussion on the microwave simulations and the fabrication techniques
+The parameters of the resonator where tailored using finite element simulations in \texttt{HFFS} and the fabrication of the resonator was performed following the procedures developed by Zhiren Wang and Marianne le Dantec in ref.~\cite{ledantec_electron_2022, wang_addressing_2023}. The key modification implemented in this work was the reduction of the nanowire width from 500~nm to 300~nm, resulting in an increased magnetic coupling strength to the \Er spins. Given that no major design changes were performed for the resonator compared to previous work, we point the reader to the previous references for a detailed discussion on the microwave simulations and the fabrication techniques
 
 
 \subsubsection{Sample assembly}
@@ -73,11 +73,14 @@ In the reflection setup, we use $i1$ to  tune the SMPD parameters (pump frequenc
 
 The initial characterization of the resonator is performed at zero magnetic field using a Vector Network Analyzer in the reflection configuration. \reffig{resonator_fit} shows the complex reflection parameter as a function of frequency. By fitting the model we obtain the internal and coupling losses of the resonator, $\kappa_i/2\pi=320$~kHz and $\kappa_c/2\pi = 420$~kHz.
 
-\begin{marginfigure}
+\begin{figure}
     \includegraphics{chapter2/figures/resonator_fit.pdf}
-    \caption[Zero-field resonator fit]{Reflection signal of the resonator at zero magnetic field. The data is fit to a standard reflection model (black lines) which yields $\omega_r/2\pi=7.74845$~GHz and a quality factor of $Q\approx10^5$.}
+    \caption[Resonator fit]{Resonator fit and field responds. 
+    \textbf{a.} Reflection signal of the resonator at zero magnetic field. The data is fit to a standard reflection model (black lines) which yields $\omega_r/2\pi=7.74845$~GHz and a quality factor of $Q\approx10^5$.
+    \textbf{b.} \red{better data!}
+    }
     \labfig{resonator_fit}
-\end{marginfigure}
+\end{figure}
 
 Both the resonance frequency $\omega_{r}$ and the internal losses $\kappa_{i}$ of the superconducting resonator show a response to the externally applied magnetic field. These shifts are primarily driven by the field-dependent modulation of the thin-film kinetic inductance. The magnitude and character of this response depend on the alignment of the $B_0$ relative to the plane of the superconducting resonator film. 
 

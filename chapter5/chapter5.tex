@@ -106,7 +106,7 @@ We now recall the energy level system defined by this Hamiltonian. \reffig{energ
 
 \begin{figure*}
     \includegraphics{chapter5/figures/matrix_elements.pdf}
-    \caption[short]{Mixing terms and cross-relaxation probability. Throughout this figure, markers are obtained through Eq. \ref{eq:matrix_elements_nine_half} \& \ref{eq:cross_relaxation_ninehalf}, derived in \refsec{zero_double_quantum_ninehalf}. Lines are calculated through Hamiltonian diagonalization using the experimental parameters measured in \refsec{final_hamiltonian_fit}.
+    \caption[short]{Mixing terms and cross-relaxation probability. Throughout this figure, markers are obtained through Eq. \ref{eq:matrix_elements_nine_half} \& \ref{eq:cross_relaxation_probability_ninehalf}, derived in \refsec{zero_double_quantum_ninehalf}. Lines are calculated through Hamiltonian diagonalization using the experimental parameters measured in \refsec{final_hamiltonian_fit}.
     \textbf{a.} Energy level diagram (black horizontal lines) showcasing all possible relaxation paths (colored lines) and their respective probability $p^{(n)}_{x, i}$.
     \textbf{b.} Matrix elements $\langle \uparrow, n + i | S_x | \downarrow, n \rangle$ as a function of $n$ for $i=+1,-1$ (red and blue respectively). 
     \textbf{c.} Cross-relaxation probability as a function of $n$ for $i=+1,-1$ (red and blue respectively).
@@ -519,7 +519,7 @@ The fit is performed using the MCMC algorithm described in the previous section.
 \end{split}
 \end{align}
 
-\noindent with a reduced chi-squared of $\chi^2_\nu=1.2$, with similar residuals as the ones reported in \reffig{fit_residuals}. Compared to the estimate of the gyromagnetic tensor in \refsec{}, this value is considerably closer to the literature. We assign the remaining difference to the pseudo-nuclear-Zeeman effect and/or the chemical shift
+\noindent with a reduced chi-squared of $\chi^2_\nu=1.2$, with similar residuals as the ones reported in \reffig{fit_residuals}. Compared to the estimate of the gyromagnetic tensor in \refsec{assignment}, this value is considerably closer to the literature. We assign the remaining difference to the pseudo-nuclear-Zeeman effect and/or the chemical shift
 
 From these values, we reconstruct the nuclear quadrupole tensor $\bar{\bar{Q}}$ and diagonalize it to obtain its principal axes $X$, $Y$, and $Z$. We find that the $Z$ axis is tilted by $0.06(3)^\circ$ with respect to the crystal $c$ axis, while the $X$ axis is rotated by $-10(6)^\circ$ relative to the crystal $a$ axis. The corresponding principal values are $Q_X = 268.138(9)$~kHz, $Q_Y = -30.799(7)$~kHz, and $Q_Z = -237.338(3)$~kHz. These values correspond to a quadrupolar interaction strength of $C_q / 2\pi = 19.3059(7)\,\mathrm{MHz}$ and a biaxiality parameter $\eta = 0.77026(7)$.
 

@@ -45,21 +45,21 @@ We define the spherical components (rank-2 irreducible combinations) as
 
 \begin{equation}
 \begin{aligned}
-Q_0 &= Q_{zz},\\
-Q_{\pm1} &= Q_{xz}\pm iQ_{yz},\\
-Q_{\pm2} &= \tfrac12\,(Q_{xx}-Q_{yy}) \pm i\,Q_{xy}.
+S_0 &= Q_{zz},\\
+S_{\pm1} &= Q_{xz}\pm iQ_{yz},\\
+S_{\pm2} &= \tfrac12\,(Q_{xx}-Q_{yy}) \pm i\,Q_{xy}.
 \end{aligned}
 \label{eq:Q-spherical-def}
 \end{equation}
 
-Using \ref{eq:Qprime-cart} in the definition of $Q'_{\pm1}$,
+Using \ref{eq:Qprime-cart} in the definition of $S'_{\pm1}$,
 
 \begin{equation}
 \begin{aligned}
-Q'_{+1}
+S'_{+1}
 &= Q'_{xz}+i\,Q'_{yz}\\
 &= \big(\cos\phi\,Q_{xz}+\sin\phi\,Q_{yz}\big)\;+\;i\big(-\sin\phi\,Q_{xz}+\cos\phi\,Q_{yz}\big)\\
-&= (\cos\phi - i\sin\phi)\,Q_{xz}\;+\;(\sin\phi + i\cos\phi)\,Q_{yz} =\; e^{-i\phi}\,Q_{+1}.
+&= (\cos\phi - i\sin\phi)\,Q_{xz}\;+\;(\sin\phi + i\cos\phi)\,Q_{yz} =\; e^{-i\phi}\,S_{+1}.
 \end{aligned}
 \end{equation}
 
@@ -67,52 +67,52 @@ Similarly,
 
 \begin{equation}
 \begin{aligned}
-Q'_{-1}
+S'_{-1}
 &= Q'_{xz}-i\,Q'_{yz}\\
 &= \big(\cos\phi\,Q_{xz}+\sin\phi\,Q_{yz}\big)\;-\;i\big(-\sin\phi\,Q_{xz}+\cos\phi\,Q_{yz}\big)\\
 &= (\cos\phi + i\sin\phi)\,Q_{xz}\;+\;(\sin\phi - i\cos\phi)\,Q_{yz}\\
-&= e^{+i\phi}\,\big(Q_{xz}-iQ_{yz}\big) \;=\; e^{+i\phi}\,Q_{-1}.
+&= e^{+i\phi}\,\big(Q_{xz}-iQ_{yz}\big) \;=\; e^{+i\phi}\,S_{-1}.
 \end{aligned}
 \end{equation}
 
-Let $\Delta\equiv Q_{xx}-Q_{yy}$. From \eqref{eq:Qprime-cart},
+Let $\Delta Q \equiv Q_{xx}-Q_{yy}$. From \eqref{eq:Qprime-cart},
 
 \begin{equation}
 \begin{aligned}
-Q'_{+2}
+S'_{+2}
 &= \tfrac12\,(Q'_{xx}-Q'_{yy}) + i\,Q'_{xy}\\
-&= \tfrac12\Big[\big(\cos^2\!\phi-\sin^2\!\phi\big)\Delta + 4\sin\phi\cos\phi\,Q_{xy}\Big]\\
-&+ i\Big[\big(\cos^2\!\phi-\sin^2\!\phi\big)Q_{xy} - \sin\phi\cos\phi\,\Delta\Big].
+&= \tfrac12\Big[\big(\cos^2\!\phi-\sin^2\!\phi\big)\Delta Q  + 4\sin\phi\cos\phi\,Q_{xy}\Big]\\
+&+ i\Big[\big(\cos^2\!\phi-\sin^2\!\phi\big)Q_{xy} - \sin\phi\cos\phi\,\Delta Q \Big].
 \end{aligned}
 \end{equation}
 
 Use the double-angle identities $\cos 2\phi=\cos^2\!\phi-\sin^2\!\phi$ and $\sin 2\phi=2\sin\phi\cos\phi$ to rewrite
 \begin{equation}
 \begin{aligned}
-Q'_{+2}
-&= \tfrac12\Big[\cos 2\phi\,\Delta + 2\sin 2\phi\,Q_{xy}\Big]
-+ i\Big[\cos 2\phi\,Q_{xy} - \tfrac12\sin 2\phi\,\Delta\Big]\\[4pt]
-&= \left(\tfrac12\Delta + iQ_{xy}\right)\big(\cos 2\phi - i\sin 2\phi\big)\\[4pt]
-&= \left(\tfrac12\Delta + iQ_{xy}\right) e^{-i2\phi}
-\;=\; e^{-i2\phi}\,Q_{+2}.
+S'_{+2}
+&= \tfrac12\Big[\cos 2\phi\,\Delta Q  + 2\sin 2\phi\,Q_{xy}\Big]
++ i\Big[\cos 2\phi\,Q_{xy} - \tfrac12\sin 2\phi\,\Delta Q \Big]\\[4pt]
+&= \left(\tfrac12\Delta Q  + iQ_{xy}\right)\big(\cos 2\phi - i\sin 2\phi\big)\\[4pt]
+&= \left(\tfrac12\Delta Q  + iQ_{xy}\right) e^{-i2\phi}
+\;=\; e^{-i2\phi}\,S_{+2}.
 \end{aligned}
 \end{equation}
 
 By complex conjugation or repeating the steps with $-i$,
 
 \begin{equation}
-Q'_{-2} \;=\; e^{+i2\phi}\,Q_{-2}.
+S'_{-2} \;=\; e^{+i2\phi}\,S_{-2}.
 \end{equation}
 
 Since $Q'_{zz}=Q_{zz}$,
 \begin{equation}
-Q'_0 \;=\; Q_0.
+S'_0 \;=\; S_0.
 \end{equation}
 
 Collecting the results,
 
 \begin{equation}
-Q'_m \;=\; e^{-im\phi}\,Q_m,\qquad m=0,\pm1,\pm2.
+S'_m \;=\; e^{-im\phi}\,S_m,\qquad m=0,\pm1,\pm2.
 \end{equation}
 
 

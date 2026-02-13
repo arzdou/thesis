@@ -428,13 +428,15 @@ g_J \mu_B \gamma_n \frac{\mu_0}{4\pi} r^{-3} \Big[
 \noindent where $\theta_r$ and $\phi_r$ are, respectively, the polar and azimuthal angles of the vector $\mathbf{r}$ and the spin operators are expressed in the crystal axis basis. This interaction can be written in a more compact form:
 
 \begin{equation}
-    \cH{hf} / \hbar = \hat{\mathbf{J}} \cdot \bar{\bar {A}} \cdot \hat{\mathbf{I}},
+    \cH{hf, $J$} / \hbar = \hat{\mathbf{J}} \cdot \bar{\bar {A_J}} \cdot \hat{\mathbf{I}},
+    \label{eq:hf_J_hamiltonian}
 \end{equation}
 
-\noindent where the complexity of the dipolar interaction is encoded in the hyperfine tensor $\bar{\bar{A}}$. 
+\noindent where the complexity of the dipolar interaction is encoded in the hyperfine tensor $\bar{\bar{A_J}}$. 
 %The interaction is anisotropic and depends on the relative position and orientation between the two spins. 
 
 \section{The spin Hamiltonian}
+\labsec{spin_hamiltonian_final}
 
 We now summarize the previous derivations and assemble a compact spin Hamiltonian for a single \Er:\Ca ion coupled to one nearby nuclear spin. The model below applies to both to \W and \Nb. The nuclear quadrupole term is included generally and set to zero for \W (which has $I=1/2$). We employ three nested levels of approximations, each appropriate in different parameter regimes and used throughout this thesis:
 
@@ -443,7 +445,8 @@ We now summarize the previous derivations and assemble a compact spin Hamiltonia
 The most general description retains the entire $J=15/2$ manifold and includes the crystal-field, Zeeman, nuclear Zeeman, nuclear quadrupole and the full hyperfine coupling:
     
 \begin{equation}
-    \cH{15/2} / \hbar = g_J \mu_B \, B_0 \hat{J}_{z'} + \cH{cf} + \omega_I \, \hat{I}_{z'} + \hat{\mathbf{I}} \cdot \bar{\bar{Q}} \cdot \hat{\mathbf{I}} + \hat{\mathbf{J}} \cdot \bar{\bar {A}} \cdot \hat{\mathbf{I}}.
+    \cH{15/2} / \hbar = g_J \mu_B \, B_0 \hat{J}_{z'} + \cH{cf} + \omega_I \, \hat{I}_{z'} + \hat{\mathbf{I}} \cdot \bar{\bar{Q}} \cdot \hat{\mathbf{I}} + \hat{\mathbf{J}} \cdot \bar{\bar {A_J}} \cdot \hat{\mathbf{I}}.
+    \label{eq:full_spin_hamiltonian}
 \end{equation}
 
 We note that, at this level of approximation, the two Zeeman terms are isotropic and the operators $J_{z'}$ and $I_{z'}$ refer to the same axis $z'$, parallel to the magnetic field $B_0$.
@@ -477,11 +480,12 @@ Note that this Hamiltonian is written in the basis of the crystalline axes. The 
     
 \begin{equation}
     \cH{$\tfrac12$} / \hbar = \omega_S \, S_{z''} + \omega_I \, I_{z'} + \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I} + \mathbf{S} \cdot \bar{\bar {A}}_{S} \cdot \mathbf{I}
+    \label{eq:spin_half_hamiltonian}
 \end{equation}
 
 We note that, given the anisotropy of the electron spin gyromagnetic factor, the quantization axis of the nuclear spin $z'$ and of the electron spin $z''$ are not necessarily parallel to each other.
 
-\subsubsection{High-field (secular) approximation} 
+\subsubsection{Secular approximation} 
 
 When $\omega_S$ is much larger than the hyperfine interaction strength\sidenote{This corresponds to
 \begin{equation*}

@@ -81,18 +81,17 @@ An important aspect emphasized by the authors is that substitutional sites are, 
 
 \subsection*{Conclusion}
 
-Both works illustrate how measurements of quadrupolar interactions at the single-spin level provide access to local chemical structure and strain-induced lattice distortions.
+Both works illustrate how measurements of quadrupolar interactions at the single-spin level provide access to local structural information and strain-induced lattice distortions. In both cases, high resolution spectroscopy is used to identify deviations from the expected Hamiltonians which is then used to understand the interactions of the system. The next step would be to reconstruct the full-quadrupole tensor of an individual nuclear spin based on the measured spectroscopic information.
 
-In the first experiment, coherence-preserving dynamical decoupling sequences enable the observation of quadrupole-enabled NMR transitions that are nominally forbidden. Their presence reveals subtle modifications of the local symmetry induced by fabricated microstructures. Similarly, the second experiment demonstrates how strain arising from differential thermal contraction between substrate and device structures can break inversion symmetry and induce quadrupolar interactions in otherwise centrosymmetric sites.
+%In the first experiment, coherence-preserving dynamical decoupling sequences enable the observation of quadrupole-enabled NMR transitions that are nominally forbidden. Their presence reveals subtle modifications of the local symmetry induced by fabricated microstructures. Similarly, the second experiment demonstrates how strain arising from differential thermal contraction between substrate and device structures can break inversion symmetry and induce quadrupolar interactions in otherwise centrosymmetric sites.
 
-However, neither experiment achieves a full reconstruction of the quadrupole tensor. This limitation stems from operating in the weak quadrupolar regime, where energy shifts depend only on the projection of the quadrupole tensor along the magnetic field axis. Complete reconstruction in the weak quadrupole regime would require angular-dependent measurements. In the NV platform, such measurements are particularly challenging, as high-fidelity readout and control typically require precise alignment of the magnetic field along the NV axis.
+%We highlight that either experiment attemts a full reconstruction of the quadrupole tensor. This limitation stems from operating in the weak quadrupolar regime, where energy shifts depend only on the projection of the quadrupole tensor along the magnetic field axis. Complete reconstruction in the weak quadrupole regime would require angular-dependent measurements. In the NV platform, such measurements are particularly challenging, as high-fidelity readout and control typically require precise alignment of the magnetic field along the NV axis.
 
-Finally, we note that the work reported in Ref.~\sidecite{bartling_universal_2025} required Hamiltonian parameter estimation with hertz-level precision. Their results indicate that the quadrupole interaction of $^{14}\mathrm{N}$ remains unchanged across different electronic spin states—an assumption that is intuitively appealing. The results presented in this chapter will challenge that assumption.
+The nuclear quadrupolar interaction stems form the EFG at the nuclear spin position and should, in principle, not depend on the electron spin state. Such dependence is indeed not described in the standard spin Hamiltonian (see \refch{electron_nuclear_interaction}). This is tested and confirmed in Bartling Ref.~\sidecite{bartling_universal_2025} where they measure the Hamiltonian parameters with hertz-level precision. 
 
+In addition, precision measurements of the hyperfine spectrum of atoms and simple molecules probe electron-nuclear interactions beyond the leading-order magnetic dipolar and electric quadrupolar terms~\sidecite{schwartz_theory_1955}. Higher-order interactions such as the magnetic octuple are $\sim 10^5$ times weaker; hence, high spectral resolution in the order of hertz is required to resolve their contribution. This is readily achieved in atomic and molecular beams or in single-ion experiments, using combined microwave and laser excitations~\sidecite{gerginov_observation_2003,lewty_spectroscopy_2012}. In the solid state, ensemble magnetic resonance measurements of coupled electron-nuclear spin systems generally offer a lower spectral resolution (kilohertz at best~\sidecite{sielaff_pulsed_2025}), particularly when high-spin nuclei are involved. The origin of the broadening lies in a combination of spin-spin interactions and inhomogeneous distribution of electron gyromagnetic tensor and/or quadrupolar couplings. This precluded so far the observation of higher-order terms in the coupled spin Hamiltonian by magnetic resonance techniques, despite active research~\sidecite{segel_nuclear_1978,doering_search_1986,liao_nuclear_1994}.
 
-%Precision measurements of the hyperfine spectrum of atoms and simple molecules probe electron-nuclear interactions beyond the leading-order magnetic dipolar and electric quadrupolar terms~\cite{schwartz_theory_1955}. Higher-order interactions such as the magnetic octuple are $\sim 10^5$ times weaker; hence, high spectral resolution in the order of hertz is required to resolve their contribution. This is readily achieved in atomic and molecular beams or in single-ion experiments, using combined microwave and laser excitations~\cite{gerginov_observation_2003,lewty_spectroscopy_2012}. In the solid state, ensemble magnetic resonance measurements of coupled electron-nuclear spin systems generally offer a lower spectral resolution (kHz at best~\cite{sielaff_pulsed_2025}), particularly when high-spin nuclei are involved. The origin of the broadening lies in a combination of spin-spin interactions and inhomogeneous distribution of electron gyromagnetic tensor and/or quadrupolar couplings. This precluded so far the observation of higher-order terms in the coupled spin Hamiltonian by magnetic resonance techniques, despite active research~\cite{segel_nuclear_1978,doering_search_1986,liao_nuclear_1994}.
-
-% Because the magnetic moment of $I > 1$ nuclei is not point-like but has a spatial extension, they have a magnetic octupole moment that couples to magnetic field second derivatives. Such interaction has been measured in the hyperfine spectrum of neutral atoms~\sidecite{gerginov_observation_2003} and ions~\sidecite{lewty_spectroscopy_2012} using atomic beams but never in the solid-state, and could be used to extract information about the nuclear structure. Nuclear spins with $I > 3/2$ may couple to the electric field third derivative via the nuclear hexadecapole moment, which has so far never been conclusively measured.
+Because the magnetic moment of $I > 1$ nuclei is not point-like but has a spatial extension, they have a magnetic octupole moment that couples to magnetic field second derivatives. Such interaction has been measured in the hyperfine spectrum of neutral atoms~\sidecite{gerginov_observation_2003} and ions~\sidecite{lewty_spectroscopy_2012} using atomic beams but never in the solid-state, and could be used to extract information about the nuclear structure. Nuclear spins with $I > 3/2$ may couple to the electric field third derivative via the nuclear hexadecapole moment, which has so far never been conclusively measured.
 
 %One strategy to circumvent this limitation is to couple individual nuclear spins to a nearby electron spin impurity, enabling indirect but sensitive detection. This approach has been used to great success with NV centers in diamond to measure the hyperfine interaction of $^{13}\mathrm{C}$ nuclear spin with hertz resolution~\cite{abobeih_atomicscale_2019, bartling_universal_2025}. This level of precision allowed the three-dimensional reconstruction of the nuclear spin environment of a single NV center with lattice site precision~\cite{vandestolpe_mapping_2024}. Hertz resolution was also reported for the quadrupolar interaction of the $^{14}\mathrm{N}$ nuclear spin for a number of NV centers at room temperature~\cite{breitweiser_quadrupolar_2024}. The results were used to establish a significant correlation between the zero-field splitting of the NV centers and the quadrupole interaction of the nuclear spin, both of which depend on the local electric fields generated by the surrounding lattice. These results demonstrate how precision hyperfine spectroscopy can be used to structurally study single nuclear spins in the solid-state.
 
@@ -105,6 +104,7 @@ Finally, we note that the work reported in Ref.~\sidecite{bartling_universal_202
 
 
 \section{Spin system}
+\labsec{spin_system_ch5}
 
 \begin{figure*}[t!]
     \includegraphics{chapter5/figures/spectra_2d.pdf}
@@ -368,7 +368,7 @@ The excited-state manifold frequencies $\omega^{(\Uparrow)}_{n,n+1}$ are then me
 \reffig{ramsey_ninehalf}c plots the fitted NMR frequencies as a function of the transition index $n$, both for the ground and excited state of the \Er spin (green and orange resp.). The ground state transitions and consistently larger than their excited state counterparts, which indicate a positive value of $A_\parallel/2\pi\approx130$~kHz. The value of the transition frequencies in the \Er ground state are the following
 
 \begin{align*}
-\omega^{(\Downarrow)}_{n, \ n+1} / 2\pi = [&7563655.5,\, 6897827.7,\, 6230527.8,\,  \dots
+\omega^{(\Downarrow)}_{n, n+1} / 2\pi = [&7563655.5,\, 6897827.7,\, 6230527.8,\,  \dots
 \\&5560809.0,\, 4886882.6,\, 4205110.3,\,  \dots
 \\&3507057.2,\, 2777446.4,\, 1824936.4]\ \pm 1~\text{Hz}
 \end{align*}
@@ -382,28 +382,28 @@ given here in increasing order of $n$. Respectively, the NMR transitions for the
 \end{marginfigure}
   
 \begin{align*}
-\omega^{(\Uparrow)}_{n, \ n+1} / 2\pi = [&7426916\,, 6761742,\, 6095227,\, \dots\\
+\omega^{(\Uparrow)}_{n, n+1} / 2\pi = [&7426916\,, 6761742,\, 6095227,\, \dots\\
 &5426468,\, 4753828,\, 4073918,\, \dots\\
 &3378381,\, 2654903,\, 1693679]\ \pm 20~\text{Hz}
 \end{align*}
 
 
-From the fitted coherence (\reffig{ramsey_ninehalf}d \& e) we estimate that the uncertainty of the measured frequencies is approximately $\sim 1$~Hz for the ground state and $\sim 20$~Hz for the excited state. We confirm this by monitoring the frequency drift of the $\ket{º 0} \leftrightarrow \ket{\Downarrow 1}$ transition during a prolonged period of 60 hours. \reffig{drift} plots the frequency drift $\delta \omega$ as a function of time, which remains confined within $\pm1$~Hz.
+From the fitted coherence (\reffig{ramsey_ninehalf}d \& e) we estimate that the uncertainty of the measured frequencies is approximately $\sim 1$~Hz for the ground state and $\sim 20$~Hz for the excited state. We confirm this by monitoring the frequency drift of the $\ket{\Downarrow 0} \leftrightarrow \ket{\Downarrow 1}$ transition during a prolonged period of 60 hours. \reffig{drift} plots the frequency drift $\delta \omega$ as a function of time, which remains confined within $\pm1$~Hz.
 
 The fitted coherence time for ground and excited Ramsey measurements are in plot in \reffig{ramsey_ninehalf}d \& e respectively. On the one hand, ground state transitions display a constant behavior\sidenote{We note that for $n=5$ the coherence time is slightly lower for unknown reasons.} with $T_2^*\approx150$~ms. This indicates that magnetic noise is the dominant contribution to the Ramsey dephasing, since electric noise would impact more strongly transitions with extremal values of $n$, as was observed in an individual $^{123}\mathrm{Sb}$ nuclear spin in silicon \sidecite{fernandezdefuentes_navigating_2024}. On the other hand, the coherence time of the excited state Ramsey measurements is limited by the \Er relaxation time. We observe that $T_2^{*(\Uparrow)}$ slightly increases with $n$, due to the increased detuning of the $\ket{\Downarrow,n} \leftrightarrow \ket{\Uparrow,n}$ transition from the resonator. However, the increase is less than expected from the Purcell effect, shown as a purple line in the plot, suggesting that this \Er has a relatively short non-radiative lifetime, of order $\sim 3$\,ms, possibly linked to the proximal \Nb impurity. 
 
 
 \subsubsection{The effect of the \W bath}
 
-The nuclear spin bath, consisting of neighboring \W\ nuclear spins, significantly contributes to the spectral drift of the \Nb\ transition frequencies. To mitigate this effect, we polarize the spin bath using solid-effect DNP by applying microwave pulses resonant with the double-quantum transitions of the coupled \W\ spins (see \reffig{polarization_seq}). To be able to effectively drive weakly coupled \W nuclear spins, we employ 40~ms pulses separated by 10~ms delays to allow the microwave lines to cool, and repeat this sequence 15 times. The strong pulse amplitudes induce a substantial AC-Zeeman shift, and we account for this by chirping the pulse 350~kHz around $\omega^{\mathrm{(W)}}/2\pi = 725$~kHz. Note that it is crucial that the \W\ polarization sequence is applied \emph{after} the \Nb\ preparation, since the electron-spin allowed transition depends on the \Nb\ state, and the \W\ zero-quantum transition is correspondingly detuned relative to this transition.
-
-\begin{figure}
+\begin{figure}{b}
     \includegraphics{chapter5/figures/polarized_vs_unpolarized.pdf}
     \caption[Effect of \W polarization]{Ramsey sequence with and without \W polarization pulses. Measurement data (dots) are fit to an exponentially decaying (line) which yields $T_2^*=22$~ms and $T_2^*=331$~ms for the unpolarized and the polarized case respectively.}
     \labfig{polarized_vs_unpolarized}
 \end{figure}
 
-To demonstrate the impact of the \W polarization, \reffig{polarized_vs_unpolarized} shows a \Nb Ramsey measurement with and without \W polarization. The \Nb coherence time $T_2^*$ without \W polarization is $26$\,ms, and it increases up to 331~ms upon polarizing the \W bath. Since the measurement time of the curve in \reffig{polarized_vs_unpolarized} is much shorter than those in \reffig{ramsey_ninehalf}a, ($\sim$3 hours compared to $\sim$32 hours), the measured $T_2^*$ is considerably larger in this measurement.
+The nuclear spin bath, primarily consisting of neighboring \W nuclear spins, significantly contributes to the spectral drift of the \Nb transition frequencies. To mitigate this effect, we polarize the spin bath using solid-effect DNP by applying microwave pulses resonant with the double-quantum transitions of the coupled \W spins (see \reffig{polarization_seq}). To be able to effectively drive weakly coupled \W nuclear spins, we employ 40~ms pulses separated by 10~ms, and repeat this sequence 15 times. The strong pulse amplitudes induce a substantial AC-Zeeman shift, and we account for this by chirping the pulse 350~kHz around $\omega_{\text{\W}}^{\text(DQ)}/2\pi = \omega_r - 725$~kHz. Note that it is crucial that the \W polarization sequence is applied \emph{after} the \Nb preparation, since the electron-spin allowed transition depends on the \Nb state, and the \W double-quantum transition is correspondingly detuned relative to this transition.
+
+To demonstrate the impact of the \W polarization, \reffig{polarized_vs_unpolarized} shows a \Nb Ramsey measurement with and without \W polarization. The \Nb coherence time $T_2^*$ without \W polarization is $26$\,ms, and it increases up to 331~ms upon polarizing the \W bath. Since the measurement time of the curve in \reffig{polarized_vs_unpolarized} is much shorter than those in \reffig{ramsey_ninehalf}a, ($\sim$3 hours compared to $\sim$32 hours), the $T_2^*$ is considerably larger for this measurement.
 
 \subsubsection{Hahn echo measurements}
 
@@ -424,16 +424,24 @@ In addition, the large nuclear spin of \Nb offers interesting perspectives for q
 
 \subsection{Fitting $\mathcal{H}^{(\Downarrow)}$ and $\mathcal{H}^{(\Uparrow)}$}
 
-We now analyze the frequencies shown in \reffig{ramsey_ninehalf}c to extract the nuclear spin parameters. 
-%Directly fitting the Hamiltonian in Eq. \ref{eq:hamiltonian_ninehalf_full} is non-trivial, as the high precision of the data means that higher order terms might need to be considered. 
-We begin the fitting process with a simplified system, separating the Hamiltonian in two manifolds depending on the state of the \Er spin as shown in Eq.  \ref{eq:up_down_hamiltonian}. In this picture, we have two independent nuclear spin systems which experience slightly different magnetic fields, both magnitude and orientation. The origin of this difference lies in the parallel and perpendicular components of the hyperfine interaction which take opposite signs depending on the state of the \Er spin. 
+We now analyze the frequencies shown in \reffig{ramsey_ninehalf}c to extract the nuclear spin parameters. As discussed in \refsec{spin_system_ch5}, the objective is to test the assumption that the quadrupole interaction does not depend on the \Er spin state. In order to do so, we separate the Hamiltonian in two manifolds, as shown in Eq. \ref{eq:up_down_hamiltonian}. In this picture, we have two independent nuclear spin systems which experience slightly different magnetic fields, both magnitude and orientation. The origin of this difference lies in the parallel and perpendicular components of the hyperfine interaction which take opposite signs depending on the state of the \Er spin. 
 
 Each of the manifolds can be independently fit to obtain an effective magnetic field and the \Nb quadrupole tensor. However, they correspond to a "single-axis measurement" as the magnetic field is only applied along one direction. Before proceeding to the fit, we note an intrinsic degeneracy of the quadrupole spectrum under these conditions.
 
 \subsubsection{Rotational invariance of the quadrupolar energy spectrum}
 \labsec{rot_invariance}
 
-When fitting the nuclear transition frequencies in this work, we consider the measurements with a single orientation of the magnetic field. Under these conditions, the measured NMR frequencies are not sufficient to describe the full quadrupole tensor. It is intuitively clear that the measured spectrum should be invariant under a rotation around the applied field direction $z$, and that only $4$ out of the $5$ parameters that describe a quadrupole tensor can be determined at best. This is mathematically evidenced when expressing the quadrupole tensor as a function of rank-2 spherical tensors $T^{(2)}_{m}$, instead of Cartesian coordinates. The rank-2 spherical tensors are related to the spin operator basis by
+The quadrupolar interaction is mathematically modeled with a rank-2 tensor that is real, traceless and symmetric. Therefore, 5 variables are needed to fully describe it. As discussed in \refsec{nuclear_spins_ca}, a possible set of variables are the quadrupolar interaction strength, $C_q$, the biaxiality parameter, $\eta$, and the three Euler angles that define the rotation from the laboratory frame to the quadrupole principal axes frame. Likewise, the quadrupole can be described in Cartesian coordinates for an arbitrary basis:
+
+\begin{equation}
+Q=\begin{pmatrix}
+Q_{xx} & Q_{xy} & Q_{xz}\\
+Q_{xy} & Q_{yy} & Q_{yz}\\
+Q_{xz} & Q_{yz} & Q_{zz}
+\end{pmatrix},\qquad \mathrm{Tr}\,Q=0,
+\end{equation}
+
+However, when fitting the nuclear transition frequencies in this work, we consider the measurements with a single orientation of the magnetic field. Under these conditions, the measured NMR frequencies are not sufficient to describe the full quadrupole tensor. It is intuitively clear that the measured spectrum should be invariant under a rotation around the applied field direction $z$, and that only $4$ out of the $5$ parameters that describe a quadrupole tensor can be determined at best. This is mathematically evidenced when expressing the quadrupole tensor as a function of rank-2 spherical tensors $T^{(2)}_{m}$. These operators are related to the spin operator basis by
 
 \begin{equation}
 \begin{split}
@@ -446,7 +454,7 @@ T^{(2)}_{\pm 2} &= I_{\pm}^2 .
 and by algebraic manipulation we can rewrite the quadrupolar interaction as
 
 \begin{equation}
-    \cH{Q} / \hbar = \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I} = \sum_{m = -2}^2 Q_m T^{(2)}_m(\hat{\mathbf{I}})
+    \cH{Q} / \hbar = \mathbf{I} \cdot \bar{\bar{Q}} \cdot \mathbf{I} = \sum_{m = -2}^2 S_m T^{(2)}_m(\hat{\mathbf{I}})
     \label{eq:quadrupole_spherical}
 \end{equation}
 
@@ -454,17 +462,17 @@ and by algebraic manipulation we can rewrite the quadrupolar interaction as
 
 \begin{equation}
 \begin{aligned}
-Q_{0} &= Q_{zz}, \\
-Q_{\pm 1} &= Q_{zx} \pm i Q_{zy}, \\
-Q_{\pm 2} &= \tfrac{1}{2}(Q_{xx} - Q_{yy}) \pm i Q_{xy}.
+S_{0} &= Q_{zz}, \\
+S_{\pm 1} &= Q_{zx} \pm i Q_{zy}, \\
+S_{\pm 2} &= \tfrac{1}{2}(Q_{xx} - Q_{yy}) \pm i Q_{xy}.
 \end{aligned}
 \end{equation}
 
 One can show (Appendix \ref{app:rotations_quadrupole}) that the coefficients transform as 
 \begin{equation}
-Q_m \;\mapsto\; e^{-im\zeta}\, Q_m,
+S_m \;\mapsto\; e^{-im\zeta}\, S_m,
 \end{equation}
-under a physical rotation of angle $\zeta$ about the $z$-axis. Since the energy levels of the Hamiltonian are insensitive to these phase factors and depend only on invariants such as $Q_0$, $|Q_{\pm 1}|^2$, and $|Q_{\pm 2}|^2$, the energy spectrum is invariant under such rotations. The matrix form of the quadrupole tensor in terms of these invariants is
+under a physical rotation of angle $\zeta$ about the $z$-axis. Since the energy levels of the Hamiltonian are insensitive to these phase factors and depend only on invariants such as $S_0$, $|S_{\pm 1}|$, and $|S_{\pm 2}|$, the energy spectrum is invariant under such rotations. The matrix form of the quadrupole tensor in terms of these invariants is
 
 \begin{align}
 \begin{split}
@@ -475,10 +483,10 @@ under a physical rotation of angle $\zeta$ about the $z$-axis. Since the energy 
 \end{split}
 \end{align}
 
-where $\Delta$ is the phase difference between $S_{+2}$ and $S_{+1}$
+where $\Delta$ is defined as
 
 \begin{equation}
-\Delta = \Delta_2 - \Delta_1 = \arctan\left(\frac{2Q_{xy}}{Q_{xx}-Q_{yy}}\right) -  \arctan\left(\frac{Q_{yz}}{Q_{xz}}\right)
+\Delta = \arctan\left(\frac{2Q_{xy}}{Q_{xx}-Q_{yy}}\right) -  \arctan\left(\frac{Q_{yz}}{Q_{xz}}\right)
 \end{equation}
 
 For single axis measurements, this leaves $S_0$, $|S_1|$, $|S_2|$, and $\Delta$ to be determined, whereas $\zeta$ can be fixed to an arbitrary value. This is a subtle point with an important consequence: any two tensors related by a rotation along the quantization axis produce identical NMR spectra for a fixed field orientation\sidenote{It is straightforward to see that the Zeeman term is also degenerate under rotations along the axis of $B_0$.}. Equivalently, no matter how precise the measurement of the nuclear transition frequencies, one can only reconstruct the quadrupole tensor up to a rotation about the field axis. Consequently, the only way to lift this degeneracy is by measuring the spectra at different orientations of the magnetic field\sidenote{At zero magnetic field, no orientation information can be extracted, only the magnitudes of the principal components of the quadrupole}.
@@ -521,7 +529,7 @@ where $\sigma^{(\Downarrow)}_n=1$~Hz is the measurement uncertainty. The Hamilto
 
 The residuals of the two fits are shown in \reffig{fit_residuals}. The results agree up to statistical uncertainty ($1$\,Hz for the $\Downarrow$ data, $20$\,Hz for the $\Uparrow$ data), and the residuals show no discernible trend.  We calculate the reduced chi-squared for the ground and excited state and obtain $\chi^{2,(\Downarrow)}_\nu=0.75$ and $\chi^{2,(\Uparrow)}_\nu=1.14$, respectively. The proximity of these values to 1 indicates that the model correctly describes the data while avoiding over-fitting. We remark that the uncertainty of $S_1^{(\Downarrow)}$ and $\Delta^{(\Downarrow)}$ is much larger than the other parameters. This is readily explained by the effect of these quantities on the energy levels of the Hamiltonian. On the one hand, $S_1$, $\Delta$ are closely related to the values of the quadrupole perpendicular to $B_0$, and are only observable as second and third order effects respectively. On the other hand, $B_0$, $S_0$ and $S_2$ are responsible for zero and first order effects and their estimation is more precise. Appendix \ref{app:mcmc_fit} dives into the resulting posterior distributions and explicit details of the fit procedure.
 
-The fit yields the quadrupolar tensors $\bar{\bar{Q}}^{(\Downarrow)}$ and $\bar{\bar{Q}}^{(\Uparrow)}$, up to an arbitrary rotation around the $z^{(\Downarrow)}$ and $z^{(\Uparrow)}$ axes, respectively. Given this degeneracy and the fact that the quantization axis are not parallel in the two cases, component-wise comparison of the tensor is inappropriate. Therefore, we compare the principal values of the tensor obtained diagonalizing each $\bar{\bar{Q}}^{(\Downarrow)}$ and $\bar{\bar{Q}}^{(\Uparrow)}$. This analysis reveals that the principal axis associated with the largest eigenvalue (denoted $X$) lies approximately within the crystal $(a,b)$-plane, up to an undetermined in-plane angle. The second-strongest principal axis (denoted as $Z$) is approximately parallel to the crystal $c$-axis and therefore to $B_0$. 
+The fit yields the quadrupolar tensors $\bar{\bar{Q}}^{(\Downarrow)}$ and $\bar{\bar{Q}}^{(\Uparrow)}$, up to an arbitrary rotation around the $z^{(\Downarrow)}$ and $z^{(\Uparrow)}$ axes, respectively. Given this degeneracy and the fact that the quantization axis are not parallel in the two cases, component-wise comparison of the tensor is inappropriate. Therefore, we compare the principal values of the tensor obtained diagonalizing $\bar{\bar{Q}}^{(\Downarrow)}$ and $\bar{\bar{Q}}^{(\Uparrow)}$. This analysis reveals that the principal axis associated with the largest eigenvalue (denoted $X$) lies approximately within the crystal $(a,b)$-plane, up to an undetermined in-plane angle. The second-strongest principal axis (denoted as $Z$) is approximately parallel to the crystal $c$-axis and therefore to $B_0$. 
 
 \begin{figure}
     \includegraphics{chapter5/figures/q_histograms.pdf}
@@ -549,7 +557,7 @@ First, we consider the Lamb shift of the EPR-allowed transitions, which renormal
 \Delta\omega = \Delta \frac{g_0^2}{\Delta^2 + \kappa^2/4}.
 \end{equation}
 
-In the case of the coupled \Nb--\Er system, the \Er excited state levels $\ket{\Uparrow,n}$ are shifted by $\Delta \omega_n = g_0^2 \frac{\Delta_n}{\Delta_n^2 + \kappa^2/4}$, where $\Delta_n = \omega_0 - \omega_n$ is the detuning of the EPR-allowed transition from the resonator frequency. The order of magnitude is $\Delta \omega \sim g_0^2 / \kappa \sim 2\pi \times 100\,\mathrm{rad}\cdot \mathrm{s}^{-1}$ and the dependence on $n$ causes shifts $\Delta_{n+1} - \Delta_n$ of the NMR transition frequencies $\omega_{n,n+1}^\Uparrow $, which therefore must be taken into account in our analysis. We achieve this by including the following term in the Hamiltonian
+In the case of the coupled \Nb--\Er system, the \Er excited state levels $\ket{\Uparrow,n}$ are shifted by $\Delta \omega_n = g_0^2 \frac{\Delta_n}{\Delta_n^2 + \kappa^2/4}$, where $\Delta_n = \omega_0 - \omega_n$ is the detuning of the EPR-allowed transition from the resonator frequency. The order of magnitude is $\Delta \omega / 2\pi \sim g_0^2 / (2\pi\kappa) \sim 100$~Hz and the dependence on $n$ causes shifts $\Delta_{n+1} - \Delta_n$ of the NMR transition frequencies $\omega_{n,n+1}^\Uparrow $, which therefore must be taken into account in our analysis. We achieve this by including the following term in the Hamiltonian
 
 \begin{equation}
     \mathcal{H}_L = \Delta \omega_n \ket{\Uparrow,n}\bra{\Uparrow,n}
@@ -593,7 +601,7 @@ The fit is performed using the MCMC algorithm described in the previous section.
 \end{split}
 \end{align}
 
-\noindent with a reduced chi-squared of $\chi^2_\nu=1.2$, with similar residuals as the ones reported in \reffig{fit_residuals}. Compared to the estimate of the gyromagnetic tensor in \refsec{assignment}, this value is considerably closer to the literature. We assign the remaining difference to the pseudo-nuclear-Zeeman effect and/or the chemical shift
+\noindent with a reduced chi-squared of $\chi^2_\nu=1.2$ and similar residuals as the ones reported in \reffig{fit_residuals}. Compared to the estimate of the gyromagnetic tensor in \refsec{assignment}, this value is considerably closer to the literature. We assign the remaining difference to the pseudo-nuclear-Zeeman effect and/or the chemical shift
 
 From these values, we reconstruct the nuclear quadrupole tensor $\bar{\bar{Q}}$ and diagonalize it to obtain its principal axes $X$, $Y$, and $Z$. We find that the $Z$ axis is tilted by $0.06(3)^\circ$ with respect to the crystal $c$ axis, while the $X$ axis is rotated by $-10(6)^\circ$ relative to the crystal $a$ axis. The corresponding principal values are $Q_X = 268.138(9)$~kHz, $Q_Y = -30.799(7)$~kHz, and $Q_Z = -237.338(3)$~kHz. These values correspond to a quadrupolar interaction strength of $C_q / 2\pi = 19.3059(7)\,\mathrm{MHz}$ and a biaxiality parameter $\eta = 0.77026(7)$.
 
@@ -613,33 +621,31 @@ The quadrupolar tensor $\bar{\bar{Q}}$ is graphically represented in the crystal
 
 \section{Origin of the SDQ interaction}
 
-We identify two possible mechanisms that could account for the SDQ term.
+We identify two possible mechanisms that could account for the SDQ term: the pseudo-quadrupole coupling and a magnetically-induced electrostatic interaction. The origin and strength of these interactions for \Er:\Ca was discussed in \refsec{erbium_ions_in_ca}. In the following we numerically investigate the strength of these two effects.
 
-The first one is the magnetic coupling of the \Nb to higher-excited states of the \Er. Such coupling is well-known to cause nuclear frequency shifts that mimic a quadrupolar interaction, leading to a so-called pseudo-quadrupolar contribution of magnetic origin \sidecite{foley_secondorder_1947, abragam_electron_2012}. This pseudo-quadrupolar component might itself depend on the \Er spin state, as envisioned in \sidecite{ghatikar_zeemanfielddependent_1966}. 
+%The first one is the magnetic coupling of the \Nb to higher-excited states of the \Er. Such coupling is well-known to cause nuclear frequency shifts that mimic a quadrupolar interaction, leading to a so-called pseudo-quadrupolar contribution of magnetic origin \sidecite{foley_secondorder_1947, abragam_electron_2012}. This pseudo-quadrupolar component might itself depend on the \Er spin state, as envisioned in \sidecite{ghatikar_zeemanfielddependent_1966}. 
 
-The second one is the electrostatic interaction between the \Er and the \Nb spins. Bloembergen predicted \sidecite{bloembergen_linear_1961} that paramagnetic centers located at sites without inversion symmetry carry an electric dipole whose magnitude is proportional to $B_0$ and whose orientation changes with the spin state. This leads to linear electric-field shifts of the EPR transition frequency that have been observed in numerous paramagnetic systems~\sidecite{ludwig_splitting_1961}, including in \Er:\Ca \sidecite{mims_electric_1964, mims_electric_1965}. 
+%The second one is the electrostatic interaction between the \Er and the \Nb spins. Bloembergen predicted \sidecite{bloembergen_linear_1961} that paramagnetic centers located at sites without inversion symmetry carry an electric dipole whose magnitude is proportional to $B_0$ and whose orientation changes with the spin state. This leads to linear electric-field shifts of the EPR transition frequency that have been observed in numerous paramagnetic systems~\sidecite{ludwig_splitting_1961}, including in \Er:\Ca \sidecite{mims_electric_1964, mims_electric_1965}. 
 
-The origin and strength of these interactions for \Er:\Ca was discussed in \refsec{erbium_ions_in_ca}. In the following we numerically investigate the strength of these two effects.
 
 \subsection{Pseudo-quadrupole interaction}
 
-In this section we attempt to explain the observed SDQ effect through the action of higher energy Kramers doublets $Z_2, \dots,Z_8$ on the nuclear transition energies of the \Nb spin. As detailed in \refch{electron_nuclear_interaction}, the spin-1/2 model is an approximation of the full $J=15/2$ manifold. The application of a magnetic field $B_0\approx440$~mT along the $c$-axis of the crystal will induce a non-negligible mixing of the wavefunctions within the $J$-manifold. The mixing with higher order energy levels has a two-fold effect on coupled nuclear spins.
+In this section we attempt to explain the observed SDQ effect through the action of higher energy Kramers doublets $Z_2, \dots,Z_8$ on the nuclear transition energies of the \Nb spin. As explained in \refsec{spin_hamiltonian_final}, the spin-1/2 model (Eq.~\ref{eq:spin_half_hamiltonian}) is a restriction of the more complete Hamiltonian (Eq.~\ref{eq:full_spin_hamiltonian}) to the lowest two \Er energy levels. In particular, the hyperfine Hamiltonian coupling the effective spin $S$ and the nuclear spin is a two-level restriction of the hyperfine Hamiltonian $\cH{hf, $J$}$ (Eq.\ref{eq:hf_J_hamiltonian}). The latter couples the nuclear spin not only to the $Z_1$ doublet, but also to the other higher-energy $Z_{2-8}$ states. These couplings renormalize the nuclear energy levels in a manner that may mimic an effective quadrupolar interaction. This pseudo-quadrupolar interaction is of purely magnetic origin, contrary to the real quadrupolar interaction~\sidecite{foley_secondorder_1947,abragam_electron_2012}, and can be of simiar order of magnitude as the electric quadrupole when the nuclear spin is located on the nucleus of the paramagnetic ion~\sidecite{schweiger_principles_2001}. 
 
-First is the pseudo-Zeeman effect \sidecite{baker_paramagnetic_1958, jeschke_hyperfine_1997}. The magnetic moment of the $Z_1$ doublet states is modified which results in non-zero average magnetic moment (see \refsec{erbium_ions_in_ca}). This generates an effective magnetic field at the location of the nuclear spins, which effectively renormalizes the gyromagnetic factor of the nuclear spin. 
+The effective Hamiltonian of the pseudo-quadrupolar interaction depends on the point-symmetry of the site where the ion is located. It has been predicted that this interaction can be described by a term of the form $S_z I_z^2$ for D$_{3\text{h}}$ symmetry \cite{ghatikar_zeemanfielddependent_1966}, which would imply that the pseudo-quadrupolar part may depend on the spin state, as observed in our experiment. However, no prediction was made for the $S_4$ symmetry. We therefore rely on numerical simulations to estimate the relevance of this effect.
 
-Second, is the pseudo-quadrupole effect \sidecite{foley_secondorder_1947, abragam_electron_2012}, which effectively renormalizes the nuclear quadrupole tensor. In contrast to the electric origin of the quadrupole, this interaction is magnetic. When the nuclear spin is located on the nucleus of the paramagnetic ion, this effect can be on the same order of magnitude as the electric quadrupole \sidecite{schweiger_principles_2001}. The effective Hamiltonian of the interaction is non-trivial and depends on the point-symmetry of the site where the ion is located. It has been theorized that this interaction can have the form $S_z \ I_z^2$ for the D$_{3\text{h}}$ symmetry \sidecite{ghatikar_zeemanfielddependent_1966}. However, the \Nb lies in a $S_4$ site for which, to the best of our knowledge, there is no theoretical insight. 
 
 To quantitatively characterize the effect of the pseudo-Quadrupole for this specific configuration, we proceed by performing the following numerical analysis. First, we generate a series of the NMR transitions for the \Nb -- \Er system by diagonalizing the $J=15/2$ Hamiltonian
 
 \begin{align}
-        \mathcal{H}/\hbar =\ \mu_B \ g_J\mathbf{B_0}\cdot \mathbf{J} + \mathcal{H}_{\mathrm{cf}} 
+        \mathcal{H} =\ \mu_B \ g_J\mathbf{B_0}\cdot \mathbf{J} + \mathcal{H}_{\mathrm{cf}} 
         + \omega_I I_z + \mathbf{I}\cdot \bar{\bar{Q}}\cdot \mathbf{I}  
-    + \ \mathbf{J}\cdot \lambda \bar{\bar{A}}_J\cdot\mathbf{I} +\mathcal{H}_{\mathrm{L}}
+    + \ \mathbf{J}\cdot \lambda \bar{\bar{A}}_J\cdot\mathbf{I} +\mathcal{H}_{\mathrm{L}}.
 \end{align}
 
-The hyperfine coupling tensor $\bar{\bar{A}}$ is calculated from a dipole-dipole interaction between the \Er spin and the \Nb at the measured site. The crystal-field parameters are obtained from ref.\sidecite{enrique_optical_1971}. The rest of the values are taken from the spectroscopic measurements performed in \refsec{final_hamiltonian_fit}. We note that the presence of the \Nb impurity in the vicinity of the \Er ion breaks the $S_4$ symmetry of the lattice site. Therefore, the crystal-field parameters used to describe the crystal-field Hamiltonian are not a completely accurate description of the system. Nevertheless, we use the values given in ref.\sidecite{enrique_optical_1971} as reasonable approximation.
+As for the Hamiltonian fit in the previous section, the hyperfine coupling tensor $\bar{\bar{A}}_J$ is calculated from a dipole-dipole interaction between the \Er spin and the \Nb at the expected position. We use the $S_4$-symmetric crystal-field Hamiltonian $\mathcal{H}_{\mathrm{cf}} $ determined in~\cite{enrique_optical_1971}, whose validity is questionable here due to the $S_4$ symmetry breaking due to the \Nb presence. Given that the pseudo-quadrupole effect is a second order interaction of the hyperfine coupling, we use a dimensionless scaling parameter $\lambda$ for the hyperfine interaction strength. Otherwise, the Hamiltonian parameters are set to the measured values. 
 
-Given that the pseudo-quadrupole effect is a second order interaction of the hyperfine coupling, we use the scaling parameter $\lambda$ to effectively control its strength. 
+The NMR transition frequencies computed in the lowest two \Er manifolds are then fitted with the effective spin-1/2 model, using the same procedure as the one used for the experimental data (described in the previous section), yielding the effective quadrupolar interaction in each \Er state. The difference between the principal values along the $c$ axis between the $\uparrow$ and $\downarrow$ values, $Q_\mathrm{sdq, pq}$, is shown in \reffig{pseudoquadrupole}a as a function of the scaling parameter $\lambda$.
 
 \begin{figure}
     \includegraphics{chapter5/figures/pseudoquadrupole.pdf}
@@ -649,15 +655,15 @@ Given that the pseudo-quadrupole effect is a second order interaction of the hyp
     \labfig{pseudoquadrupole}
 \end{figure}
 
-The simulated NMR transitions are then fit using the effective spin-1/2 model. The fit is performed following the procedure outlined in the previous sections, by separating the fit between the electron ground and excited state and compares the principal values of the quadrupole in the two manifolds. We find that the pseudo-quadrupole shift is non-zero and quadratic with the hyperfine scaling factor, in agreement with a second-order effect. In addition, the interaction matches qualitatively with the experimentally observed mismatch splitting of the quadrupole parameters. \reffig{pseudoquadrupole} plots the effective SDQ interaction induced by the pseudo-quadrupole effect, $Q_\mathrm{sdq, pq}$, as a function of the scaling parameter $\lambda$.
+We first note that the computed $Q_\mathrm{sdq, pq}$ is $0$ when $\lambda=0$, as expected. For non-zero values of $\lambda$, a non-zero spin-dependent pseudo-quadrupole is computed. Its value scales quadratically with the hyperfine scaling factor, as expected for an effect that can be described in second-order perturbation theory. The magnitude of the interaction is of similar order as the experimentally measured value, although the $\lambda=1$ value $Q_\mathrm{sdq, pq}/2\pi =-8$~Hz is a factor $10$ smaller than the measurement and has an opposite sign. We also compute $Q_\mathrm{sdq, pq}$ at $\lambda=1$ as a function of $\theta$ (see \reffig{pseudoquadrupole}b). In a window of $\pm5$ degrees, $Q_\mathrm{sdq, pq}$ remains consistently smaller than 10~Hz in absolute value.
 
-The numerically predicted strength of the interaction along the $c$-axis ($i=Z$) for $\lambda=1$ is approximately $-8$~Hz, an order of magnitude smaller compared to the measurement and with opposite sign. We continue this analysis by fixing $\lambda=1$ and scanning the in-plane angle $\theta_S$ between $B_0$ and the projection of the $c$-axis on the resonator plane. In the span of $\pm5$ degrees the shift remains consistently smaller than 10~Hz (in absolute value) with no indication of a rapid increase.
-
-From this numerical analysis, we conclude that the effect of the pseudo-quadrupole interaction has a magnitude comparable with the data but with opposite sign, indicating that this mechanism should be considered but cannot be the only one at play. 
+We conclude that pseudo-quadrupole interactions arising from second-order paramagnetic coupling between the electron $J$-multiplet and the nuclear spin needs to be considered in a complete analysis. However, it has opposite sign and is one order of magnitude smaller than the measurements, implying that the effect is likely not the only one at play.
 
 \subsection{Electrostatic coupling}
 
-In \refsec{erbium_ions_in_ca} we introduced the concept of magnetically induced electric dipole. Indeed, ions in non-centrosymmetric sites will experience admixing of wavefunctions with different parity due to the odd terms of the crystal field Hamiltonian \sidecite{kiel_theory_1966}. In turn, this results in a magnetoelectric effect which couples static electric and magnetic fields and can be effectively described as a magnetically induced electric dipole. As described in \refsec{erbium_ions_in_ca}, the Hamiltonian used to describe this effect is 
+The second one is the electrostatic interaction between the \Er and the \Nb spins. Bloembergen predicted \sidecite{bloembergen_linear_1961} that paramagnetic centers located at sites without inversion symmetry carry an electric dipole whose magnitude is proportional to $B_0$ and whose orientation changes with the spin state. This leads to linear electric-field shifts of the EPR transition frequency that have been observed in numerous paramagnetic systems~\sidecite{ludwig_splitting_1961}, including in \Er:\Ca \sidecite{mims_electric_1964, mims_electric_1965}. This effect was discussed in \refsec{erbium_ions_in_ca}, but we briefly summarize the results here. 
+
+Ions in non-centrosymmetric sites will experience admixing of wavefunctions with different parity due to the odd terms of the crystal field Hamiltonian \sidecite{kiel_theory_1966}. In turn, this results in a magnetoelectric effect which couples static electric and magnetic fields and can be effectively described as a magnetically induced electric dipole. As described in \refsec{erbium_ions_in_ca}, the Hamiltonian used to describe this effect is 
 
 \begin{align}
 \begin{split}
@@ -693,7 +699,7 @@ Given the spectral resolution of the ground-state data, we can test the presence
 \end{split}
 \end{align}
 
-\reffig{octupole_hexadecapole} shows the posterior distribution of $C_3$ and $C_4$ for each of two fits. We find $C_3 = 8 \pm 14$~Hz and $C_4 = 12 \pm 10$\,Hz, compatible with zero in both cases. 
+\reffig{octupole_hexadecapole} shows the posterior distribution of $C_3$ and $C_4$ for each of two fits. We find $C_3 = 8(14)$~Hz and $C_4 = 12(10)$\,Hz, compatible with zero in both cases. 
 
 \begin{figure}
     \includegraphics{chapter5/figures/octupole_hexadecapole.pdf}

@@ -11,33 +11,94 @@
 In this chapter we investigate an unexpected impurity with nuclear spin $I=9/2$ found in close-proximity to an individual \Er spin. By analysis of the NMR transitions, excited through stimulated Raman driving, we identify the spin as a \Nb. We then perform precision spectroscopy by leveraging the long coherence of the \Nb spin, and we are able to determine the nuclear transition frequencies with hertz precision. By fitting the nuclear spectra to a Hamiltonian model we identify a previously unobserved form of coupling term between the electron and the nuclear spin. In addition, we set a higher bound on the hexadecapolar interaction of the \Nb nuclear spin, one order of magnitude tighter than previous NMR ensemble measurements in the solid state.
 \end{quote} 
 
-\section{Introduction}
+\section{State-of-the-art}
+\labsec{sota_ch5}
 
-Precision measurements of the hyperfine spectrum of atoms and simple molecules probe electron-nuclear interactions beyond the leading-order magnetic dipolar and electric quadrupolar terms~\cite{schwartz_theory_1955}. Higher-order interactions such as the magnetic octuple are $\sim 10^5$ times weaker; hence, high spectral resolution in the order of hertz is required to resolve their contribution. This is readily achieved in atomic and molecular beams or in single-ion experiments, using combined microwave and laser excitations~\cite{gerginov_observation_2003,lewty_spectroscopy_2012}. In the solid state, ensemble magnetic resonance measurements of coupled electron-nuclear spin systems generally offer a lower spectral resolution (kHz at best~\cite{sielaff_pulsed_2025}), particularly when high-spin nuclei are involved. The origin of the broadening lies in a combination of spin-spin interactions and inhomogeneous distribution of electron gyromagnetic tensor and/or quadrupolar couplings. This precluded so far the observation of higher-order terms in the coupled spin Hamiltonian by magnetic resonance techniques, despite active research~\cite{segel_nuclear_1978,doering_search_1986,liao_nuclear_1994}.
+We begin this chapter by highlighting two state-of-the-art experiments in which the spectra of individual quadrupolar nuclei were measured. As in the previous chapters, the systems of interest are NV centers in diamond and donor impurities in silicon.
+
+\subsection*{Quadrupole of a $^{14}\mathrm{N}$ nuclear spin $I=1$ in diamond}
+
+Recent work by S. Breitweiser \textit{et al.} probes the quadrupolar spectrum of the $^{14}\mathrm{N}$ nuclear spin coupled to an NV center in diamond~\sidecite{breitweiser_quadrupolar_2024}. As shown in \reffig{sota_nv1}a, the sample is located inside a solid immersion lens, which enhances optical photon collection efficiency by reducing optical losses. The energy level structure of the coupled electron–nuclear system is shown in \reffig{sota_nv1}b. The spectrum is progressively split by the different interaction terms: the zero-field splitting, the electron Zeeman interaction, the nuclear quadrupole interaction, the hyperfine interaction, and the nuclear Zeeman interaction.
+
+Using a DD sequence, the hyperfine spectrum of the $^{14}\mathrm{N}$ nuclear spin can be measured with high precision. \reffig{sota_nv1}c shows both the DD pulse sequence and the measured spectra as a function of the interpulse delay. The transitions highlighted in purple and red correspond to $\Delta m_I = \pm 1$. These transitions are enabled by $S_z I_x$ terms in the Hamiltonian, engineered by introducing a small off-axis component of the magnetic field.
+
+In contrast, the green transitions correspond to $\Delta m_I = \pm 2$, which are enabled by quadrupolar terms perpendicular to the magnetic field axis, namely $I_x^2$ and $I_y^2$. Due to the site symmetry of the $^{14}\mathrm{N}$ nucleus in the NV center, the biaxiality parameter of the quadrupole tensor is, in principle, zero, and such terms should be absent. However, the observation of these transitions indicates a non-axial components in the Hamiltonian. By fitting the DD oscillation frequencies\sidenote{This follows a similar principle to that discussed in \refsec{sideband_driving_and_identification} \& \refsec{stimulated_raman_ch4}.}, they extract a biaxiality parameter $\eta = 0.0181$.
+
+
+\begin{figure*}
+    \includegraphics{chapter5/figures/state_of_the_art.pdf}
+    \caption[State-of-the-art: Nuclear spectrum of a $^{14}\mathrm{N}$ spin]{
+        \textbf{a.} Model of a diamond NV center located within a solid immersion lens, composed of an electronic spin (purple) coupled to a $^{14}\mathrm{N}$  nuclear spin (blue).
+        \textbf{b.} Energy level diagram of the system. The terms correspond to the zero-field-splitting, the electron Zeeman, the nuclear quadrupole, the hyperfine and the nuclear Zeeman interactions respectively. 
+        \textbf{c.} DD spectra of the NV center. Peaks corresponding to  $\Delta m_I = \pm1$ transitions (purple and red) appear in the presence of an off-axis magnetic field (B = 193 G). Peaks corresponding to $\Delta m_I = \pm2$ transitions (green) appear due to the quadrupolar asymmetry parameter, even without an off-axis magnetic field. Arrows mark the different types of transitions highlighted in subplot b. Top shows a schematic of a DD pulse sequence.
+        \textbf{d.}  DD spectra for two different NV centers  (blue and orange), here with N = 32 pulses repetitions, reflect significant differences in the 14N quadrupolar Hamiltonian. Data are shown with markers, along with best-fit simulation results as dashed lines.
+    }
+    \labfig{sota_nv1}
+\end{figure*}
+
+They extend this study by measuring the DD spectra of NV centers that are not embedded in a solid immersion lens. Notably, the $\Delta m_I = \pm 2$ transitions are no longer observed, suggesting that strain induced by the fabricated microstructure is responsible for the anomalous biaxiality parameter.
+
+
+\begin{marginfigure}
+    \includegraphics{chapter5/figures/state_of_the_art2.pdf}
+    \caption[State-of-the-art: Correlations between $^{14}\mathrm{N}$ parameters]{
+        Measured quadrupole strength along the field axis $Q_z$ for a $^{14}\mathrm{N}$, derived from DD spectroscopy, plotted against the electron zero-field-splitting parameters D and E measured by EPR spectroscopy.
+    }
+    \labfig{sota_nv2}
+\end{marginfigure}
+
+\reffig{sota_nv1}d shows two $\Delta m_I = \pm 1$ transitions for different NV centers, which do not overlap. This reflects significant variations in the $^{14}\mathrm{N}$ quadrupolar Hamiltonian, attributed to different local strain environments. By measuring the hyperfine spectra of multiple NV centers and fitting the results to a Hamiltonian model, the authors extract the relevant parameters of the system. \reffig{sota_nv2} plots the quadrupolar interaction strength along the $z$-axis versus the zero-field splitting parameters, revealing clear correlations. They are attributed to local strain modifying the crystal field experienced by each impurity. These results demonstrate how single-spin quadrupole measurements can be used to probe local strain and microscopic structural variations.
+
+\subsection*{Quadrupole of a $^{123}\mathrm{Sb}$ nuclear spin $I=7/2$ in silicon}
+
+Building upon the previous state-of-the-art discussions, we now highlight the work by S. Asaad, V. Mourik \textit{et al.}, in which they measure the spectrum of a single $^{123}\mathrm{Sb}$ donor in silicon~\sidecite{asaad_coherent_2020}.
+
+Like phosphorus, antimony is a group-V donor. When implanted in silicon, it forms a defect state that binds a single electron in its neutral configuration. Consequently, electron and nuclear spin readout techniques based on monitoring the current through a SET are also applicable in this system. A notable difference is that $^{123}\mathrm{Sb}$ has nuclear spin $I=7/2$, rendering its spectrum sensitive to quadrupolar interactions.
+
+The donor is measured in its ionized state, where the electron is removed from the system and reintroduced only for nuclear spin readout. The energy level structure of the $^{123}\mathrm{Sb}$ nuclear spin is shown in \reffig{sota_sb2}a. The quadrupole interaction is assumed to be much weaker than the Zeeman interaction. Under these conditions, the magnetic quantum numbers $m_I$ remain good quantum numbers, and the Zeeman levels acquire shifts proportional to $Q_{zz} m_I^2$.
+
+
+\begin{figure}
+    \includegraphics{chapter5/figures/sota_sb2.pdf}
+    \caption[State-of-the-art: Nuclear spectrum of a $^{123}\mathrm{Sb}$ spin]{
+        \textbf{a.} Energy level structure of the spin-7/2 nucleus of an ionized $^{123}\mathrm{Sb}$ donor. The Zeeman effect (green) linearly splits the energy levels and the quadrupole interaction causes a further energy split (blue). The transition between $7/2 \leftrightarrow 3/2$ has been highlighted with an arrow.
+        \textbf{b.} \& \textbf{c.} Nuclear electric resonance spectrum of the $\Delta m_I = \pm1$ \& $\Delta m_I = \pm2$ transitions as a function of the AC voltage of the driving gate.
+    }
+    \labfig{sota_sb2}
+\end{figure}
+
+Electric fields can modulate the quadrupole interaction of nuclear spins at non-centrosymmetric sites. This mechanism was first proposed by Bloembergen in 1961, who noted that strong electric fields can induce slight lattice distortions, thereby modifying the electric field gradient at the nuclear site~\sidecite{bloembergen_linear_1961}. The resulting linear electric Stark shift has since been observed in bulk NMR experiments across various systems~\sidecite{dixon_electrically_1964, ono_coherent_2013, macfarlane_optical_2014}.
+
+By applying an AC electric field, the authors modulate the off-diagonal quadrupole tensor elements and drive the $m_I=\pm1$ and $\pm2$ transitions. Figures \reffig{sota_sb2}b and c show the corresponding nuclear electric resonance spectra. Notably, the $-1/2 \leftrightarrow 1/2$ transition is absent, as it is first-order insensitive to quadrupolar effects. From the spectral separations, they estimate $Q_{zz}/2\pi \approx 66$~kHz.
+
+\begin{marginfigure}
+    \includegraphics{chapter5/figures/sota_sb1.pdf}
+    \caption[State-of-the-art: Strain map on silicon]{Shear strain in the silicon substrate, calculated on a vertical cross-section under the orange dashed line}
+    \labfig{sota_sb1}
+\end{marginfigure}
+
+An important aspect emphasized by the authors is that substitutional sites are, in fact, centrosymmetric, which should suppress both quadrupole interactions and linear electric Stark shifts. However, aluminum gates induce significant lattice strain at low temperatures due to the mismatch in thermal contraction between the aluminum and the silicon~\sidecite{dehollain_nanoscale_2012}. For impurities located near the surface, this strain can break the site symmetry, thereby generating a finite quadrupole interaction. They calculate the strain map around the donor position (see \reffig{sota_sb1}), which shows significant values of shear strain. From the strain simulations and the Hamiltonian parameters they are able to locate the approximate position of the impurity, by correlating the strain-induced EFG with the measured data.
+
+\subsection*{Conclusion}
+
+Both works illustrate how measurements of quadrupolar interactions at the single-spin level provide access to local chemical structure and strain-induced lattice distortions.
+
+In the first experiment, coherence-preserving dynamical decoupling sequences enable the observation of quadrupole-enabled NMR transitions that are nominally forbidden. Their presence reveals subtle modifications of the local symmetry induced by fabricated microstructures. Similarly, the second experiment demonstrates how strain arising from differential thermal contraction between substrate and device structures can break inversion symmetry and induce quadrupolar interactions in otherwise centrosymmetric sites.
+
+However, neither experiment achieves a full reconstruction of the quadrupole tensor. This limitation stems from operating in the weak quadrupolar regime, where energy shifts depend only on the projection of the quadrupole tensor along the magnetic field axis. Complete reconstruction in the weak quadrupole regime would require angular-dependent measurements. In the NV platform, such measurements are particularly challenging, as high-fidelity readout and control typically require precise alignment of the magnetic field along the NV axis.
+
+Finally, we note that the work reported in Ref.~\sidecite{bartling_universal_2025} required Hamiltonian parameter estimation with hertz-level precision. Their results indicate that the quadrupole interaction of $^{14}\mathrm{N}$ remains unchanged across different electronic spin states—an assumption that is intuitively appealing. The results presented in this chapter will challenge that assumption.
+
+
+%Precision measurements of the hyperfine spectrum of atoms and simple molecules probe electron-nuclear interactions beyond the leading-order magnetic dipolar and electric quadrupolar terms~\cite{schwartz_theory_1955}. Higher-order interactions such as the magnetic octuple are $\sim 10^5$ times weaker; hence, high spectral resolution in the order of hertz is required to resolve their contribution. This is readily achieved in atomic and molecular beams or in single-ion experiments, using combined microwave and laser excitations~\cite{gerginov_observation_2003,lewty_spectroscopy_2012}. In the solid state, ensemble magnetic resonance measurements of coupled electron-nuclear spin systems generally offer a lower spectral resolution (kHz at best~\cite{sielaff_pulsed_2025}), particularly when high-spin nuclei are involved. The origin of the broadening lies in a combination of spin-spin interactions and inhomogeneous distribution of electron gyromagnetic tensor and/or quadrupolar couplings. This precluded so far the observation of higher-order terms in the coupled spin Hamiltonian by magnetic resonance techniques, despite active research~\cite{segel_nuclear_1978,doering_search_1986,liao_nuclear_1994}.
 
 % Because the magnetic moment of $I > 1$ nuclei is not point-like but has a spatial extension, they have a magnetic octupole moment that couples to magnetic field second derivatives. Such interaction has been measured in the hyperfine spectrum of neutral atoms~\sidecite{gerginov_observation_2003} and ions~\sidecite{lewty_spectroscopy_2012} using atomic beams but never in the solid-state, and could be used to extract information about the nuclear structure. Nuclear spins with $I > 3/2$ may couple to the electric field third derivative via the nuclear hexadecapole moment, which has so far never been conclusively measured.
 
-One strategy to circumvent this limitation is to couple individual nuclear spins to a nearby electron spin impurity, enabling indirect but sensitive detection. This approach has been used to great success with NV centers in diamond to measure the hyperfine interaction of $^{13}\mathrm{C}$ nuclear spin with hertz resolution~\cite{abobeih_atomicscale_2019, bartling_universal_2025}. This level of precision allowed the three-dimensional reconstruction of the nuclear spin environment of a single NV center with lattice site precision~\cite{vandestolpe_mapping_2024}. Hertz resolution was also reported for the quadrupolar interaction of the $^{14}\mathrm{N}$ nuclear spin for a number of NV centers at room temperature~\cite{breitweiser_quadrupolar_2024}. The results were used to establish a significant correlation between the zero-field splitting of the NV centers and the quadrupole interaction of the nuclear spin, both of which depend on the local electric fields generated by the surrounding lattice. These results demonstrate how precision hyperfine spectroscopy can be used to structurally study single nuclear spins in the solid-state.
+%One strategy to circumvent this limitation is to couple individual nuclear spins to a nearby electron spin impurity, enabling indirect but sensitive detection. This approach has been used to great success with NV centers in diamond to measure the hyperfine interaction of $^{13}\mathrm{C}$ nuclear spin with hertz resolution~\cite{abobeih_atomicscale_2019, bartling_universal_2025}. This level of precision allowed the three-dimensional reconstruction of the nuclear spin environment of a single NV center with lattice site precision~\cite{vandestolpe_mapping_2024}. Hertz resolution was also reported for the quadrupolar interaction of the $^{14}\mathrm{N}$ nuclear spin for a number of NV centers at room temperature~\cite{breitweiser_quadrupolar_2024}. The results were used to establish a significant correlation between the zero-field splitting of the NV centers and the quadrupole interaction of the nuclear spin, both of which depend on the local electric fields generated by the surrounding lattice. These results demonstrate how precision hyperfine spectroscopy can be used to structurally study single nuclear spins in the solid-state.
 
-Individual high-nuclear spin spectroscopy is not limited to NV centers, as demonstrated by the measurements of a $^{123}\mathrm{Sb}$ nuclear spin ($I=7/2$) of an electron spin donor in $^{28}\mathrm{Si}$-enriched silicon~\cite{fernandezdefuentes_navigating_2024,yu_creation_2024}. These works leverage different driving schemes to control the state of the nuclear spin, using both electric and magnetic fields. The focus of these demonstrations is presenting the spin systems as quantum computing platforms with long coherence times and a wide range of control. In doing so, they also set the path forward for high-resolution spectroscopy of individual nuclear spins by providing a detailed understanding of the microscopic physics that governs the behavior of these systems. 
+%Individual high-nuclear spin spectroscopy is not limited to NV centers, as demonstrated by the measurements of a $^{123}\mathrm{Sb}$ nuclear spin ($I=7/2$) of an electron spin donor in $^{28}\mathrm{Si}$-enriched silicon~\cite{fernandezdefuentes_navigating_2024,yu_creation_2024}. These works leverage different driving schemes to control the state of the nuclear spin, using both electric and magnetic fields. The focus of these demonstrations is presenting the spin systems as quantum computing platforms with long coherence times and a wide range of control. In doing so, they also set the path forward for high-resolution spectroscopy of individual nuclear spins by providing a detailed understanding of the microscopic physics that governs the behavior of these systems. 
 
-In this Chapter we study a \Nb -- \Er coupled system. When combined with the \Er spin, the high-nuclear spin of the \Nb ($I=9/2$) creates a 20-level manifold that we explore by expanding the readout, DNP and stimulated Raman pulses presented in the previous two chapters. Given that \Nb is not native to \Ca, we focus on the analysis of the hyperfine spectrum with the objective of chemically and structurally identifing this originally unknown impurity. We note that the measurements in this chapter were taken alongside Zhiyuan Huang and Nicolas Thill.
-
-\begin{figure}
-    \includegraphics{chapter5/figures/state_of_the_art.pdf}
-    \caption[State of the art for individual nuclear spin hyperfine spectroscopy]{State of the art for individual nuclear spin hyperfine spectroscopy.
-    \textbf{a.} 
-    \textit{(top)} Model of an NV center in diamond in an solid inmersion lens. 
-    \textit{(bottom)} Energy levels of the system with the correspinding spin terms. The NV is a spin $S=1$ with a zero-field splitting $D$.
-    Figure taken from ref.~\cite{breitweiser_quadrupolar_2024}
-    \textbf{b.} 
-    \textit{(top)} Scanning electron micrograph of the device used in the experiment
-    \textit{(bottom)} Energy level diagram of the $^{123}\mathrm{Sb}$ atom in the neutral state. The ESR-allowed and NMR-allowed transitions are shown as solid lines while DQ transitions are shown as dashed lines (marked as Electron Double Spin Resonance, EDSR).
-    Figure taken from ref.~\cite{fernandezdefuentes_navigating_2024}
-    }
-    \labfig{state_of_the_art_nb}
-\end{figure}
-
+%In this Chapter we study a \Nb -- \Er coupled system. When combined with the \Er spin, the high-nuclear spin of the \Nb ($I=9/2$) creates a 20-level manifold that we explore by expanding the readout, DNP and stimulated Raman pulses presented in the previous two chapters. Given that \Nb is not native to \Ca, we focus on the analysis of the hyperfine spectrum with the objective of chemically and structurally identifing this originally unknown impurity. We note that the measurements in this chapter were taken alongside Zhiyuan Huang and Nicolas Thill.
 
 %Major progress in spectral resolution was brought by recent experiments carried on individual paramagnetic centers in ultra-pure crystals at low temperature, opening the way to precision hyperfine spectroscopy in the solid-sate. The hyperfine and quadrupolar interactions of $^{13}\mathrm{C}$ and $^{14}\mathrm{N}$ nuclear spins in diamond were measured with hertz resolution by a Nitrogen-Vacancy (NV) center spin, using optical detection of the NV at 4K~\cite{abobeih_atomicscale_2019, vandestolpe_mapping_2024, bartling_universal_2025}. Hertz resolution was also reported for the spin Hamiltonian parameters of $^{31}\mathrm{P}$ and $^{123}\mathrm{Sb}$ nuclear spin ($I=7/2$) of an electron spin donor in $^{28}\mathrm{Si}$-enriched silicon, using spin-to-charge conversion of the donor for detection at 10mK~\cite{fernandezdefuentes_navigating_2024}. 
 
@@ -47,8 +108,8 @@ In this Chapter we study a \Nb -- \Er coupled system. When combined with the \Er
 
 \begin{figure*}[t!]
     \includegraphics{chapter5/figures/spectra_2d.pdf}
-    \caption[Rotation pattern and time trace of \Nb -- \Er system]{Rotation pattern and time trace of \Nb -- \Er system. \textbf{a.} Rotation pattern. The ensemble averaged counts $\langle C \rangle$ is plot as a function of the magnetic field amplitude and the angle $\theta$. The black arrow marks the \Er spin that is strongly coupled to the \Nb nuclear spin. The red star marks the magnetic field amplitude and $\theta$ used for this work.
-    \textbf{b.} Spectroscopy of the \Er - \Nb coupled system as a function of time. A Gaussian pulse with duration 40 \textmu s and frequency $\omega/2\pi$ is first applied to the sample. After a waiting time $\tau_{\text{w}}=120$~\textmu s, photon counts from the SMPD are integrated over a window of length $\tau_{int}=2$~ms. The same pulse-and-readout sequence is then repeated at the next pulse frequency. The ensemble-averaged signal $\langle C \rangle$ is obtained by averaging 1000 integrated count values. The top plot shows the time averaged signal $\langle C\rangle _{\mathrm{t}}$  as a function of pulse frequency. Gray dashed lines have been plot as a guide for the eye for each EPR transition with frequencies $\omega_{n}$.}
+    \caption[Rotation pattern and time trace of \Nb -- \Er system]{Rotation pattern and time trace of \Nb -- \Er system. \textbf{a.} Rotation pattern. The ensemble averaged counts $\langle C \rangle$ is plot as a function of the magnetic field amplitude and the angle $\theta$. The black arrow marks the \Er spin that is strongly coupled to the \Nb nuclear spin. The red star at $B_0=446.27$~mT and $\theta = -0.37^\circ$ marks the magnetic field amplitude and $\theta$ used for this work.
+    \textbf{b.} Spectroscopy of the \Nb--\Er coupled system as a function of time. A Gaussian pulse with duration 40 \textmu s and frequency $\omega/2\pi$ is first applied to the sample. After a waiting time $\tau_{\text{w}}=120$~\textmu s, photon counts from the SMPD are integrated over a window of length $\tau_{int}=2$~ms. The same pulse-and-readout sequence is then repeated at the next pulse frequency. The ensemble-averaged signal $\langle C \rangle$ is obtained by averaging 1000 integrated count values. The top plot shows the total averaged signal $\langle C\rangle _{\mathrm{t}}$  as a function of pulse frequency. Gray dashed lines have been plot as a guide for the eye for each EPR transition with frequencies $\omega_{n}$.}
     \labfig{spectra_2d}
 \end{figure*}
 
@@ -69,20 +130,22 @@ As discussed in previous chapters, the sample hosts many addressable single \Er 
 
 To characterize the \Er spin, we first set $B_0$ to match the resonance condition. Unless otherwise specified, the measurements of this chapter were taken at $B_0=446.27$~mT and $\theta = -0.37^\circ$,  marked in \reffig{spectra_2d}a as a red star. The results of the basic electron spin characterization are detailed in \reftab{er_characterization_nb}.
 
-We remark that the top of the curve for this spin does not match with $\theta=0$, implying that the $c$-axis of this specific spin is not aligned with the bulk's $c$-axis. This behavior is consistent with the large inhomogeneous broadening that is characteristic of REIs in the solid-state, associated with local electric fields that can appear due to charge compensation mechanisms or strain~\sidecite{billaud_electron_2025}. By fitting the curve to a parabola we measure a difference of $0.20^\circ$. In practice, we we define the angle with respect to this spin's $c$-axis as $\theta_S \equiv \theta - 0.20^\circ$, which we use during the magnetic dipole coupling calculations described in \refsec{assignment}.
+We remark that the top of the curve for this spin does not match with $\theta=0$, implying that the $c$-axis of this specific spin is not aligned with the bulk's $c$-axis. This behavior is consistent with the large inhomogeneous broadening that is characteristic of REIs in the solid-state. It is associated with local electric fields that appear due to charge compensation mechanisms or strain~\sidecite{billaud_electron_2025}. By fitting the curve to a parabola we measure a difference of $0.20^\circ$. In practice, we we define the angle with respect to this spin's $c$-axis as $\theta_S \equiv \theta - 0.20^\circ$, which we use during the magnetic dipole coupling calculations described in \refsec{assignment}.
 
-We then measure a spectroscopic time trace, similar to the ones presented in \refsec{nuclear_spin_quantum_jumps}, by repeatedly measuring the \Er resonance spectrum by sweeping the excitation pulse frequency and monitoring the subsequent fluorescence. Note, that the span of the scan is much larger than the operating bandwidth of the SMPD of $\sim300$~kHz. To measure this trace we actively tune the frequency of the detector using DC pulses sent through the buffer's flux line, which modifies the magnetic flux threading the coupled SQUID, therefore changing the frequency of the SMPD. 
+We then measure a spectroscopic time trace, similar to the ones presented in \refsec{nuclear_spin_quantum_jumps}. We repeatedly measure the \Er spectrum by sweeping the excitation pulse frequency and monitoring the fluorescence after the pulse. Note, that the span of the scan is much larger than the operating bandwidth of the SMPD of $\sim300$~kHz. To measure this trace we actively tune the frequency of the detector using DC pulses sent through the buffer's flux line, which modifies the magnetic flux threading the coupled SQUID, therefore changing the frequency of the SMPD. 
 
-As shown in Chapter \ref{ch:detection_and_control_of_individual_w}, strongly coupled nuclear spins are revealed by sudden jumps of the \Er resonance, due to changes on the state of strongly coupled neighboring nuclear spins. In \reffig{spectra_2d}b, ten evenly-spaced resonances are observed, they are separated by $\sim$130~kHz and have vastly different cross-relaxation lifetimes, indicating the coupling to a spin-9/2 nuclear spin impurity.  
+As shown in Chapter \ref{ch:detection_and_control_of_individual_w}, strongly coupled nuclear spins are revealed by sudden jumps of the \Er EPR-allowed transition frequency. In \reffig{spectra_2d}b, ten evenly-spaced resonances are observed, they are separated by $\sim$130~kHz and have vastly different cross-relaxation lifetimes, indicating the coupling to a spin-9/2 nuclear spin impurity.  
 
-As discussed in \refsec{nb_er_hamiltonian}, the Hamiltonian of this system is
+As discussed in \refsec{nb_er_hamiltonian}, the secular Hamiltonian of this system is
 
 \begin{equation}
     \cH{}/\hbar = \omega_S \hat{S}_z + \omega_I \hat{I}_z + A_\parallel \hat{S}_z \hat{I}_z + A_\perp \hat{S}_z \hat{I}_x + \hat{\mathbf{I}} \cdot \bar{\bar{Q}} \cdot \hat{\mathbf{I}}.
     \label{eq:hamiltonian_ninehalf_full}
 \end{equation}
 
-where the terms correspond, in order, to the \Er spin Zeeman energy, the high-nuclear spin Zeeman energy the parallel and perpendicular interaction hyperfine interaction and the quadrupolar term (see \refsec{interaction_between_to_spins} and \refsec{electric_quadrupole} respectively). The Hamiltonian can be re-written as
+where the terms correspond, in order, to the \Er spin Zeeman energy, the high-nuclear spin Zeeman energy the parallel and perpendicular interaction hyperfine interaction and the quadrupolar term (see \refsec{interaction_between_to_spins} and \refsec{nuclear_spins_ca} respectively). 
+
+The Hamiltonian can be separated in to manifolds, depending on the state of the electron spin. Therefore, it can be re-written as
 
 \begin{align}
 \begin{split}
@@ -102,19 +165,23 @@ where the terms correspond, in order, to the \Er spin Zeeman energy, the high-nu
     \labfig{energy_levels_ninehalf_ch5}
 \end{marginfigure}
 
-We now recall the energy level system defined by this Hamiltonian. \reffig{energy_levels_ninehalf_ch5} shows the $20$ energy levels of the coupled spins, grouped in the two $m_S = \Downarrow$ or $m_S = \Uparrow$ manifolds. The nuclear spin eigenstates are mixed by the quadrupolar interaction and are therefore labeled as $\ket{n}$ in increasing order of energy, with $n$ varying between $0$ and $9$. Ten transitions between $\ket{\Downarrow, n}$ and $\ket{\Uparrow, n}$ at $\omega_n$ are EPR-allowed. Transitions between $\ket{m_S, n}$ and $\ket{m_S, n+1}$ at frequencies $\omega_{n,n+1}^{m_S} $ are NMR-allowed. As described in \refsec{zero_double_quantum_ninehalf}, double- or zero-quantum transitions between $\ket{\Downarrow, n}$ and $\ket{\Uparrow, n \pm 1}$ are weakly authorized because of the slight difference of nuclear spin wave function when the \Er spin is $\ket{\Downarrow}$ and $\ket{\Uparrow}$. 
+We now recall the energy level system defined by this Hamiltonian. \reffig{energy_levels_ninehalf_ch5} shows the $20$ energy levels of the coupled spins, grouped in the two $m_S = \Downarrow$ or $m_S = \Uparrow$ manifolds. The nuclear spin eigenstates are mixed by the quadrupolar interaction and are therefore labeled as $\ket{n}$ in increasing order of energy, with $n$ varying between $0$ and $9$. Ten transitions between $\ket{\Downarrow, n}$ and $\ket{\Uparrow, n}$ at $\omega_n$ are EPR-allowed. Transitions between $\ket{m_S, n}$ and $\ket{m_S, n+1}$ at frequencies $\omega_{n,n+1}^{m_S} $ are NMR-allowed. As described in \refsec{zero_double_quantum_ninehalf}, double- or zero-quantum transitions between $\ket{\Downarrow, n}$ and $\ket{\Uparrow, n \pm 1}$ are weakly authorized because of the slight hyperfine-induced mixing between the nuclear spin states. 
 
 \begin{figure*}
     \includegraphics{chapter5/figures/matrix_elements.pdf}
     \caption[short]{Mixing terms and cross-relaxation probability. Throughout this figure, markers are obtained through Eq. \ref{eq:matrix_elements_nine_half} \& \ref{eq:cross_relaxation_probability_ninehalf}, derived in \refsec{zero_double_quantum_ninehalf}. Lines are calculated through Hamiltonian diagonalization using the experimental parameters measured in \refsec{final_hamiltonian_fit}.
-    \textbf{a.} Energy level diagram (black horizontal lines) showcasing all possible relaxation paths (colored lines) and their respective probability $p^{(n)}_{x, i}$.
+    \textbf{a.} Energy level diagram (black horizontal lines) showcasing all possible relaxation paths and their respective probability $p^{(n)}_{x, i}$. Red and blue colors are used for the DQ and ZQ transition, while black is the EPR-allowed transition.
     \textbf{b.} Matrix elements $\langle \uparrow, n + i | S_x | \downarrow, n \rangle$ as a function of $n$ for $i=+1,-1$ (red and blue respectively). 
     \textbf{c.} Cross-relaxation probability as a function of $n$ for $i=+1,-1$ (red and blue respectively).
     }
     \labfig{matrix_elements}
 \end{figure*}
 
-\reffig{matrix_elements}b \& c show the matrix elements and cross-relaxation probabilities for the specific parameters of this system, which are measured in \refsec{final_hamiltonian_fit}. We note that the matrix elements (and correspondingly the cross-relaxation probabilities) increase with energy level index $n$. In particular, the cross-relaxation probability for the state $\ket{\Uparrow,9}$ is several orders of magnitude larger than that of $\ket{\Uparrow,0}$.. This trend is directly reflected in the experimental data shown in Figure~\reffig{spectra_2d}(b), where the effective lifetime of the $\ket{0}$ state is on the order of tens of minutes. By contrast, the $\ket{9}$ state exhibits a much shorter effective lifetime and is barely visible in the spectrum.
+Figures \ref{fig:matrix_elements}b \& c show the calculated matrix elements and corresponding cross-relaxation probabilities for the parameters of this system. Although these parameters will be determined quantitatively in \refsec{final_hamiltonian_fit}, we use their anticipated values here to provide physical intuition for the observed behavior in \reffig{spectra_2d}b.
+
+The calculations reveal that both the matrix elements and the associated cross-relaxation probabilities increase with the energy level index $n$. In particular, the cross-relaxation probability of the state $\ket{\Uparrow,9}$ is several orders of magnitude larger than that of $\ket{\Uparrow,0}$.
+
+This trend is directly reflected in the time trace shown in \reffig{spectra_2d}b. The effective lifetime of the $\ket{0}$ state is on the order of tens of minutes, indicating strongly suppressed cross-relaxation. In contrast, the $\ket{9}$ state exhibits a substantially shorter effective lifetime and is barely visible in the spectrum, consistent with its much larger calculated cross-relaxation probability.
 
 \section{Readout, preparation and control}
 
@@ -130,9 +197,9 @@ After the observation of the high-nuclear spin, we proceed to extend the nuclear
     \labfig{readout_singleshot}
 \end{marginfigure}
 
-During the experiments performed in Chapters \ref{ch:detection_and_control_of_individual_w} and \ref{ch:individual_nuclear_spins_quantum_information} with \W, the frequency separation between the electron spin transitions was in the order of $\sim50$~kHz, well within the SMPD and the resonator bandwidth. This allowed us to monitor the population of each of the nuclear spin states independently by exciting the appropriate electron spin transition and measuring the subsequent fluorescence (see \refsec{single_shot_ro_singlespin}). However, the ten distinct electron spin frequencies of this system are separated each by $\sim130$~kHz spanning more than 1~MHz, considerably larger than the SMPD and the resonator bandwidth. Additionally, the cross-relaxation probability of the different nuclear states is vastly difference, as evidenced by the different effective nuclear spin lifetimes in \reffig{spectra_2d}b. In fact, the cross-relaxation for large $n$ states is too large to achieve high enough SNR for high fidelity readout using the previous scheme. Consequently, we only define the nuclear spin readout protocol at $\ket{0}$, as it has the lowest cross-relaxation probability \reffig{matrix_elements}c. Later, when we achieve nuclear spin coherent control, the population of any arbitrary state can be transferred to $\ket{0}$ and subsequently readout. We also maximize the Purcell effect in the relevant transition by tuning the magnetic field such that $\omega_r = \omega_0$.
+During the experiments performed in Chapters \ref{ch:detection_and_control_of_individual_w} and \ref{ch:individual_nuclear_spins_quantum_information} with \W, the frequency separation between the EPR-allowed transitions was in the order of $\sim50$~kHz, well within the SMPD and the resonator bandwidth. This allowed us to monitor the population of each of the nuclear spin states independently, by exciting the appropriate EPR-allowed transition and measuring the subsequent fluorescence (see \refsec{single_shot_ro_singlespin}). However, the ten distinct electron spin frequencies of this system are separated each by $\sim130$~kHz spanning more than 1~MHz, considerably larger than the SMPD and the resonator bandwidth. Additionally, the cross-relaxation probability of the different nuclear states is vastly difference, as discussed in the previous section. In fact, the cross-relaxation for large $n$ states is too large to achieve high enough SNR for high fidelity readout using the previous scheme. Consequently, we only define the nuclear spin readout protocol at $\ket{0}$, as it has the lowest cross-relaxation probability \reffig{matrix_elements}c. Later, when we achieve nuclear spin coherent control, the population of any arbitrary state can be coherently transferred to $\ket{0}$ and subsequently readout. We also maximize the Purcell effect in the relevant transition by tuning the magnetic field such that $\omega_r = \omega_0$.
 
-Readout on state $\ket{0}$ is achieved by applying $\sim 200$ successive $\pi$-pulses at $\omega_0$ and counting the number of clicks, $C$. \reffig{readout_singleshot} plots the count histograms after preparing in $\ket{0}$ or $\ket{1}$, which shows two well-resolved histograms. By defining a threshold at $C=75$ we can discriminate whether the nuclear spin is in state $\ket{0}$ or not, which defines our readout scheme.
+Readout on state $\ket{0}$ is achieved by applying $\sim 200$ successive $\pi$-pulses at $\omega_0$ and counting the number of clicks, $C$. \reffig{readout_singleshot} plots the count histograms after preparing in $\ket{0}$ or $\ket{1}$, which shows two well-resolved histograms. By defining a threshold at $C=75$ we can discriminate whether the nuclear spin is in state $\ket{0}$ or not.
 
 \subsubsection{Solid-effect polarization}
 \labsec{solid_effect_ninehalf}
@@ -143,11 +210,15 @@ Readout on state $\ket{0}$ is achieved by applying $\sim 200$ successive $\pi$-p
     \labfig{zq_single_transition}
 \end{marginfigure}
 
-In the previous chapters we demonstrated how to perform solid-effect DNP to deterministically prepare the state of strongly coupled \W nuclear spins. The generalization to a high-nuclear spin $I=9/2$ is straightforward, as it only requires pumping all the $9$ DQ transitions to prepare $\ket{0}$. A crude approach would be to send a chirped pulse that covers a large frequency band of $10$~MHz under the electron spin transitions, this pulse would eventually excite one of the DQ transitions, bringing the nuclear spin state closer to $\ket{0}$. However, this technique is not time-efficient, as it chirps the pulse is mostly not resonant with any transition, and direct driving of the ZQ transitions is preferable. Therefore, we begin by characterizing all ZQ and DQ transitions through resonant spectroscopy.
+In the previous chapters we demonstrated how to perform solid-effect DNP to deterministically prepare the state of strongly coupled \W nuclear spins. The generalization to a high-nuclear spin $I=9/2$ is straightforward, as it only requires pumping all the $9$ DQ transitions to prepare $\ket{0}$. A crude approach would be to send a chirped pulse that covers a large frequency band of $10$~MHz under the EPR-allowed transitions, this pulse would eventually excite one of the DQ transitions, bringing the nuclear spin state closer to $\ket{0}$. However, this technique is not time-efficient. As it chirps, the pulse is mostly not resonant with any transition, and direct driving of the ZQ transitions is preferable. Therefore, we begin by characterizing all ZQ and DQ transitions through EDNMR spectroscopy.
 
 We begin by preparing the nuclear spin into $\ket{0}$\sidenote{Naturally, the first characterization was performed using the "crude" method described in the previous paragraph. Subsequent measurements (as the ones showed here) use the known frequencies of the ZQ and DQ transitions to gather well averaged data more efficiently.}. We scan the frequency of the driving microwave pulse and monitor the population of state $\ket{0}$. As shown in \reffig{zq_single_transition}, we measure a depletion of the population in $\ket{0}$ centered around $\omega_0 + 7.418~$MHz, which indicates successful excitation of the ZQ transition.
 
-We measure all nine ZQ transitions by extending the protocol to the rest of the nuclear energy levels. As before, the first step is the preparation of $\ket{0}$, then the population is transferred to state $\ket{n}$ by concatenating $\pi$-pulses between pairs of adjacent nuclear spin states (see next section). After the excitation pulse, the population is transferred back to $\ket{0}$ by a reverse train of $\pi$-pulses and readout. The resulting spectra for the ZQ transitions are displayed in \reffig{zq_transitions}a. We can drive Rabi oscillations by modifying the duration of resonant pulse on each ZQ transition, as shown in \reffig{zq_transitions}b. The contrast of the signal is limited by the coherence of the electron spin. As discussed in \refsec{zero_double_quantum_ninehalf}, the Rabi frequency is proportional to the perpendicular hyperfine coupling term $A_\perp$. We use Eq. \ref{eq:zero_double_quantum_ninehalf_rabi} to estimate the value of the perpendicular hyperfine coupling independently for each transition, plot as a function of $n$ in \reffig{A_perp_sb}. The values average to $A_\perp=46(9)$~kHz. We note that the uncertainty of the measurement is mainly dominated by the uncertainty of the resonator bandwidth $\kappa$. Fitting the quality factor of a resonator to a high degree of accuracy is notoriously hard as it depends on the probing power.
+We measure all nine ZQ transitions by extending the protocol to the rest of the nuclear energy levels. As before, the first step is the preparation of $\ket{0}$, then the population is transferred to state $\ket{n}$ by concatenating $\pi$-pulses between pairs of adjacent nuclear spin states (see next section). After the excitation pulse, the population is transferred back to $\ket{0}$ by a reverse train of $\pi$-pulses and readout. The resulting spectra for the ZQ transitions are displayed in \reffig{zq_transitions}a. 
+
+We can drive Rabi oscillations of the ZQ transitions by modifying the duration of the pulse, as shown in \reffig{zq_transitions}b. We note two things. First, the contrast of the signal is limited by the coherence of the electron spin, as in the previous chapters. Second, the Rabi frequency for the same pulse amplitude increases with $n$. This is due to the combined effect of reduced resonator filtering as the resonant ZQ transition frequency gets closer to the center of the resonator, and increased matrix element, as shown in \reffig{matrix_elements}. 
+
+As discussed in \refsec{zero_double_quantum_ninehalf}, the Rabi frequency is proportional to the perpendicular hyperfine coupling term $A_\perp$. We use Eq. \ref{eq:zero_double_quantum_ninehalf_rabi} to estimate the value of the perpendicular hyperfine coupling independently for each transition, plot as a function of $n$ in \reffig{A_perp_sb}. The values average to $A_\perp/2\pi=46(9)$~kHz. We note that the uncertainty of the measurement is mainly dominated by the uncertainty of the resonator bandwidth $\kappa$. Fitting the quality factor of a resonator to a high degree of accuracy is notoriously hard as it depends on the probing power. Furthermore, the value of $A_\perp$ estimated for $n=8$ is substantially larger compared to the rest. This deviation is not fully understood, but the working theory is that microwave attenuation is slightly reduced compared to the rest of transitions. \red{?? not sure, let's discuss}
 
 \begin{figure*}
     \includegraphics{chapter5/figures/zq_transitions.pdf}
@@ -167,7 +238,7 @@ We measure all nine ZQ transitions by extending the protocol to the rest of the 
     \labfig{A_perp_sb}
 \end{marginfigure}
 
-We now define the final pulse sequence used to polarize to state $\ket{0}$, shown in \reffig{polarization_seq}. We sequentially drive all double-quantum transitions, starting from $n=8$ down to $n=0$, using 1~ms microwave pulses. Each pulse is followed by a 1~\textmu s delay to allow the electron spin to relax to its ground state. Because of their small matrix elements and large detuning relative to the allowed transitions, the zero- and double-quantum transitions experience large AC-Zeeman shifts, causing their resonance frequencies to be sensitive to the applied microwave amplitude. To compensate for microwave-power fluctuations and spectral drift, all pulses are chirped by 100~kHz around each transition frequency. Due to the low Rabi frequencies of the sideband transitions, a single pulse is insufficient to achieve full population transfer. We compensate by applying 15 repetitions of the pumping sequence to ensure reliable preparation of the \Nb nuclear spin. An additional 15 pulses are applied to the $n=0$ transition, which has the smallest matrix element (see \reffig{matrix_elements}b) and was experimentally found to be particularly difficult to polarize. Polarization into $\ket{0}$ is achieved with a probability close to $1$ at the beginning of each sequence. In addition, the $^{183}\mathrm{W}$ environment is also polarized at the beginning of every sequence to reduce the magnetic noise from the neighboring \W nuclear spins (as discussed in the next section).
+We now define the final pulse sequence used to polarize to state $\ket{0}$, shown in \reffig{polarization_seq}. We sequentially drive all double-quantum transitions, starting from $n=8$ down to $n=0$, using 1~ms microwave pulses. Each pulse is followed by a 1~\textmu s delay to allow the electron spin to relax to its ground state. Because of their small matrix elements and large detuning relative to the allowed transitions, the zero- and double-quantum transitions experience large AC-Zeeman shifts, causing their resonance frequencies to be sensitive to the applied microwave amplitude. To compensate for microwave-power fluctuations and spectral drift, all pulses are chirped by 100~kHz around each transition frequency. Due to the low Rabi frequencies of most sideband transitions, a single pulse is insufficient to achieve full population transfer. We compensate by applying 15 repetitions of the pumping sequence to ensure reliable preparation of the \Nb nuclear spin. An additional 15 pulses are applied to the $n=0$ transition, which has the smallest matrix element (see \reffig{matrix_elements}b) and was experimentally found to be particularly difficult to polarize. Polarization into $\ket{0}$ is achieved with a probability close to $1$ at the beginning of each sequence. In addition, the $^{183}\mathrm{W}$ environment is also polarized at the beginning of every sequence to reduce the magnetic noise from the neighboring \W nuclear spins (as discussed in \refsec{precision_nmr_spec}).
 
 \begin{figure}
     \includegraphics{chapter5/figures/polarization_seq.pdf}
@@ -178,7 +249,9 @@ We now define the final pulse sequence used to polarize to state $\ket{0}$, show
 \subsubsection{Stimulated Raman driving}
 
 
-To perform coherent driving of the \Nb NMR transitions we use stimulated Raman driving pulses, which have been discussed in \refsec{stimulated_raman_driving_ninehalf}. The first transition we characterize is $\ket{\Downarrow,0} \leftrightarrow \ket{\Downarrow,1}$. Spectroscopy of the transition is shown in \reffig{raman_spectroscopy_nb}a. The choice to begin with this transition is natural, as both the preparation and readout have been defined with respect to $\ket{0}$. Once the transition frequency and the duration of a $\pi$-pulse have been measured, we can reliably transfer the population between these pair of states. As such we can define a preparation and readout protocol in $\ket{1}$ by including a $\pi$-pulse between $\ket{\Downarrow,0} \leftrightarrow \ket{\Downarrow,1}$ after the original DNP protocol and before the original readout pulse sequence. We can then use the preparation and readout in $\ket{1}$ to measure the next NMR transition between $\ket{\Downarrow,0} \leftrightarrow \ket{\Downarrow,1}$, and so on successively.
+To perform coherent driving of the \Nb NMR transitions we use stimulated Raman driving pulses, which have been discussed in \refsec{stimulated_raman_driving_ninehalf}. The first transition we characterize is $\ket{\Downarrow,0} \leftrightarrow \ket{\Downarrow,1}$. Spectroscopy of the transition is shown in \reffig{raman_spectroscopy_nb}a. The choice to begin with this transition is natural, as both the preparation and readout have been defined with respect to $\ket{0}$. 
+
+Once the transition frequency and the duration of a $\pi$-pulse have been measured, we can reliably transfer the population between these pair of states. As such we can define a preparation and readout protocol in $\ket{1}$. This is achieved by including a $\pi$-pulse between $\ket{\Downarrow,0} \leftrightarrow \ket{\Downarrow,1}$ after the original DNP protocol and before the original readout pulse sequence. We can then use the preparation and readout in $\ket{1}$ to measure the next NMR transition between $\ket{\Downarrow,0} \leftrightarrow \ket{\Downarrow,1}$, and so on successively.
 
 This train of $\pi$-pulses used to transfer the population from state $\ket{\Downarrow, 0}$ to $\ket{\Downarrow, n}$ is also known as a Givens rotation~\sidecite{cybenko_reducing_2001} and has been successfully used previously to control the state of an individual $^{123}\mathrm{Sb}$ nuclear spin is silicon \sidecite{yu_creation_2024}.
 
@@ -189,11 +262,35 @@ This train of $\pi$-pulses used to transfer the population from state $\ket{\Dow
     \includegraphics{chapter5/figures/raman_spectroscopy.pdf}
     \caption[NMR spectroscopy of a \Nb nuclear spin.]{
     NMR spectroscopy of a \Nb nuclear spin. 
-    \textbf{a.} Raman spectroscopy for $n=0$. Population of $\ket{0}$ as a function of $\delta$. Solid black line correspond to a cardinal sine fit on the measurement data. The inset presents a diagram of the Raman driving scheme on the four-levels of interest. $\Delta$ is the detuning of one of the first pulse with the EPR transition and $\delta$ is the frequency difference between the two drives. The detuning is set to $\Delta = \omega_{01}/2$.
-    \textbf{b.} \textit{(top)} Pulse sequence of spectroscopy between states $\ket{\Downarrow n}$ and $\ket{\Downarrow n+1}$. The nuclear spin is first unconditionally polarized into $\ket{0}$ followed by a Givens rotation that prepares the \Nb spin into $\ket{n}$. A Raman pulse of frequency $\delta$ is then applied. The Givens rotation is then inverted. Finally, the state of the \Nb spin is read-out. 
+    \textbf{a.} Raman spectroscopy for $n=0$. Population of $\ket{0}$ as a function of $\delta$. Solid black line correspond to a cardinal sine fit on the measurement data. The inset presents a diagram of the Raman driving scheme on the four-levels of interest. $\Delta$ is the detuning of one of the first pulse with the EPR transition and $\delta$ is the frequency difference between the two drives. The detuning is set to $\Delta = -\omega_{01}/2$.
+    \textbf{b.} \textit{(top)} Pulse sequence of spectroscopy between states $\ket{\Downarrow n}$ and $\ket{\Downarrow n+1}$. A Givens rotation is defined as the accumulation of $\pi$-pulses that coherently transfer the population from $\ket{0}$ to $\ket{n}$. The nuclear spin is first unconditionally polarized into $\ket{0}$ followed by a Givens rotation that prepares the \Nb spin into $\ket{n}$. A Raman pulse of frequency $\delta$ is then applied. The Givens rotation is then inverted. Finally, the state of the \Nb spin is read-out. 
     \textit{(bottom)} Raman spectroscopy of all NMR transitions.  Black arrow marks the transition corresponding to the previous plot. For each transition $\Delta = \omega_{n, \ n+1}/2$.}
     \labfig{raman_spectroscopy_nb}
 \end{figure*}
+
+The spectrum of all ground state NMR-allowed transitions is shown in \reffig{raman_spectroscopy_nb}b. Their frequencies span a large range, from $1.5$\,MHz to $8$\,MHz, indicating that the quadrupolar interaction has comparable magnitude to the Zeeman energy. %The measured NMR frequency spectrum sheds light on the vastly different cross-relaxation lifetimes observed in \reffig{spectra_2d}b, since they scale like $\sim \omega_{n,n+1}^{2}$, explaining why low-$n$ states appear more stable.
+
+\begin{figure}
+    \includegraphics{chapter5/figures/raman_rabi.pdf}
+    \caption[Rabi oscillations for all \Nb transitions]{Rabi oscillations for all NMR transitions. 
+    \textit{(top)} Pulse sequence. We prepare state $\ket{\Downarrow n}$ followed by a resonant Raman pulse with duration $\tau$. The population of $\ket{n}$ is subsequently readout.
+    \textit{(bottom)}. Measured Rabi oscillations (colored dots) and cosine fit (solid dark line) as a function of $\tau$. The amplitude of the drives $\Omega_A$ and $\Omega_B$ was calibrated to give similar Raman Rabi frequencies.}
+    \labfig{raman_rabi}
+\end{figure}
+
+\begin{marginfigure}
+    \includegraphics{chapter5/figures/A_perp_raman.pdf}
+    \caption[$A_\perp$ measured through stimulated Raman driving]{The value of $A_\perp$ measured for each transition is plot as a function of the transition index $n$. A dashed horizontal line is plot at the mean value. The error-bars show the uncertainty of the measurement obtained by error propagation, considering an uncertainty of the resonator bandwidth $\kappa$ of $50$~kHz.}
+    \labfig{A_perp_raman}
+\end{marginfigure}
+
+We confirm the previous measurement of $A_\perp$ by estimating the value of this parameter using the stimulated Raman Rabi frequency. \reffig{raman_rabi} shows the \Nb Rabi oscillations between all 9 NMR-allowed transitions fit to a cosine curve. As demonstrated in \refch{nuclea_spin_control}, the Rabi frequency is proportional to $A_\perp$, and we can use Eq. \ref{eq:stimulated_raman_ninehalf_aperp} to estimate its value. \reffig{A_perp_raman} plots the measured $A_\perp$ for each of the transitions, which average to $A_\perp/2\pi=50(11)$~kHz. The value matches quantitatively with the one measured through the sideband driving. % We attribute the origin of remaining positive trend to small miss-characterization of $\omega_0$ and $\kappa$ at the time of the measurement.
+
+
+\section{Identification and site assignment}
+\labsec{assignment}
+
+The $\ket{\Downarrow,4} \leftrightarrow \ket{\Downarrow,5}$ transition is of particular interest. As shown in \reffig{matrix_elements}b, only the $n = 8,9$ states exhibit significant mixing with other nuclear spin wavefunctions, while the $n = 4,5$ levels approximately correspond to $m_I = \pm \tfrac{1}{2}$. Since, to first order, the quadrupolar interaction shifts the nuclear energy levels proportionally to $Q\, m_I^2$, the states with $m_I = \pm \tfrac{1}{2}$ are equally shifted. As a result, the transition frequency between $\ket{\Downarrow,4}$ and $\ket{\Downarrow,5}$ is first-order insensitive to quadrupolar shifts. Therefore,
 
 \begin{margintable}
 \centering
@@ -212,30 +309,6 @@ $^{209}$Bi & $+6.962$ \\ \hline
 \labtab{nuclear_spin_gyromagnetic}
 \end{margintable}
 
-The spectrum of all ground state manifold NMR transitions is shown in \reffig{raman_spectroscopy_nb}b. Their frequencies span a large range, from $1.5$\,MHz to $8$\,MHz, indicating that the quadrupolar interaction has comparable magnitude to the Zeeman energy. %The measured NMR frequency spectrum sheds light on the vastly different cross-relaxation lifetimes observed in \reffig{spectra_2d}b, since they scale like $\sim \omega_{n,n+1}^{2}$, explaining why low-$n$ states appear more stable.
-
-\begin{figure}
-    \includegraphics{chapter5/figures/raman_rabi.pdf}
-    \caption[Rabi oscillations for all \Nb transitions]{Rabi oscillations for all NMR transitions. 
-    \textit{(top)} Pulse sequence. We prepare state $\ket{\Downarrow n}$ followed by a resonant Raman pulse with duration $\tau$. The population of nuclear state $\ket{n+1}$ subsequently readout.
-    \textit{(bottom}. Measured Rabi oscillations (colored dots) and cosine fit (solid dark line) as a function of $\tau$. The amplitude of the drives $\Omega_A$ and $\Omega_B$ was calibrated to give similar Raman Rabi frequencies.}
-    \labfig{raman_rabi}
-\end{figure}
-
-\begin{marginfigure}
-    \includegraphics{chapter5/figures/A_perp_raman.pdf}
-    \caption[$A_\perp$ measured through stimulated Raman driving]{$A_\perp$ measured through stimulated Raman driving. The value of $A_\perp$ measured for each transition is plot as a function of the transition index $n$. A dashed horizontal line is plot at the mean value. The error-bars show the uncertainty of the measurement obtained by error propagation, considering an uncertainty of the resonator bandwidth $\kappa$ of $50$~kHz.}
-    \labfig{A_perp_raman}
-\end{marginfigure}
-
-We confirm the previous measurement of $A_\perp$ by estimating the value of this parameter using the stimulated Raman Rabi frequency. \reffig{raman_rabi} shows the \Nb Rabi oscillations between all 9 NMR-allowed transitions fit to a cosine curve. As demonstrated in \refch{nuclea_spin_control}, the Rabi frequency is proportional to $A_\perp$, and we can use Eq. \ref{eq:stimulated_raman_ninehalf_aperp} to estimate its value. \reffig{A_perp_raman} plots the measured $A_\perp$ for each of the transitions, which average to $A_\perp=50(11)$~kHz. The value matches quantitatively with the one measured through the sideband driving. % We attribute the origin of remaining positive trend to small miss-characterization of $\omega_0$ and $\kappa$ at the time of the measurement.
-
-
-\section{Identification and site assignment}
-\labsec{assignment}
-
-The $\ket{\Downarrow,4} \leftrightarrow \ket{\Downarrow,5}$ transition is of particular interest because it is first-order insensitive to the quadrupolar interaction. In the system studied here, only the $n = 8,9$ states exhibit significant mixing with other nuclear spin wavefunctions (see \reffig{matrix_elements}b), while the $n = 4,5$ levels approximately correspond to $m_I = \pm \tfrac{1}{2}$. Since, to first order, the quadrupolar interaction shifts the nuclear energy levels proportionally to $Q\, m_I^2$, the states with $m_I = \pm \tfrac{1}{2}$ are equally shifted. As a result, the transition frequency between $\ket{\Downarrow,4}$ and $\ket{\Downarrow,5}$ is first-order insensitive to quadrupolar shifts. Therefore,
-
 \begin{align}
 \begin{split}
     \omega^{(\Downarrow)}_{45} &\approx \omega_I + \frac{A_\parallel}{2} + \mathcal{O}(Q^2), \\
@@ -243,7 +316,7 @@ The $\ket{\Downarrow,4} \leftrightarrow \ket{\Downarrow,5}$ transition is of par
 \end{split}
 \end{align}
 
-By comparison of $\gamma$ with the tabulated values of the gyromagnetic ratio of stable nuclei with spin-9/2 (see \reftab{nuclear_spin_gyromagnetic}) we determine that the impurity is a $^{93}\mathrm{Nb}$ atom. The remaining difference with the tabulated value is likely due to a combination of a second order quadrupole effects (see \refsec{final_hamiltonian_fit}), pseudo-nuclear-Zeeman shift caused by the \Er, and/or to chemical shifts.
+By comparison of $\gamma$ with the tabulated values of the gyromagnetic ratio of stable nuclei with spin-9/2 (see \reftab{nuclear_spin_gyromagnetic}) we determine that the impurity is a $^{93}\mathrm{Nb}$ atom. The remaining difference with the tabulated value is likely due to a combination of a second order quadrupole effects (see \refsec{final_hamiltonian_fit}), pseudo-nuclear-Zeeman shift caused by the \Er and/or to chemical shifts.
 
 \begin{marginfigure}
     \includegraphics{chapter5/figures/crystal_with_nb.pdf}
@@ -251,9 +324,9 @@ By comparison of $\gamma$ with the tabulated values of the gyromagnetic ratio of
     \labfig{crystal_with_nb}
 \end{marginfigure}
 
-This impurity may originate from the crystal growth, or from the niobium film sputtering during resonator fabrication. We hypothesize that the niobium atom enters in substitution of a $\mathrm{W}^{6+}$ atom in a pentavalent state, thus compensating the \Er extra positive charge compared to $\mathrm{Ca}^{2+}$. From $A_\parallel/2\pi \sim 130$\,kHz (see \reffig{spectra_2d}b), and $A_\perp/2\pi \sim 50$\,kHz, we determine that the \Nb is located in the first unit cell centered in the \Er spin along the $c$ axis, as shown in \reffig{crystal_with_nb}. We confirm this assignment by measuring $A_\parallel$ and $A_\perp$ for various in-plane angles $\theta_S$.
+This impurity may originate from the crystal growth, or from the niobium film sputtering during resonator fabrication. We hypothesize that the niobium atom enters in substitution of a $\mathrm{W}^{6+}$ atom in a pentavalent state, thus compensating the \Er extra positive charge compared to $\mathrm{Ca}^{2+}$. From $A_\parallel/2\pi \sim 130$\,kHz (see \reffig{spectra_2d}b), and $A_\perp/2\pi \sim 50$\,kHz, we determine that the \Nb is located in the first unit cell in a type-3 site (see \refsec{nuclear_spin_quantum_jumps}), as shown in \reffig{crystal_with_nb}. We confirm this assignment by measuring $A_\parallel$ and $A_\perp$ for various in-plane angles $\theta_S$.
 
-\reffig{site_assignment}a plots the measured values of $A_\parallel$ and $A_\perp$ along with the numerical estimations for all 10 possible W positions in the first unit cell. The numerical estimations quantitatively agree with two specific sites, which lie directly along the $c$-axis either above or below of the \Er ion. Due to the degeneracy in hyperfine coupling between the two sites we are unable to distinguish if the \Nb atom is above or below the \Er ion. \reffig{site_assignment}b shows a magnified version of the plot. We note a systematic difference for the values of $A_\parallel$ of less than 1\% with respect to the measured values, which may be due a breakdown of the point-dipole approximation, or to a slight displacement of the \Nb position with respect to the \W site, possibly also impacted by strain caused by differential thermal contraction of the \Nb thin-film and the \Ca substrate \sidecite{pla_straininduced_2018,billaud_electron_2025}. 
+\reffig{site_assignment}a plots the measured values of $A_\parallel$ and $A_\perp$ along with the numerical estimations for all 10 possible W positions in the first unit cell. The numerical estimations quantitatively agree wit the two type-3 sites, which are magnetically identical. Due to this degeneracy in hyperfine coupling between the two sites we are unable to distinguish if the \Nb atom is above or below the \Er ion. \reffig{site_assignment}b shows a magnified version of the plot. We note a systematic difference for the values of $A_\parallel$ of less than 1\% with respect to the measured values, which may be due a breakdown of the point-dipole approximation, or to a slight displacement of the \Nb position with respect to the \W site, possibly also impacted by strain caused by differential thermal contraction of the \Nb thin-film and the \Ca substrate \sidecite{pla_straininduced_2018,billaud_electron_2025}. 
 
 \begin{figure*}
     \includegraphics{chapter5/figures/site_assignment.pdf}
@@ -266,6 +339,7 @@ This impurity may originate from the crystal growth, or from the niobium film sp
 
 
 \section{Precision NMR spectroscopy}
+\labsec{precision_nmr_spec}
 
 \begin{figure*}
     \includegraphics{chapter5/figures/ramsey_ninehalf.pdf}
@@ -274,14 +348,14 @@ This impurity may originate from the crystal growth, or from the niobium film sp
     \textit{(bottom)} Dots correspond the measured population from the Ramsey sequence and solid black line is an exponentially decaying cosine fit. 
     \textbf{b.} \textit{(top)} Excited Ramsey pulse sequence. The second \Nb $\pi$-pulse has an artificial phase $\psi$ to compensate for the rapid oscillations of the measurement.
     \textit{(left)} Dots correspond the measured population from the excited Ramsey sequence and solid black line is an exponentially decaying cosine fit.
-    \textbf{c.} \Nb nuclear spin transition frequencies $\omega^{(\Downarrow)}_{n, \ n+1}$ and $\omega^{(\Uparrow)}_{n, \ n+1}$ (green and blue markers resp.) as a function of $n$. 
+    \textbf{c.} \Nb nuclear spin transition frequencies $\omega^{(\Downarrow)}_{n, \ n+1}$ and $\omega^{(\Uparrow)}_{n, \ n+1}$ (green and orange markers resp.) as a function of $n$. 
     \textbf{d.} Coherence $T_2^{*, (\Downarrow)}$ for each transition $\ket{\Downarrow n}\leftrightarrow\ket{\Downarrow, n+1}$.    
     \textbf{e.}  Coherence $T_2^{*, (\Uparrow)}$ for each transition $\ket{\Uparrow n}\leftrightarrow\ket{\Uparrow, n+1}$. Solid line gives an upper bound to the coherence from the relaxation rate through the Purcell effect. 
     Error bars in the figures correspond to the 1-$\sigma$ fit uncertainty.}
     \labfig{ramsey_ninehalf}
 \end{figure*}
 
-The accuracy of the NMR spectra shown in \reffig{raman_spectroscopy_nb} is reduced due to the differential AC-Zeeman shifts that renormalize the energy levels. To access the non-shifted value of $\omega_n$, we use a Ramsey pulse sequence. Indeed, the frequency of the oscillations in a Ramsey measurement can be directly mapped to the bare frequency difference between the two levels of interest, provided that no pulse is applied during the free-evolution time of the sequence. 
+The accuracy of the NMR spectra shown in \reffig{raman_spectroscopy_nb} is reduced due to the differential AC-Zeeman shifts that renormalize the energy levels. To access the non-shifted value of $\omega_n$, we use a Ramsey pulse sequence.
 
 \subsubsection{Ramsey measurements}
 
@@ -291,7 +365,7 @@ To increase the accuracy of the measurement, we choose to interleave the measure
 
 The excited-state manifold frequencies $\omega^{(\Uparrow)}_{n,n+1}$ are then measured by including two \Er $\pi$-pulses separated by $\tau$, applied in-between two Raman $\pi/2$ pulses kept at a constant time delay of $1$\,ms. The data is shown in \reffig{ramsey_ninehalf}b. By keeping the time separation between the two \Nb pulses constant, any phase the state accumulates is proportional to the difference in frequency between the NMR transitions in the ground and excited state of the \Er spin. Consequently, the oscillation frequency of the measured data directly yields $\omega^{(\Downarrow)}_{n,n+1}-\omega^{(\Uparrow)}_{n,n+1}$. 
 
-\reffig{ramsey_ninehalf}c plots the fitted NMR frequencies as a function of the transition index $n$, both for the ground and excited state of the \Er spin (green and blue resp.). The ground state transitions and consistently larger than their excited state counterparts, which indicate a positive value of $A_\parallel/2\pi\approx130$~kHz. The value of the transition frequencies in the \Er ground state are the following
+\reffig{ramsey_ninehalf}c plots the fitted NMR frequencies as a function of the transition index $n$, both for the ground and excited state of the \Er spin (green and orange resp.). The ground state transitions and consistently larger than their excited state counterparts, which indicate a positive value of $A_\parallel/2\pi\approx130$~kHz. The value of the transition frequencies in the \Er ground state are the following
 
 \begin{align*}
 \omega^{(\Downarrow)}_{n, \ n+1} / 2\pi = [&7563655.5,\, 6897827.7,\, 6230527.8,\,  \dots
@@ -333,7 +407,7 @@ To demonstrate the impact of the \W polarization, \reffig{polarized_vs_unpolariz
 
 \subsubsection{Hahn echo measurements}
 
-In addition, the large nuclear spin of \Nb offers interesting perspectives for quantum sensing. Indeed, the magnetic moment of states $0$ and $n$ differ by $\sim n \, \mu_\text{\Nb}$, implying that the state $\ket{0} + \ket{n}$ is $\sim n$ times more sensitive to a small magnetic signal than $\ket{0} + \ket{1}$. Such "Schrödinger spin-cat" states have been studied in a Sb donor in silicon~\sidecite{yu_creation_2024}, and used in magnetometry with Rydberg atoms sensing \sidecite{dietsche_highsensitivity_2019}. We perform a preliminary characterization of the magnetic sensitivity of these states by measuring the echo coherence of the state $\ket{\Downarrow \, 0} + \ket{\Downarrow \, n+1}$. Figure \reffig{echo_nb}a \& b show a schematic of the pulse sequence along with the signal, fitted to an exponentially decaying cosine which yield the coherence time $T_{2}$. The decoherence rate $1/T_2$ is seen to increase linearly with $n$ (see \reffig{echo_nb}c), indicating that decoherence occurs mainly because of magnetic noise. Due to the accumulation of coherent errors on the pulses, we only measure these states until $n=6$. These measurements were taken in a different magnetic field configuration with a in-plane angle $\theta_S=-0.3^\circ$. 
+In addition, the large nuclear spin of \Nb offers interesting perspectives for quantum sensing. Indeed, the magnetic moment of states $0$ and $n$ differ by $\sim n \, \mu_\text{\Nb}$, implying that the state $\ket{0} + \ket{n}$ is $\sim n$ times more sensitive to a small magnetic signal than $\ket{0} + \ket{1}$. Such "Schrödinger spin-cat" states have been studied in a Sb donor in silicon~\sidecite{yu_creation_2024}, and used in magnetometry with Rydberg atoms sensing \sidecite{dietsche_highsensitivity_2019}. We perform a preliminary characterization of the magnetic sensitivity of these states by measuring the echo coherence of the state $\ket{\Downarrow \, 0} + \ket{\Downarrow \, n+1}$. \reffig{echo_nb}a \& b show a schematic of the pulse sequence along with the signal, fitted to an exponentially decaying cosine which yield the coherence time $T_{2}$. The decoherence rate $1/T_2$ is seen to increase linearly with $n$ (see \reffig{echo_nb}c), indicating that decoherence occurs mainly because of magnetic noise. Due to the accumulation of coherent errors on the pulses, we only measure these states until $n=6$. These measurements were taken in a different magnetic field configuration with a in-plane angle $\theta_S=-0.3^\circ$. 
 
 \begin{figure*}
     \includegraphics{chapter5/figures/echo.pdf}
@@ -469,7 +543,7 @@ Where $Q_\mathrm{sdq}$ is the interaction coupling strength. Moreover, to accoun
 
 \subsubsection{Lamb shift}
 
-First, we consider the Lamb shift of the electron spin transitions, which renormalize the \Nb transitions in the excited state of the \Er spin. As discussed in \refsec{spin_coupled_to_resonator}, the Lamb shift of the excited state of a spin-1/2 coupled to a resonator in its (vacuum) ground state, with coupling strength $g_0$ and detuning $\Delta$ is given by
+First, we consider the Lamb shift of the EPR-allowed transitions, which renormalize the \Nb transitions in the excited state of the \Er spin. As discussed in \refsec{spin_coupled_to_resonator}, the Lamb shift of the excited state of a spin-1/2 coupled to a resonator in its (vacuum) ground state, with coupling strength $g_0$ and detuning $\Delta$ is given by
 
 \begin{equation}
 \Delta\omega = \Delta \frac{g_0^2}{\Delta^2 + \kappa^2/4}.

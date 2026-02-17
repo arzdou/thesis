@@ -9,7 +9,7 @@
 
 \begin{quote}
 \itshape
-In this chapter we experimentally demonstrate single \W nuclear spin detection, spectroscopy and polarization using a local \Er spin probe in an all-microwave setup. We begin by reporting the observation of nuclear spin quantum-jumps, measured through high-resolution spectroscopy. By analyzing the spectral separation of the electron-spin frequencies and the quantum-jump rate, we estimate the hyperfine couplings and identify the lattice sites of the \W nuclear spins relative to the \Er probe. The strong hyperfine coupling between the \Er and \W spins enables single-shot readout of the nuclear spin state by monitoring the electron transition frequency via single microwave photon counting. We perform single-spin EDNMR spectroscopy on a \W nuclear spin by driving the zero- and double-quantum transitions. Through the combination of driving of these transitions and electron spin relaxation, we achieve deterministic nuclear spin polarization, also known as solid-effect dynamical nuclear polarization.
+In this chapter we experimentally demonstrate single \W nuclear spin detection, spectroscopy and polarization using a local \Er spin probe in an all-microwave setup. We begin by reporting the observation of nuclear spin quantum-jumps, measured through high-resolution spectroscopy of the \Er spin. By analyzing the spectral separation of the electron-spin frequencies and the quantum-jump rate, we estimate the hyperfine couplings and identify the lattice sites of the \W nuclear spins relative to the \Er probe. The strong hyperfine coupling between the \Er and \W spins enables single-shot readout of the nuclear spin state by monitoring the EPR-allowed transition frequency via single microwave photon counting. We perform single-spin EDNMR spectroscopy on a \W nuclear spin by driving the zero- and double-quantum transitions. Through the combination of driving of these transitions and electron spin relaxation, we achieve deterministic nuclear spin polarization, also known as solid-effect dynamical nuclear polarization.
 \end{quote}
 
 
@@ -68,16 +68,16 @@ Single nuclear spin detection has been achieved in a variety of physical systems
 \begin{marginfigure}
     \includegraphics{chapter3/figures/sota_nv2.pdf}
     \caption[NV center in diamond]{Sketch of an NV center in diamond. A nitrogen and a vacancy (blue and gray respectively) combine in a diamond substrate (black C atoms). In its negatively charged state, the system has $S=1$ and can be controlled with microwave pulses (in blue). Single-shot readout is performed by measuring the spin-selective optical fluorescence (in red). A green laser is used to readout and prepare the state of the NV center (in green). The figure was taken from \cite{neumann_singleshot_2010}.}
-    \labfig{sota_nv2}
+    \labfig{sota_nv2_ch3}
 \end{marginfigure}
 
-Nitrogen-vacancy (NV) centers are point defects consisting of a substitutional nitrogen atom adjacent to a vacancy in the diamond lattice, as shown in \reffig{sota_nv2}. This defect forms a localized electronic state within the diamond band gap. In its negatively charged state, the NV center possesses a paramagnetic ground state with total spin $S=1$. The corresponding energy levels as a function of magnetic field are shown in \reffig{sota_nv1}a. The electron spin levels are further split by the hyperfine coupling to the $^{14}\mathrm{N}$ nuclear spin.
+Nitrogen-vacancy (NV) centers are point defects consisting of a substitutional nitrogen atom adjacent to a vacancy in the diamond lattice, as shown in \reffig{sota_nv2_ch3}. This defect forms a localized electronic state within the diamond band gap. In its negatively charged state, the NV center possesses a paramagnetic ground state with total spin $S=1$. The corresponding energy levels as a function of magnetic field are shown in \reffig{sota_nv1_ch3}a. The electron spin levels are further split by the hyperfine coupling to the $^{14}\mathrm{N}$ nuclear spin.
 
 The optical transitions exhibit spin-dependent fluorescence intensity, a property that enabled the detection of the spin state of an individual NV center using optical excitation~\sidecite{jelezko_single_2002}, followed shortly by the detection of nearby single $^{13}\mathrm{C}$ nuclear spins~\sidecite{jelezko_observation_2004a}. 
 
 %However, the nuclear spin readout scheme was not single-shot; multiple repetitions were required to accumulate a detectable signal, thereby obscuring the intrinsic quantum nature of the spin dynamics. The primary limitation was a reduced effective nuclear spin lifetime $T_1$, caused by cross-relaxation events induced by the transverse hyperfine coupling during optical interrogation with a green laser~\sidecite{robledo_spin_2011}.
 
-Single-shot readout of the $^{14}\mathrm{N}$ nuclear spin was achieved by Neumann \textit{et al.} in 2010~\sidecite{neumann_singleshot_2010}. In the experiment, the electron spin is initialized in the $m_S=0$ state. A nuclear-spin-selective microwave $\pi$-pulse is then applied, transferring the electron population to the $m_S=-1$ state conditional on the nuclear spin state. This selective mapping is possible because the hyperfine splitting of the EPR-allowed transitions is stronger than the decoherence rate of the electron spin. Then, the electron spin is read-out optically by measuring the photoluminescence under a green laser pulsed excitation. Therefore, if the $^{14}\mathrm{N}$ is in state $m_I=-1$ the PL should be low, whereas it should be high if the $^{14}\mathrm{N}$ is in state $m_I=0$ or $m_I=+1$. The fluorescence trace shown in \reffig{sota_nv1}b reveals real-time quantum-jumps of the nuclear spin state.
+Single-shot readout of the $^{14}\mathrm{N}$ nuclear spin was achieved by Neumann \textit{et al.} in 2010~\sidecite{neumann_singleshot_2010}. In the experiment, the electron spin is initialized in the $m_S=0$ state. A nuclear-spin-selective microwave $\pi$-pulse is then applied, transferring the electron population to the $m_S=-1$ state conditional on the nuclear spin state. This selective mapping is possible because the hyperfine splitting of the EPR-allowed transitions is stronger than the decoherence rate of the electron spin. Then, the electron spin is read-out optically by measuring the photoluminescence under a green laser pulsed excitation. Therefore, if the $^{14}\mathrm{N}$ is in state $m_I=-1$ the PL should be low, whereas it should be high if the $^{14}\mathrm{N}$ is in state $m_I=0$ or $m_I=+1$. The fluorescence trace shown in \reffig{sota_nv1_ch3}b reveals real-time quantum-jumps of the nuclear spin state.
 
 \begin{figure*}
     \includegraphics{chapter3/figures/sota_nv1.pdf}
@@ -85,12 +85,14 @@ Single-shot readout of the $^{14}\mathrm{N}$ nuclear spin was achieved by Neuman
     \textbf{a.} Complete energy level scheme including magnified $^{14}\mathrm{N}$ hyperfine structure. The EPR-allowed transition is shown in blue. The NMR-allowed transitions are shown as orange arrows. The nuclear spin quadrupole and hyperfine splitting Q and A respectively are depicted as well. The nuclear Zeeman energy has been considered in the diagram.
     \textbf{b.} Normalized fluorescence time traces (gray) as a function of time. The microwave pulses are applied in the space of time defined by the blue arrow. Low fluorescence intensity correspond to nuclear spin in state $m_I=-1$, and high fluorescence intensity indicates $m_I=0,1$.
     \textbf{c.} Nuclear spin effective lifetime $T_1$ as a function of the magnetic field intensity along the NV axis. The data is fit to a model of cross-relaxation due to the electron spin scrambling after excitation by a green laser.}
-    \labfig{sota_nv1}
+    \labfig{sota_nv1_ch3}
 \end{figure*}
 
 The time trace shows that the nuclear spin can be interrogated repeatedly before a state change occurs. Under laser excitation, the electron spin is reset in the ground state. Nevertheless, the nuclear spin state remains stable for many cycles. Therefore, the protocol is a projective, single-shot, Quantum Non-Demolition (QND) measurement of the nuclear spin state~\sidecite{imoto_quantum_1985}. The average number of readout cycles before a nuclear spin flip defines an effective nuclear $T_1$ under measurement.
 
-This effective lifetime ultimately limits both the readout fidelity and the degree to which the measurement can be considered truly QND. Nuclear spin flips are induced by cross-relaxation through the ZQ/DQ transitions, which occur during optical excitation when the electron spin state is scrambled. As discussed in \refsec{driving_nuclear_spin_half}, the probability of such cross-relaxation events scales inversely with the nuclear Larmor frequency. Consequently, increasing the applied magnetic field enhances the nuclear spin lifetime. \reffig{sota_nv1}c shows the measured effective nuclear $T_1$ as a function of magnetic field and is fit to a model that accounts for cross-relaxation via ZQ/DQ transitions. This confirmed that these processes dominate the nuclear spin relaxation under optical interrogation.
+This effective lifetime ultimately limits both the readout fidelity and the degree to which the measurement can be considered truly QND. Nuclear spin flips are induced by cross-relaxation through the ZQ/DQ transitions, occurring mostly in the optically-excited state since the hyperfine coupling is $\sim 10$ times stronger than in the ground-state. As discussed in \refsec{driving_nuclear_spin_half}, the probability of such cross-relaxation events scales inversely with the nuclear Larmor frequency. Consequently, increasing the applied magnetic field enhances the nuclear spin lifetime. \reffig{sota_nv1_ch3}c shows the measured effective nuclear $T_1$ as a function of magnetic field and is in good agreement with a model that describes cross-relaxation via ZQ/DQ transitions in the optical excited state. A similar mechanism will be present in our system, as \W nuclear spins will cross-relax through the ZQ/DQ transitions when the electron spin is excited.
+
+%This confirmed that these processes dominate the nuclear spin relaxation under optical interrogation.
 
 %Over the years, several strategies have been developed to further mitigate this limitation. Replacing off-resonant green excitation with resonant red laser excitation suppresses back-action on the nuclear spin~\sidecite{robledo_highfidelity_2011}. Additionally, incorporating solid immersion lenses or optical cavities significantly enhances photon collection efficiency, which reduces the number of required laser pulses~\sidecite{schroder_ultrabright_2011}.
 
@@ -107,7 +109,7 @@ This effective lifetime ultimately limits both the readout fidelity and the degr
     \labfig{sota_p}
 \end{figure*}
 
-In contrast to optical fluorescence-based readout, electrical detection schemes exploit spin-to-charge conversion mechanisms. One such technique couples a neutral donor in silicon, such as a phosphorus impurity, to a single-electron transistor (SET). The SET current is finite only within specific electrochemical potential windows, and the tunneling of a single electron is sufficient to switch the current. By applying a strong magnetic field $B_0$, spin-dependent tunneling can be engineered, as the Zeeman effect lifts the degeneracy of the electron spin states. Therefore, current flowing through the device signals the state of the electron spin, enabling single-shot electron spin readout~\sidecite{morello_singleshot_2010}.
+In contrast to optical fluorescence-based readout, electrical detection schemes exploit spin-to-charge conversion mechanisms. One such technique couples a neutral phosphorus donor in silicon to a single-electron transistor (SET). The SET current depends on the charge state of the donor. By applying a strong magnetic field $B_0$, spin-dependent tunneling can be engineered, as the Zeeman effect lifts the degeneracy of the electron spin states. Therefore, current flowing through the device signals the state of the electron spin, enabling single-shot electron spin readout~\sidecite{morello_singleshot_2010}.
 
 The first detection of an individual nuclear spin using this architecture was demonstrated by J. Pla \textit{et al.} in 2013~\sidecite{pla_highfidelity_2013}. The device used in their work is shown in \reffig{sota_p}a. Four electrostatic gates control the electrochemical potential of the donor. The electron spin is driven using a microwave magnetic field $B_1$ generated by an on-chip transmission line.
 
@@ -117,9 +119,9 @@ Figure \reffig{sota_p}c shows electron spin resonance spectroscopy. After applyi
 
 By monitoring the difference in excited-state population between the two resonance frequencies, $\Delta f_\uparrow = f_\uparrow(\nu_{e2}) - f_\uparrow(\nu_{e1})$, the nuclear spin state can be discriminated with a fidelity exceeding $0.998$. Observation of the nuclear spin dynamics (shown in \reffig{sota_p}d) reveals the presence of a shorter-lived spin state. This effect is attributed to electron-nuclear flip-flop processes occurring during electron spin readout. The authors mitigate this mechanism by increasing the donor ionization rate, thereby suppressing unwanted spin exchange during measurement.
 
-\subsection*{Conclusion}
+\subsection*{Summary}
 
-The two experiments, authors rely on the hyperfine interaction between a nuclear spin and a proximal electron spin to enable single-shot nuclear spin readout. Fundamentally, they resolve the hyperfine splitting of the EPR-allowed transitions. In both approaches, successful discrimination of the nuclear spin state requires that the hyperfine coupling exceed the electron spin linewidth, ensuring that the EPR transitions are spectrally resolvable.
+The two experiments rely on the hyperfine interaction between a nuclear spin and a proximal electron spin to enable single-shot nuclear spin readout. Fundamentally, they resolve the hyperfine splitting of the EPR-allowed transitions. In both approaches, successful discrimination of the nuclear spin state requires that the hyperfine coupling exceed the electron spin linewidth, ensuring that the EPR transitions are spectrally resolvable.
 
 Such strong hyperfine interactions are typically achieved when the electron and nuclear spins are coupled through the Fermi contact interaction, leading to coupling strengths on the order of several megahertz. In contrast, dipolar interactions with more distant nuclear spins are significantly weaker and therefore more challenging to resolve spectroscopically. Nevertheless, advances in dynamical decoupling have enabled the detection of large ensembles of weakly coupled distant $^{13}\mathrm{C}$ spins using a single NV center~\sidecite{vandestolpe_mapping_2024}.
 
@@ -144,7 +146,9 @@ Using magnetically silent substrates is a promising path towards single nuclear 
 
 \section{Single \Er spins characterization}
 
-In this chapter we focus on five independent \Er ions, which we label Er$_i$ with $i=\{1,2,3,4,5\}$. After identifying an individual \Er ion we characterize it following the procedure described in \refsec{erbium_spin_detection}. This yields the values shown in \reftab{electron_characterization}. Due to time constraints, some coherence times were not measured for certain ions. 
+In this chapter we focus on five different \Er ions, which we label Er$_i$ with $i=\{1,2,3,4,5\}$. After identifying an individual \Er spin, we set the magnetic field amplitude and angle such that the electron spin frequency is close to the resonator frequency, \textit{i.e.} $\omega_r\approx\omega_S$, and set the coils on persistent mode. We proceed by characterizing the spin following the procedure described in \refsec{individual_er_ion_characterization}. This yields the values shown in \reftab{electron_characterization}. Due to time constraints, some coherence times were not measured for certain ions. 
+
+As discussed in \refsec{individual_er_ion_characterization}, the measured coherence times are remarkably long when compared to other single electron spins in the solid-state discussed in the \textit{state-of-the-art} section. In fact, the decoherence time is generally lifetime-limited. In addition, given that $T_2^*\sim100$~\textmu s, hyperfine couplings in the order of 10~kHz should be resolved, enabling the detection of single \W nuclear spins.
 
 \begin{table}
 \begin{tabular}{|l|l|l|l|l|l|}
@@ -166,13 +170,13 @@ $T_2$ (ms)       & -                   & -                   & -               &
 \begin{figure*}
     \includegraphics{chapter3/figures/quantum_jumps.pdf}
     \caption[\Er time traces]{\Er time traces. 
-    \textbf{a.} \textit{(top)} Fluorescence detection spectroscopy pulse scheme. A Gaussian $\pi$-pulse of 80 \textmu s of duration and frequency $\omega_0$ + $\delta$ is applied to the sample. Ensemble-averaged number of counts $\langle C \rangle$ is subsequently measured during an integration time window, $\tau_{\mathrm{int}}$. The sequence is then repeated without any delay, with the excitation pulse frequency updated.
+    \textbf{a.} \textit{(top)} Fluorescence detection spectroscopy pulse scheme. A Gaussian $\pi$-pulse of 80 \textmu s of duration and frequency $\omega_r$ + $\delta$ is applied to the sample. Ensemble-averaged number of counts $\langle C \rangle$ is subsequently measured during an integration time window, $\tau_{\mathrm{int}}$. The sequence is then repeated without any delay, with the excitation pulse frequency updated.
     \textit{(bottom)}. High-resolution spectra of five $\mathrm{Er}^{3+}$ ion spins, measured consecutively during $150$\,minutes. Each spectrum is recorded by averaging $200$ sweeps of $\delta$, yielding the ensemble-averaged number of counts $\langle C \rangle (\delta)$. The integration time $\tau_{\mathrm{int}}$ is 1.6 ms for $\mathrm{Er}_1$, 2.0 ms for $\mathrm{Er}_{2,3}$ and 3.6 ms for $\mathrm{Er}_{4,5}$. The increase in counts corresponds to the detected fluorescence after exciting an EPR-allowed transition. The resonance frequency evolves in time with a slow drift and sudden telegraphic jumps. Each spectrum is fitted as a Lorentzian and the center $\tilde{\delta}$ is shown as a function of time for $\mathrm{Er}_2$ as a black continuous line. 
     \textbf{b.} Histograms of $\tilde{\delta}$ for the five ions.}
     \labfig{quantum_jumps}
 \end{figure*}
 
-After identifying and characterizing individual \Er ions, we perform high-resolution spectroscopy by exciting the spin with an 80 \textmu s long Gaussian-shaped microwave $\pi$-pulse, with frequency $\omega$ followed by microwave fluorescence detection, sweeping $\delta = \omega - \omega_0$ over $2\pi \times 100$\,kHz. Each sweep is averaged 200 times to obtain the ensemble-averaged number of counts $\langle C \rangle (\omega)$. \reffig{quantum_jumps}a shows such spectra measured repeatedly during 150 minutes for $\mathrm{Er}_1 - \mathrm{Er}_5$. Ion $\mathrm{Er}_1$ displays a single line, whose center frequency fluctuates on a timescale of several minutes, and on a frequency scale of $\sim 20$\,kHz. This spectral diffusion is attributed to a combination of $B_0$ drift, charge noise, and re-arrangements of the weakly coupled nuclear spin bath, and was observed for all measured ions although with a different intensity (see discussion below). Because the drift is slow, it can be compensated by various frequency-tracking strategies (see discussion below) which are used in all the measurements reported later in this chapter. In contrast, the electron spin frequencies of ions $\mathrm{Er}_2$, $\mathrm{Er}_3$, and $\mathrm{Er}_5$ display a clear telegraphic noise between two frequencies, four in the case of $\mathrm{Er}_4$. Similar to the systems discussed in \refsec{sota_ch3}, these jumps occur when one nearby $^{183}\mathrm{W}$ nuclear spin changes state. Quantum jumps are a hallmark of the measurement of individual quantum systems, and aside of nuclear spins, they have been observed for trapped ions~\sidecite{nagourney_shelved_1986,bergquist_observation_1986,sauter_observation_1986}, photons in a high-Q microwave cavity~\sidecite{gleyzes_quantum_2007,guerlin_progressive_2007}, superconducting circuits~\sidecite{vijay_observation_2011}. Here, we report their observation on individual $^{183}\mathrm{W}$ nuclear spins by microwave fluorescence detection.
+After identifying and characterizing individual \Er ions, we perform high-resolution spectroscopy by exciting the spin with an 80 \textmu s long Gaussian-shaped microwave $\pi$-pulse, with frequency $\omega$ followed by microwave fluorescence detection, sweeping $\delta = \omega - \omega_r$ over $2\pi \times 100$\,kHz. Each sweep is averaged 200 times to obtain the ensemble-averaged number of counts $\langle C \rangle (\delta)$. \reffig{quantum_jumps}a shows such spectra measured repeatedly during 150 minutes for $\mathrm{Er}_1 - \mathrm{Er}_5$. Ion $\mathrm{Er}_1$ displays a single line, whose center frequency fluctuates on a timescale of several minutes, and on a frequency scale of $\sim 20$\,kHz. This spectral diffusion is attributed to a combination of $B_0$ drift, charge noise, and re-arrangements of the weakly coupled nuclear spin bath, and was observed for all measured ions although with a different intensity (see discussion below). Because the drift is slow, it can be compensated by various frequency-tracking strategies (see discussion below) which are used in all the measurements reported later in this chapter. In contrast, the electron spin frequencies of ions $\mathrm{Er}_2$, $\mathrm{Er}_3$, and $\mathrm{Er}_5$ display a clear telegraphic noise between two frequencies, four in the case of $\mathrm{Er}_4$. Similar to the systems discussed in \refsec{sota_ch3}, these jumps occur when one nearby $^{183}\mathrm{W}$ nuclear spin changes state. Quantum jumps are a hallmark of the measurement of individual quantum systems, and aside of nuclear spins, they have been observed for trapped ions~\sidecite{nagourney_shelved_1986,bergquist_observation_1986,sauter_observation_1986}, photons in a high-Q microwave cavity~\sidecite{gleyzes_quantum_2007,guerlin_progressive_2007}, superconducting circuits~\sidecite{vijay_observation_2011}. Here, we report their observation on individual $^{183}\mathrm{W}$ nuclear spins by microwave fluorescence detection.
 
 The transition frequency of each spectrum $\tilde{\delta}(t)$ is obtained from a Lorentzian fit, shown as a histogram in \reffig{quantum_jumps}b for the five ions. Each histogram presents a different number of resolved distributions. For $\mathrm{Er}_2$, $\mathrm{Er}_3$ and $\mathrm{Er}_5$, the two resolved distributions indicate the presence of a strongly coupled neighboring nuclear spin. In contrast, $\mathrm{Er}_4$, shows four resolved distributions which correspond to two strongly coupled nuclear spins. The pair will be referred as $\mathrm{Er}_4^{(1)}$ and $\mathrm{Er}_4^{(2)}$ in the following. We note that the standard deviation of the individual distributions is significantly different for each ion, indicating that part of the drift originates from their local environment, likely from unresolved nuclear spin jumps.
 
@@ -184,7 +188,7 @@ The energy level structure presented in \refsec{w_er_hamiltonian} dictates that 
     \Delta \tilde \delta (\tau) = \tilde \delta (\tau) - \tilde \delta (\tau - \Delta t), 
 \end{equation}
 
-which is plot in \reffig{trace_analysis}a as a function of time for Er$_2$. Depending on the number of strongly coupled nuclear spins, the value distribution of $\Delta \tilde \delta$ will show different number of peaks (see \reffig{trace_analysis}b).  The peak centered at $0$ arises when no resolved jump occurs in-between two consecutive traces. A Gaussian fit yields a Full-Width-Half-Maximum varying from 4.5 to 10 kHz, indicating that the short-term noise (at the minute scale) also varies significantly from ion to ion. The extra peaks observed for $\mathrm{Er}_{2-5}$ arise from resolved nuclear spin quantum jumps. Gaussian fits to these peaks yield the mean frequency jump size which corresponds to $|A_\parallel|$. The measured values are shown in \reftab{hyperfine_parallel_meas}. We note that the standard deviation of the satellite peaks is similar in value to the central peak, as expected. 
+where $\Delta t$ is the difference in time between subsequent traces. $ \Delta \tilde \delta$ is plotted in \reffig{trace_analysis}a as a function of time for Er$_2$. Depending on the number of strongly coupled nuclear spins, the value distribution of $\Delta \tilde \delta$ will show different number of peaks (see \reffig{trace_analysis}b).  The peak centered at $0$ arises when no resolved jump occurs in-between two consecutive traces. A Gaussian fit yields a Full-Width-Half-Maximum varying from 4.5 to 10 kHz, indicating that the short-term noise (at the minute scale) also varies significantly from ion to ion. The extra peaks observed for $\mathrm{Er}_{2-5}$ arise from resolved nuclear spin quantum jumps. Gaussian fits to these peaks yield the mean frequency jump size which corresponds to $|A_\parallel|$. The measured values are shown in \reftab{hyperfine_parallel_meas}. We note that the standard deviation of the satellite peaks is similar in value to the central peak, as expected. 
 
 \begin{figure}
     \includegraphics{chapter3/figures/trace_analysis.pdf}
@@ -235,17 +239,27 @@ From this equation, we estimate $A_\perp$ by averaging both probabilities. The r
     \centering
     \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        & \textbf{$\mathrm{Er}_2$} & \textbf{$\mathrm{Er}_3$} & \textbf{$\mathrm{Er}_4^{(1)}$} & \textbf{$\mathrm{Er}_4^{(1)}$} & \textbf{$\mathrm{Er}_5$} \\ \hline
+        & \textbf{$\mathrm{Er}_2$} & \textbf{$\mathrm{Er}_3$} & \textbf{$\mathrm{Er}_4^{(1)}$} & \textbf{$\mathrm{Er}_4^{(2)}$} & \textbf{$\mathrm{Er}_5$} \\ \hline
         $|A_\parallel|/2\pi$ (kHz)  
         & 21(1) & 36.3(6) & 38.5(8) & 19(1) & 39.6(5) \\ \hline        
         $|A_\perp|/2\pi$ (kHz)  
-        & 12(3) & 27(3) & 40(5) & 11(3) & 103(5)  \\ \hline
+        & 12(3) & 27(3) & 40(5) & 11(3) & 72(5)  \\ \hline
         $\theta$ (deg) & -0.3 & -0.2 & - 0.1 &-0.1 &0.1 \\ \hline
-        site & 3 & 1\,|\,2 &  1\,|\,2 & 3 & 1 \\ \hline
+        type & 3 & 1\,|\,2 &  1\,|\,2 & 3 & 1 \\ \hline
     \end{tabular}
-    \caption[Hyperfine coupling measurement]{Hyperfine coupling between the neighbouring \W of each \Er spin and site assignment. \red{redo}}
+    \caption[Hyperfine coupling measurement]{Hyperfine coupling between the neighbouring \W of each \Er spin and site assignment.}
     \labtab{hyperfine_parallel_meas}
 \end{table}
+
+
+
+By comparing the measured values of $A_\parallel$ and $A_\perp$ to magnetic dipole simulations, shown in \reffig{hyperfine_simulations}, we can tentatively assign the crystalline site of each nuclear spin. When the magnetic field is applied approximately parallel to the $c$-axis, we can distinguish three types of magnetically similar sites within a unit cell centered around the \Er impurity, as shown in \reffig{crystal_sites}. The assignment of each nuclear spin is shown in \reftab{hyperfine_parallel_meas}.
+
+\begin{figure*}
+    \includegraphics{chapter3/figures/hyperfine_simulations.pdf}
+    \caption[Hyperfine coupling for between \Er and \W]{ Hyperfine coupling $A_\parallel$ and $A_\perp$ obtained through a dipole-dipole Hamiltonian simulation as a function of the in-plane angle $\theta$. The calculation considers the measured out-of-plane angle $\beta = -0.57^\circ$. The position of the ions is specified in angstroms. The plots are organized depending on the relative position of the nuclear spin with respect to the \Er spin, as shown in \reffig{crystal_sites}}
+    \labfig{hyperfine_simulations}
+\end{figure*}
 
 \begin{marginfigure}
     \includegraphics{chapter3/figures/crystal_sites.pdf}
@@ -253,9 +267,11 @@ From this equation, we estimate $A_\perp$ by averaging both probabilities. The r
     \labfig{crystal_sites}
 \end{marginfigure}
 
-By comparing the measured values of $A_\parallel$ and $A_\perp$ to magnetic dipole simulations (see \refsec{interaction_between_to_spins}), we can tentatively assign the crystalline site of each nuclear spin. When the magnetic field is applied approximately parallel to the $c$-axis, we can distinguish three types of magnetically similar sites within a unit cell centered around the \Er impurity, as shown in \reffig{crystal_sites}. The assignment of each nuclear spin is shown in \reftab{hyperfine_parallel_meas}.
+For the nuclear spins coupled to Er$_2$ and Er$_4^{(2)}$, the measured values of $A_\parallel$ and $A_\perp$ are close to those expected from type 3 sites, making this site assignment likely. The other nuclear spins have larger values of $\lvert A_\parallel\rvert$ and $\lvert A_\perp \rvert$, implying that they are either type 1 or type 2 sites; however, the match is not quantitative with any of the sites. Several reasons could explain this. First, local deformations of the crystal could be caused by the larger positive charge of \Er compared to the original $\mathrm{Ca}^{2+}$. Second, the measured ions are notably strained, as evidenced by the fact that they are found several mT above the center of the ensemble line (as discussed in \refsec{individual_er_ion_characterization}). In the case of the nuclear spin coupled to Er$_5$, the value of $\lvert A_\perp \rvert$ measured is notably larger than the range predicted both for type 1 and type 2; however, for larger angles, type 1 spins reach such large $\lvert A_\perp \rvert$ values (see \reffig{hyperfine_simulations}), motivating a tentative assignment of Er$_5$ to a type 1 site. We finally note that site assignment should be made easier by the measurement of the angular dependence of $A_\parallel$ and $A_\perp$.
 
 \subsection{Tracking procedure}
+
+As discussed in the previous section, the frequency drift on the EPR-allowed frequencies is on the same order of magnitude as the linewidth of the transition. Without active tracking and compensation of the drift, the fluorescent intensity of the transition will not be constant, resulting in a reduction of SNR. However, the noise has a characteristic timescale of minutes, which is slow when compared to the duration of our pulse sequences. Therefore, it is possible to track the drift in between averages, which allows to compensate it during the next sequence. 
 
 \begin{marginfigure}
     \includegraphics{chapter3/figures/rough_tracking.pdf}
@@ -263,17 +279,17 @@ By comparing the measured values of $A_\parallel$ and $A_\perp$ to magnetic dipo
     \labfig{rough_tracking}
 \end{marginfigure}
 
-As discussed in the previous section, the frequency drift on the EPR-allowed frequencies is on the same order of magnitude as the linewidth of the transition. Without active tracking and compensation of the drift, the fluorescent intensity of the transition will not be constant, resulting in a reduction of SNR. However, the noise has a characteristic timescale of minutes, which is slow when compared to the duration of our pulse sequences. Therefore, it is possible to track the drift in between averages, which allows to compensate it during the next sequence. 
-
 A rudimentary but straightforward tracking protocol can be implemented by performing high-resolution spectroscopy with a small sweeping range around the electron transition frequency\sidenote{To account for nearby nuclear spins, we perform dynamical nuclear polarization before tracking (see \refsec{dnp_half})}. The ensemble averaged number of counts $\langle C \rangle (\delta)$ is then fitted to a Lorentzian, as shown in \reffig{rough_tracking} The center of the fit yields the new electron spin transition frequency and the pulse frequencies are updated for the next measurement. This algorithm is straightforward and reliable, but the main drawback is the time it takes to obtain a reasonable fit, approximately 1 minute. Therefore, it can only be realistically run a limited number of times, resulting in poor tracking.
 
-Due to the limitations of the direct tracking procedure, we envisioned a second algorithm focused on speed rather than fine control. This method exploits the properties of a Ramsey measurement as frequency sensor. Let's begin by considering a Ramsey measurement, where the spin is sent to the equatorial plane of the Bloch sphere by a $\pi/2$-pusle where it freely evolves during a time $\tau$ before another $\pi/2$-pulse is applied and the population of the spin state is measured. In our case, the measurement is performed via the SMPD and results in a number of counts $C$. 
+Due to the limitations of the direct tracking procedure, we envisioned a second algorithm focused on speed rather than fine control. This method exploits the properties of a Ramsey measurement as frequency sensor. One possible strategy for tracking the drift would be to measure the full Ramsey fringe and fit the oscillation frequency, but this method will again be limited by the data acquisition time. Instead, the tracking can be greatly accelerated by probing only a single time point on the Ramsey curve, chosen for maximal sensitivity. This point corresponds to the zero crossing of the Ramsey oscillation, where the population of the electron spin is linear to the instantaneous drift $\delta \omega$. For this single-point Ramsey sensor, sensitivity is maximized when $\tau\sim T_2^*$ as it balances long phase accumulation time with low information loss due to decoherence.
 
-During the free evolution period, the electron spin accumulates a phase proportional to the transition frequency and the evolution time. Any drift $\delta \omega$ in the transition frequency therefore appears as an additional phase shift\sidenote{As measured before, the drift in our system has a timescale of minutes, while the coherence of the electron is on the hundreds of \textmu s. It is therefore reasonable to assume that the transition frequency is constant during the evolution time of the Ramsey sequence.} $\phi = (\omega_S + \delta \omega) \tau$. Since $\omega_S \gg \delta\omega$, directly resolving small changes in $\phi$ is difficult. To address this, the second Ramsey pulse includes an artificial phase that effectively compensates most of the rapid oscillation due to $\omega_S$, leaving only the slower drift-dependent component.
+%Let's begin by considering a Ramsey measurement, where the spin is sent to the equatorial plane of the Bloch sphere by a $\pi/2$-pusle where it freely evolves during a time $\tau$ before another $\pi/2$-pulse is applied and the population of the spin state is measured. In our case, the measurement is performed via the SMPD and results in a number of counts $C$. 
 
-One possible strategy for tracking the drift would be to measure the full Ramsey fringe and fit the oscillation frequency, but this method will again be limited by the data acquisition time. Instead, the tracking can be greatly accelerated by probing only a single time point on the Ramsey curve, chosen for maximal sensitivity. This point corresponds to the zero crossing of the Ramsey oscillation, where the population of the electron spin is linear to $\delta \omega$. For this single-point Ramsey sensor, sensitivity is maximized when $\tau\sim T_2^*$ as it balances long phase accumulation time with low information loss due to decoherence.
+%During the free evolution period, the electron spin accumulates a phase proportional to the transition frequency and the evolution time. Any drift $\delta \omega$ in the transition frequency therefore appears as an additional phase shift\sidenote{As measured before, the drift in our system has a timescale of minutes, while the coherence of the electron is on the hundreds of \textmu s. It is therefore reasonable to assume that the transition frequency is constant during the evolution time of the Ramsey sequence.} $\phi = (\omega_S + \delta \omega) \tau$. Since $\omega_S \gg \delta\omega$, directly resolving small changes in $\phi$ is difficult. To address this, the second Ramsey pulse includes an artificial phase that effectively compensates most of the rapid oscillation due to $\omega_S$, leaving only the slower drift-dependent component.
 
-\begin{figure*}
+In practice, fluctuating dark counts introduce a varying offset in the measured counts $C$. We remove this offset by phase cycling: the Ramsey sequence is repeated with an added $\pi$ phase shift on the second pulse, producing a second measurement $\bar C$. Subtracting the two, $C - \bar C$, cancels the offset and yields a signal that is linear in $\delta\omega$, provided that $\tau \ll 2\pi / \Delta\omega$ (see \reffig{tracking_ramsey}a).
+
+\begin{figure*}[b!]
     \includegraphics{chapter3/figures/tracking.pdf}
     \caption[Ramsey tracking scheme]{Ramsey tracking scheme. 
     \textbf{a.} \textit{(top)} Simulated Ramsey measurement under phase cycling. The signal was generated with a dephasing time of 50~\textmu s and artificial detuning of 20~kHz and 21~kHz (red and gray respectively). The resulting quantity, $C - \bar C$ is plot as a function of the interpulse delay $\tau$. 
@@ -281,9 +297,6 @@ One possible strategy for tracking the drift would be to measure the full Ramsey
     \textbf{b.} Feedback loop diagram. The PI loop is run after every measurement to correct any shift in the frequencies of the system.}
     \labfig{tracking_ramsey}
 \end{figure*}
-
-
-In practice, fluctuating dark counts introduce a varying offset in the measured counts $C$. We remove this offset by phase cycling: the Ramsey sequence is repeated with an added $\pi$ phase shift on the second pulse, producing a second measurement $\bar C$. Subtracting the two, $C - \bar C$, cancels the offset and yields a signal that is linear in $\delta\omega$, provided that $\tau \ll 2\pi / \Delta\omega$ (see \reffig{tracking_ramsey}a).
 
 The quantity $C - \bar C$ can be used as the process variable of a Proportional-Integral (PI) loop with a setpoint at zero, integrated within the FPGA logic. In practice, we define the variable $Y_i$ which carries a short memory by filtering the values of the sensor output for every iteration $i$ of the PI loop,
 
@@ -304,9 +317,9 @@ The second tracking procedure is used to compensate for the drift in all measure
 \section{Single-Shot readout}
 \labsec{single_shot_ro_singlespin}
 
-\begin{figure*}
+\begin{figure*}[b!]
     \includegraphics{chapter3/figures/single_shot_readout.pdf}
-    \caption[Nuclear single shot readout trace]{Single shot readout trace. 
+    \caption[Nuclear single shot readout trace]{Single shot readout trace. The measurement in this figure did not include tracking.
     \textbf{a.} \textit{Left} Integrated counts $C_\downarrow$ (resp. $C_\uparrow$) as a function of time as a dark red (resp. light red) solid line. The data was taken for $\mathrm{Er_2}$ with integration time $\tau_{\mathrm{int}}$ = 1.6 ms and $N_{RO}$ = 10$^3$. Quantum jumps appear as abrupt changes in the number of counts with telegraphic trajectory. The two traces are anti-correlated and the state of the nuclear spin can be mapped to $\ket{\downarrow}$ when C$_\downarrow$>C$_\uparrow$, represented by a black continuous line. \textit{Right} Readout histograms of C$_\downarrow$ and C$_\uparrow$. The lower number of counts in state $\uparrow$ is attributed to imperfect SMPD frequency tuning, resulting in different fluorescence intensities. 
     \textbf{b.} Histogram of $\delta C$ $\equiv$ $C_\Downarrow$ - $C_\Uparrow$. A bimodal Gaussian distribution fit is plotted as black solid line. Vertical black dashed line shows the threshold for single-shot read-out.
     }
@@ -315,6 +328,12 @@ The second tracking procedure is used to compensate for the drift in all measure
 
 
 We leverage the ability to spectrally resolve the different allowed transition frequencies of the electronic spin to perform a projective, QND, single-shot measurement of the nuclear spin state (see \reffig{single_shot_readout_pulses}a). We apply sequences of frequency-resolved excitation pulses at $\omega_S - A/2$ and $\omega_S + A/2$. The pulses are Gaussian-shaped, 80~\textmu s-long and spaced by an integration time $\tau_{\mathrm{int}}$ during which the fluorescence counts are measured; repeating this $N_\mathrm{RO}$ times yields the number of counts after each sequence $C_\uparrow$ and $C_\downarrow$. \reffig{single_shot_readout_pulses}b shows the described pulse sequence.
+
+We continuously record $C_\uparrow$ and $C_\downarrow$ for ion $\mathrm{Er}_2$ over a 7-hour period using $N_{\mathrm{RO}}=10^3$ readout pulses per sequence. The two time traces appear in \reffig{single_shot_readout}a, and show strongly anti-correlated behavior. The measurement did not include any tracking, which results in maximum counts as a function of time.
+
+The photon-counting histograms for each trace are shown in \reffig{single_shot_readout}b. They present two well separated distributions. We note that the distribution centers are not identical, and we measure a lower count signal for $C_\uparrow$. We attribute this difference to imperfect tuning of the SMPD center frequency and the resulting bias in detector efficiency. 
+
+The histogram of the count difference $\delta C \equiv C_\downarrow - C_\uparrow$ shows two symmetric and well resolved peaks (see \reffig{single_shot_readout}b). We define a threshold at the minimum of the distribution which enables single-shot readout of the nuclear spin state. 
 
 \begin{marginfigure}
     \includegraphics{chapter3/figures/single_shot_readout_pulses.pdf}
@@ -325,11 +344,7 @@ We leverage the ability to spectrally resolve the different allowed transition f
     \labfig{single_shot_readout_pulses}
 \end{marginfigure}
 
-We continuously record $C_\uparrow$ and $C_\downarrow$ for ion $\mathrm{Er}_2$ over a 7-hour period using $N_{\mathrm{RO}}=10^3$ readout pulses per sequence. The two time traces appear in \reffig{single_shot_readout}a, and show strongly anti-correlated behaviour. The photon-counting histograms for each trace show two well separated distributions. We note that the distribution centers are not identical, and we measure a lower count signal for $C_\uparrow$. We attribute this difference to imperfect tuning of the SMPD center frequency and the resulting bias in detector efficiency. 
-
-The histogram of the count difference $\delta C \equiv C_\downarrow - C_\uparrow$ shows two symmetric and well resolved peaks (see \reffig{single_shot_readout}b). We define a threshold at the minimum of the distribution which enables single-shot readout of the nuclear spin state. 
-
-We characterize the fidelity of the readout of $\mathrm{Er}_5$ as a function of $N_{\mathrm{RO}}$ by deterministically preparing the nuclear spin in a specific state (see the following section) and measuring the population of the prepared state as a function of $N_{\mathrm{RO}}$ (see \reffig{single_shot_vs_NRO}). At first, the probability of a correct assignment improves with $N_\mathrm{RO}$, due to the increase in Signal-to-Noise Ratio (SNR). After reaching a maximum value, the probability exponentially decreases with $N_\mathrm{RO}$, due to the finite cross-relaxation probability $p_{ZQ, DQ}$ at each readout step. We create a quantitative model by independently considering these two effects, which we detail in the following.
+We characterize the fidelity of the readout of the \W nuclear spin of $\mathrm{Er}_5$ as a function of $N_{\mathrm{RO}}$ by deterministically preparing the nuclear spin in a specific state (see the following section) and measuring the population of the prepared state as a function of $N_{\mathrm{RO}}$ (see \reffig{single_shot_vs_NRO}). At first, the probability of a correct assignment increases with $N_\mathrm{RO}$, due to the increase in Signal-to-Noise Ratio (SNR). After reaching a maximum value, the probability exponentially decreases with $N_\mathrm{RO}$, due to the finite cross-relaxation probability $p_{ZQ, DQ}$ at each readout step. In the following we present a model that computes the \W state readout fidelity resulting from these two phenomena.
 
 \begin{figure}
     \includegraphics{chapter3/figures/single_shot_vs_NRO.pdf}
@@ -341,7 +356,7 @@ We characterize the fidelity of the readout of $\mathrm{Er}_5$ as a function of 
 
 \paragraph{SNR of the measurement}
 
-We consider a nuclear spin prepared in $\ket{\downarrow}$. Since the spin is completely polarized, the measured counts $C_\uparrow$ will arise solely from detector dark-counts and can be modelled as a Poissonian random variable with rate $N_\mathrm{RO} \, \Gamma_\mathrm{DC}\, t_\mathrm{d}$ where $\Gamma_\mathrm{DC}$ is the detector  dark-count rate and $t_\mathrm{d}$ is the duration of each detection window. 
+We consider a nuclear spin prepared in $\ket{\downarrow}$. Since the spin is completely polarized, the measured counts $C_\uparrow$ will arise solely from detector dark-counts and can be modelled as a Poissonian random variable with rate $N_\mathrm{RO} \, \Gamma_\mathrm{DC}\, t_\mathrm{d}$ where $\Gamma_\mathrm{DC}$ is the detector dark-count rate and $t_\mathrm{d}$ is the duration of each detection window (see \refsec{Detecting_individual_Er}). 
 
 In contrast, the measured counts $C_\downarrow$ contain contributions from both detector dark counts and real fluorescence events. We model the fluorescence contribution as a binomial random variable with sample size $N_\mathrm{RO}$ and success probability $\eta$, where $\eta$ denotes the spin-to-click detection efficiency. The total distribution of $C_\downarrow$ is therefore given by the sum of a Poisson-distributed dark-count process and a binomially distributed fluorescence process. Direct addition of these two distributions does not have a simple form, but it can be significantly simplified in the experimentally relevant regime.
 
@@ -412,7 +427,7 @@ The populations exponentially converge to a stable state which depends on the re
     P_\downarrow(N_\mathrm{RO}) \: \approx \: \frac{1}{2}\left( 1 + e^{- 2 p_\text{x} \, N_\mathrm{RO}}\right), 
 \end{equation}
 
-In conclusion, cross-relaxation drives the system a balanced mixed state when $N_\mathrm{RO} \gg p_\text{x}$; larger $p_x$ gives faster deterioration of the prepared nuclear population and thus limits the number of usable readout pulses.
+In conclusion, cross-relaxation drives the system into an unpolarized state when $N_\mathrm{RO} \gg p_\text{x}^-1$; larger $p_x$ gives faster deterioration of the prepared nuclear population and thus limits the number of usable readout pulses.
 
 \paragraph{Total fidelity of the measurement} The final readout fidelity is set by a combination of the two processes described above, which have different scaling on $N_\mathrm{RO}$. %On one hand the SNR of the measurement improves with repetitions and larger values of $N_\mathrm{RO}$ result in better discrimination between the two states ($\mathrm{SNR} \propto \sqrt{N_{\mathrm{RO}}}$). On the other hand, each pulse carries a small probability to flip the nuclear spin through a cross-relaxation event, which accumulates and drives the nuclear population towards a mixed state with an exponential dependence on $N_{\mathrm{RO}}$.
 
@@ -450,7 +465,7 @@ Alternatively, the cross-relaxation probability itself can be reduced. By decrea
 \section{Sideband driving and nuclear spin identification}
 \labsec{sideband_driving_and_identification}
 
-Nuclear spin spectroscopy is achieved by driving the forbidden transitions, in a single-spin version of the Electron-Electron-Double-Resonance (ELDOR) detected NMR (EDNMR) experiment ~\sidecite{schosseler_pulsed_1994}. Following preparation in state $\ket{\downarrow}$ (resp. $\ket{\uparrow}$) a flattop-shaped pulse is applied at a frequency $\omega_S + \delta$ and maximum amplitude $\Omega$. A reduction (resp. increase) in the down-state population $P_\downarrow$ is observed when $\omega_S + \delta$ matches the forbidden DQ and ZQ transitions. Spectroscopy data are shown in \reffig{sb_spectroscopy}a \& b for $3$ values of $\Omega$, showing a frequency shift and power-broadening.
+Nuclear spin spectroscopy is achieved by driving the forbidden transitions, in a single-spin version of the Electron-Electron-Double-Resonance (ELDOR) detected NMR (EDNMR) experiment ~\sidecite{schosseler_pulsed_1994}. Following preparation in state $\ket{\downarrow}$ (resp. $\ket{\uparrow}$) a flattop-shaped pulse is applied at a frequency $\omega_S + \delta$ and maximum amplitude $\Omega$. A reduction (resp. increase) in the down-state population $P_\downarrow$ is observed when $\omega_S + \delta$ matches the forbidden DQ and ZQ transitions. Spectroscopy data are shown in \reffig{sb_spectroscopy}a \& b for $3$ values of $\Omega$, showing that its frequency and linewidth are dependent on $\Omega$.
 
 \begin{figure*}
     \includegraphics{chapter3/figures/sb_spectroscopy.pdf}
@@ -467,7 +482,7 @@ The fitted frequencies for the ZQ and DQ transitions,  $\delta_\text{ZQ, DQ}$, a
 \delta_{ZQ, DQ}(\Omega) = \mp \frac{1}{2} \left(\delta\omega^{(\uparrow)}_\mathrm{AC} + \delta\omega^{(\downarrow)}_\mathrm{AC}\right) \approx \mp \frac{1}{2} \left(\frac{\Omega^{2}}{2\omega_I^{(\Uparrow)}} + \frac{\Omega^{2}}{2\omega_I^{(\Downarrow)}}\right).
 \end{equation}
 
-The fit yields the nuclear spin Larmor frequency, $\omega_I/2\pi = - 788.1(4)$ kHz. The corresponding gyromagnetic factor of $1.767(1)$~MHz/T is close to the value expected for $^{183}\mathrm{W}$ in \Ca, $\gamma_W/2\pi = 1.774$~MHz/T \sidecite{knight_solidstate_1986}, thus confirming the nature of the nuclear spin. 
+The fit yields the nuclear spin Larmor frequency, $\omega_I/2\pi = - 788.1(4)$ kHz. The corresponding gyromagnetic factor of $1.767(1)$~MHz/T is close to the value expected for $^{183}\mathrm{W}$ in \Ca, $\gamma_W/2\pi = 1.774$~MHz/T \sidecite{knight_solidstate_1986}, thus confirming the nature of the nuclear spin. The residual difference is attributed to a combination of pseudo-nuclear Zeeman, chemical shift, and possibly error in field calibration.
 
 Driving the forbidden transitions provides an alternative method to determine $A_\perp$, as discussed in \refsec{driving_nuclear_spin_half}. Indeed, the ZQ and DQ Rabi frequency $\Omega_\text{ZQ, DQ}$ are related to the allowed-transition Rabi frequency as 
 
@@ -475,7 +490,7 @@ Driving the forbidden transitions provides an alternative method to determine $A
     \Omega_{\text{ZQ}} \approx \Omega_{\text{DQ}} \approx \Omega \, \frac{A_\perp}{2\omega_I}\,\frac{1}{\sqrt{1+4\omega_I^2/\kappa^2}}.
 \end{equation}
 
-The DQ and ZQ Rabi oscillations are plot in \reffig{sb_rabi} and the oscillation frequencies are fit to the above equation, from which we obtain  $A_\perp/2\pi=103(7)$~kHz. This value is significantly larger than the one obtained using the readout analysis in the previous section. As discussed before, the estimation of $p_x$ is ill-condition by the nature of the dataset. We take the value of $A_\perp$ measured in this section as a more precise estimation of the hyperfine coupling. 
+The DQ and ZQ Rabi oscillations are plot in \reffig{sb_rabi} and the oscillation frequencies are fit to the above equation, from which we obtain  $A_\perp/2\pi=103(7)$~kHz. This value is significantly larger than the one obtained using the readout analysis in the previous section. As discussed before, the estimation of $p_x$ is ill-condition by the nature of the dataset. We consider the value of $A_\perp$ measured using ZQ/DQ Rabi oscillations as a more precise estimation of the hyperfine coupling. 
 
 \begin{figure}
     \includegraphics{chapter3/figures/sb_rabi.pdf}

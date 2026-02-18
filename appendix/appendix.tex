@@ -250,6 +250,26 @@ The second contribution originates from the impinging photons due to the finite 
 where we have considered that the detector has a lorentzian lineshape and that $\bar{n}_b$ is constant in its bandwidth. The total contribution to the dark count rate is then given by the addition of the two rates $\alpha_\text{SMPD} = \alpha_\text{th} + \alpha_q$ and can be experimentally characterized by simply running the detection cycle without any input signal.
 
 
+\chapter{Time-dependent Hamiltonian simulations}
+\label{app:simulations}
+
+The simulations were performed by Zhiyuan W. Huang using \texttt{QuTip} \sidecite{johansson_qutip_2012} and \texttt{Dynamiqs} \sidecite{guilmin_dynamiqs_2025} to characterize the coherent and incoherent error sources in our system. The simulations consider an electron spin coupled to two nuclear spins and does not include a cavity or background spin bath. Therefore, the system is described by the Hamiltonian in Eq. \ref{eq:spin_hamiltonian_c4}. An additional driving term with frequency $\omega$ is modeled by the Hamiltonian
+
+\begin{equation}
+    \cH{d}= \frac{\hbar\Omega_d}{2}(\hat{S}_{-}e^{i\omega t} + \hat{S}_{+}e^{-i\omega t}),
+\end{equation}
+
+where $\Omega_d$ is the pulse amplitude, $\hat{S}_{+}$ and $\hat{S}_{+}$ are the lowering and raising operators for the \Er spin respectively. The pulse amplitude used in the simulation is calibrated using the measured electron spin Rabi frequency and pulse durations are matched to those used in the experiment.
+
+The simulation results follow from solving the master equation with the total time-dependent Hamiltonian
+
+\begin{equation}
+\frac{d\hat{\rho}}{dt} = \frac{1}{i \hbar} \left[ \cH{tot}, \hat{\rho} \right] + \sum_k \left( \hat{L}_k \hat{\rho} \hat{L}_k^\dagger - \frac{1}{2} \left\{ \hat{L}_k^\dagger \hat{L}_k, \hat{\rho} \right\} \right),
+\end{equation}
+
+where $\cH{tot} = \cH{} + \cH{d}$. The electron energy relaxation process is modeled by the Lindblad operators $\hat{L}_{s_-} = \sqrt{\Gamma_{1} (\bar{n}_{\text{th}} + 1)} \, \hat{S}_{-}$ and $\hat{L}_{s_+} = \sqrt{\Gamma_{1} (\bar{n}_{\text{th}})} \, \hat{S}_{+}$, where $\Gamma_{1} = \frac{1}{T_1}$ is the electron relaxation rate. Dephasing of the nuclear spins is modeled by $\hat{L}_{n_\varphi,i} = \sqrt{\Gamma_{\varphi}} \, \hat{I}_{z,i}$ for $i=1,2$, where $\Gamma_{\varphi} = \frac{1}{T_2^*}$ is the nuclear dephasing rate. We also note that this analysis only considers Markovian effects, but a more realistic description should also include non-Markovian terms, such as spin-bath dynamics, could be an extra source of decoherence. 
+
+
 \chapter{Monte Carlo Markov chain fitting procedure}
 \label{app:mcmc_fit}
 

@@ -6,6 +6,8 @@
 \begin{quote}
 \itshape
 In this chapter, we approach our system from a quantum-computing perspective.  We describe how to build a two-qubit register using two \W nuclear spins coupled to a single \Er impurity. Using the single-shot readout and DNP techniques demonstrated in the previous chapter, we expand on the control of the spins by driving microwave stimulated Raman transitions. We implement a two-qubit gate leveraging the frequency shifts imparted by the Raman drives on the nuclear spins and demonstrate a two-qubit CNOT gate. We measure second-long coherence times for the nuclear spins, one of the longest among nuclear-spin qubits. Finally, we demonstrate that Bell states with zero magnetic projection exist in a so-called decoherence free subspace and are protected against external magnetic noise.
+
+The measurements and analysis of the data on this section were performed by me and James O'Sullivan.
 \end{quote}
 
 \section{State of the art}
@@ -79,7 +81,7 @@ A microwave $2\pi$-pulse on a specific transition will induce a $\pi$ phase shif
 %Recently, coupling between two, physically separated nuclear spins was realized. In the work of Stemp \textit{et al.}, each nucleus was bound to a different electron, and the two electrons are coupled by exchange interaction~\sidecite{stemp_scalable_2025}. The gate protocol follows the same physical principle as the nuclear two-qubit gate presented above; the exchange interaction splits the ESR spectrum depending on the state of the electron spin and a spin-selective pulse can impart a conditional phase. Importantly, the ESR-spectrum is further split by the contact interaction with the nuclear spins, so that nuclear-nuclear entangling gates can be performed between the distant qubits (see \reffig{stateoftheart2_ch4}). The relatively low Bell state fidelities were rapidly improved by precise calibration and control of the electronic noise of the system, demonstrating an 11-qubit processor with high-fidelity gates ($>99\%$ two-qubit gate fidelity)~\sidecite{edlbauer_11qubit_2025}.
 
 
-\subsection*{Summary}
+\subsection*{Discussion}
 
 Both approaches to two-qubit gates leverage the hyperfine coupling to deterministically entangle the electron and nuclear spins. In both cases, a crucial requirement is electron spin coherence. The $T_2^*$ in both systems is relatively low, in the order of $1$~\textmu s for NVs and $20$~\textmu s for neutral $^{31}\mathrm{P}$ donors. However, the approaches to solve this problem in each system are different.
 

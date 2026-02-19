@@ -8,7 +8,9 @@
 
 \begin{quote}
 \itshape
-In this chapter we investigate an unexpected impurity with nuclear spin $I=9/2$ found in close-proximity to an individual \Er spin. By analysis of the NMR transitions, excited through stimulated Raman driving, we identify the spin as a \Nb. We then perform precision spectroscopy by leveraging the long coherence of the \Nb spin, and we determine the nuclear transition frequencies with hertz precision. By fitting the nuclear spectra to a Hamiltonian model we identify a previously unobserved coupling term between the electron spin and the nuclear quadrupole. In addition, we set a higher bound on the hexadecapolar interaction of the \Nb nuclear spin, one order of magnitude tighter than previous NMR ensemble measurements in the solid state.
+In this chapter we investigate an unexpected impurity with nuclear spin $I=9/2$ found in close-proximity to an individual \Er spin. By analysis of the NMR transitions, excited through stimulated Raman driving, we identify the spin as a \Nb. We then perform precision spectroscopy by leveraging the long coherence of the \Nb spin, and we determine the nuclear transition frequencies with hertz precision. By fitting the nuclear spectra to the spin Hamiltonian of the system, we identify a previously unobserved coupling term between the electron spin and the nuclear quadrupole. In addition, we set a higher bound on the hexadecapolar interaction of the \Nb nuclear spin, one order of magnitude tighter than previous NMR ensemble measurements in the solid state.
+
+The measurements on this section were performed by Z. Wang and I performed the analysis of the data.
 \end{quote} 
 
 \section{State-of-the-art}
@@ -18,17 +20,17 @@ We begin this chapter by highlighting two state-of-the-art experiments in which 
 
 \subsection*{Quadrupolar spectroscopy of a $^{14}\mathrm{N}$ nuclear spin in diamond}
 
-The NV center has $C_{3v}$ point-symmetry. This implies that, in principle, the $^{14}\mathrm{N}$ quadrupole is axial around the NV symmetry axis. Therefore, the quadrupolar Hamiltonian takes the following form
+The NV center has $C_{3v}$ point-symmetry. This implies that, in principle, the $^{14}\mathrm{N}$ quadrupole is axial around the NV symmetry axis. As discussed in \refsec{nuclear_spins_ca}, the quadrupolar Hamiltonian in this case takes the following form 
 
 \begin{equation}
-    \cH{Q} = Q_{zz} \left[\hat{I}_z^2 - I(I+1)\right]
+    \cH{Q} = Q_{zz} \left[\hat{I}_z^2 - I(I+1)/3\right]
 \end{equation} 
 
 And only one parameter is needed to describe the interaction. Recent work by S. Breitweiser \textit{et al.} tests this hypothesis, and shows by precision spectroscopy that $C_{3v}$ symmetry is in fact broken for individual NVs~\sidecite{breitweiser_quadrupolar_2024}. This is manifested by the appearance of a small but non-zero biaxiality parameter $\eta$.
 
 As shown in \reffig{sota_nv1}a, the sample is located inside a solid immersion lens, which enhances optical photon collection efficiency. The energy level structure of the coupled electron-nuclear system is shown in \reffig{sota_nv1}b. The spectrum is progressively split by the different interaction terms. Since the magnetic field is applied along the quadrupole axis, the quadrupole interaction is diagonal and splits the levels proportional to $m_I^2$.
 
-They measure with high precision the hyperfine spectrum of the quadrupolar through the use of a DD pulse sequence (see \refsec{sota_ch4}). \reffig{sota_nv1}c shows both the pulse sequence and the measured spectra as a function of the interpulse delay. The transitions highlighted in purple and red correspond to $\Delta m_I = \pm 1$. These transitions are enabled by $S_z I_x$ terms in the Hamiltonian, engineered by introducing a small off-axis component of the magnetic field.
+They measure with high precision the hyperfine spectrum of the quadrupolar through the use of a DD pulse sequence. This sequence follows the same principle of electron decoupling as the DDrf sequences discussed in \refsec{sota_ch4}. However, instead of using rf-pulses, they leverage the hyperfine coupling to create a constructive rotation of the nuclear spin state~\sidecite{taminiau_detection_2012}. \reffig{sota_nv1}c shows both the pulse sequence and the measured spectra as a function of the interpulse delay. The transitions highlighted in purple and red correspond to $\Delta m_I = \pm 1$. These transitions are enabled by $S_z I_x$ terms in the Hamiltonian, engineered by introducing a small off-axis component of the magnetic field.
 
 In contrast, the green transitions correspond to $\Delta m_I = \pm 2$, which are enabled by quadrupolar terms perpendicular to the magnetic field axis, namely $I_x^2$ and $I_y^2$. The observation of these transitions indicates a non-axial components in the Hamiltonian. Using the DD spectroscopy, the authors can extract the small biaxiality parameter with 4 digits.
 
@@ -59,7 +61,7 @@ They extend this study by measuring the DD spectra of NV centers that are not em
 
 \subsection*{Quadrupole spectroscopy of a $^{123}\mathrm{Sb}$ high-nuclear spin in silicon}
 
-Building upon the previous state-of-the-art discussions, we now highlight the work by S. Asaad, V. Mourik \textit{et al.}, in which they measure the spectrum of a single $^{123}\mathrm{Sb}$ nuclear spin, using the electron spin of the neutral donor as a probe~\sidecite{asaad_coherent_2020}.
+Building upon the \textit{state-of-the-art} in Chapters \ref{ch:detection_and_control_of_individual_w} and \ref{ch:individual_nuclear_spins_quantum_information},, we now highlight the work by S. Asaad, V. Mourik \textit{et al.}, in which they measure the spectrum of a single $^{123}\mathrm{Sb}$ nuclear spin, using the electron spin of the neutral donor as a probe~\sidecite{asaad_coherent_2020}.
 
 Like phosphorus, antimony is a group-V donor. When implanted in silicon, it forms a defect state that binds a single electron in its neutral configuration at low temperatures. Consequently, the methods described in \refsec{sota_ch4} to readout the donor spin by spin-to-charge conversion apply here as well. A notable difference is that $^{123}\mathrm{Sb}$ has nuclear spin $I=7/2$, rendering its spectrum sensitive to quadrupolar interactions.
 
@@ -87,19 +89,44 @@ By applying an AC electric field, the authors modulate the off-diagonal quadrupo
 
 An important aspect emphasized by the authors is that silicon sites are, in fact, centrosymmetric, which should suppress both quadrupole interactions and linear electric Stark shifts. However, aluminum gates induce significant lattice strain at low temperatures due to the mismatch in thermal contraction between the aluminum and the silicon~\sidecite{dehollain_nanoscale_2012, pla_straininduced_2018}. For impurities located near the surface, this strain can break the site symmetry, thereby generating a finite quadrupole interaction. They calculate the strain map around the donor position (see \reffig{sota_sb1}), which shows significant values of shear strain. From the strain simulations and the Hamiltonian parameters they are able to locate the approximate position of the impurity, by correlating the strain-induced EFG with the measured data.
 
-\subsection*{Conclusion}
+\subsection*{Precision spectroscopy}
 
-Both works illustrate how measurements of quadrupolar interactions at the single-spin level provide access to local structural information and strain-induced lattice distortions. In both cases, high resolution spectroscopy is used to identify deviations from the expected Hamiltonians which is then used to understand the interactions of the system. The next step would be to reconstruct the full-quadrupole tensor of an individual nuclear spin based on the measured spectroscopic information.
+A driving motivation of high-resolution spectroscopy is to measure interaction terms beyond the magnetic dipole and electric quadrupole coupling. These are the octupole and hexadecapole interactions, which, at first order, take the following form~\sidecite{schwartz_theory_1955}
+
+\begin{align}
+\begin{split}
+    \cH{octupole} &= \frac{C_3}{I(2I-1)(I-1)}\,I_z^3 , \\
+    \cH{hexadecapole} &= \frac{C_4}{I(2I-1)(I-1)(2 I -3)}\,  I_z^4,
+\end{split}
+\end{align}
+
+where $C_3$ and $C_4$ are the octupole and hexadecapole coupling strength. These interactions correspond to the third and fourth order terms of the multipole expansion (see \refsec{nuclear_spins_ca}) and appear due to the non-sphericity of the nuclear spin wavefunctions. The octupole is a magnetic interaction that couples spins $I > 1$ to the magnetic field second derivatives. The hexadecapole is an electric interaction that couples spins $I > 3/2$ with the electric field third derivative.
+
+These higher order interactions are $>10^5$ times weaker that the leading order terms and precision measurements of the NMR spectrum are required to resolve their contribution. The octupole moment has been measured using molecular beam spectroscopy and single-ion experiments~\sidecite{gerginov_observation_2003,lewty_spectroscopy_2012}. A statistically-significant non-zero hexadecapole moment was claimed using molecular beam measurements~\sidecite{cederberg_evidence_1999}, but it was three orders of magnitude larger than predicted by theory~\sidecite{thyssen_quadrupole_2001}. This implies that the interaction likely originates higher order magnetic interactions (pseudo-hexadecapole).
+
+These measurements are able to achieve exceptional precision by isolating the target from the environment. In contrast, ensemble magnetic resonance measurements of coupled electron-nuclear spin systems in the solid-state generally offer a lower spectral resolution (kilohertz at best~\sidecite{sielaff_pulsed_2025}). The broadening originates from spectral drift and inhomogenous broadening. In addition, high-nuclear spins are subject to further broadening as local electric field differences will induce shifts on the quadrupolar interaction. This precluded so far the observation of higher-order terms in the coupled spin Hamiltonian by magnetic resonance techniques, despite active research~\sidecite{segel_nuclear_1978,doering_search_1986}.
+
+The tighter bound on hexadecapole interaction is reported ref.~\sidecite{liao_nuclear_1994} who found a value $C_4=$\red{xx}
+
+
+%In addition, precision measurements of the hyperfine spectrum of atoms and simple molecules probe electron-nuclear interactions beyond the leading-order magnetic dipolar and electric quadrupolar terms~\sidecite{schwartz_theory_1955}. Higher-order interactions such as the magnetic octuple are $\sim 10^5$ times weaker; hence, high spectral resolution in the order of hertz is required to resolve their contribution. This is readily achieved in atomic and molecular beams or in single-ion experiments, using combined microwave and laser excitations~\sidecite{gerginov_observation_2003,lewty_spectroscopy_2012}. In the solid state, ensemble magnetic resonance measurements of coupled electron-nuclear spin systems generally offer a lower spectral resolution (kilohertz at best~\sidecite{sielaff_pulsed_2025}), particularly when high-spin nuclei are involved. The origin of the broadening lies in a combination of spin-spin interactions and inhomogeneous distribution of electron gyromagnetic tensor and/or quadrupolar couplings. This precluded so far the observation of higher-order terms in the coupled spin Hamiltonian by magnetic resonance techniques, despite active research~\sidecite{segel_nuclear_1978,doering_search_1986,liao_nuclear_1994}.
+
+%Because the magnetic moment of $I > 1$ nuclei is not point-like but has a spatial extension, they have a magnetic octupole moment that couples to magnetic field second derivatives. Such interaction has been measured in the hyperfine spectrum of neutral atoms~\sidecite{gerginov_observation_2003} and ions~\sidecite{lewty_spectroscopy_2012} using atomic beams but never in the solid-state, and could be used to extract information about the nuclear structure. Nuclear spins with $I > 3/2$ may couple to the electric field third derivative via the nuclear hexadecapole moment, which has so far never been conclusively measured.
+
+
+\subsection*{Discussion}
+
+The works on NV centers and donors in silicon illustrate how measurements of quadrupolar interactions at the single-spin level provide access to local structural information and strain-induced lattice distortions. In both cases, high resolution spectroscopy is used to identify deviations from the expected Hamiltonians which is then used to understand the interactions of the system. The next step would be to reconstruct the full-quadrupole tensor of an individual nuclear spin based on the measured spectroscopic information.
+
+Single nuclear spins in the solid-state also provide a platform to investigate higher order interactions. Compared to ensemble measurements that are limited by inhomogeneous and quadrupolar broadening, individual nuclear spins demosntrate long coherence times, as discussed in the \textit{state-of-the-art} section of Chapter \ref{ch:individual_nuclear_spins_quantum_information}. This resolution can be used to test assumptions on the Hamiltonian.
+
+One such example is the dependance of the nuclear quadrupole on the state of neighbouring spins. The nuclear quadrupolar interaction stems form the EFG at the nuclear spin position and should, in principle, not depend on the electron spin state. Such dependence is indeed not described in the standard spin Hamiltonian (see \refch{electron_nuclear_interaction}). This is tested and confirmed for the case of a $^{14}$N nuclear spin coupled to the NV electron spin, in ref.~\sidecite{bartling_universal_2025} where they measure the Hamiltonian parameters with hertz-level precision in both states of the NV center. 
+
+Given the long coherence times of \W nuclear spins demonstrated in the previous chapter, \Ca is a promising substrate for precision spectroscopy of individual nuclear spins. In this Chapter we identify and impurity in the crystal and use precision spectroscopy to identify its nature and interactions with the \Er spin.
 
 %In the first experiment, coherence-preserving dynamical decoupling sequences enable the observation of quadrupole-enabled NMR transitions that are nominally forbidden. Their presence reveals subtle modifications of the local symmetry induced by fabricated microstructures. Similarly, the second experiment demonstrates how strain arising from differential thermal contraction between substrate and device structures can break inversion symmetry and induce quadrupolar interactions in otherwise centrosymmetric sites.
 
 %We highlight that either experiment attemts a full reconstruction of the quadrupole tensor. This limitation stems from operating in the weak quadrupolar regime, where energy shifts depend only on the projection of the quadrupole tensor along the magnetic field axis. Complete reconstruction in the weak quadrupole regime would require angular-dependent measurements. In the NV platform, such measurements are particularly challenging, as high-fidelity readout and control typically require precise alignment of the magnetic field along the NV axis.
-
-The nuclear quadrupolar interaction stems form the EFG at the nuclear spin position and should, in principle, not depend on the electron spin state. Such dependence is indeed not described in the standard spin Hamiltonian (see \refch{electron_nuclear_interaction}). This is tested and confirmed in Bartling Ref.~\sidecite{bartling_universal_2025} where they measure the Hamiltonian parameters with hertz-level precision. 
-
-In addition, precision measurements of the hyperfine spectrum of atoms and simple molecules probe electron-nuclear interactions beyond the leading-order magnetic dipolar and electric quadrupolar terms~\sidecite{schwartz_theory_1955}. Higher-order interactions such as the magnetic octuple are $\sim 10^5$ times weaker; hence, high spectral resolution in the order of hertz is required to resolve their contribution. This is readily achieved in atomic and molecular beams or in single-ion experiments, using combined microwave and laser excitations~\sidecite{gerginov_observation_2003,lewty_spectroscopy_2012}. In the solid state, ensemble magnetic resonance measurements of coupled electron-nuclear spin systems generally offer a lower spectral resolution (kilohertz at best~\sidecite{sielaff_pulsed_2025}), particularly when high-spin nuclei are involved. The origin of the broadening lies in a combination of spin-spin interactions and inhomogeneous distribution of electron gyromagnetic tensor and/or quadrupolar couplings. This precluded so far the observation of higher-order terms in the coupled spin Hamiltonian by magnetic resonance techniques, despite active research~\sidecite{segel_nuclear_1978,doering_search_1986,liao_nuclear_1994}.
-
-Because the magnetic moment of $I > 1$ nuclei is not point-like but has a spatial extension, they have a magnetic octupole moment that couples to magnetic field second derivatives. Such interaction has been measured in the hyperfine spectrum of neutral atoms~\sidecite{gerginov_observation_2003} and ions~\sidecite{lewty_spectroscopy_2012} using atomic beams but never in the solid-state, and could be used to extract information about the nuclear structure. Nuclear spins with $I > 3/2$ may couple to the electric field third derivative via the nuclear hexadecapole moment, which has so far never been conclusively measured.
 
 %One strategy to circumvent this limitation is to couple individual nuclear spins to a nearby electron spin impurity, enabling indirect but sensitive detection. This approach has been used to great success with NV centers in diamond to measure the hyperfine interaction of $^{13}\mathrm{C}$ nuclear spin with hertz resolution~\cite{abobeih_atomicscale_2019, bartling_universal_2025}. This level of precision allowed the three-dimensional reconstruction of the nuclear spin environment of a single NV center with lattice site precision~\cite{vandestolpe_mapping_2024}. Hertz resolution was also reported for the quadrupolar interaction of the $^{14}\mathrm{N}$ nuclear spin for a number of NV centers at room temperature~\cite{breitweiser_quadrupolar_2024}. The results were used to establish a significant correlation between the zero-field splitting of the NV centers and the quadrupole interaction of the nuclear spin, both of which depend on the local electric fields generated by the surrounding lattice. These results demonstrate how precision hyperfine spectroscopy can be used to structurally study single nuclear spins in the solid-state.
 
@@ -138,9 +165,9 @@ As discussed in previous chapters, the sample hosts many addressable single \Er 
 
 To characterize the \Er spin, we first set $B_0$ to match the resonance condition. Unless otherwise specified, the measurements of this chapter were taken at $B_0=446.27$~mT and $\theta = -0.37^\circ$,  marked in \reffig{spectra_2d}a as a red star. The results of the basic electron spin characterization are detailed in \reftab{er_characterization_nb}.
 
-We remark that the top of the curve for this spin does not match with $\theta=0$, implying that the $c$-axis of this specific spin is not aligned with the bulk's $c$-axis. This behavior is consistent with the large inhomogeneous broadening that is characteristic of REIs in the solid-state. It is associated with local electric fields that appear due to charge compensation mechanisms or strain~\sidecite{billaud_electron_2025}. By fitting the curve to a parabola we measure a difference of $0.20^\circ$. In practice, we we define the angle with respect to this spin's $c$-axis as $\theta_S \equiv \theta - 0.20^\circ$, which we use during the magnetic dipole coupling calculations described in \refsec{assignment}.
+As discussed in \refsec{individual_er_ion_characterization}, the top of the curve for this spin does not match with $\theta=0$. This implies that the direction of minimal effective gyromagnetic tensor is not aligned with the bulk's $c$-axis. By fitting the curve to a parabola we measure a difference of $0.20^\circ$. In practice, we we define the angle with respect to this spin's $c$-axis as $\theta_S \equiv \theta - 0.20^\circ$, which we use during the magnetic dipole coupling calculations described in \refsec{assignment}.
 
-We then measure a spectroscopic time trace, similar to the ones presented in \refsec{nuclear_spin_quantum_jumps}. We repeatedly measure the \Er spectrum by sweeping the excitation pulse frequency and monitoring the fluorescence after the pulse. Note, that the span of the scan is much larger than the operating bandwidth of the SMPD of $\sim300$~kHz. To measure this trace we actively tune the frequency of the detector using DC pulses sent through the buffer's flux line, which modifies the magnetic flux threading the coupled SQUID, therefore changing the frequency of the SMPD. 
+We then measure a spectroscopic time trace, similar to the ones presented in \refsec{nuclear_spin_quantum_jumps}. We repeatedly measure the \Er spectrum by sweeping the excitation pulse frequency and monitoring the fluorescence after the pulse. Note, that the span of the scan is much larger than the operating bandwidth of the SMPD of $\sim300$~kHz. To measure this trace we actively tune the frequency of the detector to stay in resonance with the excitation frequency $\omega$
 
 As shown in Chapter \ref{ch:detection_and_control_of_individual_w}, strongly coupled nuclear spins are revealed by sudden jumps of the \Er EPR-allowed transition frequency. In \reffig{spectra_2d}b, ten evenly-spaced resonances are observed, they are separated by $\sim$130~kHz and have vastly different cross-relaxation lifetimes, indicating the coupling to a spin-9/2 nuclear spin impurity.  
 
@@ -153,7 +180,7 @@ As discussed in \refsec{nb_er_hamiltonian}, the secular Hamiltonian of this syst
 
 where the terms correspond, in order, to the \Er spin Zeeman energy, the high-nuclear spin Zeeman energy the parallel and perpendicular interaction hyperfine interaction and the quadrupolar term (see \refsec{interaction_between_to_spins} and \refsec{nuclear_spins_ca} respectively). 
 
-The Hamiltonian can be separated in to manifolds, depending on the state of the electron spin. Therefore, it can be re-written as
+The Hamiltonian can be separated in two manifolds, depending on the state of the electron spin. Therefore, it can be re-written as
 
 \begin{align}
 \begin{split}
@@ -165,7 +192,7 @@ The Hamiltonian can be separated in to manifolds, depending on the state of the 
 \end{align}
 
 
-\noindent  $\cH{}^{(m_S)}$ is the nuclear spin Hamiltonian when the \Er spin is in $m_S = \Downarrow$ or $m_S = \Uparrow$. As a result of the hyperfine interaction, the nuclear spin quantization axis $z^{(m_S)}$ and Larmor frequency $\omega_I^{(m_S)} \simeq \omega_I + m_S A_\parallel/2 $ depend on the \Er spin state. In the usual coupled spin description, the quadrupolar tensor should not depend on $m_S$. In this chapter we focus on testing this property by separately measuring the tensors $\bar{\bar{Q}}^{(\Downarrow)}$ and $\bar{\bar{Q}}^{(\Uparrow)}$ for each \Er spin orientation. 
+\noindent  $\cH{}^{(m_S)}$ is the nuclear spin Hamiltonian when the \Er spin is in $m_S = \Downarrow$ or $m_S = \Uparrow$. As a result of the hyperfine interaction, the nuclear spin quantization axis $z^{(m_S)}$ and Larmor frequency $\omega_I^{(m_S)} \simeq \omega_I + m_S A_\parallel/2 $ depend on the \Er spin state. In the usual coupled spin description, the quadrupolar tensor should not depend on $m_S$, as confirmed with NV centers in diamond (see \refsec{sota_ch5}). In this chapter we focus on testing this property by separately measuring the tensors $\bar{\bar{Q}}^{(\Downarrow)}$ and $\bar{\bar{Q}}^{(\Uparrow)}$ for each \Er spin orientation. 
 
 \begin{marginfigure}
     \includegraphics{chapter5/figures/energy_levels_ninehalf.pdf}
@@ -173,7 +200,7 @@ The Hamiltonian can be separated in to manifolds, depending on the state of the 
     \labfig{energy_levels_ninehalf_ch5}
 \end{marginfigure}
 
-We now recall the energy level system defined by this Hamiltonian. \reffig{energy_levels_ninehalf_ch5} shows the $20$ energy levels of the coupled spins, grouped in the two $m_S = \Downarrow$ or $m_S = \Uparrow$ manifolds. The nuclear spin eigenstates are mixed by the quadrupolar interaction and are therefore labeled as $\ket{n}$ in increasing order of energy, with $n$ varying between $0$ and $9$. Ten transitions between $\ket{\Downarrow, n}$ and $\ket{\Uparrow, n}$ at $\omega_n$ are EPR-allowed. Transitions between $\ket{m_S, n}$ and $\ket{m_S, n+1}$ at frequencies $\omega_{n,n+1}^{m_S} $ are NMR-allowed. As described in \refsec{zero_double_quantum_ninehalf}, double- or zero-quantum transitions between $\ket{\Downarrow, n}$ and $\ket{\Uparrow, n \pm 1}$ are weakly authorized because of the slight hyperfine-induced mixing between the nuclear spin states. 
+We now recall the energy level system defined by this Hamiltonian, which was already described in Section \refsec{nb_er_hamiltonian}. \reffig{energy_levels_ninehalf_ch5} shows the $20$ energy levels of the coupled spins, grouped in the two $m_S = \Downarrow$ or $m_S = \Uparrow$ manifolds. The nuclear spin eigenstates are mixed by the quadrupolar interaction and are therefore labeled as $\ket{n}$ in increasing order of energy, with $n$ varying between $0$ and $9$. Ten transitions between $\ket{\Downarrow, n}$ and $\ket{\Uparrow, n}$ at $\omega_n$ are EPR-allowed. Transitions between $\ket{m_S, n}$ and $\ket{m_S, n+1}$ at frequencies $\omega_{n,n+1}^{m_S} $ are NMR-allowed. As described in \refsec{zero_double_quantum_ninehalf}, double- or zero-quantum transitions between $\ket{\Downarrow, n}$ and $\ket{\Uparrow, n \pm 1}$ are weakly authorized because of the slight hyperfine-induced mixing between the nuclear spin states. 
 
 \begin{figure*}
     \includegraphics{chapter5/figures/matrix_elements.pdf}
@@ -185,7 +212,7 @@ We now recall the energy level system defined by this Hamiltonian. \reffig{energ
     \labfig{matrix_elements}
 \end{figure*}
 
-Figures \ref{fig:matrix_elements}b \& c show the calculated matrix elements and corresponding cross-relaxation probabilities for the parameters of this system. Although these parameters will be determined quantitatively in \refsec{final_hamiltonian_fit}, we use their anticipated values here to provide physical intuition for the observed behavior in \reffig{spectra_2d}b.
+Figures \ref{fig:matrix_elements}b \& c show the calculated matrix elements and corresponding cross-relaxation probabilities for the parameters of this systemusing the analytical formulae derived in \refsec{high_spin_generalization}. Although these parameters will be determined quantitatively in \refsec{final_hamiltonian_fit}, we use their anticipated values here to provide physical intuition for the observed behavior in \reffig{spectra_2d}b.
 
 The calculations reveal that both the matrix elements and the associated cross-relaxation probabilities increase with the energy level index $n$. In particular, the cross-relaxation probability of the state $\ket{\Uparrow,9}$ is several orders of magnitude larger than that of $\ket{\Uparrow,0}$.
 
@@ -193,7 +220,7 @@ This trend is directly reflected in the time trace shown in \reffig{spectra_2d}b
 
 \section{Readout, preparation and control}
 
-After the observation of the high-nuclear spin, we proceed to extend the nuclear spin single-shot readout, DNP and coherent control techniques developed in the previous chapters for the characterization and control of \W nuclear spins.
+We proceed to extend the nuclear spin single-shot readout, DNP and coherent control techniques developed in the previous chapters for the characterization and control of \W nuclear spins.
 
 \subsubsection{Single-shot readout}
 
@@ -205,7 +232,7 @@ After the observation of the high-nuclear spin, we proceed to extend the nuclear
     \labfig{readout_singleshot}
 \end{marginfigure}
 
-During the experiments performed in Chapters \ref{ch:detection_and_control_of_individual_w} and \ref{ch:individual_nuclear_spins_quantum_information} with \W, the frequency separation between the EPR-allowed transitions was in the order of $\sim50$~kHz, well within the SMPD and the resonator bandwidth. This allowed us to monitor the population of each of the nuclear spin states independently, by exciting the appropriate EPR-allowed transition and measuring the subsequent fluorescence (see \refsec{single_shot_ro_singlespin}). However, the ten distinct electron spin frequencies of this system are separated each by $\sim130$~kHz spanning more than 1~MHz, considerably larger than the SMPD and the resonator bandwidth. Additionally, the cross-relaxation probability of the different nuclear states is vastly difference, as discussed in the previous section. In fact, the cross-relaxation for large $n$ states is too large to achieve high enough SNR for high fidelity readout using the previous scheme. Consequently, we only define the nuclear spin readout protocol at $\ket{0}$, as it has the lowest cross-relaxation probability \reffig{matrix_elements}c. Later, when we achieve nuclear spin coherent control, the population of any arbitrary state can be coherently transferred to $\ket{0}$ and subsequently readout. We also maximize the Purcell effect in the relevant transition by tuning the magnetic field such that $\omega_r = \omega_0$.
+During the experiments performed in Chapters \ref{ch:detection_and_control_of_individual_w} and \ref{ch:individual_nuclear_spins_quantum_information} with \W, the frequency separation between the EPR-allowed transitions was in the order of $\sim50$~kHz, well within the SMPD and the resonator bandwidth. This allowed us to monitor the population of each of the nuclear spin states independently, by exciting the appropriate EPR-allowed transition and measuring the subsequent fluorescence (see \refsec{single_shot_ro_singlespin}). However, the ten distinct electron spin frequencies of this system are separated each by $\sim130$~kHz spanning more than 1~MHz, considerably larger than the SMPD and the resonator bandwidth. Additionally, the cross-relaxation probability of the different nuclear states is vastly different, as discussed in the previous section. In fact, the cross-relaxation for large $n$ states is too large to achieve high enough SNR for high fidelity readout using the previous scheme. Consequently, we perform readout on state  $\ket{0}$, as it has the lowest cross-relaxation probability \reffig{matrix_elements}c. Later, when we achieve nuclear spin coherent control, the population of any arbitrary state can be coherently transferred to $\ket{0}$ and subsequently readout. We also maximize the Purcell effect in the relevant transition by tuning the magnetic field such that $\omega_r = \omega_0$.
 
 Readout on state $\ket{0}$ is achieved by applying $\sim 200$ successive $\pi$-pulses at $\omega_0$ and counting the number of clicks, $C$. \reffig{readout_singleshot} plots the count histograms after preparing in $\ket{0}$ or $\ket{1}$, which shows two well-resolved histograms. By defining a threshold at $C=75$ we can discriminate whether the nuclear spin is in state $\ket{0}$ or not.
 

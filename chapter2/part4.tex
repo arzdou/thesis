@@ -91,12 +91,16 @@ In the reflection setup, we use $i1$ to  tune the SMPD parameters (pump frequenc
 
 \section{Superconducting resonator characterization}
 
-The resonator is first characterized at zero magnetic field using a Vector Network Analyzer in the reflection configuration. \reffig{resonator_fit}a shows the complex reflection parameter as a function of frequency. By fitting the model we obtain the internal and coupling losses of the resonator, $\kappa_i/2\pi=320$~kHz and $\kappa_c/2\pi = 420$~kHz.
+The resonator is first characterized at zero magnetic field using a Vector Network Analyzer in the reflection configuration. \reffig{resonator_fit}a shows the complex reflection parameter as a function of frequency. By fitting the model we obtain the internal and coupling losses of the resonator, $\kappa_i/2\pi=255$~kHz and $\kappa_c/2\pi = 621$~kHz. The quality factor of the resonator is given by 
+
+\begin{equation}
+    Q = \frac{\omega_r}{\kappa_i + \kappa_c} = 8.8 \times 10^{5}
+\end{equation}
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/resonator_fit.pdf}
     \caption[Resonator fit]{Resonator fit at zero field. 
-    Reflection signal of the resonator at zero magnetic field. The data is fit to a standard reflection model (black lines) which yields $\omega_r/2\pi=7.74845$~GHz and a quality factor of $Q\approx10^5$.
+    Reflection signal of the resonator at zero magnetic field. The data is fit to a standard reflection model (black lines) which yields $\omega_r/2\pi=7.74845$~GHz and a quality factor of $Q=8.8\times10^5$.
     }
     \labfig{resonator_fit}
 \end{marginfigure}
@@ -138,11 +142,11 @@ In the following, the magnetic field will always be applied in the plane of the 
 
 \begin{figure}
     \includegraphics{chapter2/figures/resonator_vs_bfield.pdf}
-    \caption[Resonator response to in-plane field]{Resonator response to in-plane magnetic field. Frequency and quality factor as a function of in-plane magnetic field amplitude. The data was taken in transmission mode. \red{there is a discrepancy between a and b. Find data from the same run}}
+    \caption[Resonator response to in-plane field]{Resonator response to in-plane magnetic field. Frequency and quality factor as a function of in-plane magnetic field amplitude. The data was taken in transmission mode.}
     \labfig{resonator_vs_bfield}
 \end{figure}
 
-We then measure the frequency and quality factor as a function of the applied field. The data are shown in \reffig{resonator_vs_bfield}. The resonance frequency is quadratically shifted, at 450~mT it drops \red{xx}~MHz with respect to the zero field values. The quality factor decreases with field intensity. \red{comment more}
+We then measure the frequency and quality factor as a function of the applied field. The data are shown in \reffig{resonator_vs_bfield}. The resonance frequency is quadratically shifted as a function of the in-plane field. At 450~mT it drops approximately 40~MHz with respect to the zero field values. Due to the field alignment, the quality factor of the resonator remains approximately constant as a function of the magnetic field. We note that the sharp peaks correspond to paramagnetic impurities previously observed in similar samples~\sidecite{ledantec_electron_2022,billaud_electron_2025}.
 
 %We then measure the resonance frequency $\omega_{r}$ and the internal losses $\kappa_{i}$ of the superconducting resonator show a response to the externally applied magnetic field. 
 

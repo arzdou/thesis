@@ -6,11 +6,11 @@
 \begin{quote}
 \itshape
 
-This chapter is focused on the specific techniques used to achieve coherent control of a nuclear spin coupled to an \Er spin. We distinguish two sections in this chapter: the first part focuses on an \Er spin coupled to a single \W nuclear spin, which constitute the bulk of the nuclear spin environment in \Ca. We discuss resonant driving of the ZQ/DQ transition and introduce microwave stimulated Raman transitions for the case of a nuclear spin $I=1/2$. The second part generalizes these results to a quadrupolar nuclear spin $I>1/2$ which will be used during Chapter \ref{ch:nb_nuclear_spin} to control a \Nb nuclear spin with $I=9/2$.
+This chapter is focused on the specific techniques used to achieve coherent control of a nuclear spin coupled to an \Er spin. We distinguish two sections in this chapter: the first part focuses on an \Er spin coupled to a single \W nuclear spin, which constitutes the bulk of the nuclear spin environment in \Ca. We discuss resonant driving of the ZQ/DQ transition and introduce microwave stimulated Raman transitions for the case of a nuclear spin $I=1/2$. The second part generalizes these results to a quadrupolar nuclear spin $I>1/2$, which will be used in Chapter \ref{ch:nb_nuclear_spin} to control a \Nb nuclear spin with $I=9/2$.
 
 \end{quote}
 
-This chapter is focused on the derivations of the Rabi rates for the different driving techniques for the nuclear spins, and can be mathematically dense. Readers seeking an overview of the essential results may wish to consult \refsec{summary_spin_driving} first, as it contains a summary of the results of this chapter. 
+This chapter is focused on the derivation of the Rabi rates for the different nuclear spin driving techniques. Readers seeking an overview of the essential results may wish to consult \refsec{summary_spin_driving} first, as it contains a summary of the results of this chapter.
 
 %In this chapter we describe the techniques used to coherently controlling a nuclear spin that is strongly coupled to an \Er ion.  We begin in \refsec{driving_nuclear_spin_half} by describing a system of an electron spin coupled to a nuclear spin-1/2, and introduce the concept of sideband driving. We then discuss stimulated Raman driving as a means of coherently controlling the state of the nuclear spin in \refsec{raman_driving}. Finally, we generalize the results to a nuclear spin-9/2 (\refsec{high_spin_generalization}).
 
@@ -56,13 +56,13 @@ This chapter is focused on the derivations of the Rabi rates for the different d
 \section{Driving a \W nuclear spin through the \Er spin}
 \labsec{driving_nuclear_spin_half}
 
-If one wishes to drive the state of a nuclear spin, the most straightforward way is to apply a radiofrequency (rf) pulse resonant with the allowed NMR transitions. However, the superconducting resonator in our setup acts as a narrow band-pass filter centered around $\omega_r\approx7.7$~GHz, as detailed in \refsec{spin_coupled_to_resonator}. Consequently, all rf drives applied to the sample will be reflected from the resonator and direct driving of a nuclear spin is impossible in our setup. We now proceed to discuss two different methods that can be used to drive a nuclear spin using only microwave pulses
+If one wishes to drive the state of a nuclear spin, the most straightforward way is to apply a radiofrequency (rf) pulse resonant with the allowed NMR transitions. However, the superconducting resonator in our setup acts as a narrow band-pass filter centered around $\omega_r\approx7.7$~GHz, as detailed in \refsec{spin_coupled_to_resonator}. Consequently, all rf drives applied to the sample will be reflected from the resonator and direct driving of a nuclear spin is impossible in our setup. We now proceed to discuss two different methods that can be used to drive a nuclear spin using only microwave pulses.
 
-%In ensemble EPR, the resonance lines are inhomogeneously broadened, and a strong microwave tone will simultaneously drive the EPR-allowed transitions of some spins and the ZQ or DQ transitions of others. The resulting EPR spectrum shows a central hole as well as several side-peaks, which can be used to determine hyperfine coupling parameters. This method recieves the name of electron-electron double resonance (ELDOR)-detected NMR (EDNMR)~\sidecite{schosseler_pulsed_1994}. In this section, we discuss the single-spin version of the EDNMR sequence.
+%In ensemble EPR, the resonance lines are inhomogeneously broadened, and a strong microwave tone will simultaneously drive the EPR-allowed transitions of some spins and the ZQ or DQ transitions of others. The resulting EPR spectrum shows a central hole as well as several side-peaks, which can be used to determine hyperfine coupling parameters. This method recieves the name of electron-electron double resonance (ELDOR)-detected NMR (EDNMR)~\sidecite{schosseler_pulsed_1994}. In this section, we discuss the single spin version of the EDNMR sequence.
 
 \subsection{Zero- and double-quantum transitions}
 
-The \Er spin is resonant with the cavity when the magnitude of the magnetic field along the $c$-axis is $B_0\approx0.45$~T. At this field, the Larmor frequency of \W is  $\omega_I\approx800$~kHz. The ZQ and DQ transitions are detuned from the EPR-allowed transitions by this frequency, and can be therefore driven with a microwave tone (see \reffig{energy_levels_half}b). As these transitions simultaneously change the state of both spins, resonant driving of the ZQ and DQ transitions is a valid strategy to control the coupled nuclear spin.
+The \Er spin is resonant with the cavity when the magnitude of the magnetic field along the $c$-axis is $B_0\approx0.45$~T. At this field, the Larmor frequency of \W is $\omega_I\approx800$~kHz. The ZQ and DQ transitions are detuned from the EPR-allowed transitions by this frequency, and can therefore be driven with a microwave tone (see \reffig{energy_levels_half}b). As these transitions simultaneously change the state of both spins, resonant driving of the ZQ and DQ transitions is a valid strategy to control the coupled nuclear spin.
 
 %In Chapter \ref{ch:detection_and_control_of_individual_w} we demonstrate how to control the state of the nuclear spin by resonantly driving these transitions. 
 
@@ -104,7 +104,7 @@ Therefore, the zero- and double-quantum transitions $\ket{1}\leftrightarrow\ket{
     \bra{1} \hat{S}_x \ket{3} \approx \bra{2} \hat{S}_x \ket{4} \approx 1/2,
 \end{equation}
 
-The Rabi rate of an allowed EPR transition with a resonant the cavity is given in \refsec{spin_coupled_to_resonator} by $\Omega = 4g_0 \epsilon_d / \kappa$, where $\epsilon_d$ is the applied microwave amplitude. To obtain the ZQ and DQ Rabi rates at the \textit{same} drive amplitude we simply rescale $\Omega$ by the ratio of the relevant matrix elements. Including the cavity filtering (the sideband is detuned from the cavity by $\sim\omega_I$) gives the final ZQ/DQ Rabi rate
+The Rabi rate of an allowed EPR transition when resonant with the cavity is given in \refsec{spin_coupled_to_resonator} by $\Omega = 4g_0 \epsilon_d / \kappa$, where $\epsilon_d$ is the applied microwave amplitude. To obtain the ZQ and DQ Rabi rates at the \textit{same} drive amplitude, we simply rescale $\Omega$ by the ratio of the relevant matrix elements. Including the cavity filtering (the sideband is detuned from the cavity by $\sim\omega_I$) gives the final ZQ/DQ Rabi rate
 
 \begin{equation}
     \Omega_{\text{ZQ}} \approx \Omega_{\text{DQ}} \approx \Omega \cdot \frac{A_\perp}{2\omega_I}\cdot\frac{1}{\sqrt{1+4\omega_I^2/\kappa^2}}.
@@ -112,15 +112,15 @@ The Rabi rate of an allowed EPR transition with a resonant the cavity is given i
 
 Because the matrix elements and the cavity filtering are nearly the same for the ZQ and DQ sidebands, their driven Rabi rates are essentially equal. This equation will be used in the analysis of the experimental results to extract the value of $A_\perp$.
 
-We note that sideband driving necessarily involves populating the electron spin excited state, so the operation is limited by the much faster electron dephasing time $T_2^*$ rather than by the long nuclear coherence. Consequently, electron spin decoherence rate imposes a fundamental limit on the fidelity of nuclear-spin gates implemented via sideband drives.
+We note that sideband driving necessarily involves populating the electron spin excited state, so the operation is limited by the much faster electron dephasing time $T_2^*$ rather than by the long nuclear coherence. Consequently, the electron spin decoherence rate imposes a fundamental limit on the fidelity of nuclear spin gates implemented via sideband drives.
 
 \subsection{AC-Zeeman shifts}
 \labsec{ac-zeeman_shifts}
 
 %We now introduce the concept of AC-Zeeman shifts, also known as the magnetic AC-Stark shift. 
-When driving a two-level system off-resonance the energy levels are renormalized and the transition frequency is shifted with the square of the amplitude of the drive and is proportional to the matrix element of the transition. A derivation of this effect requires second order perturbation theory on the time-dependent Hamiltonian and can be found in ref.~\sidecite{cohen-tannoudji_atom_2024}. 
+When driving a two-level system off-resonance, the energy levels are renormalized and the transition frequency is shifted proportionally to the square of the drive amplitude and to the matrix element of the transition. A derivation of this effect requires second-order perturbation theory on the time-dependent Hamiltonian and can be found in Ref.~\sidecite{cohen-tannoudji_atom_2024}.
 
-When a microwave pulse with amplitude\sidenote{From here onwards, we characterize the amplitude of a microwave pulse by the equivalent Rabi frequency on resonance} $\Omega$ and frequency $\omega_d = \omega_S + \Delta$ is applied on a single electron spin, the transition frequency is shifted by
+When a microwave pulse with amplitude\sidenote{From here onwards, we characterize the amplitude of a microwave pulse by the equivalent Rabi frequency on resonance} $\Omega$ and frequency $\omega_d = \omega_S + \Delta$ is applied to a single electron spin, the transition frequency is shifted by
 
 \begin{equation}
     \delta\omega_\mathrm{AC} = -\frac{\Omega^2}{2\Delta},
@@ -133,9 +133,9 @@ When a microwave pulse with amplitude\sidenote{From here onwards, we characteriz
     \labfig{ac_zeeman_diagram}
 \end{marginfigure}
 
-which results in a smaller frequency when $\Delta>0$ and \textit{vice versa}. 
+This results in a smaller frequency when $\Delta>0$ and \textit{vice versa}.
 
-We now address the AC-Zeeman shifts occurring when driving the forbidden ZQ or DQ transitions. As described in \refsec{w_er_hamiltonian}, there are six different transitions in this system, two EPR-allowed, two NMR-allowed and the ZQ and DQ transitions. Under an off resonant drive, \textit{all} the transitions are renormalized following Eq.~\ref{eq:simple_ac_zeeman}. The total shift of the ZQ and DQ transitions can be calculated by independently considering the effect of the drive to each transition:
+We now address the AC-Zeeman shifts occurring when driving the forbidden ZQ or DQ transitions. As described in \refsec{w_er_hamiltonian}, there are six different transitions in this system: two EPR-allowed, two NMR-allowed, and the ZQ and DQ transitions. Under an off-resonant drive, \textit{all} the transitions are renormalized following Eq.~\ref{eq:simple_ac_zeeman}. The total shift of the ZQ and DQ transitions can be calculated by independently considering the effect of the drive on each transition:
 
 \begin{itemize}    
     \item Both EPR-allowed transitions are shifted by the presence of the off-resonant drive by
@@ -177,9 +177,9 @@ We define the probability of a cross-relaxation event after the electron spin ha
 \subsection{Stimulated Raman driving}
 \labsec{raman_driving}
 
-As discussed in the previous section, a pulse resonant with a ZQ/DQ transition can be used to coherently drive the nuclear spin state. As explained earlier, ZQ/DQ driving is not an efficient way to coherently drive a nuclear spin in our setup. In this section, we explain how a nuclear spin can be driven by the simultaneous application of two off-resonant microwave tones. This so-called Raman scheme is commonly used in optics to drive hyperfine transition in atoms \sidecite{kasevich_atomic_1991}, and we transpose it here to spin systems at microwave frequency. In this section, we derive the effective nuclear spin driving strength (the so-called Raman Rabi frequency $\Omega_\mathrm{Ram}$). We also derive formulas for the differential AC-Zeeman shifts undergone by the nuclear spin levels in presence of the Raman drives, which will be useful in Chapter \ref{ch:individual_nuclear_spins_quantum_information} to construct a two-qubit gate.
+As discussed in the previous section, a pulse resonant with a ZQ/DQ transition can be used to coherently drive the nuclear spin state. As explained earlier, ZQ/DQ driving is not an efficient way to coherently drive a nuclear spin in our setup. In this section, we explain how a nuclear spin can be driven by the simultaneous application of two off-resonant microwave tones. This so-called Raman scheme is commonly used in optics to drive hyperfine transitions in atoms \sidecite{kasevich_atomic_1991}, and we transpose it here to spin systems at microwave frequencies. In this section, we derive the effective nuclear spin driving strength (the so-called Raman Rabi frequency $\Omega_\mathrm{Ram}$). We also derive formulas for the differential AC-Zeeman shifts undergone by the nuclear spin levels in the presence of the Raman drives, which will be useful in Chapter \ref{ch:individual_nuclear_spins_quantum_information} to construct a two-qubit gate.
 
-As a starting point, we consider a three-level system with a $\Lambda$-structure: two uncoupled ground states (named $\ket{a}$ \& $\ket{b}$) and an excited state (named $\ket{c}$), as shown in \reffig{raman_scheme}a. The two ground-to-excited transitions are off-resonantly driven by microwave tones with Rabi rates $\Omega_\mathrm{A}$ and $\Omega_\mathrm{B}$. The frequency difference between the $\ket{a} \leftrightarrow \ket{c}$ transition and drive A is given by $\Delta$ and the detuning between the two drives by $\delta$. In the dispersive regime ($|\Delta| \gg |\Omega_\mathrm{A, B}|$) the excited state can be adiabatically eliminated \sidecite{cohen-tannoudji_atom_2024}. When $\delta$ is resonant with the NMR-allowed transition frequency, the nuclear spin population is driven with Rabi frequency given by
+As a starting point, we consider a three-level system with a $\Lambda$-structure: two uncoupled ground states (named $\ket{a}$ \& $\ket{b}$) and an excited state (named $\ket{c}$), as shown in \reffig{raman_scheme}a. The two ground-to-excited transitions are off-resonantly driven by microwave tones with Rabi rates $\Omega_\mathrm{A}$ and $\Omega_\mathrm{B}$. The frequency difference between the $\ket{a} \leftrightarrow \ket{c}$ transition and drive A is given by $\Delta$, and the detuning between the two drives by $\delta$. In the dispersive regime ($|\Delta| \gg |\Omega_\mathrm{A, B}|$) the excited state can be adiabatically eliminated \sidecite{cohen-tannoudji_atom_2024}. When $\delta$ is resonant with the NMR-allowed transition frequency, the nuclear spin population is driven with Rabi frequency given by
 
 \begin{equation}
     \Omega_\mathrm{Ram} = \frac{\Omega_\mathrm{A}\Omega_\mathrm{B}}{2\Delta}.
@@ -187,7 +187,7 @@ As a starting point, we consider a three-level system with a $\Lambda$-structure
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/raman_scheme.pdf}
-    \caption[Stimulated Raman Scheme]{Stimulated Raman Scheme. The two microwave pulses have amplitudes $\Omega_\text{A, B}$ the frequency difference between the two pulses is defined as $\delta$
+    \caption[Stimulated Raman Scheme]{Stimulated Raman Scheme. The two microwave pulses have amplitudes $\Omega_\text{A, B}$. The frequency difference between the two pulses is defined as $\delta$.
     \textbf{a.} $\Lambda$-level system. $\Delta$ is defined as the detuning between drive A and the $\ket{a} \leftrightarrow \ket{c}$ transition.
     \textbf{b.} \W--\Er coupled system.  $\Delta$ is defined as the detuning between drive A and the electron spin transition when the nuclear spin is in state $\uparrow$.}
     \labfig{raman_scheme}
@@ -212,7 +212,7 @@ where $\alpha_\text{A,B}$ is a linear scaling factor to account for differences 
 \label{eq:omega_raman}
 \end{equation}
 
-Because the ZQ and DQ matrix elements have opposite signs (Eq. \ref{eq:zq_dq_matrix_elements}), the resulting Raman Rabi rates necessarily carry opposite signs as well. The sign difference can be compensating with by driving "in the middle" of the two excited state levels, as the sign of the denominator will also be opposite in these conditions. The optimal point corresponds to $\Delta=-\omega_I^{(\Uparrow)}/2$, since it results in the maximal frequency detuning of the drives with respect to the EPR-allowed transitions. This allows to increase their microwave amplitude without breaking the Raman condition $\Omega_\text{A,B} \ll \Delta$ which would significantly populate the \Er excited state. The Raman Rabi frequency at this condition is given by
+Because the ZQ and DQ matrix elements have opposite signs (Eq. \ref{eq:zq_dq_matrix_elements}), the resulting Raman Rabi rates necessarily carry opposite signs as well. The sign difference can be compensated for by driving "in the middle" of the two excited state levels, as the sign of the denominator will also be opposite in these conditions. The optimal point corresponds to $\Delta=-\omega_I^{(\Uparrow)}/2$, since it results in the maximal frequency detuning of the drives with respect to the EPR-allowed transitions. This allows one to increase their microwave amplitude without breaking the Raman condition $\Omega_\text{A,B} \ll \Delta$, which would significantly populate the \Er excited state. The Raman Rabi frequency at this condition is given by
 
 \begin{marginfigure}
     \includegraphics{chapter2/figures/raman_rabi_vs_detuning.pdf}
@@ -236,7 +236,7 @@ As described in the previous section, the presence of an off-resonance microwave
     \label{eq:ac_zeeman}
 \end{equation}
 
-In this equation, the first term corresponds to the shift of the A drive to the EPR-allowed transition when the nuclear spin is in $\uparrow$ and $\downarrow$ respectively and the second term corresponds to the shift of the B drive on the same electron transitions.
+In this equation, the first term corresponds to the shift induced by drive A on the EPR-allowed transition when the nuclear spin is in $\uparrow$ and $\downarrow$, respectively, and the second term corresponds to the shift induced by drive B on the same electron transitions.
 
 \section{High-spin generalization}
 \labsec{high_spin_generalization}
@@ -276,7 +276,7 @@ The eigenstates of the unperturbed system $\cH{0}$ correspond to $\ket{m_S m_I}$
 
 \begin{equation}
 \label{seq:first-order-wfn}
-    \ket{\psi_{m_S,m_I}} \approx \ket{m_S, m_I} + \sum_{i\in\{\pm1\pm2\}} M_i^{(m_S, m_I)} \cdot \ket{m_S, m_I + i}
+    \ket{\psi_{m_S,m_I}} \approx \ket{m_S, m_I} + \sum_{i\in\{\pm1,\pm2\}} M_i^{(m_S, m_I)} \cdot \ket{m_S, m_I + i}
 \end{equation}
 
 where 
@@ -297,7 +297,7 @@ where
     \labfig{ninehalf_matrix_elements}
 \end{marginfigure}
 
-Due to the hyperfine and quadrupole induced mixing, the nuclear spin magnetic numbers are not good quantum numbers anymore, and we introduce the notation $\ket{m_S, n} = \ket{\psi_{m_S, 9/2-m_I}}$ with $n\in\{0,\dots,9\}$ in ascending order of energy. Due to the admixing of the nuclear spin wavefunctions, the matrix element for the EPR-allowed and ZQ/DQ transitions are given by 
+Due to the hyperfine- and quadrupole-induced mixing, the nuclear spin magnetic numbers are not good quantum numbers anymore, and we introduce the notation $\ket{m_S, n} = \ket{\psi_{m_S, 9/2-m_I}}$ with $n\in\{0,\dots,9\}$ in ascending order of energy. Due to the admixing of the nuclear spin wavefunctions, the matrix elements for the EPR-allowed and ZQ/DQ transitions are given by
 
 \begin{align}
 \begin{split}
@@ -310,7 +310,7 @@ Due to the hyperfine and quadrupole induced mixing, the nuclear spin magnetic nu
 
 %We note that even if the mixing between $\Delta m_I=2$ wavefunctions is larger by an order of magnitude, the change in nuclear wavefunctions between $\ket{\uparrow n}$ and $\ket{\downarrow n}$ is mainly dominated by the $M_{\pm1}$ coefficients, due to the proportionality to $m_S$ and the corresponding change of sign between the two states. However, the matrix elements for $i=\pm2$ are non-negligible, specially for high $n$. This indicates that higher order sidebands are also weakly allowed in this system, enabled by the quadrupole non-diagonal elements.
 
-We note that $\Delta n = \pm2$ matrix elements are non-zero which means that higher order sidebands driving is permitted thanks to the quadrupole mixing. In the weak-quadrupole regime these $\Delta m_I = \pm 2$ matrix elements are much smaller than their $\Delta m_I = \pm 2$ counterparts. Moreover, the $\Delta m_I = \pm 2$ lines are typically farther detuned from the resonator center, so cavity filtering further suppresses the effective drive amplitude. The net effect is that driving $\Delta m_I = \pm 2$ transitions requires higher microwave power with much slower Rabi rates, and we do not treat them in the following.
+We note that $\Delta n = \pm2$ matrix elements are nonzero, which means that higher-order sideband driving is permitted thanks to the quadrupole mixing. In the weak-quadrupole regime these $\Delta m_I = \pm 2$ matrix elements are much smaller than their $\Delta m_I = \pm 1$ counterparts. Moreover, the $\Delta m_I = \pm 2$ lines are typically farther detuned from the resonator center, so cavity filtering further suppresses the effective drive amplitude. The net effect is that driving $\Delta m_I = \pm 2$ transitions requires higher microwave power with much slower Rabi rates, and we do not treat them in the following.
 
 Analogous to the $I=1/2$ case, the nuclear population of the $I=9/2$ system can be addressed by resonantly driving the weakly allowed sideband transitions. The perpendicular hyperfine term is responsible for the dominant $\Delta m_I = \pm 1$ ZQ and DQ sidebands, while the non-diagonal quadrupole terms open additional $\Delta m_I = \pm 2$ paths. 
 
@@ -323,11 +323,11 @@ We arbitrarily consider the ZQ transitions from state $n$ to $n+1$ with frequenc
 \label{eq:zero_double_quantum_ninehalf_rabi}
 \end{equation}
 
-As for the case of the nuclear-spin $I=1/2$, the oscillation frequency is proportional to the coupling strength. However, the ladder factors $C^+_{n}$ will modulate the driving speed depending on the state of the nuclear spin, with the highest factor for the $n=4$ to $n=5$ transition which approximately corresponds to the $m_I=1/2$ to $m_I=-1/2$ transition (see \reffig{ninehalf_matrix_elements}). In addition, when driving the ZQ and DQ transitions, the energy levels will experience an AC-Zeeman shift, as described in the spin-1/2 case.
+As for the case of the nuclear spin $I=1/2$, the oscillation frequency is proportional to the coupling strength. However, the ladder factors $C^+_{n}$ will modulate the driving speed depending on the state of the nuclear spin, with the highest factor for the $n=4$ to $n=5$ transition which approximately corresponds to the $m_I=1/2$ to $m_I=-1/2$ transition (see \reffig{ninehalf_matrix_elements}). In addition, when driving the ZQ and DQ transitions, the energy levels will experience an AC-Zeeman shift, as described in the spin-1/2 case.
 
 \subsection{Cross-relaxation rates}
 
-Using the calculated matrix elements we now proceed to give an estimation of the relaxation rate of the electron spin through all the available mechanisms. The main relaxation channel for the electron spin comes from the EPR-allowed transitions, which leave the nuclear spin invariant, and the matrix element for these transitions is approximately 1/2 no matter the state of the nuclear spin. However, the hyperfine interaction shifts the frequency of these transitions ($\omega_0, \dots,\omega_9$) depending on the state of the nuclear spin. Experimentally, we tune the spin such that $\omega_0=\omega_r$ which results in different Purcell factors for every transition. The electron relaxation rate when the nuclear spin is in state $n$, $\Gamma_R^{(n)}$, is given by
+Using the calculated matrix elements, we now proceed to give an estimate of the relaxation rate of the electron spin through all the available mechanisms. The main relaxation channel for the electron spin comes from the EPR-allowed transitions, which leave the nuclear spin invariant, and the matrix element for these transitions is approximately 1/2 no matter the state of the nuclear spin. However, the hyperfine interaction shifts the frequency of these transitions ($\omega_0, \dots,\omega_9$) depending on the state of the nuclear spin. Experimentally, we tune the spin such that $\omega_0=\omega_r$, which results in different Purcell factors for every transition. The electron relaxation rate when the nuclear spin is in state $n$, $\Gamma_R^{(n)}$, is given by
 
 \begin{equation}
     \Gamma^{(n)}_R = \frac{\kappa g_0^2}{\kappa^2/4 + (\omega_r - \omega_n)^2} =  \Gamma^{(0)}_R \cdot \frac{1}{1 + 4\frac{(\omega_r - \omega_n)^2}{\kappa^2}}
@@ -342,7 +342,7 @@ where $\Gamma^{(0)}_R$ is the electron decay rate when $n=0$. We denote the freq
 \end{split}
 \end{align}
 
-The total relaxation rate for $\ket{\uparrow n}$ is given by $\Gamma^{(n)} = \Gamma^{(n)}_R +\sum_i\Gamma^{(n)}_i$. We naturally introduce the cross-relaxation probability
+The total relaxation rate for $\ket{\uparrow n}$ is given by $\Gamma^{(n)} = \Gamma^{(n)}_R + \sum_i\Gamma^{(n)}_i$. We naturally introduce the cross-relaxation probability.
 
 \begin{equation}
     \label{eq:cross_relaxation_probability_ninehalf}
@@ -355,7 +355,7 @@ Due to the difference in scale of the matrix elements between the $\Delta m_I \p
 \subsection{Stimulated Raman driving}
 \labsec{stimulated_raman_driving_ninehalf}
 
-In this section we derive the expressions for the Rabi frequency of a Raman drive for the case of a nuclear-spin $I=9/2$ by generalizing the results obtained in the previous section of a spin $I=1/2$. As in this previous section, the stimulated Raman scheme allows to transfer the population between the two adjacent nuclear spin levels $\ket{\Downarrow n}$ and $\ket{\Downarrow n+1}$ through the use of two off-resonant microwave drives with amplitudes $\Omega_\text{A}$ and $\Omega_\text{B}$ (see Eq. \ref{raman_amplitudes}). When the difference in frequency between the two drives matches the nuclear spin transition frequency, a two-photon process enables the coherent control of the nuclear spin population between the two levels. This is possible by leveraging the coupling of the two levels of interest to their electron excited counterparts: $\ket{\Uparrow n}$ and $\ket{\Uparrow n+1}$. As in the previous section, the presence of two electron excited states creates two possible paths for the scheme, which interfere with each other,
+In this section we derive the expressions for the Rabi frequency of a Raman drive for the case of a nuclear spin $I=9/2$ by generalizing the results obtained in the previous section for a spin $I=1/2$. As in the previous section, the stimulated Raman scheme allows one to transfer the population between the two adjacent nuclear spin levels $\ket{\Downarrow n}$ and $\ket{\Downarrow n+1}$ through the use of two off-resonant microwave drives with amplitudes $\Omega_\text{A}$ and $\Omega_\text{B}$ (see Eq. \ref{raman_amplitudes}). When the difference in frequency between the two drives matches the nuclear spin transition frequency, a two-photon process enables the coherent control of the nuclear spin population between the two levels. This is possible by leveraging the coupling of the two levels of interest to their electron excited counterparts: $\ket{\Uparrow n}$ and $\ket{\Uparrow n+1}$. As in the previous section, the presence of two electron excited states creates two possible paths for the scheme, which interfere with each other,
 
 \begin{equation}
 \begin{split}    
@@ -379,8 +379,8 @@ We note that the final value of $\Omega_{\mathrm{Ram}}$ is the same as in the $I
 
 This chapter has established the theoretical framework for nuclear spin control mediated by an electron spin using microwave drives. We have discussed two mechanisms, resonant driving of the ZQ/DQ transition and microwave stimulated Raman driving. The discussion was separated into two parts: first, the case of nuclear spins $I=1/2$, which will be used in Chapters \ref{ch:detection_and_control_of_individual_w} and \ref{ch:individual_nuclear_spins_quantum_information}, and second, the generalization to high-spin nuclei ($I>1/2$) used in Chapter \ref{ch:nb_nuclear_spin}.  
 
-\paragraph{Zero- and double-quantum transitions.} Direct driving of the ZQ/DQ transitions allows simultaneous control of the electron and nuclear spin state. The matrix element of the transition is small compared to the EPR-allowed transitions and large microwave amplitude pulses are required to effectively drive Rabi oscillations. The use of large microwave amplitudes induces AC-Zeeman shifts of the EPR-allowed transitions which translates to effective shifts of the ZQ and DQ transition frequencies. However, Even at large microwave amplitudes the scheme is limited by the electron spin decoherence since the excited state is populated by the drive.
+\paragraph{Zero- and double-quantum transitions.} Direct driving of the ZQ/DQ transitions allows simultaneous control of the electron and nuclear spin state. The matrix element of the transition is small compared to the EPR-allowed transitions, and large microwave amplitude pulses are required to effectively drive Rabi oscillations. The use of large microwave amplitudes induces AC-Zeeman shifts of the EPR-allowed transitions which translate to effective shifts of the ZQ and DQ transition frequencies. However, even at large microwave amplitudes the scheme is limited by electron spin decoherence since the excited state is populated by the drive.
 
 \paragraph{Cross-relaxation events.} Due to the non-zero ZQ and DQ matrix elements, the electron spin can spontaneously decay through a ZQ or DQ transition, changing the state of the nuclear spin in the process. The probability for this cross-relaxation event scales proportionally to the square of the perpendicular hyperfine coupling, $A_\perp$.
 
-\paragraph{Stimulated Raman driving.} Control of the nuclear spin can be achieved by applying two off-resonant microwave tones with a mutual detuning equal to the NMR-allowed transition frequency~\sidecite{cohen-tannoudji_atom_2024}. This microwave stimulated Raman scheme does not significantly populate the electron spin excited state and preserves the coherence time of nuclear spins. The two microwave drives also renormalize the energy levels of the system which result in a \textit{differential} AC-Zeeman shift of the NMR-allowed transition. 
+\paragraph{Stimulated Raman driving.} Control of the nuclear spin can be achieved by applying two off-resonant microwave tones with a mutual detuning equal to the NMR-allowed transition frequency~\sidecite{cohen-tannoudji_atom_2024}. This microwave stimulated Raman scheme does not significantly populate the electron spin excited state and preserves the coherence time of nuclear spins. The two microwave drives also renormalize the energy levels of the system, which result in a \textit{differential} AC-Zeeman shift of the NMR-allowed transition.

@@ -301,6 +301,12 @@ Given that magnetic noise spans multiple timescales, the measured value of $T_2^
 
 A way to suppress the effect of slow noise is to refocus the spin coherence using a Hahn echo sequence. This yields an echo coherence time $T_2$ that is longer than the Ramsey dephasing time, $T_2 \ge T_2^*$. Therefore, one can define a transverse decoherence rate $\Gamma_2 = 1 / T_2$. Since energy relaxation contributes to decoherence, $\Gamma_2$ is bounded by $\Gamma_2 \ge \Gamma_1/2$. When $\Gamma_2 \approx \Gamma_1/2$ the spin is said to be lifetime-limited, as it does not visibly suffer any decoherence before energy relaxation.
 
+\begin{figure}[b!]
+    \includegraphics{chapter2/figures/resonator_spin_lines.pdf}
+    \caption[Resonator coupled to a spin]{Resonator inductively coupled to a single electron spin. The resonator has two loss mechanisms: internal losses $\kappa_i$ and energy exchange with the capacitively coupled lines $\kappa_c$ and interacts with a spin with coupling strength $g_0$. The spin can decay via phonon relaxation with a rate $\kappa_\text{phonon}$}
+    \labfig{resonator_spin_lines}
+\end{figure}
+
 Spectral diffusion can be suppressed by reducing the density of paramagnetic impurities and nuclear spins. In this context, \Er:\Ca has demonstrated extraordinarily long ensemble coherence times of 23~ms~\sidecite{ledantec_twentythreemillisecond_2021}. In the single-spin regime with a Purcell-limited lifetime of approximately 1~ms, the decoherence time was lifetime limited. This achievement was possible due to two factors. First, the low concentration of erbium and other paramagnetic impurities, on the order of parts per billion~(ppb). In this regime, the average distance between impurities is much larger than the magnetic dipole interaction range and their contribution to spectral diffusion can be neglected. Second, \Ca has one of the lowest nuclear magnetic moment densities among natural-abundance crystals. Only the \W isotope has a non-negligible abundance ($14.4$\%), with nuclear spin $I=1/2$ and a relatively weak gyromagnetic ratio (see \refsec{nuclear_spins_ca}).  
 
 Based on the electron decoherence time in \Ca, we expect second-long coherence times for the \W nuclear spins, given the ratio of their gyromagnetic ratios ($\sim 10^3$). In Chapter \ref{ch:individual_nuclear_spins_quantum_information}, we measure the nuclear spin coherence and find $T_2^*\approx1~s$, in agreement with the expected value.
@@ -309,27 +315,21 @@ In addition, nuclear polarization can be used to reduce spectral diffusion when 
 
 Finally, an additional source of spectral diffusion is fluctuations of the static magnetic field, which arise from the intrinsic noise of the current source driving the coil. We mitigate this by using superconducting coils that are set in persistent-current mode, where the current source is effectively disconnected (see \refsec{measurement_setup}). This results in a substantial increase in field stability.
 
-
-\begin{figure}
-    \includegraphics{chapter2/figures/resonator_spin_lines.pdf}
-    \caption[Resonator coupled to a spin]{Resonator inductively coupled to a single electron spin. The resonator has two loss mechanisms: internal losses $\kappa_i$ and energy exchange with the capacitively coupled lines $\kappa_c$ and interacts with a spin with coupling strength $g_0$. The spin can decay via phonon relaxation with a rate $\kappa_\text{phonon}$}
-    \labfig{resonator_spin_lines}
-\end{figure}
-
 \section[Microwave photon counting]{Microwave photon counting}
 \labsec{Detecting_individual_Er}
 
-Single-electron spin sensitivity has been recently demonstrated in our group through the use of a unique device known as the Single Microwave Photon Detector (SMPD) \sidecite{wang_addressing_2023}. The device is based on a superconducting circuit, designed to detect individual microwave photons with high efficiency in a narrow frequency bandwidth \sidecite{lescanne_irreversible_2020}. The device consists of a transmon qubit coupled to two coplanar waveguide resonators, called the \textit{buffer} and the \textit{waste} resonators. The incoming photon arrives in the buffer resonator and is converted to an excitation in the qubit and the waste through a parametric process controlled by a pump tone. The waste is strongly coupled to the microwave lines and the excitation on this resonator is rapidly dissipated, rendering the process irreversible. Finally, the state of the qubit is measured via dispersive readout through the waste resonator. The qubit is conditionally reset with a $\pi$-pulse and subsequently read out until it is measured in its ground state. This process is repeated cyclically.
 
-For our purposes, we now discuss the relevant performance metrics: the dark count rate $\Gamma_\text{DC}$ and the detection efficiency $\eta_\text{d}$. Appendix \ref{app:SMPD} gives a concise explanation of the operation and characteristics of the device. 
-
-\begin{figure}
+\begin{figure}[b!]
     \includegraphics{chapter2/figures/smpd_trace.pdf}
     \caption[Operational efficiency of an SMPD]{Operational efficiency of an SMPD. The figure was taken from~\cite{balembois_cyclically_2024}.
     \textbf{a.} Time traces representing one second of detection ($\approx$80000 cycles) for different powers applied to the buffer. Each line represents a click. 
     \textbf{b.} Number of clicks per second as the function of the number of incoming photons. The fit (orange line) allows to extract the overall efficiency $\eta_\text{d}=0.43$.}
     \labfig{smpd_trace}
 \end{figure}
+
+Single-electron spin sensitivity has been recently demonstrated in our group through the use of a unique device known as the Single Microwave Photon Detector (SMPD) \sidecite{wang_addressing_2023}. The device is based on a superconducting circuit, designed to detect individual microwave photons with high efficiency in a narrow frequency bandwidth \sidecite{lescanne_irreversible_2020}. The device consists of a transmon qubit coupled to two coplanar waveguide resonators, called the \textit{buffer} and the \textit{waste} resonators. The incoming photon arrives in the buffer resonator and is converted to an excitation in the qubit and the waste through a parametric process controlled by a pump tone. The waste is strongly coupled to the microwave lines and the excitation on this resonator is rapidly dissipated, rendering the process irreversible. Finally, the state of the qubit is measured via dispersive readout through the waste resonator. The qubit is conditionally reset with a $\pi$-pulse and subsequently read out until it is measured in its ground state. This process is repeated cyclically.
+
+For our purposes, we now discuss the relevant performance metrics: the dark count rate $\Gamma_\text{DC}$ and the detection efficiency $\eta_\text{d}$. Appendix \ref{app:SMPD} gives a concise explanation of the operation and characteristics of the device. 
 
 The quantum efficiency of the detector is the ratio between the number of counts and the number of incoming photons. The dark count rate is the count rate when the device is operated without any input signal. Its origin can be traced back to two main effects: spurious qubit excitations and thermal photons on the microwave lines. \reffig{smpd_trace}a shows a series of traces as a function of calibrated input power: at zero power, the detection events correspond to the dark count rate of the detector, as the power increases, the number of counts also does so, until the detector saturates. We measure the efficiency of the detector by fitting the number of detection events as a function of the calibrated input power with a linear curve (see \reffig{smpd_trace}b). 
 
@@ -338,13 +338,13 @@ The data shown in \reffig{smpd_trace} correspond to the previous generation SMPD
 \section{Single-spin detection by microwave photon counting}
 \labsec{single_spin_detection_microwave_photon_counting}
 
-\begin{figure*}
+\begin{figure*}[t!]
     \includegraphics{chapter2/figures/resonator_spin_SMPD.pdf}
     \caption[Detection Scheme]{Detection Scheme. A microwave pulse (black arrow) is sent to the superconducting resonator (orange), fabricated on the surface of a \Ca crystal, which excites a resonant \Er spin (red). Via the Purcell effect, the spontaneous microwave emission (red arrow) is collected in the microwave lines and routed through a circulator to the SMPD where it is detected as a count.}
     \labfig{resonator_spin_SMPD}
 \end{figure*}
 
-
 Most of the measurements shown in this manuscript are performed by monitoring the Purcell enhanced microwave fluorescence of the \Er spin after a resonant excitation using the SMPD. Unlike traditional single-spin readout methods that rely on spin-dependent optical fluorescence \sidecite{wrachtrup_optical_1993} or on transport-based spin-to-charge conversion (STM \sidecite{elzerman_singleshot_2004} or quantum-dot readout \sidecite{rugar_single_2004}), microwave photon counting operates entirely in the microwave regime and does not require system specific mechanisms like optical transitions or spin-to-charge conversion. 
 
 The measurement scheme is summarized by the diagram presented in \reffig{resonator_spin_SMPD}. The crystalline \Ca sample, where the \Er spins are hosted, takes the form of a rectangular monocrystalline slab. On the surface of the crystal, a superconducting Nb thin film resonator is fabricated. The \Er spins are inductively coupled to the resonator through the magnetic field generated by the nanowire inductive element, thereby enhancing their radiative relaxation rate via the Purcell effect. A microwave pulse is generated at room temperature with a frequency that is resonant with the cavity. If an \Er spin is resonant with the cavity, it will be excited by the pulse. Following the excitation, the spin will spontaneously relax into a microwave photon, routed with a microwave circulator to the SMPD, where it is detected. The \textit{spin-to-click} efficiency $\eta_\text{spin}$ depends on the SMPD efficiency, the ratio between the coupling and total loss of the resonator and the attenuation of the microwave line connecting the two.
+

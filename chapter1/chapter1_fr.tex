@@ -88,9 +88,7 @@ En raison de ces limitations, nous pilotons les spins nucléaires au moyen d'un 
 
 Au Chapitre \ref{ch:individual_nuclear_spins_quantum_information}, nous nous concentrons sur un système dans lequel un spin \Er est couplé à deux spins nucléaires \W voisins, notés Qb1 et Qb2. En exploitant les décalages AC-Zeeman induits par des impulsions Raman désaccordées, nous élaborons un protocole permettant d'implémenter une porte à deux qubits. Le désaccord Raman $\Delta$ détermine l'amplitude des décalages AC-Zeeman et conduit à deux régimes de fonctionnement distincts. La \reffig{ch2}d les présente : à gauche, un régime inconditionnel, où la fréquence de transition de Qb2 est indépendante de l'état de Qb1, et à droite, un régime conditionnel, où cette fréquence dépend de l'état de Qb1.
 
-Les sources de bruit corrélées entre paires de spins peuvent être supprimées en préparant le système dans des états singulet ou triplet spécifiques de moment magnétique nul~\cite{bartling_entanglement_2022, bradley_tenqubit_2019}. À l'aide des spins nucléaires \W, nous préparons l'état de Bell $\tfrac{1}{\sqrt2}\left(\ket{\downarrow\uparrow}+\ket{\uparrow\downarrow}\right)$, vérifié par tomographie d'état (Fig.~\reffig{ch2}e), et nous mesurons son temps de cohérence. Nous observons une augmentation d'un facteur deux par rapport au temps de cohérence à un qubit, indiquant une suppression efficace du bruit magnétique au sein d'un sous-espace libre de décohérence.
-
-\begin{figure*}[b]
+\begin{figure*}[t!]
     \includegraphics{chapter1/figures/ch3v1.pdf}
     \caption[Spectroscopie RMN de précision d'un spin nucléaire \Nb]{Spectroscopie RMN de précision d'un spin nucléaire \Nb.
     \textbf{a.} Spectre des niveaux d'énergie d'un spin \Er couplé à un spin nucléaire \Nb de spin $I=9/2$. Les dix transitions autorisées en RPE sont indiquées en rouge. Les dix-huit transitions autorisées en RMN sont mises en évidence en vert et en orange, selon l'état du spin \Er.
@@ -102,9 +100,12 @@ Les sources de bruit corrélées entre paires de spins peuvent être supprimées
     \labfig{ch3}
 \end{figure*}
 
+Les sources de bruit corrélées entre paires de spins peuvent être supprimées en préparant le système dans des états singulet ou triplet spécifiques de moment magnétique nul~\cite{bartling_entanglement_2022, bradley_tenqubit_2019}. À l'aide des spins nucléaires \W, nous préparons l'état de Bell $\tfrac{1}{\sqrt2}\left(\ket{\downarrow\uparrow}+\ket{\uparrow\downarrow}\right)$, vérifié par tomographie d'état (Fig.~\reffig{ch2}e), et nous mesurons son temps de cohérence. Nous observons une augmentation d'un facteur deux par rapport au temps de cohérence à un qubit, indiquant une suppression efficace du bruit magnétique au sein d'un sous-espace libre de décohérence.
 
-\section*{Spectroscopie de précision d'un spin nucléaire 9/2}
+\section*{Spectroscopie de précision d'un spin 9/2}
 
+
+Une autre application des méthodes développées au Chapitre \ref{ch:detection_and_control_of_individual_w} consiste à caractériser une espèce atomique inconnue située à proximité d'un spin électronique. C'est l'objet du Chapitre \ref{ch:nb_nuclear_spin}, dans lequel nous caractérisons entièrement une impureté inconnue de spin nucléaire 9/2 proche d'un spin \Er. Nous réalisons en outre une spectroscopie hyperfine de précision de cet atome \Nb et mettons en évidence des termes jusqu'alors inconnus dans le Hamiltonien de spin.
 
 \begin{marginfigure}
     \includegraphics{chapter1/figures/ch3_extra.pdf}
@@ -112,11 +113,10 @@ Les sources de bruit corrélées entre paires de spins peuvent être supprimées
     \labfig{ch3_extra}
 \end{marginfigure}
 
-Une autre application des méthodes développées au Chapitre \ref{ch:detection_and_control_of_individual_w} consiste à caractériser une espèce atomique inconnue située à proximité d'un spin électronique. C'est l'objet du Chapitre \ref{ch:nb_nuclear_spin}, dans lequel nous caractérisons entièrement une impureté inconnue de spin nucléaire 9/2 proche d'un spin \Er. Nous réalisons en outre une spectroscopie hyperfine de précision de cet atome \Nb et mettons en évidence des termes jusqu'alors inconnus dans le Hamiltonien de spin.
-
 La \reffig{ch3}a représente les vingt niveaux d'énergie du système couplé \Nb--\Er ainsi que l'ensemble des transitions RPE, de fréquences $\omega_n$, et des transitions autorisées en RMN, réparties en deux manifolds selon l'état du spin \Er et de fréquences $\omega_{n,n+1}^{(m_S)}$. Nous caractérisons d'abord le système par spectroscopie RPE en mesurant des traces temporelles similaires à celles du Chapitre \ref{ch:detection_and_control_of_individual_w}. La \reffig{ch3}b montre les dix transitions autorisées en RPE du spin électronique, régulièrement espacées, ce qui est caractéristique d'un spin électronique couplé à un spin nucléaire $I=9/2$.
 
 Nous utilisons les méthodes développées dans les chapitres précédents (lecture en un seul tir, DNP par effet solide et entraînement Raman stimulé) pour mesurer le spectre RMN du spin \Nb. En comparant la fréquence de Larmor de l'impureté aux rapports gyromagnétiques de spins nucléaires, nous l'identifions comme un spin \Nb. Nous tirons parti de la longue cohérence du spin nucléaire pour mesurer son spectre hyperfin avec une résolution au hertz, présenté sur la \reffig{ch3}c en fonction de l'indice de transition. La grande séparation des niveaux indique que l'intensité de l'interaction quadrupolaire du spin nucléaire est du même ordre de grandeur que celle de l'interaction de Zeeman.
+
 
 Nous ajustons le spectre RMN à un modèle hamiltonien dans les deux manifolds \Er avec une précision au hertz, comme l'illustrent les résidus de l'ajustement (voir \reffig{ch3}c). Nous observons que l'intensité de l'interaction quadrupolaire diffère entre les deux manifolds, comme le montre la \reffig{ch3}d via la différence statistiquement significative entre les distributions a posteriori de la force de couplage quadrupolaire obtenues pour les deux ajustements. Nous attribuons cette différence à un nouveau type d'interaction entre spins électronique et nucléaire. De plus, nous sommes en mesure d'établir des bornes sur l'interaction hexadécapolaire, d'un ordre de grandeur plus contraignantes que les mesures de référence précédentes~\sidecite{liao_nuclear_1994}, comme le montre la \reffig{ch3}e.
 

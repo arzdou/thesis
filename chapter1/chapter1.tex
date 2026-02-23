@@ -71,7 +71,7 @@ To perform our experiments we use the spin degree of freedom of an \Er ion in \C
 
 \section{Detection of individual nuclear spins and dynamical nuclear polarization}
 
-\begin{figure*}
+\begin{figure*}[b!]
     \includegraphics{chapter1/figures/ch1.pdf}
     \caption[Detection of individual \W and DNP]{
         Detection of individual nuclear spins and dynamical nuclear polarization.
@@ -92,14 +92,6 @@ By leveraging the spectral separation of the electron spin transition we obtain 
 
 The zero- and double-quantum transitions (represented in \reffig{ch1}a with dashed arrows) are weakly allowed due to the hyperfine interaction and simultaneously change the state of the electron and nuclear spin. In ensemble EPR, this weak coupling is exploited in electron-electron double resonance (ELDOR) detected NMR (EDNMR) measurements to probe the hyperfine spectra~\sidecite{schosseler_pulsed_1994}. Here we demonstrate single spin EDNMR by driving the ZQ/DQ transitions on a single \Er spin. We use the resulting spectra (shown in \reffig{ch1}d) to identify the coupled nuclear spin as a \W.
 
-%Finally, we use solid-effect dynamical nuclear polarization (DNP)~\sidecite{abragama.proctow._nouvelle_1958} to define a preparation protocol for the nuclear spins. As shown in  \reffig{ch1}e, repeatedly pulsing the ZQ (DQ) transition allows one to polarize the nuclear spin to $\ket{\downarrow}$ ($\ket{\uparrow}$).
-
-A key requirement for single-spin spectroscopy and quantum computing is deterministic preparation of individual nuclear spins in an arbitrary state. We achieve deterministic single-spin polarization to $\ket{\downarrow}$ ($\ket{\uparrow}$) by exciting the ZQ (DQ) transitions and waiting for the electron spin to relax. After several iterations, the nuclear spin should always end up in the desired state, as evidenced by the level diagram in \reffig{ch1}a. As shown in \reffig{ch1}e, after the application of a few ZQ $\pi$-pulses resonant with the ZQ transition, we observe that the \W nuclear spin is deterministically prepared in $\ket{\downarrow}$. This polarization scheme is the single-spin version of a method invented by Abragam and Proctor for ensembles of spins and called solid-effect dynamical nuclear polarization (DNP)~\sidecite{abragama.proctow._nouvelle_1958}.
-
-%This demonstration relies on the hyperfine coupling between the spins, which splits the electron spin transitions depending on the state of the nuclear spin. Thanks to the low decoherence rate of the \Er spins, enabled by the low concentration of magnetic spins in the crystal, we are able to resolve the spin-dependent microwave fluorescence, and we define a single-shot quantum-non-demolition readout protocol on the nuclear spin state. Using a single spin version of Electron-Electron Double Resonance (ELDOR) detected NMR (EDNMR) we identify the chemical nature and the relative position of the \W spins with respect to the \Er spin. Finally, we demonstrate solid-effect Dynamical Nuclear Polarization (DNP) of the individual nuclear spins~\sidecite{travesedo_allmicrowave_2025}.
-
-\section{A register of two nuclear spin qubits}
-
 \begin{figure*}[b!]
     \includegraphics{chapter1/figures/ch2.pdf}
     \caption[A two nuclear spin qubit register]{A two nuclear spin qubit register.
@@ -112,6 +104,15 @@ A key requirement for single-spin spectroscopy and quantum computing is determin
     \labfig{ch2}
 \end{figure*}
 
+%Finally, we use solid-effect dynamical nuclear polarization (DNP)~\sidecite{abragama.proctow._nouvelle_1958} to define a preparation protocol for the nuclear spins. As shown in  \reffig{ch1}e, repeatedly pulsing the ZQ (DQ) transition allows one to polarize the nuclear spin to $\ket{\downarrow}$ ($\ket{\uparrow}$).
+
+A key requirement for single-spin spectroscopy and quantum computing is deterministic preparation of individual nuclear spins in an arbitrary state. We achieve deterministic single-spin polarization to $\ket{\downarrow}$ ($\ket{\uparrow}$) by exciting the ZQ (DQ) transitions and waiting for the electron spin to relax. After several iterations, the nuclear spin should always end up in the desired state, as evidenced by the level diagram in \reffig{ch1}a. As shown in \reffig{ch1}e, after the application of a few ZQ $\pi$-pulses resonant with the ZQ transition, we observe that the \W nuclear spin is deterministically prepared in $\ket{\downarrow}$. This polarization scheme is the single-spin version of a method invented by Abragam and Proctor for ensembles of spins and called solid-effect dynamical nuclear polarization (DNP)~\sidecite{abragama.proctow._nouvelle_1958}.
+
+%This demonstration relies on the hyperfine coupling between the spins, which splits the electron spin transitions depending on the state of the nuclear spin. Thanks to the low decoherence rate of the \Er spins, enabled by the low concentration of magnetic spins in the crystal, we are able to resolve the spin-dependent microwave fluorescence, and we define a single-shot quantum-non-demolition readout protocol on the nuclear spin state. Using a single spin version of Electron-Electron Double Resonance (ELDOR) detected NMR (EDNMR) we identify the chemical nature and the relative position of the \W spins with respect to the \Er spin. Finally, we demonstrate solid-effect Dynamical Nuclear Polarization (DNP) of the individual nuclear spins~\sidecite{travesedo_allmicrowave_2025}.
+
+\section{A register of two nuclear spin qubits}
+
+
 
 In Chapter \ref{ch:individual_nuclear_spins_quantum_information}, we harness the readout and polarization methods developed in Chapter \ref{ch:detection_and_control_of_individual_w} to demonstrate the operation of a two-nuclear-spin-qubit register. Nuclear spins in magnetically silent crystals have demonstrated coherence times ranging from seconds to hours~\sidecite{saeedi_roomtemperature_2013, muhonen_storing_2014, zhong_optically_2015} and, as such, are interesting qubit candidates. Different architectures for quantum computing using electron and nuclear spins in the solid state have been proposed~\cite{dutt_quantum_2007b,awschalom_quantum_2018,zwanenburg_silicon_2013}. The ability to detect and coherently control the state of nuclear spins with high fidelity in a quantum register has been demonstrated in a series of systems~\sidecite{pla_highfidelity_2013, song_entanglement_2026}. Nuclear spin driving is usually done by application of resonant radiofrequency (rf) pulses~\sidecite{vandersar_decoherenceprotected_2012, bradley_tenqubit_2019}. However, the \Er spins in our setup are addressed by a microwave resonator, capacitively coupled to the microwave lines, and therefore all rf pulses are filtered.
 
@@ -121,7 +122,7 @@ In Chapter \ref{ch:individual_nuclear_spins_quantum_information} we focus on a s
 
 Correlated sources of noise between spin pairs can be suppressed by preparing the system in specific singlet or triplet states with zero magnetic moment~\cite{bartling_entanglement_2022, bradley_tenqubit_2019}. Using \W nuclear spins, we prepare the Bell state $\tfrac{1}{\sqrt2}\left(\ket{\downarrow\uparrow}+\ket{\uparrow\downarrow}\right)$, verified by state tomography (Fig.~\reffig{ch2}e), and measure its coherence time. We find a twofold increase relative to the single-qubit coherence time, indicating effective magnetic-noise suppression within a decoherence-free subspace.
 
-\begin{figure*}[b]
+\begin{figure*}[t!]
     \includegraphics{chapter1/figures/ch3v1.pdf}
     \caption[Precision NMR spectroscopy of a \Nb nuclear spin]{Precision NMR spectroscopy of a \Nb nuclear spin.
     \textbf{a.} Energy level spectrum of an \Er spin coupled to a \Nb nuclear spin $I=9/2$. The ten EPR-allowed transitions are marked in red. The eighteen NMR-allowed transitions are highlighted in green and orange, depending on the state of the \Er spin.

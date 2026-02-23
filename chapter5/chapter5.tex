@@ -150,6 +150,8 @@ Given the long coherence times of \W nuclear spins demonstrated in the previous 
 
 As discussed in previous chapters, the sample hosts many addressable single \Er spins, each with its unique nuclear spin environment. The coupled \Nb -- \Er spin system was discovered fortuitously in the same \Ca sample described in \refch{sample_and_setup} and used throughout Chapters \ref{ch:detection_and_control_of_individual_w} \& \ref{ch:individual_nuclear_spins_quantum_information}. \reffig{spectra_2d}a shows a large-range electron spin 2D spectroscopy, where both the amplitude and the in-plane angle of the external magnetic field $B_0$ are swept. The spin of interest in this chapter is marked with a black arrow. 
 
+To characterize the \Er spin, we first set $B_0$ to match the resonance condition. Unless otherwise specified, the measurements of this chapter were taken at $B_0=446.27$~mT and $\theta = -0.37^\circ$,  marked in \reffig{spectra_2d}a as a red star. The results of the basic electron spin characterization are detailed in \reftab{er_characterization_nb}.
+
 \begin{margintable}
     \centering
     \begin{tabular}{l|c}
@@ -162,8 +164,6 @@ As discussed in previous chapters, the sample hosts many addressable single \Er 
     \caption[\Er characterization]{\Er characterization.}
     \labtab{er_characterization_nb}
 \end{margintable}
-
-To characterize the \Er spin, we first set $B_0$ to match the resonance condition. Unless otherwise specified, the measurements of this chapter were taken at $B_0=446.27$~mT and $\theta = -0.37^\circ$,  marked in \reffig{spectra_2d}a as a red star. The results of the basic electron spin characterization are detailed in \reftab{er_characterization_nb}.
 
 As discussed in \refsec{individual_er_ion_characterization}, the top of the curve for this spin does not match with $\theta=0$. This implies that the direction of minimal effective gyromagnetic tensor is not aligned with the bulk's $c$-axis. By fitting the curve to a parabola, we measure a difference of $0.20^\circ$. In practice, we define the angle with respect to this spin's $c$-axis as $\theta_S \equiv \theta - 0.20^\circ$, which we use during the magnetic dipole coupling calculations described in \refsec{assignment}.
 
@@ -407,15 +407,15 @@ The excited-state manifold frequencies $\omega^{(\Uparrow)}_{n,n+1}$ are then me
 
 \reffig{ramsey_ninehalf}c plots the fitted NMR frequencies as a function of the transition index $n$, both for the ground and excited state of the \Er spin (green and orange resp.). The ground state transitions are consistently larger than their excited state counterparts, which indicates a positive value of $A_\parallel/2\pi\approx130$~kHz. 
 
+From the fitted coherence (\reffig{ramsey_ninehalf}d \& e) we estimate that the uncertainty of the measured frequencies is about 1~Hz for the ground state and about 20~Hz for the excited state. We confirm this by monitoring the frequency drift of the $\ket{\Downarrow 0} \leftrightarrow \ket{\Downarrow 1}$ transition during a prolonged period of 60 hours. \reffig{drift} plots the frequency drift $\delta \omega$ as a function of time, which remains confined within $\pm1$~Hz.
+
+The fitted coherence times for the ground- and excited-state Ramsey measurements are plotted in \reffig{ramsey_ninehalf}d \& e, respectively. On the one hand, ground-state transitions display approximately constant behavior\sidenote{We note that for $n=5$ the coherence time is slightly lower for unknown reasons.} with $T_2^*\approx150$~ms. This indicates that magnetic noise is the dominant contribution to the Ramsey dephasing, since electric noise would more strongly impact transitions with extremal values of $n$, as was observed in an individual $^{123}\mathrm{Sb}$ nuclear spin in silicon \sidecite{fernandezdefuentes_navigating_2024}. On the other hand, the coherence time of the excited-state Ramsey measurements is limited by the \Er relaxation time. We observe that $T_2^{*(\Uparrow)}$ slightly increases with $n$ due to the increased detuning of the $\ket{\Downarrow,n} \leftrightarrow \ket{\Uparrow,n}$ transition from the resonator. However, the increase is less than expected from the Purcell effect, shown as a purple line in the plot, suggesting that this \Er has a relatively short non-radiative lifetime, on the order of $\sim 3$\,ms, possibly linked to the proximal \Nb impurity. 
+
 \begin{marginfigure}
     \includegraphics{chapter5/figures/drift.pdf}
     \caption[\Nb transition frequency drift]{Frequency drift of the $\ket{\Downarrow 0} \leftrightarrow \ket{\Downarrow 1}$ transition as a function of time. Dashed line highlights $\delta \omega = 0$. Error bars correspond to the 1-$\sigma$ uncertainty of the fitted Ramsey measurement.}
     \labfig{drift}
 \end{marginfigure}
-
-From the fitted coherence (\reffig{ramsey_ninehalf}d \& e) we estimate that the uncertainty of the measured frequencies is about 1~Hz for the ground state and about 20~Hz for the excited state. We confirm this by monitoring the frequency drift of the $\ket{\Downarrow 0} \leftrightarrow \ket{\Downarrow 1}$ transition during a prolonged period of 60 hours. \reffig{drift} plots the frequency drift $\delta \omega$ as a function of time, which remains confined within $\pm1$~Hz.
-
-The fitted coherence times for the ground- and excited-state Ramsey measurements are plotted in \reffig{ramsey_ninehalf}d \& e, respectively. On the one hand, ground-state transitions display approximately constant behavior\sidenote{We note that for $n=5$ the coherence time is slightly lower for unknown reasons.} with $T_2^*\approx150$~ms. This indicates that magnetic noise is the dominant contribution to the Ramsey dephasing, since electric noise would more strongly impact transitions with extremal values of $n$, as was observed in an individual $^{123}\mathrm{Sb}$ nuclear spin in silicon \sidecite{fernandezdefuentes_navigating_2024}. On the other hand, the coherence time of the excited-state Ramsey measurements is limited by the \Er relaxation time. We observe that $T_2^{*(\Uparrow)}$ slightly increases with $n$ due to the increased detuning of the $\ket{\Downarrow,n} \leftrightarrow \ket{\Uparrow,n}$ transition from the resonator. However, the increase is less than expected from the Purcell effect, shown as a purple line in the plot, suggesting that this \Er has a relatively short non-radiative lifetime, on the order of $\sim 3$\,ms, possibly linked to the proximal \Nb impurity. 
 
 In conclusion, the value and uncertainty of the transition frequencies in the \Er ground state are the following
 

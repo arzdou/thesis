@@ -185,7 +185,7 @@ In \reffig{buffer_autocalibration}b, the SMPD resonance frequency is plotted as 
 We now perform spectroscopy of the \Er spin ensemble. Given the gyromagnetic ratio of \Er spins (see \refsec{erbium_ions_in_ca}), the expected magnetic field along the $c$-axis for which the resonator is tuned to the ensemble is given by
 
 \begin{equation}
-    B_0 = \frac{\omega_r}{\gamma_\parallel} \approx 440~\text{mT} 
+    B_0 = -\frac{\omega_r}{\gamma_\parallel} \approx 440~\text{mT} 
 \end{equation}
 
 We ramp the magnetic field along the $z$-axis (which is close to the $c$-axis) to this value and perform photon counting spectroscopy. We apply a strong microwave pulse with a duration of 100~\textmu s at the frequency of the resonator $\omega_r$. After the pulse, we measure the number of counts on the SMPD during an integration window of $\tau_\text{int}=200$~ms. We average the total number of counts during the integration time over a number of iterations to obtain the ensemble average counts $\langle C \rangle$. We repeat this measurement while sweeping the magnetic field. Due to the dependence of the resonator frequency on the applied magnetic field, we apply the SMPD frequency tuning procedure for every value of $B_0$ ($0.15$~mT steps). 
@@ -214,7 +214,7 @@ Due to finite precision when cutting the sample, the crystal $c$-axis is not per
 The orientation of the $c$-axis is determined by a parabolic fit of $B_0^\text{max}$ as a function of $\theta$, shown in \reffig{sample_field_alignment}a. To measure $\beta_0$, we apply an out-of-plane component along the $x$-axis and measure the center frequency of the resonance as a function of the out-of-plane angle $\beta$. As discussed above, an out-of-plane magnetic field will significantly modify the resonator frequency. Therefore, we define an effective gyromagnetic rate,
 
 \begin{equation}
-    \gamma \equiv \frac{\omega_r(B_0^\text{max})}{B_0^\text{max}}.
+    \gamma \equiv -\frac{\omega_r(B_0^\text{max})}{B_0^\text{max}}.
 \end{equation}
 
 \reffig{sample_field_alignment}b plots $\gamma$ as a function of $\beta$, and the data is fit to a parabola which yields $\beta_0=-0.57^\circ$. 

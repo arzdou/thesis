@@ -118,7 +118,7 @@ We note that sideband driving necessarily involves populating the electron spin 
 \labsec{ac-zeeman_shifts}
 
 %We now introduce the concept of AC-Zeeman shifts, also known as the magnetic AC-Stark shift. 
-When driving a two-level system off-resonance, the energy levels are renormalized and the transition frequency is shifted proportionally to the square of the drive amplitude and to the matrix element of the transition. A derivation of this effect requires second-order perturbation theory on the time-dependent Hamiltonian and can be found in Ref.~\sidecite{cohen-tannoudji_atom_2024}.
+When the drive amplitude on a two-level system becomes large enough, the fast-rotating terms that are ignored in the rotating-wave-approximation (see \red{refsec}) will shift the energy levels ~\sidecite{cohen-tannoudji_atom_2024}. This is known as the Bloch-Siegert shift. In the case when the drive is not resonant from the transition frequency it also receives the name of AC-Stark shift. Given that, in our system, the driving is performed through a magnetic field, we will refer to this effect as the AC-Zeeman shift.
 
 When a microwave pulse with amplitude\sidenote{From here onwards, we characterize the amplitude of a microwave pulse by the equivalent Rabi frequency on resonance} $\Omega$ and frequency $\omega_d = \omega_S + \Delta$ is applied to a single electron spin, the transition frequency is shifted by
 
@@ -135,7 +135,7 @@ When a microwave pulse with amplitude\sidenote{From here onwards, we characteriz
 
 This results in a smaller frequency when $\Delta>0$ and \textit{vice versa}.
 
-We now address the AC-Zeeman shifts occurring when driving the forbidden ZQ or DQ transitions. As described in \refsec{w_er_hamiltonian}, there are six different transitions in this system: two EPR-allowed, two NMR-allowed, and the ZQ and DQ transitions. Under an off-resonant drive, \textit{all} the transitions are renormalized following Eq.~\ref{eq:simple_ac_zeeman}. The total shift of the ZQ and DQ transitions can be calculated by independently considering the effect of the drive on each transition:
+We now address the AC-Zeeman shifts occurring when driving the forbidden ZQ or DQ transitions. As described in \refsec{w_er_hamiltonian}, there are six different transitions in this system: two EPR-allowed, two NMR-allowed, and the ZQ and DQ transitions. Under an off-resonant drive, \textit{all} the transitions are shifted following Eq.~\ref{eq:simple_ac_zeeman}. The total shift of the ZQ and DQ transitions can be calculated by independently considering the effect of the drive on each transition:
 
 \begin{itemize}    
     \item Both EPR-allowed transitions are shifted by the presence of the off-resonant drive by
@@ -229,7 +229,7 @@ Because the ZQ and DQ matrix elements have opposite signs (Eq. \ref{eq:zq_dq_mat
 
 \paragraph{Differential AC-Zeeman shift}
 
-As described in the previous section, the presence of an off-resonance microwave drive renormalizes the energy levels of the system and induces an AC-Zeeman shift on the EPR-allowed transitions. In turn, this effectively shifts the resonance of the ZQ/DQ transition. Similarly, the two drives used for the stimulated Raman driving will renormalize the energy levels and create an effective shift $\delta_\text{AC}$ of the NMR transition which modifies the resonant condition of the stimulated Raman drive to $\delta = \omega_I^{(\Downarrow)} + \delta_\text{AC}$. The shift can be by considering the independent effect of each drive in each EPR-allowed transition,
+As described in the previous section, the presence of an off-resonance microwave drive shifts the energy levels of the system and induces an AC-Zeeman shift on the EPR-allowed transitions. In turn, this effectively shifts the resonance of the ZQ/DQ transition. Similarly, the two drives used for the stimulated Raman driving will shift the energy levels and create an effective shift $\delta_\text{AC}$ of the NMR transition which modifies the resonant condition of the stimulated Raman drive to $\delta = \omega_I^{(\Downarrow)} + \delta_\text{AC}$. The shift can be by considering the independent effect of each drive in each EPR-allowed transition,
 
 \begin{equation}
     \delta_\text{AC} = \frac{\Omega_A^2}{4} \cdot \left(\frac{1}{\Delta} - \frac{1}{\Delta + \omega_I^{(\Uparrow)} -  \omega_I^{(\Downarrow)}}\right) + \frac{\Omega_B^2}{4} \cdot \left(\frac{1}{\Delta + \omega_I^{(\Downarrow)}} - \frac{1}{\Delta + \omega_I^{(\Uparrow)}}\right).
@@ -383,4 +383,4 @@ This chapter has established the theoretical framework for nuclear spin control 
 
 \paragraph{Cross-relaxation events.} Due to the non-zero ZQ and DQ matrix elements, the electron spin can spontaneously decay through a ZQ or DQ transition, changing the state of the nuclear spin in the process. The probability for this cross-relaxation event scales proportionally to the square of the perpendicular hyperfine coupling, $A_\perp$.
 
-\paragraph{Stimulated Raman driving.} Control of the nuclear spin can be achieved by applying two off-resonant microwave tones with a mutual detuning equal to the NMR-allowed transition frequency~\sidecite{cohen-tannoudji_atom_2024}. This microwave stimulated Raman scheme does not significantly populate the electron spin excited state and preserves the coherence time of nuclear spins. The two microwave drives also renormalize the energy levels of the system, which result in a \textit{differential} AC-Zeeman shift of the NMR-allowed transition.
+\paragraph{Stimulated Raman driving.} Control of the nuclear spin can be achieved by applying two off-resonant microwave tones with a mutual detuning equal to the NMR-allowed transition frequency~\sidecite{cohen-tannoudji_atom_2024}. This microwave stimulated Raman scheme does not significantly populate the electron spin excited state and preserves the coherence time of nuclear spins. The two microwave drives shift the energy levels of the system, which result in a \textit{differential} AC-Zeeman shift of the NMR-allowed transition.

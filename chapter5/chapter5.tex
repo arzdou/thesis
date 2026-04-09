@@ -171,7 +171,7 @@ We then measure a spectroscopic time trace, similar to the ones presented in \re
 
 As shown in Chapter \ref{ch:detection_and_control_of_individual_w}, strongly coupled nuclear spins are revealed by sudden jumps of the \Er EPR-allowed transition frequency. In \reffig{spectra_2d}b, ten evenly-spaced resonances are observed. They are separated by $\sim$130~kHz and have vastly different cross-relaxation lifetimes, indicating the coupling to a spin-9/2 nuclear spin impurity.  
 
-As discussed in \refsec{nb_er_hamiltonian}, the secular Hamiltonian of this system is
+As discussed in \refsec{nb_er_hamiltonian}, the pseudosecular Hamiltonian of this system is
 
 \begin{equation}
     \cH{}/\hbar = \omega_S \hat{S}_z + \omega_I \hat{I}_z + A_\parallel \hat{S}_z \hat{I}_z + A_\perp \hat{S}_z \hat{I}_x + \hat{\mathbf{I}} \cdot \bar{\bar{Q}} \cdot \hat{\mathbf{I}}.
@@ -482,7 +482,7 @@ Q_{xz} & Q_{yz} & Q_{zz}
 \end{pmatrix},\qquad \mathrm{Tr}\,Q=0,
 \end{equation}
 
-However, when fitting the nuclear transition frequencies in this work, we consider the measurements with a single orientation of the magnetic field. Under these conditions, the measured NMR frequencies are not sufficient to describe the full quadrupole tensor. It is intuitively clear that the measured spectrum should be invariant under a rotation around the applied field direction $z$, and that only $4$ out of the $5$ parameters that describe a quadrupole tensor can be determined at best. This is mathematically evidenced when expressing the quadrupole tensor as a function of rank-2 spherical tensors $T^{(2)}_{m}$. These operators are related to the spin operator basis by
+However, when fitting the nuclear transition frequencies in this work, we consider the measurements with a single orientation of the magnetic field. Under these conditions, the measured NMR frequencies are not sufficient to describe the full quadrupole tensor. It is intuitively clear that the measured spectrum should be invariant under a rotation around the applied field direction $z$, and that only $4$ out of the $5$ parameters that describe a quadrupole tensor can be determined at best. This is mathematically evidenced when expressing the quadrupole tensor as a function of rank-2 spherical tensors $T^{(2)}_{m}$. These operators, up to a normalization factor, are related to the spin operator basis by
 
 \begin{equation}
 \begin{split}
@@ -594,7 +594,7 @@ where $Q_\mathrm{sdq}$ is the interaction coupling strength. Moreover, to accoun
 
 \subsubsection{Non-secular hyperfine}
 
-Up to this point, we have treated the hyperfine interaction within the secular approximation, retaining only terms proportional to $S_z$. This approximation is well justified by the large mismatch between the electronic and nuclear Zeeman energies, which differ by approximately three orders of magnitude. However, given the smallness of the spin-dependent interaction, it becomes necessary to include non-secular hyperfine contributions.
+Up to this point, we have treated the hyperfine interaction within the pseudosecular approximation, retaining only terms proportional to $S_z$. This approximation is well justified by the large mismatch between the electronic and nuclear Zeeman energies, which differ by approximately three orders of magnitude. However, given the smallness of the spin-dependent interaction, it becomes necessary to include non-secular hyperfine contributions.
 
 Given that non-secular hyperfine terms will induce second- and third-order corrections to the energy spectrum and exhibit strong correlation with each other, we choose not to directly fit these terms. Instead, we calculate their values using magnetic dipole simulations (see \refsec{interaction_between_to_spins}). This approximation is justified by the robustness of the site assignment, where the discrepancy between the measured and calculated hyperfine is smaller than 10\%. 
 

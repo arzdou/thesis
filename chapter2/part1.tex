@@ -17,7 +17,7 @@ We begin this chapter by describing the properties of a single electron spin in 
 Electrons are elementary particles with negative charge and an inherent magnetic moment arising from their spin,
 
 \begin{equation}
-    \hat{\boldsymbol{\mu}}_e = - \gamma_e \hat{\mathbf{S}} 
+    \hat{\boldsymbol{\mu}}_e = \gamma_e \hat{\mathbf{S}} 
 \end{equation}
 
 where $\hat{\mathbf{S}}= (\hat{S}_x, \hat{S}_y, \hat{S}_z)$ correspond to the spin-1/2 operators and $\gamma_e / 2\pi = 28.024$~GHz/T is the gyromagnetic ratio of the electron spin. In a constant magnetic field $\mathbf{B_0}$, an electron in free space can be described by the Zeeman effect:
@@ -26,7 +26,7 @@ where $\hat{\mathbf{S}}= (\hat{S}_x, \hat{S}_y, \hat{S}_z)$ correspond to the sp
     \cH{e} / \hbar = - \mathbf{B_0} \cdot \hat{\boldsymbol{\mu}}_e = \omega_e \hat{S}_{z'}.
 \end{equation}
 
-where $\omega_e = \gamma_e \, \mathbf{B_0}$ is the Larmor frequency of the electron spin and $z'$ corresponds to the quantization axis of the spin, parallel to $\mathbf{B_0}$. The two states of the system are labeled $\ket{\Downarrow}$ and $\ket{\Uparrow}$ and their energy difference depends linearly on $|B_0|$. We highlight the following properties:
+where $\omega_e = -\gamma_e \, \mathbf{B_0}$ is the Larmor frequency of the electron spin and $z'$ corresponds to the quantization axis of the spin, parallel to $\mathbf{B_0}$. The two states of the system are labeled $\ket{\Downarrow}$ and $\ket{\Uparrow}$ and their energy difference depends linearly on $|B_0|$. We highlight the following properties:
 
 \begin{itemize}
     \item \textbf{Isotropy}. The electron's gyromagnetic factor is isotropic. As a result, the quantization axis is aligned with the external magnetic field $(z' \parallel \mathbf{B_0})$.
@@ -50,11 +50,11 @@ The free-ion Hamiltonian that describes an $N$-electron ion in free space can be
 
 \begin{align}
 \begin{split}
-    \cH{fi} &= \underbrace{\sum_{i=1}^N \frac{\hbar^2}{2m} \nabla_i^2 - \sum_{i=1}^N \frac{Ze^2}{r_i}}_{\cH{0} \rightarrow \text{ Kinetic and Potential}} + \underbrace{\sum_{i<j}^N \frac{e^2}{r_{ij}}}_{\cH{C} \rightarrow \text{ Coulomb}} + \underbrace{\sum_{i=1}^N \xi(r_i)\,\hat{\mathbf{L}}_i \cdot \hat{\mathbf{S}}_i}_{\cH{SO} \rightarrow \text{ Spin-Orbit}}.
+    \cH{fi} &= -\underbrace{\sum_{i=1}^N \frac{\hbar^2}{2m} \nabla_i^2 - \sum_{i=1}^N \frac{Ze^2}{r_i}}_{\cH{0} \rightarrow \text{ Kinetic and Potential}} + \underbrace{\sum_{i<j}^N \frac{e^2}{r_{ij}}}_{\cH{C} \rightarrow \text{ Coulomb}} + \underbrace{\sum_{i=1}^N \xi(r_i)\,\hat{\mathbf{L}}_i \cdot \hat{\mathbf{S}}_i}_{\cH{SO} \rightarrow \text{ Spin-Orbit}}.
 \end{split}
 \end{align}
 
-where $r_i$ is the distance of each electron to the nucleus and $r_{ij}$ are the distances between electrons. In order, the terms describe the kinetic and potential energy, the electron--electron Coulomb interaction, and the spin--orbit coupling. For light ions, the spin--orbit coupling can be considered as a perturbation to the dominant electron--electron interaction. However, the Hamiltonian defined by the remaining terms cannot be directly solved, as it involves the coupling between $N$ independent electrons. This problem is solved by introducing the central-field approximation, where the electron--electron interaction is described with a single-electron potential averaged over all electron interactions. 
+where $r_i$ is the distance of each electron to the nucleus and $r_{ij}$ are the distances between electrons. In order, the terms describe the kinetic and potential energy, the electron--electron Coulomb interaction, and the spin--orbit coupling. For light ions, the spin--orbit coupling can be considered as a perturbation to the dominant electron--electron interaction. However, the Hamiltonian defined by the remaining terms cannot be directly solved, as it involves the coupling between $N$ independent electrons. This problem is solved by introducing the mean-field approximation, where the electron--electron interaction is described with a single-electron potential averaged over all electron interactions. 
 
 \begin{align}
 \begin{split}
@@ -102,23 +102,23 @@ Inside the crystal, the energy levels of the \Er ion are perturbed by the electr
 Due to the shielding provided by the more external $5s$ and $5p$ closed shells, the electrostatic interaction between the ion and the crystal can be treated as a perturbation to the free-ion Hamiltonian. The crystal-field Hamiltonian is used to describe the interaction between the ion and the crystal and is generally described in terms of the extended Stevens operators $\hat{O}^q_k$ with $k=1,2,3,\dots$ and $q \in \{-k,\dots, k\}$ \sidecite{abragam_electron_2012,stevens_matrix_1952}
 
 \begin{equation}
-    \cH{cf} / \hbar = \sum_{k}^{1,2,3,\dots}\sum_{q}^{-k,...k} B_k^q \hat{O}^q_k \,
+    \cH{cf} / \hbar = \sum_{k=0}^{\infty}\sum_{q=-k}^{k} B_k^q \hat{O}^q_k \,
 \end{equation}
 
-where the coefficients $B_k^q$ are real-valued crystal-field parameters. Terms with even and odd rank (the $k$ index) belong to the even and odd electrostatic potentials ($V_{\mathrm{even}}$ and $V_{\mathrm{odd}}$), respectively.
+where the coefficients $B_k^q$ are real-valued crystal-field parameters\sidenote{The terms with $k>6$ are rarely considered as they are practically irrelevant.}. Terms with even and odd rank (the $k$ index) belong to the even and odd electrostatic potentials ($V_{\mathrm{even}}$ and $V_{\mathrm{odd}}$), respectively.
 
 The extended Stevens operators are constructed as polynomial combinations of the $J_z$, $J_+$ and $J_-$ operators, and a full list of the operators can be found in \sidecite{altshuler_electron_1964}. The indices $k$ and $q$ encode the symmetry properties of the crystal field: $k$ specifies the rank of the operator (i.e., the maximum total power of angular momentum operators in the polynomial). The index $q$ determines the projection onto the quantization axis (i.e. the maximum power of the non-diagonal terms). For example, 
 
 \begin{align}
 \begin{split}
-    \hat{O}_2^0 &= 3 \hat{J}_z^2 - J(J-1)\,\mathbb{1}, \\
+    \hat{O}_2^0 &= 3 \hat{J}_z^2 - J\,\hat{\mathbb{1}}, \\
     \hat{O}_4^4 &= \tfrac{1}{2} \left( \hat{J}_+^4 + \hat{J}_-^4 \right).
 \end{split}
 \end{align}
 
 The maximum power of the angular momentum operators in the polynomial expansion of the Stevens operator is given by the $k$ index, while the maximum power of the $J_\pm$ operators is given by the $q$ index. This allows the crystal field to encode the symmetry properties of the crystal site in a reduced number of terms. 
 
-\paragraph{Odd-parity crystal-field terms} The effect of the odd terms (and thus $V_\mathrm{odd}$) has been discussed in \sidecite{kiel_theory_1966,judd_optical_1962a}. This term couples electrons in the $4f$ shell with shells of opposite parity, for instance the $5d$. Because of the large energy difference, the wave-function admixture is small; nevertheless, its consequences are important. First, it allows a non-zero electric dipole matrix element between Kramers doublets (and in particular, it allows electric-dipole driving of the optical transition at $1.5 \mu \mathrm{m}$ as shown in \reffig{full_energy_splitting}) \cite{judd_optical_1962a}. Second, and very relevant for this work, it means that the energy states of \Er may present a finite electric dipole moment. This moment is suppressed at zero magnetic field by Kramers degeneracy, however the latter is lifted under a finite magnetic field. Therefore, in finite magnetic fields, \Er energy levels present a non-zero electric dipole, whose magnitude is moreover approximately proportional to the magnetic field strength.
+\paragraph{Odd-parity crystal-field terms} The effect of the odd terms (and thus $V_\mathrm{odd}$) has been discussed in \sidecite{kiel_theory_1966,judd_optical_1962a}. This term couples electrons in the $4f$ shell with shells of opposite parity, for instance the $5d$. Because of the large energy difference, the wave-function admixture is small; nevertheless, its consequences are important. First, it allows a non-zero electric dipole matrix element between Kramers doublets (and in particular, it allows electric-dipole driving of the optical transition at $1.5$ \textmu m as shown in \reffig{full_energy_splitting}) \cite{judd_optical_1962a}. Second, and very relevant for this work, it means that the energy states of \Er may present a finite electric dipole moment. This moment is suppressed at zero magnetic field by Kramers degeneracy, however the latter is lifted under a finite magnetic field. Therefore, in finite magnetic fields, \Er energy levels present a non-zero electric dipole, whose magnitude is moreover approximately proportional to the magnetic field strength.
 
 \paragraph{Even-parity crystal-field terms} We now neglect the effect of the odd crystal-field terms, and consider only the main $4f$ part of the \Er level wavefunction. Non-zero matrix elements between $4f$ states require even parity operators; hence, the wavefunctions and energy levels are determined by $V_\mathrm{even}$. The following level of approximation is to neglect the admixture between levels of well-defined angular momentum $J$. This is justified by the large energy difference between the $J$ manifolds due to the large spin-orbit interaction ($J=1.5 \mu \mathrm{m}$ between $15/2$ and $J=13/2$). We go back to the effects of the odd terms in the Hamiltonian and their interaction with an external electric field in the following section.
 
@@ -177,10 +177,10 @@ The energy separation between the $Z_1$ and $Z_2$ doublets is approximately 650 
 
 \begin{equation}
     \label{eq:er_spin_hamiltonian}
-    \cH{eZ} / \hbar = \mathbf{B_0}\cdot \bar{\bar{\gamma}}_{^{3+}\text{Er}}\cdot\hat{\mathbf{S}} = \omega_S\, \hat{S}_{z'}
+    \cH{eZ} / \hbar = -\mathbf{B_0}\cdot \bar{\bar{\gamma}}_{^{3+}\text{Er}}\cdot\hat{\mathbf{S}} = \omega_S\, \hat{S}_{z'}
 \end{equation}
 
-where $\omega_S = \mathbf{B_0}\cdot \bar{\bar{\gamma}}_{^{3+}\text{Er}}$ is the Larmor frequency of the spin and $z'$ corresponds to its quantization axis. The two eigenstates of the system are labeled $\ket{\Downarrow}$ and $\ket{\Uparrow}$. The effective gyromagnetic tensor $\bar{\bar{\gamma}}_{^{3+}\text{Er}}$ is diagonal along the principal axes of the crystal, with values \sidecite{antipina.a._anisotropy_1981}
+where $\omega_S = -\mathbf{B_0}\cdot \bar{\bar{\gamma}}_{^{3+}\text{Er}}$ is the Larmor frequency of the spin and $z'$ corresponds to its quantization axis. The two eigenstates of the system are labeled $\ket{\Downarrow}$ and $\ket{\Uparrow}$. The effective gyromagnetic tensor $\bar{\bar{\gamma}}_{^{3+}\text{Er}}$ is diagonal along the principal axes of the crystal, with values \sidecite{antipina.a._anisotropy_1981}
 
 \begin{align}
 \begin{split}
@@ -280,12 +280,12 @@ In Chapters \ref{ch:detection_and_control_of_individual_w} and \ref{ch:individua
 A nuclear spin $I=1/2$ in an external magnetic field is described by the Zeeman Hamiltonian, analogous to the electron case:
 
 \begin{equation}
-    \cH{nZ} / \hbar = \gamma_n\, \mathbf{B_0}\cdot\hat{\mathbf{I}} = \omega_I \, \hat{I}_{z'},
+    \cH{nZ} / \hbar = -\gamma_n\, \mathbf{B_0}\cdot\hat{\mathbf{I}} = \omega_I \, \hat{I}_{z'},
 \end{equation}
 
 \noindent where $\gamma_n$ is the isotropic nuclear gyromagnetic factor, $\hat{\mathbf{I}}=(\hat{I}_x,\hat{I}_y,\hat{I}_z)$ are the nuclear spin operators, $\omega_I = \gamma_n\, \mathbf{B_0}$ is the Larmor frequency, and $z'$ is the quantization axis of the nuclear spin. This term splits the nuclear manifold into $2I + 1$ energy levels, uniquely described by the magnetic quantum number $m_I \in \{-I, -I+1, \dots, I\}$. For the species relevant to this work, the gyromagnetic ratios are $\gamma_{\text{\W}}/2\pi = 1.77394$~MHz/T and $\gamma_{\text{\Nb}}/2\pi = 10.4213$~MHz/T \sidecite{knight_solidstate_1986}.
 
-These values lie in the MHz/T range, which is roughly $10^{-4}$ times smaller than an electron. In addition, we note that the sign of the gyromagnetic ratios is positive\sidenote{Given that the nuclear spin is a complex combination of the spin and orbital momentum of nucleons, the gyromagnetic ratio can also be negative under particular circumstances, as is the case for $^{15}$N.}, which means that the Zeeman ground state is $m_I=I$ and parallel to the applied magnetic field, in contrast to the electron spin.
+These values lie in the MHz/T range, which is roughly $10^{-3}$ times smaller than an electron. In addition, we note that the sign of the gyromagnetic ratios is generally positive\sidenote{Given that the nuclear spin is a complex combination of the spin and orbital momentum of nucleons, the gyromagnetic ratio can also be negative under particular circumstances, as is the case for $^{15}$N.}, which means that the Zeeman ground state is $m_I=I$ and parallel to the applied magnetic field, in contrast to the electron spin.
 
 
 %The gyromagnetic ratio of a proton is $\gamma_p/2\pi = 42.57716$~MHz/T {ref} which is approximately 500 times smaller than the Bohr magneton. Given the large difference in magnetic response, the Zeeman energy of the electron spin is in general the dominating term in interacting systems. 
@@ -487,7 +487,7 @@ Note that this Hamiltonian is written in the basis of the crystalline axes. The 
 
 We note that, given the anisotropy of the electron spin gyromagnetic factor, the quantization axis of the nuclear spin $z'$ and of the electron spin $z''$ are not necessarily parallel to each other.
 
-\subsubsection{Secular approximation} 
+\subsubsection{Pseudosecular approximation} 
 
 When $\omega_S$ is much larger than the hyperfine interaction strength\sidenote{This corresponds to
 \begin{equation*}
@@ -497,7 +497,7 @@ If the separation between the spins is $a$, the condition can be approximated as
 \begin{equation*}
 |\mathbf{B_0}| \gg \frac{\gamma_{\text{\W}} \mu_0}{ 8\pi a^3} \approx 1\text{~mT}.
 \end{equation*}} 
-, $S_{x''}$ and $S_{y''}$ terms have a negligible effect on the wavefunctions. In this secular approximation, the hyperfine Hamiltonian writes:
+, $S_{x''}$ and $S_{y''}$ terms have a negligible effect on the wavefunctions. In this pseudosecular approximation, the hyperfine Hamiltonian writes:
 
 \begin{align}
 \begin{split}
@@ -505,12 +505,12 @@ If the separation between the spins is $a$, the condition can be approximated as
 \end{split}
 \end{align}
 
-\noindent where the ${x''}$-axis has been chosen to be parallel to the direction of the perpendicular hyperfine coupling. Intuitively, the secular approximation can be understood by considering the effects of each term in the \Er spin Bloch sphere. The dominant Zeeman term induces a precession of the electron spin around the ${z''}$-axis with frequency $\omega_S$. By contrast, the hyperfine terms involving $S_{x''}$ and $S_{y''}$ correspond to rotations around the ${x''}$- and ${y''}$-axes, with much smaller frequencies. Because of the large difference in frequency scales, the transverse rotations effectively average to zero and can be neglected.
+\noindent where the ${x''}$-axis has been chosen to be parallel to the direction of the perpendicular hyperfine coupling. Intuitively, the pseudosecular approximation can be understood by considering the effects of each term in the \Er spin Bloch sphere. The dominant Zeeman term induces a precession of the electron spin around the ${z''}$-axis with frequency $\omega_S$. By contrast, the hyperfine terms involving $S_{x''}$ and $S_{y''}$ correspond to rotations around the ${x''}$- and ${y''}$-axes, with much smaller frequencies. Because of the large difference in frequency scales, the transverse rotations effectively average to zero and can be neglected.
 
-We note that the terms $A_\parallel$ and $A_\perp$ appear in the quantization axes basis, which is different from the one in Eq.~\ref{eq:half_hyperfine}. These parameters play an essential role in the experiments as they can be measured through EPR spectroscopy. We compare the measured values with a numerical estimation to perform site assignment of the nuclear spins coupled to the \Er spin. The numerical estimate is obtained by calculating $\cH{hf}$ and projecting the Hamiltonian into the quantization axes basis using the Hilbert-Schmidt inner product:
+We note that the terms $A_\parallel$ and $A_\perp$ appear in the quantization axes basis, which is different from the one in Eq.~\ref{eq:half_hyperfine}. These parameters play an essential role in the experiments as they can be measured through EPR spectroscopy. We compare the measured values with a numerical estimation to perform site assignment of the nuclear spins coupled to the \Er spin. The numerical estimate is obtained by calculating $\cH{hf}$ and projecting the Hamiltonian into the quantization axes basis using the Frobenius inner product:
 
 \begin{align}
-    A_\parallel = \frac{\text{Tr}\{ H_\text{hf} \times (S_{z''}I_{z'})^\dagger\}}{\text{Tr}\{ S_{z''}I_{z'}\times( S_{z''}I_{z'})^\dagger \}},  \quad A_\perp = \frac{\text{Tr}\{ H_\text{hf} \times ( S_{x''}I_{z'})^\dagger\}}{\text{Tr}\{  S_{x''}I_{z'}\times( S_{x''}I_{z'})^\dagger \}}.
+    A_\parallel = \frac{\text{Tr}\{ H_\text{hf} \dot (S_{z''}I_{z'})^\dagger\}}{\text{Tr}\{ S_{z''}I_{z'}\dot( S_{z''}I_{z'})^\dagger \}},  \quad A_\perp = \frac{\text{Tr}\{ H_\text{hf} \dot ( S_{x''}I_{z'})^\dagger\}}{\text{Tr}\{  S_{x''}I_{z'}\dot( S_{x''}I_{z'})^\dagger \}}.
 \end{align} 
 
 The final spin-1/2 Hamiltonian is
@@ -595,7 +595,7 @@ This Hamiltonian defines a four-level system and the analytical solution is deri
 \begin{figure}
     \includegraphics{chapter2/figures/energy_levels_half_v2.pdf}
     \caption[\W-\Er coupled system]{
-        \textbf{a.} \W-\Er coupled system. The \Er spin (red) interacts with a \W spin (orange) through the hyperfine interaction (gray). The quantization axis of the spins $S_z$ and $I_z$ differ from each other due to the anisotropy of the \Er gyromagnetic tensor.
+        \textbf{a.} \W-\Er coupled system. The \Er spin (red) interacts with a \W spin (orange) through the hyperfine interaction. The quantization axis of the spins $S_z$ and $I_z$ differ from each other due to the anisotropy of the \Er gyromagnetic tensor.
         \textbf{b.} Energy level diagram of the coupled system in the high field regime approximation. Allowed EPR transitions are shown with a black arrow while zero-quantum and double-quantum transitions are shown with blue and red arrows respectively.}
     \labfig{energy_levels_half_v2}
 \end{figure}
@@ -671,7 +671,7 @@ In Chapter \ref{ch:nb_nuclear_spin} we report the observation of an \Er electron
    \label{eq:hamiltonian_spin_9o2}
 \end{equation}
 
-This Hamiltonian yields twenty energy levels, illustrated in \reffig{energy_levels_ninehalf_w_sidebands}. Under the secular approximation the electron spin projection $m_S$ is a good quantum number, so the full manifold effectively separates into two submanifolds $(m_S = \Uparrow, \Downarrow)$ of ten nuclear spin levels each. By contrast, the nuclear spin states are influenced by both the hyperfine coupling and the electric quadrupole interaction, which mix states with different $m_I$.
+This Hamiltonian yields twenty energy levels, illustrated in \reffig{energy_levels_ninehalf_w_sidebands}. Under the pseudosecular approximation the electron spin projection $m_S$ is a good quantum number, so the full manifold effectively separates into two submanifolds $(m_S = \Uparrow, \Downarrow)$ of ten nuclear spin levels each. By contrast, the nuclear spin states are influenced by both the hyperfine coupling and the electric quadrupole interaction, which mix states with different $m_I$.
 
 \begin{figure}
     \includegraphics{chapter2/figures/energy_levels_ninehalf_w_sidebands.pdf}

@@ -26,10 +26,21 @@
 
 \frontmatter % Denotes the start of the pre-document content, uses roman numerals
 
+% Two options are available for the front, the univeristy cover and the standard cover
+% For each case just uncomment the preffered option
+
 %----------------------------------------------------------------------------------------
-%	COPYRIGHT PAGE
+%	OPTION 1 - UNIVERSITY COVER
 %----------------------------------------------------------------------------------------
 
+% \includepdf[pages=-]{frontmatter/cover.pdf}
+
+
+%----------------------------------------------------------------------------------------
+%	OPTION 2 - Standard cover
+%----------------------------------------------------------------------------------------
+
+%	COPYRIGHT PAGE 
 \makeatletter
 \uppertitleback{\@titlehead} % Header
 
@@ -55,17 +66,11 @@
 }
 \makeatother
 
-%----------------------------------------------------------------------------------------
 %	DEDICATION
-%----------------------------------------------------------------------------------------
 
 \dedication{
 	\flushright \textit{À Carla}
 }
-
-%----------------------------------------------------------------------------------------
-%	OUTPUT TITLE PAGE AND PREVIOUS
-%----------------------------------------------------------------------------------------
 
 % Note that \maketitle outputs the pages before here
 \maketitle
